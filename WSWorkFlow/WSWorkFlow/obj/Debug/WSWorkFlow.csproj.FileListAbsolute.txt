@@ -1,5 +1,0 @@
-F:\001. UNIVERSITY 2010\003. TERM 3\004. THUONG MAI DIEN TU\WebserviceProject\WSWorkFlow\WSWorkFlow\bin\WSWorkFlow.dll
-F:\001. UNIVERSITY 2010\003. TERM 3\004. THUONG MAI DIEN TU\WebserviceProject\WSWorkFlow\WSWorkFlow\bin\WSWorkFlow.pdb
-F:\001. UNIVERSITY 2010\003. TERM 3\004. THUONG MAI DIEN TU\WebserviceProject\WSWorkFlow\WSWorkFlow\obj\Debug\ResolveAssemblyReference.cache
-F:\001. UNIVERSITY 2010\003. TERM 3\004. THUONG MAI DIEN TU\WebserviceProject\WSWorkFlow\WSWorkFlow\obj\Debug\WSWorkFlow.dll
-F:\001. UNIVERSITY 2010\003. TERM 3\004. THUONG MAI DIEN TU\WebserviceProject\WSWorkFlow\WSWorkFlow\obj\Debug\WSWorkFlow.pdb
