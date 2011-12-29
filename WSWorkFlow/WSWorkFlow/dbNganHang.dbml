@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NganHang" Class="dbNganHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=NganHang;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NganHangConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CaNhan" Member="CaNhans">
+    <Type Name="CaNhan">
+      <Column Name="MaCaNhan" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKhachHang" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="CMND_HoChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KhachHang_CaNhan" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKhachHang" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MatKhauThanhToan" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaDiaChi" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KhachHang_CaNhan" Member="CaNhans" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="CaNhan" />
+      <Association Name="KhachHang_DoanhNghiep" Member="DoanhNghieps" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DoanhNghiep" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DoanhNghiep" Member="DoanhNghieps">
+    <Type Name="DoanhNghiep">
+      <Column Name="MaDoanhNghiep" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKhachHang" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="MaLoaiGiayPhep" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TenDoanhNghiep" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DienThoaiDoanhNghiep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoGiayPhepKinhDoanh" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="KhachHang_DoanhNghiep" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

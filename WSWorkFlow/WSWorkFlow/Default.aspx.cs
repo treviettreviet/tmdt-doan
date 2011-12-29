@@ -26,12 +26,19 @@ namespace WSWorkFlow
                 object[] ob = new object[2];
                 ob[0] = id;
                 ob[1] = pass;
-                string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
-                string ServiceName = "EMVServices";
+                string URLWebservice = "http://localhost:1248/WebServiceForUser.asmx";
+                string ServiceName = "WebServiceForUser";
                 string MethodName = "Authenticate";
                 object obResult = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, ob);
-                string SID = ob.ToString();
-                Response.Write("SID: " + SID);
+                if (!obResult.Equals(""))
+                {
+                    string SID = obResult.ToString();
+                    Response.Write("SID: " + SID);
+                }
+                else
+                {
+                    Response.Write("False");
+                }
             }
             catch (Exception ex)
             {
