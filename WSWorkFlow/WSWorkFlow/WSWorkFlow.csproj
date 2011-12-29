@@ -13,6 +13,7 @@
     <RootNamespace>WSWorkFlow</RootNamespace>
     <AssemblyName>WSWorkFlow</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,7 +60,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+<<<<<<< .mine
+    <Content Include="wsTransfer.asmx" />
+=======
     <Content Include="WebServiceForUser.asmx" />
+>>>>>>> .r5
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbNganHang.designer.cs">
@@ -82,6 +87,10 @@
     </Compile>
     <Compile Include="WebServiceInvoker.cs" />
     <Compile Include="WSProxy.cs" />
+    <Compile Include="wsTransfer.asmx.cs">
+      <DependentUpon>wsTransfer.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
