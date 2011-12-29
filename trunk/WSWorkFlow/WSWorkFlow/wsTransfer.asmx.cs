@@ -17,55 +17,71 @@ namespace WSWorkFlow
     public class wsTransfer : System.Web.Services.WebService
     {
         private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
-
+        
+        // Gọi WS của Thầy Minh
+        string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
+        string ServiceName = "EMVServices";
         /// <summary>
         /// Chuyển khoảng giữa các tài khoảng cùng ngân hàng
         /// </summary>
         /// <param name="sid">SID của ngân hàng cấp cho môi giới</param>
-        /// <param name="ccsend">Mã số thẻ gửi</param>
+        /// <param name="ccreceive">Mã số thẻ gửi</param>
         /// <param name="ccreceive">Mã số thẻ nhận</param>
         /// <param name="amount">Số tiền cần chuyển</param>
-        /// <param name="ccsendsecurenum">Mã Secure Number của thẻ gửi</param>
+        /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
-        public int TransferMoneySameBank(string sid, string ccsend, string ccreceive, float amount, string ccsendsecurenum)
+        public int TransferMoneySameBank(string sid, string ccreceive, string ccreceive, float amount, string ccreceivesecurenum, string ccreceivesecurenum)
         {
-            //Lấy sid của ngân hàng cấp
-            WebServiceForUser wsBank = new WebServiceForUser();
+            decimal dSoDu = (decimal)amount;
 
-            string bankSID = wsBank.Authenticate("OCBCBan", "X2ugS2E37S");
+            string MethodName = "Authenticate";
+
+            string bankSID = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
             
-            if(sid == "123456abcdef")
+            if(sid == bankSID)
             {
-                //CCard ccSend = GetService("Get Card Info");
+                //Lấy dữ liệu thẻ có trong ngân hàng
 
-                int iSendCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankSID, ccsend, "IssuerID", ccsendsecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
+                //Thẻ gửi
+                var rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
+                
+                The sendCard = rowCard;
+                //Kiểm tra có thẻ trong ngân hàng không
+                if (sendCard == null)
+                    return 1;
 
-                switch (iSendCardState)
+                //Thẻ nhận
+                rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
+                The receiveCard = rowCard;
+
+
+                //Kiểm tra thẻ gửi
+                int ireceiveCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, receiveCard.MaLoaiThe, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+
+                switch (ireceiveCardState)
                 {
                     case -1: //Invalid SID
-                        return 2; 
+                        return 2;
                     case 0: //Card valid 
-                        //CCustomer cusSend = GetService("Get Send Customer Info");
-                        //CCustomer cusReceive = GetService("Get Receive Customer Info");
-                        //if(cusSend.SoTien > muc_quy_dinh)
-                        //{
-                        //      if(cusSend.SoTien > amount)
-                        //      {
-                        //          CCCard ccReceive = GetService("Get Card Info");
-                        //          int iReceiveCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankSID, ccsend, "IssuerID", ccsendsecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
-                        //          if(iReceiveCardState == 1)
-                        //          {
-                        //              cusSend.SoTien -= amount;
-                        //              cusReceive.SoTien += amount;
-                        //              GhiNhanGiaoDich();
-                        //          }
-                        //      }
-                        //      else
-                        //          return 1;
-                        //}
-                        //else
-                        //      return 1;
+                        KhachHang cusreceive = receiveCard.KhachHang;
+                        KhachHang cusReceive = receiveCard.KhachHang;
+
+                        if (receiveCard.SoDu > dSoDu)
+                        {
+                            //Kiểm tra thẻ nhận
+                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, receiveCard.MaLoaiThe, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            if (iReceiveCardState == 1)
+                            {
+                                sendCard.SoDu -= dSoDu;
+                                receiveCard.SoDu += dSoDu;
+                                dbNganHang.SubmitChanges();
+                            }
+                            else
+                                return 1;
+                        }
+                        else
+                            return 1;
                         break;
                     case 1: //Card ID is not valid for this bank 
                         return 1;
@@ -91,53 +107,46 @@ namespace WSWorkFlow
         /// Chuyển khoảng giữa các tài khoảng khác ngân hàng
         /// </summary>
         /// <param name="sid">SID của ngân hàng cấp cho môi giới</param>
-        /// <param name="ccsend">Mã số thẻ gửi</param>
+        /// <param name="ccreceive">Mã số thẻ gửi</param>
         /// <param name="ccreceive">Mã số thẻ nhận</param>
         /// <param name="amount">Số tiền cần chuyển</param>
-        /// <param name="ccsendsecurenum">Mã Secure Number của thẻ gửi</param>
+        /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
-        public int TransferMoneyDiffBank(string sid, string ccsend, string ccreceive, float amount, string ccsendsecurenum)
+        public int TransferMoneyDiffBank(string sid, string ccreceive, string ccreceive, float amount, string ccreceivesecurenum)
         {
-            string bankSendSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
+            string bankreceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             string bankReceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             
             if(sid == "123456abcdef")
             {
-                //CCard ccSend = GetService("Get Card Info");
+
+                //CCard ccreceive = GetService("Get Card Info");
                 //CCard ccReceive = GetService("Get Card Info");
 
-                int iSendCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankSendSID, ccsend, "IssuerID", ccsendsecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
+                int ireceiveCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankreceiveSID, ccreceive, "IssuerID", ccreceivesecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
 
-                 switch (iSendCardState)
+                 switch (ireceiveCardState)
                 {
                     case -1: //Invalid SID
                         return 2; 
-                        break;
                     case 0: //Card valid 
 
                         break;
                     case 1: //Card ID is not valid for this bank 
                         return 1;
-                        break;
                     case 2: //Card Type is not valid (Visa/Master) 
                         return 2;
-                        break;
                     case 3: //Customer Name not valid
                         return 1;
-                        break;
                     case 4: //Secure Number of the Credit card is not valid
                         return 1;
-                        break;
                     case 5: //Input Date of user for the credit card are not valid
                         return 1;
-                        break;
                     case 6: //Out of valid date from now 
                         return 2;
-                        break;
                     case 7: //Card is stolen
                         return 2;
-                        break;
                 }
             }
 
