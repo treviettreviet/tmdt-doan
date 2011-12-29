@@ -21,23 +21,30 @@ namespace WSWorkFlow
         {
             try
             {
+                System.Net.ServicePointManager.Expect100Continue = false; 
                 string id = txtBankID.Text;
                 string pass = txtPassword.Text;
                 object[] ob = new object[2];
                 ob[0] = id;
                 ob[1] = pass;
-                string URLWebservice = "http://localhost:1248/WebServiceForUser.asmx";
-                string ServiceName = "WebServiceForUser";
+                //string URLWebservice = "http://localhost:1248/WebServiceForUser.asmx";
+                //string ServiceName = "WebServiceForUser";
+                //string MethodName = "Authenticate";
+
+                // Gọi WS của Thầy Minh
+                string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
+                string ServiceName = "EMVServices";
                 string MethodName = "Authenticate";
+
                 object obResult = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, ob);
                 if (!obResult.Equals(""))
                 {
                     string SID = obResult.ToString();
-                    Response.Write("SID: " + SID);
+                    lbtKetQua.Text = "SID: " + SID;
                 }
                 else
                 {
-                    Response.Write("False");
+                    lbtKetQua.Text = "Login thất bại";
                 }
             }
             catch (Exception ex)
@@ -61,6 +68,42 @@ namespace WSWorkFlow
             using (StringReader sr = new StringReader(sb.ToString()))
             {
                 return (T)deserializer.Deserialize(sr);
+            }
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Net.ServicePointManager.Expect100Continue = false;
+                string id = txtBankID.Text;
+                //string pass = txtPassword.Text;
+                object[] ob = new object[1];
+                ob[0] = id;
+                //ob[1] = pass;
+                //string URLWebservice = "http://localhost:1248/WebServiceForUser.asmx";
+                //string ServiceName = "WebServiceForUser";
+                //string MethodName = "Authenticate";
+
+                // Gọi WS của Thầy Minh
+                string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
+                string ServiceName = "EMVServices";
+                string MethodName = "GetBankCommercialNameOfCreditCard";
+
+                object obResult = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, ob);
+                if (!obResult.Equals(""))
+                {
+                    string SID = obResult.ToString();                    
+                    lbtKetQua.Text = "Name: " + SID;
+                }
+                else
+                {
+                    lbtKetQua.Text = "Ko co";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
