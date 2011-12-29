@@ -16,7 +16,7 @@ namespace WSWorkFlow
     // [System.Web.Script.Services.ScriptService]
     public class wsTransfer : System.Web.Services.WebService
     {
-
+        private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
 
         /// <summary>
         /// Chuyển khoảng giữa các tài khoảng cùng ngân hàng
@@ -31,7 +31,9 @@ namespace WSWorkFlow
         public int TransferMoneySameBank(string sid, string ccsend, string ccreceive, float amount, string ccsendsecurenum)
         {
             //Lấy sid của ngân hàng cấp
-            string bankSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
+            WebServiceForUser wsBank = new WebServiceForUser();
+
+            string bankSID = wsBank.Authenticate("OCBCBan", "X2ugS2E37S");
             
             if(sid == "123456abcdef")
             {
