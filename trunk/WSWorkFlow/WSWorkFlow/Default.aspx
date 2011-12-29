@@ -5,15 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script language="javascript" type="text/javascript">
-// <![CDATA[
-
-        function Submit1_onclick() {
-
-        }
-
-// ]]>
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,14 +18,14 @@
                 <td>
                     Bank ID</td>
                 <td>
-                    <asp:TextBox ID="txtBankID" runat="server" Text="OCBCBank"></asp:TextBox>
+                    <asp:TextBox ID="txtBankID" runat="server" Text="lenhuynh3003@gmail.com"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
                     Password</td>
                 <td>
-                    <asp:TextBox ID="txtPassword" runat="server" Text="X2ugS2E37S"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" Text="123456"></asp:TextBox>
                 </td>
             </tr>
             <tr>
