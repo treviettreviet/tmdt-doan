@@ -97,7 +97,6 @@ namespace WSWorkFlow
         [WebMethod]
         public int TransferMoneyDiffBank(string sid, string ccsend, string ccreceive, float amount, string ccsendsecurenum)
         {
-
             string bankSendSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             string bankReceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             

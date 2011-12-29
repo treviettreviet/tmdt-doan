@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <table style="width:50%;">
-            <tr>
+        <table style="width:50%; background-color: #C0C0C0;">
+            <tr style="background-color: #808080">
                 <td colspan="2" style="text-align: center; font-weight: 700; font-size: medium">
-                    ĐĂNG NHẬP</td>
+                    ĐĂNG NHẬP NGÂN HÀNG</td>
             </tr>
             <tr>
                 <td>
@@ -33,6 +33,15 @@
                     &nbsp;</td>
                 <td>
                     <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="Button1_Click" />
+                    <asp:Button ID="Button1" runat="server" onclick="Button1_Click1" 
+                        Text="Button" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:Label ID="lbtKetQua" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
         </table>
