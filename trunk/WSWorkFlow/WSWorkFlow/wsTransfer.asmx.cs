@@ -41,24 +41,44 @@ namespace WSWorkFlow
 
                 switch (iSendCardState)
                 {
-                    case -1:
+                    case -1: //Invalid SID
+                        return 2; 
+                    case 0: //Card valid 
+                        //CCustomer cusSend = GetService("Get Send Customer Info");
+                        //CCustomer cusReceive = GetService("Get Receive Customer Info");
+                        //if(cusSend.SoTien > muc_quy_dinh)
+                        //{
+                        //      if(cusSend.SoTien > amount)
+                        //      {
+                        //          CCCard ccReceive = GetService("Get Card Info");
+                        //          int iReceiveCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankSID, ccsend, "IssuerID", ccsendsecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
+                        //          if(iReceiveCardState == 1)
+                        //          {
+                        //              cusSend.SoTien -= amount;
+                        //              cusReceive.SoTien += amount;
+                        //              GhiNhanGiaoDich();
+                        //          }
+                        //      }
+                        //      else
+                        //          return 1;
+                        //}
+                        //else
+                        //      return 1;
                         break;
-                    case 0:
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
+                    case 1: //Card ID is not valid for this bank 
+                        return 1;
+                    case 2: //Card Type is not valid (Visa/Master) 
+                        return 1;
+                    case 3: //Customer Name not valid
+                        return 1;
+                    case 4: //Secure Number of the Credit card is not valid
+                        return 1;
+                    case 5: //Input Date of user for the credit card are not valid
+                        return 1;
+                    case 6: //Out of valid date from now 
+                        return 2;
+                    case 7: //Card is stolen
+                        return 2;
                 }
             }
 
@@ -88,32 +108,37 @@ namespace WSWorkFlow
 
                 int iSendCardState = (int)WSProxy.CallWebService("linkWS_Bank", "WS-E3", "CardValid", new object[] { bankSendSID, ccsend, "IssuerID", ccsendsecurenum, "Card Holder Name", "datetime valid form", "datetime valid to" });
 
-                switch (iSendCardState)
+                 switch (iSendCardState)
                 {
-                    case -1:
+                    case -1: //Invalid SID
+                        return 2; 
                         break;
-                    case 0:
+                    case 0: //Card valid 
+
                         break;
-                    case 1:
+                    case 1: //Card ID is not valid for this bank 
+                        return 1;
                         break;
-                    case 2:
+                    case 2: //Card Type is not valid (Visa/Master) 
+                        return 2;
                         break;
-                    case 3:
+                    case 3: //Customer Name not valid
+                        return 1;
                         break;
-                    case 4:
+                    case 4: //Secure Number of the Credit card is not valid
+                        return 1;
                         break;
-                    case 5:
+                    case 5: //Input Date of user for the credit card are not valid
+                        return 1;
                         break;
-                    case 6:
+                    case 6: //Out of valid date from now 
+                        return 2;
                         break;
-                    case 7:
+                    case 7: //Card is stolen
+                        return 2;
                         break;
                 }
             }
-
-            return 0;
-        }
-
 
             return 0;
         }
