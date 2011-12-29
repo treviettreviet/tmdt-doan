@@ -19,12 +19,6 @@ namespace WSWorkFlow
         private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
         public string Authenticate(string UserName, string Password)
         {
             string SID = "";
