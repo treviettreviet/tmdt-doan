@@ -62,6 +62,8 @@
     </Content>
     <Content Include="wsTransfer.asmx" />
     <Content Include="WebServiceForUser.asmx" />
+    <Content Include="WebServiceMoiGioiKinhDoanh.asmx" />
+    <Content Include="wsTransfer.asmx" /
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbNganHang.designer.cs">
@@ -83,6 +85,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServiceInvoker.cs" />
+    <Compile Include="WebServiceMoiGioiKinhDoanh.asmx.cs">
+      <DependentUpon>WebServiceMoiGioiKinhDoanh.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WSProxy.cs" />
     <Compile Include="wsTransfer.asmx.cs">
       <DependentUpon>wsTransfer.asmx</DependentUpon>
