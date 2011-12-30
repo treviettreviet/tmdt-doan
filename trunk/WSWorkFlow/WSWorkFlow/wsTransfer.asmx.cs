@@ -60,7 +60,7 @@ namespace WSWorkFlow
 
 
                 //Kiểm tra thẻ gửi
-                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaSoThe, 1, ccsendcurenum, sendCard.KhachHang.HoTen, sendCard.NgayMoThe, sendCard.NgayHetHan });
+                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaSoThe, 2, ccsendcurenum, sendCard.KhachHang.HoTen, sendCard.NgayMoThe, sendCard.NgayHetHan });
 
                 switch (iSendCardState)
                 {
@@ -73,8 +73,8 @@ namespace WSWorkFlow
                         if (sendCard.SoDu > dSoDu)
                         {
                             //Kiểm tra thẻ nhận
-                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, receiveCard.MaLoaiThe, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
-                            if (iReceiveCardState == 1)
+                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, 1, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            if (iReceiveCardState == 0)
                             {
                                 sendCard.SoDu -= dSoDu;
                                 receiveCard.SoDu += dSoDu;
