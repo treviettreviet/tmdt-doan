@@ -24,35 +24,35 @@
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">CardIdSend:</td>
             <td >
-                <asp:TextBox ID="txtCardIDSend" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCardIDSend" runat="server">5119318702648034</asp:TextBox>
                 </td>
             </tr>
                         
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">CardIdReceive:</td>
             <td class="style1">
-                <asp:TextBox ID="txtCardIDReceive" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCardIDReceive" runat="server">5119358602641937</asp:TextBox>
                 </td>
             </tr>
                         
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">AmountMoney:</td>
             <td class="style1">
-                <asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtAmount" runat="server">100000</asp:TextBox>
                 </td>
             </tr>
                         
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">SendSecuNum:</td>
             <td class="style1">
-                <asp:TextBox ID="txtSendSecureNum" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtSendSecureNum" runat="server">31A2A</asp:TextBox>
                 </td>
             </tr>
                         
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">ReceiveSecuNum:</td>
             <td class="style1">
-                <asp:TextBox ID="txtReceiveSecureNum" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtReceiveSecureNum" runat="server">1A573</asp:TextBox>
                 </td>
             </tr>
                         
