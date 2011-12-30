@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="frmTransfer.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,6 +78,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransfer.aspx.cs">
+      <DependentUpon>frmTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTransfer.aspx.designer.cs">
+      <DependentUpon>frmTransfer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
