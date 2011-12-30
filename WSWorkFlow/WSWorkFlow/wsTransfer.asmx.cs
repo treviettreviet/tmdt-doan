@@ -25,13 +25,13 @@ namespace WSWorkFlow
         /// Chuyển khoảng giữa các tài khoảng cùng ngân hàng
         /// </summary>
         /// <param name="sid">SID của ngân hàng cấp cho môi giới</param>
-        /// <param name="ccreceive">Mã số thẻ gửi</param>
-        /// <param name="ccreceive">Mã số thẻ nhận</param>
+        /// <param name="ccsend">Mã số thẻ gửi</param>
+        /// <param name="ccsend">Mã số thẻ nhận</param>
         /// <param name="amount">Số tiền cần chuyển</param>
         /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
-        public int TransferMoneySameBank(string sid, string ccreceive, string ccreceive, float amount, string ccreceivesecurenum, string ccreceivesecurenum)
+        public int TransferMoneySameBank(string sid, string ccsend, string creceive, float amount, string ccsendcurenum, string ccreceivesecurenum)
         {
             decimal dSoDu = (decimal)amount;
 
@@ -44,7 +44,7 @@ namespace WSWorkFlow
                 //Lấy dữ liệu thẻ có trong ngân hàng
 
                 //Thẻ gửi
-                var rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
+                var rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
                 
                 The sendCard = rowCard;
                 //Kiểm tra có thẻ trong ngân hàng không
@@ -52,7 +52,7 @@ namespace WSWorkFlow
                     return 1;
 
                 //Thẻ nhận
-                rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
+                rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
                 The receiveCard = rowCard;
 
 
@@ -113,7 +113,7 @@ namespace WSWorkFlow
         /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
-        public int TransferMoneyDiffBank(string sid, string ccreceive, string ccreceive, float amount, string ccreceivesecurenum)
+        public int TransferMoneyDiffBank(string sid, string ccrsend, string ccreceive, float amount, string ccreceivesecurenum)
         {
             string bankreceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             string bankReceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
