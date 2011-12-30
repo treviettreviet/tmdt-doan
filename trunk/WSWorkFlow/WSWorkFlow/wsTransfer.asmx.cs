@@ -31,7 +31,9 @@ namespace WSWorkFlow
         /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
+
         public int TransferMoneySameBank(string sid, string ccsend, string creceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
+
         {
             //decimal dSoDu = (decimal)amount;
             
@@ -79,6 +81,8 @@ namespace WSWorkFlow
                                 sendCard.SoDu -= dSoDu;
                                 receiveCard.SoDu += dSoDu;
                                 dbNganHang.SubmitChanges();
+
+
                             }
                             else
                                 return 1;
@@ -117,6 +121,7 @@ namespace WSWorkFlow
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
         public int TransferMoneyDiffBank(string sid, string ccrsend, string ccreceive, float amount, string ccreceivesecurenum)
+
         {
             string bankreceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             string bankReceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
