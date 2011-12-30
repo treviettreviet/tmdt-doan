@@ -63,7 +63,6 @@
     <Content Include="wsTransfer.asmx" />
     <Content Include="WebServiceForUser.asmx" />
     <Content Include="WebServiceMoiGioiKinhDoanh.asmx" />
-    <Content Include="wsTransfer.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbNganHang.designer.cs">
