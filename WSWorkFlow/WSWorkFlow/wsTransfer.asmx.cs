@@ -32,7 +32,7 @@ namespace WSWorkFlow
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
 
-        public int TransferMoneySameBank(string sid, string ccsend, string creceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
+        public int TransferMoneySameBank(string sid, string ccsend, string ccreceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
 
         {
             //decimal dSoDu = (decimal)amount;
@@ -49,30 +49,28 @@ namespace WSWorkFlow
                 //Lấy dữ liệu thẻ có trong ngân hàng
 
                 //Thẻ gửi
-                var rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
+                var sendCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
                 
-                The sendCard = rowCard;
                 //Kiểm tra có thẻ trong ngân hàng không
                 if (sendCard == null)
                     return 1;
 
                 //Thẻ nhận
-                rowCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
-                The receiveCard = rowCard;
+                var receiveCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
 
 
                 //Kiểm tra thẻ gửi
-                int ireceiveCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, receiveCard.MaLoaiThe, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaSoThe, 1, ccsendcurenum, sendCard.KhachHang.HoTen, sendCard.NgayMoThe, sendCard.NgayHetHan });
 
-                switch (ireceiveCardState)
+                switch (iSendCardState)
                 {
                     case -1: //Invalid SID
                         return 2;
                     case 0: //Card valid 
-                        KhachHang cusreceive = receiveCard.KhachHang;
+                        KhachHang cusSend = sendCard.KhachHang;
                         KhachHang cusReceive = receiveCard.KhachHang;
 
-                        if (receiveCard.SoDu > dSoDu)
+                        if (sendCard.SoDu > dSoDu)
                         {
                             //Kiểm tra thẻ nhận
                             int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, receiveCard.MaLoaiThe, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
