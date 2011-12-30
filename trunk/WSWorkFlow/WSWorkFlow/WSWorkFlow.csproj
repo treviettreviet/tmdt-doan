@@ -53,6 +53,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CardValid.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="frmTransfer.aspx" />
     <Content Include="Web.config" />
@@ -67,6 +68,13 @@
     <Content Include="WebServiceMoiGioiKinhDoanh.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardValid.aspx.cs">
+      <DependentUpon>CardValid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CardValid.aspx.designer.cs">
+      <DependentUpon>CardValid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dbNganHang.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
