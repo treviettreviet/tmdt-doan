@@ -24,6 +24,14 @@ namespace WSWorkFlow
             string SID = "";
             try
             {
+
+                //var khx = from row1 in dbNganHang.Thes 
+                //         from row2 in dbNganHang.KhachHangs
+                //         where row1.MaSoThe.Equals("") && row1.MaKhachHang.Equals(row2.MaKhachHang) 
+                //         select row2.HoTen;
+
+
+                //string Name = khx.ToList();
                 var result = from row in dbNganHang.KhachHangs where row.Email.Equals(UserName) && row.MatKhau.Equals(Password) select row;
                 foreach (KhachHang kh in result)
                 {
