@@ -26,18 +26,21 @@ namespace WSWorkFlow
         /// </summary>
         /// <param name="sid">SID của ngân hàng cấp cho môi giới</param>
         /// <param name="ccsend">Mã số thẻ gửi</param>
-        /// <param name="ccsend">Mã số thẻ nhận</param>
+        /// <param name="ccrecive">Mã số thẻ nhận</param>
         /// <param name="amount">Số tiền cần chuyển</param>
         /// <param name="ccreceivesecurenum">Mã Secure Number của thẻ gửi</param>
         /// <returns>trả về 3 giá trị 0 : giao dịch thành công; 1 : giao dịch thất bại; 2: các lỗi khác</returns>
         [WebMethod]
-        public int TransferMoneySameBank(string sid, string ccsend, string creceive, float amount, string ccsendcurenum, string ccreceivesecurenum)
+        public int TransferMoneySameBank(string sid, string ccsend, string creceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
         {
-            decimal dSoDu = (decimal)amount;
+            //decimal dSoDu = (decimal)amount;
+            
+            decimal dSoDu = amount;
 
             string MethodName = "Authenticate";
 
             string bankSID = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
+            sid = bankSID;
             
             if(sid == bankSID)
             {
