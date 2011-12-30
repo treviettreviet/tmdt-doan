@@ -26,37 +26,37 @@
                         
                               <tr>
                                 <td class="frmText" style="color: #000000; font-weight: normal;">sid:</td>
-                                <td><input class="frmInput" type="text" size="50" name="sid"></td>
+                                <td><input class="frmInput" type="text" size="50" name="sid"/></td>
                               </tr>
                         
                               <tr>
                                 <td class="frmText" style="color: #000000; font-weight: normal;">CardIdSend:</td>
-                                <td class="style1"><input class="frmInput" type="text" size="50" name="TransferType"></td>
+                                <td ><input class="frmInput" type="text" size="50" name="CardIdSend"/></td>
                               </tr>
                         
                               <tr>
                                 <td class="frmText" style="color: #000000; font-weight: normal;">CardIdReceiv:</td>
-                                <td class="style1"><input class="frmInput" type="text" size="50" name="BankId"></td>
-                              </tr>
-                        
-                              <tr>
-                                <td class="frmText" style="color: #000000; font-weight: normal;">Amount:</td>
-                                <td class="style1"><input class="frmInput" type="text" size="50" name="LBankId"></td>
+                                <td class="style1"><input class="frmInput" type="text" size="50" name="CardIdReceiv"/></td>
                               </tr>
                         
                               <tr>
                                 <td class="frmText" style="color: #000000; font-weight: normal;">AmountMoney:</td>
-                                <td class="style1"><input class="frmInput" type="text" size="50" name="AmountMoney"></td>
+                                <td class="style1"><input class="frmInput" type="text" size="50" name="AmountMoney"/></td>
                               </tr>
                         
                               <tr>
-                                <td class="frmText" style="color: #000000; font-weight: normal;">Currency:</td>
-                                <td class="style1"><input class="frmInput" type="text" size="50" name="Currency"></td>
+                                <td class="frmText" style="color: #000000; font-weight: normal;">SendSecuNum:</td>
+                                <td class="style1"><input class="frmInput" type="text" size="50" name="SendSecuNum"/></td>
+                              </tr>
+                        
+                              <tr>
+                                <td class="frmText" style="color: #000000; font-weight: normal;">ReceivSecuNum:</td>
+                                <td class="style1"><input class="frmInput" type="text" size="50" name="ReceivSecuNum"/></td>
                               </tr>
                         
                             <tr>
                               <td></td>
-                              <td align="right" class="style1"> <input type="submit" value="Accept" class="button"></td>
+                              <td align="right" class="style1"> <input type="submit" value="Accept" class="button"/></td>
                             </tr>
                             </table>
                       
