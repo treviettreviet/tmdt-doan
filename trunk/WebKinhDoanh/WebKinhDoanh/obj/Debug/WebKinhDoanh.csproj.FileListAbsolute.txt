@@ -1,0 +1,10 @@
+E:\TMDT-BAITAPTUAN\WebKinhDoanh\WebKinhDoanh\bin\WebKinhDoanh.dll
+E:\TMDT-BAITAPTUAN\WebKinhDoanh\WebKinhDoanh\bin\WebKinhDoanh.pdb
+E:\TMDT-BAITAPTUAN\WebKinhDoanh\WebKinhDoanh\obj\Debug\ResolveAssemblyReference.cache
+E:\TMDT-BAITAPTUAN\WebKinhDoanh\WebKinhDoanh\obj\Debug\WebKinhDoanh.dll
+E:\TMDT-BAITAPTUAN\WebKinhDoanh\WebKinhDoanh\obj\Debug\WebKinhDoanh.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebKinhDoanh\WebKinhDoanh\bin\WebKinhDoanh.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebKinhDoanh\WebKinhDoanh\bin\WebKinhDoanh.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebKinhDoanh\WebKinhDoanh\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebKinhDoanh\WebKinhDoanh\obj\Debug\WebKinhDoanh.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebKinhDoanh\WebKinhDoanh\obj\Debug\WebKinhDoanh.pdb

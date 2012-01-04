@@ -1,0 +1,90 @@
+/*--------------Vietnam Airline ---------*/
+
+*{margin:0; padding:0;}
+body {font-family:Tahoma; font-size:13px; color: #191919; line-height: 35px}
+a{text-decoration:none; outline:none}
+a img{border:none}
+ul{list-style:none}
+#pagewrap {width: 777px; margin:0 auto; padding: 37px 0}
+#page-main {border:2px solid #c7a213; background:#fff}
+
+/*-------------<< Header >>--------------*/
+#header{position: relative; height: 85px; padding:1px; text-align: center;}
+#logo {position: relative; top: 10px; left: 20px; text-align: left;}
+#banklogo{position: relative; padding:1px; text-align: center;}
+h1 a {display:block; width:240px; height: 32px; text-indent: -9999em}
+.link {float: right; padding: 7px 10px 0 0}
+.link a {float: right; margin: 0 0 0 42px}
+/*-------------<< //Header >>--------------*/
+
+/*-------------<< Container >>--------------*/
+#container {padding:8px 10px 0 80px;}
+.message {padding:25px 40px 10px 170px; }
+p.notice {background: url(https://payment.smartlink.com.vn/images/padlock.gif) no-repeat left top; padding:5px 0 10px 35px; line-height: 20px; }
+p.error {padding:5px 0 10px 35px; line-height: 20px; color: #ff0000;}
+.register {padding:1px; line-height: 20px; color: #000000; font-family:Arial; font-size:12px;}
+.tcb_note {padding:1px 0 0px 135px; line-height: 20px; color: #0000FF;}
+.info {padding: 10px 0 15px; width: 700px;}
+.info li {padding: 0 0 3px 0}
+.info-left-otp {float: left; width: 220px; padding: 0 6px 0 0; text-align:right; line-height:normal; }
+.info-left-otp p {background: url(p-info-b.png) no-repeat scroll right; padding: 3px 14px 0 0; }
+.info-left {float: left; width: 200px; padding: 0 6px 0 0; text-align:right; line-height:normal; }
+.info-left p {background: url(p-info-b.png) no-repeat scroll right; padding: 3px 14px 0 0; }
+.info-right {float: left; width: 450px}
+.date {line-height:23px}
+.date input {float:left}
+.date span {float: left; padding: 0 6px;}
+.date p {padding: 0 0 0 17px; color: #7c7c7c; float:left}
+input.text {border:1px solid #3b8cdb; background: #ededed;  height:18px; line-height:18px;padding:2px 5px 0;}
+.text-l {width: 300px}
+.text-s {width: 50px}
+.card-num {}
+.card-num input {float: left; margin: 0 17px 0 0}
+.card-num input.last {margin:0}
+.infoOnlyText {color: #000; line-height:normal; width: 700px;}
+.infoOnlyText ul li {padding: 0 0 6px 0}
+.submitvn_vna {background: url(submit_v.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 80px 0 0px; float:right; border: none}
+.submiten_vna {background: url(https://payment.smartlink.com.vn/images/submit_en.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 80px 0 0px; float:right; border: none}
+.submitvn {background: url(submit_v.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 0px 0 10px; float:right; border: none}
+.submiten {background: url(https://payment.smartlink.com.vn/images/submit_en.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 0px 0 10px; float:right; border: none}
+.otpen {background: url(https://payment.smartlink.com.vn/images/verify_en.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 60px 0 0; float:right; border: none}
+.otpvn {background: url(https://payment.smartlink.com.vn/images/verify_vn.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 60px 0 0; float:right; border: none}
+.cancelen {background: url(https://payment.smartlink.com.vn/images/cancel_en.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 80px 0 0; float:right; border: none}
+.cancelvn {background: url(cancel_v.png) no-repeat left top; width: 103px; height: 35px; display: block; margin: 0 80px 0 0; float:right; border: none}
+.link-cont {padding: 0px 20px 12px 20px}
+.link-left {float:left;}
+.link-left a {line-height: 20px; color: #000000; text-decoration:underline; outline:none; font-family:Arial; font-size:12px;}
+.link-right {float:right; width: 150px}
+.link-right a {float: right; margin: 0 0 0 6px}
+.link-right-seal {float:right; width: 90px}
+.infoOnlyText .info-right {padding-top: 3px}
+.bankImage {float: left; margin:20px 5px 10px 5px}
+/*-------------<< //Container >>--------------*/
+/*.link-left a {float: left; margin:0 4px 0 0}*/
+/*-------------<< Footer >>--------------*/
+#footer{clear:both; height: 36px; font-weight: bold; text-align:center; font-size:11px; line-height: 36px; background-color:#cbc6cc;}
+/*-------------<< //Footer >>--------------*/
+
+ /* Clearfix */
+* html .clearfix {
+    height: 1%; /* IE5-6 */
+}
+
+.clearfix {
+    display: inline-block; /* IE7xhtml*/
+}
+
+html[xmlns] .clearfix {
+    display: block; /* O */
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    line-height: 0;
+    font-size: 1px;
+    overflow: hidden;
+}

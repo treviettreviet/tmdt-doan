@@ -1,0 +1,31 @@
+/* CSS Document */
+.field-check-function {
+	display:none;
+}
+.field-notification {	
+	font-size:12px;
+	line-height:20px;
+	padding:2px 0px 2px 0px;
+}
+.field-alert{
+	/*background:url(images/info.png) no-repeat 0px 4px;
+	padding-left:18px;*/
+	/*color:#B2B2B2;*/
+}
+.field-success {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/images/icon-note-content-success.jpg) no-repeat 0px 2px;
+	padding-left:18px;
+	color:#339900;
+}
+.field-exist{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/images/step-bulit-active.gif) no-repeat 0px 5px;
+	padding-left:18px;
+	color:#FF0000;
+	display:none;
+}
+.field-error {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/images/error_small.png) no-repeat 0px 4px;
+	padding-left:18px;
+	color:#FF5A00;
+	display:none;
+}

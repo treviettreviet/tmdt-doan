@@ -1,0 +1,1066 @@
+
+
+
+
+
+ 
+message_error_notnull = "Trường này phải có thông tin";
+var message_error_du_lieu_khong_hop_le = new Array();
+message_error_du_lieu_khong_hop_le['vn'] = "Quý khách chưa điền đầy đủ thông tin";
+message_error_du_lieu_khong_hop_le['en'] = "The information cannot be empty";
+
+message_error_sai_logic_ngay_thang = "Sai logic ngày tháng";
+message_error_xac_nhan_xoa = "Quý khách có đồng ý xóa";
+message_error_dinh_dang_thoi_gian = "Định dạng thời gian không đúng";
+
+message_error_ngay_khong_hop_le = "Ngày không hợp lệ";
+message_error_Tu_ngay_phai_nho_hon_Den_ngay="Từ ngày phải nhỏ hơn đến ngày";
+message_error_nam_phai_trong_khoang_1900_2100="Ngày phải nằm trong khoảng năm 1900 đến 2100";
+
+var message_error_chua_nhap_ma_otp = new Array();
+message_error_chua_nhap_ma_otp['vn'] = "Nhập mã OTP vừa gửi đến số điện thoại/email hoặc trên Token Key của bạn";
+message_error_chua_nhap_ma_otp['en'] = "Please enter OTP sent to your mobile/email or displayed on your token key";
+
+var message_error_chua_nhap_chuoi_ky_tu = new Array();
+message_error_chua_nhap_chuoi_ky_tu['vn'] = "Nhập chính xác chuỗi ký tự hiển thị bên dưới";
+message_error_chua_nhap_chuoi_ky_tu['en'] = "Please enter security code which is displayed below";
+
+var message_error_mat_khau_emb = new Array();
+message_error_mat_khau_emb['vn'] = "Nhập mật khẩu dịch vụ eMB bạn đã đăng ký với ngân hàng Quân đội";
+message_error_mat_khau_emb['en'] = "Please enter the password of eMB service which you registered with Military Bank";
+
+var message_error_so_the_khong_hop_le = new Array();
+message_error_so_the_khong_hop_le['vn'] = "Số thẻ của Quý khách không hợp lệ";
+message_error_so_the_khong_hop_le['en'] = "Please input valid Card Number";
+
+var message_error_so_the_tu_16_den_19_ky_tu = new Array();
+message_error_so_the_tu_16_den_19_ky_tu['vn'] = "Quý khách vui lòng nhập số thẻ là chuỗi ký tự số gồm 16 hoặc 19 ký tự in trên mặt trước của thẻ";
+message_error_so_the_tu_16_den_19_ky_tu['en'] = "Please enter your card number which is 16 to 19 digits on front of the card";
+
+var message_error_thang_khong_hop_le = new Array();
+message_error_thang_khong_hop_le['vn'] = "Quý khách nhập sai ngày hiệu lực.";
+message_error_thang_khong_hop_le['en'] = "Please input valid month/year.";
+var message_error_nam_khong_hop_le = new Array();
+message_error_nam_khong_hop_le['vn'] = "Quý khách nhập sai ngày hiệu lực.";
+message_error_nam_khong_hop_le['en'] = "Please input valid month/year.";
+
+var message_error_card_name_co_ky_tu_dac_biet = new Array();
+message_error_card_name_co_ky_tu_dac_biet['vn'] = "Quý khách vui lòng đánh tiếng Việt không dấu";
+message_error_card_name_co_ky_tu_dac_biet['en'] = "Please enter your name without accent mark";
+
+var submitted = false;
+var sep=" ";
+var dec=",";
+var date_separator="/";
+//var date_format="ddmmyyyy";
+var date_symbol="ddMMyyyy";
+var empty="";
+var comma=',';
+var dot='.';
+var numCheck="0123456789";
+var globalFocusComponent = null;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function loader() {
+    self.focus(); //Bring window to foreground if necessary.
+    var form = document.forms[0]; // grab the first form available.
+    form.setAttribute("autocomplete","off"); // Turn off Autocomplete for the form, if the browser supports it.
+    //form.elements[0].focus(); // Send the cursor to the first field of the first form
+}
+
+function encodeURL(url)
+{
+  if (url.indexOf("%3F")!=-1 || url.indexOf("%3D")!=-1 || url.indexOf("%2F")!=-1 )
+  {
+  }
+  else
+  {
+	  url=encodeURIComponent(url);
+	}
+  url=url.replace(/%3D/g,"=");
+	var tmp = url.split("=");
+	url = tmp[0];
+  url=url.replace(/%2F/g,"/");
+  url=url.replace(/%3F/g,"?");
+  url=url.replace(/%3A/g,":");
+  url=url.replace(/%26/g,"&amp;");
+
+	// Thay dau &amp;
+	// Thuat toan : tach chuoi do ra thanh cac chuoi con, phan cach boi dau bang
+	// Trong cac chuoi con do, neu chuoi nao chua 2 ky tu %26 (&amp;) thi chi thay ky tu cuoi cung
+	for (var i=1;i
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<tmp.length;i++) { if (i<tmp.length-1) (tmp[i].lastindexof("%26")="=tmp[i].indexOf(&quot;%26&quot;))" url+="(&quot;=&quot;+tmp[i].replace(/%26/g,&quot;&amp;&quot;));" } else var tmp1="tmp[i].split(&quot;%26&quot;);" tmp[i]="tmp1[0];" for (var j="1;j<tmp1.length;j++)" (j<tmp1.length-1) tmp[i]+="(&quot;%26&quot;+tmp1[j]);" (url.indexof("auth")="=-1)" auth duoc khai bao trong top.jsp return url; openwindow : open popup window center input url,w="chieu" rong,h="chieu" cao,features="toolbar,location,directories,status,scrollbars,menubar,resizable" globallovwindow="null;" function openwindow(url,w,h,features) (globallovwindow && !globallovwindow.closed) globallovwindow.close(); url="encodeURL(url);" ww="(isEmpty(w))?600:w;" hh="(isEmpty(h))?400:h;" (!w || !h) wfeature="height=" +hh+',width="+ww+" ,top="+(screen.height-hh)/2+" ,left="+(screen.width-ww)/2+" ,'; +="(!features)?'status=1,scrollbars=1,resizable=1':features;" globallovwindow.focus(); globallovwindow; openwindowwithtitle(url,title,features) (!features !title) checknull(ctr) (isempty(ctr.value)) ctr.focus(); showmessage(message_error_notnull); false; true; getcheck(obj) s ; (isarray(obj)) for(var i="0;i<obj.length;i++)" (obj[i].checked) (obj.checked) s.substring(1); settitle(control, value) control.setattribute('title', value); dung de check all cac box @param lists id cua array can uncheck checkallchk ctr checkall uncheckall check(lists,checkallchk) checkflag="checkallChk.checked;" (checkflag="=" true) (isarray(lists)) i++) lists[i].checked="true;" lists.checked="true;" ham ncr2u bien doi numberic character references to unicode ncr2u(s) (s="=null)" null; len="s.length;" result foundindex; startindex="0;" while (startindex<len) foundindex="s.indexOf('&amp;#',startIndex);" (foundindex="=-1)" result+="s.substring(startIndex);" break; (startindex="=-1)" tok="s.substring(foundIndex+2,startIndex);" radix="10;" (tok.charat(0)="='x')" startindex++; result; showconfirm(key) confirm(ncr2u(key)); showmessage(key) alert(ncr2u(key)); * filterstring muc dich loc bo ky tu filter val filterstring(val,filter) str="trim(val);" c="str.charAt(i);" (filter.indexof(c)="=-1)" comparedate purpose: so sanh 2 gia tri date datecontrol1 ten control luu 1 datecontrol2 timecontrol1 time timecontrol2 type kieu (>,&lt;,=,&gt;=,&lt;=)
+            msg          : Thong bao loi .
+     Note : Neu 1 ctr null tra ve false
+            neu msg null : hien thong bao default error.sai_logic_ngay_thang
+  */
+    function compareDate(dateControl1, dateControl2, type, msg, timeControl1, timeControl2) {
+        var ctr1=eval(dateControl1);
+        var ctr2=eval(dateControl2);
+        if (compareDateNoAlert(dateControl1, dateControl2, type, timeControl1, timeControl2)) return true;
+        if (!isEmpty(msg)) showMessage(msg);
+        else  showMessage(message_error_sai_logic_ngay_thang);
+        ctr2.select();
+        ctr2.focus();
+        return false;
+    }
+
+    function compareDateNoAlert(dateControl1, dateControl2, type, timeControl1, timeControl2) {
+        var ctr1=eval(dateControl1);
+        var ctr2=eval(dateControl2);
+        var minute1, hour1=0, minute2, hour2=0;
+        var time1 = null, time2 = null;
+        if ((timeControl1 != null) &amp;&amp; (timeControl2 != null)) {
+            time1 = eval(timeControl1);
+            time2 = eval(timeControl2);
+            minute1 = time1.value.split()[0];
+            hour1 = time1.value.split()[0];
+            minute2 = time2.value.split()[0];
+            hour2 = time2.value.split()[0];
+        }
+
+        var date1 = ctr1.value;
+        var date2 = ctr2.value;
+        if (trim(date1).length &lt; 1 &amp;&amp; trim(date2).length &lt; 1) return true;
+        if (trim(date1).length &lt; 1 || trim(date2).length &lt; 1) return false;
+        var num1=d2n(date1);
+        var num2=d2n(date2);
+        if (type == "&gt;") {
+            if (num1 &gt; num2)   return true;
+            if ((num1 == num2) &amp;&amp; (hour1 &gt; hour2))  return true;
+        }
+        if (type == "&gt;=" ) {
+            if (num1 &gt;= num2) return true;
+            if ((num1 == num2) &amp;&amp; (hour1 &gt;= hour2)) return true;
+        }
+        if (type=="&lt;") {
+            if (num1<num2) return true; if ((num1="=" num2) && (hour1 < hour2)) } (type="=&quot;<=&quot;)" { (num1<="num2)" ((type="=" "=") &amp;&amp; (num1 == num2) &amp;&amp; (hour1 == hour2))  return true;
+        return false;
+    }
+
+/*
+isRequired
+    Purpose: Kiem tra thuoc tinh mandatory (bat buoc nhap) cua mot ctr
+    Input   : ctrName ten Control
+*/
+function isRequired(ctrName,msg)
+{
+  var ctr=eval(ctrName);
+  var val=ctr.value;
+  if (isEmpty(val)) {
+     if (!isEmpty(msg)) showMessage(msg);
+     else               showMessage(message_error_notnull);
+     ctr.focus();
+     return false;
+  }
+  return true;
+}
+
+/*
+isTime
+Purpose: Kiem tra dinh dang thoi gian hh:mm
+*/
+function isTime(ctrName)
+{
+  var ctr=eval(ctrName);
+  var val=ctr.value;
+  if (trim(val).length<1) val=" 00:00"; (val.indexof(":")<0) val+=":00" ; var arr="val.split(&quot;:&quot;);" hh="arr[0];" mi="arr[1];" (hh.length<2) +hh; (mi.length<2) +mi; val="hh+&quot;:&quot;+mi" objregexp="/^([0-1][0-9]|[2][0-4]):([0-5][0-9])$/" (!objregexp.test(val)) showmessage(message_error_dinh_dang_thoi_gian); ctr.focus(); ctr.select(); false; ctr.value="val;" * muc dinh: loai bo cac ki tu dac biet ghi chu: dau vao: chuoi mang theo ky muon ra: da function stringfilter(val) dinh nghia biet: mychars="[&quot;-&quot;," "~","`","!","@","#","$","%","^","*","(",")","="," :",";","'","|","\\","}","{","]","[","?"," ","<",">",".",","];
+    var i=0;
+    while(i<mychars.length) { var index="val.indexOf(myChars[i]);" if(index>0)
+      {
+        str1=val.substring(0,index);
+        str2=val.substring(index+1);
+        val=str1.concat(str2);
+      }
+      else if(index==0)   val=val.substring(1);
+      else if(index==-1)  i=i+1;
+    }
+   return val;
+}
+
+  /*
+    Muc dinh: Kiem tra mot so co phai la ky tu dac biet khong
+    Ghi chu:
+    Dau vao: chuoi can kiem tra chua ky tu dac biet
+    Dau ra: tra ve true neu chuoi chua ky tu dac biet, false neu nguoc lai
+  */
+  function isSpecialCharacter(val)
+  {
+    var myChars = ["~","`","!","@","#","$","%","^","*","(",")","=",":",";","'","|","\\","}","{","]","[","?","/","&lt;","&gt;",".",","];
+    for(var i=0;i<mychars.length; i++) { var index="val.indexOf(myChars[i]);" if(index!="-1)" return true; } false; * muc dinh: kiem tra mot chuoi co chua cac ky tu dac biet khong ghi chu: dau vao: can ra: ve true neu biet, false nguoc lai function isenglishcharacter(val) mychars=" ABCDEFGHIJKLMNOPQRSTUVXYZ0123456789abcdefghijklmnopqrstuvxyz_-." ; for(var i="0;i<val.length;" if (mychars.indexof(val[i])<0) viet cho string string.prototype.trim="function()" this.replace( ^\s+|\s+$ g,""); string.prototype.ltrim="function()" ^\s+ ,""); string.prototype.rtrim="function()" \s+$ trim : str trim(s) s.tostring().replace( ^\s* ,"").replace( \s*$ , "");} gia tri null hay isnull(val){return(val="=null);}" hoac rong isempty(val){return(val="=null||" trim(val)="=&quot;&quot;);}" phai la so (chuoi chi gom 0-9 ) dung, sai isnumberic(val) for (var c="val.charAt(i);" ((c<"0")||(c>"9")) return false;
+      }
+    return true;
+  }
+ /*
+    Muc dinh: kiem tra dau vao co phai la mang hay khong
+    Ghi chu:
+    Dau vao: phan tu can kiem tra
+    Dau ra: tra ve true neu dung, false neu sai
+  */
+function isArray(obj){return(typeof(obj.length)=="undefined")?false:true;}
+  /*
+    Muc dinh: kiem tra dau vao co phai la kieu so khong
+    Ghi chu:
+    Dau vao: phan tu can kiem tra
+    Dau ra: tra ve true neu dung, false neu sai
+  */
+function isDigit(val)
+{
+   for (var i=0;i<val.length;i++) { if (numcheck.indexof(val.substring(i,i+1))="=-1)" return false; } true; function validatephone(ctr,msg) var val="trim(ctr.value);" "); len="val.length;" (!isnumberic(val)) showmessage(msg); ctr.value ; ctr.focus(); round(num,precision) num.tofixed(precision); * dinh dang 1 so . dau vao string num la kieu vao: chuoi can format optional: chu thap phan sau phay ra: da duoc formatso(num,precision) (isempty(precision)) precision="2;" x="Math.pow(10,precision);" minus remove space sep thay bang cham de chuyen ve if(isnan(num)) (num < 0) cents="num%x;" (cents!="0)" (len<precision) for (var i="1;i<=precision-len;i++)" +cents; i++) (cents="=0)" (minus + num); else num+dec+cents); isnumbernotformat : kiem tra ctr co phai khong va lai du lie type="%" % integer isnumbernotformat(ctrname,type) (trim(val).length<1) xoa het ky tu trang su dung regular expression (type="=&quot;i&quot;)" objregexp="/^[-]?\d+$/;" truong hop nguyen (dec="=dot)" (!objregexp.test(val)) showmessage(message_error_so_the_khong_hop_le['vn']); ctr.select(); && (val>100 || val &lt; 0)) {
+      showMessage(message_error_so_the_khong_hop_le['vn']);
+      ctr.focus();
+      ctr.select();
+      return  false;
+  }
+  return  true;
+}
+
+//isNumber : Kiem tra 1 ctr co phai la kieu so ?
+//type=% : %
+//type=i : integer
+    function isNumber(ctrName,type,precision) {
+        var ctr=eval(ctrName);
+        var val=ctr.value;
+        if (trim(val).length&lt;1) {
+                return true;
+        }
+
+        //Xoa het ky tu trang
+        val=val.toString().replace(/\s/g,empty);
+        val=val.split(String.fromCharCode(160)).join(empty);
+        //Su dung regular expression
+        if (type=="i")  objRegExp=/^[-]?\d+$/;      //truong hop la so nguyen
+        else {
+            objRegExp =/^([-]?[0-9]*|[-]?\d*[\,\.]\d{1}?\d*)$/;
+            //else if (dec==dot)       objRegExp =/^([0-9]*|\d*\.\d{1}?\d*)$/;
+        }
+        if (!objRegExp.test(val)) {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            ctr.focus();
+            ctr.select();
+            return  false;
+        }
+        val=val.split(sep).join(empty);
+        val = val.replace(',','.');
+        if (type=="%" &amp;&amp; (val&gt;100 || val &lt; 0)) {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            ctr.focus();
+            ctr.select();
+            return  false;
+        }
+        // added by dhtoan
+        if (type=="&gt;0" &amp;&amp; val &lt;= 0) {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            ctr.focus();
+            ctr.select();
+            return  false;
+        }
+        if (type=="&gt;=0" &amp;&amp; val &lt; 0) {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            ctr.focus();
+            ctr.select();
+            return  false;
+        }
+        ctr.value=formatSo(val,precision);
+        return  true;
+    }
+
+
+/* su dung de bat buoc phai go so*/
+function formatNumber(ctrName)
+{
+  var strCheck=numCheck+dec+dot;
+  key=String.fromCharCode(event.keyCode);
+  if (strCheck.indexOf(key)==-1) return false;
+  return true;
+}
+function formatInt(ctrName)
+{
+  key=String.fromCharCode(event.keyCode);
+  if (numCheck.indexOf(key)==-1) return false;
+  return true;
+}
+
+function formatTime(ctrName) {
+  var ctr=eval(ctrName);
+  var val=ctr.value;
+  var len=val.length;
+  if (len&gt;5) return false;
+  key=String.fromCharCode(event.keyCode);
+  if (numCheck.indexOf(key)==-1) return false;
+  if (len==2)  ctr.value=val+":";
+  return true;
+}
+
+function formatDate(ctrName) {
+    //alert(numCheck);
+  var ctr=eval(ctrName);
+  var val=ctr.value;
+  var len=val.length;
+  if (len&gt;10) return false;
+  key=String.fromCharCode(event.keyCode);
+  if (numCheck.indexOf(key) == -1) return false;
+  if (((date_symbol=="MMddyyyy"||date_symbol=="ddMMyyyy") &amp;&amp; (len==2||len==5))||((date_symbol=="yyyyMMdd"||date_symbol=="yyyyddMM")&amp;&amp; (len==4||len==7)))  ctr.value=val+date_separator;
+  return true;
+}
+
+function isDate(ctrName)
+{
+   var strD;
+   var strM;
+   var strY;
+   var ctr=eval(ctrName);
+   var strDate=ctr.value;
+   var len=strDate.length;
+   if (len&lt;1) return true;
+
+   if (len!=8&amp;&amp;len!=10)
+   {
+    showMessage(message_error_ngay_khong_hop_le);
+    ctr.focus();
+    ctr.select();
+    return false;
+   }
+    var arr=strDate.split(date_separator);
+    if (arr.length!=3)
+    {
+      showMessage(message_error_ngay_khong_hop_le);
+      ctr.focus();
+      ctr.select();
+      return false;
+    }
+
+    else
+    {
+        if (date_symbol=="ddMMyyyy")
+         {
+          strD=arr[0];
+          strM=arr[1];
+          strY=arr[2];
+         }
+        else if (date_symbol=="MMddyyyy")
+          {
+             strD=arr[1];
+             strM=arr[0];
+             strY=arr[2];
+          }
+        else if(date_symbol=="yyyyMMdd")
+        {
+           strD=arr[2];
+           strM=arr[1];
+           strY=arr[0];
+        }
+        else if(date_symbol=="yyyyddMM")
+        {
+             strD=arr[1];
+             strM=arr[2];
+             strY=arr[0];
+        }
+   }
+    if (strY.length==2)
+    {
+         if (strY&gt;"30")  strY="19"+strY;
+         else            strY="20"+strY;
+    }
+   // Kiem tra nam nhap vao phai nam trong khoang [1900..2100]
+	var num=convertStringToNumber(strY);
+	if (num&lt;1900 || num&gt;2100)
+	{
+		showMessage(message_error_nam_phai_trong_khoang_1900_2100);
+		ctr.focus();
+		ctr.select();
+		return false;
+	}
+ if (!validDate(strD,strM,strY))
+ {
+   showMessage(message_error_ngay_khong_hop_le);
+   ctr.focus();
+   ctr.select();
+   return false;
+ }
+if (len==8)
+{
+  if(date_symbol=="MMddyyyy")       ctr.value=strM+date_separator+strD+date_separator+strY;
+  else if(date_symbol=="yyyyMMdd")  ctr.value=strY+date_separator+strM+date_separator+strD;
+  else if(date_symbol=="ddMMyyyy")  ctr.value=strD+date_separator+strM+date_separator+strY;
+  else if(date_symbol=="yyyyddMM")  ctr.value=strY+date_separator+strD+date_separator+strM;
+}
+return true;
+}
+
+function validDate(strD,strM,strY)
+{
+    var intY=parseInt(strY,10);
+    if (isNaN(intY)) return false;
+    var intD=parseInt(strD,10);
+    if (isNaN(intD)) return false;
+    if (intD&lt;1)      return false;
+    var intM=parseInt(strM,10);
+    if (isNaN(intM))      return false;
+    if (intM&gt;12||intM&lt;1)  return false;
+    if ((intM == 1 || intM == 3 || intM == 5 || intM == 7 || intM == 8 || intM == 10 || intM == 12) &amp;&amp; (intD &gt; 31)) return false;
+    if ((intM == 4 || intM == 6 || intM == 9 || intM == 11) &amp;&amp; (intD &gt; 30)) return false;
+    if (intM == 2) {
+     if (LeapYear(intY))
+     {
+      if (intD&gt;29) return false;
+     }
+     else
+     {
+      if (intD&gt;28) return false;
+     }
+    }
+    return true;
+}
+
+//isYear : Kiem tra 1 ctr co phai la kieu nam nhap vao? Nam trong khoang [1900..2100]
+//type=% : %
+//type=i : integer
+function isYear(ctlName)
+{
+	try
+	{
+		var ctr=eval(ctlName);
+		if (isEmpty(ctr.value)) return true;
+		if (!isNumberic(ctr.value))
+		{
+			showMessage(message_error_du_lieu_khong_hop_le['vn']);
+			ctr.focus();
+			ctr.select();
+			return false;
+		}
+		var num=convertStringToNumber(ctr.value);
+		if (num&lt;1900 || num&gt;2100)
+		{
+			showMessage(message_error_nam_phai_trong_khoang_1900_2100);
+			ctr.focus();
+			ctr.select();
+			return false;
+		}
+  }
+  catch (e)
+  {
+  	showMessage(e.message);
+  }
+}
+
+//Chuyen ngay ra dang so yyyymmdd de so sanh
+function d2n(strDate)
+{
+   var arr=strDate.split(date_separator);
+   var strD;
+   var strM;
+   var strY;
+   if (date_symbol=="ddMMyyyy")
+     {
+      strD=arr[0];
+      strM=arr[1];
+      strY=arr[2];
+     }
+    else if (date_symbol=="MMddyyyy")
+     {
+       strD=arr[1];
+       strM=arr[0];
+       strY=arr[2];
+     }
+    else if(date_symbol=="yyyyMMdd")
+    {
+       strD=arr[2];
+       strM=arr[1];
+       strY=arr[0];
+    }
+    else if(date_symbol=="yyyyddMM")
+    {
+         strD=arr[1];
+         strM=arr[2];
+         strY=arr[0];
+    }
+
+    if (strY.length==2){
+      if (strY&gt;"30")  strY="19"+strY;
+      else            strY="20"+strY;
+     }
+   //return parseFloat(strY+strM+strD);
+   return parseInt(strY+strM+strD);
+}
+
+function LeapYear(intY) {
+    if (intY % 100 == 0)
+    {
+      if (intY % 400 == 0)   return true;
+    }
+    else
+    {
+      if ((intY % 4) == 0) return true;
+    }
+    return false;
+}
+
+//Ham duoc su dung de lay so ngay voi moc la nam 1970
+function dateTodays(strDate)
+  {
+    var str=d2n(strDate).toString();
+    var year=str.substr(0,4);
+    var month=str.substr(4,2);
+    var day=str.substr(6,2);
+    var toDate=new Date(year,month-1,day);
+    return Math.ceil(toDate.getTime()/(24*60*60*1000));
+  }
+
+  function monthFromDateToDate( strDateFrom, strDateTo) {
+    var strFrom=d2n(strDateFrom).toString();
+    var fromYear=strFrom.substr(0,4);
+    var fromMonth=strFrom.substr(4,2);
+    var strTo=d2n(strDateTo).toString();
+    var toYear=strTo.substr(0,4);
+    var toMonth=strTo.substr(4,2);
+    var months;
+    months = (toYear - fromYear)*12;
+    months += toMonth - fromMonth;
+    return months;
+  }
+
+  //Show or hide divs
+  function showHideDiv(divName, hide) {
+    if (hide)
+        document.getElementById(divName).style.display="none";
+    else
+        document.getElementById(divName).style.display="block";
+  }
+
+
+/**
+Author : tttue
+Date : 03-12-2007
+Lay cac gia tri trong doi tuong bi disabled
+Sau do dat lai disabled ve mac dinh cua no
+Hay dung trong combobox
+*/
+function getValueOfDisableElement(obj)
+{
+	var retVal="";
+	try{
+		if (obj.disabled)
+		{
+			obj.disabled = false;
+			retVal = obj.value;
+			obj.disabled = true;
+		}
+		else
+		{
+			retVal = obj.value;
+		}
+	}
+	catch(e){showMessage(e.message);}
+	return retVal;
+}
+
+
+/**
+Author : tttue
+Date : 03-12-2007
+Enable tat ca cac doi tuong thuoc forms[0]
+Cai nay duoc dung truoc khi submit
+*/
+function enableAllElement()
+{
+	var a = document.forms[0].elements;
+	for (var i=0;i<a.length;i++) { if (a[i].disabled) a[i].disabled="false;" } **kiem tra va format so nhung ko canh bao* function isnumbernoalert(ctrname,type,precision) var ctr="eval(ctrName);" val="ctr.value;" (trim(val).length<1) return true; xoa het ky tu trang su dung regular expression (type="=&quot;i&quot;)" objregexp="/^[-]?\d+$/;" truong hop la nguyen else (dec="=dot)" (!objregexp.test(val)) false; && (val>100 || val &lt; 0)) {
+        return  false;
+    }
+    // added by dhtoan
+    if (type=="&gt;0" &amp;&amp; val &lt;= 0) {
+        return  false;
+    }
+    if (type=="&gt;=0" &amp;&amp; val &lt; 0) {
+        return  false;
+    }
+    ctr.value=formatSo(val,precision);
+    return  true;
+}
+
+/*
+  convertStringToNumber
+  Muc dich chuyen 1 string dang so ve kieu US de thuc hien cac phep tinh
+  Dau vao String num phai la kieu so
+*/
+function convertStringToNumber(num)
+{
+  if (trim(num).length&lt;1) return 0;
+  num=num.toString().replace(/\s/g,empty);   //Remove space
+  num=num.split(String.fromCharCode(160)).join(empty);      //Remove sep
+  num=num.toString().replace(/\,/g,dot);    //Replace comma=dot
+  return Number(num);                       //Tra ve 1 so
+}
+
+/*
+ *checkOTPMBSubmit
+ *Muc dich kiem tra cac du lieu truoc khi submit len server
+ *Input: otp, otpimg, staticpassword
+ **/
+function isOTPMBSubmit(otp, otpimg, staticpassword)
+{
+    if ( isNull(staticpassword) || isEmpty(staticpassword) )
+    {
+        showMessage(message_error_mat_khau_emb['vn']);
+        document.checkOTPForm.staticpassword.focus();
+        return false;
+    }
+
+    if ( isNull(otp) || isEmpty(otp) )
+    {
+        showMessage(message_error_chua_nhap_ma_otp['vn']);
+        document.checkOTPForm.otp.focus();
+        return false;
+    }
+
+    if ( isNull(otpimg) || isEmpty(otpimg) )
+    {
+        showMessage(message_error_chua_nhap_chuoi_ky_tu['vn']);
+        document.checkOTPForm.otpimg.focus();
+        return false;
+    }
+
+    return true;
+}
+/*
+ *checkOTPSubmit
+ *Muc dich kiem tra cac du lieu truoc khi submit len server
+ *Input: otp, otpimg
+ **/
+function isOTPSubmit(otp, otpimg)
+{
+
+    if ( isNull(otp) || isEmpty(otp) )
+    {
+        showMessage(message_error_chua_nhap_ma_otp['vn']);
+        document.checkOTPForm.otp.focus();
+        return false;
+    }
+
+    if ( isNull(otpimg) || isEmpty(otpimg) )
+    {
+        showMessage(message_error_chua_nhap_chuoi_ky_tu['vn']);
+        document.checkOTPForm.otpimg.focus();
+        return false;
+    }
+
+    return true;
+}
+/*
+ *checkSubmit
+ *Muc dich kiem tra cac du lieu truoc khi submit len server
+ *Input: cardName, cardNumber1, cardNumber2, cardNumber3, cardNumber4, cardMonth, cardYear
+ **/
+function checkSubmit(cardName, cardNumber, cardMonth, cardYear)
+{
+    var listBIN = new Array();
+    listBIN[0] = '707070';  //EIB
+    listBIN[1] = '970431';  //EIB
+    listBIN[2] = '970406';  //VNBC-DAB
+    listBIN[3] = '1792';    //VNBC-DAB
+    listBIN[4] = '970403';  //STB
+    listBIN[5] = '970426';  //MSB
+    listBIN[6] = '120791';  //MSB
+    listBIN[7] = '970427';  //VAB
+    listBIN[8] = '166888';  //VAB
+
+    var bin = getBin();
+    
+    document.verifycardForm.cardpaynow.disabled = true;
+
+    if ( isNull(cardName) || isEmpty(cardName) )
+    {
+        showMessage(message_error_du_lieu_khong_hop_le['vn']);
+        document.verifycardForm.cardpaynow.disabled = false
+        document.verifycardForm.cardHolderName.focus();
+        return false;
+    }
+
+    if ( isNull(cardNumber) || isEmpty(cardNumber) )
+    {
+        showMessage(message_error_du_lieu_khong_hop_le['vn']);
+        document.verifycardForm.cardpaynow.disabled = false
+        document.verifycardForm.cardNumber.focus();
+        return false;
+    }
+
+    if ( isNumberic(cardNumber) == false ) {
+        showMessage(message_error_so_the_khong_hop_le['vn']);
+        document.verifycardForm.cardpaynow.disabled = false
+        document.verifycardForm.cardNumber.focus();
+        document.verifycardForm.cardNumber.select();
+        return false;
+    }
+
+    if (trim(cardNumber).length &lt; 16 )
+    {
+        showMessage(message_error_so_the_tu_16_den_19_ky_tu['vn']);
+        document.verifycardForm.cardpaynow.disabled = false
+        document.verifycardForm.cardNumber.focus();
+        document.verifycardForm.cardNumber.select();
+        return false;
+    }
+
+    if (trim(cardNumber).length &gt; 16 &amp;&amp; trim(cardNumber).length != 19)
+    {
+        showMessage(message_error_so_the_tu_16_den_19_ky_tu['vn']);
+        document.verifycardForm.cardpaynow.disabled = false
+        document.verifycardForm.cardNumber.focus();
+        document.verifycardForm.cardNumber.select();
+        return false;
+    }
+
+    var disablebin = true;
+    for (i=0; i&lt;=listBIN.length; i++) {
+        if ( listBIN[i] == bin ) {
+            disablebin = false;
+            break;
+        }
+    }
+    if ( disablebin )
+    {
+        if (trim(cardMonth).length == 0)
+        {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            document.verifycardForm.cardpaynow.disabled = false
+            document.verifycardForm.cardMonth.focus();
+            return false;
+        } else {
+            if (checkMonthIsValid(cardMonth) == false) {
+                document.verifycardForm.cardpaynow.disabled = false
+                document.verifycardForm.cardMonth.focus();
+                document.verifycardForm.cardMonth.select();
+                return false;
+            }
+        }
+
+        if (trim(cardYear).length == 0)
+        {
+            showMessage(message_error_du_lieu_khong_hop_le['vn']);
+            document.verifycardForm.cardpaynow.disabled = false
+            document.verifycardForm.cardYear.focus();
+            return false;
+        } else {
+            if (checkYearIsValid(cardYear) == false) {
+                document.verifycardForm.cardpaynow.disabled = false
+                document.verifycardForm.cardYear.focus();
+                document.verifycardForm.cardYear.select();
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+/*
+* Kiem tra thang hieu luc
+*/
+function checkMonthIsValid(strValue) {
+    if ( isNumberic(strValue) == false ) {
+        return false;
+    }
+    var numMonth = convertStringToNumber(strValue);
+    if (numMonth&lt;0 || numMonth&gt;12)
+    {
+        return false;
+    } else {
+        return true;
+    }
+}
+/*
+* Kiem tra nam hieu luc
+*/
+function checkYearIsValid(strValue) {
+    if ( isNumberic(strValue) == false ) {
+        return false;
+    }
+    var numYear = convertStringToNumber(strValue);
+    var currentTime = new Date();
+    var currentYear = currentTime.getFullYear().toString().substr(2);
+    currentYear = convertStringToNumber(trim(currentYear));
+    if ( numYear &gt; (currentYear + 50) )
+    {
+        return false;
+    } else {
+        return true;
+    }
+}
+/*******************format tien khi thay doi loai tien VND -USD******************************/
+
+function checkNumberFormat(val,type)
+{
+  if (trim(val).length&lt;1) return true;
+
+  //Xoa het ky tu trang
+  val=val.toString().replace(/\s/g,empty);
+  val=val.split(String.fromCharCode(160)).join(empty);
+  //Su dung regular expression
+  if (type=="i")  objRegExp=/^[-]?\d+$/;      //truong hop la so nguyen
+  else {
+      objRegExp =/^([-]?[0-9]*|[-]?\d*[\,\.]\d{1}?\d*)$/;
+      //else if (dec==dot)       objRegExp =/^([0-9]*|\d*\.\d{1}?\d*)$/;
+  }
+  if (!objRegExp.test(val)) {
+      showMessage(message_error_so_the_khong_hop_le['vn']);
+      document.verifycardForm.cardNumber.focus();
+      document.verifycardForm.cardNumber.select();
+      return  false;
+  }
+  val=val.split(sep).join(empty);
+  val = val.replace(',','.');
+  if (type=="%" &amp;&amp; (val&gt;100 || val &lt; 0)) {
+      showMessage(message_error_so_the_khong_hop_le['vn']);
+      document.verifycardForm.cardNumber.focus();
+      document.verifycardForm.cardNumber.select();
+      return  false;
+  }
+  return  true;
+}
+
+function keyDown(strValue, num)
+{
+    var lan = 'vn';
+    var listBIN_A = new Array();
+    var listBIN_B = new Array();
+    //
+    listBIN_A[0] = '889988';  //TCB
+    listBIN_A[1] = '970407';  //TCB
+    listBIN_A[2] = '888899';  //TCB
+    listBIN_A[3] = '707070';  //EIB
+    listBIN_A[4] = '970431';  //EIB
+    listBIN_A[5] = '970416';  //ACB
+    //
+    listBIN_B[0] = '707070';  //EIB
+    listBIN_B[1] = '970431';  //EIB
+    listBIN_B[2] = '970406';  //VNBC-DAB
+    listBIN_B[3] = '1792';    //VNBC-DAB
+    listBIN_B[4] = '970403';  //STB
+    listBIN_B[5] = '970426';  //MSB
+    listBIN_B[6] = '120791';  //MSB
+    listBIN_B[7] = '970427';  //VAB
+    listBIN_B[8] = '166888';  //VAB
+
+    switch (num)
+    {
+    case 1:
+        if (trim(strValue).length &gt;= 6) {
+
+            var bin = getBin();
+
+            var changebin = false;
+            for (i=0; i&lt;=listBIN_A.length; i++) {
+                if ( listBIN_A[i] == bin ) {
+                    changebin = true;
+                    break;
+                }
+            }
+            if ( changebin )
+            {
+                if ( trim(lan)=='en') {
+                    document.getElementById("cardissdate").innerHTML = 'Good Thru';
+                } else {
+                    document.getElementById("cardissdate").innerHTML = 'Ngày hết hạn';
+                }
+            }
+            else
+            {
+                if ( trim(lan)=='en') {
+                    document.getElementById("cardissdate").innerHTML = 'Member Since';
+                } else {
+                    document.getElementById("cardissdate").innerHTML = 'Ngày phát hành';
+                }
+            }
+
+            var disablebin = false;
+            for (i=0; i&lt;=listBIN_B.length; i++) {
+                if ( listBIN_B[i] == bin ) {
+                    disablebin = true;
+                    break;
+                }
+            }
+            if ( disablebin )
+            {
+                document.getElementById("lblcardDate").style.display = 'none';
+                document.verifycardForm.cardMonth.value = '';
+                document.verifycardForm.cardYear.value = '';
+            }
+            else
+            {
+                document.getElementById("lblcardDate").style.display = 'block';
+            }
+
+        }
+        
+        if ( trim(strValue).length &gt;= 16)
+        {
+            if (checkNumberFormat(strValue,'1') &amp;&amp; trim(strValue).length==19) {
+                document.verifycardForm.cardMonth.focus();
+            }
+        }
+        break;
+    case 2:
+        if ( isNumberic(strValue) == false ) {
+            showMessage(message_error_thang_khong_hop_le['vn']);
+            document.verifycardForm.cardMonth.focus();
+            document.verifycardForm.cardMonth.select();
+        } else {
+            var numMonth = convertStringToNumber(strValue);
+            if (numMonth&lt;0 || numMonth&gt;12)
+            {
+                showMessage(message_error_thang_khong_hop_le['vn']);
+                document.verifycardForm.cardpaynow.disabled = false
+                document.verifycardForm.cardMonth.focus();
+                document.verifycardForm.cardMonth.select();
+            } else {
+                if ( trim(strValue).length == 2) {
+                    document.verifycardForm.cardYear.focus();
+                }
+            }
+        }
+
+        break;
+    case 3:
+        if ( isNumberic(strValue) == false ) {
+            showMessage(message_error_nam_khong_hop_le['vn']);
+            document.verifycardForm.cardYear.focus();
+            document.verifycardForm.cardYear.select();
+        } else {
+            var numYear = convertStringToNumber(strValue);
+            var currentTime = new Date();
+            var currentYear = currentTime.getFullYear().toString().substr(2);
+            currentYear = convertStringToNumber(trim(currentYear));
+            if ( numYear &gt; (currentYear + 50) )
+            {
+                showMessage(message_error_nam_khong_hop_le['vn']);
+                document.verifycardForm.cardpaynow.disabled = false
+                document.verifycardForm.cardYear.focus();
+                document.verifycardForm.cardYear.select();
+            }
+        }
+
+        break;
+    }
+
+    checkButton();
+    registerHelp();
+}
+
+function checkButton() {
+    if (document.verifycardForm.cardpaynow.disabled == true) {
+        document.verifycardForm.cardpaynow.disabled = false;
+    }
+}
+
+function registerHelp() {
+    if (trim(document.verifycardForm.cardNumber.value).length &gt;= 15) {
+        document.getElementById('bankregister').innerHTML = getDescription(getBin());
+    }
+}
+
+function getBin() {
+    var bin = document.verifycardForm.cardNumber.value.substring(0,6);
+    var dab = bin.substring(0,4);
+    var vtb = bin.substring(0,5);
+    var strRet = bin;
+    if (dab == '1792') {
+        strRet = '1792';
+    } else if (vtb == '62016') {
+        strRet = '62016';
+    }
+    return strRet;
+}
+
+/****tunglt: 16-03-2011 them huong dan dang ky dich vu internet banking********/
+
+function getDescription(num) {
+    var lan = 'vn';
+    var listDescVN = new Array();
+    var listDescEN = new Array();
+    var strRet = '';
+  
+    //VCB
+    listDescVN[686868] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Vietcombank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900 545413/04 3824 3524</b> hoặc tham khảo <a href="http://www.vietcombank.com.vn/Personal/OnlineBanking/" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[970436] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Vietcombank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900 545413/04 3824 3524</b> hoặc tham khảo <a href="http://www.vietcombank.com.vn/Personal/OnlineBanking/" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[686868] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Vietcombank</b>. If you have not registered, please call the number <b>1900 545413/04 3824 3524</b> or click <a href="http://www.vietcombank.com.vn/Personal/OnlineBanking/" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[970436] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Vietcombank</b>. If you have not registered, please call the number <b>1900 545413/04 3824 3524</b> or click <a href="http://www.vietcombank.com.vn/Personal/OnlineBanking/" class="register" target="_blank">HERE</a> for the information.';
+    //TCB
+    listDescVN[970407] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Techcombank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1800-588-822/ 043.9427444</b> hoặc tham khảo <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[888899] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Techcombank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1800-588-822/ 043.9427444</b> hoặc tham khảo <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[889988] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Techcombank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1800-588-822/ 043.9427444</b> hoặc tham khảo <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[970407] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Techcombank</b>. If you have not registered, please call the number <b>1800-588-822/ 043.9427444</b> or click <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[888899] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Techcombank</b>. If you have not registered, please call the number <b>1800-588-822/ 043.9427444</b> or click <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[889988] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Techcombank</b>. If you have not registered, please call the number <b>1800-588-822/ 043.9427444</b> or click <a href="https://www.techcombank.com.vn/Desktop.aspx/Dich-vu-the/Fst-Access/THE_FSTACCESS/" class="register" target="_blank">HERE</a> for the information.';
+    //VIB
+    listDescVN[180906] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn phải đăng ký <b>VIB4U (gói Diamond 4U, Gold4U hoặc Easy 4U</b> – lấy OTP bằng sms với nội dung <b>VIB OTP</b> gửi 6089) của <b>VIB</b> để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại <b>(844) 62.58.58.58</b> hoặc tham khảo <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[180909] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn phải đăng ký <b>VIB4U (gói Diamond 4U, Gold4U hoặc Easy 4U</b> – lấy OTP bằng sms với nội dung <b>VIB OTP</b> gửi 6089) của <b>VIB</b> để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại <b>(844) 62.58.58.58</b> hoặc tham khảo <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[970441] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn phải đăng ký <b>VIB4U (gói Diamond 4U, Gold4U hoặc Easy 4U</b> – lấy OTP bằng sms với nội dung <b>VIB OTP</b> gửi 6089) của <b>VIB</b> để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại <b>(844) 62.58.58.58</b> hoặc tham khảo <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[180906] = '<u><i>Note:</i></u> To do the transaction, you must register <b>VIB4U</b> service of <b>VIB</b> to continue  the transaction. If you have not registered, please call the number <b>(844) 62.58.58.58</b> or click <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[180909] = '<u><i>Note:</i></u> To do the transaction, you must register <b>VIB4U</b> service of <b>VIB</b> to continue  the transaction. If you have not registered, please call the number <b>(844) 62.58.58.58</b> or click <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[970441] = '<u><i>Note:</i></u> To do the transaction, you must register <b>VIB4U</b> service of <b>VIB</b> to continue  the transaction. If you have not registered, please call the number <b>(844) 62.58.58.58</b> or click <a href="http://www.vib.com.vn/Default.aspx?tabid=145" class="register" target="_blank">HERE</a> for the information.';
+    //EIB
+    listDescVN[707070] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Eximbank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>(08) 39.15.15.15/38.21.00.55</b> hoặc tham khảo <a href="http://www.eximbank.com.vn/vn/the_tienich_thanhtoantructuyen.aspx" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[970431] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>Eximbank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>(08) 39.15.15.15/38.21.00.55</b> hoặc tham khảo <a href="http://www.eximbank.com.vn/vn/the_tienich_thanhtoantructuyen.aspx" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[707070] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Eximbank</b>. If you have not registered, please call the number <b>(08) 39.15.15.15/38.21.00.55</b> or click <a href="http://www.eximbank.com.vn/vn/the_tienich_thanhtoantructuyen.aspx" class="register" target="_blank">HERE</a> for the information. ';
+    listDescEN[970431] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>Eximbank</b>. If you have not registered, please call the number <b>(08) 39.15.15.15/38.21.00.55</b> or click <a href="http://www.eximbank.com.vn/vn/the_tienich_thanhtoantructuyen.aspx" class="register" target="_blank">HERE</a> for the information. ';
+    //MB
+    listDescVN[970422] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ <b>eMB Plus</b> của <b>MB</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900545426/ (04)37674050</b> hoặc tham khảo <a href="https://ebanking.mbbank.com.vn/" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[193939] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ <b>eMB Plus</b> của <b>MB</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900545426/ (04)37674050</b> hoặc tham khảo <a href="https://ebanking.mbbank.com.vn/" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[970422] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>eMB Plus</b> service of <b>MB</b>. If you have not registered, please call the number <b>1900545426/(04)37674050</b> or click <a href="https://ebanking.mbbank.com.vn/" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[193939] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>eMB Plus</b> service of <b>MB</b>. If you have not registered, please call the number <b>1900545426/(04)37674050</b> or click <a href="https://ebanking.mbbank.com.vn/" class="register" target="_blank">HERE</a> for the information.';
+    //DAB
+    listDescVN[970406] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>DongA Bank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900545464</b> hoặc tham khảo <a href="https://ebanking.dongabank.com.vn/login?action=info" class="register" target="_blank">Tại đây</a>.';
+    listDescVN[1792] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>DongA Bank</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1900545464</b> hoặc tham khảo <a href="https://ebanking.dongabank.com.vn/login?action=info" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[970406] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>DongA Bank</b>. If you have not registered, please call the number <b>1900545464</b> or click <a href="https://ebanking.dongabank.com.vn/login?action=info" class="register" target="_blank">HERE</a> for the information.';
+    listDescEN[1792] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>DongA Bank</b>. If you have not registered, please call the number <b>1900545464</b> or click <a href="https://ebanking.dongabank.com.vn/login?action=info" class="register" target="_blank">HERE</a> for the information.';
+    //CTG
+    listDescVN[676767] = '<u><i>Lưu ý:</i></u> Quý khách vui lòng đăng ký dịch vụ thanh toán trực tuyến thẻ E- partner của <b>Vietinbank</b> để thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng đăng ký <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">TẠI ĐÂY</a>. Liên hệ 0439421333.';
+    listDescVN[201010] = '<u><i>Lưu ý:</i></u> Quý khách vui lòng đăng ký dịch vụ thanh toán trực tuyến thẻ E- partner của <b>Vietinbank</b> để thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng đăng ký <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">TẠI ĐÂY</a>. Liên hệ 0439421333.';
+    listDescVN[620101] = '<u><i>Lưu ý:</i></u> Quý khách vui lòng đăng ký dịch vụ thanh toán trực tuyến thẻ E- partner của <b>Vietinbank</b> để thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng đăng ký <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">TẠI ĐÂY</a>. Liên hệ 0439421333.';
+    listDescVN[62016] = '<u><i>Lưu ý:</i></u> Quý khách vui lòng đăng ký dịch vụ thanh toán trực tuyến thẻ E- partner của <b>Vietinbank</b> để thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng đăng ký <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">TẠI ĐÂY</a>. Liên hệ 0439421333.';
+    listDescVN[970415] = '<u><i>Lưu ý:</i></u> Quý khách vui lòng đăng ký dịch vụ thanh toán trực tuyến thẻ E- partner của <b>Vietinbank</b> để thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng đăng ký <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">TẠI ĐÂY</a>. Liên hệ 0439421333.';
+    listDescEN[676767] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>Vietinbank</b> online payment service. If you have not registered, please click <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">HERE</a> for the registration or call the number 0439421333.';
+    listDescEN[201010] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>Vietinbank</b> online payment service. If you have not registered, please click <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">HERE</a> for the registration or call the number 0439421333.';
+    listDescEN[620101] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>Vietinbank</b> online payment service. If you have not registered, please click <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">HERE</a> for the registration or call the number 0439421333.';
+    listDescEN[62016] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>Vietinbank</b> online payment service. If you have not registered, please click <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">HERE</a> for the registration or call the number 0439421333.';
+    listDescEN[970415] = '<u><i>Note:</i></u> To do the transaction, you need register to use the <b>Vietinbank</b> online payment service. If you have not registered, please click <a href="https://www.vietinbank.vn/epayment/onlineregist/" class="register" target="_blank">HERE</a> for the registration or call the number 0439421333.';
+    //ACB
+    listDescVN[970416] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>ACB</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1800577775</b> hoặc tham khảo <a href="http://www.acb.com.vn/tienich/ib_hdsd.htm" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[970416] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>ACB</b>. If you have not registered, please call the number <b>1800577775</b> or click <a href="http://www.acb.com.vn/tienich/ib_hdsd.htm" class="register" target="_blank">HERE</a> for the information.';
+    //HDB
+    listDescVN[970437] = '<u><i>Lưu ý:</i></u> Để thực hiện giao dịch, bạn cần đăng ký sử dụng dịch vụ thanh toán qua internet và nhận OTP của <b>HDB</b>. Trường hợp chưa đăng ký, vui lòng liên hệ theo số <b>1800588896</b> hoặc tham khảo <a href="http://hdbank.com.vn/Default.aspx?Moduleid=23&amp;Product=a851be88-4d37-4856-836f-d3de9483691a&amp;PageId=0f851571-a8b1-4f9e-b437-0f92f50f648a" class="register" target="_blank">Tại đây</a>.';
+    listDescEN[970437] = '<u><i>Note:</i></u> To do the transaction, you need register to use the online payment service and receive OTP of <b>HDB</b>. If you have not registered, please call the number <b>1800588896</b> or click <a href="http://hdbank.com.vn/Default.aspx?Moduleid=23&amp;Product=a851be88-4d37-4856-836f-d3de9483691a&amp;PageId=0f851571-a8b1-4f9e-b437-0f92f50f648a" class="register" target="_blank">HERE</a> for the information.';
+    //STB
+    listDescVN[970403] = '<u><i>Lưu ý:</i></u> Bạn phải đăng ký dịch vụ Internet Banking hoặc Mua hàng trực tuyến dành cho thẻ Plus/PassportPlus của <b>Sacombank</b> để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại <b>1900 5555 88</b> hoặc tham khảo <a href="http://www.sacombank.com.vn/Pages/Thong-tin-san-pham-The.aspx" class="register" target="_blank">Tại đây</a> để biết thêm chi tiết.';
+    listDescEN[970403] = '<u><i>Note:</i></u> You must register Internet Banking or Online Shopping of <b>Sacombank</b> to continue the transaction. If you have not registered, please call the number <b>1900 5555</b> or click <a href="http://www.sacombank.com.vn/Pages/Thong-tin-san-pham-The.aspx" class="register" target="_blank">HERE</a> for the information.';
+    //MSB
+    listDescVN[970426] = '<u><i>Lưu ý:</i></u> Bạn phải sử dụng thẻ M1 của Ngân hàng Hàng Hải để tiếp tục thực hiện giao dịch. Vui lòng liên hệ theo số điện thoại 1800 599 999 và 04 39 44 55 66 hoặc tham khảo <a href="http://www.msb.com.vn/b1-san-pham-dich-vu/c-ngan-hang-dien-tu/khach-hang-ca-nhan/dich-vu-thanh-toan/dich-vu-thanh-toan-2013-thanh-toan-truc-tuyen" class="register" target="_blank">Tại đây</a>';
+    listDescVN[120791] = '<u><i>Lưu ý:</i></u> Bạn phải sử dụng thẻ M1 của Ngân hàng Hàng Hải để tiếp tục thực hiện giao dịch. Vui lòng liên hệ theo số điện thoại 1800 599 999 và 04 39 44 55 66 hoặc tham khảo <a href="http://www.msb.com.vn/b1-san-pham-dich-vu/c-ngan-hang-dien-tu/khach-hang-ca-nhan/dich-vu-thanh-toan/dich-vu-thanh-toan-2013-thanh-toan-truc-tuyen" class="register" target="_blank">Tại đây</a>';
+    listDescEN[970426] = '<u><i>Note:</i></u> You must use M1 card of Maritime Bank to continue the transaction. Please call the numbers 1800 599 999 and 04 39 44 55 66 or <a href="http://www.msb.com.vn/b1-san-pham-dich-vu/c-ngan-hang-dien-tu/khach-hang-ca-nhan/dich-vu-thanh-toan/dich-vu-thanh-toan-2013-thanh-toan-truc-tuyen" class="register" target="_blank">Click here</a> for the information.';
+    listDescEN[120791] = '<u><i>Note:</i></u> You must use M1 card of Maritime Bank to continue the transaction. Please call the numbers 1800 599 999 and 04 39 44 55 66 or <a href="http://www.msb.com.vn/b1-san-pham-dich-vu/c-ngan-hang-dien-tu/khach-hang-ca-nhan/dich-vu-thanh-toan/dich-vu-thanh-toan-2013-thanh-toan-truc-tuyen" class="register" target="_blank">Click here</a> for the information.';
+    //NVB
+    listDescVN[970419] = '<u><i>Lưu ý:</i></u> Bạn phải đăng ký dịch vụ thanh toán trực tuyến của Ngân hàng TMCP Nam Việt (Navibank) để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại 1900 5555 64 hoặc tham khảo <a href="http://navibank.com.vn/" class="register" target="_blank">Tại đây</a> để biết thêm chi tiết.';
+    listDescEN[970419] = '<u><i>Note:</i></u> You must register online transaction of Nam Viet Commercial Joint Stock Bank (Navibank) to continue the transaction. If you have not registered, please call the number 1900 5555 64 or click <a href="http://navibank.com.vn/" class="register" target="_blank">HERE</a> for the information.';
+    listDescVN[818188] = '<u><i>Lưu ý:</i></u> Bạn phải đăng ký dịch vụ thanh toán trực tuyến của Ngân hàng TMCP Nam Việt (Navibank) để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại 1900 5555 64 hoặc tham khảo <a href="http://navibank.com.vn/" class="register" target="_blank">Tại đây</a> để biết thêm chi tiết.';
+    listDescEN[818188] = '<u><i>Note:</i></u> You must register online transaction of Nam Viet Commercial Joint Stock Bank (Navibank) to continue the transaction. If you have not registered, please call the number 1900 5555 64 or click <a href="http://navibank.com.vn/" class="register" target="_blank">HERE</a> for the information.';
+    //VAB
+    listDescVN[970427] = '<u><i>Lưu ý:</i></u> Bạn phải đăng ký dịch vụ Cổng thanh toán trực tuyến của Ngân hàng Việt Á để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại 08-35128121 hoặc tham khảo <a href="https://paymentonline.vietabank.com.vn/Default.aspx?tabid=331" class="register" target="_blank">Tại đây</a> để biết thêm chi tiết.';
+    listDescEN[970427] = '<u><i>Note:</i></u> You must register Payment Online of VietABank to continue the transaction. If you have not registered, please call the number 08-35128121 or click <a href="https://paymentonline.vietabank.com.vn/Default.aspx?tabid=331" class="register" target="_blank">HERE</a> for the information.';
+    listDescVN[166888] = '<u><i>Lưu ý:</i></u> Bạn phải đăng ký dịch vụ Cổng thanh toán trực tuyến của Ngân hàng Việt Á để tiếp tục thực hiện giao dịch. Trường hợp chưa đăng ký, vui lòng liên hệ theo số điện thoại 08-35128121 hoặc tham khảo <a href="https://paymentonline.vietabank.com.vn/Default.aspx?tabid=331" class="register" target="_blank">Tại đây</a> để biết thêm chi tiết.';
+    listDescEN[166888] = '<u><i>Note:</i></u> You must register Payment Online of VietABank to continue the transaction. If you have not registered, please call the number 08-35128121 or click <a href="https://paymentonline.vietabank.com.vn/Default.aspx?tabid=331" class="register" target="_blank">HERE</a> for the information.';
+
+    if (trim(lan)=='en') {
+        strRet = listDescEN[num];
+    } else {
+        strRet = listDescVN[num];
+    }
+    if (!strRet) strRet = '<br><br>';
+    return strRet;
+}
+
+
+<!-- This document saved from https://payment.smartlink.com.vn/javascripts/script.jsp -->
