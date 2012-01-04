@@ -1,0 +1,25 @@
+dl {
+    font:normal 12px/15px Arial;
+    position: relative;
+    width: 350px;
+}
+/* The hint to Hide and Show */
+.hint {
+    display: none;
+    position: absolute;
+    right: -490px;
+    width: 200px;
+    margin-top: -4px;
+    border: 1px solid #c93;
+    padding: 10px 12px;
+    background: #ffc url(https://payment.smartlink.com.vn/images/pointer.gif) no-repeat -10px 5px;
+}
+/* The pointer image is hadded by using another span */
+.hint .hint-pointer {
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url(https://payment.smartlink.com.vn/images/pointer.gif) left top no-repeat;
+}

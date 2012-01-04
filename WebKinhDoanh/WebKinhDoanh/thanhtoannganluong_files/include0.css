@@ -1,0 +1,1665 @@
+/*
+body{
+	font:0.75em/1.5em Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	color:#000;
+}
+*/
+
+a{
+	color:#0066cc;
+	text-decoration:none;
+	}
+a:hover{
+	color:#0066cc;
+	text-decoration:underline;
+	}
+.clear{
+	clear:both;
+	}
+.blue{
+	color:#0054a6;
+	font-weight:bold;
+	}
+.box-content{
+	overflow:hidden;
+	margin-bottom:10px;
+	position:relative;
+	}
+.box-content-top{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat -10px 0;
+	height:5px;
+	overflow:hidden;
+	}
+.box-content-top-left{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat 0 0;
+	height:5px;
+	width:5px;
+	float:left;
+	overflow:hidden;
+	}
+.box-content-top-right{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat 100% 0;
+	height:5px;
+	width:5px;
+	float:right;
+	overflow:hidden;
+	}
+.box-content-top-center{
+	margin:0 5px;
+	}
+.box-content-bottom{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat 0px 100%;
+	height:5px;
+	overflow:hidden;
+	}
+.box-content-bottom-left{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat 0 100%;
+	width:5px;
+	height:5px;
+	float:left;
+	overflow:hidden;
+	}
+.box-content-bottom-right{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content.gif) no-repeat 100% 100%;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-bottom-r.gif) no-repeat 0 0;
+	height:5px;
+	width:5px;
+	float:right;
+	overflow:hidden;
+	}
+.box-content-bottom-center{
+	margin:0 5px;
+	height:5px;
+	overflow:hidden;
+	}
+.box-content-center{
+	border: 1px solid #a5b4bc;
+	border-top:0;
+	border-bottom:0;
+	padding:5px 0;
+	overflow:hidden;
+	}
+.box-content-square{
+	border: 1px solid #a5b4bc;
+	width:938px;
+	overflow:hidden;
+	}
+.box-content-center h4, .box-content-square h4{
+	border-bottom:1px solid #ddd;
+	margin:10px;
+	margin-top:0;
+	text-transform:uppercase;
+	}
+	
+.box-right{
+	border:1px solid #999;
+	margin-bottom:15px;
+	}
+.box-right-title{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-title.jpg) repeat-x 0 0;
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	}
+.box-square-content{
+	border:1px solid #a1a1a1;
+	overflow:hidden;
+	}
+	
+/* -----Nap tien Javascript------- */
+.content-recharge-active {
+	display:block;
+}
+.content-recharge-none {
+	display:none;
+}
+/*---------------------------------*/
+
+/*-- add for Message Box Javascript --*/
+.message-success {
+	background:#eef5ff url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-InformationMsg.gif) no-repeat 10px 50%;
+	/*border:1px solid #DFE3F8;*/
+	padding:5px 5px 5px 35px;
+	margin-bottom:10px;
+	color:#333;
+	display:none;
+}
+
+.message-success img {
+	float:left;
+	margin: 10px;	
+}
+/*
+.message-box {
+	background:#FFFFDE url(images/error_16x16.gif) no-repeat 10px 50%;
+	border:1px solid #ffcf0f;
+	padding:5px 10px 5px 35px;
+	margin-bottom:10px;
+	color:#FF5C02;
+	font-weight:bold;
+	display:none;
+}
+
+.message-box img {
+	float:left;
+	margin: 10px;	
+}
+*/
+
+/*-------------------------01-07-2010-----------------------*/
+/*
+.message-box{
+	width:auto;
+	margin:10px auto;
+	padding:5px 10px 5px 35px;
+	background:#ffffde url(images/error_16x16.gif) no-repeat 10px 20px;
+	border:1px solid #ffbe53;
+	color:#FF0000;
+	font-size:14px;
+	display:none;
+	}
+.message-box-title{
+	border-bottom:1px solid #fbfbfb;
+	font-weight:bold;
+	margin-bottom:8px;
+	font-size:16px;
+	padding-bottom:2px;
+	text-align:left;
+	}
+*/
+.message-box{
+	background:#FFFFDE url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/error_16x16.gif) no-repeat 10px 50%;
+	border:1px solid #ffcf0f;	
+	padding:5px 10px 5px 35px;
+	margin:10px auto;
+	color:#FF5C02;
+	font-size:14px;
+	width:auto;
+	display:none;
+}
+#message-box-login{
+	background:#FFFFDE url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/error_16x16.gif) no-repeat 10px 50%;
+	border:1px solid #ffcf0f;
+	margin:0;
+	padding:5px 10px 5px 35px;
+	margin-bottom:10px;
+	color:#FF5C02;
+	font-size:12px;
+	width:auto;
+}
+/*---diendc-2/2/2010 account help box-------------------------*/
+
+#account-help-box{
+	width:230px;
+	float:right;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-right:10px;
+	background:#fffbd2;
+	border:1px solid #fee994;
+	padding:5px 10px;
+	}
+#account-help-box h4{
+	margin:0px 0px 10px 0;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/help.png) no-repeat 0 0;
+	height:28px;
+	padding-left:32px;
+	line-height:30px;
+	}
+#account-help-box img{
+	margin:0 5px;
+	}
+#account-help-box p{
+	margin-bottom:6px;
+	}
+	
+/*-- add for List Partner Javascript --*/
+#list_partner {
+	position:absolute;
+	display:none;
+	border:1px solid #A5B4BC;
+	background-color:#FFFFFF;
+	width:250px; height:150px;
+	overflow:scroll; overflow-y:scroll; overflow-x:hidden;
+}
+#list_partner div {
+	padding:5px;
+}
+#list_partner div a {
+	display:block; line-height:20px;
+	overflow:hidden;
+	color:#0066FF; text-decoration:none;
+	border-bottom:1px solid #A5B4BC;
+}
+#list_partner div a.active {
+	color:#FF5C02;
+}
+#list_partner div a:hover {
+	color:#FF5C02;
+}
+/*-------------------------------------*/
+
+/*--add for MenuMain javascript--*/
+#account-menu{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/account-menu-bg-c.gif) repeat-x 0 0;
+	height:64px;
+	margin-bottom:15px;
+	overflow:hidden;
+	}
+#account-menu-l{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/account-menu-bg-l.gif) no-repeat 0 0;
+	width:4px;
+	height:64px;
+	float:left;
+	}
+#account-menu-r{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/account-menu-bg-r.gif) no-repeat 0 0;
+	width:4px;
+	height:64px;
+	float:right;
+	}
+account-menu-c{
+	height:64px;
+	margin:0 4px;
+	}
+#account-menu-main{
+	height:34px;
+	overflow:hidden;
+	}
+#account-menu-main ul{
+	margin:0;
+	padding:0;
+	}
+#account-menu-main ul li, #account-menu-sub ul li{
+	list-style:none;
+	margin-left:3px;
+	float:left;
+	}
+#account-menu-main ul li a{
+	color:#fff;
+	padding:4px 20px 0 20px;
+	font-weight:bold;
+	float:left;
+	height:24px;
+	margin-top:6px;
+	overflow:hidden;
+	text-transform:uppercase;
+	}
+#account-menu-main ul li a:hover, #account-menu-main ul li .active{
+	background:#fff;
+	display:block;
+	height:24px;
+	color:#172d3a;
+	text-decoration:none;
+	}
+#account-menu .end{
+	border:none;
+	}
+#account-menu-sub ul{
+	margin:5px 0 0 0;
+	padding:0;
+	}
+#account-menu-sub ul li a{
+	border-right: 1px solid #2a5db0;
+	padding:0 15px;
+	color:#2a5db0;
+	}
+#account-menu-sub ul li a:hover, #account-menu-sub ul li .active{
+	padding:0 15px;
+	color:#ff6600;
+	}
+	
+#account-menu-sub {
+	position:relative;
+}
+#account-menu-sub ul.group-sub-menu {
+	display:none;
+ 	position:absolute;
+}
+#account-menu-sub ul.active {
+ 	display:block;
+}
+/*-------------------------------*/
+/*----withdraw------------------------*/
+.cashout-method {
+	display:none;
+}
+.cashout-method-active {
+	display:table-row;
+	*display:block;
+}
+/*--------------------------*/
+/*** Calendar **********************/
+/*** style calendar: ***/
+
+a.dp-choose-date {
+	float: left;
+	width: 20px;
+	height: 16px;
+	padding: 0;
+	margin: 5px 3px 0;
+	display: block;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/table-date.jpg) no-repeat; 
+}
+a.dp-choose-date.dp-disabled {
+	background-position: 0 -20px;
+	cursor: default;
+}
+
+input.dp-applied {
+	width: 120px;
+	float: left;
+}
+
+table.jCalendar {
+	border: 1px solid #000;
+	background: #aaa;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+table.jCalendar th {
+	background: #333;
+	color: #fff;
+	font-weight: bold;
+	padding: 3px 5px;
+}
+table.jCalendar td {
+	background: #ccc;
+	color: #000;
+	padding: 3px 5px;
+	text-align: center;
+}
+table.jCalendar td.other-month {
+	background: #ddd;
+	color: #aaa;
+}
+table.jCalendar td.today {
+	background: #666;
+	color: #fff;
+}
+table.jCalendar td.selected {
+	background: #f66;
+	color: #fff;
+}
+table.jCalendar td.selected:hover {
+	background: #f33;
+	color: #fff;
+}
+table.jCalendar td:hover, table.jCalendar td.dp-hover {
+	background: #fff;
+	color: #000;
+}
+table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
+	background: #bbb;
+	color: #888;
+}
+
+/* For the popup */
+
+/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+
+div.dp-popup {
+	position: relative;
+	background: #ccc;
+	font-size: 10px;
+	font-family: arial, sans-serif;
+	padding: 2px;
+	width: 171px;
+	line-height: 1.2em;
+}
+div#dp-popup {
+	position: absolute;
+	z-index: 199;
+}
+div.dp-popup h2 {
+	font-size: 12px;
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+}
+a#dp-close {
+	font-size: 11px;
+	padding: 4px 0;
+	text-align: center;
+	display: block;
+}
+a#dp-close:hover {
+	text-decoration: underline;
+}
+div.dp-popup a {
+	color: #000;
+	text-decoration: none;
+	padding: 3px 2px 0;
+}
+div.dp-popup div.dp-nav-prev {
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-prev a {
+	float: left;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+	cursor: pointer;
+}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+	cursor: default;
+}
+div.dp-popup div.dp-nav-next {
+	position: absolute;
+	top: 2px;
+	right: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-next a {
+	float: right;
+}
+div.dp-popup a.disabled {
+	cursor: default;
+	color: #aaa;
+}
+div.dp-popup td {
+	cursor: pointer;
+}
+div.dp-popup td.disabled {
+	cursor: default;
+}
+
+
+/*** Het phan css cho calendar ***/
+/*Phan hien thi cho box ghi chu*/
+#ghichu-overview {
+width:450px;
+}
+#ghichu-overview .box-content-center {
+width:448px;
+}
+#overview-content .icon-tamgiu, #overview-content .icon-ttngay {
+border:0 none;
+bottom:0;
+clear:both;
+height:16px;
+text-align:right;
+width:100%;
+}
+ .clear-button{
+ float:right;
+ margin-right:10px;
+ overflow:hidden;
+ position:absolute;
+ right:0;
+ }
+
+/*===================================*/
+
+/* box user add 11/03/2010*/
+#shortcut-use-login {
+	margin:0px;
+	display:none;
+	z-index:1000;
+	position:absolute;
+}
+/*====================*/
+
+/* expand help content add(11/03/2010)*/
+#box-content-center-body-right-content .help_title {
+	margin:5px;
+}
+#box-content-center-body-right-content .help_title a{
+	margin-left:10px;
+}
+#box-content-center-body-right-content .guide-request-left-content {
+	display:none;
+}
+/*=====================*/
+
+/* frame-ajax */
+#frame-ajax {
+	overflow:hidden;
+	padding:0px;
+}
+#layout_frame_ajax {
+	/*position:absolute; top:0px; left:0px;*/
+	/*position:relative; top:-100px;*/
+	position:relative; top:0px; left:0px;
+	z-index:100;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/loading490.gif) no-repeat center;
+	background-color:#FFFFFF;
+	display:none;
+	opacity:0.8; /* Modern Browsers, eg: Firefox, Safari, Opera, Chrome */
+	filter: alpha(opacity = 80);  /* IE */
+   	-moz-opacity: 0.8;  /* Old Mozilla, eg: Netscape */
+  	-khtml-opacity: 0.8;  /* Old Safari */
+}
+/*=====================*/
+
+/* user-contact -- */
+#add-group-left .active{
+	background:#fff;
+	font-weight:bold;
+}
+#add-group-left .group-name div.operator{
+	float:right;
+	width:50px;
+	height:25px;
+	height:
+}
+#add-group-left .group-name em {
+	display:none;
+	float:right; margin-right:2px;
+	width:18px;
+}
+#add-group-left .input-group {
+	overflow:inherit;
+}
+#add-group-left .over {
+	font-weight:bold;
+}
+#add-group-left .over em { 
+	display:block;
+}
+#add-group-left .active em {
+	display:block;
+}
+.button-ajax {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/account-info-bg-tab.jpg) repeat-x 50% 0;
+	height:22px;
+	line-height:22px;
+	padding:0 10px 0px 10px;
+	color:#102952;
+	font-size:13px;
+	border:1px solid #9d9ea0;
+	overflow:hidden;
+	float:left;
+	margin-right:5px;
+}
+.button-ajax a, a:hover{
+	color:#102952;
+	text-decoration:none;
+}
+.disable {
+	color:#CCCCCC;
+}
+.disable span {
+	color:#CCCCCC;
+}
+.selected {
+	color:#FF0000;
+}
+.action-ajax {
+	display:none;
+}
+.button-disable {
+	color:#CCCCCC;
+}
+.button-disable span{
+	color:#CCCCCC;
+}
+.confirm {
+	display:none;
+}
+/*
+.alert {
+	display:none;
+}
+*/
+#frame_coppy {
+	display:none;
+}
+.frame-ajax {
+	overflow:hidden;
+}
+.layout-frame {
+	position:relative; top:0px; left:0px;
+	z-index:100;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/loading490.gif) no-repeat center;
+	background-color:#FFFFFF;
+	display:none;
+	opacity:0.8; /* Modern Browsers, eg: Firefox, Safari, Opera, Chrome */
+	filter: alpha(opacity = 80);  /* IE */
+   	-moz-opacity: 0.8;  /* Old Mozilla, eg: Netscape */
+  	-khtml-opacity: 0.8;  /* Old Safari */
+}
+
+#danhsachdoitac {
+	display:none;
+	overflow:hidden;
+}
+#danhsachdoitac .layout {
+	position:relative; top:0px; left:0px;
+	height:100px;
+	z-index:100;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/loading490.gif) no-repeat center;
+	background-color:#FFFFFF;
+	display:none;
+	opacity:0.8; /* Modern Browsers, eg: Firefox, Safari, Opera, Chrome */
+	filter: alpha(opacity = 80);  /* IE */
+   	-moz-opacity: 0.8;  /* Old Mozilla, eg: Netscape */
+  	-khtml-opacity: 0.8;  /* Old Safari */
+}
+/*--------------------*/
+
+/*--- user_manage --*/
+#frame_all {
+	overflow:hidden;
+}
+/*------------------*/
+
+#message-content {
+	height:150px;
+	overflow:hidden;
+		
+}
+#message-container {
+	float:left;
+	width:100%;
+	
+	}	
+	
+/*-------Trang overview----hungnd----*/	
+
+#overview-content .yellow {
+background:none repeat scroll 0 0 #FF9;
+}
+/*-------Trang lich su giao dich----hungnd----*/	
+#transaction-history-list .from {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-from.gif") no-repeat scroll 100% 50% transparent;
+padding-right:12px;
+}
+
+/*--phuonglh-------*/
+.button-box a {
+	margin-right:10px;
+}
+/*---------*/	
+/*------------------------------- BEGIN INTERGATION HOME----------------------------*/
+#intergation-title{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-title-intergation-c.gif) repeat-x 0 0;
+	height:35px;
+	margin-bottom:10px;
+	}
+#intergation-title-left{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-title-intergation-l.gif) no-repeat 0 0;
+	height:35px;
+	width:46px;
+	float:left;
+	}
+#intergation-title-right{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-title-intergation-r.gif) no-repeat 100% 0;
+	height:35px;
+	width:10px;
+	float:right;
+	}
+#intergation-title-content{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-title-intergation-c.gif) repeat-x 0 0;
+	height:35px;
+	line-height:30px;
+	margin:0 10px 0 46px;
+	text-transform:uppercase;
+	color:#555;
+	}
+#intergation-title-content h2{
+	margin:0 0 0 15px;
+	border:0;
+	}
+#intergation-home-left{
+	width:225px;
+	float:left;
+	}
+#intergation-home-right{
+	float:right;
+	width:700px;
+	}
+.intergation-box-left{
+	border:1px solid #d2d2d2;
+	margin-bottom:10px;
+	}
+.title-box{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-title.gif) repeat-x 0 100%;
+	margin: 0px;
+	height:27px;
+	line-height:27px;
+	padding:0 10px;
+	text-transform:uppercase;
+	}
+#search-box-content{
+	padding:10px;
+	}
+#search-box-content .input-search{
+	width:170px;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-search-input.gif) no-repeat 0 50%;
+	padding:0 5px 0 22px;
+	border:1px solid #d2d2d2;
+	height:22px;
+	line-height:22px;
+	margin-bottom:5px;
+	color:#777;
+	}
+#shortcut-menu{
+	text-transform:uppercase;
+	font-weight:bold;
+	background:#d2d2d2;
+	}
+#shortcut-menu li{
+	list-style:none;
+	border:1px solid #fff;
+	margin-bottom:1px;
+	}
+#shortcut-menu li a{
+	background:#f8f8f8;
+	height:40px;
+	line-height:40px;
+	display:block;
+	text-decoration:none;
+	color:#333;
+	}
+#shortcut-menu li a:hover, #shortcut-menu .active a {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-intergation-hover.gif) no-repeat 100% 50%;
+	}
+#shortcut-menu span{
+	width:40px;
+	height:40px;
+	float:left;
+	}
+.icon-huongdan{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-huongdantichhop.gif) no-repeat 50% 50%;
+	}
+.icon-demo{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-demo.gif) no-repeat 50% 50%;
+	}	
+.icon-download{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-download.gif) no-repeat 50% 50%;
+	}
+.icon-qa{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-aq.gif) no-repeat 50% 50%;
+	}
+	
+	
+#shortcut-menu .sub-menu-intergation-box-left li{
+	margin:0;
+	padding:0
+}
+#shortcut-menu .sub-menu-intergation-box-left{
+	margin-top:1px;
+	padding:10px  5px 0 10px;
+	background:#fff;
+	border:0;
+	}
+#shortcut-menu .sub-menu-intergation-box-left a{
+	background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-from.gif") no-repeat scroll 0 4px #FFFFFF;
+	height:auto;
+	line-height:normal;
+	margin-bottom:10px;
+	padding-left:12px;
+	text-transform:none;
+	width:195px;
+}
+	
+	
+#shortcut-menu .sub-menu-intergation-box-left a:hover, #shortcut-menu .sub-menu-intergation-box-left .active a{
+	color:#ff5a00;
+	background:#fff url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-from.gif) no-repeat 0 3px;
+}
+
+#shortcut-menu .sub-menu-intergation-box-left li {
+margin:0;
+line-height:normal;
+}
+#shortcut-menu .sub-menu-intergation-box-left {
+background:none repeat scroll 0 0 #FFFFFF;
+border:0 none;
+margin-top:1px;
+overflow:hidden;
+padding:10px 5px 0 10px;
+}
+
+#shortcut-menu .sub-menu-intergation-box-left a:hover, #shortcut-menu .sub-menu-intergation-box-left .active a {
+color:#FF5A00;
+}	
+	
+	
+/*menu quick link*/	
+#access-quick .active ,#access-quick a:hover {
+color:#FF5A00;
+	
+}
+	
+/*
+#shortcut-menu .sub-menu-intergation-box-left{
+	margin-top:1px;
+	padding:5px 0;
+	background:#fff;
+	}
+#shortcut-menu .sub-menu-intergation-box-left li{
+	background:#fff;
+	border:0;
+	margin:0;
+	padding:0 0 0 15px;
+	list-style:none;
+	height:25px;
+	line-height:25px;
+	}
+#shortcut-menu .sub-menu-intergation-box-left li a{
+	background:url(images/icon-list-.gif) no-repeat 0 50%;
+	padding-left:12px;
+	text-transform:none;
+	color:#008fea;
+	height:25px;
+	line-height:25px;
+	}
+#shortcut-menu .sub-menu-intergation-box-left .active a, #shortcut-menu .sub-menu-intergation-box-left li a:hover{
+	color:#ff5a00;
+	}
+	
+*/	
+#access-quick .title-box{ 
+	background:#ff7400;
+	border:1px solid #fff;
+	color:#fff;
+	}
+#access-quick li{
+	border-bottom:1px dashed #eee;
+	list-style:none;
+	margin:0 10px;
+	padding:5px 0;
+	}
+#access-quick a{
+	font-weight:bold;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-list-.gif) no-repeat 0 50%;
+	color:#008fea;
+	padding-left:12px;
+	}
+#hot-news{
+	margin:5px 0;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-hotnews.gif) no-repeat 0 50%;
+	padding:10px 5px 10px 20px;
+	}
+#hot-news span{
+	font-weight:bold;
+	margin-right:5px;
+	color:#FF0000;
+	text-transform:uppercase;
+	}
+	
+#intergation-home-right-box-content{
+	width:700px;
+	overflow:hidden;
+	overflow:hidden;
+	}
+#intergation-home-right-box-content-l, #intergation-home-right-box-content-r, #intergation-home-right-box-content-c{
+	width:226px;
+	}
+#intergation-home-right-box-content-l{
+	float:left;
+	}
+#intergation-home-right-box-content-r{
+	float:right;
+	}
+#intergation-home-right-box-content-c{
+	float:left;
+	margin-left:10px;
+	}
+.intergation-home-right-box-content-title{
+	height:24px;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content-top-c-intergation-title.gif) repeat-x 0 0;
+	color:#ff5a00;
+	text-transform:uppercase;
+	font-weight:bold;
+	}
+.intergation-home-right-box-content-title-l{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content-top-left-intergation.gif) no-repeat 0 0;
+	width:5px;
+	height:24px;
+	float:left;
+	}
+.intergation-home-right-box-content-title-r{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content-top-right-intergation.gif) no-repeat 100% 0;
+	height:24px;
+	width:5px;
+	float:right;
+	}
+.intergation-home-right-box-content-title-c span{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-box-content-top-c-intergation.gif) no-repeat 100% 0;
+	height:24px;
+	line-height:24px;
+	display:block;
+	float:left;
+	padding-right:25px;
+	padding-left:5px;
+	}
+.intergation-home-right-box-content-center{
+	border:1px solid #d2d2d2;
+	border-top:0;
+	padding:6px;
+	}
+.intergation-home-right-box-content-center-banner img{
+	border:1px solid #eee;
+	padding:1px;
+	}
+.tienich{
+	width:50%;
+	font-weight:bold;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-from.gif) no-repeat 0 50%;
+	padding-left:12px;
+	}
+.intergation-home-banner{
+	text-align:center;
+	}
+#intergation-home-banner-adv{
+	margin:10px 0;
+	height:60px;
+	overflow:hidden;
+	}
+#intergation-home-right-bottom{
+	color:#ff5a00;
+	font-size:24px;
+	text-transform:uppercase;
+	font-style:italic;
+	margin-top:20px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	font-weight:bold;
+	}
+/*------------------------------- BEGIN INTERGATION HOME----------------------------*/
+
+#intergation-guide-right{
+	width:180px;
+	float:right;
+	}
+#intergation-guide-right img{
+	width:180px;
+	}
+#intergation-guide-content{
+	width:505px;
+	float:left;
+	margin-left:15px;
+	}
+#tichhopwebsite-button{
+	margin-bottom:10px;
+	}
+#intergation-guide-right-adv img{
+	margin-bottom:3px;
+	}
+#intergation-guide-content-line{
+	border-bottom:1px solid #d2d2d2;
+	height:18px;
+	}
+#intergation-guide-content-line li{
+	float:left;
+	list-style:none;
+	margin-right:12px;
+	}
+#intergation-guide-content-line li a{
+	color:#ff5a00;
+	font-weight:bold;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-from.gif) no-repeat 0 50%;
+	padding-left:10px;
+	}
+.intergation-guide-content{
+	margin:15px 0;
+	border-bottom:1px dashed #d9d9d9;
+	}
+.intergation-guide-content h3{
+	margin-bottom:5px;
+	text-transform:uppercase;
+	}
+.intergation-guide-content p{
+	
+	margin-bottom:5px;
+	}
+.step-intergation{
+	width:58px;
+	height:58px;
+	line-height:28px;
+	color:#777;
+	font-size:18px;
+	text-align:center;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-step-intergation.gif) no-repeat 50% 50%;
+	float:left;
+	}
+.step-intergation p{
+	margin:0;
+	padding:0;
+	}
+.numberstep-intergation{
+	font-size:24px;
+	font-weight:bold;
+	}
+.step-intergation-bottom{
+	height:60px;
+	text-align:center;
+	margin:15px 10px 15px 120px;
+	}
+.step-intergation-bottom li{
+	display:inline;
+	list-style:none;
+	margin-right:5px;
+	float:left;
+	}
+.step-intergation-b{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-step-b-intergation.gif) no-repeat 50% 50%;
+	width:15px;
+	height:58px;
+	}
+.other li {
+color:#FF5A00;
+margin-left:15px;
+}
+	
+	
+#paga-view span {
+	float:left;
+	padding-right:5px;
+	}
+#paga-view a {
+border:1px solid #EEEEEE;
+display:block;
+float:left;
+font-weight:bold;
+margin-right:5px;
+padding:1px 6px;
+}
+#paga-view a:hover, #paga-view .active {
+background:none repeat scroll 0 0 #EEEEEE;
+border:1px solid #CCCCCC;
+color:#333333;
+text-decoration:none;
+}
+.question {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/q-.gif") no-repeat scroll 0 0 transparent;
+font-weight:bold;
+padding:15px 5px 15px 60px;
+}
+.answer {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/a-.gif") no-repeat scroll 0 0 transparent;
+padding:0 5px 30px 60px;
+}
+
+#hoidap_browse .intergation-guide-content {
+margin-bottom:3px;
+}
+#form-login {
+margin-top:20px;
+}
+.title-login {
+border-bottom:1px solid #EEEEEE;
+font-weight:bold;
+margin-bottom:10px;
+text-transform:uppercase;
+}
+#form-login th {
+font-weight:normal;
+padding:5px;
+text-align:right;
+width:150px;
+}
+.gray-table-label {
+color:#999999;
+}
+.gray-table-label:hover {
+color:#333333;
+}
+
+.button-download {
+margin:30px 0 10px;
+text-align:center;
+}
+.button-dangly {
+font-size:24px;
+line-height:50px;
+margin-top:50px;
+padding-right:80px;
+text-align:center;
+}
+.button-dangly- {
+float:right;
+}
+.button-dangly- a {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-button-dangky.gif") no-repeat scroll 0 0 transparent;
+color:#FFFFFF;
+display:block;
+float:left;
+height:50px;
+padding-left:15px;
+}
+.button-dangly- a span {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bg-button-dangky.gif") no-repeat scroll 100% 0 transparent;
+display:block;
+padding-right:15px;
+}
+/*ph?n web deverloper*/
+.dev-top-thongke .title, .dev-verify .title {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/list-accept.gif") no-repeat scroll 0 0 transparent;
+border-bottom:1px solid #D2D2D2;
+font-weight:bold;
+height:18px;
+margin-bottom:10px;
+margin-top:15px;
+padding-left:22px;
+text-transform:uppercase;
+}
+.dev-top-thongke-list {
+border:1px solid #E9E9E9;
+}
+.dev-top-thongke-list td {
+padding:5px;
+}
+.title-table {
+background:none repeat scroll 0 0 #EEEEEE;
+font-weight:bold;
+}
+.gray-table {
+background:none repeat scroll 0 0 #F6F6F6;
+}
+.yell-table {
+background:none repeat scroll 0 0 #FFF6DC;
+}
+.red-star {
+color:#FF0000;
+}
+.dev-verify th {
+font-weight:normal;
+padding:5px;
+text-align:right;
+vertical-align:top;
+width:200px;
+}
+.dev-verify td {
+padding:5px;
+vertical-align:top;
+}
+
+.button-dangly- a:hover {
+color:#FFFFFF;
+}
+#shortcut-menu span {
+float:left;
+height:40px;
+width:40px;
+}
+
+.icon-dev {
+background:url("https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/icon-dev.gif") no-repeat scroll 50% 50% transparent;
+}
+
+#message {
+	position:fixed;
+	
+}	
+
+
+#form-guicauhoi th{
+	text-align:right;
+	font-weight:normal;
+	width:125px;
+	padding:3px 5px;
+	}
+	
+/*----------------message new------------------*/
+#message-new{
+	width:220px;
+	margin-right:2px;
+	position:fixed;
+	z-index:10;
+	bottom:0;
+	right:0;
+	}
+#message-new-top{
+	height:27px;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/message-top.gif) no-repeat 0 0;
+	}
+#message-new-bottom{
+	height:14px;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/message-bottom.gif) no-repeat 0 100%;
+	}
+#message-new-content{
+	background:#fff;
+	border-right:1px solid #e6e6e6;
+	border-left:1px solid #e6e6e6;
+	padding:5px 0;
+	height:211px;
+	overflow:hidden;
+	opacity:0.85;
+	background:#fff;
+	}
+#message-new .message-new-content{
+	border:1px solid #eee;
+	margin:1px 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding:3px 5px 3px 25px;
+	height:34px;
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/message-new-content-icon.gif) no-repeat 3px 8px;
+	}
+#message-new-top .title-msgbox{
+	float:left;
+	width:150px;
+	margin-left:35px;
+	font-weight:bold;
+	line-height:27px;
+	color:#fff;
+	text-transform:uppercase;
+	}
+#message-new-top .title a{
+	color:#fff;
+	}
+#message-new-top  .close-message{
+	float:right;
+	width:20px;
+	margin-top:5px;
+	}
+#message-new-content-bottom{
+	background:none repeat scroll 0 0 #FFFFFF;
+	border-left:1px solid #E6E6E6;
+	border-right:1px solid #E6E6E6;
+	
+	opacity:0.85;
+	font-size:11px;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-right:2px;
+	height:15px;
+	}
+#message-new-content-bottom a{
+	color:#777;
+	}
+#message-new-content-bottom a:hover{
+	color:#ff5a00;
+	}
+.prev-message, .next-message, #message-new-content-bottom  .prev-message-end, .next-message-end{
+	width:6px;
+	height:10px;
+	display:block;
+	margin-top:3px;
+	float:left;
+	}
+.prev-message{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/button-message-buttom.gif) no-repeat 0 0px;
+	margin-right:7px;
+	}
+.next-message{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/button-message-buttom.gif) no-repeat 100% 100%;
+	}
+.prev-message-end{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/button-message-buttom.gif) no-repeat 0 100%;
+	margin-right:7px;
+	}
+.next-message-end{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/button-message-buttom.gif) no-repeat 100% 0;
+	}
+/*----------------end message new------------------*/		
+.delivery_type {
+	display:none;
+}
+.delivery_user_payment {
+	display:none;
+}
+/*------- heart-banner ----------------------------*/
+#heart-banner #pic-heart {
+	width:940px;
+	height:220px;
+	overflow:hidden;
+	position:relative;
+}
+#heart-banner #frame-banner {
+	position:relative;
+	top:0px;
+	left:0px;
+	height:220px;
+}
+#heart-banner #frame-banner div {
+	float:left;
+}
+/*----- template transaction --------*/
+#template_id {
+	border:1px solid #CCC;
+	position:relative;
+}
+#template_id .layout {
+	position:absolute;
+	z-index:10;
+	top:0px; left:0px;
+	display:none;
+	background-color:#FFF;
+	width:100%;
+	opacity:0.8;
+	*filter:alpha(opacity=80);
+}
+#template_id .control {
+	padding:10px; border-bottom:1px solid #CCC; background-color:#EFEFEF;
+}
+#template_id .bottom {
+	height:25px; line-height:25px; border-top:1px solid #CCC; background-color:#EFEFEF;
+}
+#template_id table {
+	background-color:#EFEFEF;
+}
+#template_id th {
+	text-align:center;
+	background-color:#CCC;
+	font-weight:bold;
+	height:20px;
+}
+#template_id td {
+	background-color:#FFF;
+	height:18px;
+}
+/*----- user contact --------*/
+#danhsachdoitac {
+	border:1px solid #CCC;
+	position:relative;
+	width:auto;
+}
+#danhsachdoitac .control {
+	padding:10px; border-bottom:1px solid #CCC; background-color:#EFEFEF;
+}
+#danhsachdoitac .bottom {
+	height:25px; line-height:25px; border-top:1px solid #CCC; background-color:#EFEFEF;
+}
+#danhsachdoitac .bottom div {
+	float:right;
+}
+#danhsachdoitac table {
+	background-color:#EFEFEF;
+}
+#danhsachdoitac th {
+	text-align:center;
+	background-color:#CCC;
+	font-weight:bold;
+	height:20px;
+}
+#danhsachdoitac td {
+	background-color:#FFF;
+	height:18px;
+}
+/* transaction history order */
+.title-box-table .title-box-table-content {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/transaction-up-down-icon.gif) no-repeat -20px 20px;
+}
+.transaction-order-desc .title-box-table-content {
+	background-position:100% -19px;
+}
+.transaction-order-asc .title-box-table-content {
+	background-position:100% 3px;
+}
+.transaction-order-desc a.order-desc, .transaction-order-asc a.order-asc {
+	font-weight:bold; color:#333;
+}
+.transaction-select {
+	position:relative;
+	display:none;
+	cursor:pointer;
+}
+.transaction-select .menu-order-box {
+	display:none;
+	position:absolute;
+	top:18px; left:-1px;
+}
+.menu-order-box {
+	padding-top:5px;
+}
+.menu-order-box div {
+	border:1px solid #d2e0ed;
+	background-color:#FFF;
+	width:155px;
+}
+.menu-order-box a {
+	display:block;
+	padding:5px 5px 3px 25px;
+	margin:1px 1px 0px 1px;
+	cursor:pointer;
+	text-align:left;
+	border-bottom:1px solid #D2E0ED;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+#data-grid .menu-order-box a{
+	text-decoration:none;
+}
+
+.menu-order-box a.order-asc {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/transaction-az-icon.gif) no-repeat 3px 5px;
+	background-color:#e8f1fa;
+}
+.menu-order-box a.order-desc {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/transaction-za-icon.gif) no-repeat 3px 5px;
+	background-color:#e8f1fa;
+}
+.menu-order-box a.end {
+	border-bottom:none;
+	margin-bottom:1px;
+}
+.data-grid-header {
+	padding:0px 5px 0px 5px;
+}
+/*----------*/
+h1.error, div.error {
+background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/error-message-icon.png) no-repeat 10px 50%;
+
+border:#FF0000 solid 0.1em;
+margin-left:0;
+margin-right:0;
+margin-top:0.5em;
+padding-bottom:10px;
+padding-left:36px;
+padding-right:10px;
+padding-top:10px;
+}
+.error {
+background-color:#FFFFCC;
+color:#FF0000;
+}
+/* 03/07/2010 */
+.convert-box {
+	background-color:#FFF; 
+	position:absolute; 
+	top:90px; left:0px;
+	z-index:100;
+}
+#layout-back {
+	opacity: 0.3;
+	filter:alpha(opacity=30);
+	background-color:#000;
+	position:absolute; top:0px; left:0px;
+	z-index:10;
+}
+
+/* transaction history */
+tr.green td {
+	/*background-color:#5A965B;*/
+	background-color:#5A965B;
+	color:#FFF;
+}
+tr.green a{
+	color:#FFF;
+}
+
+tr.red td {
+	background-color:#FFB3B3;
+}
+tr.orange td {
+	background-color:#FFFFA4;
+}
+div.transaction_status a {
+	/*background:url(images/icon-comment-overview-g.gif) no-repeat;*/
+	width:26px; height:26px;
+	display:block;
+	float:left;
+	text-decoration:none;
+}
+div.transaction_status .complaint_status {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/complaint-warning.gif) no-repeat;
+}
+div.transaction_status .transfer_status {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/delivery-confirm.gif) no-repeat;	
+}
+div.transaction_status .refund_status {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/full-refund.gif) no-repeat;	
+}
+/* tip box */
+.tip-box {
+	opacity:0.1; filter:alpha(opacity=10);
+	width:350px;
+	display:none;
+	position:absolute; top:0px; left:0px;
+}
+
+.tip-box .clear {
+	clear:both;
+}
+.tip-box .line-clear {
+	height:0px; line-height:0px; overflow:hidden;
+	clear:both;
+}
+.tip-box .shadow {
+	
+}
+.tip-box .background {
+	
+}
+.tip-box .arrow {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-tail.png) no-repeat bottom center;
+}
+.tip-box .arrow2 {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-tail2.png) no-repeat bottom center;
+}
+.tip-box .block {
+	
+}
+.tip-box .center {
+	margin:0px 19px 0px 19px;
+}
+.tip-box .top, .tip-box .top div {
+	height:15px; line-height:15px; overflow:hidden;
+}
+.tip-box .top .left {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-1.png) no-repeat left;
+}
+.tip-box .top .right {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-3.png) no-repeat right;
+}
+.tip-box .top .center {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-2.png) repeat-x;
+}
+.tip-box .bottom, .tip-box .bottom div {
+	height:29px; line-height:29px; overflow:hidden;
+}
+.tip-box .bottom .left {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-6.png) no-repeat left;
+}
+.tip-box .bottom .right {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-8.png) no-repeat right;
+}
+.tip-box .bottom .center {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-7.png) repeat-x;
+}
+.tip-box .middle .left {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-4.png) repeat-y left;
+}
+.tip-box .middle .right {
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/checkout/images/bubble-5.png) repeat-y right;
+}
+.tip-box .middle .center {
+	padding:1px 5px 1px 5px;
+	background-color:#FFF;
+}
+/* layout_message */
+.layout_message {
+	background-color:#FFFFFF;
+	position:relative;
+	top:0px;
+	left:0px;
+	z-index:100;
+	display:none;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
+/*-------------------03-07-2010------------------------*/
+#conver-system, #conver-system-info{
+	width:690px;
+	color:#555;
+	margin:10px auto 0 auto;
+	border:1px solid #ccc;
+	}
+#conver-system-title{
+	background:url(https://www.nganluong.vn/webskins/skins/nganluong/images/transaction-detail-message-title-bg.gif) repeat-x 0 0;
+	border:1px solid #fff;
+	border-bottom:0;
+	height:26px;
+	line-height:26px;
+	padding:0 10px;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	}
+#conver-system-content{
+	padding:10px;
+	}
+#conver-system-note{
+	margin-bottom:10px;
+	}
+#conver-system-note p{
+	margin-bottom:10px;
+	}
+.conver-system-button{
+	text-align:center;
+	}
+.conver-system-title{
+	border-bottom:1px solid #ccc;
+	padding-bottom:2px;
+	font-weight:bold;
+	margin:10px 0;
+	}
+
+#conver-system-content th{
+	width:160px;
+	text-align:left;
+	font-weight:normal;
+	}
+#conver-system-content td, #conver-system-content th{
+	padding:5px;
+	}
+#conver-system-bottom{
+	border-top:1px solid #ccc;
+	height:30px;
+	line-height:30px;
+	padding-top:10px;
+	margin-top:15px;
+	text-align:center;
+	}
+#conver-system-bottom .button-round-grayscale-input{
+	margin-left:10px;
+	}
+#conver-system-info td{
+	width:50%;
+	padding:0 10px 10px 20px;
+	}
+#conver-system-info th{
+	border-right:1px solid #ccc;
+	padding:0 20px 10px 10px;
+	width:50%;
+	}
+#conver-system-info td p, #conver-system-info th p{
+	text-align:center;
+	font-weight:bold;
+	}
+#conver-system-info td p .button-content, #conver-system-info th p .button-content{
+	margin-top:10px;
+	}
+.button-content{
+	background:#fbd687 url(button-c.gif) repeat-x 0 50%;
+	height:24px;
+	padding-bottom:3px;
+	color:#fff;
+	border:1px solid #ff7007;
+	overflow:hidden;
+	width:auto;
+	cursor:pointer;	
+	}

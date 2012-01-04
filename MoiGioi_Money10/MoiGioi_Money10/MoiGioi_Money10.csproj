@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6B227E5-4941-47AD-B71D-D6C749CE6B34}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MoiGioi_Money10</RootNamespace>
+    <AssemblyName>MoiGioi_Money10</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css1\deposit-.css" />
+    <Content Include="css1\hotnews0.css" />
+    <Content Include="css1\hotnews1.css" />
+    <Content Include="css1\include0.css" />
+    <Content Include="css1\include1.css" />
+    <Content Include="css1\jquery00.css" />
+    <Content Include="css1\keyboard.css" />
+    <Content Include="css1\keyboare.css" />
+    <Content Include="css1\nganluon.css" />
+    <Content Include="css1\styles00.css" />
+    <Content Include="css1\styles01.css" />
+    <Content Include="css1\taskbar0.css" />
+    <Content Include="css1\taskbar1.css" />
+    <Content Include="css\deposit-.css" />
+    <Content Include="css\hotnews0.css" />
+    <Content Include="css\hotnews1.css" />
+    <Content Include="css\include0.css" />
+    <Content Include="css\include1.css" />
+    <Content Include="css\jquery00.css" />
+    <Content Include="css\keyboard.css" />
+    <Content Include="css\keyboare.css" />
+    <Content Include="css\nganluon.css" />
+    <Content Include="images\acb_1299.gif" />
+    <Content Include="images\agb_1299.gif" />
+    <Content Include="images\americia.gif" />
+    <Content Include="images\bg-logo-.gif" />
+    <Content Include="images\bg-menu-.gif" />
+    <Content Include="images\bg-menu0.gif" />
+    <Content Include="images\bg-tab00.gif" />
+    <Content Include="images\bg-title.gif" />
+    <Content Include="images\bidv_127.gif" />
+    <Content Include="images\blue_col.png" />
+    <Content Include="images\dab_1299.gif" />
+    <Content Include="images\digital0.gif" />
+    <Content Include="images\dot-menu.gif" />
+    <Content Include="images\dot-yell.gif" />
+    <Content Include="images\exb_1299.gif" />
+    <Content Include="images\goods000.gif" />
+    <Content Include="images\hdb_1307.png" />
+    <Content Include="images\icb_1299.gif" />
+    <Content Include="images\icon-Exc.gif" />
+    <Content Include="images\icon-Inf.gif" />
+    <Content Include="images\jcbcard0.gif" />
+    <Content Include="images\masterca.gif" />
+    <Content Include="images\mb_12990.gif" />
+    <Content Include="images\menu-tab.gif" />
+    <Content Include="images\menu-tac.gif" />
+    <Content Include="images\menu-tad.gif" />
+    <Content Include="images\msb_1299.gif" />
+    <Content Include="images\nl_cash_.gif" />
+    <Content Include="images\nvb_1324.jpg" />
+    <Content Include="images\pgb_1299.gif" />
+    <Content Include="images\recharge.gif" />
+    <Content Include="images\sb_12785.gif" />
+    <Content Include="images\scb_1299.gif" />
+    <Content Include="images\shb_1299.gif" />
+    <Content Include="images\table-da.jpg" />
+    <Content Include="images\tcb_1299.gif" />
+    <Content Include="images\toggle_p.png" />
+    <Content Include="images\tpb_1291.gif" />
+    <Content Include="images\un_verif.png" />
+    <Content Include="images\vcb_1299.gif" />
+    <Content Include="images\vib_1299.gif" />
+    <Content Include="images\visacard.gif" />
+    <Content Include="js1\date0000.js" />
+    <Content Include="js1\datepick.js" />
+    <Content Include="js1\heart_me.js" />
+    <Content Include="js1\jquery00.js" />
+    <Content Include="js1\jquery01.js" />
+    <Content Include="js1\jquery_m.js" />
+    <Content Include="js1\set_inpu.js" />
+    <Content Include="js\deposit0.js" />
+    <Content Include="js\styles00.css" />
+    <Content Include="css\styles01.css" />
+    <Content Include="css\taskbar0.css" />
+    <Content Include="css\taskbar1.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\365win00.jpg" />
+    <Content Include="images\365win01.jpg" />
+    <Content Include="images\acc-stat.gif" />
+    <Content Include="images\account-.gif" />
+    <Content Include="images\account0.gif" />
+    <Content Include="images\account1.gif" />
+    <Content Include="images\account2.gif" />
+    <Content Include="images\account3.gif" />
+    <Content Include="images\account4.gif" />
+    <Content Include="images\account5.gif" />
+    <Content Include="images\account6.gif" />
+    <Content Include="images\banner00.jpg" />
+    <Content Include="images\banner01.jpg" />
+    <Content Include="images\bg-box-t.gif" />
+    <Content Include="images\bg-box-u.gif" />
+    <Content Include="images\bg-btn-s.gif" />
+    <Content Include="images\bg-btn-t.gif" />
+    <Content Include="images\bg-input.gif" />
+    <Content Include="images\bg-inpuu.gif" />
+    <Content Include="images\bg-redmo.gif" />
+    <Content Include="images\bg-redmp.gif" />
+    <Content Include="images\bg-tab-c.gif" />
+    <Content Include="images\bg-taskb.gif" />
+    <Content Include="images\bg-taskc.gif" />
+    <Content Include="images\bg-taskd.gif" />
+    <Content Include="images\bg-taske.gif" />
+    <Content Include="images\bg-title.png" />
+    <Content Include="images\bg-titlf.png" />
+    <Content Include="images\btn-sear.png" />
+    <Content Include="images\bulit-00.gif" />
+    <Content Include="images\button-c.gif" />
+    <Content Include="images\button-d.gif" />
+    <Content Include="images\button-r.gif" />
+    <Content Include="images\button-s.gif" />
+    <Content Include="images\captcha0.gif" />
+    <Content Include="images\chino000.jpg" />
+    <Content Include="images\chino001.jpg" />
+    <Content Include="images\close-me.gif" />
+    <Content Include="images\dambao16.jpg" />
+    <Content Include="images\escrow-i.gif" />
+    <Content Include="images\hearbann.gif" />
+    <Content Include="images\hearbano.gif" />
+    <Content Include="images\hearbanp.gif" />
+    <Content Include="images\hearbanq.gif" />
+    <Content Include="images\hotrotha.png" />
+    <Content Include="images\hotrothb.png" />
+    <Content Include="images\icon-exe.gif" />
+    <Content Include="images\icon-lis.gif" />
+    <Content Include="images\icon-lit.gif" />
+    <Content Include="images\icon-man.gif" />
+    <Content Include="images\icon-mob.gif" />
+    <Content Include="images\icon-moc.gif" />
+    <Content Include="images\icon-new.gif" />
+    <Content Include="images\icon-nex.gif" />
+    <Content Include="images\icon-ney.gif" />
+    <Content Include="images\icon-nez.gif" />
+    <Content Include="images\icon-nl-.gif" />
+    <Content Include="images\icon-nl0.gif" />
+    <Content Include="images\icon-pp0.png" />
+    <Content Include="images\icon-pp1.png" />
+    <Content Include="images\icon-que.gif" />
+    <Content Include="images\icon-sky.gif" />
+    <Content Include="images\icon-skz.gif" />
+    <Content Include="images\icon-ym0.gif" />
+    <Content Include="images\icon-ym1.gif" />
+    <Content Include="images\icon_tra.gif" />
+    <Content Include="images\icon_trb.gif" />
+    <Content Include="images\icon_trc.gif" />
+    <Content Include="images\icon_trd.gif" />
+    <Content Include="images\large_11.png" />
+    <Content Include="images\large_12.png" />
+    <Content Include="images\large_13.png" />
+    <Content Include="images\large_14.png" />
+    <Content Include="images\large_15.png" />
+    <Content Include="images\large_16.png" />
+    <Content Include="images\large_17.png" />
+    <Content Include="images\large_18.png" />
+    <Content Include="images\large_19.png" />
+    <Content Include="images\large_1A.png" />
+    <Content Include="images\large_1B.png" />
+    <Content Include="images\large_1C.png" />
+    <Content Include="images\large_1D.png" />
+    <Content Include="images\large_1E.png" />
+    <Content Include="images\large_1F.png" />
+    <Content Include="images\large_1G.png" />
+    <Content Include="images\large_1H.png" />
+    <Content Include="images\large_1I.png" />
+    <Content Include="images\large_1J.png" />
+    <Content Include="images\large_1K.png" />
+    <Content Include="images\large_1L.png" />
+    <Content Include="images\large_1M.png" />
+    <Content Include="images\large_1N.png" />
+    <Content Include="images\large_1O.png" />
+    <Content Include="images\large_1P.png" />
+    <Content Include="images\large_1Q.png" />
+    <Content Include="images\large_1R.png" />
+    <Content Include="images\large_1S.png" />
+    <Content Include="images\large_1T.png" />
+    <Content Include="images\large_1U.png" />
+    <Content Include="images\large_1V.png" />
+    <Content Include="images\large_1W.png" />
+    <Content Include="images\large_1X.png" />
+    <Content Include="images\large_1Y.png" />
+    <Content Include="images\large_1Z.png" />
+    <Content Include="images\large_20.png" />
+    <Content Include="images\login-ba.png" />
+    <Content Include="images\logo-nl0.png" />
+    <Content Include="images\logo-nl1.png" />
+    <Content Include="images\menu-nav.gif" />
+    <Content Include="images\ngay1600.jpg" />
+    <Content Include="images\nguoiban.gif" />
+    <Content Include="images\nguoibao.gif" />
+    <Content Include="images\nl000000.gif" />
+    <Content Include="images\nl000001.gif" />
+    <Content Include="images\quytrinh.gif" />
+    <Content Include="images\quytrini.gif" />
+    <Content Include="images\register.gif" />
+    <Content Include="images\registes.gif" />
+    <Content Include="images\registet.gif" />
+    <Content Include="images\registeu.gif" />
+    <Content Include="images\registev.gif" />
+    <Content Include="images\registew.gif" />
+    <Content Include="images\registex.gif" />
+    <Content Include="images\registey.gif" />
+    <Content Include="images\registez.gif" />
+    <Content Include="images\registf0.gif" />
+    <Content Include="images\registf1.gif" />
+    <Content Include="images\registf2.gif" />
+    <Content Include="images\registf3.gif" />
+    <Content Include="images\registf4.gif" />
+    <Content Include="images\rigister.gif" />
+    <Content Include="images\Sacomban.jpg" />
+    <Content Include="images\Sacombao.jpg" />
+    <Content Include="images\services.gif" />
+    <Content Include="images\servicet.gif" />
+    <Content Include="images\serviceu.gif" />
+    <Content Include="images\servicev.gif" />
+    <Content Include="images\step-bg-.gif" />
+    <Content Include="images\thongbao.jpg" />
+    <Content Include="images\thongbap.jpg" />
+    <Content Include="images\transact.gif" />
+    <Content Include="images\transacu.gif" />
+    <Content Include="images\transacv.gif" />
+    <Content Include="images\transacw.gif" />
+    <Content Include="images\wait0000.gif" />
+    <Content Include="js\date0000.js" />
+    <Content Include="js\datepick.js" />
+    <Content Include="js\form_che.js" />
+    <Content Include="js\function.js" />
+    <Content Include="js\heartban.js" />
+    <Content Include="js\heartbao.js" />
+    <Content Include="js\heart_me.js" />
+    <Content Include="js\jquery00.js" />
+    <Content Include="js\jquery01.js" />
+    <Content Include="js\jquery_m.js" />
+    <Content Include="js\jquery_n.js" />
+    <Content Include="js\keyboard.js" />
+    <Content Include="js\keyboare.js" />
+    <Content Include="js\set_inpu.js" />
+    <Content Include="js\set_inpv.js" />
+    <Content Include="js\transfer.js" />
+    <Content Include="js\validati.js" />
+    <Content Include="js\validatj.js" />
+    <Content Include="css\styles00.css" />
+    <Content Include="js\withdraw.js" />
+    <Content Include="TrangChu_NoiDung.ascx" />
+    <Content Include="TrangChu_SlideShow.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="TrangChu.aspx" />
+    <Content Include="ChonDangKy.aspx" />
+    <Content Include="DangKy_CaNhan.aspx" />
+    <Content Include="DangKy_DoanhNghiep.aspx" />
+    <Content Include="DangNhap_ThatBai.aspx" />
+    <Content Include="LichSuGiaoDich.aspx" />
+    <Content Include="ChuyenTienTamGiu.aspx" />
+    <Content Include="NapTien.aspx" />
+    <Content Include="RutTien.aspx" />
+    <Content Include="GiaoDichTheCao.aspx" />
+    <Content Include="TaiKhoan.aspx" />
+    <Content Include="WebForm12.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site_TTTaiKhoan.Master.cs">
+      <DependentUpon>Site_TTTaiKhoan.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site_TTTaiKhoan.Master.designer.cs">
+      <DependentUpon>Site_TTTaiKhoan.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu_NoiDung.ascx.cs">
+      <DependentUpon>TrangChu_NoiDung.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu_NoiDung.ascx.designer.cs">
+      <DependentUpon>TrangChu_NoiDung.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu_SlideShow.ascx.cs">
+      <DependentUpon>TrangChu_SlideShow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu_SlideShow.ascx.designer.cs">
+      <DependentUpon>TrangChu_SlideShow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChonDangKy.aspx.cs">
+      <DependentUpon>ChonDangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChonDangKy.aspx.designer.cs">
+      <DependentUpon>ChonDangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy_CaNhan.aspx.cs">
+      <DependentUpon>DangKy_CaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy_CaNhan.aspx.designer.cs">
+      <DependentUpon>DangKy_CaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy_DoanhNghiep.aspx.cs">
+      <DependentUpon>DangKy_DoanhNghiep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy_DoanhNghiep.aspx.designer.cs">
+      <DependentUpon>DangKy_DoanhNghiep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap_ThatBai.aspx.cs">
+      <DependentUpon>DangNhap_ThatBai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap_ThatBai.aspx.designer.cs">
+      <DependentUpon>DangNhap_ThatBai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuGiaoDich.aspx.cs">
+      <DependentUpon>LichSuGiaoDich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichSuGiaoDich.aspx.designer.cs">
+      <DependentUpon>LichSuGiaoDich.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenTienTamGiu.aspx.cs">
+      <DependentUpon>ChuyenTienTamGiu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChuyenTienTamGiu.aspx.designer.cs">
+      <DependentUpon>ChuyenTienTamGiu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NapTien.aspx.cs">
+      <DependentUpon>NapTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NapTien.aspx.designer.cs">
+      <DependentUpon>NapTien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RutTien.aspx.cs">
+      <DependentUpon>RutTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RutTien.aspx.designer.cs">
+      <DependentUpon>RutTien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDichTheCao.aspx.cs">
+      <DependentUpon>GiaoDichTheCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiaoDichTheCao.aspx.designer.cs">
+      <DependentUpon>GiaoDichTheCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.designer.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm12.aspx.cs">
+      <DependentUpon>WebForm12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm12.aspx.designer.cs">
+      <DependentUpon>WebForm12.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site_TTTaiKhoan.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2283</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

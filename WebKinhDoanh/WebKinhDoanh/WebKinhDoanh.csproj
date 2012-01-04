@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFBAAC68-2989-48DE-9DFA-CB31DB1D8BEA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebKinhDoanh</RootNamespace>
+    <AssemblyName>WebKinhDoanh</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chonnganhangthanhtoan.html" />
+    <Content Include="chonnganhangthanhtoan_files\bannerTo.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bannerTp.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bg-input.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bg-logo-.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bg-title.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bg-titlf.gif" />
+    <Content Include="chonnganhangthanhtoan_files\bg-titlg.gif" />
+    <Content Include="chonnganhangthanhtoan_files\blue_col.png" />
+    <Content Include="chonnganhangthanhtoan_files\box_user.js" />
+    <Content Include="chonnganhangthanhtoan_files\btn-v200.gif" />
+    <Content Include="chonnganhangthanhtoan_files\button-c.gif" />
+    <Content Include="chonnganhangthanhtoan_files\button-p.gif" />
+    <Content Include="chonnganhangthanhtoan_files\catBg000.png" />
+    <Content Include="chonnganhangthanhtoan_files\checked-.png" />
+    <Content Include="chonnganhangthanhtoan_files\dot-g-20.gif" />
+    <Content Include="chonnganhangthanhtoan_files\form_che.js" />
+    <Content Include="chonnganhangthanhtoan_files\function.js" />
+    <Content Include="chonnganhangthanhtoan_files\icon-fla.gif" />
+    <Content Include="chonnganhangthanhtoan_files\icon-hel.png" />
+    <Content Include="chonnganhangthanhtoan_files\icon-mua.gif" />
+    <Content Include="chonnganhangthanhtoan_files\icon-tam.gif" />
+    <Content Include="chonnganhangthanhtoan_files\icon-ud0.gif" />
+    <Content Include="chonnganhangthanhtoan_files\include0.css" />
+    <Content Include="chonnganhangthanhtoan_files\jquery_m.js" />
+    <Content Include="chonnganhangthanhtoan_files\logo-nl0.png" />
+    <Content Include="chonnganhangthanhtoan_files\logo-par.png" />
+    <Content Include="chonnganhangthanhtoan_files\logo-ver.gif" />
+    <Content Include="chonnganhangthanhtoan_files\nganluon.css" />
+    <Content Include="chonnganhangthanhtoan_files\nl000000.gif" />
+    <Content Include="chonnganhangthanhtoan_files\notifica.png" />
+    <Content Include="chonnganhangthanhtoan_files\payment_.js" />
+    <Content Include="chonnganhangthanhtoan_files\set_inpu.js" />
+    <Content Include="chonnganhangthanhtoan_files\styles_v.css" />
+    <Content Include="chonnganhangthanhtoan_files\toggle_p.png" />
+    <Content Include="chonnganhangthanhtoan_files\validati.js" />
+    <Content Include="congthanhtoansmartlink.html" />
+    <Content Include="congthanhtoansmartlink_files\b_vcbtcb.gif" />
+    <Content Include="congthanhtoansmartlink_files\cancel_v.png" />
+    <Content Include="congthanhtoansmartlink_files\congthan.gif" />
+    <Content Include="congthanhtoansmartlink_files\favicon0.gif" />
+    <Content Include="congthanhtoansmartlink_files\favicon0.htm" />
+    <Content Include="congthanhtoansmartlink_files\p-info-b.png" />
+    <Content Include="congthanhtoansmartlink_files\script00.htm" />
+    <Content Include="congthanhtoansmartlink_files\seal0000.js" />
+    <Content Include="congthanhtoansmartlink_files\smartlin.gif" />
+    <Content Include="congthanhtoansmartlink_files\style000.css" />
+    <Content Include="congthanhtoansmartlink_files\submit_v.png" />
+    <Content Include="congthanhtoansmartlink_files\tooltip_.css" />
+    <Content Include="congthanhtoansmartlink_files\tooltip_.js" />
+    <Content Include="dangnhaptaikhoan.html" />
+    <Content Include="dangnhaptaikhoan_files\acb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\agb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\americia.gif" />
+    <Content Include="dangnhaptaikhoan_files\bannerTo.gif" />
+    <Content Include="dangnhaptaikhoan_files\bannerTp.gif" />
+    <Content Include="dangnhaptaikhoan_files\bg-input.gif" />
+    <Content Include="dangnhaptaikhoan_files\bg-title.gif" />
+    <Content Include="dangnhaptaikhoan_files\bg-titlf.gif" />
+    <Content Include="dangnhaptaikhoan_files\bidv_127.gif" />
+    <Content Include="dangnhaptaikhoan_files\box_user.js" />
+    <Content Include="dangnhaptaikhoan_files\btn-v200.gif" />
+    <Content Include="dangnhaptaikhoan_files\button-c.gif" />
+    <Content Include="dangnhaptaikhoan_files\button-p.gif" />
+    <Content Include="dangnhaptaikhoan_files\catBg000.png" />
+    <Content Include="dangnhaptaikhoan_files\checked-.png" />
+    <Content Include="dangnhaptaikhoan_files\dab_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\dot-g-20.gif" />
+    <Content Include="dangnhaptaikhoan_files\exb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\form_che.js" />
+    <Content Include="dangnhaptaikhoan_files\function.js" />
+    <Content Include="dangnhaptaikhoan_files\hdb_1307.png" />
+    <Content Include="dangnhaptaikhoan_files\icb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\icon-fla.gif" />
+    <Content Include="dangnhaptaikhoan_files\icon-hel.png" />
+    <Content Include="dangnhaptaikhoan_files\icon-ud0.gif" />
+    <Content Include="dangnhaptaikhoan_files\include0.css" />
+    <Content Include="dangnhaptaikhoan_files\jcbcard0.gif" />
+    <Content Include="dangnhaptaikhoan_files\jquery_m.js" />
+    <Content Include="dangnhaptaikhoan_files\logo-nl0.png" />
+    <Content Include="dangnhaptaikhoan_files\logo-par.png" />
+    <Content Include="dangnhaptaikhoan_files\logo-ver.gif" />
+    <Content Include="dangnhaptaikhoan_files\masterca.gif" />
+    <Content Include="dangnhaptaikhoan_files\mb_12990.gif" />
+    <Content Include="dangnhaptaikhoan_files\msb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\nganluon.css" />
+    <Content Include="dangnhaptaikhoan_files\nl000000.gif" />
+    <Content Include="dangnhaptaikhoan_files\nl_cash_.gif" />
+    <Content Include="dangnhaptaikhoan_files\nvb_1324.jpg" />
+    <Content Include="dangnhaptaikhoan_files\pgb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\sb_12785.gif" />
+    <Content Include="dangnhaptaikhoan_files\scb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\set_inpu.js" />
+    <Content Include="dangnhaptaikhoan_files\shb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\styles_v.css" />
+    <Content Include="dangnhaptaikhoan_files\tcb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\tpb_1291.gif" />
+    <Content Include="dangnhaptaikhoan_files\update_q.js" />
+    <Content Include="dangnhaptaikhoan_files\validati.js" />
+    <Content Include="dangnhaptaikhoan_files\vcb_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\vib_1299.gif" />
+    <Content Include="dangnhaptaikhoan_files\visacard.gif" />
+    <Content Include="dangnhaptaikhoan_files\vtip0000.css" />
+    <Content Include="dangnhaptaikhoan_files\vtip0000.js" />
+    <Content Include="DatHang.aspx" />
+    <Content Include="dathang.html" />
+    <Content Include="dathang_files\00000000.gif" />
+    <Content Include="dathang_files\00000000.png" />
+    <Content Include="dathang_files\96000000.css" />
+    <Content Include="dathang_files\ac-04a00.jpg" />
+    <Content Include="dathang_files\accept_n.png" />
+    <Content Include="dathang_files\aochino0.jpg" />
+    <Content Include="dathang_files\banner_c.swf" />
+    <Content Include="dathang_files\bg000000.jpg" />
+    <Content Include="dathang_files\bg000000.png" />
+    <Content Include="dathang_files\chino_co.png" />
+    <Content Include="dathang_files\global00.css" />
+    <Content Include="dathang_files\gray_pag.css" />
+    <Content Include="dathang_files\hover_le.png" />
+    <Content Include="dathang_files\hover_ri.png" />
+    <Content Include="dathang_files\index000.js" />
+    <Content Include="dathang_files\jquery-l.js" />
+    <Content Include="dathang_files\jquery-u.css" />
+    <Content Include="dathang_files\jquery-u.js" />
+    <Content Include="dathang_files\jquery00.js" />
+    <Content Include="dathang_files\opi00000.gif" />
+    <Content Include="dathang_files\opi00001.gif" />
+    <Content Include="dathang_files\reset000.css" />
+    <Content Include="dathang_files\sanmuaba.gif" />
+    <Content Include="dathang_files\shopchin.png" />
+    <Content Include="dathang_files\skypeChe.js" />
+    <Content Include="dathang_files\slider_r.jpg" />
+    <Content Include="dathang_files\style000.css" />
+    <Content Include="dathang_files\support_.gif" />
+    <Content Include="dathang_files\text0000.css" />
+    <Content Include="dathang_files\ui-bg_fl.png" />
+    <Content Include="dathang_files\ui-bg_gl.png" />
+    <Content Include="dathang_files\ui-bg_gm.png" />
+    <Content Include="dathang_files\ui-bg_hi.png" />
+    <Content Include="dathang_files\ui-icons.png" />
+    <Content Include="dathang_files\ui-icont.png" />
+    <Content Include="dathang_files\ui-iconu.png" />
+    <Content Include="dathang_files\ui000000.css" />
+    <Content Include="dathang_files\ui000000.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="index.html" />
+    <Content Include="index_files\00000000.gif" />
+    <Content Include="index_files\1-7-2-30.jpg" />
+    <Content Include="index_files\96000000.css" />
+    <Content Include="index_files\ac-01000.jpg" />
+    <Content Include="index_files\ac-03000.jpg" />
+    <Content Include="index_files\ac-04a00.jpg" />
+    <Content Include="index_files\ac-05000.jpg" />
+    <Content Include="index_files\ac-06000.jpg" />
+    <Content Include="index_files\ac-07000.jpg" />
+    <Content Include="index_files\ac-08000.jpg" />
+    <Content Include="index_files\ac-09000.jpg" />
+    <Content Include="index_files\accept_n.png" />
+    <Content Include="index_files\banner_c.swf" />
+    <Content Include="index_files\bg000000.jpg" />
+    <Content Include="index_files\bg000000.png" />
+    <Content Include="index_files\chino_co.png" />
+    <Content Include="index_files\global00.css" />
+    <Content Include="index_files\gray_pag.css" />
+    <Content Include="index_files\hover_le.png" />
+    <Content Include="index_files\hover_ri.png" />
+    <Content Include="index_files\index000.js" />
+    <Content Include="index_files\jquery-u.css" />
+    <Content Include="index_files\jquery-u.js" />
+    <Content Include="index_files\jquery00.js" />
+    <Content Include="index_files\opi00000.gif" />
+    <Content Include="index_files\opi00001.gif" />
+    <Content Include="index_files\reset000.css" />
+    <Content Include="index_files\sanmuaba.gif" />
+    <Content Include="index_files\shopchin.png" />
+    <Content Include="index_files\skypeChe.js" />
+    <Content Include="index_files\slider_r.jpg" />
+    <Content Include="index_files\style000.css" />
+    <Content Include="index_files\support_.gif" />
+    <Content Include="index_files\text0000.css" />
+    <Content Include="index_files\ui-bg_fl.png" />
+    <Content Include="index_files\ui-bg_hi.png" />
+    <Content Include="index_files\ui-icons.png" />
+    <Content Include="index_files\ui000000.css" />
+    <Content Include="index_files\ui000000.js" />
+    <Content Include="thanhtoannganluong.html" />
+    <Content Include="thanhtoannganluong_files\acb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\agb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\americia.gif" />
+    <Content Include="thanhtoannganluong_files\bannerTo.gif" />
+    <Content Include="thanhtoannganluong_files\bannerTp.gif" />
+    <Content Include="thanhtoannganluong_files\bg-title.gif" />
+    <Content Include="thanhtoannganluong_files\bg-titlf.gif" />
+    <Content Include="thanhtoannganluong_files\bidv_127.gif" />
+    <Content Include="thanhtoannganluong_files\box_user.js" />
+    <Content Include="thanhtoannganluong_files\button-c.gif" />
+    <Content Include="thanhtoannganluong_files\button-p.gif" />
+    <Content Include="thanhtoannganluong_files\catBg000.png" />
+    <Content Include="thanhtoannganluong_files\checked-.png" />
+    <Content Include="thanhtoannganluong_files\dab_1299.gif" />
+    <Content Include="thanhtoannganluong_files\dot-g-20.gif" />
+    <Content Include="thanhtoannganluong_files\exb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\form_che.js" />
+    <Content Include="thanhtoannganluong_files\function.js" />
+    <Content Include="thanhtoannganluong_files\hdb_1307.png" />
+    <Content Include="thanhtoannganluong_files\icb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\icon-fla.gif" />
+    <Content Include="thanhtoannganluong_files\icon-hel.png" />
+    <Content Include="thanhtoannganluong_files\icon-ud0.gif" />
+    <Content Include="thanhtoannganluong_files\include0.css" />
+    <Content Include="thanhtoannganluong_files\jcbcard0.gif" />
+    <Content Include="thanhtoannganluong_files\jquery_m.js" />
+    <Content Include="thanhtoannganluong_files\logo-nl0.png" />
+    <Content Include="thanhtoannganluong_files\logo-par.png" />
+    <Content Include="thanhtoannganluong_files\logo-ver.gif" />
+    <Content Include="thanhtoannganluong_files\masterca.gif" />
+    <Content Include="thanhtoannganluong_files\mb_12990.gif" />
+    <Content Include="thanhtoannganluong_files\msb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\nganluon.css" />
+    <Content Include="thanhtoannganluong_files\nl000000.gif" />
+    <Content Include="thanhtoannganluong_files\nl_cash_.gif" />
+    <Content Include="thanhtoannganluong_files\nvb_1324.jpg" />
+    <Content Include="thanhtoannganluong_files\pgb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\sb_12785.gif" />
+    <Content Include="thanhtoannganluong_files\scb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\set_inpu.js" />
+    <Content Include="thanhtoannganluong_files\shb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\styles_v.css" />
+    <Content Include="thanhtoannganluong_files\tcb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\tpb_1291.gif" />
+    <Content Include="thanhtoannganluong_files\update_q.js" />
+    <Content Include="thanhtoannganluong_files\validati.js" />
+    <Content Include="thanhtoannganluong_files\vcb_1299.gif" />
+    <Content Include="thanhtoannganluong_files\vib_1299.gif" />
+    <Content Include="thanhtoannganluong_files\visacard.gif" />
+    <Content Include="thanhtoannganluong_files\vtip0000.css" />
+    <Content Include="thanhtoannganluong_files\vtip0000.js" />
+    <Content Include="thanhtoantienmat.html" />
+    <Content Include="thanhtoantienmat_files\acb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\agb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\americia.gif" />
+    <Content Include="thanhtoantienmat_files\bannerTo.gif" />
+    <Content Include="thanhtoantienmat_files\bannerTp.gif" />
+    <Content Include="thanhtoantienmat_files\bg-input.gif" />
+    <Content Include="thanhtoantienmat_files\bg-logo-.gif" />
+    <Content Include="thanhtoantienmat_files\bg-title.gif" />
+    <Content Include="thanhtoantienmat_files\bg-titlf.gif" />
+    <Content Include="thanhtoantienmat_files\bg-titlg.gif" />
+    <Content Include="thanhtoantienmat_files\bidv_127.gif" />
+    <Content Include="thanhtoantienmat_files\blue_col.png" />
+    <Content Include="thanhtoantienmat_files\box_user.js" />
+    <Content Include="thanhtoantienmat_files\btn-v200.gif" />
+    <Content Include="thanhtoantienmat_files\button-c.gif" />
+    <Content Include="thanhtoantienmat_files\button-p.gif" />
+    <Content Include="thanhtoantienmat_files\catBg000.png" />
+    <Content Include="thanhtoantienmat_files\checked-.png" />
+    <Content Include="thanhtoantienmat_files\dab_1299.gif" />
+    <Content Include="thanhtoantienmat_files\dot-g-20.gif" />
+    <Content Include="thanhtoantienmat_files\exb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\form_che.js" />
+    <Content Include="thanhtoantienmat_files\function.js" />
+    <Content Include="thanhtoantienmat_files\hdb_1307.png" />
+    <Content Include="thanhtoantienmat_files\icb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\icon-fla.gif" />
+    <Content Include="thanhtoantienmat_files\icon-hel.png" />
+    <Content Include="thanhtoantienmat_files\icon-ud0.gif" />
+    <Content Include="thanhtoantienmat_files\include0.css" />
+    <Content Include="thanhtoantienmat_files\jcbcard0.gif" />
+    <Content Include="thanhtoantienmat_files\jquery_m.js" />
+    <Content Include="thanhtoantienmat_files\logo-nl0.png" />
+    <Content Include="thanhtoantienmat_files\logo-par.png" />
+    <Content Include="thanhtoantienmat_files\logo-ver.gif" />
+    <Content Include="thanhtoantienmat_files\masterca.gif" />
+    <Content Include="thanhtoantienmat_files\mb_12990.gif" />
+    <Content Include="thanhtoantienmat_files\msb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\nganluon.css" />
+    <Content Include="thanhtoantienmat_files\nl000000.gif" />
+    <Content Include="thanhtoantienmat_files\nl_cash_.gif" />
+    <Content Include="thanhtoantienmat_files\notifica.png" />
+    <Content Include="thanhtoantienmat_files\nvb_1324.jpg" />
+    <Content Include="thanhtoantienmat_files\pgb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\sb_12785.gif" />
+    <Content Include="thanhtoantienmat_files\scb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\set_inpu.js" />
+    <Content Include="thanhtoantienmat_files\shb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\styles_v.css" />
+    <Content Include="thanhtoantienmat_files\tcb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\toggle_p.png" />
+    <Content Include="thanhtoantienmat_files\tpb_1291.gif" />
+    <Content Include="thanhtoantienmat_files\validati.js" />
+    <Content Include="thanhtoantienmat_files\vcb_1299.gif" />
+    <Content Include="thanhtoantienmat_files\vib_1299.gif" />
+    <Content Include="thanhtoantienmat_files\visacard.gif" />
+    <Content Include="thanhtoantienmat_files\vtip0000.css" />
+    <Content Include="thanhtoantienmat_files\vtip0000.js" />
+    <Content Include="thongbaoketquagiaodich.html" />
+    <Content Include="thongbaoketquagiaodich_files\bannerTo.gif" />
+    <Content Include="thongbaoketquagiaodich_files\bannerTp.gif" />
+    <Content Include="thongbaoketquagiaodich_files\bg-input.gif" />
+    <Content Include="thongbaoketquagiaodich_files\bg-title.gif" />
+    <Content Include="thongbaoketquagiaodich_files\bg-titlf.gif" />
+    <Content Include="thongbaoketquagiaodich_files\box_user.js" />
+    <Content Include="thongbaoketquagiaodich_files\btn-v200.gif" />
+    <Content Include="thongbaoketquagiaodich_files\button-c.gif" />
+    <Content Include="thongbaoketquagiaodich_files\button-p.gif" />
+    <Content Include="thongbaoketquagiaodich_files\catBg000.png" />
+    <Content Include="thongbaoketquagiaodich_files\checked-.png" />
+    <Content Include="thongbaoketquagiaodich_files\dot-g-20.gif" />
+    <Content Include="thongbaoketquagiaodich_files\icon-fla.gif" />
+    <Content Include="thongbaoketquagiaodich_files\icon-hel.png" />
+    <Content Include="thongbaoketquagiaodich_files\icon-ud0.gif" />
+    <Content Include="thongbaoketquagiaodich_files\include0.css" />
+    <Content Include="thongbaoketquagiaodich_files\jquery_m.js" />
+    <Content Include="thongbaoketquagiaodich_files\logo-nl0.png" />
+    <Content Include="thongbaoketquagiaodich_files\logo-par.png" />
+    <Content Include="thongbaoketquagiaodich_files\logo-ver.gif" />
+    <Content Include="thongbaoketquagiaodich_files\nl000000.gif" />
+    <Content Include="thongbaoketquagiaodich_files\notifica.png" />
+    <Content Include="thongbaoketquagiaodich_files\styles_v.css" />
+    <Content Include="thongtintaikhoannganhang.html" />
+    <Content Include="thongtintaikhoannganhang_files\bannerTo.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bannerTp.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bg-input.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bg-logo-.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bg-title.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bg-titlf.gif" />
+    <Content Include="thongtintaikhoannganhang_files\bg-titlg.gif" />
+    <Content Include="thongtintaikhoannganhang_files\blue_col.png" />
+    <Content Include="thongtintaikhoannganhang_files\boxover0.htm" />
+    <Content Include="thongtintaikhoannganhang_files\box_user.js" />
+    <Content Include="thongtintaikhoannganhang_files\btn-v200.gif" />
+    <Content Include="thongtintaikhoannganhang_files\button-c.gif" />
+    <Content Include="thongtintaikhoannganhang_files\button-p.gif" />
+    <Content Include="thongtintaikhoannganhang_files\captcha0.gif" />
+    <Content Include="thongtintaikhoannganhang_files\catBg000.png" />
+    <Content Include="thongtintaikhoannganhang_files\checked-.png" />
+    <Content Include="thongtintaikhoannganhang_files\confirm_.js" />
+    <Content Include="thongtintaikhoannganhang_files\dot-g-20.gif" />
+    <Content Include="thongtintaikhoannganhang_files\form_che.js" />
+    <Content Include="thongtintaikhoannganhang_files\function.js" />
+    <Content Include="thongtintaikhoannganhang_files\icon-fla.gif" />
+    <Content Include="thongtintaikhoannganhang_files\icon-hel.png" />
+    <Content Include="thongtintaikhoannganhang_files\icon-mua.gif" />
+    <Content Include="thongtintaikhoannganhang_files\icon-tam.gif" />
+    <Content Include="thongtintaikhoannganhang_files\icon-ud0.gif" />
+    <Content Include="thongtintaikhoannganhang_files\include0.css" />
+    <Content Include="thongtintaikhoannganhang_files\jquery_m.js" />
+    <Content Include="thongtintaikhoannganhang_files\logo-nl0.png" />
+    <Content Include="thongtintaikhoannganhang_files\logo-par.png" />
+    <Content Include="thongtintaikhoannganhang_files\logo-ver.gif" />
+    <Content Include="thongtintaikhoannganhang_files\nganluon.css" />
+    <Content Include="thongtintaikhoannganhang_files\nl000000.gif" />
+    <Content Include="thongtintaikhoannganhang_files\notifica.png" />
+    <Content Include="thongtintaikhoannganhang_files\set_inpu.js" />
+    <Content Include="thongtintaikhoannganhang_files\styles_v.css" />
+    <Content Include="thongtintaikhoannganhang_files\toggle_p.png" />
+    <Content Include="thongtintaikhoannganhang_files\validati.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatHang.aspx.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHang.aspx.designer.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7513</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
