@@ -18,7 +18,6 @@ namespace WSWorkFlow
             //float mount = 3;
             //ws.TransferMoneySameBank("sdfsd", "sdfsd", "sdfds", mount, "sdf");
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             try
