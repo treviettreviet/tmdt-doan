@@ -1,5 +1,0 @@
-E:\HoanChinh\HK3\2. TMDT\DoAn\MoiGioi_Money10\MoiGioi_Money10\bin\MoiGioi_Money10.dll
-E:\HoanChinh\HK3\2. TMDT\DoAn\MoiGioi_Money10\MoiGioi_Money10\bin\MoiGioi_Money10.pdb
-E:\HoanChinh\HK3\2. TMDT\DoAn\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\ResolveAssemblyReference.cache
-E:\HoanChinh\HK3\2. TMDT\DoAn\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\MoiGioi_Money10.dll
-E:\HoanChinh\HK3\2. TMDT\DoAn\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\MoiGioi_Money10.pdb
