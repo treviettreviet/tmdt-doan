@@ -130,7 +130,7 @@
             <tr>
             	<td>Mật khẩu:</td>
                 <td align="right"><input class="keyboardInput" name="password" type="password" id="password" autocomplete="off" value style="color:#777;width:130px; margin:0px; padding:0px;height:18px;font-size:12px;	border:1px solid #a5b4bc;">
-                <img class="keyboardInputInitiator" src="webskins/javascripts/keyboard/keyboard.gif" alt="Bàn phím ảo" title="Hiển thị bàn phím ảo"></td>
+                
             </tr>            
         </table>
     </div>
