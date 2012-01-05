@@ -7,11 +7,11 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" action="http://localhost:2283/ThanhToanTrucTuyen.aspx">
     <div>
-    
-        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
-    
+        <asp:Button ID="Button1" runat="server" Text="Button"/>
+        <asp:HiddenField ID="tendoanhnghiep"  Value="Cửa hàng áo cưới" />
+        <asp:HiddenField ID="email"  Value="abc@gmail.com"
     </div>
     </form>
 </body>
