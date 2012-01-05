@@ -50,19 +50,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css1\deposit-.css" />
-    <Content Include="css1\hotnews0.css" />
-    <Content Include="css1\hotnews1.css" />
-    <Content Include="css1\include0.css" />
-    <Content Include="css1\include1.css" />
-    <Content Include="css1\jquery00.css" />
-    <Content Include="css1\keyboard.css" />
-    <Content Include="css1\keyboare.css" />
-    <Content Include="css1\nganluon.css" />
-    <Content Include="css1\styles00.css" />
-    <Content Include="css1\styles01.css" />
-    <Content Include="css1\taskbar0.css" />
-    <Content Include="css1\taskbar1.css" />
     <Content Include="css\deposit-.css" />
     <Content Include="css\hotnews0.css" />
     <Content Include="css\hotnews1.css" />
@@ -72,6 +59,8 @@
     <Content Include="css\keyboard.css" />
     <Content Include="css\keyboare.css" />
     <Content Include="css\nganluon.css" />
+    <Content Include="css\nganluong_form_check.css" />
+    <Content Include="css\styles.css" />
     <Content Include="css\styles_v.css" />
     <Content Include="css\vtip0000.css" />
     <Content Include="images\acb_1299.gif" />
@@ -93,6 +82,7 @@
     <Content Include="images\checked-.png" />
     <Content Include="images\dab_1299.gif" />
     <Content Include="images\digital0.gif" />
+    <Content Include="images\direct-i.jpg" />
     <Content Include="images\dot-g-20.gif" />
     <Content Include="images\dot-menu.gif" />
     <Content Include="images\dot-yell.gif" />
@@ -126,18 +116,17 @@
     <Content Include="images\toggle_p.png" />
     <Content Include="images\tpb_1291.gif" />
     <Content Include="images\un_verif.png" />
+    <Content Include="images\un_verify.png" />
     <Content Include="images\vcb_1299.gif" />
     <Content Include="images\vib_1299.gif" />
     <Content Include="images\visacard.gif" />
-    <Content Include="js1\date0000.js" />
-    <Content Include="js1\datepick.js" />
-    <Content Include="js1\heart_me.js" />
-    <Content Include="js1\jquery00.js" />
-    <Content Include="js1\jquery01.js" />
-    <Content Include="js1\jquery_m.js" />
-    <Content Include="js1\set_inpu.js" />
     <Content Include="js\box_user.js" />
     <Content Include="js\deposit0.js" />
+    <Content Include="js\form_check.js" />
+    <Content Include="js\ga.js" />
+    <Content Include="js\heart_menu.js" />
+    <Content Include="js\jquery_min.js" />
+    <Content Include="js\set_input.js" />
     <Content Include="js\styles00.css" />
     <Content Include="css\styles01.css" />
     <Content Include="css\taskbar0.css" />
@@ -306,6 +295,7 @@
     <Content Include="js\transfer.js" />
     <Content Include="js\update_q.js" />
     <Content Include="js\validati.js" />
+    <Content Include="js\validation.js" />
     <Content Include="js\validatj.js" />
     <Content Include="css\styles00.css" />
     <Content Include="js\vtip0000.js" />
@@ -326,12 +316,14 @@
     <Content Include="DangKy_DoanhNghiep.aspx" />
     <Content Include="DangNhap_ThatBai.aspx" />
     <Content Include="LichSuGiaoDich.aspx" />
-    <Content Include="ChuyenTienTamGiu.aspx" />
+    <Content Include="ChonChuyenTien.aspx" />
     <Content Include="NapTien.aspx" />
     <Content Include="RutTien.aspx" />
     <Content Include="GiaoDichTheCao.aspx" />
     <Content Include="TaiKhoan.aspx" />
-    <Content Include="WebForm12.aspx" />
+    <Content Include="ChuyenTienTamGiu_1.aspx" />
+    <Content Include="ChuyenTienNgay_1.aspx" />
+    <Content Include="TK_ThongTinTaiKhoan.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -415,12 +407,12 @@
     <Compile Include="LichSuGiaoDich.aspx.designer.cs">
       <DependentUpon>LichSuGiaoDich.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ChuyenTienTamGiu.aspx.cs">
-      <DependentUpon>ChuyenTienTamGiu.aspx</DependentUpon>
+    <Compile Include="ChonChuyenTien.aspx.cs">
+      <DependentUpon>ChonChuyenTien.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ChuyenTienTamGiu.aspx.designer.cs">
-      <DependentUpon>ChuyenTienTamGiu.aspx</DependentUpon>
+    <Compile Include="ChonChuyenTien.aspx.designer.cs">
+      <DependentUpon>ChonChuyenTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="NapTien.aspx.cs">
       <DependentUpon>NapTien.aspx</DependentUpon>
@@ -450,12 +442,26 @@
     <Compile Include="TaiKhoan.aspx.designer.cs">
       <DependentUpon>TaiKhoan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm12.aspx.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
+    <Compile Include="ChuyenTienTamGiu_1.aspx.cs">
+      <DependentUpon>ChuyenTienTamGiu_1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm12.aspx.designer.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
+    <Compile Include="ChuyenTienTamGiu_1.aspx.designer.cs">
+      <DependentUpon>ChuyenTienTamGiu_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenTienNgay_1.aspx.cs">
+      <DependentUpon>ChuyenTienNgay_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChuyenTienNgay_1.aspx.designer.cs">
+      <DependentUpon>ChuyenTienNgay_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TK_ThongTinTaiKhoan.aspx.cs">
+      <DependentUpon>TK_ThongTinTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TK_ThongTinTaiKhoan.aspx.designer.cs">
+      <DependentUpon>TK_ThongTinTaiKhoan.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
