@@ -308,7 +308,6 @@
     <Content Include="css\styles00.css" />
     <Content Include="js\vtip0000.js" />
     <Content Include="js\withdraw.js" />
-    <Content Include="ThanhToanTrucTuyen.aspx" />
     <Content Include="TrangChu_NoiDung.ascx" />
     <Content Include="TrangChu_SlideShow.ascx" />
     <Content Include="Web.config" />
@@ -333,6 +332,7 @@
     <Content Include="ChuyenTienNgay_1.aspx" />
     <Content Include="TK_ThongTinTaiKhoan.aspx" />
     <Content Include="DangNhapThanhCong.aspx" />
+    <Content Include="ThanhToanTrucTuyen.aspx" />
     <Content Include="webskins\javascripts\keyboard\icon-exel.gif" />
     <Content Include="webskins\javascripts\keyboard\keyboard.gif" />
   </ItemGroup>
@@ -348,19 +348,19 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Site_ThanhToan.Master.cs">
+      <DependentUpon>Site_ThanhToan.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site_ThanhToan.Master.designer.cs">
+      <DependentUpon>Site_ThanhToan.Master</DependentUpon>
+    </Compile>
     <Compile Include="Site_TTTaiKhoan.Master.cs">
       <DependentUpon>Site_TTTaiKhoan.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site_TTTaiKhoan.Master.designer.cs">
       <DependentUpon>Site_TTTaiKhoan.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ThanhToanTrucTuyen.aspx.cs">
-      <DependentUpon>ThanhToanTrucTuyen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ThanhToanTrucTuyen.aspx.designer.cs">
-      <DependentUpon>ThanhToanTrucTuyen.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrangChu_NoiDung.ascx.cs">
       <DependentUpon>TrangChu_NoiDung.ascx</DependentUpon>
@@ -481,6 +481,13 @@
     <Compile Include="DangNhapThanhCong.aspx.designer.cs">
       <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ThanhToanTrucTuyen.aspx.cs">
+      <DependentUpon>ThanhToanTrucTuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThanhToanTrucTuyen.aspx.designer.cs">
+      <DependentUpon>ThanhToanTrucTuyen.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -490,6 +497,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site_TTTaiKhoan.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site_ThanhToan.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
