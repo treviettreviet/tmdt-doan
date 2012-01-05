@@ -63,11 +63,16 @@
     <Content Include="css\styles.css" />
     <Content Include="css\styles_v.css" />
     <Content Include="css\vtip0000.css" />
+    <Content Include="images\1top_940x220 copy.jpg" />
+    <Content Include="images\365win.jpg" />
     <Content Include="images\acb_1299.gif" />
     <Content Include="images\agb_1299.gif" />
     <Content Include="images\americia.gif" />
+    <Content Include="images\banner Giao Long.jpg" />
+    <Content Include="images\banner hello chao %28NL%29 .jpg" />
     <Content Include="images\bannerTo.gif" />
     <Content Include="images\bannerTp.gif" />
+    <Content Include="images\Baomoi-TechcomBank-NL copy1.jpg" />
     <Content Include="images\bg-logo-.gif" />
     <Content Include="images\bg-menu-.gif" />
     <Content Include="images\bg-menu0.gif" />
@@ -81,6 +86,7 @@
     <Content Include="images\catBg000.png" />
     <Content Include="images\checked-.png" />
     <Content Include="images\dab_1299.gif" />
+    <Content Include="images\DG nguoc kinh 42.jpg" />
     <Content Include="images\digital0.gif" />
     <Content Include="images\direct-i.jpg" />
     <Content Include="images\dot-g-20.gif" />
@@ -96,6 +102,7 @@
     <Content Include="images\icon-Inf.gif" />
     <Content Include="images\icon-ud0.gif" />
     <Content Include="images\jcbcard0.gif" />
+    <Content Include="images\keyboard.gif" />
     <Content Include="images\logo-par.png" />
     <Content Include="images\logo-ver.gif" />
     <Content Include="images\masterca.gif" />
@@ -108,6 +115,7 @@
     <Content Include="images\nvb_1324.jpg" />
     <Content Include="images\pgb_1299.gif" />
     <Content Include="images\recharge.gif" />
+    <Content Include="images\Sacombank_nganluong_940x220.jpg" />
     <Content Include="images\sb_12785.gif" />
     <Content Include="images\scb_1299.gif" />
     <Content Include="images\shb_1299.gif" />
@@ -324,6 +332,9 @@
     <Content Include="ChuyenTienTamGiu_1.aspx" />
     <Content Include="ChuyenTienNgay_1.aspx" />
     <Content Include="TK_ThongTinTaiKhoan.aspx" />
+    <Content Include="DangNhapThanhCong.aspx" />
+    <Content Include="webskins\javascripts\keyboard\icon-exel.gif" />
+    <Content Include="webskins\javascripts\keyboard\keyboard.gif" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -462,6 +473,13 @@
     </Compile>
     <Compile Include="TK_ThongTinTaiKhoan.aspx.designer.cs">
       <DependentUpon>TK_ThongTinTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhapThanhCong.aspx.cs">
+      <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhapThanhCong.aspx.designer.cs">
+      <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
