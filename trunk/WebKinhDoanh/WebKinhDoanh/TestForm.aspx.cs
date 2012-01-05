@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace WebKinhDoanh
 {
-    public partial class DatHang : System.Web.UI.Page
+    public partial class TestForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnSend_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
             // Thông tin 1 đơn hàng
             CDonHang cDonHang = new CDonHang();
@@ -29,12 +29,13 @@ namespace WebKinhDoanh
             cTaiKhoan.DienThoai = "0984.08.00.48";
             cTaiKhoan.DiaChi = "109B, Cư Xá Đường Sắt, Lý Thái Tổ, Phường 1, Quận 3, TP Hồ Chí Minh";
             string url = "www.google.com.vn";
-            SendInformation(url, cDonHang, cTaiKhoan);
+            //SendInformation(url, cDonHang, cTaiKhoan);
+            Response.Redirect(url+"?DonHang="+cDonHang+"&TaiKhoan="+cTaiKhoan);
         }
 
         protected void SendInformation(string url, CDonHang cDonHang, CTaiKhoan cTaiKhoan)
         {
-            Response.RedirectLocation = url;
+            Response.Redirect("");
         }
     }
 }
