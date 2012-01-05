@@ -349,6 +349,7 @@
     </Compile>
     <Compile Include="Site_ThanhToan.Master.cs">
       <DependentUpon>Site_ThanhToan.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site_ThanhToan.Master.designer.cs">
       <DependentUpon>Site_ThanhToan.Master</DependentUpon>
