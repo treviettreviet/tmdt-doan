@@ -1703,7 +1703,7 @@ box-business-bottom-c{
 /*-----------------begin menu tab-------------------*/	
 #menu-tab{
 	height:29px;
-	background:url(../images/menu-tab-bg-dot.gif) repeat-x 0 100%;
+	background:url(../images/menu-tab.gif) repeat-x 0 100%;
 	text-transform:uppercase;
 	}
 #menu-tab li{
@@ -1715,25 +1715,25 @@ box-business-bottom-c{
 	overflow:hidden;
 	}
 #menu-tab a{
-	background: url(../images/menu-tab-bg.gif) repeat-x 0 2px;
+	background: url(../images/menu-tac.gif) repeat-x 0 2px;
 	padding-left:15px;
 	color:#8b8b8b;
 	display:block;
 	}
 #menu-tab a span{
-	background: url(../images/menu-tab-bg.gif) repeat-x 100% 2px;
+	background: url(../images/menu-tac.gif) repeat-x 100% 2px;
 	padding-right:15px;
 	display:block;
 
 	}
 #menu-tab .active a{
-	background: url(../images/menu-tab-bg-active.gif) repeat-x 0 0;
+	background: url(../images/menu-tad.gif) repeat-x 0 0;
 	padding-left:15px;
 	color:#fff;
 	font-weight:bold;
 	}
 #menu-tab .active span{
-	background: url(../images/menu-tab-bg-active.gif) repeat-x 100% 0;
+	background: url(../images/menu-tad.gif) repeat-x 100% 0;
 	padding-right:15px;
 	}
 #menu-tab a:hover{
@@ -6874,7 +6874,7 @@ table #active{
 	width:173px;
 	float:left;
 	padding:5px 0 5px 0;
-	background:url(../images/dot-menu-ver.gif) repeat-y 100% 0;
+	background:url(../images/dot-menu.gif) repeat-y 100% 0;
 	z-index:99999;
 	}
 #menu-vertical-right{

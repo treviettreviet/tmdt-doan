@@ -12,23 +12,26 @@
 <meta name="keywords" content="Ví điện tử, Cổng thanh toán trực tuyến, Giao dịch an toàn, Bảo vệ người mua, bảo hiểm giao dịch, Thanh toán Tạm giữ, Thanh toán Ngay,  Thanh toán Nhanh chóng - Tiện lợi, Tích hợp thanh toán, Thanh toán, Nạp tiền, Rút tiền, Chuyển tiền, Yêu cầu thanh toán, Mua sắm trực tuyến">	
 <meta name="description" content="NgânLượng.vn là Ví điện tử và Cổng Thanh toán Trực tuyến (TTTT) chuyên dùng cho Thương mại Điện tử (TMĐT) tiên phong và hàng đầu tại Việt Nam, cả về sản phẩm dịch vụ, độ phủ thị trường và lưu lượng thanh toán">
 
-<script type="text/javascript" src="js1/jquery_m.js"></script>
-<script type="text/javascript" src="js1/heart_me.js"></script>
-<script type="text/javascript" src="js1/set_inpu.js"></script>
-<script type="text/javascript" src="js1/datepick.js"></script>
-<script type="text/javascript" src="js1/date0000.js"></script>
-<script type="text/javascript" src="js1/jquery00.js"></script>
-<script type="text/javascript" src="js1/transfer.js"></script>
-<script type="text/javascript" src="js1/deposit0.js"></script>
-<script type="text/javascript" src="js1/datepick.js"></script>
-<script type="text/javascript" src="js1/withdraw.js"></script>
+<script type="text/javascript" src="js/jquery_m.js"></script>
+<script type="text/javascript" src="js/heart_me.js"></script>
+<script type="text/javascript" src="js/set_inpu.js"></script>
+<script type="text/javascript" src="js/datepick.js"></script>
+<script type="text/javascript" src="js/date0000.js"></script>
+<script type="text/javascript" src="js/jquery00.js"></script>
+<script type="text/javascript" src="js/transfer.js"></script>
+<script type="text/javascript" src="js/deposit0.js"></script>
+<script type="text/javascript" src="js/datepick.js"></script>
+<script type="text/javascript" src="js/withdraw.js"></script>
+<script type="text/javascript" src="js/validation.js"></script>
+<script type="text/javascript" src="js/ga.js"></script>
 
-<link rel="stylesheet" href="css1/styles00.css" type="text/css">
-<link rel="stylesheet" href="css1/include0.css" type="text/css">
-<link rel="stylesheet" href="css1/taskbar0.css" type="text/css">
-<link rel="stylesheet" href="css1/hotnews0.css" type="text/css">
-<link rel="stylesheet" href="css1/jquery00.css" type="text/css">
-<link rel="stylesheet" href="css1/deposit-.css" type="text/css"> 
+<link rel="stylesheet" href="css/styles00.css" type="text/css">
+<link rel="stylesheet" href="css/include0.css" type="text/css">
+<link rel="stylesheet" href="css/taskbar0.css" type="text/css">
+<link rel="stylesheet" href="css/hotnews0.css" type="text/css">
+<link rel="stylesheet" href="css/jquery00.css" type="text/css">
+<link rel="stylesheet" href="css/deposit-.css" type="text/css"> 
+<link rel="stylesheet" href="css/nganluong_form_check.css" type="text/css">
 </head>
 <link rel="shortcut icon" href="../images/nl000000.gif">
 <div id="taskbar">
