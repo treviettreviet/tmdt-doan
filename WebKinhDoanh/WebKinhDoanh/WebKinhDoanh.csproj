@@ -235,6 +235,7 @@
     <Content Include="index_files\ui-icons.png" />
     <Content Include="index_files\ui000000.css" />
     <Content Include="index_files\ui000000.js" />
+    <Content Include="TestForm.aspx" />
     <Content Include="thanhtoannganluong.html" />
     <Content Include="thanhtoannganluong_files\acb_1299.gif" />
     <Content Include="thanhtoannganluong_files\agb_1299.gif" />
@@ -439,6 +440,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.aspx.cs">
+      <DependentUpon>TestForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestForm.aspx.designer.cs">
+      <DependentUpon>TestForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
