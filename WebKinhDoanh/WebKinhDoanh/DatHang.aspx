@@ -217,6 +217,7 @@
                 <td></td>
                 <td>
                     <button class="ui_button" type="submit">Thanh Toán</button>
+                    <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Gửi" />
                 <a href="#">&nbsp;Đến trang giao thanh toán Ngân Lượng &gt;&gt;</a></td>
             </tr>
             </table>
