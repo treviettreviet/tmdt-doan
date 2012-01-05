@@ -255,16 +255,16 @@ $(function() {
                             <ul>
                                 <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
                                     <img alt="Thanh toán bằng Visa Card" border="0" height="30" 
-                                        src="thanhtoannganluong_files/visacard.gif" /></a></li>
+                                        src="../images/visacard.gif" /></a></li>
                                 <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
                                     <img alt="Thanh toán bằng Master Card" border="0" height="30" 
-                                        src="thanhtoannganluong_files/masterca.gif" /></a></li>
+                                        src="../images/masterca.gif" /></a></li>
                                 <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
                                     <img alt="Thanh toán bằng thẻ American Express" border="0" height="30" 
-                                        src="thanhtoannganluong_files/americia.gif" /></a></li>
+                                        src="../images/americia.gif" /></a></li>
                                 <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
                                     <img alt="Thanh toán bằng thẻ JCB" border="0" height="30" 
-                                        src="thanhtoannganluong_files/jcbcard0.gif" /></a></li>
+                                        src="../images/jcbcard0.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -280,36 +280,36 @@ $(function() {
                             <ul>
                                 <li><a id="email" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vcb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
                                 <li><a id="email0" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_tcb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email1" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_mb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/mb_12990.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
                                 <li><a id="email2" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vib_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vib_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
                                 <li><a id="email3" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vtb_ck_on#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/icb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/icb_1299.gif" /></a></li>
                                 <li><a id="email4" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_exb_ck_on#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/exb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/exb_1299.gif" /></a></li>
                                 <li><a id="email5" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_acb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/acb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
                                 <li><a id="email6" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_hdb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/hdb_1307.png" /></a></li>
+                                    <img border="0" height="30" src="../images/hdb_1307.png" /></a></li>
                                 <li><a id="email7" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_msb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/msb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/msb_1299.gif" /></a></li>
                                 <li><a id="email8" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_nvb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/nvb_1324.jpg" /></a></li>
+                                    <img border="0" height="30" src="../images/nvb_1324.jpg" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -325,16 +325,16 @@ $(function() {
                             <ul>
                                 <li><a id="email9" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
                                 <li><a id="email10" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vnbc_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/dab_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
                                 <li><a id="email11" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email12" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/shb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -350,37 +350,37 @@ $(function() {
                             <ul>
                                 <li><a id="email13" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
                                 <li><a id="email14" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=dab_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/dab_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
                                 <li><a id="email15" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email16" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=mb_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/mb_12990.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
                                 <li><a id="email17" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/shb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
                                 <li><a id="email18" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vib_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vib_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
                                 <li><a id="email19" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=acb_ck_in#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/acb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
                                 <li><a id="email20" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sb_ck_in#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/sb_12785.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/sb_12785.gif" /></a></li>
                                 <li><a id="email21" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tpb_ck_in#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tpb_1291.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tpb_1291.gif" /></a></li>
                                 <li><a id="email22" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=pgb_ck_in#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/pgb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/pgb_1299.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -396,46 +396,46 @@ $(function() {
                             <ul>
                                 <li><a id="email23" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
                                 <li><a id="email24" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=dab_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/dab_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
                                 <li><a id="email25" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email26" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=mb_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/mb_12990.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
                                 <li><a id="email27" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/shb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
                                 <li><a id="email28" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=icb_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/icb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/icb_1299.gif" /></a></li>
                                 <li><a id="email29" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=acb_atm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/acb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
                                 <li><a id="email30" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=bidv_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/bidv_127.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/bidv_127.gif" /></a></li>
                                 <li><a id="email31" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=agb_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/agb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/agb_1299.gif" /></a></li>
                                 <li><a id="email32" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=msb_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/msb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/msb_1299.gif" /></a></li>
                                 <li><a id="email33" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=scb_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/scb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/scb_1299.gif" /></a></li>
                                 <li><a id="email34" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=pgb_atm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/pgb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/pgb_1299.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -451,59 +451,59 @@ $(function() {
                             <ul>
                                 <li><a id="email35" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
                                 <li><a id="email36" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=dab_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/dab_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
                                 <li><a id="email37" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tcb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email38" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=mb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/mb_12990.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
                                 <li><a id="email39" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/shb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
                                 <li><a id="email40" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vib_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/vib_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
                                 <li><a id="email41" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=icb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/icb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/icb_1299.gif" /></a></li>
                                 <li><a id="email42" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=acb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/acb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
                                 <li><a id="email43" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=bidv_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/bidv_127.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/bidv_127.gif" /></a></li>
                                 <li><a id="email44" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=agb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/agb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/agb_1299.gif" /></a></li>
                                 <li><a id="email45" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=msb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/msb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/msb_1299.gif" /></a></li>
                                 <li><a id="email46" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/sb_12785.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/sb_12785.gif" /></a></li>
                                 <li><a id="email47" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=scb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/scb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/scb_1299.gif" /></a></li>
                                 <li><a id="email48" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tpb_ck_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/tpb_1291.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/tpb_1291.gif" /></a></li>
                                 <li><a id="email49" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=pgb_ck_tm_off#option-payment-type" 
                                         style="width: 90px;">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/pgb_1299.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/pgb_1299.gif" /></a></li>
                                 <li><a id="email50" 
                                         href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=home_tm_off#option-payment-type">
-                                    <img border="0" height="30" src="thanhtoannganluong_files/nl_cash_.gif" /></a></li>
+                                    <img border="0" height="30" src="../images/nl_cash_.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
