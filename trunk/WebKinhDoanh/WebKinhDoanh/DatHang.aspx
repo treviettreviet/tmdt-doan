@@ -217,12 +217,12 @@
                 <td></td>
                 <td>
                     <button class="ui_button" type="submit" >Thanh Toán</button>
-                    <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Gửi" />
+                    
                 <a href="#">&nbsp;Đến trang giao thanh toán Ngân Lượng &gt;&gt;</a></td>
             </tr>
             </table>
             <input type="hidden" name="template_function" value="saveCheckOut"/>     
-            </form>      
+            </form> <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Gửi" />     
         </div>
         </div>
 </div></div>
