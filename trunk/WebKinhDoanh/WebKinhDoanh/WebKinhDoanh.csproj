@@ -416,6 +416,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDonHang.cs" />
+    <Compile Include="CTaiKhoan.cs" />
     <Compile Include="DatHang.aspx.cs">
       <DependentUpon>DatHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
