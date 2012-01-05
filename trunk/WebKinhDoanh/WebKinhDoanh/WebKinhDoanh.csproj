@@ -13,6 +13,7 @@
     <RootNamespace>WebKinhDoanh</RootNamespace>
     <AssemblyName>WebKinhDoanh</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
