@@ -10,7 +10,7 @@
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
 		<form name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
-			
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 			<div id="step-flow">
 				<ul id="step-three">
 					<li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký </li>

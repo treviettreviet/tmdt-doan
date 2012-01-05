@@ -41,20 +41,18 @@
                         <th>
                             Hoá đơn/Sản phẩm:</th>
                         <td>
-                            16</td>
+                            <asp:Label id="lblMaSanPham" runat="server" Text="Label"></asp:Label>
+                            </td>
                     </tr>
-			
-			
-			
-			
 			
 			<!-- BEGIN BlockQuantity -->
 			        <tr>
                         <th>
                             Số lượng:</th>
                         <td>
-                            1
+                            
 				<!-- BEGIN BlockUpdateQuantity -->
+				            <asp:Label ID="lblSoLuong" runat="server" Text="Label"></asp:Label>
 				            <span>[<a id="update_quantity_button" 
                                 href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#"> 
                             Cập nhật </a>]</span>
@@ -69,7 +67,8 @@
                         <th>
                             Tổng thanh toán:</th>
                         <td>
-                            <span class="yell">2.700.000</span> VND
+                            &nbsp;<asp:Label ID="lblTongTien" runat="server" Text="Label"></asp:Label>
+                            VND
                         </td>
                     </tr>
                 </table>
@@ -127,7 +126,8 @@ $(function() {
                         <th>
                             Chủ tài khoản:</th>
                         <td>
-                            TRẦN THỊ NGỌC TRÂM</td>
+                            <asp:Label ID="lblTenNguoiNhan" runat="server" Text="Label"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <th>
@@ -140,19 +140,22 @@ $(function() {
                         <th>
                             Email:</th>
                         <td>
-                            chino_collection@yahoo.com</td>
+                            <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <th>
                             Điện thoại:</th>
                         <td>
-                            01684020707</td>
+                            <asp:Label ID="lblSoDienThoai" runat="server" Text="Label"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <th>
                             Địa chỉ:</th>
                         <td>
-                            116 Công Chúa Ngọc Hân-phuong 12, Quận 11, Hồ Chí Minh</td>
+                            <asp:Label ID="lblDiaChi" runat="server" Text="Label"></asp:Label>
+                        </td>
                     </tr>
                 </table>
             </div>

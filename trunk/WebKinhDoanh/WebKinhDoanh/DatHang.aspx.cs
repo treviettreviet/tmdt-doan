@@ -28,8 +28,16 @@ namespace WebKinhDoanh
             cTaiKhoan.Email = "lenhuynh3003@gmail.com";
             cTaiKhoan.DienThoai = "0984.08.00.48";
             cTaiKhoan.DiaChi = "109B, Cư Xá Đường Sắt, Lý Thái Tổ, Phường 1, Quận 3, TP Hồ Chí Minh";
-            string url = "www.google.com.vn";
-            SendInformation(url, cDonHang, cTaiKhoan);
+            string url = "http://localhost:2283/ThanhToanTrucTuyen.aspx";
+            url += "?MaSanPham="+cDonHang.MaSanPham;
+            url += "&SoLuong="+cDonHang.SoLuong;
+            url += "&TongTien="+cDonHang.TongTien;
+            url += "&TenNguoiNhan="+cTaiKhoan.TenTaiKhoan;
+            url += "&Email="+cTaiKhoan.Email;
+            url += "&DienThoai="+cTaiKhoan.DienThoai;
+            url += "&DiaChi="+cTaiKhoan.DiaChi;
+            Response.Redirect(url);
+            //SendInformation(url, cDonHang, cTaiKhoan);
         }
 
         protected void SendInformation(string url, CDonHang cDonHang, CTaiKhoan cTaiKhoan)
