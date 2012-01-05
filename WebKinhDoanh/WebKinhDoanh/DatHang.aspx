@@ -129,7 +129,7 @@
             <div style="text-align: center; display: none;" id="size"><img src="dathang_files/aochino0.jpg"></div>
         </div>       
         <div>      		
-            <form method="post">
+            <form method="get" action="" id="xxx">
             <p></p>
             <p>
                 <span class="note">Những mục có dấu (*) là bắt buộc phải nhập</span><br>
@@ -216,12 +216,12 @@
             <tr>
                 <td></td>
                 <td>
-                    <button class="ui_button" type="submit">Thanh Toán</button>
+                    <button class="ui_button" type="submit" >Thanh Toán</button>
                     <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Gửi" />
                 <a href="#">&nbsp;Đến trang giao thanh toán Ngân Lượng &gt;&gt;</a></td>
             </tr>
             </table>
-            <input type="hidden" name="template_function" value="saveCheckOut">     
+            <input type="hidden" name="template_function" value="saveCheckOut"/>     
             </form>      
         </div>
         </div>

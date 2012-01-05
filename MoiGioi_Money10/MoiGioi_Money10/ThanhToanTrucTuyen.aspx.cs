@@ -11,7 +11,13 @@ namespace MoiGioi_Money10
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblMaSanPham.Text = Request.QueryString["MaSanPham"];
+            lblSoLuong.Text = Request.QueryString["SoLuong"];
+            lblTongTien.Text = Request.QueryString["TongTien"];
+            lblTenNguoiNhan.Text = Request.QueryString["TenNguoiNhan"];
+            lblEmail.Text = Request.QueryString["Email"];
+            lblSoDienThoai.Text = Request.QueryString["DienThoai"];
+            lblDiaChi.Text = Request.QueryString["DiaChi"];
         }
     }
 }
