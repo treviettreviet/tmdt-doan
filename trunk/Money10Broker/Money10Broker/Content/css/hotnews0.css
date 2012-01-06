@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*27-05 HOT NEWS*/
+#body-top{
+	position:relative;
+    top: 0px;
+    left: 0px;
+}
+#heart-banner{
+	z-index:0;
+	}
+.news-hot{
+	float:right;
+	width:400px;
+	position:absolute;
+	top:50px;
+	right:0;
+	
+	}
+.news-hot ul.news-view{
+	width:380px;
+	float:left;
+	margin:0;
+	padding:0;height:18px;
+	overflow:hidden;
+	position:relative;
+	}
+.news-hot ul li{
+	list-style:none;
+	}
+.news-hot ul.news-view li{
+	position:absolute;
+	background:#fff;
+	display:block;
+	height:18px;
+	line-height:18px;
+	top:18px;
+	left:0px;
+	}
+.news-hot ul.news-view li.active{
+	top:0;
+	}
+.news-hot .news-view a{
+	padding-left:35px;
+	display:block;
+	color:#555;
+	float:left;
+	width:370px;
+	background:url(../images/icon-new.gif) no-repeat 0 0px;
+	}
+.news-hot .news-view a.active{
+	color:#555 !important;
+	}
+.news-hot .news-hot-date{
+	font-size:11px;
+	color:#c4c4c4;
+	margin-left:3px;
+	}
+.news-hot-box{
+	float:right;
+	margin-top:8px;
+	position:relative;
+	}
+.news-hot-box .btn-news-hot a{
+	width:20px;
+	height:17px;
+	display:block;
+	background:url(../images/icon-nex.gif) no-repeat 100% 0;
+	}
+.news-hot-box .btn-news-hot a:hover, .news-hot-box .btn-news-hot a.active{
+	background:url(../images/icon-nex.gif) no-repeat 100% -26px;
+	}
+.news-hot-box .news-hot-sub{
+	position:absolute;
+	width:370px;
+	border:1px solid #e3e3e3;
+	border-bottom:2px solid #e0e0e0;
+	margin:0;
+	top:15px;
+	right:0;
+	z-index:999999999;
+	padding:5px;
+	display:none;
+	box-shadow: 0 3px 8px #eee;
+	background:#fff url(../images/recharge-left-r1.gif) repeat-x 0 100%;
+	}
+.news-hot-box:hover .news-hot-sub{
+	display:block;
+	}
+.news-hot-box .news-hot-sub li{
+	list-style:none;
+	display:block;
+	padding:0 0 5px 12px;
+	margin-bottom:5px;
+	background:url(../images/bullit-news-hot.gif) no-repeat 0 6px;
+	border-bottom:1px dotted #e3e3e3;
+	}
+.news-hot-box .news-hot-sub li.last, .news-hot-box .news-hot-sub li:last-child{
+	border:0;
+	margin-bottom:0;
+	}
+.news-hot-box .news-hot-sub a{
+	color:#555;
+	line-height:normal;
+	}
+.news-hot a:hover, .news-hot a.active{
+	color:#ff5a00;
+	text-decoration:none;
+	}
