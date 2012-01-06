@@ -332,6 +332,7 @@
     <Compile Include="CTaiKhoan.cs" />
     <Compile Include="DangNhapThanhCong.aspx.cs">
       <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DangNhapThanhCong.aspx.designer.cs">
       <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
