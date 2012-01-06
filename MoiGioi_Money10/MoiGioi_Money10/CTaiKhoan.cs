@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebKinhDoanh
+namespace MoiGioi_Money10
 {
     public class CTaiKhoan
     {
