@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="revisit-after" content="1 days"/>
+<meta name="verify-v1" content="5aMXCOH9gNNFj+gs9RUKoOCWGV9t35FxOxCaokfoiWs="/>
+<meta name="keywords" content="mua ban, dau gia, truc tuyen"/>
+<meta name="description" content="Sàn mua bán đấu giá trực tuyến số 1 Việt Nam. Mua hàng nội địa và từ Ebay Mỹ"/>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <script type="text/javascript" src="../../Scripts/js/jquery_m.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/box_user.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/set_inpu.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/function.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/validati.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/form_che.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/vtip0000.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/update_q.js"></script>
+    <link rel="stylesheet" href="../../Content/css/styles_v.css" type="text/css" />
+    <link rel="stylesheet" href="../../Content/css/include0.css" type="text/css" />
+    <link rel="stylesheet" href="../../Content/css/nganluon.css" type="text/css" />
+    <link rel="stylesheet" href="../../Content/css/vtip0000.css" type="text/css" />
+    <link rel="shortcut icon" href="../../Content/images/nl000000.gif" />
+</head>
+<body>
+    <div id="swrapper">
+        <div id="header">
+            ﻿<div class="header-top" style="margin: 0; padding: 0;">
+                <div class="logo-nl">
+                    <a href="https://www.nganluong.vn/index.php?portal=nganluong&amp;page=home" target="_blank"
+                        class="logo-nl"></a>
+                </div>
+                <div class="label-logo">
+                    <a href="http://news.nganluong.vn/chi-tiet-3/75/429/Ket-qua-Chuong-trinh-binh-chon-Website-va-Dich-vu-TMDT-duoc-Nguoi-tieu-dung-ua-thich-nhat.html"
+                        target="_blank">
+                        <img src="../../Content/images/bannerTo.gif" border="0" alt="" />
+                    </a><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html"
+                        target="_blank">
+                        <img src="../../Content/images/bannerTp.gif" border="0" alt="" />
+                    </a>
+                </div>
+                <div class="logo-partner">
+                </div>
+                <!--<div class="clear"></div>
+	<div style="float:right;"><a style="background:url(https://www.nganluong.vn/webskins/skins/nganluong/images/icon-new-hot.gif) no-repeat left; padding-left:30px; color:#555;" href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html">Vì sao nên sử dụng NgânLượng.vn: 24 điểm khác biệt</a></div>-->
+            </div>
+        </div>
+        <div id="body">
+            <!-- start content -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <!-- end content -->
+        </div>
+        
+        <!-- Begin Footer -->
+        <div id="footer">
+            <div class="ft-t">
+                <div class="coppyright">
+                    Bản quyền © 2009-2011 NgânLượng.vn</div>
+                <div class="sloggan">
+                    Thanh toán trực tuyến An toàn - Nhanh chóng - Tiện lợi</div>
+            </div>
+            <div class="ft-c">
+                <div class="logo-bank">
+                </div>
+                <div class="logo-verisign">
+                </div>
+                <div class="ft-content">
+                    Hệ thống Thanh toán Trực tuyến trung gian kết hợp bảo vệ người mua hàng đầu Việt
+                    Nam,
+                    <br>
+                    Được bảo hộ &amp; cấp phép bởi NGÂN HÀNG NHÀ NƯỚC VIỆT NAM,<br>
+                    Ví điện tử DUY NHẤT được cộng đồng bình chọn ƯA THÍCH NHẤT 2 năm liên tiếp, danh
+                    hiệu Sao Khuê 2011.</div>
+            </div>
+            <!-- Start of Zopim Live Chat Script -->
+            <script type="text/javascript">
+                window.$zopim || (function (d, s) {
+                    var z = $zopim = function (c) { z._.push(c) }, $ =
+	z.s = d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o
+	) { z.set._.push(o) }; $.setAttribute('charset', 'utf-8'); $.async = !0; z.set.
+	_ = []; $.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://cdn') +
+	'.zopim.com/?XI9LPK7GrETMZmdXBpuvXYrDwBu6x9wa'; $.type = 'text/java' + s; z.
+	t = +new Date; z._ = []; e.parentNode.insertBefore($, e)
+                })(document, 'script')
+            </script>
+            <script type="text/javascript">
+                $zopim(function () {
+                    $zopim.livechat.setLanguage('vi');
+
+                    $zopim.livechat.bubble.setTitle('Bạn cần giúp đỡ?');
+                    $zopim.livechat.bubble.setText('Nhấn vào để được hỗ trợ trực tuyến');
+                    $zopim.livechat.setGreetings({
+                        'online': ['Click để gửi câu hỏi', 'Cảm ơn bạn đã ghé thăm. Bạn có thắc mắc hay góp ý gì về dịch của chúng tôi, hãy nhập một câu hỏi, nhân viên CSKH sẽ chat với bạn để giải đáp.'],
+                        'offline': ['Click để gửi lời nhắn', 'Cảm ơn bạn đã ghé thăm. Hiện đang ngoài giờ hành chính hoặc nhân viên CSKH đi vắng, bạn vui lòng để lại câu hỏi hoặc lời nhắn, chúng tôi sẽ trả lời qua email cho bạn trong thời gian sớm nhất.'],
+                        'away': ['Click để gửi lời nhắn', 'Cảm ơn bạn đã ghé thăm. Hiện nhân viên CSKH đi vắng, bạn vui lòng để lại câu hỏi hoặc lời nhắn, chúng tôi sẽ trả lời qua email cho bạn trong thời gian sớm nhất.']
+                    });
+                });
+            </script>
+            <!-- End of Zopim Live Chat Script -->
+            <script type="text/javascript">
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-3140255-7']);
+                _gaq.push(['_setDomainName', '.nganluong.vn']);
+                _gaq.push(['_trackPageview']);
+
+                (function () {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+        </div>
+        <!-- End Footer -->
+    </div>
+</body>
+</html>
