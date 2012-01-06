@@ -1,0 +1,5 @@
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\MoiGioi_Money10\MoiGioi_Money10\bin\MoiGioi_Money10.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\MoiGioi_Money10\MoiGioi_Money10\bin\MoiGioi_Money10.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\MoiGioi_Money10.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\MoiGioi_Money10\MoiGioi_Money10\obj\Debug\MoiGioi_Money10.pdb
