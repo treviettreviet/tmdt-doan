@@ -63,6 +63,7 @@
     <Content Include="css\styles.css" />
     <Content Include="css\styles_v.css" />
     <Content Include="css\vtip0000.css" />
+    <Content Include="DangNhapThanhCong.aspx" />
     <Content Include="GetData.aspx" />
     <Content Include="images\acb_1299.gif" />
     <Content Include="images\agb_1299.gif" />
@@ -329,6 +330,12 @@
   <ItemGroup>
     <Compile Include="CDonHang.cs" />
     <Compile Include="CTaiKhoan.cs" />
+    <Compile Include="DangNhapThanhCong.aspx.cs">
+      <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhapThanhCong.aspx.designer.cs">
+      <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GetData.aspx.cs">
       <DependentUpon>GetData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
