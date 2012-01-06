@@ -5,7 +5,7 @@
     ThanhToanTrucTuyen
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div _designerregion="0">
+    <div>
         <div class="header-bottom">
             <div class="hb-l">
             </div>
@@ -493,6 +493,7 @@
                         <input name="_token_form" type="hidden" value="3c876ba6934ed87724b5daaf2ca9678c" />
                         <div class="message-box">
                         </div>
+                        <%using (Html.BeginForm("ThanhToanTrucTuyen", "Public", FormMethod.Post)){ %>
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <th>
@@ -535,7 +536,8 @@
                                 </td>
                             </tr>
                         </table>
-                        <script language="javascript">                            setFormCheck();</script>
+                        <%} %>
+                        <script type="text/javascript" language="javascript">setFormCheck();</script>
                     </div>
                 </div>
             </div>

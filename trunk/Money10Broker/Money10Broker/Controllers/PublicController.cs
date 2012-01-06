@@ -20,5 +20,11 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+
+        public ActionResult ThanhToanTrucTuyen(string email, string password)
+        {
+            // Xử lý code tại đây.
+            return View();
+        }
     }
 }
