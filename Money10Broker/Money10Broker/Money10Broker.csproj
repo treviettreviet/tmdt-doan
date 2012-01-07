@@ -339,8 +339,12 @@
     <Content Include="Scripts\js\vtip0000.js" />
     <Content Include="Scripts\js\withdraw.js" />
     <Content Include="Views\Admin\Default.aspx" />
-    <Content Include="Views\Public\Default.aspx" />
+    <Content Include="Views\Public\ChonDangKy.aspx" />
+    <Content Include="Views\Public\DangKyCaNhan.aspx" />
+    <Content Include="Views\Public\DangNhapThanhCong.aspx" />
+    <Content Include="Views\Public\DangNhapThatBai.aspx" />
     <Content Include="Views\Public\ThanhToanTrucTuyen.aspx" />
+    <Content Include="Views\Public\TrangChu.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -353,6 +357,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Shared\SiteThanhToan.Master" />
+    <Folder Include="Views\Public\UserControl\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\MoiGioi.edmx">
@@ -360,9 +365,18 @@
       <LastGenOutput>MoiGioi.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
+
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SiteTaiKhoan.Master" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
