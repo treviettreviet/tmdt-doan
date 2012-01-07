@@ -1,0 +1,5 @@
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Banking\Money10Banking\bin\Money10Banking.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Banking\Money10Banking\bin\Money10Banking.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Banking\Money10Banking\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Banking\Money10Banking\obj\Debug\Money10Banking.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Banking\Money10Banking\obj\Debug\Money10Banking.pdb
