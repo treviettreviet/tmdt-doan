@@ -126,18 +126,18 @@ namespace WSWorkFlow
 
         private int WriteTransaction(The sendCard, The receiveCard, decimal amount)
         {
-            LichSuGiaoDich logTrans = new LichSuGiaoDich();
-            string maHienTai = LayMaCuoiCungCuaBangBatKy();
-            string ID = TaoMaTangTuDong(maHienTai, 2, "GD");
-            logTrans.MaLichSuGiaoDich = "GD001";
-            logTrans.MaThe = sendCard.MaThe;
+            //LichSuGiaoDich logTrans = new LichSuGiaoDich();
+            //string maHienTai = LayMaCuoiCungCuaBangBatKy();
+            //string ID = TaoMaTangTuDong(maHienTai, 2, "GD");
+            //logTrans.MaLichSuGiaoDich = "GD001";
+            //logTrans.MaThe = sendCard.MaThe;
+            ////logTrans.SoTheNhan = receiveCard.MaThe;
             //logTrans.SoTheNhan = receiveCard.MaThe;
-            logTrans.SoTheNhan = receiveCard.MaThe;
-            logTrans.SoTienGiaoDich = amount;
-            logTrans.MaLoaiGiaoDich = "LGD003";
-            logTrans.NgayGiaoDich = DateTime.Now;
-            dbNganHang.LichSuGiaoDiches.InsertOnSubmit(logTrans);
-            dbNganHang.SubmitChanges();
+            //logTrans.SoTienGiaoDich = amount;
+            //logTrans.MaLoaiGiaoDich = "LGD003";
+            //logTrans.NgayGiaoDich = DateTime.Now;
+            //dbNganHang.LichSuGiaoDiches.InsertOnSubmit(logTrans);
+            //dbNganHang.SubmitChanges();
 
             return 1;
         }
