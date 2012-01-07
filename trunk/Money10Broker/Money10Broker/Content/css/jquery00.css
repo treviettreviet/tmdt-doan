@@ -13,7 +13,7 @@
 	width: 43px;
 	height: 11px;
 	position: absolute;
-	background-image: url(../images/wait0000.gif);
+	background-image: url(../../Content/images/wait0000.gif);
 }
 .cluetip-arrows {
 	position: absolute;
@@ -50,7 +50,7 @@
 	position:relative;
 }
 .cluetip-default h3#cluetip-title a, .cluetip-rounded h3#cluetip-title a, .cluetip-jtip h3#cluetip-title a {
-	background: url(../images/cancel.png) no-repeat left 0;
+	background: url(../../Content/images/cancel.png) no-repeat left 0;
 	height:12px;
 	width:12px;
 	position:absolute;
@@ -60,7 +60,7 @@
 	outline:none;
 }
 .cluetip-default h3#cluetip-title a:hover, .cluetip-rounded h3#cluetip-title a:hover, .cluetip-jtip h3#cluetip-title a:hover {
-	background: url(../images/cancel-hover.png) no-repeat left 0;
+	background: url(../../Content/images/cancel-hover.png) no-repeat left 0;
 	height:16px;
 	width:16px;
 	right:-2px;
@@ -89,16 +89,16 @@
 /* default arrows */
 
 .clue-right-default .cluetip-arrows, .clue-right-rounded .cluetip-arrows, .clue-right-jtip .cluetip-arrows {
-	background-image: url(../images/darrowleft.gif);
+	background-image: url(../../Content/images/darrowleft.gif);
 	left:-7px;
 }
 .clue-left-default .cluetip-arrows, .clue-left-rounded .cluetip-arrows, .clue-left-jtip .cluetip-arrows {
-	background-image: url(../images/darrowright.gif);
+	background-image: url(../../Content/images/darrowright.gif);
 	left: 98.5%;
 	margin-right: -11px;
 }
 .clue-bottom-default .cluetip-arrows, .clue-bottom-rounded .cluetip-arrows, .clue-bottom-jtip .cluetip-arrows {
-	background-image: url(../images/darrowdown.gif);
+	background-image: url(../../Content/images/darrowdown.gif);
 	bottom: 100%;
 	left: 50%;
 	margin-left: -11px;
@@ -106,7 +106,7 @@
 	width: 22px;
 }
 .clue-top-default .cluetip-arrows, .clue-top-rounded .cluetip-arrows, .clue-top-jtip .cluetip-arrows {
-	background-image: url(../images/darrowup.gif);
+	background-image: url(../../Content/images/darrowup.gif);
 	top: -10px;
 	left: 50%;
 	margin-left: -11px;

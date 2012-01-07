@@ -37,12 +37,12 @@
 	overflow:hidden;
 	text-align:center;
 	padding:5px 10px 0 5px;
-	background:url(../images/bg-logo-.gif) no-repeat 50% 50%;
+	background:url(../../Content/images/bg-logo-.gif) no-repeat 50% 50%;
 	}
 .deposit-list-row h3{
 	font-size:12px;
 	font-weight:normal;
-	background:url(../images/bg-title.gif) repeat-x 0 50%;
+	background:url(../../Content/images/bg-title.gif) repeat-x 0 50%;
 	}
 .deposit-list-row h3 a{
 	background:#fff;
@@ -58,10 +58,10 @@
 	color:#777;
 	padding-left:15px;
 	text-decoration:underline;
-	background:url(../images/toggle_p.png) no-repeat -2px 1px;
+	background:url(../../Content/images/toggle_p.png) no-repeat -2px 1px;
 	}
 .deposit-list-row h3 a.active .deposit-step{
-	background:url(../images/blue_col.png) no-repeat -2px 0;
+	background:url(../../Content/images/blue_col.png) no-repeat -2px 0;
 	}
 .deposit-list-row h3 .deposit-charge{
 	color:#ff5a00;
@@ -87,6 +87,6 @@
 	width:400px;
 	margin-top:-10px;
 	_margin-top:-5px;
-	background:url(../images/vcb-tien-trieu.png) no-repeat 0 0;
-	*background:url(../images/vcb-tien-trieu.jpg) no-repeat 0 0;
+	background:url(../../Content/images/vcb-tien-trieu.png) no-repeat 0 0;
+	*background:url(../../Content/images/vcb-tien-trieu.jpg) no-repeat 0 0;
 	}

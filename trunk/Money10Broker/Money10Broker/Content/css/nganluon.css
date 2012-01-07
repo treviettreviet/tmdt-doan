@@ -13,18 +13,18 @@
 	/*color:#B2B2B2;*/
 }
 .field-success {
-	background:url(../images/icon-note-content-success.jpg) no-repeat 0px 2px;
+	background:url(../../Content/images/icon-note-content-success.jpg) no-repeat 0px 2px;
 	padding-left:18px;
 	color:#339900;
 }
 .field-exist{
-	background:url(../images/step-bulit-active.gif) no-repeat 0px 5px;
+	background:url(../../Content/images/step-bulit-active.gif) no-repeat 0px 5px;
 	padding-left:18px;
 	color:#FF0000;
 	display:none;
 }
 .field-error {
-	background:url(../images/error_small.png) no-repeat 0px 4px;
+	background:url(../../Content/images/error_small.png) no-repeat 0px 4px;
 	padding-left:18px;
 	color:#FF5A00;
 	display:none;

@@ -45,7 +45,7 @@
 	color:#555;
 	float:left;
 	width:370px;
-	background:url(../images/icon-ney.gif) no-repeat 0 0px;
+	background:url(../../Content/images/icon-ney.gif) no-repeat 0 0px;
 	}
 .news-hot .news-view a.active{
 	color:#555 !important;
@@ -64,10 +64,10 @@
 	width:20px;
 	height:17px;
 	display:block;
-	background:url(../images/icon-nez.gif) no-repeat 100% 0;
+	background:url(../../Content/images/icon-nez.gif) no-repeat 100% 0;
 	}
 .news-hot-box .btn-news-hot a:hover, .news-hot-box .btn-news-hot a.active{
-	background:url(../images/icon-nez.gif) no-repeat 100% -26px;
+	background:url(../../Content/images/icon-nez.gif) no-repeat 100% -26px;
 	}
 .news-hot-box .news-hot-sub{
 	position:absolute;
@@ -81,7 +81,7 @@
 	padding:5px;
 	display:none;
 	box-shadow: 0 3px 8px #eee;
-	background:#fff url(../images/recharge-left-r1.gif) repeat-x 0 100%;
+	background:#fff url(../../Content/images/recharge-left-r1.gif) repeat-x 0 100%;
 	}
 .news-hot-box:hover .news-hot-sub{
 	display:block;
@@ -91,7 +91,7 @@
 	display:block;
 	padding:0 0 5px 12px;
 	margin-bottom:5px;
-	background:url(../images/bullit-news-hot.gif) no-repeat 0 6px;
+	background:url(../../Content/images/bullit-news-hot.gif) no-repeat 0 6px;
 	border-bottom:1px dotted #e3e3e3;
 	}
 .news-hot-box .news-hot-sub li.last, .news-hot-box .news-hot-sub li:last-child{
