@@ -3,3 +3,8 @@ F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Bank\Money10Bank\bin\Money10Bank
 F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Bank\Money10Bank\obj\Debug\ResolveAssemblyReference.cache
 F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Bank\Money10Bank\obj\Debug\Money10Bank.dll
 F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Bank\Money10Bank\obj\Debug\Money10Bank.pdb
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10Bank\Money10Bank\bin\Money10Bank.dll
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10Bank\Money10Bank\bin\Money10Bank.pdb
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10Bank\Money10Bank\obj\Debug\ResolveAssemblyReference.cache
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10Bank\Money10Bank\obj\Debug\Money10Bank.dll
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10Bank\Money10Bank\obj\Debug\Money10Bank.pdb
