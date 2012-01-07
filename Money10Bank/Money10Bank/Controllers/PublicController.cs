@@ -24,5 +24,9 @@ namespace Money10Bank.Controllers
         {
             return View();
         }
+        public ActionResult DangKy()
+        {
+            return View();
+        }
     }
 }
