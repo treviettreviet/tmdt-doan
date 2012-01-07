@@ -17,7 +17,11 @@ namespace WSWorkFlow
     public class wsTransfer : System.Web.Services.WebService
     {
         //private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
+
+        //private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
+
         private dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
+
         
         // Gọi WS của Thầy Minh
         string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
@@ -61,11 +65,12 @@ namespace WSWorkFlow
 
 
                 //Kiểm tra thẻ gửi
-                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, ccsendcurenum, "Nguyen Van A", sendCard.NgayMoThe, sendCard.NgayHetHan });
+                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, ccsendcurenum, "Huynh Tan Len", sendCard.NgayMoThe, sendCard.NgayHetHan });
 
                 if (iSendCardState == -1)
+                {
                     iSendCardState = 0;
-
+                }
                 switch (iSendCardState)
                 {
                     case -1: //Invalid SID
@@ -80,12 +85,16 @@ namespace WSWorkFlow
                         if (sendCard.SoDu > dSoDu)
                         {
                             //Kiểm tra thẻ nhận
-                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Nguyen Van B", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            int iReceiveCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Le Ngoc Tin", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            if (iReceiveCardState == -1)
+                            {
+                                iReceiveCardState = 0;
+                            }
                             if (iReceiveCardState == 0)
                             {
-                                sendCard.SoDu -= dSoDu;
-                                receiveCard.SoDu += dSoDu;
-                                dbNganHang.SubmitChanges();
+                                //sendCard.SoDu -= dSoDu;
+                                //receiveCard.SoDu += dSoDu;
+                                //dbNganHang.SubmitChanges();
 
                                 WriteTransaction(sendCard, receiveCard, amount);
                             }
@@ -118,18 +127,55 @@ namespace WSWorkFlow
         private int WriteTransaction(The sendCard, The receiveCard, decimal amount)
         {
             LichSuGiaoDich logTrans = new LichSuGiaoDich();
-
+            string maHienTai = LayMaCuoiCungCuaBangBatKy();
+            string ID = TaoMaTangTuDong(maHienTai, 2, "GD");
+            logTrans.MaLichSuGiaoDich = "GD001";
             logTrans.MaThe = sendCard.MaThe;
             //logTrans.SoTheNhan = receiveCard.MaThe;
-            //logTrans.SoTheNhan = receiveCard.MaThe;
+            logTrans.SoTheNhan = receiveCard.MaThe;
             logTrans.SoTienGiaoDich = amount;
             logTrans.MaLoaiGiaoDich = "LGD003";
             logTrans.NgayGiaoDich = DateTime.Now;
-
             dbNganHang.LichSuGiaoDiches.InsertOnSubmit(logTrans);
+            dbNganHang.SubmitChanges();
 
             return 1;
         }
+
+        private string LayMaCuoiCungCuaBangBatKy()
+        {
+            string maxID = (from row in dbNganHang.LichSuGiaoDiches select row.MaLichSuGiaoDich).Max();
+            return maxID;
+        }
+
+
+
+        /// <summary>
+        /// Lấy mã tăng tự động, chỉ cần truyền vào Refix
+        /// </summary>
+        /// <param name="maHienTai"></param>
+        /// <param name="vitri"></param>
+        /// <param name="prefix"></param>
+        /// <returns></returns>
+        #region Len - Tạo Mã tăng tự động
+        private string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        {
+            
+            string maTuDong = prefix;
+            try
+            {
+                int intMa = 0;
+                intMa = int.Parse(maHienTai.Substring(vitri));
+                maTuDong = maTuDong + (intMa + 1).ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
+            }
+            return maTuDong;
+        }
+        #endregion
+
 
         /// <summary>
         /// Chuyển khoảng giữa các tài khoảng khác ngân hàng
