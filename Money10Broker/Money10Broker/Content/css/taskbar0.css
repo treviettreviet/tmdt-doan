@@ -15,7 +15,7 @@
 	bottom:auto;
 	z-index:9999999;
 	border-bottom:1px solid #fff;
-	background:url(../images/bg-taskb.gif) repeat-x 0 0;
+	background:url(../../Content/images/bg-taskb.gif) repeat-x 0 0;
 	}
 .taskbar{
 	width:940px;
@@ -51,14 +51,14 @@
 .taskbar-sort li a.active, .taskbar-sort li a:hover{
 	color:#444;
 	text-decoration:none;
-	background:url(../images/bg-taskc.gif) no-repeat 0 0;
+	background:url(../../Content/images/bg-taskc.gif) no-repeat 0 0;
 	}
 .taskbar-sort li a.active{
 	color:#333;
 	font-weight:bold;
 	}
 .taskbar-sort li a.active span, .taskbar-sort li a:hover span{
-	background:url(../images/bg-taskc.gif) no-repeat 100% 0;
+	background:url(../../Content/images/bg-taskc.gif) no-repeat 100% 0;
 	}
 .taskbar-support a.bt-support{
 	height:23px;
@@ -66,10 +66,10 @@
 	display:block;
 	float:right;
 	text-indent:-3000px;
-	background:url(../images/bg-btn-s.gif) repeat-x 0 0;
+	background:url(../../Content/images/bg-btn-s.gif) repeat-x 0 0;
 	}
 .taskbar-support a.bt-support:hover, .taskbar-support a.bt-support.active{
-	background:url(../images/bg-btn-s.gif) repeat-x 0 -23px;
+	background:url(../../Content/images/bg-btn-s.gif) repeat-x 0 -23px;
 	height:28px;
 	}
 	
@@ -87,19 +87,19 @@
 	width:16px;
 	}
 .taskbar-sort li a span.icon-tasbar-nl{
-	background:url(../images/icon-nl-taskbar.gif) no-repeat 0 0;
+	background:url(../../Content/images/icon-nl-taskbar.gif) no-repeat 0 0;
 	}
 .taskbar-sort li a.active .icon-tasbar-nl, .taskbar-sort li a:hover .icon-tasbar-nl{
-	background:url(../images/icon-nl-.gif) no-repeat 0 0;
+	background:url(../../Content/images/icon-nl-.gif) no-repeat 0 0;
 	}
 .taskbar-sort li a .icon-tasbar-nl{
-	background:url(../images/icon-nl-.gif) no-repeat 0 0;
+	background:url(../../Content/images/icon-nl-.gif) no-repeat 0 0;
 	}
 .taskbar-sort li a .icon-tasbar-pp{
-	background:url(../images/icon-pp0.png) no-repeat 0 -22px;
+	background:url(../../Content/images/icon-pp0.png) no-repeat 0 -22px;
 	}
 .taskbar-sort li a.active .icon-tasbar-pp, .taskbar-sort li a:hover .icon-tasbar-pp{
-	background:url(../images/icon-pp0.png) no-repeat 0 0;
+	background:url(../../Content/images/icon-pp0.png) no-repeat 0 0;
 	}
 
 #support{
@@ -111,16 +111,16 @@
 	}
 
 .support-content-email{
-	background:url(../images/icon-mail.gif) no-repeat 0 -1px;
+	background:url(../../Content/images/icon-mail.gif) no-repeat 0 -1px;
 	padding-left:24px;
 	}
 .support-content-mobile{
-	background:url(../images/phone-icon.gif) no-repeat 0 0px;
+	background:url(../../Content/images/phone-icon.gif) no-repeat 0 0px;
 	padding-left:24px;
 	height:16px;
 	}
 .support-content-hotline{
-	background:url(../images/hotline.gif) no-repeat 0 -2px;
+	background:url(../../Content/images/hotline.gif) no-repeat 0 -2px;
 	padding-left:18px;
 	height:16px;
 	}
@@ -134,14 +134,14 @@
 	margin-top:5px;
 	display:block;
 	padding-left:20px;
-	background:url(../images/icon-bt-help.gif) no-repeat 0 2px;
+	background:url(../../Content/images/icon-bt-help.gif) no-repeat 0 2px;
 	}
 #support-online a.bt-support:hover{
 	color:#ff5a00;
 	text-decoration:none;
 	}
 .support-content{
-	background:#fdfdfd url(../images/bg-support-content.gif) repeat-x 0 100%;
+	background:#fdfdfd url(../../Content/images/bg-support-content.gif) repeat-x 0 100%;
 	width:560px;
 	padding:5px;
 	margin:28px 0 0 -375px;
@@ -155,7 +155,7 @@
 	position:absolute;
 	}
 .cl-box{
-	background:url(../images/icon-clear-overview.gif) no-repeat 0 0;
+	background:url(../../Content/images/icon-clear-overview.gif) no-repeat 0 0;
 	height:16px;
 	width:16px;
 	float:right;
