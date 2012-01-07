@@ -89,7 +89,7 @@
       <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
  <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
  				<div style="margin-bottom: 15px;">
-	 	<a href="https://www.baokim.vn/accounts/login" title="Đăng nhập">Đăng nhập</a><span>|</span>
+	 	<a href="Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span>
 	 	<a href="Public/DangKy" title="Đăng ký">Đăng ký</a><span>|</span> 
 		
 		<a href="https://www.baokim.vn/contact" title="Liên hệ">Liên hệ</a>			</div>
