@@ -31,7 +31,27 @@ namespace Money10Broker.Controllers
 
             return View();
         }
-
+<<<<<<< .mine        public ActionResult TrangChu()
+        {
+            return View();
+        }
+        public ActionResult DangNhapThanhCong()
+        {
+            return View();
+        }
+        public ActionResult DangNhapThatBai()
+        {
+            return View();
+        }
+        public ActionResult ChonDangKy()
+        {
+            return View();
+        }
+        public ActionResult DangKyCaNhan()
+        {
+            return View();
+        }
+=======
         public ActionResult DangKyCaNhan()
         {
             return View();
@@ -96,5 +116,5 @@ namespace Money10Broker.Controllers
 
         }
 
-    }
+>>>>>>> .theirs    }
 }
