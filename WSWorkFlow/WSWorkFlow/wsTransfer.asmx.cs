@@ -92,11 +92,11 @@ namespace WSWorkFlow
                             }
                             if (iReceiveCardState == 0)
                             {
-                                //sendCard.SoDu -= dSoDu;
-                                //receiveCard.SoDu += dSoDu;
-                                //dbNganHang.SubmitChanges();
+                                sendCard.SoDu -= dSoDu;
+                                receiveCard.SoDu += dSoDu;
+                                dbNganHang.SubmitChanges();
 
-                                WriteTransaction(sendCard, receiveCard, amount);
+                                //WriteTransaction(sendCard, receiveCard, amount);
                             }
                             else
                                 return 1;
