@@ -17,7 +17,7 @@ namespace Money10Broker
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                "TrangChu", // Route name
+                "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Public", action = "TrangChu", id = UrlParameter.Optional } // Parameter defaults
             );

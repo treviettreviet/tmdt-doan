@@ -493,7 +493,7 @@
                         <input name="_token_form" type="hidden" value="3c876ba6934ed87724b5daaf2ca9678c" />
                         <div class="message-box">
                         </div>
-                        <%using (Html.BeginForm("ThanhToanTrucTuyen", "Public", FormMethod.Post)){ %>
+                        <%using (Html.BeginForm("XuLyDangNhapThanhToanTrucTuyen", "Public", FormMethod.Post)){ %>
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <th>
