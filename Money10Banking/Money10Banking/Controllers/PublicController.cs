@@ -23,5 +23,9 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
     }
 }
