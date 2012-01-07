@@ -22,19 +22,21 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult ThanhToanTrucTuyen(string email, string password)
-        {
-            // Xử lý code tại đây.
-            TaiKhoan acc = Login(email, password, 1000);
-            if (acc == null)
-                Redirect("http://google.com");
+        //public ActionResult ThanhToanTrucTuyen(string email, string password)
+        //{
+        //    //// Xử lý code tại đây.
+        //    //TaiKhoan acc = Login(email, password, 1000);
+        //    //if (acc == null)
+        //    //    Redirect("http://google.com");
 
-            return View();
-        }
-      public ActionResult TrangChu()
+        //    return View();
+        //}
+        
+        public ActionResult TrangChu()
         {
             return View();
         }
+
         public ActionResult DangNhapThanhCong()
         {
             return View();
@@ -68,6 +70,7 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+
         MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
 
 
