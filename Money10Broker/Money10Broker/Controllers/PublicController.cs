@@ -32,6 +32,10 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+        public ActionResult DangKyCaNhan()
+        {
+            return View();
+        }
 
         MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
 
@@ -91,5 +95,6 @@ namespace Money10Broker.Controllers
             }
 
         }
+
     }
 }
