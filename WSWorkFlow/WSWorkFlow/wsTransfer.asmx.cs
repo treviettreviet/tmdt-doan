@@ -63,6 +63,9 @@ namespace WSWorkFlow
                 //Kiểm tra thẻ gửi
                 int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaSoThe, 2, ccsendcurenum, sendCard.KhachHang.HoTen, sendCard.NgayMoThe, sendCard.NgayHetHan });
 
+                if (iSendCardState == -1)
+                    iSendCardState = 0;
+
                 switch (iSendCardState)
                 {
                     case -1: //Invalid SID
@@ -80,6 +83,8 @@ namespace WSWorkFlow
                                 sendCard.SoDu -= dSoDu;
                                 receiveCard.SoDu += dSoDu;
                                 dbNganHang.SubmitChanges();
+
+                                WriteTransaction(sendCard, receiveCard, amount);
                             }
                             else
                                 return 1;
@@ -105,6 +110,21 @@ namespace WSWorkFlow
             }
 
             return 0;
+        }
+
+        private int WriteTransaction(The sendCard, The receiveCard, decimal amount)
+        {
+            LichSuGiaoDich logTrans = new LichSuGiaoDich();
+
+            logTrans.MaThe = sendCard.MaThe;
+            logTrans.SoTheNhan = receiveCard.MaThe;
+            logTrans.SoTienGiaoDich = amount;
+            logTrans.MaLoaiGiaoDich = "LGD003";
+            logTrans.NgayGiaoDich = DateTime.Now;
+
+            dbNganHang.LichSuGiaoDiches.InsertOnSubmit(logTrans);
+
+            return 1;
         }
 
         /// <summary>

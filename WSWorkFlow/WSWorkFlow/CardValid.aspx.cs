@@ -18,8 +18,10 @@ namespace WSWorkFlow
             string MethodName = "Authenticate";
             string BankId = "OCBCBank";
             string Password = "X2ugS2E37S";
-            string sid = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] {BankId, Password}).ToString();
-            
+            //string sid = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] {BankId, Password}).ToString();
+            EMVServices.EMVServices ws = new EMVServices.EMVServices();
+            string sid = ws.Authenticate(BankId, Password);
+            //ws.AuthenticateAsync(BankId, Password);
             string CardId = "5119318702648034";
             int IssuerID = 0;
             string CardSecureNumber = "31A2A"; 
@@ -34,6 +36,8 @@ namespace WSWorkFlow
             string MethodName3 = "CardValid3";
             //object ob = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName2, new object[] { sid, CardId, IssuerID, CardSecureNumber, CardHolderName, ValidFromDate, ValidToDate}).ToString();
             object ob = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName3, new object[] { sid, CardId, IssuerID, CardHolderName }).ToString();
+            
+            int state = ws.CardValid1(sid, CardId, IssuerID, CardSecureNumber, CardHolderName, ValidFromDate, ValidToDate);
             //int result = (int)ob;
             Response.Write("Ket qua: "+ ob.ToString());
 
