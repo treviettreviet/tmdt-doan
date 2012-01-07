@@ -16,7 +16,8 @@ namespace WSWorkFlow
     // [System.Web.Script.Services.ScriptService]
     public class wsTransfer : System.Web.Services.WebService
     {
-        private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
+        //private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
+        private dbBankingDataContext dbNganHang = new dbBankingDataContext();
         
         // Gọi WS của Thầy Minh
         string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
@@ -33,7 +34,6 @@ namespace WSWorkFlow
         [WebMethod]
 
         public int TransferMoneySameBank(string sid, string ccsend, string ccreceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
-
         {
             System.Net.ServicePointManager.Expect100Continue = false; 
             //decimal dSoDu = (decimal)amount;
@@ -50,18 +50,18 @@ namespace WSWorkFlow
                 //Lấy dữ liệu thẻ có trong ngân hàng
 
                 //Thẻ gửi
-                var sendCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccsend) select row).First();
+                var sendCard = (from row in dbNganHang.Thes where row.SoThe.Equals(ccsend) select row).First();
                 
                 //Kiểm tra có thẻ trong ngân hàng không
                 if (sendCard == null)
                     return 1;
 
                 //Thẻ nhận
-                var receiveCard = (from row in dbNganHang.Thes where row.MaSoThe.Equals(ccreceive) select row).First();
+                var receiveCard = (from row in dbNganHang.Thes where row.SoThe.Equals(ccreceive) select row).First();
 
 
                 //Kiểm tra thẻ gửi
-                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaSoThe, 2, ccsendcurenum, sendCard.KhachHang.HoTen, sendCard.NgayMoThe, sendCard.NgayHetHan });
+                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, ccsendcurenum, "Nguyen Van A", sendCard.NgayMoThe, sendCard.NgayHetHan });
 
                 if (iSendCardState == -1)
                     iSendCardState = 0;
@@ -71,13 +71,16 @@ namespace WSWorkFlow
                     case -1: //Invalid SID
                         return 2;
                     case 0: //Card valid 
-                        KhachHang cusSend = sendCard.KhachHang;
-                        KhachHang cusReceive = receiveCard.KhachHang;
+                        //KhachHang cusSend = sendCard..KhachHang;
+                        //KhachHang cusReceive = receiveCard.KhachHang;
+
+                        TaiKhoan cusSend = sendCard.TaiKhoan;
+                        TaiKhoan cusReceive = receiveCard.TaiKhoan;
 
                         if (sendCard.SoDu > dSoDu)
                         {
                             //Kiểm tra thẻ nhận
-                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.MaSoThe, 1, ccreceivesecurenum, receiveCard.KhachHang.HoTen, receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            int iReceiveCardState = (int)(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Nguyen Van B", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
                             if (iReceiveCardState == 0)
                             {
                                 sendCard.SoDu -= dSoDu;
@@ -117,7 +120,8 @@ namespace WSWorkFlow
             LichSuGiaoDich logTrans = new LichSuGiaoDich();
 
             logTrans.MaThe = sendCard.MaThe;
-            logTrans.SoTheNhan = receiveCard.MaThe;
+            //logTrans.SoTheNhan = receiveCard.MaThe;
+            //logTrans.SoTheNhan = receiveCard.MaThe;
             logTrans.SoTienGiaoDich = amount;
             logTrans.MaLoaiGiaoDich = "LGD003";
             logTrans.NgayGiaoDich = DateTime.Now;
