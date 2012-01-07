@@ -74,7 +74,7 @@ namespace Money10Broker.Controllers
         MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
 
 
-        private TaiKhoan Login(string email, string password, decimal amount)
+        private ActionResult Login(string email, string password, decimal amount)
         {
             int state = UserValidation(email, password);
             TaiKhoan user = null;
@@ -82,20 +82,20 @@ namespace Money10Broker.Controllers
             if (state == 0)
             {
                 user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-
+                Session["user"] = user;
                 if (CheckAccount(amount, (decimal)user.SoDu) == 1)
-                    throw new Exception("Số tiền trong tài khoản không đủ thực hiện giao dịch !");
+                    RedirectToAction("KetQuaGiaoDich", "Không đủ tiền trong tài khoảng");
             }
             else if (state == 1)
             {
-                throw new Exception("Sai password !");
+                RedirectToAction("DangNhapThatBai", "Sai password !");
             }
             else
             {
-                throw new Exception("E-mail chưa đăng ký !");
+                RedirectToAction("DangNhapThatBai", "E-mail chưa đăng ký !");
             }
 
-            return user;
+            return View();
         }
 
         private int CheckAccount(decimal amount, decimal balance)
