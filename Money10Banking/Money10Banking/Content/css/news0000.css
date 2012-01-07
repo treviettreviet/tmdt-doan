@@ -1,0 +1,220 @@
+/*CSS by QuyNM*/
+
+/*News Style*/
+
+#Main .main-news {
+	width:570px;
+	padding-top:18px;
+	
+}
+
+#Main .right-container-news {
+	width:198px;
+	padding-top:18px;
+	
+}
+
+.main-news .breadcrumb ul
+{
+	list-style-type:none;
+}
+.main-news .breadcrumb ul, .main-news .breadcrumb ul li
+{
+	margin:0px;
+	padding:0px;
+}
+.main-news .breadcrumb ul li
+{
+	float:left;
+	background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/arrow3.gif) no-repeat scroll left center transparent;
+	padding-right:10px;
+	padding-left:15px;
+}
+.main-news .breadcrumb ul li.first
+{
+	background:none;
+	padding-left:0px;
+}
+.main-news .breadcrumb ul li a
+{
+	color:#6a6a6a;
+	font-weight:bold;
+}
+
+.main-news .newslist
+{
+	padding-top:5px;
+}
+
+.main-news .newslist img
+{
+	border:solid 1px #cecece;
+	padding:1px;
+	margin-right:10px;
+}
+.main-news .newslist .info
+{
+
+}
+.main-news .newslist p.title
+{
+	margin-bottom:5px;
+}
+.main-news .newslist .title a
+{
+	font-size:13px;
+	color:#0168b0;
+	font-weight:bold;
+}
+.main-news .newslist .date
+{
+	color:#717171;
+	display:block;
+}
+.main-news .newslist-item
+{
+	border-top:dotted 1px #414141;
+	padding-top:10px;
+	padding-bottom:3px;
+}
+.main-news .newslist-item.first
+{
+	border-top:none;
+}
+.news-hot {
+	width:195px;
+	background:#FFF;
+	border:solid 1px #cfcfcf;
+}
+.news-hot .news-hot-container {
+	background:#e4f1fc;
+	margin:1px;
+}
+.news-hot ul {
+	list-style-type: none;
+}
+.news-hot ul, .news-hot ul li {
+	margin:0px;
+	padding:0px;
+}
+.news-hot .news-hot-title
+{
+	font-size:14px;
+	color:#262626;
+	border-bottom:dotted 1px #82a5b3;
+	margin:0px 9px;
+	padding:8px 0px 8px 10px;
+}
+.news-hot ul li
+{
+	background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/arrow2.gif) no-repeat scroll left transparent;
+	background-position: 0px 10px;
+	padding:5px 0px 5px 12px;
+	margin:0 9px;
+	border-top:dotted 1px #FFFFFF;
+}
+.news-hot ul li.first
+{
+	border-top:none;
+}
+.news-hot ul li a
+{
+	color:#424141;
+}
+.news-hot ul li a:hover
+{
+	color:#6eb400;
+}
+
+.main-news .line-spa
+{
+	background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/line1.gif) no-repeat scroll right transparent;
+	height:3px;
+	padding-top:10px;
+}
+.main-news .paging
+{
+	padding-top:5px;
+}
+.main-news .paging ul
+{
+	list-style-type:none;
+}
+.main-news .paging ul, .main-news .paging ul li
+{
+	margin:0px;
+	padding:0px;
+}
+.main-news .paging ul li
+{
+	float:left;
+	margin:0 3px;
+	border: solid 1px #ada79b;
+}
+.main-news .paging ul li a
+{
+	display:block;
+	color:#333333;
+	text-decoration:none;
+	font-size:11px;
+	padding:0 4px;
+}
+.main-news .paging ul li.selected a
+{
+	font-weight:bold;
+	color:#0168b0;
+}
+
+.main-news .paging ul li.selected a:hover
+{
+	font-weight:bold;
+	color:#0168b0;
+}
+/*End News Style*/
+
+/*News Detail Style*/
+
+.main-news .newsdetail
+{
+	padding-top:10px;
+}
+.main-news .newsdetail h2.newsdetail-title
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#1a6d9f;
+	margin-bottom:0px;
+}
+.main-news .newsdetail .newsdetail-date
+{
+	color:#797979;
+}
+.main-news .newsdetail .newsdetail-content
+{
+	padding-top:10px;
+	overflow:hidden;
+}
+.main-news .newsdetail-line-spa
+{
+	background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/line2.gif) no-repeat scroll left transparent;
+	height:3px;
+	padding-top:10px;
+}
+.main-news .news-other
+{
+	padding-top:5px;
+}
+.main-news .news-other .news-other-title
+{
+	font-weight:bold;
+	color:#1a6ea0;
+	padding-bottom:5px;
+}
+
+.main-news .news-other ul li
+{
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+/*End News Detail Style*/

@@ -1,0 +1,1000 @@
+.help_link_top {
+	float: right;
+	padding-right: 5px;
+	padding-left: 16px;
+	background-color: transparent;
+	background: url('https://www.baokim.vn/application/assets/images/help.png') no-repeat;
+	text-decoration: none;
+}
+
+.help_context_icon_popup {
+	font-weight: bold;
+	/*color:#00AA00;*/
+}
+
+.help_context_icon_inline {
+	background: url('https://www.baokim.vn/application/assets/images/help_icon.png') no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#simple_payment_info th,#simple_payment_info td {
+	padding-left: 15px;
+	vertical-align: top;
+}
+
+#transaction_type {
+	overflow: hidden;
+	padding-bottom: 12px;
+}
+
+#transaction_type .site_title {
+	padding-bottom: 12px;
+}
+
+#transaction_type input {
+	margin-left: 15px;
+}
+
+#transaction_type .transaction_button_box {
+	float: right;
+	margin-right: 20px;
+}
+
+#simple_payment_info {
+	margin-bottom: 20px;
+}
+
+#transaction_mode textarea {
+	height: 90px;
+	margin: 7px 20px;
+	width: 50%;
+}
+
+.payment_header {
+	font-weight: bold;
+	text-align: center;
+	background-color: rgb(219, 229, 241);
+	padding: 4px;
+}
+
+.payment_method_header {
+	color: #0070D5;
+	font-weight: bold;
+}
+
+.payment_info th {
+	text-align: right;
+}
+
+.payment_info .field_label {
+	font-weight: bold;
+}
+
+.payment_info .field_label span {
+	color: red;
+}
+
+.step_intro {
+	background-color: rgb(242, 242, 242);
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+.step_intro td,.step_intro td strong {
+	font-size: 0.95em;
+}
+
+#left_pane {
+	width: 60%;
+	float: left;
+}
+
+#right_pane {
+	width: 38%;
+	float: right;
+	background-color: rgb(242, 242, 242);
+	padding: 5px;
+}
+
+.charges_item {
+	clear: both;
+	overflow: hidden;
+}
+
+.charges_item : hover {
+	cursor: pointer;
+	background-color: #f7f7f8;
+}
+
+.charges_item table {
+	border: 1px solid #BBC4CD;
+	width: 94%;
+}
+
+.charges_item table td {
+	vertical-align: middle;
+}
+
+.charges_item table th {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.charges_item table thead,#transfer_wrap .listTable thead {
+	background-color: #d9d9d9;
+}
+
+.trans_mode_explain {
+	background-color: #EFEFEF;
+	border: 2px solid #BCBCBC;
+	padding: 6px;
+}
+
+.payment_fee_detail {
+	margin-top: 20px;
+}
+
+.payment_fee_detail th {
+	text-align: right;
+}
+
+.border_site {
+	border: 1px solid #DDDDDD;
+	padding: 10px;
+}
+
+/* new thanh toan author CaoPV 18 / 10 / 2010 */
+	/* Thanh toan truc tuyen 01 */
+.tt-top {
+	padding:0px 0px 0px 0px;
+	width: 785px;
+	margin-top: 20px;
+}
+
+.ttwrapper {
+	margin: 0 auto;
+	width: 775px;
+}
+
+.tt-left {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+.tt-right {
+	float: left;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.fieldset {
+	background: #edf4f6;
+	border-top: 2px solid #115b88;
+	border-right: 0px;
+	border-bottom: 0px;
+	border-left: 0px;
+	padding-left: 1px;
+	height: 100%;
+	width: 100%;
+	margin-top: -4px;
+	padding-bottom: 10px;
+}
+
+.fieldset-title {
+	color: #004a7d;
+	font-weight: bold;
+	font-size: 15px;
+	margin-top: -9px;
+	margin-left: 10px;
+}
+
+.field-name {
+	font-size: 12px;
+	font-weight: normal;
+	color: #3393939;
+	float: right;
+}
+
+.field-content {
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+.field-price {
+	font-size: 12px;
+	font-weight: bold;
+	color: #be0000;
+	padding-left: 10px;
+}
+
+.field-comment {
+	font-size: 12px;
+	color: #0169b0;
+	font-weight: 100;
+	padding-left: 10px;
+}
+
+.line-bottom {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/line-bt.jpg)
+		no-repeat;
+	height: 10px;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.icon-search {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/icon-search.png)
+		no-repeat;
+	line-height: 10px;
+	width: 18px;
+	height: 18px;
+	float: left;
+}
+
+/* Start form */
+.banks-wrapper {
+	height: auto;
+	float: left;
+	padding-top: 10px;
+	width: 100%;
+}
+
+.tt-title {
+	font-size: 15px;
+	font-weight: bold;
+	color: #599100;
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/icon-start.png)
+		no-repeat;
+	padding-left: 25px;
+	line-height: 15px;
+	height: 20px;
+	width: 85%;
+	float: left;
+	margin-top: -15px;
+	margin-bottom: 10px;
+	
+}
+
+.banks-bg {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/banks-bg.jpg)
+		no-repeat;
+	width: 100%;
+	height: 95px;
+	margin-left: 10px;
+	float: left;
+}
+
+.banks-bg01 {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/banks-bg01.jpg)
+		no-repeat ;
+	width: 100%;
+	height: 56px;
+	margin-left: 10px;
+	float: left;
+}
+.banks-bg02 {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/banks-bg02.jpg)
+		no-repeat ;
+	width: 100%;
+	height: 100px;
+	margin-left: 10px;
+	float: left;
+}
+.banks-bg03 {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/banks-bg03.jpg)
+		no-repeat ;
+	width: 100%;
+	height: 150px;
+	margin-left: 10px;
+	float: left;
+}
+
+.banks-titles {
+	font-size: 15px;
+	color: #004f7f;
+	float: left;
+	padding-left: 25px;
+	margin-top: -10px;
+	height: 18px;
+}
+
+.banks-content {
+	float: left;
+	width: 780px;
+}
+
+.banks-table {
+	float: left;
+	width: 98%;
+	margin-top: 5px;
+}
+
+.tt-bank-list {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 0 15px;
+}
+
+.tt-bank-list1 {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list1 ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list1 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+
+.tt-bank-list2 {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list2 ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list2 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+.tt-bank-list3 {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list3 ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list3 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+
+.tt-bank-list4 {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list4 ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list4 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+
+.tt-bank-list5 {
+	overflow: hidden;
+	width: 735px;
+}
+
+.tt-bank-list5 ul {
+	list-style: none;
+	width: 100%;
+}
+
+.tt-bank-list5 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+
+.tt-bank-list6 {
+	overflow: hidden;
+	width: 730px;
+}
+
+.tt-bank-list6 ul {
+	list-style: none;
+	width: 95%;
+}
+
+.tt-bank-list6 ul li {
+	display: inline;
+	overflow: hidden;
+	padding: 2px 10px 22px 10px;
+}
+
+.bank-image {
+	padding-bottom:10px;
+}
+
+.bank-image-over {
+	padding-bottom:10px;
+	background:url('bn-bg000.png') repeat left top;
+}
+
+.bank-image-click {
+	margin-top:10px;
+	background:url('bn-bg000.png') repeat left top;
+}
+
+/* .bank-image-click{opacity:1;filter:alpha(opacity=100);padding: 3px 0px;border:2px solid #ae0f03; border-radius: 5px;-moz-border-radius: 5px; -webkit-border-radius: 5px;width: 100px;height: 40px;} */
+.tt-giaodich {
+	width: 100%;
+	float: left;
+}
+
+.tt-ck {
+	float: left;
+	padding-left: 20px;
+	width: 750px;
+}
+
+.tt-ck-title {
+	float: left;
+	font-size: 12px;
+	color: #004f7f;
+	text-decoration: underline;
+}
+
+.tt-ck-drop {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/icon-drop.png)
+		no-repeat;
+	height: 10px;
+	width: 10px;
+	float: left;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+.tt-ck-line {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/ttline.png)
+		no-repeat;
+	height: 10px;
+	width: 245px;
+	float: left;
+	margin-top: 15px;
+}
+
+.middle-tab {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/middle-tab.jpg) no-repeat;
+	width: 100%;
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+	float: left;
+}
+
+.tt-form {
+	float: left;
+}
+
+.tt-form-text {
+	float: left;
+	padding-left: 20px;
+	font-style: italic;
+	width: 750px;
+	height: 10px;
+	float: left;
+}
+
+.tt-form-content {
+	float: left;
+	width: 100%;
+	padding-left: 25px;
+	padding-top: 0px;
+}
+
+.tt-text-field {
+	width: 210px;
+}
+
+.tt-text-field-width {
+	width: 330px;
+}
+
+.tt-text-area {
+	width: 330px;
+	height: 65px;
+}
+
+.tt-button {
+	background: #1c71a4;
+	border: solid 1px #075889;
+	color: #FFFFFF;
+	padding: 3px 15px;
+	margin-right: 27px;
+}
+
+/* End form */
+.clear {
+	clear: both;
+}
+
+/* Thanh toan truc tuyen  2*/
+.tt-form-method {
+	width: 100%;
+	float: left;
+}
+
+.tt-warning {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/icon-warning.png)
+		no-repeat;
+	height: 45px;
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+	padding-left: 30px;
+	line-height: 25px;
+	margin-top: 0px;
+}
+
+.tt-form-table {
+	float: left;
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.tt-method-title {
+	font-size: 13px;
+	color: #226690;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.tt-bold {
+	color: #3a3a3a;
+	font-weight: bold;
+}
+
+.tt-line {
+	background:
+		url(https://www.baokim.vn/application/themes/baokim/img/img_new/tt-icon-square.png)
+		no-repeat;
+	line-height: 4px;
+	padding-left: 30px;
+	height: 25px;
+}
+
+.tt-form-thanhtoan {
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.font-bold {
+	font-weight: bold;
+}
+
+/* end thanh toan */ /* Pop up view */
+.popup-wrap {
+	width: 490px;
+	height: 400px;
+	background: #eaf2f5;
+	margin: 0 auto;
+	border: 2px solid #b8c0c3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-top: 20px;
+}
+
+.pop-title {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/khoa.jpg) no-repeat ;
+	height: 40px;
+	width: 70%;
+	color: #014a7f;
+	font-size: 20px;
+	padding-left: 40px;
+	margin-left: 200px;
+	line-height: 40px;
+}
+
+.pop-title-lock-open {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/lock-open.png) no-repeat ;
+	height: 40px;
+	width: 70%;
+	color: #014a7f;
+	font-size: 20px;
+	padding-left: 40px;
+	margin-left: 200px;
+	line-height: 40px;
+}
+
+.pop-bg-title {
+	background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/confirm-bg-title.jpg) no-repeat;
+	height: 10px;
+	margin-left: 210px;
+}
+
+.pop-content {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.pop-text {
+	padding: 10px 20px;
+	font-style: italic;
+}
+
+/* end Popup view */ /* new 20/10/2010 */
+.tt-div-left {
+	float: left;
+	width: 380px;
+	height: 330px;
+	background: #eaf2f5;
+}
+
+.tt-div-top {
+	width: 100%;
+	height: 20px;
+	float: left;
+}
+
+.tt-div-left-title {
+	font-size: 16px;
+	color: #004a7d;
+	width: 280px;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.tt-div-start {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/icon-start.png)
+		no-repeat;
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin-top: -15px;
+	margin-right: 50px;
+}
+
+.tt-div-content {
+	float: left;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+
+.div-text {
+	float: left;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.height-row{line-height: 20px;}
+
+/* 22/10/2010 */
+
+.info-wrap{width:90%; float:left;margin:0 auto;margin-left: 40px;}
+.info-left{width:313px;float:left;}
+.info-table{width:313px;}
+.head-table{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/tt-background.jpg) no-repeat;width:313px;height:25px;}
+.head-text{font-size:12px; font-weight:bold; color:#1b6ea0; padding-top:10px; padding-left:20px;}
+.info-right{width:313px;float:right;}
+
+.acc-verified{float: left;background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/verified.jpg) no-repeat;width:20px;height:20px;margin-left: 10px; }
+.acc-not-verified{float: left;background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/not-verified.png) no-repeat;width:20px;height:20px; margin-left: 10px;}
+
+/* 27/10/2010 CaoPV */
+.fieldset-content-table{
+ height: 100%;
+}
+
+.fieldset-content-table tr {
+	padding: 8px 0;
+	
+}
+
+.fieldset-content-table th {
+	color:#393939;
+	font-weight:bold;
+	padding-right:10px;
+	padding-top:3px;
+	text-align:right;
+	vertical-align:top;
+	width:43%;
+}
+.fieldset-content-table td {
+	font-size: 12px;
+	color: #393939;
+	padding-top: 3px;
+}
+.fieldset-content-table td account-name{
+	font-size: 12px;
+	color: #393939;
+	float: left;
+	padding: 8px 0;
+}
+
+.fieldset-content-table th span.mandatory {
+	font-size: 14px;
+	color: red;
+	padding-left: 5px;
+}
+.fieldset-content-table td span.acc-name {
+	float: left;line-height: 25px;
+}
+.fieldset-content-table td span.price {
+	color: #be0000;
+	font-weight: bold;
+}
+.fieldset-button{padding: 1px; background:#cfec75; border: 1px solid #c1cdb9;font-weight: bold;color: #393939; }
+
+
+/* CaoPV 28/10/2010*/
+
+td.emp_field{
+	color: #961616;
+	font-weight: bold;
+}
+.tt-title-info {
+	font-size: 15px;
+	font-weight: bold;
+	color: #214577;
+	padding-left: 40px;
+	height:15px;
+	width: 70%;
+	float: left;
+	margin-top: 10px;
+}
+
+
+.tt-title-01 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #599100;
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/dot01.jpg) no-repeat;
+	padding-left: 25px;
+	line-height: 10px;
+	height: 30px;
+	width: 85%;
+	float: left;
+	margin: 20px 0 0 30px;
+}
+.tt-title-02 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #167299;
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/dot02.jpg)
+	no-repeat;
+	padding-left: 25px;
+	line-height: 8px;
+	height:25px;
+	width: 85%;
+	margin-left:5px;
+	float: left;
+}
+.table-method{
+	width: 100%;
+	border: 0px;
+	margin: -20px 0 20px 0;
+	padding-left: 50px;
+}
+.table-method td{
+	width: 50%;
+	height: 30px;
+}
+.pp-price{
+	color: #BE0000;
+}
+.tt-head-title{
+	background-color:#75bd02;
+	padding: 10px 0 10px 20px;
+	font-size: 15px;
+	color: #FFFFFF;
+	margin: 0 auto;
+	width: 757px;
+	font-weight: bold;
+	
+}
+.tt-head-title-login{
+	padding: 5px 0 5px 0px;
+	font-size: 15px;
+	color: #004A7D;
+	margin:0 auto;
+	font-weight: bold;
+}
+
+
+.tt-title-info-new {
+color:#214577;
+float:left;
+font-size:15px;
+font-weight:bold;
+height:15px;
+margin-bottom:30px;
+margin-top:-20px;
+padding-left:15px;
+width:90%;
+}
+
+.fieldset-new {
+	border:1px solid #115B88;
+	height: 100%;
+	width: 100%;
+	float: left;
+	padding: 0 10px 0 10px;
+	margin-left: 5px;
+}
+.div-fieldset{
+	float:left;
+	width: 102%;
+	height:auto;
+}
+.fieldset-new ul{
+list-style-image:url("https://www.baokim.vn/application/themes/baokim/img/img_new/chuV.png");
+margin:0;
+padding-left:30px;
+}
+
+.drop-down {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/d.png)
+		no-repeat;
+	height: 10px;
+	width: 10px;
+	float: left;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+.drop-up {
+	background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/a.png)
+		no-repeat;
+	height: 10px;
+	width: 10px;
+	float: left;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+.welcome{
+	width: 100%; height: auto;
+	padding-top: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+/* @CaoPV 9/11/2010 */
+.table-popup {width: 100%;font-size: 12px;}
+.table-popup th{text-align: right;padding-right: 20px;}
+.table-popup tr{height: 30px;}
+.popup-text-field-div{border:0px solid #c6d9f0;padding: 0px; width: 216px;}
+.popup-text-field{width: 210px;}
+.popup-checkbox{border: 2px solid #ff9900; }
+.popup-submit{background:#548dd4;border:1px solid #075889;color:#FFFFFF;margin-right:15px;padding:3px 15px;}
+
+/* 17/11/2010 */
+.payment-arrow-up{background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/payment-arrow-up.jpg)
+	no-repeat;
+	height: 30px;
+	width: 20px;
+    margin-top: 5px;
+	margin-right: 10px;}
+.payment-arrow-down{background: url(https://www.baokim.vn/application/themes/baokim/img/img_new/payment-arrow-down.jpg)
+	no-repeat;
+	height: 30px;
+	width: 20px;
+	margin-top: 5px;
+	margin-right: 10px;}
+.payment-mourse-over{cursor:pointer;}
+
+.language_logos{background-color:#75BD02 ;float: right;margin-right: 10px;padding: 5px 5px 0 5px;margin-top: -5px;}
+.language_logos a{font-weight: bold;font-size: 12px; text-decoration: none;color:#FFF;}
+.language_logos span{padding-left: 6px;vertical-align:super;}
+.language_logos_bg_white{background-color:#FFFFFF ;float: right;margin-right: 10px;padding: 5px 5px 0 5px;margin-top: -5px;}
+.language_logos_bg_white a{font-weight: bold;font-size: 12px;text-decoration: none;color:#000;}
+.language_logos_bg_white span{padding-left: 6px;vertical-align:super;}
+
+.guide_config_money_trans_detail{padding-left: 10px;padding-top: 10px;}
+
+
+/* Customize css website merchant */
+.wrapper_css{ width:100%; height:510px;}
+.header_css{width:100%; height:40px; vertical-align:top; background:#FFFFFF;}
+.header_title{font-size:18px; color:#4b6fc3; font-weight:bold;width:50%;float:left;margin-top:20px;}
+.header_help{width:50%; float:right;}
+.text_header{ padding-bottom: 10px; padding-left: 5px;}
+.middle_css{ width:100%;float:left;height:435px;}
+.bottom_css{width:780px;float:left;height:35px;}
+
+.left_block{float:left;width:48%;height:425px;}
+.right_block{float:right;width:48%;height:425px;}
+
+.table_css{
+	border-top:#6eb004 solid 2px; 
+	border-bottom:#d1d1d1 solid 2px;
+ 	border-right:#d1d1d1 solid 2px;
+ 	border-left:#d1d1d1 solid 2px; 
+}
+.table_css th{
+	color: #000000;
+    font-weight: normal;
+    padding-right: 10px;
+    padding-top: 3px;
+    text-align: right;
+    vertical-align: top;
+    width: 160px;
+	height:26px;
+}
+.button_css_1{
+	background: none repeat scroll 0 0 #ebebeb;
+    color: #000000;
+    margin-right: 15px;
+    padding: 3px 15px;
+	border :1px solid  #92A6AB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+}
+.button_css_2{
+	background: none repeat scroll 0 0 #6eb004;
+    color: #FFFFFF;
+    margin-right: 15px;
+    padding: 3px 15px;
+	border :1px solid  #92A6AB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+}
+.button_css_3{
+	background: none repeat scroll 0 0 #6eb004;
+    color: #FFFFFF;
+    margin-right: 15px;
+    padding: 3px 15px;
+	border :1px solid  #92A6AB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+}
+
+.block_common{ width:100%; float:left;height:auto;}
+.block_title{width:100%;float:left;font-size:15px;font-weight:bold;color:#6eb004;padding-top:10px;padding-bottom:5px;}
+.block_content{width:100%;float:left;height:auto;}
+
+/* CaoPV - 18/04/2011 */
+.popup_header_div{width:448px;height:52px;margin:0 auto;}
+.popup_top_header{width:100%;height:37px;font-size:12px;font-weight:bold;}
+.four_circle{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/four_circle.jpg) no-repeat;width:100%;height:15px;}
+.pop_header_table{width:100%;margin-top:10px;}
+.pop_header_table td{width:25%;}
+.popup_selected{color:#1176a1;}
+.login_process{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/login_process.png) no-repeat;width:389px;height:15px;margin-left:26px;}
+/* button */
+.button_div{width:auto;height:23px;display:inline;}
+.pop_bt_bg{background:transparent;border:0px;color:#FFFFFF;padding-top:2px;}
+.blue_bt_left{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_left.png) no-repeat;width:5px;height:23px;float:left;}
+.blue_bt_left_arrow{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_left_arrow.png) no-repeat;width:9px;height:23px;float:left;}
+.blue_bt_middle{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_middle.png) repeat-x;width:auto;padding-right:2px;height:23px;float:left;}
+.blue_bt_right{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_right.png) no-repeat;width:4px;height:23px;float:left;}
+.blue_bt_right_arrow{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_right_arrow.png) no-repeat;width:14px;height:23px;float:left;}
+
+.gray_bt_left{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_left_gray.jpg) no-repeat;width:4px;height:23px;float:left;}
+.gray_bt_left_arrow{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_left_arrow_gray.jpg) no-repeat;width:9px;height:23px;float:left;}
+.gray_bt_middle{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_middle_gray.png) repeat-x;width:auto;padding-right:2px;height:23px;float:left;}
+.gray_bt_right{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_right_gray.jpg) no-repeat;width:5px;height:23px;float:left;}
+.gray_bt_right_arrow{background:url(https://www.baokim.vn/application/themes/baokim/img/img_new/bgp_right_arrow_gray.png) no-repeat;width:14px;height:23px;float:left;}
+
+.popup_button_div{width:460px;height:32px;margin:0 auto;padding-top:10px;padding-right:25px;}
+.popup_button_div_left{float:left;padding-left:268px;}
+.popup_button_div_right{float:right;}
+
