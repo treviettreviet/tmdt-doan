@@ -17,7 +17,7 @@ namespace WSWorkFlow
     public class wsTransfer : System.Web.Services.WebService
     {
         //private dbNganHangDataContext dbNganHang = new dbNganHangDataContext();
-        private dbBankingDataContext dbNganHang = new dbBankingDataContext();
+        private dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
         
         // Gọi WS của Thầy Minh
         string URLWebservice = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
