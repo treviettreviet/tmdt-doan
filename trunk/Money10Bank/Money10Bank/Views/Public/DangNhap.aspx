@@ -42,7 +42,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" OnClick="btnDangNhap_Click" />
+                    <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập"/>
                 </td>
             </tr>
             <tr>
@@ -56,7 +56,7 @@
     <asp:Panel ID="pnDaDangNhap" runat="server" Visible="false">
         Bạn đã đăng nhập
         <br />
-        <asp:Button ID="btnDangNhapLai" runat="server" Text="Đăng nhập dưới quyền khác" BackColor="#80FFFF" BorderColor="#00C0C0" OnClick="btnDangNhapLai_Click" />
+        <asp:Button ID="btnDangNhapLai" runat="server" Text="Đăng nhập dưới quyền khác" BackColor="#80FFFF" BorderColor="#00C0C0" />
     </asp:Panel>
 
 </asp:Content>
