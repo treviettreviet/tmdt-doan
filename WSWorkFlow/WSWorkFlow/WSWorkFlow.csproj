@@ -56,8 +56,10 @@
     <Content Include="CardValid.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="frmTransfer.aspx" />
+    <None Include="dbNganHang.dbml">
     <None Include="dbNganHangOnline.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbNganHang.designer.cs</LastGenOutput>
       <LastGenOutput>dbNganHangOnline.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
@@ -88,9 +90,11 @@
     <Compile Include="CardValid.aspx.designer.cs">
       <DependentUpon>CardValid.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dbNganHang.designer.cs">
     <Compile Include="dbNganHangOnline.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dbNganHang.dbml</DependentUpon>
       <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -153,6 +157,8 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
+    <None Include="dbNganHang.dbml.layout">
+      <DependentUpon>dbNganHang.dbml</DependentUpon>
     <None Include="dbNganHangOnline.dbml.layout">
       <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
     </None>
