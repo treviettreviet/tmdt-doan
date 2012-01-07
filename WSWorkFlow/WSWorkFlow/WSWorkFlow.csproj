@@ -56,9 +56,9 @@
     <Content Include="CardValid.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="frmTransfer.aspx" />
-    <None Include="dbBanking.dbml">
+    <None Include="dbNganHangOnline.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbBanking.designer.cs</LastGenOutput>
+      <LastGenOutput>dbNganHangOnline.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -88,10 +88,10 @@
     <Compile Include="CardValid.aspx.designer.cs">
       <DependentUpon>CardValid.aspx</DependentUpon>
     </Compile>
-    <Compile Include="dbBanking.designer.cs">
+    <Compile Include="dbNganHangOnline.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbBanking.dbml</DependentUpon>
+      <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -153,8 +153,8 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="dbBanking.dbml.layout">
-      <DependentUpon>dbBanking.dbml</DependentUpon>
+    <None Include="dbNganHangOnline.dbml.layout">
+      <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
