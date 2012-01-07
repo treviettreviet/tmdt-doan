@@ -177,6 +177,7 @@
     <Content Include="Scripts\js\small000.js" />
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
+    <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Public\TrangChu.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
