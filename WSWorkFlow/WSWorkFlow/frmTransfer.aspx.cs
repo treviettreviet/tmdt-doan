@@ -41,7 +41,7 @@ namespace WSWorkFlow
             if (!obResult.Equals(""))
             {
                 result = (int)obResult;
-                Response.Write("Ket qua: " + result.ToString());
+                Response.Write("Ket qua giao dịch: " + result.ToString() + "(0: là giao dịch thành công | -1: là giao dịch thất bại)");
             }
             else
             {
