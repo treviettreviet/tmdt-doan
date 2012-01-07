@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat="server">
+
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>DONGA Bank</title>
+    <link href="../../Content/css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="Header">
+                <asp:Image ID="imgBanner" runat="server" Height="100px" ImageUrl="../../Content/images/DongA_header.jpg"
+                    Style="position: relative" Width="780px" /></div>
+            <div id="Menutop">
+                
+                <asp:Panel ID="Panel1" runat="server" Width="152px" BackColor="DeepSkyBlue"
+                    Style="text-align:center; vertical-align: middle; position:relative; left: 625px; top: -23px; border-color:Menu; border-style:solid; border-width:thin;" Height="22px" Direction="LeftToRight" HorizontalAlign="Left">
+                        <asp:TextBox ID="txtSearch" runat="server" Width="110px"></asp:TextBox>
+                        <asp:ImageButton ID="ImgbtnSearch" runat="server" ImageUrl="../../Content/images/layout_search.gif"
+                            />
+                </asp:Panel>
+                
+            </div>
+            <div id="Nav">
+                <asp:Panel ID="pnGuess" runat="server" Visible="true">
+                    <ul>
+                        <li class="title">Internet Banking</li><li>
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="abc.com">Đăng Nhập</asp:HyperLink></li><li>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="">Đăng Ký</asp:HyperLink></li></ul>
+                </asp:Panel>
+                
+                <ul>
+                    <li class="title">TIỆN ÍCH</li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="">Lãi suất</asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="">Biểu Phí</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="">Tỷ Giá</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="">Khuyến Mãi</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="">Trạm ATM</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="">Tìm Kiếm</asp:HyperLink></li>
+                </ul>
+                
+            </div>
+            <div id="Content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="Footer">
+                <asp:Label ID="lbFooter" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
