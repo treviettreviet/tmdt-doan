@@ -118,7 +118,7 @@ namespace Money10Broker.Controllers
             {
                 TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
 
-                if (user.MatKhau == password)
+                if (user.Email == email && user.MatKhau == password)
                     return 0;//Đăng nhập thành công
                 else
                     return 1;//Đăng nhập không thành công, sai password
@@ -129,5 +129,28 @@ namespace Money10Broker.Controllers
             }
 
         }
+
+
+        /// <summary>
+        /// Kiểm tra đăng nhập tài khoản, tại trang chủ
+        /// </summary>
+        /// 
+        public ActionResult XuLyDangNhap(string email, string password)
+        {
+            //
+            int user_validation = UserValidation(email, password);
+            if (user_validation == 0)
+            {
+                //return View("DangNhapThanhCong");
+                return RedirectToAction("DangNhapThanhCong");
+            }
+            else
+            {
+                //return View("DangNhapThatBai");
+                return RedirectToAction("DangNhapThatBai");
+            }
+            //return View();
+        }
+
    }
 }
