@@ -84,7 +84,6 @@
     <Content Include="Scripts\js\jquery.marquee.js" />
     <Content Include="Scripts\js\md5.js" />
     <Content Include="Scripts\js\simplegallery.js" />
-    <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Public\TrangChu.aspx" />
     <Content Include="Web.config" />
@@ -101,7 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />
-	<Content Include="Views\Public\DangKy.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

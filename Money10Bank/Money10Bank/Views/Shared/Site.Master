@@ -28,9 +28,16 @@
             <div id="Nav">
                 <asp:Panel ID="pnGuess" runat="server" Visible="true">
                     <ul>
-                        <li class="title">Internet Banking</li><li>
-                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="abc.com">Đăng Nhập</asp:HyperLink></li><li>
-                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="">Đăng Ký</asp:HyperLink></li></ul>
+                        <li class="title">Internet Banking</li>
+                        <li>
+                            <%--<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Public/DangNhap">Đăng Nhập</asp:HyperLink></li><li>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="">Đăng Ký</asp:HyperLink>--%>
+                            <a href="Public/DangNhap">Đăng Nhập</a>
+                        </li>
+                        <li>
+                            <a href="Public/DangKy">Đăng Ký</a>
+                        </li>
+                    </ul>
                 </asp:Panel>
                 
                 <ul>
