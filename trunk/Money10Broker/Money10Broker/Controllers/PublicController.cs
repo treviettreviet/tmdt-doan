@@ -52,11 +52,22 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult DangKyCaNhan()
+        public ActionResult DangKyDoanhNghiep()
         {
             return View();
         }
-
+        public ActionResult LichSuGiaoDich()
+        {
+            return View();
+        }
+        public ActionResult NapTien()
+        {
+            return View();
+        }
+        public ActionResult RutTien()
+        {
+            return View();
+        }
         MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
 
 
