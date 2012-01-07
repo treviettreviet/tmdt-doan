@@ -15,6 +15,13 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
-
+        public ActionResult TrangChu()
+        {
+            return View();
+        }
+        public ActionResult DangKy()
+        {
+            return View();
+        }
     }
 }

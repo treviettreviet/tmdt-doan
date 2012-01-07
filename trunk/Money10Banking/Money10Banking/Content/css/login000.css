@@ -1,0 +1,117 @@
+/*CSS by QuyNM*/
+
+/*Login Style*/
+
+#Main .main-container {
+	width:270px;
+	padding-left:40px;
+	padding-top:33px;
+}
+#Main .right-container {
+	width:450px;
+	padding-right:30px;
+	padding-top:33px;
+}
+.login-form {
+	background:url("../../Content/images/login_content.gif") repeat-y scroll left transparent;
+	width:269px;
+}
+.login-form .login_header {
+	background:url("../../Content/images/login_top.gif") no-repeat scroll top transparent;
+	height:6px;
+	width:269px;
+}
+.login-form .login_bottom {
+	background:url("../../Content/images/login_bottom.gif") no-repeat scroll bottom transparent;
+	height:12px;
+	width:269px;
+}
+.login-form .login_content {
+	margin: 0px 25px 5px 20px;
+}
+.login-form .login_content .header {
+	font-size:18px;
+	color:#2b2b2b;
+	padding-bottom:8px;
+	background:url("../../Content/images/login_sparator.gif") repeat-x scroll bottom transparent;
+}
+
+.login-form .login_button {
+	background:url("../../Content/images/button_center.gif") repeat-x scroll left #086da4;
+	height:28px;
+	border-left:solid 1px #086da4;
+	border-right:solid 1px #086da4;
+	border-top:none;
+	border-bottom:none;
+	width:90px;
+	color:#fff;
+	margin-top:10px;
+}
+.login-form .login_label {
+	font-size:14px;
+	color:#3a3a3a;
+	padding:8px 0px 3px 0px;
+}
+
+.login-form .login_texbox {
+	width:180px;
+	padding-left:5px;
+}
+.login_remember {
+	padding-top:5px;
+}
+.inputcheckbox {
+	border:0 none;
+	vertical-align:middle;
+	margin:2px 4px 2px 0px;
+}
+.login_remember label {
+	vertical-align:middle;
+	
+}
+.login-form .login_link {
+	padding-top:10px;
+}
+.login-form .login_link a {
+	background:url("../../Content/images/bullet1.gif") no-repeat scroll left center transparent;
+	padding-left:12px;
+	padding-right:10px;
+}
+
+.right-container p {
+	font-size:14px;
+}
+.right-container .bqt-baokim {
+	color:#0b83d5;
+	padding-top:5px;
+}
+.baokim-services {
+	width:180px;
+	padding-bottom:15px;
+}
+.baokim-services ul {
+	list-style-type:none;
+}
+.baokim-services ul, .baokim-services ul li {
+	margin:0px;
+	padding:0px;
+}
+.baokim-services ul li {
+	font-size:15px;
+	font-weight:bold;
+	color:#5d9404;
+	padding:5px 0px;
+	background:url("../../Content/images/bullet2.gif") no-repeat scroll left center transparent;
+	padding-left:20px;
+	border-bottom:dotted 1px #bdccce;
+}
+.baokim-services ul li.first {
+	border-top:dotted 1px #bdccce;
+}
+
+
+/*End Login Style*/
+
+/* @author CaoPV new 6.11.2010 */
+.font-acc{color: #236592; font-weight: bold;font-size: 12px;padding-left: 10px;}
+.font-acc-command{color: #236592; font-size: 12px;padding:0 10px;}
