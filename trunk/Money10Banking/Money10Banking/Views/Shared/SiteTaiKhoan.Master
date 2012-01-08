@@ -76,8 +76,6 @@
 </head>
 <body>
 
-    <form id="form1" runat="server">
-
 <div class="wrapper">
 	<div class="page-normal">
 		<div id="Header">
@@ -350,8 +348,6 @@
 .thin{font-weight:100;}
 </style></div>
 </div>
-
-    </form>
 
 </body>
 </html>
