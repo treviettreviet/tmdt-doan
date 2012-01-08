@@ -39,14 +39,14 @@ namespace WSWorkFlow
 
         public int TransferMoneySameBank(string sid, string ccsend, string ccreceive, decimal amount, string ccsendcurenum, string ccreceivesecurenum)
         {
-            System.Net.ServicePointManager.Expect100Continue = false; 
-            //decimal dSoDu = (decimal)amount;
+            System.Net.ServicePointManager.Expect100Continue = false;
+            EMVServices.EMVServices ws = new EMVServices.EMVServices();
             
             decimal dSoDu = amount;
 
-            string MethodName = "Authenticate";
+            //string MethodName = "Authenticate";
 
-            string bankSID = WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
+            string bankSID = ws.Authenticate("OCBCBank", "X2ugS2E37S");//WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
             sid = bankSID;
             
             if(sid == bankSID)
@@ -65,7 +65,7 @@ namespace WSWorkFlow
 
 
                 //Kiểm tra thẻ gửi
-                int iSendCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, ccsendcurenum, "Huynh Tan Len", sendCard.NgayMoThe, sendCard.NgayHetHan });
+                int iSendCardState = ws.CardValid1(bankSID, sendCard.MaThe, 2, ccsendcurenum, "Huynh Tan Len", sendCard.NgayMoThe.Value, sendCard.NgayHetHan.Value);//(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, ccsendcurenum, "Huynh Tan Len", sendCard.NgayMoThe, sendCard.NgayHetHan });
 
                 if (iSendCardState == -1)
                 {
@@ -85,7 +85,7 @@ namespace WSWorkFlow
                         if (sendCard.SoDu > dSoDu)
                         {
                             //Kiểm tra thẻ nhận
-                            int iReceiveCardState = (int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Le Ngoc Tin", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
+                            int iReceiveCardState = ws.CardValid1(bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Le Ngoc Tin", receiveCard.NgayMoThe.Value, receiveCard.NgayHetHan.Value);//(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, ccreceivesecurenum, "Le Ngoc Tin", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
                             if (iReceiveCardState == -1)
                             {
                                 iReceiveCardState = 0;

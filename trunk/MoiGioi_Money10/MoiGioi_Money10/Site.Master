@@ -6,11 +6,9 @@
 
 <meta name="revisit-after" content="1 days">
 <meta name="verify-v1" content="5aMXCOH9gNNFj+gs9RUKoOCWGV9t35FxOxCaokfoiWs=">
-<!--<base href="https://www.nganluong.vn/">-->
+
 
 <title>Cổng thanh toán trực tuyến, Ví điện tử được ưa chuộng nhất Việt Nam: An toàn, Tiện lợi, Phổ biến, Được bảo vệ - NgânLượng.vn</title>
-<meta name="keywords" content="Ví điện tử, Cổng thanh toán trực tuyến, Giao dịch an toàn, Bảo vệ người mua, bảo hiểm giao dịch, Thanh toán Tạm giữ, Thanh toán Ngay,  Thanh toán Nhanh chóng - Tiện lợi, Tích hợp thanh toán, Thanh toán, Nạp tiền, Rút tiền, Chuyển tiền, Yêu cầu thanh toán, Mua sắm trực tuyến">	
-<meta name="description" content="NgânLượng.vn là Ví điện tử và Cổng Thanh toán Trực tuyến (TTTT) chuyên dùng cho Thương mại Điện tử (TMĐT) tiên phong và hàng đầu tại Việt Nam, cả về sản phẩm dịch vụ, độ phủ thị trường và lưu lượng thanh toán">
 
 <script type="text/javascript" src="js/jquery_m.js"></script>
 <script type="text/javascript" src="js/jquery_n.js"></script>
@@ -173,20 +171,20 @@
     }
 </script>
 <div id="body-top">
-	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="https://www.nganluong.vn/">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
+	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="#">Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
 	
 	
 	
 	<div class="news-hot" id="news_hot">  	
 		   <ul class="news-view" id="news_view">
                 
-	<li class="active"><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
+	<li class="active"><a href="#" class="active">TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a></li>
             </ul>
             <div class="news-hot-box">
                 <span class="btn-news-hot"><a href="javascript:;" id="hot-new"></a></span>
                 <ul class="news-hot-sub" id="news_view_list">
 					
-	<li class="active"><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
+	<li class="active"><a href="#" class="active">TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a></li>
                 </ul>
             </div>
         </div>	
@@ -210,31 +208,23 @@
 	<div id="footer">
 		<div id="menu-footer">
 
-	<a href="http://help.nganluong.vn/chi-tiet-49/2/419/Gioi-thieu-ve-NganLuong.vn.html" target="_blank" rel="nofollow">Về NgânLượng.vn</a>
-	|<a href="http://help.nganluong.vn/chi-tiet-4/27/373/Chinh-sach-su-dung-NganLuong.vn.html" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
-	|<a href="http://help.nganluong.vn/chi-tiet-17/27/372/Chinh-sach-quyen-rieng-tu-(Privacy-Policy).html" target="_blank" rel="nofollow">Quyền riêng tư</a>
-	|<a href="http://help.nganluong.vn/danh-muc-27/27/1/Quy-dinh---Chinh-sach.html" target="_blank" rel="nofollow">Quy định - Chính sách</a>
-	|<a href="http://help.nganluong.vn/danh-muc-2/2/1/Tro-giup---Huong-dan.html" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
-	|<a href="http://vizum.vn/" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
+	<a href="#" target="_blank" rel="nofollow">Về Nhà Môi Giới</a>
+	|<a href="#" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
+	|<a href="#" target="_blank" rel="nofollow">Quyền riêng tư</a>
+	|<a href="#" target="_blank" rel="nofollow">Quy định - Chính sách</a>
+	|<a href="#" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
+	|<a href="#" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
 </div>
 <div id="footer-add">
     <div id="footer-add-right">
         <address style="margin-bottom:5px;">
-            <strong>Hà Nội:</strong> Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng; Hotline: 0984-863-761; Điện thoại: 1900-5858-99 (ext 111).
-        </address>
-        <address style="margin-bottom:5px;">
-            <strong>TP.HCM:</strong> Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12,
+            <strong>TP.HCM:</strong> Trường ĐH KHTN, Khoa CNTT, Bộ môn HTTT, Lớp 10HCB, số 227 đường Nguyễn Văn Cừ,
        <br>
-        quận Tân Bình; Điện thoại: 1900-5858-99 (ext 101).
+        quận 5; Điện thoại: 1900 - xxxx - xxxx
         </address>
     </div><div id="footer-add-left" style="width:490px;">
-        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 NgânLượng.vn: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="http://www.peacesoft.net/" target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
-        <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
-        <p style="margin-bottom:5px;">Các liên kết khác:
-			<a href="http://chodientu.vn/" target="_blank" rel="nofollow">www.chodientu.vn</a> | 
-			<a href="http://chodientu.vn/ebay" target="_blank" rel="nofollow">www.ebay.vn</a> | 
-			<a href="http://adnet.vn/" target="_blank" rel="nofollow">www.adnet.vn</a> | 
-			<a href="http://vizum.vn/" target="_blank" rel="nofollow">www.vizum.vn</a></p>                
+        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 : Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="http://www.peacesoft.net/" target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
+        <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>           
     </div>
 </div>
 
@@ -283,4 +273,3 @@
 <script type="text/javascript" src="js/heartbao.js"></script>
 </body>
 </html>
-<!-- This document saved from https://www.nganluong.vn/ -->
