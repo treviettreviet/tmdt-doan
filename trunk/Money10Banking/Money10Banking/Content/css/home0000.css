@@ -152,9 +152,9 @@ div.faq-hot-container ul li a {
 .home-bn-fr-login{ background:url(../../Content/images/button-yellow.gif) no-repeat;width:135px;height:36px; font-size:15px;color:#ffffff; margin-top:50px;margin-left:10px; font-weight:bold; border:0px;}
 .row-feature{color:#FFFFFF; font-size:15px; font-weight:bold; padding:3.5px 0 3.5px 12px;}
 .hb-home-banner{width:100%; height:135px;  margin-top:10px;}
-.hb-banner-01{float:left; width:268px;height:135px; background:url(home-bn-.jpg) no-repeat; }
-.hb-banner-02{float:left; width:268px;height:135px; background:url(home-bn0.jpg) no-repeat; }
-.hb-banner-03{float:left ;width:268px;height:135px; background:url(home-bn1.jpg) no-repeat; }
+.hb-banner-01{float:left; width:268px;height:135px; background:url(../../Content/images/home-bn-.jpg) no-repeat; }
+.hb-banner-02{float:left; width:268px;height:135px; background:url(../../Content/images/home-bn0.jpg) no-repeat; }
+.hb-banner-03{float:left ;width:268px;height:135px; background:url(../../Content/images/home-bn1.jpg) no-repeat; }
 .hb-title{ height:28px ;color:#ffffff; font-size:17px;font-weight:bold; padding-top:8px;padding-left:18px;}
 .hb-short-content{ height:65px; color:#FFFFFF; font-size:12px; padding:0 18px;}
 .hb-more{ padding-left:168px; height:20px; color:#94ddff; font-size:12px;}
@@ -172,7 +172,7 @@ div.faq-hot-container ul li a {
 /*
 .hb-news-content ul li{list-style-image:url(../img/img_new/square-icon.png);border-bottom:dotted #FFFFFF thin;padding-top:2px; padding-bottom:2px;}
 */
-.hb-news-content ul li{border-bottom:thin dotted #FFFFFF;list-style-image:url(square-i.png);padding-bottom:2px;padding-top:2px;width:170px;}
+.hb-news-content ul li{border-bottom:thin dotted #FFFFFF;list-style-image:url(../../Content/images/square-i.png);padding-bottom:2px;padding-top:2px;width:170px;}
 .a-news{color:#424141;text-decoration:none;}
 .a-news-over{text-decoration:underline;color:#424141; }
 .a-news-out{text-decoration:none;color:#424141;}
@@ -184,10 +184,10 @@ div.faq-hot-container ul li a {
 
 
 .hb-news{width:280px;;height:auto;float:left; padding-right:10px;}
-.hb-news-title{background:url(news-hb-.png) no-repeat;padding-left:35px;margin-top:5px;padding-bottom:20px;background-position:bottom;color:#575757; font-size:12px; color:#575757; font-weight:bold; }
+.hb-news-title{background:url(../../Content/images/news-hb-.png) no-repeat;padding-left:35px;margin-top:5px;padding-bottom:20px;background-position:bottom;color:#575757; font-size:12px; color:#575757; font-weight:bold; }
 .hb-news a {text-decoration:none;color:#424141;}
 .hb-news p{margin-left:40px;margin-bottom:5px;	}
-.hb-news ul{list-style-image:url(muiten00.png);padding-left:38px; margin:0;}
+.hb-news ul{list-style-image:url(../../Content/images/muiten00.png);padding-left:38px; margin:0;}
 .hb-news li{line-height:20px;}
 
 .line-phancach{width:2px;min-height:150px;margin-top:40px; border-right:dotted thin #a4a4a4; float:left;}
@@ -197,7 +197,7 @@ div.faq-hot-container ul li a {
 
 
 
-.form_login{width:182px;height:196px;background:url(hb-form-.gif)  no-repeat;float:left; padding-left:15px;}
+.form_login{width:182px;height:196px;background:url(../../Content/images/hb-form-.gif)  no-repeat;float:left; padding-left:15px;}
 .home-form-login-title{font-size:14px;color:#5b9500; font-weight:bold; }
 .form-content-text{color:#424242;font-size:11px; }
 .table-left{}
@@ -209,7 +209,7 @@ div.faq-hot-container ul li a {
 .home-news-title{color:#262626; font-size:14px; border-bottom:dotted thin #82a5b3; padding:10px 0 10px 10px; width:160px;margin-bottom:15px; font-weight:bold;margin-left:10px;}
 .hb-news-content{width:196px;float:left;display:block; }
 .hb-news-content ul{margin:0;padding-left:17px; }
-.news-content ul li{list-style-image:url(square-i.png);border-bottom:dotted #FFFFFF thin;padding-top:2px; padding-bottom:2px;}
+.news-content ul li{list-style-image:url(../../Content/images/square-i.png);border-bottom:dotted #FFFFFF thin;padding-top:2px; padding-bottom:2px;}
 .a-news{color:#424141;text-decoration:none;}
 .a-news-over{text-decoration:underline;color:#424141; }
 .a-news-out{text-decoration:none;color:#424141;}
@@ -292,7 +292,7 @@ div.faq-hot-container ul li a {
 	z-index: 1;
 }
 .hb-banner-gray{
-	background:url('bn-bg000.png') repeat left top;
+	background:url('../../Content/images/bn-bg000.png') repeat left top;
 }
 .bank-list{
 	overflow: hidden;

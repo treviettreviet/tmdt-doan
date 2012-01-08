@@ -1,17 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main" style="padding: 0">
         <div class="home">
             <!-- start home top -->
             <div class="home-top">
-                <div class="home-top-left">
-                    <%--<script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
-                    <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css"/>--%>
-                    <div class="form_login">
-                        <form action="Public/XuLyDangNhap" method="post" id="login_small" accept-charset="utf-8">
-                        <table width="170" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
+                <div class="home-top">
+                    <div class="home-top-left">
+                        <%--<script type="text/javascript" src="Scripts/js/keyboard.js"></script>
+                        <link rel="stylesheet" type="text/css" href="Content/css/keyboard.css">--%>
+                        <div class="form_login">
+                            <form action="Public/XuLyDangNhap" method="post" id="login_small"
+                            autocomplete="off" accept-charset="utf-8">
+                            <%--<input type="hidden" name="_form_action" value="accounts/login">
+                            <input type="hidden" name="_form_token" value="12e3b3a73d4d99b6fc645b18ec243b974b28a301">--%>
+                            <table width="170" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td height="34">
                                         <div class="home-form-login-title">
@@ -26,7 +28,7 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="text" name="email" value="huynhtanlen@gmail.com" id="email"  style="width: 128px;"/>
+                                            <input type="text" name="email" value id="email" class="keyboardInput" style="width: 128px;">
                                         </label>
                                     </td>
                                 </tr>
@@ -38,14 +40,15 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="password" name="password" value="money10" id="password"  style="width: 128px;"/>
+                                            <input type="password" name="password" value id="password" class="keyboardInput"
+                                                style="width: 128px;">
                                         </label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td height="27">
                                         <label>
-                                            <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login"/>
+                                            <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login">
                                         </label>
                                     </td>
                                 </tr>
@@ -59,9 +62,9 @@
                                                 Đăng ký</a></div>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        </form>
+                            </table>
+                            </form>
+                            <script type="text/javascript">
                         <script type="text/javascript">
 
                             function showSupportEx() {
