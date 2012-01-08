@@ -222,8 +222,8 @@
                 <input type="hidden" name="form_module_id" value="1646" />
                 <div id="input-login">
                     <!-- thông báo lỗi-->
-                    <div class="message-box">
-                    </div>
+                   <%-- <div class="message-box">
+                    </div>--%>
                     <!--hết thông báo lỗi-->
                     <table border="0" cellspacing="0" width="100%">
                         <tr>
