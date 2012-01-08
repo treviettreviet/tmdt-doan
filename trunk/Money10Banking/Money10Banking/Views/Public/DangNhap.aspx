@@ -12,7 +12,7 @@
                     <div class="login_header">
                     </div>
                     <div class="login_content">
-                        <form action="Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
+                        <form action="XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
                         <div class="header">
                             Đăng Nhập</div>
                         <div class="login_label">
