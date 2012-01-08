@@ -81,6 +81,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="application\themes\baokim\img\img_new\keyboard.png" />
     <Content Include="Content\css\common00.css" />
     <Content Include="Content\css\home0000.css" />
     <Content Include="Content\css\jquery-u.css" />
@@ -150,6 +151,7 @@
     <Content Include="Content\images\icon-hel.png" />
     <Content Include="Content\images\icon0000.png" />
     <Content Include="Content\images\icon_dan.gif" />
+    <Content Include="Content\images\keyboard.png" />
     <Content Include="Content\images\kiem_tie.jpg" />
     <Content Include="Content\images\landding.jpg" />
     <Content Include="Content\images\li-title.gif" />
@@ -178,7 +180,6 @@
     <Content Include="Content\images\square-i.png" />
     <Content Include="Content\images\support_.gif" />
     <Content Include="Content\images\support_.png" />
-    <Content Include="Content\images\SyntaxHi.css" />
     <Content Include="Content\images\topup-ba.jpg" />
     <Content Include="Content\images\topup_ba.jpg" />
     <Content Include="Content\images\tran-tab.gif" />
@@ -240,6 +241,7 @@
       <LastGenOutput>dbNganHangOnline.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
