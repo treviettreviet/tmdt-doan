@@ -83,15 +83,15 @@ namespace Money10Banking.Controllers
             {
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
+                {
+                    //Session sesKhachHang = 
                     return View("LichSuGiaoDich");
+                }
                 else
                 {
                     string div = "error-box";
-                    //string begin_div = "<div class='error-box'>";
-                    //string end_div = "</div>";
-                    //<div class="error-box">Thông tin đăng nhập không chính xác</div>
                     string error = "";
-                    if(user_validation==-1)
+                    if (user_validation == -1)
                     {
                         error += "Email không tồn tại";
                     }
@@ -99,8 +99,8 @@ namespace Money10Banking.Controllers
                     {
                         error += "Sai mật khẩu";
                     }
-                    ViewData["div"] = div;
-                    ViewData["error"] = error;
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                     return View("DangNhap");
                 }
             }
