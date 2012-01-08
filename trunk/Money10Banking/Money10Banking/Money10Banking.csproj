@@ -210,12 +210,14 @@
     <Content Include="Scripts\js\small000.js" />
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
+    <Content Include="Views\Public\CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="Views\Public\ChuyenTien.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Public\LichSuGiaoDich.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
     <Content Include="Views\Public\RutTien.aspx" />
+    <Content Include="Views\Public\ThayDoiMatKhau.aspx" />
     <Content Include="Views\Public\TrangChu.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -241,7 +243,6 @@
       <LastGenOutput>dbNganHangOnline.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

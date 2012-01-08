@@ -19,7 +19,7 @@
 <link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css"/>
 <link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css"/>
 <link href="../../Content/css/login000.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script/>
+<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
 <script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
 <script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
   
@@ -312,4 +312,4 @@
 </div>
 </body>
 </html>	
-<!-- This document saved from https://www.baokim.vn/ -->
+

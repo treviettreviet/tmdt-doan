@@ -130,7 +130,14 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
-       
+        public ActionResult CapNhatThongTinTaiKhoan()
+        {
+            return View();
+        }
+        public ActionResult ThayDoiMatKhau()
+        {
+            return View();
+        }
         
         /// <summary>
         /// Thắng - Kiểm tra email tồn tại không?

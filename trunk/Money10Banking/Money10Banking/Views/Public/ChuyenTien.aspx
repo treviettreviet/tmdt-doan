@@ -7,7 +7,7 @@
 				<div id="account_info">
 	<div id="account_info_inner">
 		 <div class="tran-tab-bg">
-	 <%--<table width="100%" cellspacing="0">
+	 <table width="100%" cellspacing="0">
 		<tr>
 		   <td width="25%" class="tran-first"><div class="font1">Số dư tài khoản </div>
 			 <div class="font2">0</div>
@@ -26,7 +26,7 @@
  				</div>
  			</td>
 		 </tr>
-	  </table>--%>
+	  </table>
 </div>			</div>
 </div>
 	

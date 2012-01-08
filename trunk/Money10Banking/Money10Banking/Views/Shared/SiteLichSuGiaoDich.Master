@@ -16,7 +16,7 @@
     <link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/login000.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../../Scripts/js/jquery00.js"></script/>
+    <script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery-u.js"></script>
@@ -49,11 +49,11 @@
           showButtonPanel: true,
           showAnim: 'fadeIn',
           showOn: "both",
-          buttonImage: "https://www.baokim.vn/application/assets/img/vpg_admin/calendar.gif",
+          buttonImage: "../../Content/images/calendar.gif",
           buttonImageOnly: true
       }));
 
-            dp.SyntaxHighlighter.ClipboardSwf = "https://www.baokim.vn/application/assets/js/sh_scripts/clipboard.swf";
+            dp.SyntaxHighlighter.ClipboardSwf = "../../Content/images/clipboard.swf";
             dp.SyntaxHighlighter.BloggerMode();
             dp.SyntaxHighlighter.HighlightAll("code");
 
@@ -81,8 +81,8 @@
 </div>
 <div class="right" style="padding-right:30px;">
     <div class="linkexpress right">
-      <script type="text/javascript" src="LichSuGiaoDich_files/keyboard.js"></script>
- <link rel="stylesheet" type="text/css" href="LichSuGiaoDich_files/keyboard.css">
+      <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
  		<div style="width:360px;display: inline;">
 		<div style="display:inline;cursor: pointer;position: relative;float: right;" onmouseover="showSupportEx()" onmouseout="hideSupportEx()">
 				<div>
@@ -90,19 +90,19 @@
 		        		<div style="background-color: white; border:solid 1px gray;padding:5px;">
 		        			<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
 							  <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim">  <img src="LichSuGiaoDich_files/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div></td>
+							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim?chat"> <img src="LichSuGiaoDich_files/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim?chat"> Hỗ trợ chung</a></div> </td>
+							    <td><div class="ys-image"><a href="skype:hotro.baokim?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim?chat"> Hỗ trợ chung</a></div> </td>
 							  </tr>
 							 <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim_nv">  <img src="LichSuGiaoDich_files/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div></td>
+							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim_nv">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim_nv?chat"> <img src="LichSuGiaoDich_files/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim_nv?chat"> Hỗ trợ nghiệp vụ</a></div> </td>
+							    <td><div class="ys-image"><a href="skype:hotro.baokim_nv?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim_nv?chat"> Hỗ trợ nghiệp vụ</a></div> </td>
 							  </tr>
 							 <tr>
-							    <td valign="top"><div class="ys-image"><a href="ymsgr:sendim?hotrokythuat.baokim"> <img src="LichSuGiaoDich_files/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div></td>
+							    <td valign="top"><div class="ys-image"><a href="ymsgr:sendim?hotrokythuat.baokim"> <img src="../../Content/images/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div><div class="ys-image"><a href="skype:hotrokythuat.baokim?chat">   <img src="LichSuGiaoDich_files/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div></div> </td>
+							    <td><div><div class="ys-image"><a href="skype:hotrokythuat.baokim?chat">   <img src="../../Content/images/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div></div> </td>
 							 </tr>
 						</table>
 		        		</div>        		
@@ -118,24 +118,12 @@
 		    	  <div id="AccountBlog" style="display:none;cursor:default; position: absolute;width:258px;padding-top:0px;z-index:1;color:#578E01">
 		        		<div style="background-color: white; border:solid 1px gray;padding:5px;margin-top: -13px;">
 		        			<table width="250" border="0" cellspacing="0" cellpadding="0" class="account-table-blog">
-								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/emails">Thêm / Sửa Email </a></td>
-								  </tr>
-								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/phones">Thêm / Sửa số Điện thoại</a></td>
+								 <tr>
+								    <td><a href="https://www.baokim.vn/accounts/phones">Sửa số Điện thoại</a></td>
 								  </tr>
 								  <tr>
 								    <td><a href="https://www.baokim.vn/accounts/profile">Sửa địa chỉ</a></td>
-								  </tr>
-								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/account_sub">Quản lý tài khoản con</a></td>
-								  </tr>
-								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/banks">Quản lý tài khoản Ngân Hàng</a></td>
-								  </tr>
-								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/register/activate/" .=""> Xác thực tài khoản</a></td>
-								  </tr>
+								  </tr>				  
 								  <tr>
 								    <td><a href="https://www.baokim.vn/accounts/profile/change_password">Đổi mật khẩu</a></td>
 								  </tr>
@@ -312,7 +300,7 @@
                 </div>
                 <div class="veri_sign_secured">
                     <embed onclick="window.open(&quot;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.baokim.vn&amp;lang=en&quot;,&quot;popup&quot;,&quot;height=500,width=550,scrollbars=yes&quot;)"
-                        src="LichSuGiaoDich_files/getseal0.swf" loop="false" menu="false" quality="best"
+                        src="../../Content/images/getseal0.swf" loop="false" menu="false" quality="best"
                         wmode="transparent" swliveconnect="FALSE" name="s_s" type="application/x-shockwave-flash"
                         pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always"
                         align="" height="72" width="100">
@@ -376,7 +364,7 @@
             }
             .l_menu
             {
-                background: url("LichSuGiaoDich_files/ll000000.jpg") no-repeat scroll 0 0 transparent;
+                background: url("../../Content/images/ll000000.jpg") no-repeat scroll 0 0 transparent;
                 padding-left: 16px;
                 padding-right: 18px;
             }
