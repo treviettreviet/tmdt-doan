@@ -42,39 +42,27 @@ namespace Money10Banking.Controllers
         /// <returns></returns>
         private int UserValidation(string email, string password)
         {
-            int check = -3; // Đăng nhập thất bại: Sai Username và Password
+            int check = -1; // Đăng nhập thất bại: Sai Username và Password
             try
             {
                 TaiKhoan user = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (user.Email == email && user.MatKhau == password)
+                if (user.MatKhau == password)
                 {
                     check = 0;  //Đăng nhập thành công
                     return check;
                 }
-                else
+               
+                if (!user.MatKhau.Equals(password))
                 {
-                    if (!user.Email.Equals(email) && !user.MatKhau.Equals(password))
-                        return check;  // Sai Email và mật khẩu
-                    else
-                    {
-                        if (!user.Email.Equals(email))
-                        {
-                            check = -1; // Email không tồn tại
-                            return check;
-                        }
-                        else
-                        {
-                            check = -2; // Sai Password
-                            return check;  
-                        }
-                    }
+                    check = -2; // Email không tồn tại
+                    return check;
                 }
             }
             catch
             {
                 return check; 
             }
-
+            return check;
         }
 
         /// <summary>
@@ -83,12 +71,39 @@ namespace Money10Banking.Controllers
         /// <param name="UserName"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public ActionResult XuLyDangNhap(string UserName, string Password)
+        public ActionResult XuLyDangNhap(string email, string password)
         {
-            int user_validation = UserValidation(UserName, Password);
-            if (user_validation == 0)
-                return View("DangKy");
-            return View("BaoLoi");
+            try
+            {
+                
+                int user_validation = UserValidation(email, password);
+                if (user_validation == 0)
+                    return View("LichSuGiaoDich");
+                else
+                {
+                    string div = "error-box";
+                    //string begin_div = "<div class='error-box'>";
+                    //string end_div = "</div>";
+                    //<div class="error-box">Thông tin đăng nhập không chính xác</div>
+                    string error = "";
+                    if(user_validation==-1)
+                    {
+                        error += "Email không tồn tại";
+                    }
+                    if (user_validation == -2)
+                    {
+                        error += "Sai mật khẩu";
+                    }
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("DangNhap");
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception(ex.Message);
+            }
         }
 
 
@@ -111,6 +126,9 @@ namespace Money10Banking.Controllers
         }
 
 
-
+        public ActionResult LichSuGiaoDich()
+        {
+            return View();
+        }
     }
 }

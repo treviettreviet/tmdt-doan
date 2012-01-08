@@ -13,13 +13,13 @@
     var APPPATH_URI = "/application/";
     var BASE_URI = "/";
 </script>
-<link rel="shortcut icon" href="../../Content/images/icon0000.png">
-<link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css">
-<link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css">
-<link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css">
-<link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css">
-<link href="../../Content/css/login000.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
+<link rel="shortcut icon" href="../../Content/images/icon0000.png"/>
+<link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css"/>
+<link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css"/>
+<link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css"/>
+<link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css"/>
+<link href="../../Content/css/login000.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script/>
 <script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
 <script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
   

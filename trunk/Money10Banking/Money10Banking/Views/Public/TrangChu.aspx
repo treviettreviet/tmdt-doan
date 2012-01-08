@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Money10Banking.Models.LogOnModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main" style="padding: 0">
@@ -26,7 +26,7 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="text" name="email" value="" id="email"  style="width: 128px;"/>
+                                            <input type="text" name="email" value="huynhtanlen@gmail.com" id="email"  style="width: 128px;"/>
                                         </label>
                                     </td>
                                 </tr>
@@ -38,7 +38,7 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="password" name="password" value="" id="password"  style="width: 128px;"/>
+                                            <input type="password" name="password" value="money10" id="password"  style="width: 128px;"/>
                                         </label>
                                     </td>
                                 </tr>
