@@ -22,15 +22,15 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult XuLyDangNhapThanhToanTrucTuyen(string email, string password)
-        {
-            // Xử lý code tại đây.
-            TaiKhoan acc = Login(email, password, 1000);
-            if (acc == null)
-                Redirect("http://google.com");
+        //public ActionResult XuLyDangNhapThanhToanTrucTuyen(string email, string password)
+        //{
+        //    // Xử lý code tại đây.
+        //    TaiKhoan acc = Login(email, password, 1000);
+        //    if (acc == null)
+        //        Redirect("http://google.com");
 
-            return View();
-        }
+        //    return View();
+        //}
         
         public ActionResult TrangChu()
         {

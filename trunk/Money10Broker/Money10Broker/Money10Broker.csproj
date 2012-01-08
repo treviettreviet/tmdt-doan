@@ -143,7 +143,6 @@
     <Content Include="Content\images\bg-titlf.png" />
     <Content Include="Content\images\bidv_127.gif" />
     <Content Include="Content\images\blue_col.png" />
-    <Content Include="Content\images\box_user.js" />
     <Content Include="Content\images\btn-sear.png" />
     <Content Include="Content\images\bulit-00.gif" />
     <Content Include="Content\images\button-c.gif" />
@@ -330,7 +329,6 @@
     <Content Include="Scripts\js\set_inpu.js" />
     <Content Include="Scripts\js\set_input.js" />
     <Content Include="Scripts\js\set_inpv.js" />
-    <Content Include="Scripts\js\styles00.css" />
     <Content Include="Scripts\js\transfer.js" />
     <Content Include="Scripts\js\update_q.js" />
     <Content Include="Scripts\js\validati.js" />
@@ -360,9 +358,10 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="webskins\javascripts\keyboard\keyboard.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Public\UserControl\" />
+    <Content Include="Views\Shared\SiteTaiKhoan.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\SiteThanhToan.Master" />
@@ -374,7 +373,7 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\SiteTaiKhoan.Master" />
+    <Content Include="Views\Admin\SiteTaiKhoan.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />

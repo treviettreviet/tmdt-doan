@@ -1,15 +1,12 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<head>
-
-<meta name="revisit-after" content="1 days">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <meta name="revisit-after" content="1 days">
 <meta name="verify-v1" content="5aMXCOH9gNNFj+gs9RUKoOCWGV9t35FxOxCaokfoiWs=">
-<!--<base href="https://www.nganluong.vn/">-->
-
-<title>Tổng hợp giao dịch | NgânLượng.vn</title>
 <meta name="keywords" content="Ví điện tử, Cổng thanh toán trực tuyến, Giao dịch an toàn, Bảo vệ người mua, bảo hiểm giao dịch, Thanh toán Tạm giữ, Thanh toán Ngay,  Thanh toán Nhanh chóng - Tiện lợi, Tích hợp thanh toán, Thanh toán, Nạp tiền, Rút tiền, Chuyển tiền, Yêu cầu thanh toán, Mua sắm trực tuyến">	
 <meta name="description" content="NgânLượng.vn là Ví điện tử và Cổng Thanh toán Trực tuyến (TTTT) chuyên dùng cho Thương mại Điện tử (TMĐT) tiên phong và hàng đầu tại Việt Nam, cả về sản phẩm dịch vụ, độ phủ thị trường và lưu lượng thanh toán">
 
@@ -34,8 +31,7 @@
 <link rel="stylesheet" href="../../Content/css/deposit-.css" type="text/css"> 
 <link rel="stylesheet" href="../../Content/css/nganluong_form_check.css" type="text/css">
 </head>
-<link rel="shortcut icon" href="../../Content/images/nl000000.gif">
-<form id="form1" runat="server">
+<body>
 <div id="taskbar">
 	<div class="taskbar">
     	<div class="taskbar-sort">
@@ -316,7 +312,4 @@
 </div>
 <script type="text/javascript" src="../../Scripts/js/jquery01.js" "=""></script>
 </body>
-</form>
-
 </html>
-<!-- This document saved from https://www.nganluong.vn/?portal=nganluong&page=transaction_history -->
