@@ -12,14 +12,14 @@
                     <div class="login-form">
                         <div class="login_header"></div>
                         <div class="login_content">
-                         <form action="https://www.baokim.vn/accounts/login" id="form_login" autocomplete="off" accept-charset="utf-8" method="post">
-<input type="hidden" name="_form_action" value="/accounts/login">
-<input type="hidden" name="_form_token" value="89b6ae338e41af5d29a372356130073f2ce5a24d">
+                         <form action="Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
+                            <input type="hidden" name="_form_action" value="/accounts/login">
+                            <input type="hidden" name="_form_token" value="89b6ae338e41af5d29a372356130073f2ce5a24d">
                             <div class="header">Đăng Nhập</div>  
                             <div class="login_label">Email / Số điện thoại</div>
-                            <div><input type="text" name="email" value class="keyboardInput login_texbox"></div>
+                            <div><input type="text" name="email" value="" class="keyboardInput login_texbox"/></div>
                             <div class="login_label">Mật khẩu</div>
-                            <div><input type="password" name="password" value class="keyboardInput login_texbox"></div>
+                            <div><input type="password" name="password" value="" class="keyboardInput login_texbox"/></div>
                            <!--  
                             <div class="login_remember">
                                 <input type="checkbox" name="" value="" id="cb_remember" class="inputcheckbox" /><label for="cb_remember">Nhớ mật khẩu</label>
@@ -35,7 +35,8 @@
                             <div><input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
                             <div class="login_link">
                             	<a href="https://www.baokim.vn/accounts/register" title="Đăng ký tài khoản Bảo Kim miễn phí">Đăng ký tài khoản Bảo Kim <b>Miễn phí</b></a>                                <a href="https://www.baokim.vn/accounts/login/forget_password" title="Quên mật khẩu">Quên mật khẩu?</a>                                <a href="https://www.baokim.vn/accounts/login/forget_email" title="Quên email">Quên email?</a>                            </div>
-                       	                       </form>                        </div>
+                       	                       </form>                        
+                        </div>
                         <div class="login_bottom"></div>
                     </div>
                 </div>

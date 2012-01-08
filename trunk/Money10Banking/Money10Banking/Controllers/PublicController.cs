@@ -77,13 +77,21 @@ namespace Money10Banking.Controllers
 
         }
 
-        public ActionResult XuLyDangNhap(string email, string password)
+        /// <summary>
+        /// Lên - Xử lý đăng nhập từ trang chủ
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        public ActionResult XuLyDangNhap(string UserName, string Password)
         {
-            int user_validation = UserValidation(email, password);
+            int user_validation = UserValidation(UserName, Password);
             if (user_validation == 0)
                 return View("DangKy");
             return View("BaoLoi");
         }
+
+
 
         public ActionResult ChuyenTien()
         {
@@ -101,5 +109,8 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+
+
+
     }
 }
