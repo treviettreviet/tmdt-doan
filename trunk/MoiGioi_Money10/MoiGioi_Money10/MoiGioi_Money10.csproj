@@ -68,6 +68,7 @@
     <Content Include="css\vtip0000.css" />
     <Content Include="DangNhapThanhCong.aspx" />
     <Content Include="GetData.aspx" />
+    <Content Include="icon-exel.gif" />
     <Content Include="images\acb_1299.gif" />
     <Content Include="images\agb_1299.gif" />
     <Content Include="images\americia.gif" />
@@ -305,6 +306,7 @@
     <Content Include="css\styles00.css" />
     <Content Include="js\vtip0000.js" />
     <Content Include="js\withdraw.js" />
+    <Content Include="keyboard.gif" />
     <Content Include="ThanhToanTrucTuyen.aspx" />
     <Content Include="TrangChu_NoiDung.ascx" />
     <Content Include="TrangChu_SlideShow.ascx" />

@@ -551,13 +551,13 @@ div.faq-hot-container ul li a {
 }
 
 .tran-tab-bg {
-	background: url(../../Content/images/tran-tab-bg.gif) repeat-x;
+	background: url(../../Content/images/tran-tab.gif) repeat-x;
 	margin-top: 10px;
 }
 
 .tran-tab-menu-myacount {
 	padding-left: 30px;
-	background: url(../../Content/images/li-title-line.gif) no-repeat -2px 8px;
+	background: url(../../Content/images/li-title.gif) no-repeat -2px 8px;
 	min-width: 170px;
 	color: #FFFFFF;
 }
@@ -674,7 +674,7 @@ div.faq-hot-container ul li a {
 	padding-left: 25px;
 	padding-top: 10px;
 	font-weight: bold;
-	background: url(../../Content/images/message-icon.png) no-repeat 3px 5px;
+	background: url(../../Content/images/message-.png) no-repeat 3px 5px;
 }
 
 .notification_bar {
