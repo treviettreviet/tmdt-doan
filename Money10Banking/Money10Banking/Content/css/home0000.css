@@ -201,7 +201,7 @@ div.faq-hot-container ul li a {
 .home-form-login-title{font-size:14px;color:#5b9500; font-weight:bold; }
 .form-content-text{color:#424242;font-size:11px; }
 .table-left{}
-.home-bt-login{background:url(home-but.gif) no-repeat;width:70px;height:21px; color:#FFFFFF; border:thin; font-size:11px;}
+.home-bt-login{background:url(../../Content/images/home-but.gif) no-repeat;width:70px;height:21px; color:#FFFFFF; border:thin; font-size:11px;}
 .home-fr-a{font-size:11px ; color:#515150; text-decoration:underline;}
 
 .hb-news-wrapper{float:left; width:200px; border:1px solid #c8d0d5; height:auto;}
