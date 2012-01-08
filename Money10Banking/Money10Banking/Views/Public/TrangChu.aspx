@@ -1,24 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Money10Banking.Models.LogOnModel>" %>
 
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main" style="padding: 0">
         <div class="home">
             <!-- start home top -->
             <div class="home-top">
                 <div class="home-top-left">
-                    <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
-                    <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css"/>
+                    <%--<script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
+                    <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css"/>--%>
                     <div class="form_login">
-                        <%--<form action="Public/XuLyDangNhap" method="post" id="login_small">--%>
-                        <form action="Public/XuLyDangNhap" method="post">
-                            <table width="170" border="0" cellpadding="0" cellspacing="0">
+                        <form action="Public/XuLyDangNhap" method="post" id="login_small" accept-charset="utf-8">
+                        <table width="170" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
                                 <tr>
                                     <td height="34">
                                         <div class="home-form-login-title">
@@ -33,7 +26,7 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="text" name="email" id="email" class="keyboardInput" style="width: 128px;" />
+                                            <input type="text" name="email" value="" id="email"  style="width: 128px;"/>
                                         </label>
                                     </td>
                                 </tr>
@@ -45,14 +38,14 @@
                                 <tr>
                                     <td height="30">
                                         <label>
-                                            <input type="password" name="password" id="password" class="keyboardInput" style="width: 128px;" />
+                                            <input type="password" name="password" value="" id="password"  style="width: 128px;"/>
                                         </label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td height="27">
                                         <label>
-                                            <input type="submit" name="submit" value="Đăng Nhập" class="home-bt-login" />
+                                            <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login"/>
                                         </label>
                                     </td>
                                 </tr>
@@ -66,7 +59,8 @@
                                                 Đăng ký</a></div>
                                     </td>
                                 </tr>
-                            </table>
+                            </tbody>
+                        </table>
                         </form>
                         <script type="text/javascript">
 
