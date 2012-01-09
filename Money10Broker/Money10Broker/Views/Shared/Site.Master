@@ -197,10 +197,6 @@
    <!-- <div id="line-yell"></div>-->
 	<!-- end header-->	
 	<div id="body">
-    	<!--<div id="line-yell-home" style="overflow:hidden;"></div>-->
-        <!-- start slideshow -->
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
 		 <!-- end slideshow -->
          <!-- start nội dung -->
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
