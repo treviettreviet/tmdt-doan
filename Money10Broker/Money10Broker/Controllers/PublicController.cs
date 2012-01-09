@@ -158,6 +158,9 @@ namespace Money10Broker.Controllers
         public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string sex, string address, string city_id)
         {
 
+            //Transfer1.wsTransfer ws = new Transfer1.wsTransfer();
+            //ws.TransferMoneySameBank();
+
             if (cmdRegister != null)
             {
                 if (KiemTraEmail(email) == 1)
