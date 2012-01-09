@@ -14,6 +14,7 @@
     <AssemblyName>Money10Broker</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,10 +73,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\MoiGioi.Designer.cs">
+    <Compile Include="Models\MoiGioiOnline.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MoiGioi.edmx</DependentUpon>
+      <DependentUpon>MoiGioiOnline.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -367,16 +368,16 @@
     <Content Include="Views\Shared\SiteThanhToan.Master" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\MoiGioi.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MoiGioi.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Admin\SiteTaiKhoan.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\MoiGioiOnline.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MoiGioiOnline.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
