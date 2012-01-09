@@ -317,7 +317,7 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<%--<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="heart-banner" style="height: 220px; margin-top: 0;">
         <div id="pic-heart">
             <div id="frame-banner" style="width: 6580px; left: -3760px;">
@@ -386,4 +386,4 @@
                 6000</p>
         </div>
     </div>
-</asp:Content>
+</asp:Content>--%>

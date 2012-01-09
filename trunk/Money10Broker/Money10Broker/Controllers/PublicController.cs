@@ -71,8 +71,8 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
-
+        //MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
+        xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
         private ActionResult Login(string email, string password, decimal amount)
         {
@@ -152,5 +152,13 @@ namespace Money10Broker.Controllers
             //return View();
         }
 
+
+        // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
+        // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
+        // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
+        public ActionResult XuLyDangKyCaNhan()
+        {
+            return View();
+        }
    }
 }

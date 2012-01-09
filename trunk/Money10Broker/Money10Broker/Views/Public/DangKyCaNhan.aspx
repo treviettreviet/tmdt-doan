@@ -2,14 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <div id="content">
 	<div id="content">
 	<div id="register">
 		<div id="title"><span class="yel">Đăng ký mở ví điện tử cá nhân</span>&nbsp;&nbsp;[ <a href="DangKy_DoanhNghiep.aspx">Chuyển sang đăng ký mở ví điện tử doanh nghiệp</a> ]</div>
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form action="XuLyDangKyCaNhan" name="NL_UserRegisterPersonalForm" method="post">
+		<form action="Public/XuLyDangKyCaNhan" name="NL_UserRegisterPersonalForm" method="post">
             <input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
@@ -192,7 +191,4 @@
 
 </script>--%>
 
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
