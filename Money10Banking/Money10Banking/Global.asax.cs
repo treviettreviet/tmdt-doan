@@ -20,7 +20,6 @@ namespace Money10Banking
                 "TrangChu", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Public", action = "TrangChu", id = UrlParameter.Optional } // Parameter defaults
-              
             );
 
         }
