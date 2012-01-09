@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,8 +252,8 @@
     <Content Include="Scripts\js\shBrushX.js" />
     <Content Include="Scripts\js\shCore00.js" />
     <Content Include="Scripts\js\small000.js" />
+    <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Admin\Default.aspx" />
-    <Content Include="Views\Public\Admin.aspx" />
     <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
     <Content Include="Views\Public\ChuyenTien.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />

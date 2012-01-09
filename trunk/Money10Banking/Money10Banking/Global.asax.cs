@@ -19,7 +19,7 @@ namespace Money10Banking
             routes.MapRoute(
                 "TrangChu", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Public", action = "CapNhatThongTinTaiKhoan", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Admin", action = "Admin", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }

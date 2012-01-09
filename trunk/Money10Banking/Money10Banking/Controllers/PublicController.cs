@@ -39,10 +39,7 @@ namespace Money10Banking.Controllers
             return View();
         }
 
-        public ActionResult Admin()
-        {
-            return View();
-        }
+       
         /// <summary>
         /// Lên - Kiểm tra đăng nhập, trả về nhiều kết quả
         /// </summary>
