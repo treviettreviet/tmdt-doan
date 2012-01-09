@@ -308,8 +308,11 @@
                        <div class="form-content clear">                 
 	                     	<p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Tài khoản cá nhân</span><span class="font-acc-command">(Sử dụng thông tin cá nhân để thực hiện giao dịch)</span></label></p>
                        		<p style="margin-left:80px;"><input type="radio" name="account[]" value  onclick="j('#register_account_personal').hide();j('#register_account_business').show(); j('#type_register').val(2);" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Tài khoản doanh nghiệp</span><span class="font-acc-command">(Sử dụng thông tin pháp nhân /Doanh nghiệp để thực hiện giao dịch)</span></label></p>
-                            <%--<form id="form" runat="server">--%>
-                            <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form1" name="form_register_personal" accept-charset="utf-8" method="post">
+
+                           <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form1" name="form_register_personal" accept-charset="utf-8" method="post">
+
+                           
+
                             <%--<input type="hidden" name="_form_action" value="../../Controllers/PublicController.cs">
 <input type="hidden" name="_form_token" value="../../Controllers/PublicController.cs">--%>
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal">
@@ -317,7 +320,7 @@
                                     <th>Email<span class="mandatory">*</span></th>
                                     <td class="style1">
                                        <input type="text" name="email"  value class="text qtip" autocomplete="off"
-                                            title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName"> <input disabled= "disabled" name="ktemail" type="text" />
+                                            title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
                                         <br>                            
                                     </td>
                                 </tr>

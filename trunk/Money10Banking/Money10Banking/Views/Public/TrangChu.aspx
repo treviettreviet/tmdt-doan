@@ -4,6 +4,15 @@
         <div class="home">
             <!-- start home top -->
             <div class="home-top">
+
+                <div class="home-top-left">
+                    <%--<script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
+                    <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css"/>--%>
+                    <div class="form_login">
+                        <form action="XuLyDangNhap" method="post" id="login_small" accept-charset="utf-8">
+                        <table width="170" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+
                 <div class="home-top">
                     <div class="home-top-left">
                         <%--<script type="text/javascript" src="Scripts/js/keyboard.js"></script>
@@ -14,6 +23,7 @@
                             <%--<input type="hidden" name="_form_action" value="accounts/login">
                             <input type="hidden" name="_form_token" value="12e3b3a73d4d99b6fc645b18ec243b974b28a301">--%>
                             <table width="170" border="0" cellpadding="0" cellspacing="0">
+
                                 <tr>
                                     <td height="34">
                                         <div class="home-form-login-title">
