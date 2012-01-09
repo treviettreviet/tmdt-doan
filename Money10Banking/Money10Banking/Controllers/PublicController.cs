@@ -52,13 +52,13 @@ namespace Money10Banking.Controllers
             try
             {
                 TaiKhoan user = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (user.MatKhau == password)
+                if (user.MatKhau == GetMD5Hash(password))
                 {
                     check = 0;  //Đăng nhập thành công
                     return check;
                 }
-               
-                if (!user.MatKhau.Equals(password))
+
+                if (!user.MatKhau.Equals(GetMD5Hash(password)))
                 {
                     check = -2; // Email không tồn tại
                     return check;
@@ -373,7 +373,8 @@ namespace Money10Banking.Controllers
                 dc.MaTaiKhoan = tk.MaTaiKhoan;
                 db1.DiaChis.AddObject(dc);
                 KhachHang kh = new KhachHang();
-                var maKh = from mkh in db1.KhachHangs select mkh.MaKhachHang;
+                var maKh = from mkh in db1.KhachHangs select mkh;
+
                 int k = maKh.Count() + 1;
                 if (k <= 9)
                 {
@@ -414,7 +415,7 @@ namespace Money10Banking.Controllers
 
                 return View("DangNhap");
             }
-            catch (Exception ex)
+            catch 
             {
                 //throw new Exception("Error on # of clients.", ex);
                 return View("BaoLoi");
@@ -484,22 +485,24 @@ namespace Money10Banking.Controllers
             db1.TaiKhoans.AddObject(tk);
 
             MoiGioi mg = new MoiGioi();
-            var maMg = from mmg in db1.MoiGiois select mmg;
-            int m = maMg.Count() + 1;
-            if (m <= 9)
-            {
-                mg.MaMoiGioi = "MG00" + m.ToString();
-            }
-            else
-                if (m > 9 && m <= 99)
-                {
-                    mg.MaMoiGioi = "MG0" + m.ToString();
-                }
-                else
-                    if (m > 99 && m <= 999)
-                    {
-                        mg.MaMoiGioi = "MG" + m.ToString();
-                    }
+            MoiGioi maMg = db1.MoiGiois.LastOrDefault();
+            string moigioi = maMg.MaMoiGioi;
+            //int m = maMg.Count() + 1;
+            //if (m <= 9)
+            //{
+            //    mg.MaMoiGioi = "MG00" + m.ToString();
+            //}
+            //else
+            //    if (m > 9 && m <= 99)
+            //    {
+            //        mg.MaMoiGioi = "MG0" + m.ToString();
+            //    }
+            //    else
+            //        if (m > 99 && m <= 999)
+            //        {
+            //            mg.MaMoiGioi = "MG" + m.ToString();
+            //        }
+            mg.MaMoiGioi= TaoMaTangTuDong(moigioi, 2, "MG");
 
             mg.MaTaiKhoan = tk.MaTaiKhoan;
             //var gpkd = from gp in db1.MoiGiois where companyName.Equals(gp.SoGiayPhepKinhDoanh) || companyName.Equals(gp.TenCongTy) select gp;
@@ -600,7 +603,7 @@ namespace Money10Banking.Controllers
              
             return View("DangNhap");
         }
-        catch (Exception ex)
+        catch
         {
             //throw new Exception("Error on # of clients.", ex);
             return View("BaoLoi");
