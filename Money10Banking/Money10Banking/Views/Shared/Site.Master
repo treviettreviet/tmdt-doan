@@ -1,53 +1,47 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <head>
-	
-<title>BaoKim.vn - Cổng thanh toán trực tuyến đảm bảo an toàn giao dịch tiện lợi</title>
-
-<!-- Language: vi -->
-
-<script type="text/javascript">
-    var APPPATH_URI = "/application/";
-    var BASE_URI = "/";
-</script>
-<link rel="shortcut icon" href="../../Content/images/icon0000.png"/>
-<link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css"/>
-<link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css"/>
-<link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css"/>
-<link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css"/>
-<link href="../../Content/css/login000.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
-  
-<script type="text/javascript" src="../../Scripts/js/jquery-u.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery03.js"></script>
-<link href="../../Content/css/jquery-u.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../../Scripts/js/jquery04.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery05.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery06.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery07.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery08.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery09.js"></script>
-
-<script type="text/javascript" src="../../Scripts/js/jquery0A.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery0B.js"></script>
-<link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css" media="screen">
-
-<script type="text/javascript" src="../../Scripts/js/shCore00.js"></script>
-<script type="text/javascript" src="../../Scripts/js/shBrushX.js"></script>
-<link href="../../Content/css/SyntaxHi.css" rel="stylesheet" type="text/css">
-<link href="../../Content/css/jquery01.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript">
+    <title>BaoKim.vn - Cổng thanh toán trực tuyến đảm bảo an toàn giao dịch tiện lợi
+    </title>
+    <!-- Language: vi -->
+    <script type="text/javascript">
+        var APPPATH_URI = "/application/";
+        var BASE_URI = "/";
+    </script>
+    <link rel="shortcut icon" href="../../Content/images/icon0000.png" />
+    <link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/login000.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery-u.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery03.js"></script>
+    <link href="../../Content/css/jquery-u.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../Scripts/js/jquery04.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery05.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery06.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery07.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery08.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery09.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery0A.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery0B.js"></script>
+    <link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../../Scripts/js/shCore00.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/shBrushX.js"></script>
+    <link href="../../Content/css/SyntaxHi.css" rel="stylesheet" type="text/css">
+    <link href="../../Content/css/jquery01.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
 <!--
-    var j = jQuery.noConflict();
+        var j = jQuery.noConflict();
 
-    j(document).ready(function () {
-        j("input.calendar").datepicker(j.extend({},
+        j(document).ready(function () {
+            j("input.calendar").datepicker(j.extend({},
       j.datepicker.regional["vi"], {
           dateFormat: "dd/mm/yy",
           changeMonth: true,
@@ -60,256 +54,476 @@
           buttonImageOnly: true
       }));
 
-        dp.SyntaxHighlighter.ClipboardSwf = "../../Content/images/clipboard.swf";
-        dp.SyntaxHighlighter.BloggerMode();
-        dp.SyntaxHighlighter.HighlightAll("code");
+            dp.SyntaxHighlighter.ClipboardSwf = "../../Content/images/clipboard.swf";
+            dp.SyntaxHighlighter.BloggerMode();
+            dp.SyntaxHighlighter.HighlightAll("code");
 
-        j("a.fancybox").fancybox();
-    });
+            j("a.fancybox").fancybox();
+        });
 //-->
-</script>
-		<link rel="canonical" href="https://www.baokim.vn/">
-		<meta name="keywords" content="Thanh toán trực tuyến, Mua hàng an toàn, Tích hợp bán hàng, Mua sắm trực tuyến, Chuyển tiền trực tuyến, Thanh toán, Nạp tiền, Tích hợp thanh toán, Nhận tiền siêu tốc, Gửi yêu cầu chuyển tiền">
-		<meta name="description" content="Bảo Kim - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
+    </script>
+    <link rel="canonical" href="https://www.baokim.vn/">
+    <meta name="keywords" content="Thanh toán trực tuyến, Mua hàng an toàn, Tích hợp bán hàng, Mua sắm trực tuyến, Chuyển tiền trực tuyến, Thanh toán, Nạp tiền, Tích hợp thanh toán, Nhận tiền siêu tốc, Gửi yêu cầu chuyển tiền">
+    <meta name="description" content="Bảo Kim - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
-
 <body>
-   
-<div class="wrapper">
-	<div class="page-normal">
-		<div id="Header">
-			<div class="top-header">
-<div class="logo left">
-    <a href="https://www.baokim.vn/" title="baokim.vn">
-        <img src="../../Content/images/logo0000.png" alt="baokim.vn" title="baokim.vn">
-    </a>
-</div>
-<div class="right" style="padding-right:30px;">
-    <div class="linkexpress right">
-      <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
- <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
- 				<div style="margin-bottom: 15px;">
-	 	<a href="Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span>
-	 	<a href="Public/DangKy" title="Đăng ký">Đăng ký</a><span>|</span> 
-		
-		<a href="https://www.baokim.vn/contact" title="Liên hệ">Liên hệ</a>			</div>
-	  	      	
-      	  <div style="display:inline;cursor: pointer;position: relative;" onmouseover="showSupportEx()" onmouseout="hideSupportEx()">
-    	   <a href="ymsgr:sendim?hotro.baokim@yahoo.com"></a>
-    	   <a href="skype:hotro.baokim?chat"> </a>
-		    	<div>
-		    	  <div id="support_yahoo_skype" style="display:none;cursor:default; position: absolute;width:245px;padding-top:0px;z-index:1;margin-left: 20px;">
-		        		<div style="background-color: white; border:solid 1px gray;padding:5px;">
-		        			<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
-							  <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div></td>
-							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim?chat"> Hỗ trợ chung</a></div> </td>
-							  </tr>
-							  <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim_nv">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div></td>
-							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim_nv?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim_nv?chat"> Hỗ trợ nghiệp vụ</a></div> </td>
-							  </tr>
-							 <tr>
-							    <td valign="top"><div class="ys-image"><a href="ymsgr:sendim?hotrokythuat.baokim"> <img src="../../Content/images/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div></td>
-							    <td style="width: 10px;"></td>
-							    <td><div><div class="ys-image"><a href="skype:hotrokythuat.baokim?chat">   <img src="../../Content/images/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div></div> </td>
-							 </tr>
-						</table>
-		        		</div>        		
-		        	</div>
-		         </div>	
-         </div>
- 
-<script type="text/javascript">
+    <div class="wrapper">
+        <div class="page-normal">
+            <div id="Header">
+                <div class="top-header">
+                    <div class="logo left">
+                        <a href="https://www.baokim.vn/" title="baokim.vn">
+                            <img src="../../Content/images/logo0000.png" alt="baokim.vn" title="baokim.vn">
+                        </a>
+                    </div>
+                    <div class="right" style="padding-right: 30px;">
+                        <div class="linkexpress right">
+                            <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
+                            <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
+                            <div style="margin-bottom: 15px;">
+                                <a href="Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="Public/DangKy"
+                                    title="Đăng ký">Đăng ký</a><span>|</span> <a href="https://www.baokim.vn/contact"
+                                        title="Liên hệ">Liên hệ</a>
+                            </div>
+                            <div style="display: inline; cursor: pointer; position: relative;" onmouseover="showSupportEx()"
+                                onmouseout="hideSupportEx()">
+                                <a href="ymsgr:sendim?hotro.baokim@yahoo.com"></a><a href="skype:hotro.baokim?chat">
+                                </a>
+                                <div>
+                                    <div id="support_yahoo_skype" style="display: none; cursor: default; position: absolute;
+                                        width: 245px; padding-top: 0px; z-index: 1; margin-left: 20px;">
+                                        <div style="background-color: white; border: solid 1px gray; padding: 5px;">
+                                            <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <div class="ys-image">
+                                                            <a href="ymsgr:sendim?hotro.baokim">
+                                                                <img src="../../Content/images/yahoo-ic.gif">
+                                                            </a>
+                                                        </div>
+                                                        <div class="ys-text">
+                                                            <a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div>
+                                                    </td>
+                                                    <td style="width: 10px;">
+                                                    </td>
+                                                    <td>
+                                                        <div class="ys-image">
+                                                            <a href="skype:hotro.baokim?chat">
+                                                                <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
+                                                        <div class="ys-text">
+                                                            <a href="skype:hotro.baokim?chat">Hỗ trợ chung</a></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="ys-image">
+                                                            <a href="ymsgr:sendim?hotro.baokim_nv">
+                                                                <img src="../../Content/images/yahoo-ic.gif">
+                                                            </a>
+                                                        </div>
+                                                        <div class="ys-text">
+                                                            <a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div>
+                                                    </td>
+                                                    <td style="width: 10px;">
+                                                    </td>
+                                                    <td>
+                                                        <div class="ys-image">
+                                                            <a href="skype:hotro.baokim_nv?chat">
+                                                                <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
+                                                        <div class="ys-text">
+                                                            <a href="skype:hotro.baokim_nv?chat">Hỗ trợ nghiệp vụ</a></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="top">
+                                                        <div class="ys-image">
+                                                            <a href="ymsgr:sendim?hotrokythuat.baokim">
+                                                                <img src="../../Content/images/yahoo-ic.gif">
+                                                            </a>
+                                                        </div>
+                                                        <div class="ys-text">
+                                                            <a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div>
+                                                    </td>
+                                                    <td style="width: 10px;">
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="ys-image">
+                                                                <a href="skype:hotrokythuat.baokim?chat">
+                                                                    <img src="../../Content/images/skype000.png" width="14" height="14">
+                                                                </a>
+                                                            </div>
+                                                            <div class="ys-text">
+                                                                <a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
 
-    function showSupportEx() {
-        j("#support_yahoo_skype").show();
-    }
-    function hideSupportEx() {
-        j("#support_yahoo_skype").hide();
-    }
-    function showAcccountEx() {
-        j("#AccountBlog").show();
-    }
-    function hideAcccountEx() {
-        j("#AccountBlog").hide();
-    }
-</script>
-<style type="text/css">
-.ys-image{float: left;width: 25%;}
-.ys-text{float:left;padding-top:0px;width: 75%;font-size: 11px; }
-.account-table-blog tr{height: 25px;}
-.account-table-blog td{padding-left: 25px;color:#578E01;}
-#AccountBlog .account-table-blog a:hover{color:#578E01;}
-</style>             
-    </div>
-    <div class="clear">
-    </div>
-    <div class="info right" style="margin-top: 0px;">
-        <div style="display:inline;cursor: pointer;position: relative">
-        	<a class="fancybox_hotline" href="https://www.baokim.vn/application/themes/baokim/views/support_block.php" style="text-decoration:none;"><img src="../../Content/images/support_.gif" border="0"> </a>       	
+                                function showSupportEx() {
+                                    j("#support_yahoo_skype").show();
+                                }
+                                function hideSupportEx() {
+                                    j("#support_yahoo_skype").hide();
+                                }
+                                function showAcccountEx() {
+                                    j("#AccountBlog").show();
+                                }
+                                function hideAcccountEx() {
+                                    j("#AccountBlog").hide();
+                                }
+                            </script>
+                            <style type="text/css">
+                                .ys-image
+                                {
+                                    float: left;
+                                    width: 25%;
+                                }
+                                .ys-text
+                                {
+                                    float: left;
+                                    padding-top: 0px;
+                                    width: 75%;
+                                    font-size: 11px;
+                                }
+                                .account-table-blog tr
+                                {
+                                    height: 25px;
+                                }
+                                .account-table-blog td
+                                {
+                                    padding-left: 25px;
+                                    color: #578E01;
+                                }
+                                #AccountBlog .account-table-blog a:hover
+                                {
+                                    color: #578E01;
+                                }
+                            </style>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="info right" style="margin-top: 0px;">
+                            <div style="display: inline; cursor: pointer; position: relative">
+                                <a class="fancybox_hotline" href="https://www.baokim.vn/application/themes/baokim/views/support_block.php"
+                                    style="text-decoration: none;">
+                                    <img src="../../Content/images/support_.gif" border="0">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br class="clear">
+                </div>
+                <script>
+                    j(document).ready(function () {
+                        j("a.fancybox_hotline").fancybox({
+                            'autoDimensions': false,
+                            'scrolling': 'no',
+                            'width': 800,
+                            'height': 600
+                        });
+
+                    });
+                </script>
+                <!-- Start Menu -->
+                <div class="Menu">
+                    <script type="text/javascript">
+                        var t;
+                        var currentCat = '0';
+                        var parentCat = '0';
+                        var currentSubSub = '';
+                        var prevCat = '';
+                        var space = [0, 0, 0, 0, 0, 0];
+                        function showSubMenu(currentHover) {
+                            clearTimeout(t);
+                            for (i = 0; i < 6; i++) {
+                                jQuery("#subcat" + i).css("display", "none");
+                                jQuery("#cat" + i).removeClass("selected");
+                            }
+                            jQuery("#subcat" + currentHover).css("display", "block");
+                            jQuery("#cat" + currentHover).addClass("selected");
+                            jQuery("#subcat" + currentHover).css("margin-left", space[currentHover]);
+
+                            prevCat = currentHover;
+                        }
+
+                        function resetMenu() {
+                            if (currentSubSub != '') {
+                                jQuery("#subsub" + currentSubSub).css("display", "none");
+                            }
+                            t = setTimeout('restoreCurrentMenu()', 1200);
+                        }
+
+                        function restoreCurrentMenu() {
+                            clearTimeout(t);
+                            for (i = 0; i < 5; i++) {
+                                jQuery("#subcat" + i).css("display", "none");
+                                jQuery("#cat" + i).removeClass("selected");
+                            }
+                            setCurrentMenu();
+                        }
+
+                        function setCurrentMenu() {
+                            if (currentCat != '') {
+                                if (document.getElementById("cat" + currentCat) != null) {
+                                    jQuery("#cat" + currentCat).addClass("selected");
+                                    jQuery("#subcat" + currentCat).css("display", "block");
+                                    jQuery("#subcat" + currentCat).css("margin-left", space[currentCat]);
+
+                                } else {
+                                    jQuery("#cat" + parentCat).addClass("selected");
+                                    jQuery("#subcat" + parentCat).css("display", "block");
+                                    jQuery("#subcat" + parentCat).css("margin-left", space[parentCat]);
+                                }
+                            }
+                        }
+
+                        function showSubSubMenu(currentHover) {
+                            currentSubSub = currentHover;
+                            jQuery("#subsub" + currentHover).css("display", "block");
+                            clearTimeout(t);
+                        }
+                        jQuery(document).ready(function () {
+                            setCurrentMenu();
+                        });
+                    </script>
+                    <div class="parent">
+                        <ul>
+                            <li id="cat0" class="m_home first"><a href="https://www.baokim.vn/" onmouseout="resetMenu()"
+                                onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service">
+                                    <a href="https://www.baokim.vn/service" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
+                                        <span>Dịch vụ</span></a></li><li id="cat2" class="m_payment"><a href="https://www.baokim.vn/payment/integrate_button/intro_view"
+                                            onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Tích hợp thanh toán</span></a></li><li
+                                                id="cat3" class="m_shopping"><a href="http://shopping.baokim.vn/home/" onmouseout="resetMenu()"
+                                                    onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li id="cat4" class="m_news">
+                                                        <a href="https://www.baokim.vn/news" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
+                                                            <span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="https://www.baokim.vn/faq"
+                                                                onmouseout="resetMenu()" onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sub">
+                        <ul id="subcat0" style="display: none;">
+                            <li>&nbsp;</li></ul>
+                        <ul id="subcat1" style="display: none;">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang">
+                                Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                                    <a href="https://www.baokim.vn/transactions/transfer">Chuyển tiền</a></li><li onmouseout="resetMenu()"
+                                        onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="https://www.baokim.vn/transactions/charges">
+                                            Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
+                                                <a href="https://www.baokim.vn/dai-ly-bao-kim.html"><font color="red">Đăng ký đại lý
+                                                </font>
+                                                    <img src="../../Content/images/hot00000.gif" border="0"></a></li><li onmouseout="resetMenu()"
+                                                        onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="https://www.baokim.vn/rev/index">
+                                                            Mua thẻ Visa trả trước RÊV</a></li></ul>
+                        <ul id="subcat2" style="display: none;">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="https://www.baokim.vn/payment/integrate_button/intro_view">
+                                Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
+                                    <a href="https://www.baokim.vn/payment/deal">Nút thanh toán thỏa thuận</a></li><li
+                                        onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="https://www.baokim.vn/payment/integrate_button">
+                                            Nút tích hợp sản phẩm</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
+                                                <a href="https://www.baokim.vn/payment/integrate_website">Tích hợp toàn bộ Website</a></li></ul>
+                        <ul id="subcat3" style="display: none;">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;30&quot;);"><a href="http://shopping.baokim.vn/home/san-pham.html">
+                                Sản phẩm thanh toán qua Bảo Kim</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;31&quot;);">
+                                    <a href="http://shopping.baokim.vn/sea/"><font color="red">Chuyên trang khuyến mại</font><img
+                                        src="../../Content/images/hot00000.gif" border="0"></a></li><li onmouseout="resetMenu()"
+                                            onmouseover="showSubSubMenu(&quot;32&quot;);"><a href="http://shopping.baokim.vn/home/dang-ky.html">
+                                                Đăng ký giảm giá</a></li></ul>
+                        <ul id="subcat4" style="display: none;">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;40&quot;);"><a href="https://www.baokim.vn/news/category/tin-tu-bao-kim">
+                                Tin từ Bảo Kim</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;41&quot;);">
+                                    <a href="https://www.baokim.vn/news/category/tin-tu-doi-tac">Tin từ đối tác</a></li><li
+                                        onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;42&quot;);"><a href="https://www.baokim.vn/news/category/tin-kinh-te">
+                                            Tin kinh tế</a></li></ul>
+                        <ul id="subcat5" style="display: none;">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;50&quot;);"><a href="https://www.baokim.vn/#">
+                                Tìm hiểu</a><div id="subsub50" class="sub_sub_menu" style="display: none">
+                                    <ul>
+                                        <li><a href="https://www.baokim.vn/#">Tại sao dùng Bảo Kim</a></li><li><a href="https://www.baokim.vn/#">
+                                            Bảo Kim hoạt động như thế nào</a></li><li><a href="https://www.baokim.vn/#">Thanh toán
+                                                với Bảo Kim tại đâu</a></li></ul>
+                                </div>
+                            </li>
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;51&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang">
+                                Thanh toán</a><div id="subsub51" class="sub_sub_menu" style="display: none">
+                                    <ul>
+                                        <li><a href="https://www.baokim.vn/faq/category/thanh-toan-an-toan">Thanh toán an toàn</a></li><li>
+                                            <a href="https://www.baokim.vn/faq/category/thanh-toan-truc-tiep">Thanh toán không cần
+                                                đăng ký tài khoản</a></li></ul>
+                                </div>
+                            </li>
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;52&quot;);"><a href="https://www.baokim.vn/faq/category/chuyen-tien">
+                                Chuyển tiền</a><div id="subsub52" class="sub_sub_menu" style="display: none">
+                                    <ul>
+                                        <li><a href="https://www.baokim.vn/faq/category/chuyen-tien-an-toan">Chuyển tiền an
+                                            toàn</a></li><li><a href="https://www.baokim.vn/faq/category/chuyen-tien-ngoai-he-thong">
+                                                Chuyển tiền cho người chưa đăng ký tài khoản</a></li><li><a href="https://www.baokim.vn/faq/category/yeu-cau-chuyen-tien">
+                                                    Gửi yêu cầu chuyển tiền</a></li></ul>
+                                </div>
+                            </li>
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;53&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan">
+                                Bán trên Vật Giá</a><div id="subsub53" class="sub_sub_menu" style="display: none">
+                                    <ul>
+                                        <li><a href="https://www.baokim.vn/faq/category/tich-hop-thanh-toan">Tích hợp thanh
+                                            toán</a></li><li><a href="https://www.baokim.vn/faq/category/tich-hop-thanh-toan">Tích
+                                                hợp gian hàng</a></li><li><a href="https://www.baokim.vn/faq/category/nap-tien-vao-tk-vat-gia">
+                                                    Nạp tiền vào tài khoản Vật Giá</a></li></ul>
+                                </div>
+                            </li>
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;54&quot;);"><a href="https://www.baokim.vn/user_questions/faq">
+                                Câu hỏi thường gặp</a></li></ul>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <!-- End Menu -->
+            </div>
+            <!-- Start Content -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- End Content -->
         </div>
     </div>
-</div>
-<br class="clear">
-</div>
-<script>
-    j(document).ready(function () {
-        j("a.fancybox_hotline").fancybox({
-            'autoDimensions': false,
-            'scrolling': 'no',
-            'width': 800,
-            'height': 600
-        });
+    <div id="Footer">
+        <div class="footer-container">
+            <div class="footer_div">
+                <div class="footer_top">
+                    <table style="float: left;" class="table_menu">
+                        <tr>
+                            <td style="text-align: left; padding-right: 20px">
+                                <a href="https://www.baokim.vn/index.php" class="menu_link">Trang chủ</a>
+                            </td>
+                            <td class="l_menu">
+                                <a href="https://www.baokim.vn/intro" class="menu_link">Giới thiệu</a>
+                            </td>
+                            <td class="l_menu">
+                                <a href="https://www.baokim.vn/privacy_policy" class="menu_link">Chính sách bảo mật</a>
+                            </td>
+                            <td class="l_menu">
+                                <a href="https://www.baokim.vn/user_agreement" class="menu_link">Quy định sử dụng</a>
+                            </td>
+                            <td class="l_menu">
+                                <a href="https://www.baokim.vn/faq" class="menu_link">Trợ giúp</a>
+                            </td>
+                            <td class="l_menu">
+                                <a href="https://www.baokim.vn/contact" class="menu_link">Liên hệ</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="veri_sign_secured">
+                    <embed onclick="window.open(&quot;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.baokim.vn&amp;lang=en&quot;,&quot;popup&quot;,&quot;height=500,width=550,scrollbars=yes&quot;)"
+                        src="../../Content/images/getseal0.swf" loop="false" menu="false" quality="best"
+                        wmode="transparent" swliveconnect="FALSE" name="s_s" type="application/x-shockwave-flash"
+                        pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always"
+                        align="" height="72" width="100">
+                </div>
+                <div class="footer_bottom_left">
+                    <div style="font-size: 11px; font-weight: bold; padding-top: 5px;">
+                        CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ BẢO KIM</div>
+                    <br>
+                    <b>Bảo Kim</b> - <span class="thin">Dịch vụ thanh toán trực tuyến thúc đẩy thương mại
+                        điện tử Việt Nam</span>
+                    <p>
+                        <p>
+                            <b>Giấy phép ĐKKD</b>:<span class="thin"> 0104432131. Cấp tại: Sở Kế hoạch và Đầu tư
+                                Hà Nội. Ngày cấp: 08/02/2010</span>
+                </div>
+                <div class="foorer_bottom_right">
+                    <b>Trụ sở</b>: <span class="thin">Tầng 7, 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span>
+                    <p>
+                        <p>
+                            <b>VP TP.HCM</b>:<span class="thin">Lầu 10 tòa nhà MeKong Tower,235 Cộng Hòa F.13,Q.Tân
+                                Bình.</span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
 
-    });
-</script>
-			<!-- Start Menu -->
-			<div class="Menu">
-			                    
-<script type="text/javascript">
-    var t;
-    var currentCat = '0';
-    var parentCat = '0';
-    var currentSubSub = '';
-    var prevCat = '';
-    var space = [0, 0, 0, 0, 0, 0];
-    function showSubMenu(currentHover) {
-        clearTimeout(t);
-        for (i = 0; i < 6; i++) {
-            jQuery("#subcat" + i).css("display", "none");
-            jQuery("#cat" + i).removeClass("selected");
-        }
-        jQuery("#subcat" + currentHover).css("display", "block");
-        jQuery("#cat" + currentHover).addClass("selected");
-        jQuery("#subcat" + currentHover).css("margin-left", space[currentHover]);
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-16248977-1']);
+            _gaq.push(['_setDomainName', '.baokim.vn']);
+            _gaq.push(['_trackPageview']);
 
-        prevCat = currentHover;
-    }
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
 
-    function resetMenu() {
-        if (currentSubSub != '') {
-            jQuery("#subsub" + currentSubSub).css("display", "none");
-        }
-        t = setTimeout('restoreCurrentMenu()', 1200);
-    }
-
-    function restoreCurrentMenu() {
-        clearTimeout(t);
-        for (i = 0; i < 5; i++) {
-            jQuery("#subcat" + i).css("display", "none");
-            jQuery("#cat" + i).removeClass("selected");
-        }
-        setCurrentMenu();
-    }
-
-    function setCurrentMenu() {
-        if (currentCat != '') {
-            if (document.getElementById("cat" + currentCat) != null) {
-                jQuery("#cat" + currentCat).addClass("selected");
-                jQuery("#subcat" + currentCat).css("display", "block");
-                jQuery("#subcat" + currentCat).css("margin-left", space[currentCat]);
-
-            } else {
-                jQuery("#cat" + parentCat).addClass("selected");
-                jQuery("#subcat" + parentCat).css("display", "block");
-                jQuery("#subcat" + parentCat).css("margin-left", space[parentCat]);
+        </script>
+        <style type="text/css">
+            .footer_div
+            {
+                width: 100%;
+                height: 153px;
+                margin: 0 auto;
+                background: #eaf2f5;
+                font-size: 11px;
+                margin-bottom: 20px;
             }
-        }
-    }
-
-    function showSubSubMenu(currentHover) {
-        currentSubSub = currentHover;
-        jQuery("#subsub" + currentHover).css("display", "block");
-        clearTimeout(t);
-    }
-    jQuery(document).ready(function () {
-        setCurrentMenu();
-    });
-</script>
-<div class="parent">
-	<ul>
-		<li id="cat0" class="m_home first"><a href="https://www.baokim.vn/" onmouseout="resetMenu()" onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service"><a href="https://www.baokim.vn/service" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><li id="cat2" class="m_payment"><a href="https://www.baokim.vn/payment/integrate_button/intro_view" onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="http://shopping.baokim.vn/home/" onmouseout="resetMenu()" onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li id="cat4" class="m_news"><a href="https://www.baokim.vn/news" onmouseout="resetMenu()" onmouseover="showSubMenu(4)"><span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="https://www.baokim.vn/faq" onmouseout="resetMenu()" onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>	</ul>
-</div>
-<div class="sub">
-	<ul id="subcat0" style="display:none;"><li>&nbsp;</li></ul><ul id="subcat1" style="display:none;"><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang">Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);"><a href="https://www.baokim.vn/transactions/transfer">Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="https://www.baokim.vn/transactions/charges">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);"><a href="https://www.baokim.vn/dai-ly-bao-kim.html"><font color="red">Đăng ký đại lý </font><img src="../../Content/images/hot00000.gif" border="0"></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="https://www.baokim.vn/rev/index">Mua thẻ Visa trả trước RÊV</a></li></ul><ul id="subcat2" style="display:none;"><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="https://www.baokim.vn/payment/integrate_button/intro_view">Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);"><a href="https://www.baokim.vn/payment/deal">Nút thanh toán thỏa thuận</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="https://www.baokim.vn/payment/integrate_button">Nút tích hợp sản phẩm</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);"><a href="https://www.baokim.vn/payment/integrate_website">Tích hợp toàn bộ Website</a></li></ul><ul id="subcat3" style="display:none;"><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;30&quot;);"><a href="http://shopping.baokim.vn/home/san-pham.html">Sản phẩm thanh toán qua Bảo Kim</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;31&quot;);"><a href="http://shopping.baokim.vn/sea/"><font color="red">Chuyên trang khuyến mại</font><img src="../../Content/images/hot00000.gif" border="0"></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;32&quot;);"><a href="http://shopping.baokim.vn/home/dang-ky.html">Đăng ký giảm giá</a></li></ul><ul id="subcat4" style="display:none;"><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;40&quot;);"><a href="https://www.baokim.vn/news/category/tin-tu-bao-kim">Tin từ Bảo Kim</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;41&quot;);"><a href="https://www.baokim.vn/news/category/tin-tu-doi-tac">Tin từ đối tác</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;42&quot;);"><a href="https://www.baokim.vn/news/category/tin-kinh-te">Tin kinh tế</a></li></ul><ul id="subcat5" style="display:none;"><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;50&quot;);"><a href="https://www.baokim.vn/#">Tìm hiểu</a><div id="subsub50" class="sub_sub_menu" style="display:none"><ul><li><a href="https://www.baokim.vn/#">Tại sao dùng Bảo Kim</a></li><li><a href="https://www.baokim.vn/#">Bảo Kim hoạt động như thế nào</a></li><li><a href="https://www.baokim.vn/#">Thanh toán với Bảo Kim tại đâu</a></li></ul></div></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;51&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang">Thanh toán</a><div id="subsub51" class="sub_sub_menu" style="display:none"><ul><li><a href="https://www.baokim.vn/faq/category/thanh-toan-an-toan">Thanh toán an toàn</a></li><li><a href="https://www.baokim.vn/faq/category/thanh-toan-truc-tiep">Thanh toán không cần đăng ký tài khoản</a></li></ul></div></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;52&quot;);"><a href="https://www.baokim.vn/faq/category/chuyen-tien">Chuyển tiền</a><div id="subsub52" class="sub_sub_menu" style="display:none"><ul><li><a href="https://www.baokim.vn/faq/category/chuyen-tien-an-toan">Chuyển tiền an toàn</a></li><li><a href="https://www.baokim.vn/faq/category/chuyen-tien-ngoai-he-thong">Chuyển tiền cho người chưa đăng ký tài khoản</a></li><li><a href="https://www.baokim.vn/faq/category/yeu-cau-chuyen-tien">Gửi yêu cầu chuyển tiền</a></li></ul></div></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;53&quot;);"><a href="https://www.baokim.vn/faq/category/thanh-toan">Bán trên Vật Giá</a><div id="subsub53" class="sub_sub_menu" style="display:none"><ul><li><a href="https://www.baokim.vn/faq/category/tich-hop-thanh-toan">Tích hợp thanh toán</a></li><li><a href="https://www.baokim.vn/faq/category/tich-hop-thanh-toan">Tích hợp gian hàng</a></li><li><a href="https://www.baokim.vn/faq/category/nap-tien-vao-tk-vat-gia">Nạp tiền vào tài khoản Vật Giá</a></li></ul></div></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;54&quot;);"><a href="https://www.baokim.vn/user_questions/faq">Câu hỏi thường gặp</a></li></ul></div>
-<div class="clear">
-   
-                </div>		
-			</div>
-            <!-- End Menu -->
-		</div>
-        <!-- Start Content -->
-		 <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
-        <!-- End Content -->
-	   </div>
+            .footer_top
+            {
+                width: 685px;
+                height: 34px;
+                margin-top: 30px;
+                border-top: 1px solid #bababa;
+                border-bottom: 1px solid #bababa;
+                float: left;
+            }
+            .blue_color
+            {
+                color: #0072b9;
+            }
+            .l_menu
+            {
+                background: url("BaoKim.vn\ -\ Cổng\ thanh\ toán\ trực\ tuyến\ đảm\ bảo\ an\ toàn\ giao\ dịch\ tiện\ lợi_files/ll000000.jpg") no-repeat scroll 0 0 transparent;
+                padding-left: 16px;
+                padding-right: 18px;
+            }
+            .menu_link
+            {
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 13px;
+            }
+            .table_menu td
+            {
+                padding-top: 8px;
+            }
+            .footer_bottom_left
+            {
+                width: 457px;
+                height: 77px;
+                float: left;
+                padding-top: 7px;
+            }
+            .foorer_bottom_right
+            {
+                height: 46px;
+                float: right;
+                width: 360px;
+            }
+            .veri_sign_secured
+            {
+                width: 138px;
+                height: 96px;
+                float: right;
+                margin-top: 0px;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 10px;
+            }
+            .thin
+            {
+                font-weight: 100;
+            }
+        </style>
     </div>
-	<div id="Footer">
-		<div class="footer-container">
-     <div class="footer_div">
-	<div class="footer_top">
-		<table style="float:left;" class="table_menu">
-			<tr>
-				<td style="text-align:left;padding-right:20px"><a href="https://www.baokim.vn/index.php" class="menu_link">Trang chủ</a></td>
-				<td class="l_menu"><a href="https://www.baokim.vn/intro" class="menu_link">Giới thiệu</a></td>
-				<td class="l_menu"><a href="https://www.baokim.vn/privacy_policy" class="menu_link">Chính sách bảo mật</a></td>
-				<td class="l_menu"><a href="https://www.baokim.vn/user_agreement" class="menu_link">Quy định sử dụng</a></td>
-				<td class="l_menu"><a href="https://www.baokim.vn/faq" class="menu_link">Trợ giúp</a></td>
-				<td class="l_menu"><a href="https://www.baokim.vn/contact" class="menu_link">Liên hệ</a></td>
-			</tr>
-		</table>
-	
-	</div>
-	
-	<div class="veri_sign_secured">
-	 	<embed onclick="window.open(&quot;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.baokim.vn&amp;lang=en&quot;,&quot;popup&quot;,&quot;height=500,width=550,scrollbars=yes&quot;)" src="../../Content/images/getseal0.swf" loop="false" menu="false" quality="best" wmode="transparent" swliveconnect="FALSE" name="s_s" type="application/x-shockwave-flash" pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" align="" height="72" width="100">  
-	</div>
-	
-	<div class="footer_bottom_left">
-		<div style="font-size:11px;font-weight:bold;padding-top: 5px;">CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ BẢO KIM</div>
-		<br><b>Bảo Kim</b> - <span class="thin">Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam</span>
-		<p>
-		<p><b>Giấy phép ĐKKD</b>:<span class="thin"> 0104432131. Cấp tại: Sở Kế hoạch và Đầu tư Hà Nội. Ngày cấp: 08/02/2010</span> 
-	</div>	
-	<div class="foorer_bottom_right">
-		<b>Trụ sở</b>: <span class="thin">Tầng 7, 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span>
-		<p>
-		<p><b>VP TP.HCM</b>:<span class="thin">Lầu 10 tòa nhà MeKong Tower,235 Cộng Hòa F.13,Q.Tân Bình.</span>
-	</div>
-	
-</div>     
-</div>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-16248977-1']);
-    _gaq.push(['_setDomainName', '.baokim.vn']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-
-<style type="text/css">
-.footer_div{width:100%;height:153px;margin:0 auto;background:#eaf2f5;font-size:11px;margin-bottom:20px;}
-.footer_top{width:685px;height:34px;margin-top:30px;border-top:1px solid #bababa;border-bottom:1px solid #bababa;float:left;}
-.blue_color{color:#0072b9;}
-.l_menu{background: url("BaoKim.vn\ -\ Cổng\ thanh\ toán\ trực\ tuyến\ đảm\ bảo\ an\ toàn\ giao\ dịch\ tiện\ lợi_files/ll000000.jpg") no-repeat scroll 0 0 transparent; padding-left: 16px; padding-right: 18px;}
-.menu_link{text-decoration:none;font-weight:bold;font-size:13px;}
-.table_menu td {  padding-top:8px;}
-.footer_bottom_left{width:457px;height:77px;float:left;padding-top:7px;}
-.foorer_bottom_right{height:46px;float:right;width:360px;}
-.veri_sign_secured{width:138px;height:96px;float:right;margin-top:0px;vertical-align:middle;text-align:center;padding-top:10px;}
-.thin{font-weight:100;}
-</style>	</div>
-</div>
 </body>
-</html>	
-
+</html>

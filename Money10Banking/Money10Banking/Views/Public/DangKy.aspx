@@ -1,16 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
   <div id="Main">
-					    		    			<script type="text/javascript">
+      <script type="text/javascript">
 					    		    			    //initiate validator on load
 					    		    			    j(document).ready(function () {
 					    		    			        // validate contact form on keyup and submit
@@ -192,7 +185,7 @@
 					    		    			            }
 					    		    			        });
 					    		    			    });
-</script>
+      </script>
 <script>
     /**
     * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
@@ -426,26 +419,26 @@
                                 </tr>
                                  </table>  
                                 </form>
-                             <form action="XuLyDangKyMoiGioi" onsubmit="return check_company_name()" id="form_company" name="form_register_company" accept-charset="utf-8" method="post">
+                             <form action="Public/XuLyDangKyMoiGioi" onsubmit="return check_company_name()" id="form_company" name="form_register_company" accept-charset="utf-8" method="post">
 <%--<input type="hidden" name="_form_action" value="baokim.vn/accounts/register">
 <input type="hidden" name="_form_token" value="e3870bcd3afe8a59ce8d74e2554cfb17b6416cc9">--%>
                             <table class="form-content-table" cellspacing="10px" id="register_account_business" style="display:none">
                                 <tr>
                                     <th>Email<span class="mandatory">*</span></th>
                                     <td>
-                                       <input type="text" name="email_company" value class="text qtip" autocomplete="off" title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50"><br>                            
+                                       <input type="text" name="email_company" value="huynhtalen@gmail.com" class="text qtip" autocomplete="off" title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50"><br>                            
                                     </td>
                                 </tr>
                                
                                 <tr>
                                     <th>Mật khẩu<span class="mandatory">*</span></th>
                                     <td>
-                                        <input type="password" name="password_company" value class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
+                                        <input type="password" name="password_company" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Xác nhận mật khẩu<span class="mandatory">*</span></th>
                                     <td>
-                                    <input type="password" name="passwordConfirm_company" value class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
+                                    <input type="password" name="passwordConfirm_company" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
                                 </tr>  
                                 <tr>
        
@@ -455,19 +448,19 @@
      <tr>
                                     <th>Họ tên người đại diện<span class="mandatory">*</span></th>
                                     <td>
-                                    <input type="text" name="name" value class="text qtip" title="Điền họ tên người đại diện chính cho doanh nghiệp. Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !">                                   	<br><span class="error" id="error_name_company"></span>
+                                    <input type="text" name="name" value="Huynh Tan Len" class="text qtip" title="Điền họ tên người đại diện chính cho doanh nghiệp. Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !">                                   	<br><span class="error" id="error_name_company"></span>
                                     </td>
                                 </tr>                          
                                       <tr>
                                     <th>Ngày Sinh<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="birthDay" value class="text qtip" autocomplete="off" title="-Ngày Sinh">                                
+                                      <input type="text" name="birthDay" value="30/03/1989" class="text qtip" autocomplete="off" title="-Ngày Sinh">                                
                                     </td>
                                 </tr>  
                                   <tr>
                                     <th>CMND/Hộ Chiếu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="CMND" value class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
+                                      <input type="text" name="CMND" value="123456789" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
                                     </td>
                                 </tr>
                                   <tr>
@@ -475,7 +468,7 @@
                                     <td class="style1">
                                                                      
                                         
-                                     <input type="radio" name="rdNam"  /><span class="font-acc">Nam</span>
+                                     <input type="radio" name="rdNam" checked="checked"  /><span class="font-acc">Nam</span>
                                         <input type="radio" name="rdNu"  /><span class="font-acc">Nữ</span>
                                                                      
                                     </td>
@@ -490,18 +483,18 @@
                                	 <tr>
                                     <th>Tên tổ chức doanh nghiệp <span class="mandatory">*</span></th>
                                     <td>
-                                     <input type="text" name="companyName" value class="text qtip" autocomplete="off" title="Tên tổ chức doanh nghiệp phải giống với giấy phép kinh doanh/mã số thuế." size="50">                      
+                                     <input type="text" name="companyName" value="HTL" class="text qtip" autocomplete="off" title="Tên tổ chức doanh nghiệp phải giống với giấy phép kinh doanh/mã số thuế." size="50">                      
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Số đăng ký KD/MST<span class="mandatory">*</span></th>
                                     <td>
-                                    <input type="text" name="companySocialId" value class="text qtip" title="Số đăng ký /Mã số thuế">                                    </td>
+                                    <input type="text" name="companySocialId" value="ABC" class="text qtip" title="Số đăng ký /Mã số thuế">                                    </td>
                                 </tr>
                                  <tr>
                                     <th>Số điện thoại cơ quan<span class="mandatory">*</span></th>
                                     <td>
-                                      <input type="text" name="phoneNo_company" value class="text qtip" autocomplete="off" title="-số điện thoại hoặc số fax">                                
+                                      <input type="text" name="phoneNo_company" value="084321456" class="text qtip" autocomplete="off" title="-số điện thoại hoặc số fax">                                
                                     </td>
                                 </tr>
                                
@@ -583,9 +576,9 @@
                         <div class="clear"></div>
                     </div>
                     
-                    <div>
-                    	<center><img onmouseover="ddrivetip('Tiếp tục chuyển qua bước 2 để khám phá bí mật','#e7e7e7','#669933','#cccccc',300)" onmouseout="hideddrivetip()" src="../../Content/images/banner_r.jpg"></center>
-                    </div>
+    <div>
+        <center><img onmouseover="ddrivetip('Tiếp tục chuyển qua bước 2 để khám phá bí mật','#e7e7e7','#669933','#cccccc',300)" onmouseout="hideddrivetip()" src="../../Content/images/banner_r.jpg"></center>
+    </div>
                     
  </div>
 
