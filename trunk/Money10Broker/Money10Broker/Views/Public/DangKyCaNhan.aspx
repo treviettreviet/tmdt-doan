@@ -9,7 +9,7 @@
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
+		<form action="GetData.aspx" name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
 					<li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký </li>
@@ -43,23 +43,7 @@
 					</table>
 				</div>
 			</div>
-			<h4>hình thức xác minh giao dịch mặc định</h4>
-			<div class="frame_focus">
-				<div class="table-box">
-					<table width="880" border="0" cellspacing="5" cellpadding="0">
-					  <tr>
-						<td width="200" align="right"><span class="required">*</span>Chọn hình thức:</td>
-						<td><input class="otp-type" name="otp_type" type="radio" value="1" checked="checked"><span class="otp-type" id="otp_mobile">OTP (mật khẩu một lần) qua SMS</span><br>
-							<p class="blear">Mỗi khi chuyển, rút tiền hoặc thay đổi thông tin tài khoản, NgânLượng.vn gửi một mã bí mật qua SMS đến số di động mà bạn đã đăng ký để xác minh giao dịch.</p>
-							<input class="otp-type" name="otp_type" type="radio" value="2"><span class="otp-type" id="otp_payment_password">Mật khẩu thanh toán</span><br>
-							<p class="blear">Bạn khai báo và sử dụng một mật khẩu thanh toán khác với mật khẩu đăng nhập để xác minh giao dịch, khuyên dùng nếu bạn thường xuyên ở nước ngoài.</p>
-							<br>
-							<span class="yel" style="font-weight:normal;"><strong><u>Ghi chú:</u></strong> Bạn có thể lựa chọn lại hình thức xác minh giao dịch mặc định tại khu vực "Thông tin tài khoản &gt; Hình thức xác minh" sau khi đã đăng ký mở xong tài khoản.</span>
-						</td>
-					  </tr>
-					</table>
-				</div>
-			</div>
+			
             <div class="otp-type" style="display:none;">
                 <h4>Điện thoại di động</h4>
                 <div class="frame_focus">
@@ -77,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="otp-type" style="display:none;">
+            <div class="otp-type">
                 <h4>MẬT KHẨU THANH TOÁN</h4>
                 <div class="frame_focus">
                     <div class="table-box">
@@ -93,17 +77,6 @@
                         </table>
                     </div>
                 </div>
-                <h4>KHAI BÁO ĐIỆN THOẠI DI ĐỘNG </h4>
-                <div class="frame_focus">
-                    <div class="table-box">
-                        <table width="880" border="0" cellspacing="5" cellpadding="0">
-                          <tr>
-                            <td width="200" align="right">Số điện thoại di động:</td>
-                            <td class="blear"><input name="mobile2" id="mobile2" type="text" value maxlength="11" class="input-business input-numeric field-check"><span class="field-check-function blur" title="isMobile(_value_)">Dùng từ 10 đến 11 chữ số, không bao gồm khoảng trống!</span></td>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
 			</div>
 
 			<h4>THÔNG TIN CHỦ TÀI KHOẢN </h4>
@@ -111,17 +84,13 @@
 				<div class="table-box">
 					<table width="880" border="0" cellspacing="5" cellpadding="0">
 					  <tr>
-						<td width="200" align="right"><span class="required">*</span>Giấy chứng thực:</td>
-						<td class="blear"><select name="verify_type" id="verify_type" style="width: " class="list-business field-check"><option value="1" selected>Chứng minh thư nhân dân</option><option value="2">Hộ chiếu</option></select><span class="field-check-function submit" title="isSelect(_value_,0)">Bạn chưa chọn loại giấy chứng thực!</span></td>
-					  </tr>
-					  <tr>
                         <td align="right"><span class="required">*</span><span class="label">Số CMTND:</span><span class="label" style="display:none;">Số hộ chiếu:</span></td>
 					    <td class="blear"><input name="social_id" type="text" value class="input-business field-check">
 					      <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số chứng thực!</span><span class="field-check-function blur submit" title="isVerifyNumber(_value_)">Số chứng thực bạn nhập không đúng yêu cầu, không bao gồm khoảng trống!</span></td>
 				      </tr>
                       <tr>
 						<td width="200" align="right"><span class="required">*</span>Họ tên đầy đủ:</td>
-						<td class="blear"><input name="fullname" type="text" value class="input-business field-check">
+						<td class="blear"><input id="fullname" name="fullname" type="text" value class="input-business field-check">
                         <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập họ tên!</span></td>
 					  </tr>
 					  <tr>
@@ -134,11 +103,11 @@
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Chỗ ở hiện tại:</td>
-						<td class="blear"><input name="address" type="text" value class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
+						<td class="blear"><input id="address" name="address" type="text" value class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Địa phương:</td>
-						<td class="blear">tỉnh/thành <select name="city_id" id="city_id" style="width: 130px" class="list-business" onchange="getZones(this, 'zone_id', this.value);"><option value="0" selected></option><option value="2">An Giang</option><option value="3">Bà Rịa Vũng Tàu</option><option value="4">Bạc Liêu</option><option value="5">Bắc Cạn</option><option value="6">Bắc Giang</option><option value="7">Bắc Ninh</option><option value="8">Bến Tre</option><option value="9">Bình Dương</option><option value="10">Bình Định</option><option value="11">Bình Phước</option><option value="12">Bình Thuận</option><option value="13">Cà Mau</option><option value="14">Cao Bằng</option><option value="15">Cần Thơ</option><option value="16">Đà Nẵng</option><option value="17">Đắk Lắk</option><option value="18">Đồng Nai</option><option value="19">Đồng Tháp</option><option value="20">Gia Lai</option><option value="21">Hà  Giang</option><option value="22">Hà Nam</option><option value="23">Hà Nội</option><option value="25">Hà Tĩnh</option><option value="26">Hải Dương</option><option value="27">Hải Phòng</option><option value="28">Hòa Bình</option><option value="29">Hưng Yên</option><option value="30">Hồ Chí Minh</option><option value="31">Khánh Hòa</option><option value="32">Kiên Giang</option><option value="33">Kon Tum</option><option value="34">Lai Châu</option><option value="35">Lạng Sơn</option><option value="36">Lào Cai</option><option value="37">Lâm Đồng</option><option value="38">Long An</option><option value="39">Nam Định</option><option value="40">Nghệ An</option><option value="41">Ninh Bình</option><option value="42">Ninh Thuận</option><option value="43">Phú Thọ</option><option value="44">Phú Yên</option><option value="45">Quảng Bình</option><option value="46">Quảng Nam</option><option value="47">Quảng Ngãi</option><option value="48">Quảng Ninh</option><option value="49">Quảng Trị</option><option value="50">Sóc Trăng</option><option value="51">Sơn La</option><option value="52">Tây Ninh</option><option value="53">Thái Bình</option><option value="54">Thái Nguyên</option><option value="55">Thanh Hóa</option><option value="56">Thừa Thiên Huế</option><option value="57">Tiền Giang</option><option value="58">Trà Vinh</option><option value="59">Tuyên Quang</option><option value="60">Vĩnh Long</option><option value="61">Vĩnh Phúc</option><option value="62">Yên Bái</option><option value="869">Điện Biên</option><option value="912">Hậu Giang</option><option value="919">Đắk Nông</option></select> quận/huyện <select name="zone_id" id="zone_id" style="width: 130px" class="list-business field-check"><option value="0" selected></option></select><span class="field-check-function submit" title="isSelect(_value_,0)">Bạn chưa chọn địa phương!</span></td>
+						<td class="blear">tỉnh/thành <select name="city_id" id="city_id" style="width: 130px" class="list-business" onchange="getZones(this, 'zone_id', this.value);"><option value="0" selected></option><option value="2">An Giang</option><option value="3">Bà Rịa Vũng Tàu</option><option value="4">Bạc Liêu</option><option value="5">Bắc Cạn</option><option value="6">Bắc Giang</option><option value="7">Bắc Ninh</option><option value="8">Bến Tre</option><option value="9">Bình Dương</option><option value="10">Bình Định</option><option value="11">Bình Phước</option><option value="12">Bình Thuận</option><option value="13">Cà Mau</option><option value="14">Cao Bằng</option><option value="15">Cần Thơ</option><option value="16">Đà Nẵng</option><option value="17">Đắk Lắk</option><option value="18">Đồng Nai</option><option value="19">Đồng Tháp</option><option value="20">Gia Lai</option><option value="21">Hà  Giang</option><option value="22">Hà Nam</option><option value="23">Hà Nội</option><option value="25">Hà Tĩnh</option><option value="26">Hải Dương</option><option value="27">Hải Phòng</option><option value="28">Hòa Bình</option><option value="29">Hưng Yên</option><option value="30">Hồ Chí Minh</option><option value="31">Khánh Hòa</option><option value="32">Kiên Giang</option><option value="33">Kon Tum</option><option value="34">Lai Châu</option><option value="35">Lạng Sơn</option><option value="36">Lào Cai</option><option value="37">Lâm Đồng</option><option value="38">Long An</option><option value="39">Nam Định</option><option value="40">Nghệ An</option><option value="41">Ninh Bình</option><option value="42">Ninh Thuận</option><option value="43">Phú Thọ</option><option value="44">Phú Yên</option><option value="45">Quảng Bình</option><option value="46">Quảng Nam</option><option value="47">Quảng Ngãi</option><option value="48">Quảng Ninh</option><option value="49">Quảng Trị</option><option value="50">Sóc Trăng</option><option value="51">Sơn La</option><option value="52">Tây Ninh</option><option value="53">Thái Bình</option><option value="54">Thái Nguyên</option><option value="55">Thanh Hóa</option><option value="56">Thừa Thiên Huế</option><option value="57">Tiền Giang</option><option value="58">Trà Vinh</option><option value="59">Tuyên Quang</option><option value="60">Vĩnh Long</option><option value="61">Vĩnh Phúc</option><option value="62">Yên Bái</option><option value="869">Điện Biên</option><option value="912">Hậu Giang</option><option value="919">Đắk Nông</option></select> <span class="field-check-function submit" title="isSelect(_value_,0)">Bạn chưa chọn địa phương!</span></td>
 					  </tr>
 					  <tr>
 						<td align="right">Số điện thoại cố định:</td>
@@ -152,14 +121,14 @@
 				<table width="880" border="0" cellspacing="5" cellpadding="0">
 				  <tr>
 					<td width="200" align="right"><span class="required">*</span>Nhập mã xác nhận:</td>
-					<td><input name="verify_image" type="text" value maxlength="5" class="input-business field-check" autocomplete="off" style="width:80px;"><img src="../../Content/images/captcha0.gif" id="verify_image" align="absmiddle" style="margin-left:10px;"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mã xác nhận</span><div class="field-notification field-alert">Nhập chính xác <u>5</u> ký tự  bạn nhìn thấy trong hình trên</div></td>
+					<td><input name="verify_image" type="text" value maxlength="5" class="input-business field-check" autocomplete="off" style="width:80px;"><img src="../images/captcha0.gif" id="verify_image" align="absmiddle" style="margin-left:10px;"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mã xác nhận</span><div class="field-notification field-alert">Nhập chính xác <u>5</u> ký tự  bạn nhìn thấy trong hình trên</div></td>
 				  </tr>			 
 				</table>						
 			</div>
             <div class="checkbox" style="margin-bottom:0px;">
 				<input name="agree" id="agree" type="checkbox" value="1">
-				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="http://help.nganluong.vn/chi-tiet-4/27/373/Thoa-thuan-nguoi-dung-NganLuong.vn.html" target="_blank">Thỏa thuận người dùng</a> và <a href="http://help.nganluong.vn/danh-muc-56/2/1/Dang-ky-mo-tai-khoan.html" target="_blank">Hướng dẫn sử dụng</a> của NgânLượng.vn</span>
-				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button" onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
+				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="#" target="_blank">Thỏa thuận người dùng</a> và <a href="#" target="_blank">Hướng dẫn sử dụng</a></span>
+				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký" class="register-button" onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
 			</div>
 			
 			
@@ -167,7 +136,7 @@
 		</div>		
 	</div>
 </div>
-<script language="javascript">    setFormCheck();</script>
+<%--<script language="javascript">    setFormCheck();</script>
 <script language="javascript">
     $(function () {
         $('div.otp-type').hide().find('input').removeClass('field-check');
@@ -219,9 +188,8 @@
             }
         });
     });
-</script>
 
-	</div>
+</script>--%>
 
 </asp:Content>
 

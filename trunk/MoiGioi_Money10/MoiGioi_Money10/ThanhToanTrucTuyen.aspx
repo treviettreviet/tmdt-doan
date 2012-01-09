@@ -12,19 +12,19 @@
                     THANH TOÁN TRỰC TUYẾN AN TOÀN, NHANH CHÓNG, TIỆN LỢI</h2>
                 <div class="flag">
                     <a class="flag-vn active" 
-                        href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;lang=vn">
+                        href="#">
                     Tiếng Việt</a> <a class="flag-el" 
-                        href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=pay_direct&amp;lang=en">
+                        href="#">
                     English</a>
                 </div>
             </div>
         </div>
 <!-- BEGIN BlockIntro -->
         <div class="intro">
-            NgânLượng.vn được Ngân Hàng Nhà Nước bảo hộ và cấp phép hoạt động, cam kết ĐẢM 
+            Trang Môi Giới được Ngân Hàng Nhà Nước bảo hộ và cấp phép hoạt động, cam kết ĐẢM 
             BẢO AN TOÀN cho giao dịch thanh toán của bạn với phương châm: NGƯỜI BÁN CHỈ NHẬN 
             ĐƯỢC TIỀN KHI BẠN ĐÃ NHẬN HÀNG ĐÚNG MÔ TẢ! [
-            <a href="http://help.nganluong.vn/chi-tiet-49/2/419/Gioi-thieu-ve-NganLuong.vn.html" 
+            <a href="#" 
                 target="_blank">Tìm hiểu thêm</a> ]
         </div>
 <!-- END BlockIntro -->
@@ -32,7 +32,7 @@
         <div class="box-info-left box-cart">
             <div class="title">
                 <span>Thông tin đơn hàng</span> <a class="btn-zoom btn-zoom-out" 
-                    href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                    href="#">
                 Xem giản lược</a>
             </div>
             <div class="box-info-content">
@@ -54,7 +54,7 @@
 				<!-- BEGIN BlockUpdateQuantity -->
 				            <asp:Label ID="lblSoLuong" runat="server" Text="Label"></asp:Label>
 				            <span>[<a id="update_quantity_button" 
-                                href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#"> 
+                                href="#"> 
                             Cập nhật </a>]</span>
 				<!-- END BlockUpdateQuantity -->
 				        </td>
@@ -117,7 +117,7 @@ $(function() {
         <div class="box-info-right box-cart" style="margin-bottom: 5px;">
             <div class="title">
                 <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" 
-                    href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                    href="#">
                 Xem giản lược</a>
             </div>
             <div class="box-info-content">
@@ -183,11 +183,11 @@ $(function() {
             <div class="main-title">
                 <ul>
                     <li class="active">
-                        <a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                        <a href="#">
                         Thanh toán trực tuyến</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=83&amp;id=433&amp;news_name=Huong-dan-thanh-toan-truc-tuyen&amp;cat=2" 
+                    <a href="#" 
                         target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
@@ -217,13 +217,13 @@ $(function() {
             <div class="main-title">
                 <ul>
                     <li class="active">
-                        <a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                        <a href="#">
                         Thanh toán bằng tài khoản Ngân hàng</a></li>
                     <li class="end"><a class="link-payment-type" href="">Sử dụng số dư tài khoản 
-                        NgânLượng.vn</a></li>
+                        Môi Giới</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=83&amp;id=433&amp;news_name=Huong-dan-thanh-toan-truc-tuyen&amp;cat=2" 
+                    <a href="#" 
                         target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
@@ -249,23 +249,23 @@ $(function() {
 				    <div class="row-bank">
                         <div class="title-row-bank active">
                             <a class="active" 
-                                href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                                href="#">
 							<!--<span class="step-sub">Cách 1:</span>-->
 							<span class="name-title">Dùng thẻ Tín dụng và Ghi nợ quốc tế</span>
                             <span class="charge">(Phí 3.600đ + 2,75%)</span> </a>
                         </div>
                         <div class="row-bank-c">
                             <ul>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng Visa Card" border="0" height="30" 
                                         src="../images/visacard.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng Master Card" border="0" height="30" 
                                         src="../images/masterca.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng thẻ American Express" border="0" height="30" 
                                         src="../images/americia.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng thẻ JCB" border="0" height="30" 
                                         src="../images/jcbcard0.gif" /></a></li>
                             </ul>

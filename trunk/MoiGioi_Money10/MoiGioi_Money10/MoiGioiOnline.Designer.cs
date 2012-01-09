@@ -18,51 +18,51 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_CaNhan_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.TaiKhoan), "CaNhan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.CaNhan), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_DiaChi_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.TaiKhoan), "DiaChi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.DiaChi), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.LoaiGiayPhepKinhDoanh), "DoanhNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.DoanhNghiep), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.TaiKhoan), "DoanhNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.DoanhNghiep), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.LoaiGiaoDich), "LichSuGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.LichSuGiaoDich), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_LichSuGiaoDich_The", "The", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.The), "LichSuGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.LichSuGiaoDich), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.LoaiTaiKhoan), "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.TaiKhoan), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_The_LoaiThe", "LoaiThe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.LoaiThe), "The", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.The), true)]
-[assembly: EdmRelationshipAttribute("MoiGioiModel", "FK_The_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Broker.Models.TaiKhoan), "The", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Broker.Models.The), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_CaNhan_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.TaiKhoan), "CaNhan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.CaNhan), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_DiaChi_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.TaiKhoan), "DiaChi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.DiaChi), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.LoaiGiayPhepKinhDoanh), "DoanhNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.DoanhNghiep), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.TaiKhoan), "DoanhNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.DoanhNghiep), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.LoaiGiaoDich), "LichSuGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.LichSuGiaoDich), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_The", "The", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.The), "LichSuGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.LichSuGiaoDich), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.LoaiTaiKhoan), "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.TaiKhoan), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_The_LoaiThe", "LoaiThe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.LoaiThe), "The", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.The), true)]
+[assembly: EdmRelationshipAttribute("xnvaufit_MoiGioiModel", "FK_The_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(MoiGioi_Money10.TaiKhoan), "The", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MoiGioi_Money10.The), true)]
 
 #endregion
 
-namespace Money10Broker.Models
+namespace MoiGioi_Money10
 {
     #region Contexts
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class MoiGioiEntities : ObjectContext
+    public partial class xnvaufit_MoiGioiEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new MoiGioiEntities object using the connection string found in the 'MoiGioiEntities' section of the application configuration file.
+        /// Initializes a new xnvaufit_MoiGioiEntities object using the connection string found in the 'xnvaufit_MoiGioiEntities' section of the application configuration file.
         /// </summary>
-        public MoiGioiEntities() : base("name=MoiGioiEntities", "MoiGioiEntities")
+        public xnvaufit_MoiGioiEntities() : base("name=xnvaufit_MoiGioiEntities", "xnvaufit_MoiGioiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new MoiGioiEntities object.
+        /// Initialize a new xnvaufit_MoiGioiEntities object.
         /// </summary>
-        public MoiGioiEntities(string connectionString) : base(connectionString, "MoiGioiEntities")
+        public xnvaufit_MoiGioiEntities(string connectionString) : base(connectionString, "xnvaufit_MoiGioiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new MoiGioiEntities object.
+        /// Initialize a new xnvaufit_MoiGioiEntities object.
         /// </summary>
-        public MoiGioiEntities(EntityConnection connection) : base(connection, "MoiGioiEntities")
+        public xnvaufit_MoiGioiEntities(EntityConnection connection) : base(connection, "xnvaufit_MoiGioiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -404,7 +404,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="Admin")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="Admin")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Admin : EntityObject
@@ -547,6 +547,30 @@ namespace Money10Broker.Models
         private global::System.String _Email;
         partial void OnEmailChanging(global::System.String value);
         partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> TinhTrang
+        {
+            get
+            {
+                return _TinhTrang;
+            }
+            set
+            {
+                OnTinhTrangChanging(value);
+                ReportPropertyChanging("TinhTrang");
+                _TinhTrang = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TinhTrang");
+                OnTinhTrangChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _TinhTrang;
+        partial void OnTinhTrangChanging(Nullable<global::System.Int32> value);
+        partial void OnTinhTrangChanged();
 
         #endregion
     
@@ -555,7 +579,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="CaNhan")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="CaNhan")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class CaNhan : EntityObject
@@ -757,16 +781,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_CaNhan_TaiKhoan", "TaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_CaNhan_TaiKhoan", "TaiKhoan")]
         public TaiKhoan TaiKhoan
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -778,13 +802,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "TaiKhoan", value);
                 }
             }
         }
@@ -795,7 +819,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="DiaChi")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="DiaChi")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class DiaChi : EntityObject
@@ -872,7 +896,7 @@ namespace Money10Broker.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> SoNha
+        public global::System.String SoNha
         {
             get
             {
@@ -882,13 +906,13 @@ namespace Money10Broker.Models
             {
                 OnSoNhaChanging(value);
                 ReportPropertyChanging("SoNha");
-                _SoNha = StructuralObject.SetValidValue(value);
+                _SoNha = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("SoNha");
                 OnSoNhaChanged();
             }
         }
-        private Nullable<global::System.Int32> _SoNha;
-        partial void OnSoNhaChanging(Nullable<global::System.Int32> value);
+        private global::System.String _SoNha;
+        partial void OnSoNhaChanging(global::System.String value);
         partial void OnSoNhaChanged();
     
         /// <summary>
@@ -997,16 +1021,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DiaChi_TaiKhoan", "TaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DiaChi_TaiKhoan", "TaiKhoan")]
         public TaiKhoan TaiKhoan
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -1018,13 +1042,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "TaiKhoan", value);
                 }
             }
         }
@@ -1035,7 +1059,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="DoanhNghiep")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="DoanhNghiep")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class DoanhNghiep : EntityObject
@@ -1237,16 +1261,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh")]
         public LoaiGiayPhepKinhDoanh LoaiGiayPhepKinhDoanh
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh").Value = value;
             }
         }
         /// <summary>
@@ -1258,13 +1282,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiayPhepKinhDoanh>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiGiayPhepKinhDoanh>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiGiayPhepKinhDoanh>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "LoaiGiayPhepKinhDoanh", value);
                 }
             }
         }
@@ -1275,16 +1299,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "TaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "TaiKhoan")]
         public TaiKhoan TaiKhoan
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -1296,13 +1320,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "TaiKhoan", value);
                 }
             }
         }
@@ -1313,7 +1337,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="LichSuGiaoDich")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="LichSuGiaoDich")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class LichSuGiaoDich : EntityObject
@@ -1414,7 +1438,7 @@ namespace Money10Broker.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> SoTheNhan
+        public global::System.String SoTheNhan
         {
             get
             {
@@ -1424,13 +1448,13 @@ namespace Money10Broker.Models
             {
                 OnSoTheNhanChanging(value);
                 ReportPropertyChanging("SoTheNhan");
-                _SoTheNhan = StructuralObject.SetValidValue(value);
+                _SoTheNhan = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("SoTheNhan");
                 OnSoTheNhanChanged();
             }
         }
-        private Nullable<global::System.Int32> _SoTheNhan;
-        partial void OnSoTheNhanChanging(Nullable<global::System.Int32> value);
+        private global::System.String _SoTheNhan;
+        partial void OnSoTheNhanChanging(global::System.String value);
         partial void OnSoTheNhanChanged();
     
         /// <summary>
@@ -1515,16 +1539,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich")]
         public LoaiGiaoDich LoaiGiaoDich
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich").Value = value;
             }
         }
         /// <summary>
@@ -1536,13 +1560,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LoaiGiaoDich", value);
                 }
             }
         }
@@ -1553,16 +1577,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_LichSuGiaoDich_The", "The")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_The", "The")]
         public The The
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("MoiGioiModel.FK_LichSuGiaoDich_The", "The").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "The").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("MoiGioiModel.FK_LichSuGiaoDich_The", "The").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "The").Value = value;
             }
         }
         /// <summary>
@@ -1574,13 +1598,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("MoiGioiModel.FK_LichSuGiaoDich_The", "The");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<The>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "The");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<The>("MoiGioiModel.FK_LichSuGiaoDich_The", "The", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<The>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "The", value);
                 }
             }
         }
@@ -1591,7 +1615,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="LoaiGiaoDich")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="LoaiGiaoDich")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class LoaiGiaoDich : EntityObject
@@ -1673,18 +1697,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich")]
         public EntityCollection<LichSuGiaoDich> LichSuGiaoDiches
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LichSuGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LichSuGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LichSuGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LichSuGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_LoaiGiaoDich", "LichSuGiaoDich", value);
                 }
             }
         }
@@ -1695,7 +1719,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="LoaiGiayPhepKinhDoanh")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="LoaiGiayPhepKinhDoanh")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class LoaiGiayPhepKinhDoanh : EntityObject
@@ -1777,18 +1801,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep")]
         public EntityCollection<DoanhNghiep> DoanhNghieps
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DoanhNghiep>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DoanhNghiep>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DoanhNghiep>("MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DoanhNghiep>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh", "DoanhNghiep", value);
                 }
             }
         }
@@ -1799,7 +1823,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="LoaiTaiKhoan")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="LoaiTaiKhoan")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class LoaiTaiKhoan : EntityObject
@@ -1881,18 +1905,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan")]
         public EntityCollection<TaiKhoan> TaiKhoans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "TaiKhoan", value);
                 }
             }
         }
@@ -1903,7 +1927,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="LoaiThe")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="LoaiThe")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class LoaiThe : EntityObject
@@ -2009,18 +2033,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_The_LoaiThe", "The")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_The_LoaiThe", "The")]
         public EntityCollection<The> Thes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<The>("MoiGioiModel.FK_The_LoaiThe", "The");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<The>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "The");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<The>("MoiGioiModel.FK_The_LoaiThe", "The", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<The>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "The", value);
                 }
             }
         }
@@ -2031,7 +2055,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="PhiGiaoDich")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="PhiGiaoDich")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class PhiGiaoDich : EntityObject
@@ -2042,7 +2066,7 @@ namespace Money10Broker.Models
         /// Create a new PhiGiaoDich object.
         /// </summary>
         /// <param name="maPhiGiaoDich">Initial value of the MaPhiGiaoDich property.</param>
-        public static PhiGiaoDich CreatePhiGiaoDich(global::System.String maPhiGiaoDich)
+        public static PhiGiaoDich CreatePhiGiaoDich(global::System.Int32 maPhiGiaoDich)
         {
             PhiGiaoDich phiGiaoDich = new PhiGiaoDich();
             phiGiaoDich.MaPhiGiaoDich = maPhiGiaoDich;
@@ -2057,7 +2081,7 @@ namespace Money10Broker.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String MaPhiGiaoDich
+        public global::System.Int32 MaPhiGiaoDich
         {
             get
             {
@@ -2069,14 +2093,14 @@ namespace Money10Broker.Models
                 {
                     OnMaPhiGiaoDichChanging(value);
                     ReportPropertyChanging("MaPhiGiaoDich");
-                    _MaPhiGiaoDich = StructuralObject.SetValidValue(value, false);
+                    _MaPhiGiaoDich = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("MaPhiGiaoDich");
                     OnMaPhiGiaoDichChanged();
                 }
             }
         }
-        private global::System.String _MaPhiGiaoDich;
-        partial void OnMaPhiGiaoDichChanging(global::System.String value);
+        private global::System.Int32 _MaPhiGiaoDich;
+        partial void OnMaPhiGiaoDichChanging(global::System.Int32 value);
         partial void OnMaPhiGiaoDichChanged();
     
         /// <summary>
@@ -2134,7 +2158,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="TaiKhoan")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="TaiKhoan")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class TaiKhoan : EntityObject
@@ -2187,7 +2211,7 @@ namespace Money10Broker.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> SoTaiKhoan
+        public global::System.String SoTaiKhoan
         {
             get
             {
@@ -2197,13 +2221,13 @@ namespace Money10Broker.Models
             {
                 OnSoTaiKhoanChanging(value);
                 ReportPropertyChanging("SoTaiKhoan");
-                _SoTaiKhoan = StructuralObject.SetValidValue(value);
+                _SoTaiKhoan = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("SoTaiKhoan");
                 OnSoTaiKhoanChanged();
             }
         }
-        private Nullable<global::System.Int32> _SoTaiKhoan;
-        partial void OnSoTaiKhoanChanging(Nullable<global::System.Int32> value);
+        private global::System.String _SoTaiKhoan;
+        partial void OnSoTaiKhoanChanging(global::System.String value);
         partial void OnSoTaiKhoanChanged();
     
         /// <summary>
@@ -2360,18 +2384,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_CaNhan_TaiKhoan", "CaNhan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_CaNhan_TaiKhoan", "CaNhan")]
         public EntityCollection<CaNhan> CaNhans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CaNhan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "CaNhan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CaNhan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "CaNhan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CaNhan>("MoiGioiModel.FK_CaNhan_TaiKhoan", "CaNhan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CaNhan>("xnvaufit_MoiGioiModel.FK_CaNhan_TaiKhoan", "CaNhan", value);
                 }
             }
         }
@@ -2382,18 +2406,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DiaChi_TaiKhoan", "DiaChi")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DiaChi_TaiKhoan", "DiaChi")]
         public EntityCollection<DiaChi> DiaChis
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DiaChi>("MoiGioiModel.FK_DiaChi_TaiKhoan", "DiaChi");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DiaChi>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "DiaChi");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DiaChi>("MoiGioiModel.FK_DiaChi_TaiKhoan", "DiaChi", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DiaChi>("xnvaufit_MoiGioiModel.FK_DiaChi_TaiKhoan", "DiaChi", value);
                 }
             }
         }
@@ -2404,18 +2428,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "DoanhNghiep")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_DoanhNghiep_TaiKhoan", "DoanhNghiep")]
         public EntityCollection<DoanhNghiep> DoanhNghieps
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DoanhNghiep>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "DoanhNghiep");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DoanhNghiep>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "DoanhNghiep");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DoanhNghiep>("MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "DoanhNghiep", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DoanhNghiep>("xnvaufit_MoiGioiModel.FK_DoanhNghiep_TaiKhoan", "DoanhNghiep", value);
                 }
             }
         }
@@ -2426,16 +2450,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan")]
         public LoaiTaiKhoan LoaiTaiKhoan
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -2447,13 +2471,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiTaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiTaiKhoan>("MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiTaiKhoan>("xnvaufit_MoiGioiModel.FK_TaiKhoan_LoaiTaiKhoan", "LoaiTaiKhoan", value);
                 }
             }
         }
@@ -2464,18 +2488,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_The_TaiKhoan", "The")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_The_TaiKhoan", "The")]
         public EntityCollection<The> Thes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<The>("MoiGioiModel.FK_The_TaiKhoan", "The");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<The>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "The");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<The>("MoiGioiModel.FK_The_TaiKhoan", "The", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<The>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "The", value);
                 }
             }
         }
@@ -2486,7 +2510,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="ThamSo")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="ThamSo")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ThamSo : EntityObject
@@ -2497,7 +2521,7 @@ namespace Money10Broker.Models
         /// Create a new ThamSo object.
         /// </summary>
         /// <param name="maThamSo">Initial value of the MaThamSo property.</param>
-        public static ThamSo CreateThamSo(global::System.String maThamSo)
+        public static ThamSo CreateThamSo(global::System.Int32 maThamSo)
         {
             ThamSo thamSo = new ThamSo();
             thamSo.MaThamSo = maThamSo;
@@ -2512,7 +2536,7 @@ namespace Money10Broker.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String MaThamSo
+        public global::System.Int32 MaThamSo
         {
             get
             {
@@ -2524,14 +2548,14 @@ namespace Money10Broker.Models
                 {
                     OnMaThamSoChanging(value);
                     ReportPropertyChanging("MaThamSo");
-                    _MaThamSo = StructuralObject.SetValidValue(value, false);
+                    _MaThamSo = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("MaThamSo");
                     OnMaThamSoChanged();
                 }
             }
         }
-        private global::System.String _MaThamSo;
-        partial void OnMaThamSoChanging(global::System.String value);
+        private global::System.Int32 _MaThamSo;
+        partial void OnMaThamSoChanging(global::System.Int32 value);
         partial void OnMaThamSoChanged();
     
         /// <summary>
@@ -2661,7 +2685,7 @@ namespace Money10Broker.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoiGioiModel", Name="The")]
+    [EdmEntityTypeAttribute(NamespaceName="xnvaufit_MoiGioiModel", Name="The")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class The : EntityObject
@@ -2887,18 +2911,18 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_LichSuGiaoDich_The", "LichSuGiaoDich")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_LichSuGiaoDich_The", "LichSuGiaoDich")]
         public EntityCollection<LichSuGiaoDich> LichSuGiaoDiches
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LichSuGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_The", "LichSuGiaoDich");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LichSuGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "LichSuGiaoDich");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LichSuGiaoDich>("MoiGioiModel.FK_LichSuGiaoDich_The", "LichSuGiaoDich", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LichSuGiaoDich>("xnvaufit_MoiGioiModel.FK_LichSuGiaoDich_The", "LichSuGiaoDich", value);
                 }
             }
         }
@@ -2909,16 +2933,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_The_LoaiThe", "LoaiThe")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_The_LoaiThe", "LoaiThe")]
         public LoaiThe LoaiThe
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("MoiGioiModel.FK_The_LoaiThe", "LoaiThe").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "LoaiThe").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("MoiGioiModel.FK_The_LoaiThe", "LoaiThe").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "LoaiThe").Value = value;
             }
         }
         /// <summary>
@@ -2930,13 +2954,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("MoiGioiModel.FK_The_LoaiThe", "LoaiThe");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThe>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "LoaiThe");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiThe>("MoiGioiModel.FK_The_LoaiThe", "LoaiThe", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiThe>("xnvaufit_MoiGioiModel.FK_The_LoaiThe", "LoaiThe", value);
                 }
             }
         }
@@ -2947,16 +2971,16 @@ namespace Money10Broker.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoiGioiModel", "FK_The_TaiKhoan", "TaiKhoan")]
+        [EdmRelationshipNavigationPropertyAttribute("xnvaufit_MoiGioiModel", "FK_The_TaiKhoan", "TaiKhoan")]
         public TaiKhoan TaiKhoan
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan").Value = value;
             }
         }
         /// <summary>
@@ -2968,13 +2992,13 @@ namespace Money10Broker.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("xnvaufit_MoiGioiModel.FK_The_TaiKhoan", "TaiKhoan", value);
                 }
             }
         }

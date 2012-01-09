@@ -9,7 +9,7 @@
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
+		<form action="GetData.aspx" name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
 					<li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký </li>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="otp-type" style="display:none;">
+            <div class="otp-type">
                 <h4>MẬT KHẨU THANH TOÁN</h4>
                 <div class="frame_focus">
                     <div class="table-box">
@@ -77,17 +77,6 @@
                         </table>
                     </div>
                 </div>
-                <h4>KHAI BÁO ĐIỆN THOẠI DI ĐỘNG </h4>
-                <div class="frame_focus">
-                    <div class="table-box">
-                        <table width="880" border="0" cellspacing="5" cellpadding="0">
-                          <tr>
-                            <td width="200" align="right">Số điện thoại di động:</td>
-                            <td class="blear"><input name="mobile2" id="mobile2" type="text" value maxlength="11" class="input-business input-numeric field-check"><span class="field-check-function blur" title="isMobile(_value_)">Dùng từ 10 đến 11 chữ số, không bao gồm khoảng trống!</span></td>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
 			</div>
 
 			<h4>THÔNG TIN CHỦ TÀI KHOẢN </h4>
@@ -95,17 +84,13 @@
 				<div class="table-box">
 					<table width="880" border="0" cellspacing="5" cellpadding="0">
 					  <tr>
-						<td width="200" align="right"><span class="required">*</span>Giấy chứng thực:</td>
-						<td class="blear"><select name="verify_type" id="verify_type" style="width: " class="list-business field-check"><option value="1" selected>Chứng minh thư nhân dân</option><option value="2">Hộ chiếu</option></select><span class="field-check-function submit" title="isSelect(_value_,0)">Bạn chưa chọn loại giấy chứng thực!</span></td>
-					  </tr>
-					  <tr>
                         <td align="right"><span class="required">*</span><span class="label">Số CMTND:</span><span class="label" style="display:none;">Số hộ chiếu:</span></td>
 					    <td class="blear"><input name="social_id" type="text" value class="input-business field-check">
 					      <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số chứng thực!</span><span class="field-check-function blur submit" title="isVerifyNumber(_value_)">Số chứng thực bạn nhập không đúng yêu cầu, không bao gồm khoảng trống!</span></td>
 				      </tr>
                       <tr>
 						<td width="200" align="right"><span class="required">*</span>Họ tên đầy đủ:</td>
-						<td class="blear"><input name="fullname" type="text" value class="input-business field-check">
+						<td class="blear"><input id="fullname" name="fullname" type="text" value class="input-business field-check">
                         <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập họ tên!</span></td>
 					  </tr>
 					  <tr>
@@ -118,7 +103,7 @@
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Chỗ ở hiện tại:</td>
-						<td class="blear"><input name="address" type="text" value class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
+						<td class="blear"><input id="address" name="address" type="text" value class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Địa phương:</td>
@@ -143,7 +128,7 @@
             <div class="checkbox" style="margin-bottom:0px;">
 				<input name="agree" id="agree" type="checkbox" value="1">
 				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="#" target="_blank">Thỏa thuận người dùng</a> và <a href="#" target="_blank">Hướng dẫn sử dụng</a></span>
-				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button" onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};" onclick="return cmdRegister_onclick()">
+				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký" class="register-button" onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
 			</div>
 			
 			
@@ -151,7 +136,7 @@
 		</div>		
 	</div>
 </div>
-<script language="javascript">    setFormCheck();</script>
+<%--<script language="javascript">    setFormCheck();</script>
 <script language="javascript">
     $(function () {
         $('div.otp-type').hide().find('input').removeClass('field-check');
@@ -203,11 +188,8 @@
             }
         });
     });
-function cmdRegister_onclick() {
 
-}
-
-</script>
+</script>--%>
 
 	</div>
 </asp:Content>
