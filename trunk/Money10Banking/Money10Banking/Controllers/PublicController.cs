@@ -404,19 +404,15 @@ namespace Money10Banking.Controllers
         public ActionResult XuLyDangKyMoiGioi(string email_company, string password_company, string passwordConfirm_company, string name, string birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho, string companyName, string companySocialId, int phoneNo_company)
 
         {
-
-       
             try 
 	        {	        
 		        NganHangEntities dbNganHang = new NganHangEntities();
                 string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();
-                //TaiKhoan TaiKhoanMax = dbNganHang.TaiKhoans.LastOrDefault();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
-                //var TaiKhoanMax = (dbNganHang.TaiKhoans).Max();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
-                //TaiKhoan TaiKhoanMax = (from p in dbNganHang.TaiKhoans select (p)).Max();
 
                 string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
                 TaiKhoanMoi.MaTaiKhoan = MaTaiKhoanNext;
+                TaiKhoanMoi.MaLoaiTaiKhoan = "LTK002";
                 TaiKhoanMoi.SoTaiKhoan = TaoSoTaiKhoan();
                 TaiKhoanMoi.MatKhauGiaoDich = PassWord(6);
                 TaiKhoanMoi.Email = email_company;
@@ -424,8 +420,9 @@ namespace Money10Banking.Controllers
                 dbNganHang.TaiKhoans.AddObject(TaiKhoanMoi);
 
                 MoiGioi MoiGioiMoi = new MoiGioi();
-                MoiGioi MoiGioiMax = dbNganHang.MoiGiois.LastOrDefault();    // Trả về record cuối cùng trong bảng Môi Giới
-                string MaMoiGioiNext = MoiGioiMax.MaMoiGioi;
+                //MoiGioi MoiGioiMax = dbNganHang.MoiGiois.LastOrDefault();    // Trả về record cuối cùng trong bảng Môi Giới
+                string MaMoiGioiMax = dbNganHang.MoiGiois.Max(m => m.MaMoiGioi);    // Trả về mã cuối cùng trong bảng Môi Giới
+                string MaMoiGioiNext = TaoMaTangTuDong(MaMoiGioiMax, 2, "MG");
                 MoiGioiMoi.MaMoiGioi = MaMoiGioiNext;
 
                 MoiGioiMoi.MaTaiKhoan = TaiKhoanMoi.MaTaiKhoan;
@@ -439,9 +436,9 @@ namespace Money10Banking.Controllers
                 dbNganHang.MoiGiois.AddObject(MoiGioiMoi);
 
                 
-                DiaChi DiaChiMax = dbNganHang.DiaChis.LastOrDefault();  // Lấy mã địa chỉ cuối cùng
+                string DiaChiMax = (dbNganHang.DiaChis).Max(m=>m.MaDiaChi);  // Lấy mã địa chỉ cuối cùng
                 DiaChi DiaChiMoi = new DiaChi();
-                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax.MaDiaChi, 2, "DC");
+                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, 2, "DC");
                 DiaChiMoi.MaDiaChi = MaDiaChiNext;
 
                 DiaChiMoi.SoNha = SoNha;
