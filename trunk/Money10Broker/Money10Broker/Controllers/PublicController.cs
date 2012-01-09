@@ -70,7 +70,10 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
-
+        public ActionResult Admin()
+        {
+            return View();
+        }
         //MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
         xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
