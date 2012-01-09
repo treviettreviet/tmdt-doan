@@ -44,23 +44,7 @@
 				</div>
 			</div>
 			
-            <div class="otp-type" style="display:none;">
-                <h4>Điện thoại di động</h4>
-                <div class="frame_focus">
-                    <div class="table-box">
-                        <table width="880" border="0" cellspacing="5" cellpadding="0">
-                          <tr>
-                            <td width="200" align="right"><font color="#FF0000">* </font>Số điện thoại di động:</td>
-                            <td class="blear"><input name="mobile" id="mobile" type="text" value maxlength="11" class="input-business input-numeric field-check"><div class="field-notification field-alert">Hãy nhập chính xác số điện thoại di động bạn hay sử dụng để nhận mã xác minh giao dịch</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số điện thoại di động!</span><span class="field-check-function blur submit" title="isMobile(_value_)">Dùng từ 10 đến 11 chữ số, không bao gồm khoảng trống!</span></td>
-                          </tr>
-                          <tr>
-                            <td align="right"><font color="#FF0000">* </font>Xác nhận số điện thoại di động:</td>
-                            <td class="blear"><input name="confirm_mobile" type="text" value maxlength="11" class="input-business input-numeric field-check" autocomplete="off"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số điện thoại di động!</span><span class="field-check-function blur submit" title="isMobile(_value_)">Dùng từ 10 đến 11 chữ số, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'mobile')">Số điện thoại di động nhập lại không đúng!</span></td>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            
             <div class="otp-type">
                 <h4>MẬT KHẨU THANH TOÁN</h4>
                 <div class="frame_focus">
@@ -108,10 +92,6 @@
 					  <tr>
 						<td align="right"><span class="required">*</span>Địa phương:</td>
 						<td class="blear">tỉnh/thành <select name="city_id" id="city_id" style="width: 130px" class="list-business" onchange="getZones(this, 'zone_id', this.value);"><option value="0" selected></option><option value="2">An Giang</option><option value="3">Bà Rịa Vũng Tàu</option><option value="4">Bạc Liêu</option><option value="5">Bắc Cạn</option><option value="6">Bắc Giang</option><option value="7">Bắc Ninh</option><option value="8">Bến Tre</option><option value="9">Bình Dương</option><option value="10">Bình Định</option><option value="11">Bình Phước</option><option value="12">Bình Thuận</option><option value="13">Cà Mau</option><option value="14">Cao Bằng</option><option value="15">Cần Thơ</option><option value="16">Đà Nẵng</option><option value="17">Đắk Lắk</option><option value="18">Đồng Nai</option><option value="19">Đồng Tháp</option><option value="20">Gia Lai</option><option value="21">Hà  Giang</option><option value="22">Hà Nam</option><option value="23">Hà Nội</option><option value="25">Hà Tĩnh</option><option value="26">Hải Dương</option><option value="27">Hải Phòng</option><option value="28">Hòa Bình</option><option value="29">Hưng Yên</option><option value="30">Hồ Chí Minh</option><option value="31">Khánh Hòa</option><option value="32">Kiên Giang</option><option value="33">Kon Tum</option><option value="34">Lai Châu</option><option value="35">Lạng Sơn</option><option value="36">Lào Cai</option><option value="37">Lâm Đồng</option><option value="38">Long An</option><option value="39">Nam Định</option><option value="40">Nghệ An</option><option value="41">Ninh Bình</option><option value="42">Ninh Thuận</option><option value="43">Phú Thọ</option><option value="44">Phú Yên</option><option value="45">Quảng Bình</option><option value="46">Quảng Nam</option><option value="47">Quảng Ngãi</option><option value="48">Quảng Ninh</option><option value="49">Quảng Trị</option><option value="50">Sóc Trăng</option><option value="51">Sơn La</option><option value="52">Tây Ninh</option><option value="53">Thái Bình</option><option value="54">Thái Nguyên</option><option value="55">Thanh Hóa</option><option value="56">Thừa Thiên Huế</option><option value="57">Tiền Giang</option><option value="58">Trà Vinh</option><option value="59">Tuyên Quang</option><option value="60">Vĩnh Long</option><option value="61">Vĩnh Phúc</option><option value="62">Yên Bái</option><option value="869">Điện Biên</option><option value="912">Hậu Giang</option><option value="919">Đắk Nông</option></select> <span class="field-check-function submit" title="isSelect(_value_,0)">Bạn chưa chọn địa phương!</span></td>
-					  </tr>
-					  <tr>
-						<td align="right">Số điện thoại cố định:</td>
-						<td class="blear"><input name="phone" type="text" value class="input-business field-check"><span class="field-check-function blur" title="isPhoneNumber(_value_)">Dùng từ 6 đến 15 ký tự!</span></td>
 					  </tr>
 					</table>
 				</div>

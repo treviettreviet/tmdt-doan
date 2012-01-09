@@ -131,7 +131,7 @@ namespace WSWorkFlow
             //string ID = TaoMaTangTuDong(maHienTai, 2, "GD");
             //logTrans.MaLichSuGiaoDich = "GD001";
             //logTrans.MaThe = sendCard.MaThe;
-            ////logTrans.SoTheNhan = receiveCard.MaThe;
+            //logTrans.SoTheNhan = receiveCard.MaThe;
             //logTrans.SoTheNhan = receiveCard.MaThe;
             //logTrans.SoTienGiaoDich = amount;
             //logTrans.MaLoaiGiaoDich = "LGD003";

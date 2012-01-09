@@ -155,9 +155,79 @@ namespace Money10Broker.Controllers
         // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
         // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
         // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
-        public ActionResult XuLyDangKyCaNhan()
+        public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string sex, string address, string city_id)
         {
+
+            if (cmdRegister != null)
+            {
+                if (KiemTraEmail(email) == 1)
+                {
+                    TaiKhoan newUser = new TaiKhoan();
+                    CaNhan newInfo = new CaNhan();
+
+                    //Phát sinh mã cho  tài khoản
+                    var maTk = from mtk in dbMoiGioi.TaiKhoans select mtk;
+                    int j = maTk.Count() + 1;
+                    if (j <= 9)
+                    {
+                        newUser.MaTaiKhoan = "TK00" + j.ToString();
+                    }
+                    else
+                    {
+                        if (j > 9 && j <= 99)
+                        {
+                            newUser.MaTaiKhoan = "TK0" + j.ToString();
+                        }
+                        else if (j > 99 && j <= 999)
+                        {
+                            newUser.MaTaiKhoan = "TK" + j.ToString();
+                        }
+                    }
+
+                    newUser.Email = email;
+                    newUser.MatKhau = password;
+                    newUser.MatKhauGiaoDich = password_payment;
+                    newUser.MaLoaiTaiKhoan = "LTK002";
+                    newUser.TinhTrang = 0;
+                    newUser.SoTaiKhoan = "67890";
+
+                    dbMoiGioi.TaiKhoans.AddObject(newUser);
+                    dbMoiGioi.SaveChanges();
+
+
+                    //newInfo.CMNDHoChieu = Request["social_id"];
+                    //newInfo.NgaySinh = DateTime.Parse(Request["date"]);
+                    //newInfo.HoTen = Request["fullname"];
+                    //newInfo.GioiTinh = Request["sex"];
+                    //Request["addresss"];
+                    //Request["city_id"];
+                }
+            }
+
             return View();
+        }
+
+        //Kiểm tra email đăng ký
+        private int KiemTraEmail(string email)
+        {
+            try
+            {
+                TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+                if (!user.Email.Equals(email))
+                {
+                    // Email không tồn tại
+                    return 1;
+                }
+                else
+                {
+                    // email ton tai
+                    return 0;
+                }
+            }
+            catch
+            {
+                return -1;
+            }
         }
    }
 }
