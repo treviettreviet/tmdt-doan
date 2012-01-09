@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TransferMoneySameBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccsend" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccreceive" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccsendcurenum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccreceivesecurenum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferMoneySameBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransferMoneySameBankResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferMoneyDiffBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccrsend" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccreceive" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccreceivesecurenum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferMoneyDiffBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransferMoneyDiffBankResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TransferMoneySameBankSoapIn">
+    <wsdl:part name="parameters" element="tns:TransferMoneySameBank" />
+  </wsdl:message>
+  <wsdl:message name="TransferMoneySameBankSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferMoneySameBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferMoneyDiffBankSoapIn">
+    <wsdl:part name="parameters" element="tns:TransferMoneyDiffBank" />
+  </wsdl:message>
+  <wsdl:message name="TransferMoneyDiffBankSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferMoneyDiffBankResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsTransferSoap">
+    <wsdl:operation name="TransferMoneySameBank">
+      <wsdl:input message="tns:TransferMoneySameBankSoapIn" />
+      <wsdl:output message="tns:TransferMoneySameBankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoneyDiffBank">
+      <wsdl:input message="tns:TransferMoneyDiffBankSoapIn" />
+      <wsdl:output message="tns:TransferMoneyDiffBankSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsTransferSoap" type="tns:wsTransferSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TransferMoneySameBank">
+      <soap:operation soapAction="http://tempuri.org/TransferMoneySameBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoneyDiffBank">
+      <soap:operation soapAction="http://tempuri.org/TransferMoneyDiffBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTransferSoap12" type="tns:wsTransferSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TransferMoneySameBank">
+      <soap12:operation soapAction="http://tempuri.org/TransferMoneySameBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoneyDiffBank">
+      <soap12:operation soapAction="http://tempuri.org/TransferMoneyDiffBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsTransfer">
+    <wsdl:port name="wsTransferSoap" binding="tns:wsTransferSoap">
+      <soap:address location="http://localhost:1248/wsTransfer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTransferSoap12" binding="tns:wsTransferSoap12">
+      <soap12:address location="http://localhost:1248/wsTransfer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
