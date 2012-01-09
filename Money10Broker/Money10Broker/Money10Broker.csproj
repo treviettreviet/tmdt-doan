@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -381,7 +382,7 @@
     <Content Include="Scripts\js\vtip0000.js" />
     <Content Include="Scripts\js\withdraw.js" />
     <Content Include="Views\Admin\Default.aspx" />
-    <Content Include="Views\Public\Admin.aspx" />
+    <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Public\LichSuGiaoDich.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
     <Content Include="Views\Public\RutTien.aspx" />
