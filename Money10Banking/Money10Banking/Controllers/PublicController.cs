@@ -296,25 +296,10 @@ namespace Money10Banking.Controllers
             try
             {
                 NganHangEntities db1 = new NganHangEntities();
+                string maxtk = db1.TaiKhoans.Max(m=>m.MaTaiKhoan);//lấy record cuối cùng của cột mã tài khoản
                 TaiKhoan tk = new TaiKhoan();
-                var maTk = from mtk in db1.TaiKhoans select mtk;
-                int j = maTk.Count() + 1;
-                if (j <= 9)
-                {
-                    tk.MaTaiKhoan = "TK00" + j.ToString();
-                }
-                else
-                    if (j > 9 && j <= 99)
-                    {
-                        tk.MaTaiKhoan = "TK0" + j.ToString();
-                    }
-                    else
-                        if (j > 99 && j <= 999)
-                        {
-                            tk.MaTaiKhoan = "TK" + j.ToString();
-                        }
+                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, 2, "TK");
                 tk.MaLoaiTaiKhoan = "LTK001";
-
                 tk.SoTaiKhoan = TaoSoTaiKhoan();
                 tk.MatKhauGiaoDich = PassWord(6);
                 //if (KiemTraEmail(email) == 1)
@@ -329,23 +314,9 @@ namespace Money10Banking.Controllers
                 tk.MatKhau = GetMD5Hash(password).Trim();
 
                 db1.TaiKhoans.AddObject(tk);
+                string max = db1.DiaChis.Max(m => m.MaDiaChi);// lấy record cuối cùng cột mã địa chỉ
                 DiaChi dc = new DiaChi();
-                var maDC = from mdc in db1.DiaChis select mdc;
-                int i = maDC.Count() + 1;
-                if (i <= 9)
-                {
-                    dc.MaDiaChi = "DC00" + i.ToString();
-                }
-                else
-                    if (i > 9 && i <= 99)
-                    {
-                        dc.MaDiaChi = "DC0" + i.ToString();
-                    }
-                    else
-                        if (i > 99 && i <= 999)
-                        {
-                            dc.MaDiaChi = "DC" + i.ToString();
-                        }
+                dc.MaDiaChi = TaoMaTangTuDong(max, 2, "DC");
 
                 if (SoNha == "" || SoNha == null)
                 {
@@ -374,27 +345,10 @@ namespace Money10Banking.Controllers
                 dc.TinhThanh = ThanhPho;
                 dc.MaTaiKhoan = tk.MaTaiKhoan;
                 db1.DiaChis.AddObject(dc);
+                string maxkh = db1.KhachHangs.Max(m=>m.MaKhachHang);//lấy giá trị cuôiis cùng cột Mã kh
                 KhachHang kh = new KhachHang();
-                var maKh = from mkh in db1.KhachHangs select mkh;
-
-                int k = maKh.Count() + 1;
-                if (k <= 9)
-                {
-                    kh.MaKhachHang = "KH00" + k.ToString();
-                }
-                else
-                    if (k > 9 && k <= 99)
-                    {
-                        kh.MaKhachHang = "KH0" + k.ToString();
-                    }
-                    else
-                        if (k > 99 && k <= 999)
-                        {
-                            kh.MaKhachHang = "KH" + k.ToString();
-                        }
-
+                kh.MaKhachHang = TaoMaTangTuDong(maxkh, 2, "KH");
                 kh.MaTaiKhoan = tk.MaTaiKhoan;
-
                 kh.HoTen = name;
                 kh.NgaySinh = birthDay;
                 if (rdNam != null)
@@ -445,10 +399,13 @@ namespace Money10Banking.Controllers
         /// <param name="companySocialId"></param>
         /// <param name="phoneNo_company"></param>
         /// <returns></returns>
-        /// 
+
         
         public ActionResult XuLyDangKyMoiGioi(string email_company, string password_company, string passwordConfirm_company, string name, string birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho, string companyName, string companySocialId, int phoneNo_company)
+
         {
+
+       
             try 
 	        {	        
 		        NganHangEntities dbNganHang = new NganHangEntities();
@@ -457,9 +414,6 @@ namespace Money10Banking.Controllers
                 //TaiKhoan TaiKhoanMax = dbNganHang.TaiKhoans.LastOrDefault();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
                 //var TaiKhoanMax = (dbNganHang.TaiKhoans).Max();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
                 //TaiKhoan TaiKhoanMax = (from p in dbNganHang.TaiKhoans select (p)).Max();
-
-                //string max = db1.DiaChis.Max(m => m.MaDiaChi)
-                
 
                 string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
                 TaiKhoanMoi.MaTaiKhoan = MaTaiKhoanNext;
