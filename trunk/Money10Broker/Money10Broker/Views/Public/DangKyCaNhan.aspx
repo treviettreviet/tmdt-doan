@@ -9,7 +9,8 @@
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form action="GetData.aspx" name="NL_UserRegisterPersonalForm" method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="273">
+		<form action="XuLyDangKyCaNhan" name="NL_UserRegisterPersonalForm" method="post">
+            <input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
 					<li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký </li>
