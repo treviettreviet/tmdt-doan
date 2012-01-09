@@ -130,10 +130,12 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+
         public ActionResult CapNhatThongTinTaiKhoan()
         {
             return View();
         }
+
         public ActionResult ThayDoiMatKhau()
         {
             return View();
@@ -443,173 +445,67 @@ namespace Money10Banking.Controllers
         /// <param name="companySocialId"></param>
         /// <param name="phoneNo_company"></param>
         /// <returns></returns>
+        /// 
+        
         public ActionResult XuLyDangKyMoiGioi(string email_company, string password_company, string passwordConfirm_company, string name, string birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho, string companyName, string companySocialId, int phoneNo_company)
         {
-        try 
-        {
-            NganHangEntities db1 = new NganHangEntities();
-               
+            try 
+	        {	        
+		        NganHangEntities dbNganHang = new NganHangEntities();
+                string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
+                TaiKhoan TaiKhoanMoi = new TaiKhoan();
+                //TaiKhoan TaiKhoanMax = dbNganHang.TaiKhoans.LastOrDefault();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
+                //var TaiKhoanMax = (dbNganHang.TaiKhoans).Max();    // Trả về Record cuối cùng trong bảng Tài Khoản => Lấy mã cuối cùng
+                //TaiKhoan TaiKhoanMax = (from p in dbNganHang.TaiKhoans select (p)).Max();
+
+                //string max = db1.DiaChis.Max(m => m.MaDiaChi)
                 
-            TaiKhoan tk = new TaiKhoan();
-            var maTk = from mtk in db1.TaiKhoans select mtk;
-            int j = maTk.Count() + 1;
-            if (j <= 9)
-            {
-                tk.MaTaiKhoan = "TK00" + j.ToString();
-            }
-            else
-                if (j > 9 && j <= 99)
-                {
-                    tk.MaTaiKhoan = "TK0" + j.ToString();
-                }
-                else
-                    if (j > 99 && j <= 999)
-                    {
-                        tk.MaTaiKhoan = "TK" + j.ToString();
-                    }
-            tk.MaLoaiTaiKhoan = "LTK002";
 
-            tk.SoTaiKhoan = TaoSoTaiKhoan();
-            tk.MatKhauGiaoDich = PassWord(6);
-            //if (KiemTraEmail(email) == 1)
-            //{
-            tk.Email = email_company;
-            //}
-            //else
-            //{
-            //    ktemail="Email da duoc dung";
-            //   // return View("DangKy");
-            //}
-            tk.MatKhau = GetMD5Hash(password_company).Trim();
+                string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
+                TaiKhoanMoi.MaTaiKhoan = MaTaiKhoanNext;
+                TaiKhoanMoi.SoTaiKhoan = TaoSoTaiKhoan();
+                TaiKhoanMoi.MatKhauGiaoDich = PassWord(6);
+                TaiKhoanMoi.Email = email_company;
+                TaiKhoanMoi.MatKhau = GetMD5Hash(password_company).Trim();
+                dbNganHang.TaiKhoans.AddObject(TaiKhoanMoi);
+
+                MoiGioi MoiGioiMoi = new MoiGioi();
+                MoiGioi MoiGioiMax = dbNganHang.MoiGiois.LastOrDefault();    // Trả về record cuối cùng trong bảng Môi Giới
+                string MaMoiGioiNext = MoiGioiMax.MaMoiGioi;
+                MoiGioiMoi.MaMoiGioi = MaMoiGioiNext;
+
+                MoiGioiMoi.MaTaiKhoan = TaiKhoanMoi.MaTaiKhoan;
+
+                MoiGioiMoi.SoGiayPhepKinhDoanh = companySocialId;
+                MoiGioiMoi.TenCongTy = companyName;
+
+                ////mg.SoGiayPhepKinhDoanh = txtGPKD.Text.ToString();
+                //mg.TenCongTy = txtTenCty.Text.ToString();
+                MoiGioiMoi.DienThoaiCongTy = phoneNo_company;
+                dbNganHang.MoiGiois.AddObject(MoiGioiMoi);
+
                 
-            db1.TaiKhoans.AddObject(tk);
+                DiaChi DiaChiMax = dbNganHang.DiaChis.LastOrDefault();  // Lấy mã địa chỉ cuối cùng
+                DiaChi DiaChiMoi = new DiaChi();
+                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax.MaDiaChi, 2, "DC");
+                DiaChiMoi.MaDiaChi = MaDiaChiNext;
 
-            MoiGioi mg = new MoiGioi();
-            MoiGioi maMg = db1.MoiGiois.LastOrDefault();
-            string moigioi = maMg.MaMoiGioi;
-            //int m = maMg.Count() + 1;
-            //if (m <= 9)
-            //{
-            //    mg.MaMoiGioi = "MG00" + m.ToString();
-            //}
-            //else
-            //    if (m > 9 && m <= 99)
-            //    {
-            //        mg.MaMoiGioi = "MG0" + m.ToString();
-            //    }
-            //    else
-            //        if (m > 99 && m <= 999)
-            //        {
-            //            mg.MaMoiGioi = "MG" + m.ToString();
-            //        }
-            mg.MaMoiGioi= TaoMaTangTuDong(moigioi, 2, "MG");
-
-            mg.MaTaiKhoan = tk.MaTaiKhoan;
-            //var gpkd = from gp in db1.MoiGiois where companyName.Equals(gp.SoGiayPhepKinhDoanh) || companyName.Equals(gp.TenCongTy) select gp;
-               
-              
-                mg.SoGiayPhepKinhDoanh = companySocialId;
-                mg.TenCongTy = companyName;
-             
-            ////mg.SoGiayPhepKinhDoanh = txtGPKD.Text.ToString();
-            //mg.TenCongTy = txtTenCty.Text.ToString();
-            mg.DienThoaiCongTy = phoneNo_company;
-            db1.MoiGiois.AddObject(mg);
-
-            DiaChi dc = new DiaChi();
-            var maDC = from mdc in db1.DiaChis select mdc;
-            int i = maDC.Count() + 1;
-            if (i <= 9)
-            {
-                dc.MaDiaChi = "DC00" + i.ToString();
-            }
-            else
-                if (i > 9 && i <= 99)
-                {
-                    dc.MaDiaChi = "DC0" + i.ToString();
-                }
-                else
-                    if (i > 99 && i <= 999)
-                    {
-                        dc.MaDiaChi = "DC" + i.ToString();
-                    }
-
-            if (SoNha == "" || SoNha == null)
-            {
-                SoNha = "0";
-            }
-            if (Duong == "" || Duong == null)
-            {
-                Duong = "0";
-            }
-            if (PhuongXa == "" || PhuongXa == null)
-            {
-                PhuongXa = "0";
-            }
-            if (QuanHuyen == "" || QuanHuyen == null)
-            {
-                QuanHuyen = "0";
-            }
-            if (ThanhPho == "" || ThanhPho == null)
-            {
-                ThanhPho = "0";
-            }
-            dc.SoNha = SoNha;
-            dc.Duong = Duong;
-            dc.PhuongXa = PhuongXa;
-            dc.QuanHuyen = QuanHuyen;
-            dc.TinhThanh = ThanhPho;
-            dc.MaTaiKhoan = mg.MaTaiKhoan;
-            db1.DiaChis.AddObject(dc);
-            //KhachHang kh = new KhachHang();
-            //var maKh = from mkh in db1.KhachHangs select mkh.MaKhachHang;
-            //int k = maKh.Count() + 1;
-            //if (k <= 9)
-            //{
-            //    kh.MaKhachHang = "KH00" + k.ToString();
-            //}
-            //else
-            //    if (k > 9 && k <= 99)
-            //    {
-            //        kh.MaKhachHang = "KH0" + k.ToString();
-            //    }
-            //    else
-            //        if (k > 99 && k <= 999)
-            //        {
-            //            kh.MaKhachHang = "KH" + k.ToString();
-            //        }
-
-            //kh.MaTaiKhoan = tk.MaTaiKhoan;
-
-            //kh.HoTen = name;
-            //kh.NgaySinh = birthDay;
-            //if (rdNam !=null)
-            //{
-            //    kh.GioiTinh = "Nam";
-            //}
-            //if (rdNu!=null)
-            //{
-            //    kh.GioiTinh = "Nu";
-            //}
-            //if (rdNam==null && rdNu==null)
-            //{
-            //    kh.GioiTinh = "PD";
-            //}
-            //kh.CMNDHoChieu = CMND;
-                
-            //db1.KhachHangs.AddObject(kh);
-                
-            db1.SaveChanges();
-             
-            return View("DangNhap");
+                DiaChiMoi.SoNha = SoNha;
+                DiaChiMoi.Duong = Duong;
+                DiaChiMoi.PhuongXa = PhuongXa;
+                DiaChiMoi.QuanHuyen = QuanHuyen;
+                DiaChiMoi.TinhThanh = ThanhPho;
+                DiaChiMoi.MaTaiKhoan = MoiGioiMoi.MaTaiKhoan;
+                dbNganHang.DiaChis.AddObject(DiaChiMoi);
+                dbNganHang.SaveChanges();   // Save xuống CSDL
+                return View("DangNhap");
+	        }
+	        catch (Exception ex)
+	        {
+		        throw new Exception(ex.Message);
+                //return View("BaoLoi");
+	        }
         }
-        catch
-        {
-            //throw new Exception("Error on # of clients.", ex);
-            return View("BaoLoi");
-        }
-
-    }
 
 
         /// <summary>
@@ -649,5 +545,7 @@ namespace Money10Banking.Controllers
             }
             return maTuDong;
         }
+
+
     }
 }
