@@ -294,7 +294,7 @@
                     </script>
                     <div class="parent">
                         <ul>
-                            <li id="cat0" class="m_home first"><a href="https://www.baokim.vn/" onmouseout="resetMenu()"
+                            <li id="cat0" class="m_home first"><a href="http://localhost:13307/Public/TrangChu" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service">
                                     <a href="https://www.baokim.vn/service" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
                                         <span>Dịch vụ</span></a></li><li id="cat2" class="m_payment"><a href="https://www.baokim.vn/payment/integrate_button/intro_view"
