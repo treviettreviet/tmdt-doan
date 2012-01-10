@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteThanhToan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     ThanhToanTrucTuyen
-</asp:Content>
+</asp:Content>--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <div class="header-bottom">
@@ -41,7 +41,9 @@
                             Hoá đơn/Sản phẩm:
                         </th>
                         <td>
-                            <asp:Label ID="lblMaSanPham" runat="server" Text="Label"></asp:Label>
+                            <%--<asp:Label ID="lblMaSanPham" runat="server" Text="Label"></asp:Label>--%>
+                            <%: Html.Encode(ViewData["MaDonHang"]) %>
+                            
                         </td>
                     </tr>
                     <!-- BEGIN BlockQuantity -->
