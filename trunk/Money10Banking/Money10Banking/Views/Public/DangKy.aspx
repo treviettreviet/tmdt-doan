@@ -304,8 +304,7 @@
                        <div class="form-content clear">                 
 	                     	<p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Tài khoản cá nhân</span><span class="font-acc-command">(Sử dụng thông tin cá nhân để thực hiện giao dịch)</span></label></p>
                        		<p style="margin-left:80px;"><input type="radio" name="account[]" value  onclick="j('#register_account_personal').hide();j('#register_account_business').show(); j('#type_register').val(2);" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Tài khoản doanh nghiệp</span><span class="font-acc-command">(Sử dụng thông tin pháp nhân /Doanh nghiệp để thực hiện giao dịch)</span></label></p>
-
-                            <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form1" name="form_register_personal" accept-charset="utf-8" method="post">
+                           <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal">
                                 <tr>
                                     <th>Email<span class="mandatory">*</span></th>
