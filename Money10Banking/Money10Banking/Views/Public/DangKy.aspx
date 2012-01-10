@@ -355,7 +355,7 @@
                                     <td class="style1">
                                                                      
                                         
-                                     <input type="radio" name="rdNam"  checked="true"/><span class="font-acc">Nam</span>
+                                     <input type="radio" name="rdNam"  checked="checked"/><span class="font-acc">Nam</span>
                                         <input type="radio" name="rdNu"  /><span class="font-acc">Nữ</span>
                                                                      
                                     </td>

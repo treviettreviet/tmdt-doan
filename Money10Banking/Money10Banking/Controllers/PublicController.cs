@@ -291,17 +291,13 @@ namespace Money10Banking.Controllers
         /// <param name="QuanHuyen"></param>
         /// <param name="ThanhPho"></param>
         /// <returns></returns>
-        public ActionResult XuLyDangKyCaNhan(string email, string password, string passwordConfirm, string name, DateTime birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho)
+        public ActionResult XuLyDangKyCaNhan(string email, string password, string passwordConfirm, string name, string birthDay, string CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho)
         {
             try
             {
                 NganHangEntities db1 = new NganHangEntities();
                 string maxtk = db1.TaiKhoans.Max(m=>m.MaTaiKhoan);//lấy record cuối cùng của cột mã tài khoản
                 TaiKhoan tk = new TaiKhoan();
-                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, 2, "TK");
-                tk.MaLoaiTaiKhoan = "LTK001";
-                tk.SoTaiKhoan = TaoSoTaiKhoan();
-                tk.MatKhauGiaoDich = PassWord(6);
                 if (KiemTraEmail(email) == 1)
                 {
                     tk.Email = email;
@@ -314,9 +310,16 @@ namespace Money10Banking.Controllers
                     ViewData["error"] = error;
                     return View("DangKy");
                 }
+                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, 2, "TK");
+                tk.MaLoaiTaiKhoan = "LTK001";
+                tk.SoTaiKhoan = TaoSoTaiKhoan();
+                tk.MatKhauGiaoDich = PassWord(6);
+                
                 tk.MatKhau = GetMD5Hash(password).Trim();
-
+                tk.TinhTrang = 0;
                 db1.TaiKhoans.AddObject(tk);
+
+                // Thêm vào bảng DiaChi
                 string max = db1.DiaChis.Max(m => m.MaDiaChi);// lấy record cuối cùng cột mã địa chỉ
                 DiaChi dc = new DiaChi();
                 dc.MaDiaChi = TaoMaTangTuDong(max, 2, "DC");
@@ -348,12 +351,14 @@ namespace Money10Banking.Controllers
                 dc.TinhThanh = ThanhPho;
                 dc.MaTaiKhoan = tk.MaTaiKhoan;
                 db1.DiaChis.AddObject(dc);
+
+                // Thêm vào bảng Khách Hàng
                 string maxkh = db1.KhachHangs.Max(m=>m.MaKhachHang);//lấy giá trị cuôiis cùng cột Mã kh
                 KhachHang kh = new KhachHang();
                 kh.MaKhachHang = TaoMaTangTuDong(maxkh, 2, "KH");
                 kh.MaTaiKhoan = tk.MaTaiKhoan;
                 kh.HoTen = name;
-                kh.NgaySinh = birthDay;
+                //kh.NgaySinh = DateTime.Parse(birthDay);   // Chưa set, phải xet giá trị của 3 textbox
                 if (rdNam != null)
                 {
                     kh.GioiTinh = "Nam";
@@ -366,8 +371,9 @@ namespace Money10Banking.Controllers
                 {
                     kh.GioiTinh = "PD";
                 }
-                kh.CMNDHoChieu = CMND;
-
+                
+                kh.CMNDHoChieu = int.Parse(CMND);
+                kh.TinhTrang = 0;
                 db1.KhachHangs.AddObject(kh);
 
                 db1.SaveChanges();
@@ -409,6 +415,19 @@ namespace Money10Banking.Controllers
 		        NganHangEntities dbNganHang = new NganHangEntities();
                 string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();
+
+                if (KiemTraEmail(email_company) == 1)
+                {
+                    TaiKhoanMoi.Email = email_company;
+                }
+                else
+                {
+                    string div = "error-box";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("DangKy");
+                }
 
                 string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
                 TaiKhoanMoi.MaTaiKhoan = MaTaiKhoanNext;
