@@ -1,8 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
+<script runat="server">
 
+    protected void Page_Load(object sender, EventArgs e)
+    {
 
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     CapNhatThongTinCaNhan
 </asp:Content>
@@ -161,10 +166,10 @@
                     </tr>
                     <tr>
                         <th>
-                            Tỉnh/Thành phố
+                            Đường
                         </th>
                         <td>
-                             <input type="text" name="city" value class="text address" maxlength="50">
+                            <input type="text" name="street" value class="text address" maxlength="50">
                         </td>
                     </tr>
                     <tr>
@@ -173,6 +178,14 @@
                         </th>
                         <td>
                             <input type="text" name="distric" value class="text address" maxlength="50">
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>
+                            Tỉnh/Thành phố
+                        </th>
+                        <td>
+                             <input type="text" name="city" value class="text address" maxlength="50">
                         </td>
                     </tr>
                     <tr>

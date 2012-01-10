@@ -294,7 +294,7 @@ namespace Money10Banking.Controllers
         /// <param name="QuanHuyen"></param>
         /// <param name="ThanhPho"></param>
         /// <returns></returns>
-        public ActionResult XuLyDangKyCaNhan(string email, string password, string passwordConfirm, string name, string birthDay, string CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho)
+        public ActionResult XuLyDangKyCaNhan(string email, string password, string passwordConfirm, string name, string date, string month, string year, string CMND, string rdGioiTinh, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho)
         {
             try
             {
@@ -361,20 +361,21 @@ namespace Money10Banking.Controllers
                 kh.MaKhachHang = TaoMaTangTuDong(maxkh, 2, "KH");
                 kh.MaTaiKhoan = tk.MaTaiKhoan;
                 kh.HoTen = name;
+                string ngaysinh = date + "-" + month + "-" + year;
+                kh.NgaySinh = DateTime.Parse(ngaysinh);
                 //kh.NgaySinh = DateTime.Parse(birthDay);   // Chưa set, phải xet giá trị của 3 textbox
-                if (rdNam != null)
+                if (rdGioiTinh =="Nam")
                 {
                     kh.GioiTinh = "Nam";
                 }
-                if (rdNu != null)
+                if (rdGioiTinh == "Nu")
                 {
-                    kh.GioiTinh = "Nu";
+                    kh.GioiTinh = "Nữ";
                 }
-                if (rdNam == null && rdNu == null)
-                {
-                    kh.GioiTinh = "PD";
+                if(rdGioiTinh=="" || rdGioiTinh==null){
+                    kh.GioiTinh= "PD";
                 }
-                
+  
                 kh.CMNDHoChieu = int.Parse(CMND);
                 kh.TinhTrang = 0;
                 db1.KhachHangs.AddObject(kh);
