@@ -1,18 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main" style="padding: 0">
-        <div class="home">
-            <!-- start home top -->
-            <div class="home-top">
-
-                <div class="home-top-left">
-                    <%--<script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
-                    <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css"/>--%>
-                    <div class="form_login">
-                        <form action="XuLyDangNhap" method="post" id="login_small" accept-charset="utf-8">
-                        <table width="170" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-
+        
                 <div class="home-top">
                     <div class="home-top-left">
                         <%--<script type="text/javascript" src="Scripts/js/keyboard.js"></script>
@@ -165,7 +154,7 @@
             </div>
             <div class="clear">
             </div>
-        </div>
+       
         <div style="margin: 0pt auto; width: 805px;">
             <div class="hb-home-banner">
                 <div class="hb-banner left">
