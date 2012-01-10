@@ -19,6 +19,8 @@ namespace Money10Broker.Controllers
 
         public ActionResult ThanhToanTrucTuyen()
         {
+            ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
+
             return View();
         }
 
