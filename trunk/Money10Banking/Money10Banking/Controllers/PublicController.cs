@@ -302,15 +302,18 @@ namespace Money10Banking.Controllers
                 tk.MaLoaiTaiKhoan = "LTK001";
                 tk.SoTaiKhoan = TaoSoTaiKhoan();
                 tk.MatKhauGiaoDich = PassWord(6);
-                //if (KiemTraEmail(email) == 1)
-                //{
-                tk.Email = email;
-                //}
-                //else
-                //{
-                //    ktemail="Email da duoc dung";
-                //   // return View("DangKy");
-                //}
+                if (KiemTraEmail(email) == 1)
+                {
+                    tk.Email = email;
+                }
+                else
+                {
+                    string div = "error-box";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("DangKy");
+                }
                 tk.MatKhau = GetMD5Hash(password).Trim();
 
                 db1.TaiKhoans.AddObject(tk);
@@ -399,10 +402,7 @@ namespace Money10Banking.Controllers
         /// <param name="companySocialId"></param>
         /// <param name="phoneNo_company"></param>
         /// <returns></returns>
-
-        
         public ActionResult XuLyDangKyMoiGioi(string email_company, string password_company, string passwordConfirm_company, string name, string birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho, string companyName, string companySocialId, int phoneNo_company)
-
         {
             try 
 	        {	        
