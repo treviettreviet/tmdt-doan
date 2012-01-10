@@ -376,7 +376,7 @@
                                     <th>Giới Tính<span class="mandatory">*</span></th>
                                     <td class="style1">
 
-                                     <input type="radio" name="rdGioiTinh" value="Nam"/><span class="font-acc">Nam</span>
+                                     <input type="radio" name="rdGioiTinh" value="Nam" checked="true"/><span class="font-acc">Nam</span>
                                         <input type="radio" name="rdGioiTinh" value="Nu"/><span class="font-acc">Nữ</span>                                                                   
                                     </td>
                                 </tr>
@@ -500,39 +500,12 @@
                                 <td class="style1">
                                     <input type="text" name="CMND" value="123456789" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
                                 </td>
-                            </tr>
-                                <tr>
-                                <th>Giới Tính<span class="mandatory">*</span></th>
-                                <td class="style1">
-
-    </tr>     
-     <tr>
-                                    <th>Họ tên người đại diện<span class="mandatory">*</span></th>
-                                    <td>
-                                    <input type="text" name="name" value="Huynh Tan Len" class="text qtip" title="Điền họ tên người đại diện chính cho doanh nghiệp. Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !">                                   	<br><span class="error" id="error_name_company"></span>
-                                    </td>
-                                </tr>                          
-                                      <tr>
-                                    <th>Ngày Sinh<span class="mandatory">*</span></th>
-                                    <td class="style1">
-                                      <input type="text" name="date" value="30" class="text qtip" autocomplete="off" title="-Ngày Sinh"> / 
-                                      <input type="text" name="month" value="03" class="" autocomplete="off" 
-                                            title="-Ngày Sinh" style="width: 55px">/          
-                                            <input type="text" name="year" value="1989" class="" autocomplete="off" 
-                                            title="-Ngày Sinh" style="width: 55px">                    
-                                    </td>
-                                </tr>  
-                                  <tr>
-                                    <th>CMND/Hộ Chiếu<span class="mandatory">*</span></th>
-                                    <td class="style1">
-                                      <input type="text" name="CMND" value="123456789" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
-                                    </td>
-                                </tr>
+                            </tr>                              
                                   <tr>
                                     <th>Giới Tính<span class="mandatory">*</span></th>
                                     <td class="style1">                                        
-                                    <input type="radio" name="rdNam" checked="checked"  /><span class="font-acc">Nam</span>
-                                    <input type="radio" name="rdNu"  /><span class="font-acc">Nữ</span>
+                                    <input type="radio" name="rdGioitinh" checked="checked"  /><span class="font-acc">Nam</span>
+                                    <input type="radio" name="rdGioiTinh"  /><span class="font-acc">Nữ</span>
                                                                      
                                 </td>
                             </tr>
@@ -560,8 +533,6 @@
                                     <input type="text" name="phoneNo_company" value="084321456" class="text qtip" autocomplete="off" title="-số điện thoại hoặc số fax">                                
                                 </td>
                             </tr>
-                               
-                               
                                 <tr>
                                 <th>Địa Chỉ<span class="mandatory"></span></th>
                                 <td class="style1">

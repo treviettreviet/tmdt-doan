@@ -119,10 +119,10 @@
 		        		<div style="background-color: white; border:solid 1px gray;padding:5px;margin-top: -13px;">
 		        			<table width="250" border="0" cellspacing="0" cellpadding="0" class="account-table-blog">
 								 <tr>
-								    <td><a href="Public/CapNhatThongTinCaNhan">Cập nhật thông tin tài khoản</a></td>
+								    <td><a href="CapNhatThongTinTaiKhoanCaNhan">Cập nhật thông tin tài khoản</a></td>
 								  </tr>								  			  
 								  <tr>
-								    <td><a href="Public/ThayDoiMatKhau">Đổi mật khẩu</a></td>
+								    <td><a href="DoiMatKhau">Đổi mật khẩu</a></td>
 								  </tr>
 								  <tr>
 								    <td><a href="https://www.baokim.vn/accounts/profile/security_question">Câu hỏi bảo mật</a></td>
