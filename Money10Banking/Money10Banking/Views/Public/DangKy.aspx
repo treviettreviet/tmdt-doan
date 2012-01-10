@@ -302,7 +302,7 @@
 	                     	<p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Tài khoản cá nhân</span><span class="font-acc-command">(Sử dụng thông tin cá nhân để thực hiện giao dịch)</span></label></p>
                        		<p style="margin-left:80px;"><input type="radio" name="account[]" value  onclick="j('#register_account_personal').hide();j('#register_account_business').show(); j('#type_register').val(2);" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Tài khoản doanh nghiệp</span><span class="font-acc-command">(Sử dụng thông tin pháp nhân /Doanh nghiệp để thực hiện giao dịch)</span></label></p>
 
-                           <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form1" name="form_register_personal" accept-charset="utf-8" method="post">
+                            <form id="form1" runat="server">
 
                            
 
@@ -312,7 +312,7 @@
                                 <tr>
                                     <th>Email<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                       <input type="text" name="email"  value class="text qtip" autocomplete="off"
+                                       <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
                                             title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
                                         <br>                            
                                     </td>
@@ -321,17 +321,17 @@
                                 <tr>
                                     <th>Mật khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                        <input type="password" name="password" value class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
+                                        <input type="password" name="password" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Xác nhận mật khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                    <input type="password" name="passwordConfirm" value class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
+                                    <input type="password" name="passwordConfirm" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
                                 </tr>                                          
                                 <tr>
                                     <th>Họ và tên<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                     <input type="text" name="name" value class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
+                                     <input type="text" name="name" value="Phan Quang Khải" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
                                      <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
                                      <br><span class="error" id="error_name_personal"></span>
                                     </td>
@@ -339,13 +339,18 @@
                                   <tr>
                                     <th>Ngày Sinh<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="birthDay" value class="text qtip" autocomplete="off" title="-Ngày Sinh">                                
+                                      <input type="text" name="date" value="01" class="" autocomplete="off" 
+                                            title="-Ngày Sinh" style="width: 55px">/
+                                       <input type="text" name="month" value="01" class="" autocomplete="off" 
+                                            title="-Ngày Sinh" style="width: 55px">/
+                                            <input type="text" name="year" value="2000" class="" autocomplete="off" 
+                                            title="-Ngày Sinh" style="width: 55px">
                                     </td>
                                 </tr>  
                                   <tr>
                                     <th>CMND/Hộ Chiếu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="CMND" value class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
+                                      <input type="text" name="CMND" value="123123123" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
                                     </td>
                                 </tr>
                                   <tr>
@@ -353,7 +358,7 @@
                                     <td class="style1">
                                                                      
                                         
-                                     <input type="radio" name="rdNam"  /><span class="font-acc">Nam</span>
+                                     <input type="radio" name="rdNam"  checked="true"/><span class="font-acc">Nam</span>
                                         <input type="radio" name="rdNu"  /><span class="font-acc">Nữ</span>
                                                                      
                                     </td>
@@ -361,7 +366,7 @@
                                 <tr>
                                     <th>Địa Chỉ<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="SoNha" value class="text qtip" autocomplete="off" title="- Số Nhà thường trú">                                
+                                      <input type="text" name="SoNha" value="123" class="text qtip" autocomplete="off" title="- Số Nhà thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
@@ -454,7 +459,11 @@
                                       <tr>
                                     <th>Ngày Sinh<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="birthDay" value="30/03/1989" class="text qtip" autocomplete="off" title="-Ngày Sinh">                                
+                                      <input type="text" name="date" value="30" class="text qtip" autocomplete="off" title="-Ngày Sinh"> / 
+                                      <input type="text" name="month" value="03" class="" autocomplete="off" 
+                                            title="-Ngày Sinh" style="width: 55px">/          
+                                            <input type="text" name="year" value="1989" class="" autocomplete="off" 
+                                            title="-Ngày Sinh" style="width: 55px">                    
                                     </td>
                                 </tr>  
                                   <tr>
