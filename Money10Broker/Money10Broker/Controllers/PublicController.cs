@@ -42,14 +42,17 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+
         public ActionResult DangNhapThatBai()
         {
             return View();
         }
+
         public ActionResult ChonDangKy()
         {
             return View();
         }
+
         public ActionResult DangKyCaNhan()
         {
             return View();
@@ -59,18 +62,22 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+
         public ActionResult LichSuGiaoDich()
         {
             return View();
         }
+
         public ActionResult NapTien()
         {
             return View();
         }
+
         public ActionResult RutTien()
         {
             return View();
         }       
+
         //MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
         xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
@@ -135,6 +142,8 @@ namespace Money10Broker.Controllers
         /// Kiểm tra đăng nhập tài khoản, tại trang chủ
         /// </summary>
         /// 
+
+        [HttpPost]
         public ActionResult XuLyDangNhap(string email, string password)
         {
             //
@@ -146,8 +155,23 @@ namespace Money10Broker.Controllers
             }
             else
             {
+                //<div class="message-box" id="message-box-login" style="display: block; ">Mật khẩu không đúng</div>
+                string div = "message-box";
+                string error = "";
+                if (user_validation == -1)
+                {
+                    error += "Email không tồn tại";
+                }
+                if (user_validation == 1)
+                {
+                    error += "Sai mật khẩu";
+                }
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return View("DangNhap");
+
                 //return View("DangNhapThatBai");
-                return RedirectToAction("DangNhapThatBai");
+                //return RedirectToAction("DangNhapThatBai");
             }
             //return View();
         }
