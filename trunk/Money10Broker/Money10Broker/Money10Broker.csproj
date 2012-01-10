@@ -319,7 +319,8 @@
     <Content Include="Content\images\visacard.gif" />
     <Content Include="Content\images\wait0000.gif" />
     <Content Include="Global.asax" />
-    <Content Include="resources\css\invalid.css" />
+    
+	<Content Include="resources\css\invalid.css" />
     <Content Include="resources\css\reset.css" />
     <Content Include="resources\css\style.css" />
     <Content Include="resources\images\b.png" />
@@ -362,6 +363,8 @@
     <Content Include="resources\scripts\jquery.datePicker.js" />
     <Content Include="resources\scripts\jquery.wysiwyg.js" />
     <Content Include="resources\scripts\simpla.jquery.configuration.js" />
+
+	
     <Content Include="Scripts\js\box_user.js" />
     <Content Include="Scripts\js\date0000.js" />
     <Content Include="Scripts\js\datepick.js" />
