@@ -415,7 +415,8 @@ namespace Money10Banking.Controllers
         public ActionResult XuLyDangKyMoiGioi(string email_company, string password_company, string passwordConfirm_company, string name, string birthDay, int CMND, string rdNam, string rdNu, string SoNha, string Duong, string PhuongXa, string QuanHuyen, string ThanhPho, string companyName, string companySocialId, int phoneNo_company)
         {
             try 
-	        {	        
+	        {	
+                Transfer.
 		        NganHangEntities dbNganHang = new NganHangEntities();
                 string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();

@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="localhost" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="WSWorkFlow" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BankWS" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="money10" savePWD="False" userPWD="" SelectedForPublish="True" />
+  <publishProfile publishUrl="http://localhost/BankWS/" deleteExistingFiles="False" ftpAnonymousLogin="True" ftpPassiveMode="True" msdeploySite="BankWS" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BankWS" publishMethod="FTP" replaceMatchingFiles="True" userName="ecmoney" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjH96cp++z0mK+At8KWqbAgAAAAACAAAAAAAQZgAAAAEAACAAAABDsGvZDfdHec0s3dd2dm4Nvi24+tCkxyJtIS8ZgQnxOQAAAAAOgAAAAAIAACAAAABhkLqXJhAv1tZoSTMji/xvmHHH1DnMO4a6yIZfNKiBASAAAADZlouhX7+YX/Ex5dMHejv5of/2lCE/nQiTUC2Ri0tvhkAAAAAaKDBmtzLf885whHhvWmBK6SE1+jvAU/10zJnpkg/dXqDK9ZNM0cOYhKxQe2l/cWsxP81E54Mzfg9f4+IWjoG0" SelectedForPublish="True">
+    <file relUrl="wsTransfer.asmx" publishTime="12/29/2011 09:57:12" />
+    <file relUrl="bin/WSWorkFlow.pdb" publishTime="01/10/2012 12:22:52" />
+    <file relUrl="bin/WSWorkFlow.dll" publishTime="01/10/2012 12:22:52" />
+    <file relUrl="WebServiceMoiGioiKinhDoanh.asmx" publishTime="12/29/2011 15:23:03" />
+    <file relUrl="Web.config" publishTime="01/10/2012 12:18:14" />
+  </publishProfile>
 </publishData>
