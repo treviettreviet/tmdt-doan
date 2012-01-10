@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    CapNhatThongTinCaNhan
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main">
         <div class="tab-acount">
@@ -245,19 +251,7 @@
                             <input type="text" name="phone" value class="text address" maxlength="50">
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            Mục đích đăng ký
-                        </th>
-                        <td>
-                            <input type="checkbox" name="purpose[]" value="1" checked="checked" id="purpose_buy_c"><label
-                                for="purpose_buy_c"><span class="font-acc-command">Mua Hàng</span></label>
-                            <input type="checkbox" name="purpose[]" value="2" id="purpose_sale_c"><label for="purpose_sale_c"><span
-                                class="font-acc-command">Bán Hàng</span></label>
-                            <input type="checkbox" name="purpose[]" value="3" id="purpose_other_c"><label for="purpose_other_c"><span
-                                class="font-acc-command">Chưa xác định</span></label>
-                        </td>
-                    </tr>
+                   
                     <tr>
                         <th>
                             Nhận thông báo từ Bảo Kim
@@ -281,10 +275,7 @@
                                 <p style="margin-bottom: 10px;">
                                     <a href="https://www.baokim.vn/accounts/profile/change_password">Đổi mật khẩu</a>
                                     Bạn click vào đây để thay đổi mật khẩu đăng nhập vào tài khoản Bảo Kim.</p>
-                                <p>
-                                    <a href="https://www.baokim.vn/accounts/profile/security_question">Cập nhật câu hỏi
-                                        bảo mật</a> Bạn cần cập nhật câu hỏi bảo mật để sử dụng trong trường hợp quên
-                                    email đăng nhập vào tài khoản Bảo Kim.</p>
+
                             </div>
                         </td>
                     </tr>
