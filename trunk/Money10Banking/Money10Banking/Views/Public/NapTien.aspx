@@ -11,18 +11,16 @@
 		<tr>
 		   <td width="25%" class="tran-first"><div class="font1">Số dư tài khoản </div>
 			 <div class="font2">0</div>
-			 <div>
-			 <a target="_blank" style="font-size: 12px;margin-left:-5px;color:#FFF;text-decoration:underline;" href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
 			 </td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
 		   <div class="font1">Số dư đóng băng</div><div class="font2">0</div></td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;"><div class="font1">Số tiền thưởng</div><div class="font2"> 0</div></td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
-		   		Mã TK : 90D7E017B4DBC1		   		<div style="margin-top:5px;width: 100%;">
- 				<img src="../../Content/images/mail_ico.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">quangkhai1289@gmail.com</div>
+		   		Mã TK : 	   		<div style="margin-top:5px;width: 100%;">
+ 				<img src="../../Content/images/mail_ico.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">####</div>
  				</div></br>
  				<div style="margin-top:5px;width: 100%;">
- 				<img src="../../Content/images/Box-Supp.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">841698726280</div>
+ 				<img src="../../Content/images/Box-Supp.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">###</div>
  				</div>
  			</td>
 		 </tr>
@@ -140,10 +138,7 @@
 <div class="form-container" id="form_nap_tien">
 	<div class="text_header">
 		<span class="title">Nạp tiền</span>
-		<span>Nạp tiền Online bằng thẻ ATM của Ngân hàng Công thương Việt Nam</span>
-	<div class="icon-help-header">
-		<a href="https://www.baokim.vn/faq/category/nap-voi-the-atm" target="popup" onclick="window.open(&quot;&quot;,&quot;popup&quot;,&quot;height=500,width=810,scrollbars=yes&quot;)">Xem trợ giúp</a>	</div>
-</div>
+		<span>Nạp tiền Online vào thẻ ATM của Ngân hàng</span></div>
 <div class="form">
 	 <%--<div class="form-tab">
 	<ul>
@@ -176,9 +171,7 @@
 	<tr style="height:0px;"><td></td></tr>
 </table>
 </div></div>
-<form action="https://www.baokim.vn/transactions/charges/sml_bank_card/91" method="post" accept-charset="utf-8">
-<input type="hidden" name="_form_action" value="/transactions/charges/sml_bank_card/91">
-<input type="hidden" name="_form_token" value="83b2524f2bda199a1b9a8b2136bcfeb57af8d267">
+<form action="XuLyNapTien" method="post" accept-charset="utf-8">
 <div class="form-content">
 	<table class="form-content-table">
 		<tbody>
@@ -188,7 +181,7 @@
 			</tr>
 			<tr><td></td></tr>
 			<tr>
-				<th>Số tiền muốn nạp<span style="color: red;"><strong> *</strong></span>:<br> <span class="explain_message">(chưa trừ phí)</span></th>
+				<th>Số tiền nạp<span style="color: red;"><strong> *</strong></span>:<br> <span class="explain_message">(chưa trừ phí)</span></th>
 				<td><script type="text/javascript">
 				        j(document).ready(function () {
 				            j("#amount").bind("keyup", function () {
@@ -233,7 +226,7 @@
 				        }</script><input style="text-align:right" class="qtip" size="10" autocomplete="off" onkeypress="return numbersonly(this, event)" title="Nhập vào số tiền muốn chuyển" id="amount" type="text" value name="amount"><b>₫</b><div style="font-weight:bold; padding-right:3px;" id="detail_amount"></div></td>
 			</tr>
 			<tr>
-				<th>Số tiền muốn nhận<span style="color: red;"><strong> *</strong></span>:<br> <span class="explain_message">(sau khi trừ phí)</span></th>
+				<th>Số tiền nhận<span style="color: red;"><strong> *</strong></span>:<br> <span class="explain_message">(sau khi trừ phí)</span></th>
 				<td><script type="text/javascript">
 				        j(document).ready(function () {
 				            j("#receive").bind("keyup", function () {
@@ -290,19 +283,15 @@
 				</td>
 			</tr>
 						<tr>
-				<th>Số tiền thực nhận trên Bao Kim<br><span class="explain_message">(sau khi trừ phí ngân hàng)</span>:</th>
+				<th>Số tài khoản<span style="color: red;"><strong> *<br />
+                   </strong></span></th>
 				<td>
-					<span id="realReceive"></span>
-				</td>
-			</tr>
-			<tr>
-				<th>Số tiền bạn cần thanh toán<br><span class="explain_message">(Đã bao gồm phí ngân hàng)</span>:</th>
-				<td>
-					<span id="realAmount"></span>
-				</td>
+					
+                                      <input type="text" name="SoTaiKhoan" value="340426820759153" class="text qtip" autocomplete="off" onkeypress="return numbersonly(this, event)" title="- Số Tài Khoản ( 16 số)" ></td>
 			</tr>
 			
-			<tr>
+			
+			<%--<tr>
 				<th></th>
 				<td><script type="text/javascript">
 				        function new_captcha() {
@@ -310,14 +299,14 @@
 				            document.images.captcha.src = "/application/captcha/visual-captcha.php?" + now.getTime() + "&id=";
 				        }
 		</script><img style="border: solid 1px lightgray;" id="captcha" name="captcha" src="../../Content/images/visual-c.jpg" height="48" alt="Visual CAPTCHA"><a href="javascript: new_captcha();" tabindex="100"><img src="../../Content/images/Refresh_.png"></img></a></td>
-			</tr>
-			<tr>
+			</tr>--%>
+			<%--<tr>
 				<th>Nhập mã an toàn<span style="color: red;">*</span>:</th>
 				<td><input type="text" name="captcha" value class="text qtip" size="10" autocomplete="off" title="Nhập mã an toàn giống như trong ảnh trên.<br/>Trong trường hợp không nhìn rõ chữ, bạn có thể thay đổi mã an toàn bằng cách nhấn vào nút <img src='/application/captcha/Refresh_48.png' style='vertical-align:top;height:24px' alt='refresh'/> bên phải"></td>
-			</tr>
+			</tr>--%>
 			<tr>
 				<th></th>
-				<td><input type="submit" name="submit" value="Nạp tiền" class="button" onmouseover="review()" onclick="review()"></td>
+				<td><input type="submit" name="submit" value="Nạp tiền" class="button"></td>
 			</tr>
 		</tbody>	
 	</table>
