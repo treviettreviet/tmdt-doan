@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-   <div class="content-box-header">				
+    <div class="content-box-header">				
            
 					<h3>Content box</h3>
 					
@@ -35,11 +35,11 @@
 							<thead>
 								<tr>
 								   <th><input class="check-all" type="checkbox" /></th>
-								   <th>Column 1</th>
-								   <th>Column 2</th>
-								   <th>Column 3</th>
-								   <th>Column 4</th>
-								   <th>Column 5</th>
+								   <th>Thuộc tính 1</th>
+								   <th>Thuộc tính 2</th>
+								   <th>Thuộc tính 3</th>
+								   <th>Thuộc tính 4</th>
+								   <th>Thuộc tính 5</th>
 								</tr>
 								
 							</thead>
@@ -49,11 +49,11 @@
 									<td colspan="6">
 										<div class="bulk-actions align-left">
 											<select name="dropdown">
-												<option value="option1">Choose an action...</option>
-												<option value="option2">Edit</option>
-												<option value="option3">Delete</option>
+												<option value="option1">Chọn Hành Động...</option>
+												<option value="option2">Cập nhật</option>
+												<option value="option3">Xóa</option>
 											</select>
-											<a class="button" href="#">Apply to selected</a>
+											<a class="button" href="#">Cập nhật</a>
 										</div>
 										
 										<div class="pagination">
@@ -78,9 +78,9 @@
 									<td>Donec tortor diam</td>
 									<td>
 										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+										 <a href="#" title="Edit"><img src="../../resources/images/icons/pencil.png" alt="Edit" /></a>
+										 <a href="#" title="Delete"><img src="../../resources/images/icons/cross.png" alt="Delete" /></a> 
+										 <a href="#" title="Edit Meta"><img src="../../resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 									</td>
 								</tr>
 								
