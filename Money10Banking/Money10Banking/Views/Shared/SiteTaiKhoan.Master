@@ -112,7 +112,7 @@
 		
 		
 		<div style="display:inline;float:right;cursor: pointer;position: relative;" onmouseover="showAcccountEx()" onmouseout="hideAcccountEx()">
-		<p style="margin-top: 5px; color: #1b6ea0;">Chúc một ngày tốt lành, Huỳnh Tấn Lên<span><img src="../../Content/images/support_.png"></span><a href="https://www.baokim.vn/accounts/logout"><b> [Thoát]</b></a>
+		<p style="margin-top: 5px; color: #1b6ea0;" >Chúc một ngày tốt lành, <%= Session["Login"] %><span><img src="../../Content/images/support_.png"></span><a href="http://localhost:13307"><b> [Thoát]</b></a>
 		</p>
 		<div>
 		    	  <div id="AccountBlog" style="display:none;cursor:default; position: absolute;width:258px;padding-top:0px;z-index:1;color:#578E01">
@@ -125,16 +125,16 @@
 								    <td><a href="DoiMatKhau">Đổi mật khẩu</a></td>
 								  </tr>
 								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/profile/security_question">Câu hỏi bảo mật</a></td>
+								    <td><a href="#">Câu hỏi bảo mật</a></td>
 								  </tr>
 								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/profile/money_receiving_config">Cấu hình tài khoản</a></td>
+								    <td><a href="#">Cấu hình tài khoản</a></td>
 								  </tr>
 								  <tr>
-								    <td><a href="https://www.baokim.vn/accounts/profile/payment_page_option">Tùy chọn hiển thị thông tin cá nhân trên trang thanh toán</a></td>
+								    <td><a href="#">Tùy chọn hiển thị thông tin cá nhân trên trang thanh toán</a></td>
 								  </tr>							
 								  <tr>
-								  								    		<td><a href="https://www.baokim.vn/accounts/affiliate/register">Đăng ký đại lý</a></td>
+								  								    		<td><a href="https#">Đăng ký đại lý</a></td>
 								    									
 								  </tr>
 							</table>
@@ -275,22 +275,22 @@
                     <table style="float: left;" class="table_menu">
                         <tr>
                             <td style="text-align: left; padding-right: 20px">
-                                <a href="https://www.baokim.vn/index.php" class="menu_link">Trang chủ</a>
+                                <a href="#" class="menu_link">Trang chủ</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/intro" class="menu_link">Giới thiệu</a>
+                                <a href="#" class="menu_link">Giới thiệu</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/privacy_policy" class="menu_link">Chính sách bảo mật</a>
+                                <a href="#" class="menu_link">Chính sách bảo mật</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/user_agreement" class="menu_link">Quy định sử dụng</a>
+                                <a href="#" class="menu_link">Quy định sử dụng</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/faq" class="menu_link">Trợ giúp</a>
+                                <a href="#" class="menu_link">Trợ giúp</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/contact" class="menu_link">Liên hệ</a>
+                                <a href="#" class="menu_link">Liên hệ</a>
                             </td>
                         </tr>
                     </table>

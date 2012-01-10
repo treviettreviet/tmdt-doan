@@ -91,6 +91,8 @@ namespace Money10Banking.Controllers
                 if (user_validation == 0)
                 {
                     //Session sesKhachHang = 
+                    Session["Login"] = email;
+
                     return View("LichSuGiaoDich");
                 }
                 else
@@ -131,21 +133,67 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+        public int KiemTraTheTonTai(string Login, string SoTaiKhoan)
+        {
+            return 1;
 
-        public ActionResult XuLyNapTien(string receive, string SoTaiKhoan)
+            }
+        public ActionResult XuLyNapTien(string receive, string SoTaiKhoan, string Login)
         {
             try
             {
-                decimal naptien = decimal.Parse(receive);
-                NganHangEntities db = new NganHangEntities();
-                decimal sodu;
-                The tienthe = db.Thes.Single(p => p.SoThe == SoTaiKhoan);
-                sodu = tienthe.SoDu.Value;
-                tienthe.SoDu = naptien + sodu;
-               // db.Thes.AddObject(tienthe);
-                db.SaveChanges();
-                Response.Write("<script> alert ('Nap Tien thanh cong!');</script>");
-                return View("NapTien");
+                if (Login!=""|| Login!=null)
+                {
+                    string email= Session["Login"].ToString();
+                    TaiKhoan tk = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+                    string matk = tk.MaTaiKhoan;
+                    
+                    decimal naptien = decimal.Parse(receive);
+                    NganHangEntities db = new NganHangEntities();
+                    The tienthe= (from th in dbNganHangOnline.Thes select th).First<The>();
+                    decimal sodu;
+                      string div = "error-box";
+                               string error = "";
+                    if (tienthe.SoThe.Equals(SoTaiKhoan))
+                    {
+                       // tienthe = db.Thes.Single(p => p.SoThe == SoTaiKhoan);
+                        //The tienthe = (from row in dbNganHangOnline.Thes where row.SoThe.Equals(SoTaiKhoan) select row).First<The>();
+
+                        if (tienthe.MaTaiKhoan == matk)
+                        {
+                            Session["SoThe"] = tienthe.SoThe;
+                            sodu = tienthe.SoDu.Value;
+                            tienthe.SoDu = naptien + sodu;
+                            Session["SoTienThe"] = tienthe.SoDu;
+                            // db.Thes.AddObject(tienthe);
+                            db.SaveChanges();
+                            Response.Write("<script> alert ('Nap Tien thanh cong!');</script>");
+                            return View("NapTien");
+                        }
+                        else
+                        {
+                            error += "Số TK ko đúng";
+                            ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                            ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                            return View("NapTien");
+
+
+                        }
+                    }
+                    else
+                    {
+                                   error += "So tai khoan ko đúng";
+                                   ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                                   ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                                   return View("NapTien");
+                    }
+                   
+                    
+                }
+                else
+                {
+                    return View("DangNhap");
+                }
             }
             catch (Exception)
             {

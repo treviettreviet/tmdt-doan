@@ -1,11 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     LichSuGiaoDich
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main">
+    <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
         <div class="tab-acount">
             <div id="account_info">
                 <div id="account_info_inner">
@@ -17,10 +25,10 @@
                                         Số dư tài khoản
                                     </div>
                                     <div class="font2">
-                                        0</div>
+                                        <%=Session["SoTienThe"] %></div>
                                     <div>
                                         <a target="_blank" style="font-size: 12px; margin-left: -5px; color: #FFF; text-decoration: underline;"
-                                            href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
+                                            href="#">Bắn tiền ngay vào ĐT di động</a></div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
@@ -35,17 +43,17 @@
                                         0</div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    Mã TK : 0968C0176F56F0
+                                    Mã TK : <%=Session["SoThe"] %>
                                     <div style="margin-top: 5px; width: 100%;">
-                                        <img src="../../Content/images/mail_ico.png" style="float: left;"><div style="margin-bottom: 0px;
+                                        <img src="../../Content/images/mail_ico.png" style="float: left;" ><div style="margin-bottom: 0px;
                                             float: left; padding-left: 10px;">
-                                            lenhuynh3003@gmail.com</div>
+                                           <%= Session["Login"] %></div>
                                     </div>
                                     </br>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/Box-Supp.png" style="float: left;"><div style="margin-bottom: 0px;
-                                            float: left; padding-left: 10px;">
-                                            84908668263</div>
+                                            float: left; padding-left: 10px;" >
+                                           </div>
                                     </div>
                                 </td>
                             </tr>
@@ -54,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://www.baokim.vn/transactions/topup" class="title">Nạp tiền trực tiếp
+        <a href="#" class="title">Nạp tiền trực tiếp
             từ Bảo Kim vào các thuê bao di động trả trước</a>
         <div class="account-content">
             <div class="word-line">
