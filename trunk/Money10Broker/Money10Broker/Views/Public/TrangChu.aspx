@@ -215,7 +215,7 @@
             <div class="box" id="login">
                 <h4 class="title">
                     Đăng nhập tài khoản ví điện tử</h4>
-                <form method="post" action="Public/XuLyDangNhap" onsubmit="return checkLogin();"
+                <form method="post" action="/Public/XuLyDangNhap" onsubmit="return checkLogin();"
                 style="margin: 0px; padding: 0px;">
                 <input type="hidden" name="form_module_id" value="1647" />
                 <input type="hidden" name="_token_form" value="1debc3f0be12fcf3b463750bb6b42ff8" />
