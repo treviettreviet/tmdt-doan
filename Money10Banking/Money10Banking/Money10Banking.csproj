@@ -69,7 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CapNhatThongTinTaiKhoanCaNhanController.cs" />
+    <Compile Include="Controllers\ChuyenTienController.cs" />
+    <Compile Include="Controllers\DangKyController.cs" />
+    <Compile Include="Controllers\DangNhapController.cs" />
+    <Compile Include="Controllers\DoiMatKhauController.cs" />
+    <Compile Include="Controllers\LichSuGiaoDichController.cs" />
+    <Compile Include="Controllers\NapTienController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Controllers\RutTienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -255,10 +263,11 @@
     <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
-    <Content Include="Views\Public\CapNhatThongTinTaiKhoan.aspx" />
+    <Content Include="Views\Public\CapNhatThongTinTaiKhoanCaNhan.aspx" />
     <Content Include="Views\Public\ChuyenTien.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
+    <Content Include="Views\Public\DoiMatKhau.aspx" />
     <Content Include="Views\Public\LichSuGiaoDich.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
     <Content Include="Views\Public\RutTien.aspx" />
@@ -307,7 +316,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>13307</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>

@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace Money10Banking.Controllers
 {
-    public class AdminController : Controller
+    public class RutTienController : Controller
     {
         //
-        // GET: /Admin/              
-        public ActionResult Admin()
+        // GET: /RutTien/
+
+        public ActionResult RutTien()
         {
             return View();
         }
