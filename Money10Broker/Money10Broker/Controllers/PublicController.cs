@@ -152,6 +152,7 @@ namespace Money10Broker.Controllers
             //return View();
         }
 
+      
 
         // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
         // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
@@ -189,7 +190,7 @@ namespace Money10Broker.Controllers
                     }
 
                     newUser.Email = email;
-                    newUser.MatKhau = password;
+                    newUser.MatKhau =  password;
                     newUser.MatKhauGiaoDich = password_payment;
                     newUser.MaLoaiTaiKhoan = "LTK002";
                     newUser.TinhTrang = 0;

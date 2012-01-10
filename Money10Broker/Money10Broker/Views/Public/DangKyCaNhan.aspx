@@ -8,7 +8,7 @@
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form action="Public/XuLyDangKyCaNhan" name="NL_UserRegisterPersonalForm" method="post">
+		<form action="Public/XuLyDangKyCaNhan" method="post">
             <input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
@@ -34,7 +34,7 @@
 					  </tr>
 					  <tr>
 						<td width="200" align="right"><span class="required">*</span>Mật khẩu đăng nhập:</td>
-						<td class="blear"><input style="width:200px;" name="password" id="password" type="password" autocomplete="off" value class="field-check keyboardInput"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu đăng nhập</span><span class="field-check-function blur submit" title="isPassword(_value_)">Mật khẩu đăng nhập chưa đúng quy tắc</span></td>
+						<td class="blear"><input style="width:200px;" name="password" id="password" type="password" autocomplete="off" value class="field-check keyboardInput"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu đăng nhập</span><span class="field-check-function blur submit" title="isPassword(_value_)" />Mật khẩu đăng nhập chưa đúng quy tắc</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Nhập lại mật khẩu đăng nhập:</td>
