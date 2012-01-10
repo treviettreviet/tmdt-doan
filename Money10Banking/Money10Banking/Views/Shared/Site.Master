@@ -81,6 +81,7 @@
                             <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
                             <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
                             <div style="margin-bottom: 15px;">
+                                <a href="DangNhap/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="DangKy/DangKy"
                                 <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
                                     title="Đăng ký">Đăng ký</a><span>|</span> <a href="https://www.baokim.vn/contact"
                                         title="Liên hệ">Liên hệ</a>
@@ -301,8 +302,12 @@
                                             onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Tích hợp thanh toán</span></a></li><li
                                                 id="cat3" class="m_shopping"><a href="#" onmouseout="resetMenu()"
                                                     onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li id="cat4" class="m_news">
+                                                        <a href=#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
+                                                            <span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="#"
+
                                                         <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
                                                             <span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="#"
+
                                                                 onmouseout="resetMenu()" onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
                         </ul>
                     </div>
@@ -312,8 +317,13 @@
                         <ul id="subcat1" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
                                 Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+
+                                    <a href="#">Chuyển tiền</a></li><li onmouseout="resetMenu()"
+                                        onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="https://www.baokim.vn/transactions/charges">
+
                                     <a href="#">Chuyển tiền</a></li><li onmouseout="resetMenu()"
                                         onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="#">
+
                                             Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
                                                 <a href="#"><font color="red">Đăng ký đại lý
                                                 </font>
