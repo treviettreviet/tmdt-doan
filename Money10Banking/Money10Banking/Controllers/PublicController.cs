@@ -416,7 +416,7 @@ namespace Money10Banking.Controllers
         {
             try 
 	        {	
-                Transfer.
+              
 		        NganHangEntities dbNganHang = new NganHangEntities();
                 string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();
