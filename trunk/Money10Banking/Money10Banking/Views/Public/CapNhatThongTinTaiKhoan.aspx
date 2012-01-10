@@ -164,72 +164,7 @@
                             Tỉnh/Thành phố
                         </th>
                         <td>
-                            <select class="text" name="provinceId" id="provinceId">
-                                <option value>Chọn tỉnh/thành</option>
-                                <option value="1">An Giang</option>
-                                <option value="2">Bà Rịa-Vũng Tàu</option>
-                                <option value="9">Bình Dương</option>
-                                <option value="10">Bình Phước</option>
-                                <option value="11">Bình Thuận</option>
-                                <option value="8">Bình Định</option>
-                                <option value="5">Bạc Liêu</option>
-                                <option value="3">Bắc Giang</option>
-                                <option value="4">Bắc Kạn</option>
-                                <option value="6">Bắc Ninh</option>
-                                <option value="7">Bến Tre</option>
-                                <option value="14">Cao Bằng</option>
-                                <option value="12">Cà Mau</option>
-                                <option value="13">Cần Thơ</option>
-                                <option value="21">Gia Lai</option>
-                                <option value="22">Hà Giang</option>
-                                <option value="23">Hà Nam</option>
-                                <option value="24">Hà Nội</option>
-                                <option value="25">Hà Tĩnh</option>
-                                <option value="29">Hòa Bình</option>
-                                <option value="30">Hưng Yên</option>
-                                <option value="26">Hải Dương</option>
-                                <option value="27">Hải Phòng</option>
-                                <option value="28">Hậu Giang</option>
-                                <option value="31">Khánh Hoà</option>
-                                <option value="32">Kiên Giang</option>
-                                <option value="33">Kon Tum</option>
-                                <option value="34">Lai Châu</option>
-                                <option value="38">Long An</option>
-                                <option value="37">Lào Cai</option>
-                                <option value="35">Lâm Đồng</option>
-                                <option value="36">Lạng Sơn</option>
-                                <option value="39">Nam Định</option>
-                                <option value="40">Nghệ An</option>
-                                <option value="41">Ninh Bình</option>
-                                <option value="42">Ninh Thuận</option>
-                                <option value="43">Phú Thọ</option>
-                                <option value="44">Phú Yên</option>
-                                <option value="45">Quảng Bình</option>
-                                <option value="46">Quảng Nam</option>
-                                <option value="47">Quảng Ngãi</option>
-                                <option value="48">Quảng Ninh</option>
-                                <option value="49">Quảng Trị</option>
-                                <option value="50">Sóc Trăng</option>
-                                <option value="51">Sơn La</option>
-                                <option value="58">TP Hồ Chí Minh</option>
-                                <option value="55">Thanh Hoá</option>
-                                <option value="53">Thái Bình</option>
-                                <option value="54">Thái Nguyên</option>
-                                <option value="56">Thừa Thiên-Huế</option>
-                                <option value="57">Tiền Giang</option>
-                                <option value="59">Trà Vinh</option>
-                                <option value="60">Tuyên Quang</option>
-                                <option value="52">Tây Ninh</option>
-                                <option value="61">Vĩnh Long</option>
-                                <option value="62">Vĩnh Phúc</option>
-                                <option value="63">Yên Bái</option>
-                                <option value="18">Điện Biên</option>
-                                <option value="15">Đà Nẵng</option>
-                                <option value="16">Đắk Lắk</option>
-                                <option value="17">Đắk Nông</option>
-                                <option value="19">Đồng Nai</option>
-                                <option value="20">Đồng Tháp</option>
-                            </select>
+                             <input type="text" name="city" value class="text address" maxlength="50">
                         </td>
                     </tr>
                     <tr>
@@ -237,10 +172,7 @@
                             Quận/Huyện
                         </th>
                         <td>
-                            <select class="text" name="districtId" id="districtId">
-                                <option value="0">Chọn quận/huyện</option>
-                                ';
-                            </select>
+                            <input type="text" name="distric" value class="text address" maxlength="50">
                         </td>
                     </tr>
                     <tr>
@@ -250,7 +182,7 @@
                         <td>
                             <input type="text" name="phone" value class="text address" maxlength="50">
                         </td>
-                    </tr>
+                    </tr>                    
                    
                     <tr>
                         <th>

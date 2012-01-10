@@ -32,12 +32,17 @@
 					    		    			                passwordConfirm: {
 					    		    			                    required: true,
 					    		    			                    minlength: 8,
-					    		    			                    maxlength: 20,
+					    		    			                    maxlength: 20
                                                                    
 					    		    			                },
 					    		    			                acceptLicense: {
 					    		    			                    required: true
-					    		    			                }
+					    		    			                },
+                                                                date:{
+                                                                    required: true,
+                                                                    min: 1,
+                                                                    max: 31
+                                                                }
 					    		    			            },
 					    		    			            //set messages to appear inline
 					    		    			            messages: {
@@ -48,7 +53,7 @@
 					    		    			                CMND: {
 					    		    			                    required: "Hãy nhập CMND hoac hộ chiếu",
 					    		    			                    number: "Số CMND chỉ được phép nhập số.",
-					    		    			                    minlength: "Số CMND phải có ít nhất 9 ký tự.",
+					    		    			                    minlength: "Số CMND phải có ít nhất 9 ký tự."
 					    		    			                    
 					    		    			                },
 					    		    			                password: {
@@ -63,7 +68,7 @@
 					    		    			                },
 					    		    			                acceptLicense: {
 					    		    			                    required: "Bạn phải đồng ý với các điều khoản sử dụng hệ thống của chúng tôi"
-					    		    			                }
+					    		    			                },                                                                
 					    		    			            }
 					    		    			        });
 					    		    			        j("#form_company").validate({
@@ -304,7 +309,12 @@
                        <div class="form-content clear">                 
 	                     	<p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Tài khoản cá nhân</span><span class="font-acc-command">(Sử dụng thông tin cá nhân để thực hiện giao dịch)</span></label></p>
                        		<p style="margin-left:80px;"><input type="radio" name="account[]" value  onclick="j('#register_account_personal').hide();j('#register_account_business').show(); j('#type_register').val(2);" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Tài khoản doanh nghiệp</span><span class="font-acc-command">(Sử dụng thông tin pháp nhân /Doanh nghiệp để thực hiện giao dịch)</span></label></p>
+
+
+                            <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">
+
                            <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">
+
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal">
                                 <tr>
                                     <th>Email<span class="mandatory">*</span></th>
@@ -336,12 +346,24 @@
                                   <tr>
                                     <th>Ngày Sinh<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="date" value="01" class="" autocomplete="off" 
-                                            title="-Ngày Sinh" style="width: 55px">/
-                                       <input type="text" name="month" value="01" class="" autocomplete="off" 
-                                            title="-Ngày Sinh" style="width: 55px">/
-                                            <input type="text" name="year" value="2000" class="" autocomplete="off" 
-                                            title="-Ngày Sinh" style="width: 55px">
+                                        <select class="text" name="date" id="provinceId">                                        
+                                            <%for (int i = 1; i < 32; i++)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>/
+                                       <select class="text" name="month" id="Select1">                                        
+                                            <%for (int i = 1; i < 13; i++)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>/
+                                        <select class="text" name="year" id="Select2">                                        
+                                            <%for (int i = 1999; i > 1959; i--)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>
                                     </td>
                                 </tr>  
                                   <tr>
@@ -353,11 +375,9 @@
                                   <tr>
                                     <th>Giới Tính<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                                                     
-                                        
-                                     <input type="radio" name="rdNam"  checked="checked"/><span class="font-acc">Nam</span>
-                                        <input type="radio" name="rdNu"  /><span class="font-acc">Nữ</span>
-                                                                     
+
+                                     <input type="radio" name="rdGioiTinh" value="Nam"/><span class="font-acc">Nam</span>
+                                        <input type="radio" name="rdGioiTinh" value="Nu"/><span class="font-acc">Nữ</span>                                                                   
                                     </td>
                                 </tr>
                                 <tr>
@@ -455,7 +475,24 @@
                                     <tr>
                                 <th>Ngày Sinh<span class="mandatory">*</span></th>
                                 <td class="style1">
-                                    <input type="text" name="birthDay" value="30/03/1989" class="text qtip" autocomplete="off" title="-Ngày Sinh">                                
+                                    <select class="text" name="date" id="Select3">                                        
+                                            <%for (int i = 1; i < 32; i++)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>/
+                                       <select class="text" name="month" id="Select4">                                        
+                                            <%for (int i = 1; i < 13; i++)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>/
+                                        <select class="text" name="year" id="Select5">                                        
+                                            <%for (int i = 1999; i > 1959; i--)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>                             
                                 </td>
                             </tr>  
                                 <tr>
@@ -593,19 +630,15 @@
                                 <td>
                                 <input type="hidden" name="type_register" id="type_register" value="1"></input>                             
                                 <input type="submit" name="submit" value="Khởi tạo tài khoản" id="id_submit" class="button">                                    </td>
-                            </tr>
-                                
+                            </tr>                                
                             </table>  
                         </form> 
                         </div>
                         <div class="form-bottom"></div>
                         <div class="clear"></div>
-                    </div>
-                    
+                    </div>                    
     <div>
         <center><img onmouseover="ddrivetip('Tiếp tục chuyển qua bước 2 để khám phá bí mật','#e7e7e7','#669933','#cccccc',300)" onmouseout="hideddrivetip()" src="../../Content/images/banner_r.jpg"/></center>
-    </div>
-                    
+    </div>                    
  </div>
-
 </asp:Content>
