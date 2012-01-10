@@ -39,7 +39,10 @@ namespace Money10Banking.Controllers
             return View();
         }
 
-       
+        public ActionResult DoiMatKhau()
+        {
+            return View();
+        }
         /// <summary>
         /// Lên - Kiểm tra đăng nhập, trả về nhiều kết quả
         /// </summary>
