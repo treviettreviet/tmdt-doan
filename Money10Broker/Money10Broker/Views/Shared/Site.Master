@@ -39,7 +39,7 @@
     	<div class="taskbar-sort">
         	<ul>
             
-				<li><a href="" class="active" target><span class="icon-tasbar-nl"></span><span>NgânLượng.vn</span></a></li>
+				<li><a href="http://localhost:16108/Public/TrangChu" class="active" target><span class="icon-tasbar-nl"></span><span>NgânLượng.vn</span></a></li>
 				<li><a href="" class target><span class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
 				<li><a href="" class="" target=""><span>Nội dung số</span></a></li>
 				<li><a href="" class="" target=""><span>Mua sắm</span></a></li>
@@ -174,7 +174,7 @@
     }
 </script>
 <div id="body-top">
-	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="https://www.nganluong.vn/">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
+	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="http://localhost:16108/Public/TrangChu">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
 	
 	
 	

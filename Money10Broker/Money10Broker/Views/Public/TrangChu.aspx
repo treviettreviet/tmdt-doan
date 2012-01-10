@@ -255,7 +255,7 @@
                 </form>
                 <div id="dangky">
                     Bạn chưa có ví điện tử NgânLượng.vn?</br>
-                    <a href="ChonDangKy.aspx">
+                    <a href="/Public/ChonDangKy">
                         <img src="../../Content/images/button-s.gif" border="0" /></a>
                 </div>
             </div>
