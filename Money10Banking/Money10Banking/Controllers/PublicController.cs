@@ -33,7 +33,10 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
-        
+        public ActionResult NapTien()
+        {
+            return View();
+        }
         public ActionResult DangNhap()
         {
             return View();
@@ -128,10 +131,29 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
-        
-        public ActionResult NapTien()
+
+        public ActionResult XuLyNapTien(string receive, string SoTaiKhoan)
         {
-            return View();
+            try
+            {
+                decimal naptien = decimal.Parse(receive);
+                NganHangEntities db = new NganHangEntities();
+                decimal sodu;
+                The tienthe = db.Thes.Single(p => p.SoThe == SoTaiKhoan);
+                sodu = tienthe.SoDu.Value;
+                tienthe.SoDu = naptien + sodu;
+               // db.Thes.AddObject(tienthe);
+                db.SaveChanges();
+                Response.Write("<script> alert ('Nap Tien thanh cong!');</script>");
+                return View("NapTien");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            
         }
 
         public ActionResult CapNhatThongTinTaiKhoan()
