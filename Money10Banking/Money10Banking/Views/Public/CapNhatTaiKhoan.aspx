@@ -1,92 +1,145 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
+    Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-   <div id="Main">
-			<div class="tab-acount">
-				<div id="account_info">
-	<div id="account_info_inner">
-		 <div class="tran-tab-bg">
-	 <table width="100%" cellspacing="0">
-		<tr>
-		   <td width="25%" class="tran-first"><div class="font1">Số dư tài khoản </div>
-			 <div class="font2">0</div>
-			 <div>
-			 <a target="_blank" style="font-size: 12px;margin-left:-5px;color:#FFF;text-decoration:underline;" href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
-			 </td>
-		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
-		   <div class="font1">Số dư đóng băng</div><div class="font2">0</div></td>
-		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;"><div class="font1">Số tiền thưởng</div><div class="font2"> 0</div></td>
-		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
-		   		Mã TK : 90D7E017B4DBC1		   		<div style="margin-top:5px;width: 100%;">
- 				<img src="../../Content/images/mail_ico.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">quangkhai1289@gmail.com</div>
- 				</div></br>
- 				<div style="margin-top:5px;width: 100%;">
- 				<img src="../../Content/images/Box-Supp.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">841698726280</div>
- 				</div>
- 			</td>
-		 </tr>
-	  </table>
-</div>			</div>
-</div>
-	
-			</div>
-					    		    			<a href="https://www.baokim.vn/transactions/topup" class="title">Nạp tiền trực tiếp từ Bảo Kim vào các thuê bao di động trả trước</a>
-<div class="account-content">
-	     <div class="word-line">Lần cập nhật cuối :
-	08-01-2012 07:00:25</div>
-	  <div class="dot"> </div>
-    <div style="width:630px;float:left">
-	  <div class="box">
-	  <div class="box-title">
-	  <div class="title-content">
-	  <div class="left-title"> 5 giao dịch gần nhất </div>
-	  <div class="right-title">
-			<a href="https://www.baokim.vn/transactions/pre_reg_log" class="white-color">Xem các giao dịch trước khi đăng ký tài khoản Bảo Kim</a>		 |
-		 <a href="https://www.baokim.vn/transactions/log" class="white-color">Xem toàn bộ giao dịch</a>	  </div>
-	  </div></div>
-		  <table class="table" width="100%" cellspacing="0">
-		  	<thead>
-				<tr>
-				  <th width="25%" class="left-boder">Thời gian</th>
-				  <th width="20%" class="left-boder">Loại giao dịch</th>
-				  <th width="25%" class="left-boder">Tên/Email</th>
-				  <th width="15%" class="left-boder">Trạng thái</th>
-				  <th width="15%">Trạng thái</th>
-				 </tr>
-			</thead>
-			<tbody>
-							<td colspan="6"></td>
-							</tbody>
-		</table>
-  </div>
- <p>&nbsp;</p>
-	  <div class="box">
-	  <div class="box-title">
-	  <div class="title-content">
-	  <div class="left-title">5 đăng nhập gần nhất</div>
-	 <div class="right-title">&nbsp;</div>
-	  </div></div>
-		    <table width="100%" class="table" cellspacing="0">
-			 <thead>
-			 	<tr>
-					<th width="30%" class="left-boder">Thời gian</th>
-					<th width="30%" class="left-boder">IP</th>
-					<th width="40%" class="left-boder">Email/Điện thoại</th>
-			  </tr>
-			 </thead>			 
-			 <tbody>
-			 							<tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
-			<td class="color-date">2012-01-08 07:03:22</td>
-			<td>118.68.50.251</td>
-			<td class="color-email">Dang nhap quangkhai1289@gmail.com</td>
-			</tr>
-						</tbody>
-			</table>
-  </div>
- </div>
-
- <%--<div style="width:225px;float:right">
+    <div id="Main">
+        <div class="tab-acount">
+            <div id="account_info">
+                <div id="account_info_inner">
+                    <div class="tran-tab-bg">
+                        <table width="100%" cellspacing="0">
+                            <tr>
+                                <td width="25%" class="tran-first">
+                                    <div class="font1">
+                                        Số dư tài khoản
+                                    </div>
+                                    <div class="font2">
+                                        0</div>
+                                    <div>
+                                        <a target="_blank" style="font-size: 12px; margin-left: -5px; color: #FFF; text-decoration: underline;"
+                                            href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
+                                </td>
+                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
+                                    <div class="font1">
+                                        Số dư đóng băng</div>
+                                    <div class="font2">
+                                        0</div>
+                                </td>
+                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
+                                    <div class="font1">
+                                        Số tiền thưởng</div>
+                                    <div class="font2">
+                                        0</div>
+                                </td>
+                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
+                                    Mã TK : 90D7E017B4DBC1
+                                    <div style="margin-top: 5px; width: 100%;">
+                                        <img src="../../Content/images/mail_ico.png" style="float: left;"><div style="margin-bottom: 0px;
+                                            float: left; padding-left: 10px;">
+                                            quangkhai1289@gmail.com</div>
+                                    </div>
+                                    </br>
+                                    <div style="margin-top: 5px; width: 100%;">
+                                        <img src="../../Content/images/Box-Supp.png" style="float: left;"><div style="margin-bottom: 0px;
+                                            float: left; padding-left: 10px;">
+                                            841698726280</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.baokim.vn/transactions/topup" class="title">Nạp tiền trực tiếp
+            từ Bảo Kim vào các thuê bao di động trả trước</a>
+        <div class="account-content">
+            <div class="word-line">
+                Lần cập nhật cuối : 08-01-2012 07:00:25</div>
+            <div class="dot">
+            </div>
+            <div style="width: 630px; float: left">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="title-content">
+                            <div class="left-title">
+                                5 giao dịch gần nhất
+                            </div>
+                            <div class="right-title">
+                                <a href="https://www.baokim.vn/transactions/pre_reg_log" class="white-color">Xem các
+                                    giao dịch trước khi đăng ký tài khoản Bảo Kim</a> | <a href="https://www.baokim.vn/transactions/log"
+                                        class="white-color">Xem toàn bộ giao dịch</a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="25%" class="left-boder">
+                                    Thời gian
+                                </th>
+                                <th width="20%" class="left-boder">
+                                    Loại giao dịch
+                                </th>
+                                <th width="25%" class="left-boder">
+                                    Tên/Email
+                                </th>
+                                <th width="15%" class="left-boder">
+                                    Trạng thái
+                                </th>
+                                <th width="15%">
+                                    Trạng thái
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td colspan="6">
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    &nbsp;</p>
+                <div class="box">
+                    <div class="box-title">
+                        <div class="title-content">
+                            <div class="left-title">
+                                5 đăng nhập gần nhất</div>
+                            <div class="right-title">
+                                &nbsp;</div>
+                        </div>
+                    </div>
+                    <table width="100%" class="table" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="30%" class="left-boder">
+                                    Thời gian
+                                </th>
+                                <th width="30%" class="left-boder">
+                                    IP
+                                </th>
+                                <th width="40%" class="left-boder">
+                                    Email/Điện thoại
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
+                                <td class="color-date">
+                                    2012-01-08 07:03:22
+                                </td>
+                                <td>
+                                    118.68.50.251
+                                </td>
+                                <td class="color-email">
+                                    Dang nhap quangkhai1289@gmail.com
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <%--<div style="width:225px;float:right">
 	<script type="text/javascript">
 	    // wait for the DOM to be loaded 
 	    j(document).ready(function () {
@@ -237,7 +290,7 @@
 	</div>
 	</div>
 </div>--%></div>
-<div class="clear"></div>
-</div>
-
+        <div class="clear">
+        </div>
+    </div>
 </asp:Content>

@@ -255,6 +255,7 @@
     <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
+    <Content Include="Views\Public\CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="Views\Public\ChuyenTien.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
