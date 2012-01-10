@@ -36,7 +36,7 @@
                         <a href="http://help.nganluong.vn/danh-muc-55/2/1/Cac-loai-tai-khoan.html" 
                             target="_blank">Tìm hiểu thêm về ví cá nhân</a><br />
                         <br />
-                        <a class="button-round-yell" href="DangKy_CaNhan.aspx"><span>Tiếp tục »</span></a>
+                        <a class="button-round-yell" href="/Public/DangKyCaNhan"><span>Tiếp tục »</span></a>
                     </div>
                 </div>
                 <div id="register-left-bottom">
@@ -78,7 +78,7 @@
                                 target="_blank">Tìm hiểu thêm về ví doanh nghiệp</a><br />
                             <br />
                         </ul>
-                        <a class="button-round-yell" href="DangKy_DoanhNghiep.aspx"><span>Tiếp tục »</span></a>
+                        <a class="button-round-yell" href="/Public/DangKyDoanhNghiep"><span>Tiếp tục »</span></a>
                     </div>
                 </div>
                 <div id="register-right-bottom">
@@ -98,7 +98,4 @@
 
     <h2>&nbsp;</h2>
 
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

@@ -32,6 +32,7 @@ namespace Money10Broker.Controllers
         //    return View();
         //}
         
+        
         public ActionResult TrangChu()
         {
             return View();
