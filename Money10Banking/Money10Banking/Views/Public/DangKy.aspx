@@ -313,8 +313,7 @@
 
                             <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">
 
-                           <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">
-
+                         
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal">
                                 <tr>
                                     <th>Email<span class="mandatory">*</span></th>
@@ -442,7 +441,7 @@
                                  </table>  
                                 </form>
 
-                            <form action="Public/XuLyDangKyMoiGioi" onsubmit="return check_company_name()" id="form_company" name="form_register_company" accept-charset="utf-8" method="post">
+                            <form action="XuLyDangKyMoiGioi" onsubmit="return check_company_name()" id="form_company" name="form_register_company" accept-charset="utf-8" method="post">
                         <table class="form-content-table" cellspacing="10px" id="register_account_business" style="display:none">
                             <tr>
                                 <th>Email<span class="mandatory">*</span></th>
