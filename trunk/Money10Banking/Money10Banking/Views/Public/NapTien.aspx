@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="Main">
+    <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
 			<div class="tab-acount">
 				<div id="account_info">
 	<div id="account_info_inner">
@@ -10,14 +11,14 @@
 	 <table width="100%" cellspacing="0">
 		<tr>
 		   <td width="25%" class="tran-first"><div class="font1">Số dư tài khoản </div>
-			 <div class="font2">0</div>
+			 <div class="font2"><%=Session["SoTienThe"] %></div>
 			 </td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
 		   <div class="font1">Số dư đóng băng</div><div class="font2">0</div></td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;"><div class="font1">Số tiền thưởng</div><div class="font2"> 0</div></td>
 		   <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top:15px;">
-		   		Mã TK : 	   		<div style="margin-top:5px;width: 100%;">
- 				<img src="../../Content/images/mail_ico.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">####</div>
+		   		Mã TK <%=Session["SoThe"] %> 	   		<div style="margin-top:5px;width: 100%;">
+ 				<img src="../../Content/images/mail_ico.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;"><%=Session["Login"] %></div>
  				</div></br>
  				<div style="margin-top:5px;width: 100%;">
  				<img src="../../Content/images/Box-Supp.png" style="float:left;"><div style="margin-bottom:0px;float:left;padding-left:10px;">###</div>
