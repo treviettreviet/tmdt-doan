@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://emv.sdcontent.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://emv.sdcontent.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://emv.sdcontent.org">
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BankId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IssuerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardSecureNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ValidFromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ValidToDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CardValid1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IssuerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardSecureNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CardValid2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IssuerID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardValid3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CardValid3Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankCommercialNameOfCreditCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankCommercialNameOfCreditCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBankCommercialNameOfCreditCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardValid1SoapIn">
+    <wsdl:part name="parameters" element="tns:CardValid1" />
+  </wsdl:message>
+  <wsdl:message name="CardValid1SoapOut">
+    <wsdl:part name="parameters" element="tns:CardValid1Response" />
+  </wsdl:message>
+  <wsdl:message name="CardValid2SoapIn">
+    <wsdl:part name="parameters" element="tns:CardValid2" />
+  </wsdl:message>
+  <wsdl:message name="CardValid2SoapOut">
+    <wsdl:part name="parameters" element="tns:CardValid2Response" />
+  </wsdl:message>
+  <wsdl:message name="CardValid3SoapIn">
+    <wsdl:part name="parameters" element="tns:CardValid3" />
+  </wsdl:message>
+  <wsdl:message name="CardValid3SoapOut">
+    <wsdl:part name="parameters" element="tns:CardValid3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetBankCommercialNameOfCreditCardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBankCommercialNameOfCreditCard" />
+  </wsdl:message>
+  <wsdl:message name="GetBankCommercialNameOfCreditCardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBankCommercialNameOfCreditCardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EMVServicesSoap">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardValid1">
+      <wsdl:input message="tns:CardValid1SoapIn" />
+      <wsdl:output message="tns:CardValid1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardValid2">
+      <wsdl:input message="tns:CardValid2SoapIn" />
+      <wsdl:output message="tns:CardValid2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardValid3">
+      <wsdl:input message="tns:CardValid3SoapIn" />
+      <wsdl:output message="tns:CardValid3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCommercialNameOfCreditCard">
+      <wsdl:input message="tns:GetBankCommercialNameOfCreditCardSoapIn" />
+      <wsdl:output message="tns:GetBankCommercialNameOfCreditCardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EMVServicesSoap" type="tns:EMVServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://emv.sdcontent.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid1">
+      <soap:operation soapAction="http://emv.sdcontent.org/CardValid1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid2">
+      <soap:operation soapAction="http://emv.sdcontent.org/CardValid2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid3">
+      <soap:operation soapAction="http://emv.sdcontent.org/CardValid3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCommercialNameOfCreditCard">
+      <soap:operation soapAction="http://emv.sdcontent.org/GetBankCommercialNameOfCreditCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EMVServicesSoap12" type="tns:EMVServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://emv.sdcontent.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid1">
+      <soap12:operation soapAction="http://emv.sdcontent.org/CardValid1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid2">
+      <soap12:operation soapAction="http://emv.sdcontent.org/CardValid2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardValid3">
+      <soap12:operation soapAction="http://emv.sdcontent.org/CardValid3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCommercialNameOfCreditCard">
+      <soap12:operation soapAction="http://emv.sdcontent.org/GetBankCommercialNameOfCreditCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EMVServices">
+    <wsdl:port name="EMVServicesSoap" binding="tns:EMVServicesSoap">
+      <soap:address location="http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EMVServicesSoap12" binding="tns:EMVServicesSoap12">
+      <soap12:address location="http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
