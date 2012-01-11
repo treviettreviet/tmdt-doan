@@ -209,6 +209,10 @@ namespace Money10Banking.Controllers
             return View();
         }
 
+        public ActionResult CapNhatThongTinTaiKhoanCaNhan()
+        {
+            return View();
+        }
         public ActionResult ThayDoiMatKhau()
         {
             return View();
@@ -486,7 +490,6 @@ namespace Money10Banking.Controllers
         {
             try 
 	        {	
-              
 		        NganHangEntities dbNganHang = new NganHangEntities();
                 string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();
