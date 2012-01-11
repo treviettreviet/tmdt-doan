@@ -90,19 +90,19 @@
 		        		<div style="background-color: white; border:solid 1px gray;padding:5px;">
 		        			<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
 							  <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div></td>
+							    <td><div class="ys-image"><a href="#">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="#">Hỗ trợ chung</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim?chat"> Hỗ trợ chung</a></div> </td>
+							    <td><div class="ys-image"><a href="#"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="#"> Hỗ trợ chung</a></div> </td>
 							  </tr>
 							 <tr>
-							    <td><div class="ys-image"><a href="ymsgr:sendim?hotro.baokim_nv">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div></td>
+							    <td><div class="ys-image"><a href="#">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="#">Hỗ trợ nghiệp vụ</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div class="ys-image"><a href="skype:hotro.baokim_nv?chat"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="skype:hotro.baokim_nv?chat"> Hỗ trợ nghiệp vụ</a></div> </td>
+							    <td><div class="ys-image"><a href="#"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="#"> Hỗ trợ nghiệp vụ</a></div> </td>
 							  </tr>
 							 <tr>
-							    <td valign="top"><div class="ys-image"><a href="ymsgr:sendim?hotrokythuat.baokim"> <img src="../../Content/images/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div></td>
+							    <td valign="top"><div class="ys-image"><a href="#"> <img src="../../Content/images/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="#">Hỗ trợ tích hợp</a></div></td>
 							    <td style="width: 10px;"></td>
-							    <td><div><div class="ys-image"><a href="skype:hotrokythuat.baokim?chat">   <img src="../../Content/images/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div></div> </td>
+							    <td><div><div class="ys-image"><a href="#">   <img src="../../Content/images/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="#">Hỗ trợ tích hợp</a></div></div> </td>
 							 </tr>
 						</table>
 		        		</div>        		
@@ -174,7 +174,7 @@
     </div>
     <div class="info right" style="margin-top: 0px;">
         <div style="display:inline;cursor: pointer;position: relative">
-        	<a class="fancybox_hotline" href="https://www.baokim.vn/application/themes/baokim/views/support_block.php" style="text-decoration:none;"><img src="../../Content/images/support_.gif" border="0"> </a>       	
+        	<a class="fancybox_hotline" href="#" style="text-decoration:none;"><img src="../../Content/images/support_.gif" border="0"> </a>       	
         </div>
     </div>
 </div>

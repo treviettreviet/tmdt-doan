@@ -53,11 +53,11 @@
                                 </tr>
                                 <tr>
                                     <td class="form-content-text">
-                                        <a href="https://www.baokim.vn/accounts/login/forget_password" class="home-fr-a">Quên
-                                            mật khẩu</a>&nbsp;&nbsp; <a href="https://www.baokim.vn/accounts/login/forget_email"
+                                        <a href="#" class="home-fr-a">Quên
+                                            mật khẩu</a>&nbsp;&nbsp; <a href="#"
                                                 class="home-fr-a">Quên email ? </a>
                                         <div style="padding-top: 5px">
-                                            Chưa có tài khoản? <a href="https://www.baokim.vn/accounts/register" class="home-fr-a">
+                                            Chưa có tài khoản? <a href="/Public/DangKy" class="home-fr-a">
                                                 Đăng ký</a></div>
                                     </td>
                                 </tr>
