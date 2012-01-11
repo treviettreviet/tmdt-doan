@@ -18,7 +18,14 @@ namespace Money10Banking.Controllers
         private NganHangEntities dbNganHangOnline = new NganHangEntities();
         
         private Random r = new Random(); // Để phát sinh số ngẫu nhiên
-
+        public ActionResult ChuyenTien1()
+        {
+            return View();
+        }
+        public ActionResult ChuyenTienLienNganHang()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();
