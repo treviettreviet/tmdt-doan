@@ -81,14 +81,13 @@
                             <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
                             <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
                             <div style="margin-bottom: 15px;">
-                               
                                 <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
                                     title="Đăng ký">Đăng ký</a><span>|</span> <a href="#"
                                         title="Liên hệ">Liên hệ</a>
                             </div>
                             <div style="display: inline; cursor: pointer; position: relative;" onmouseover="showSupportEx()"
                                 onmouseout="hideSupportEx()">
-                                <a href="ymsgr:sendim?blueskyf9@yahoo.com"></a><a href="skype:hotro.baokim?chat">
+                                <a href="#"></a><a href="#">
                                 </a>
                                 <div>
                                     <div id="support_yahoo_skype" style="display: none; cursor: default; position: absolute;
@@ -98,64 +97,64 @@
                                                 <tr>
                                                     <td>
                                                         <div class="ys-image">
-                                                            <a href="ymsgr:sendim?hotro.baokim">
+                                                            <a href="#">
                                                                 <img src="../../Content/images/yahoo-ic.gif">
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="ymsgr:sendim?hotro.baokim">Hỗ trợ chung</a></div>
+                                                            <a href="#">Hỗ trợ chung</a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
                                                     <td>
                                                         <div class="ys-image">
-                                                            <a href="skype:hotro.baokim?chat">
+                                                            <a href="#">
                                                                 <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
                                                         <div class="ys-text">
-                                                            <a href="skype:hotro.baokim?chat">Hỗ trợ chung</a></div>
+                                                            <a href="#">Hỗ trợ chung</a></div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <div class="ys-image">
-                                                            <a href="ymsgr:sendim?hotro.baokim_nv">
+                                                            <a href="#">
                                                                 <img src="../../Content/images/yahoo-ic.gif">
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="ymsgr:sendim?hotro.baokim_nv">Hỗ trợ nghiệp vụ</a></div>
+                                                            <a href="#">Hỗ trợ nghiệp vụ</a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
                                                     <td>
                                                         <div class="ys-image">
-                                                            <a href="skype:hotro.baokim_nv?chat">
+                                                            <a href="#">
                                                                 <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
                                                         <div class="ys-text">
-                                                            <a href="skype:hotro.baokim_nv?chat">Hỗ trợ nghiệp vụ</a></div>
+                                                            <a href="#">Hỗ trợ nghiệp vụ</a></div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td valign="top">
                                                         <div class="ys-image">
-                                                            <a href="ymsgr:sendim?hotrokythuat.baokim">
+                                                            <a href="#">
                                                                 <img src="../../Content/images/yahoo-ic.gif">
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="ymsgr:sendim?hotrokythuat.baokim">Hỗ trợ tích hợp</a></div>
+                                                            <a href="#">Hỗ trợ tích hợp</a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
                                                     <td>
                                                         <div>
                                                             <div class="ys-image">
-                                                                <a href="skype:hotrokythuat.baokim?chat">
+                                                                <a href="#">
                                                                     <img src="../../Content/images/skype000.png" width="14" height="14">
                                                                 </a>
                                                             </div>
                                                             <div class="ys-text">
-                                                                <a href="skype:hotrokythuat.baokim?chat">Hỗ trợ tích hợp</a></div>
+                                                                <a href="#">Hỗ trợ tích hợp</a></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -211,7 +210,7 @@
                         </div>
                         <div class="info right" style="margin-top: 0px;">
                             <div style="display: inline; cursor: pointer; position: relative">
-                                <a class="fancybox_hotline" href="https://www.baokim.vn/application/themes/baokim/views/support_block.php"
+                                <a class="fancybox_hotline" href="#"
                                     style="text-decoration: none;">
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
@@ -319,7 +318,7 @@
                                 Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
 
                                     <a href="#">Chuyển tiền</a></li><li onmouseout="resetMenu()"
-                                        onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="https://www.baokim.vn/transactions/charges">
+                                        onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="#">
 
                                     <a href="#">Chuyển tiền</a></li><li onmouseout="resetMenu()"
                                         onmouseover="showSubSubMenu(&quot;12&quot;);"><a href="#">
@@ -406,22 +405,22 @@
                     <table style="float: left;" class="table_menu">
                         <tr>
                             <td style="text-align: left; padding-right: 20px">
-                                <a href="https://www.baokim.vn/index.php" class="menu_link">Trang chủ</a>
+                                <a href="#" class="menu_link">Trang chủ</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/intro" class="menu_link">Giới thiệu</a>
+                                <a href="#" class="menu_link">Giới thiệu</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/privacy_policy" class="menu_link">Chính sách bảo mật</a>
+                                <a href="#" class="menu_link">Chính sách bảo mật</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/user_agreement" class="menu_link">Quy định sử dụng</a>
+                                <a href="#" class="menu_link">Quy định sử dụng</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/faq" class="menu_link">Trợ giúp</a>
+                                <a href="#" class="menu_link">Trợ giúp</a>
                             </td>
                             <td class="l_menu">
-                                <a href="https://www.baokim.vn/contact" class="menu_link">Liên hệ</a>
+                                <a href="#" class="menu_link">Liên hệ</a>
                             </td>
                         </tr>
                     </table>
@@ -492,7 +491,7 @@
             }
             .l_menu
             {
-                background: url("BaoKim.vn\ -\ Cổng\ thanh\ toán\ trực\ tuyến\ đảm\ bảo\ an\ toàn\ giao\ dịch\ tiện\ lợi_files/ll000000.jpg") no-repeat scroll 0 0 transparent;
+                background: url("Content/images/ll000000.jpg") no-repeat scroll 0 0 transparent;
                 padding-left: 16px;
                 padding-right: 18px;
             }
