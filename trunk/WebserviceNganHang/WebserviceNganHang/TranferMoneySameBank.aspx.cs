@@ -39,7 +39,7 @@ namespace WebserviceNganHang
             if (ob != null)
             {
                 int kq = (int)ResultTransfer;
-                Response.Write("Ket qua: " + kq.ToString());
+                Response.Write("Ket qua giao dịch: " + kq.ToString() +"   (0: Thành công, 1, 2, 3: Các kết quả khác)");
             }
         }
     }
