@@ -1,0 +1,5 @@
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Broker\Money10Broker\bin\Money10Broker.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Broker\Money10Broker\bin\Money10Broker.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Broker\Money10Broker\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Broker\Money10Broker\obj\Debug\Money10Broker.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10Broker\Money10Broker\obj\Debug\Money10Broker.pdb

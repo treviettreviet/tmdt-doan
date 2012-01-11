@@ -9,7 +9,7 @@ namespace WSWorkFlow
     /// <summary>
     /// Summary description for wsTransfer
     /// </summary>
-    [WebService(Namespace = "http://ecmoney10.tk/Services")]
+    [WebService(Namespace = "http://ecmoney10.tk/Money10Services")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
