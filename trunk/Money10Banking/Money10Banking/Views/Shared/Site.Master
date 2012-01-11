@@ -302,12 +302,7 @@
                                                 id="cat3" class="m_shopping"><a href="#" onmouseout="resetMenu()"
                                                     onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li id="cat4" class="m_news">
                                                         <a href=#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
-                                                            <span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="#"
-
-                                                        <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
-                                                            <span>Tin tức</span></a></li><li id="cat5" class="m_faq"><a href="#"
-
-                                                                onmouseout="resetMenu()" onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
+                                                            <span>Tin tức</span></a></li></a></li><li id="cat5" class="m_faq"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
                         </ul>
                     </div>
                     <div class="sub">
