@@ -18,13 +18,13 @@ namespace WebserviceNganHang
     {
 
         [WebMethod]
-        public int TransferMoneySameBank(string SID, string CardNoSend, string CardNoReceive, decimal Amount, string SecurityNumberCardNoSend)
+        public int TransferMoneySameBank(string SID, string CardNoSend, string CardNoReceive, string Amount, string SecurityNumberCardNoSend)
         {
             dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
             System.Net.ServicePointManager.Expect100Continue = false;
             EMVServices.EMVServicesSoapClient ws = new EMVServices.EMVServicesSoapClient(); // WS cua Thay Minh
 
-            decimal dSoDu = Amount;
+            decimal dSoDu = decimal.Parse(Amount);
             string bankSID = ws.Authenticate("OCBCBank", "X2ugS2E37S");
             //WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
             SID = bankSID;
@@ -84,7 +84,7 @@ namespace WebserviceNganHang
                         {
                             return 3;   // Số dư của thẻ gửi không đủ để thực hiện giao địch
                         }
-                        break;
+                        //break;
                     }
                     case 1: //Card ID is not valid for this bank 
                         return 2;
