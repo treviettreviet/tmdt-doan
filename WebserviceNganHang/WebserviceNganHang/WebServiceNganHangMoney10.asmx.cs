@@ -137,13 +137,15 @@ namespace WebserviceNganHang
         }
 
         [WebMethod]
-        public int TransferMoneyDiffBank(string IdBankLinking, string CardNoSend, string CardNoReceive, decimal Amount, string SecurityNumberCardNoSend)
+        public int TransferMoneyDiffBank(string IdBankLinking, string CardNoSend, string CardNoReceive, string Amount, string SecurityNumberCardNoSend)
         {
             try
             {
                 System.Net.ServicePointManager.Expect100Continue = false;
                 EMVServices.EMVServicesSoapClient ws = new EMVServices.EMVServicesSoapClient();
                 dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
+
+                decimal deAmount = decimal.Parse(Amount);
 
                 // Lấy thông tin thẻ gửi dựa vào mã thẻ gửi
                 var SendCard = (from row in dbNganHang.Thes where row.SoThe.Equals(CardNoSend) select row).First();
@@ -164,8 +166,8 @@ namespace WebserviceNganHang
                 // Lấy số dư tài khoản thẻ gửi
                 decimal SendCardBalance = getBalanceAccount(SendCard.SoThe);
                 
-                decimal FeeTransaction = Amount * (decimal)0.1;     // Phí giao dịch 10%
-                decimal TotalCost = Amount + FeeTransaction;    // Tổng phí đủ để giao dịch
+                decimal FeeTransaction = deAmount * (decimal)0.1;     // Phí giao dịch 10%
+                decimal TotalCost = deAmount + FeeTransaction;    // Tổng phí đủ để giao dịch
                 if (SendCardBalance > 0 && SendCardBalance >= TotalCost)     // Đủ tiền để giao dịch
                 {
                     // Lấy thông tin của tài khoản ngân hàng liên kết trong bảng NganHangLienKet
@@ -183,7 +185,7 @@ namespace WebserviceNganHang
                             // Tiến hành cộng tiền chuyển của người gửi vào tài khoản của ngân hàng liên kết ở hệ thống ngân hàng này
                             // Và trừ tiền của tài khoản gửi
                             // Cộng thêm mức phí giao dịch 10% lấy từ tài khoản gửi
-                            CardBankLinking.SoDu += Amount; // Cộng tiền cho tài khoản môi giới
+                            CardBankLinking.SoDu += deAmount; // Cộng tiền cho tài khoản môi giới
                             CardBankMoney10.SoDu += FeeTransaction;     // Cộng tiền phí giao dịch
                             SendCard.SoDu = SendCard.SoDu - TotalCost;  // Trừ tiền của thẻ gửi
 
