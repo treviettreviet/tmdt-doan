@@ -16,6 +16,7 @@ namespace WebserviceNganHang
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string sid = "";
             string card_no_send = CardNoSend.Text;
             string card_no_receive = CardNoReceive.Text;
             string amount = Amount.Text;
@@ -24,11 +25,12 @@ namespace WebserviceNganHang
             string UrlWebservice = "http://localhost/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
             string MethodName = "TransferMoneySameBank";
+
             object[] ob = new object[5];
-            ob[0] = "sid";
+            ob[0] = sid;
             ob[1] = card_no_send;
             ob[2] = card_no_receive;
-            ob[3] = deAmount;
+            ob[3] = amount;
             ob[4] = security_number_card_no_send;
 
             //WebServiceNganHangMoney10 ws = new WebServiceNganHangMoney10();
@@ -36,7 +38,8 @@ namespace WebserviceNganHang
             object ResultTransfer = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName,ob);
             if (ob != null)
             {
-                Response.Write("Ket qua: " + ob.ToString());
+                int kq = (int)ResultTransfer;
+                Response.Write("Ket qua: " + kq.ToString());
             }
         }
     }
