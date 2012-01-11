@@ -35,9 +35,9 @@
                         <div>
                             <input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
                         <div class="login_link">
-                            <a href="https://www.baokim.vn/accounts/register" title="Đăng ký tài khoản Bảo Kim miễn phí">
-                                Đăng ký tài khoản Bảo Kim <b>Miễn phí</b></a> <a href="https://www.baokim.vn/accounts/login/forget_password"
-                                    title="Quên mật khẩu">Quên mật khẩu?</a> <a href="https://www.baokim.vn/accounts/login/forget_email"
+                            <a href="/Public/DangKy" title="Đăng ký tài khoản Bảo Kim miễn phí">
+                                Đăng ký tài khoản Bảo Kim <b>Miễn phí</b></a> <a href="#"
+                                    title="Quên mật khẩu">Quên mật khẩu?</a> <a href="#"
                                         title="Quên email">Quên email?</a>
                         </div>
                         </form>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="frm-login-right right">
-                <a href="https://www.baokim.vn/faq/category/huong-dan-nap-tien-truc-tiep-tu-tai-khoan-bao-kim">
+                <a href="#">
                     <div class="frm_login_right_top">
                         <div class="frm_login_right_top_a">
                             Áp dụng với tất cả các chương trình
@@ -67,12 +67,12 @@
                         ích:</b>
                     <div class="baokim_tienich">
                         <ul>
-                            <li>Mua hàng được tích lũy <a href="https://www.baokim.vn/faq/category/kiem-tien-thuong-khi-mua-hang"
+                            <li>Mua hàng được tích lũy <a href="#"
                                 class="c006699">tiền thưởng</a></li>
-                            <li><a href="https://www.baokim.vn/promote/gioithieuthatnhieu.html" class="c006699">
+                            <li><a href=#" class="c006699">
                                 Kiếm tiền</a> tại nhà với Bảo Kim</li>
-                            <li><a href="https://www.baokim.vn/faq/category/huong-dan-nap-tien-truc-tiep-tu-tai-khoan-bao-kim"
-                                class="c006699">Nạp thẻ điện thoại</a> tại nhà được chiết khấu ...<a href="https://www.baokim.vn/faq/category/huong-dan-nap-tien-truc-tiep-tu-tai-khoan-bao-kim"
+                            <li><a href="#"
+                                class="c006699">Nạp thẻ điện thoại</a> tại nhà được chiết khấu ...<a href="#"
                                     class="c006699"> xem thêm &gt;&gt;</a></li>
                         </ul>
                     </div>

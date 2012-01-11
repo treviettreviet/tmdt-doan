@@ -111,30 +111,30 @@
                 <div class="home-top-right">
                     <div class="slideshow">
                         <ul id="nav" style="margin-left: 2px;">
-                            <li style="text-align: center;"><a href="https://www.baokim.vn/accounts/login?return_url=L3RyYW5zYWN0aW9ucy90b3B1cA==">
+                            <li style="text-align: center;"><a href="#">
                                 1</a> </li>
-                            <li style="text-align: center;"><a href="https://www.baokim.vn/faq/category/huong-dan-nap-tien-truc-tiep-tu-tai-khoan-bao-kim">
+                            <li style="text-align: center;"><a href="#">
                                 2</a> </li>
-                            <li style="text-align: center;"><a href="http://www.baokim.vn/events/kiem_tien_hay_nap_ngay_cho_de/?utm_source=google&amp;utm_medium=cpc&amp;utm_term=kiem-tien&amp;utm_campaign=kiem_tien_hay_nap_ngay_cho_de">
+                            <li style="text-align: center;"><a href="#">
                                 3</a> </li>
-                            <li style="text-align: center;"><a href="https://www.baokim.vn/promote/landding/ha-tang-thanh-toan-baokim.html">
+                            <li style="text-align: center;"><a href="#">
                                 4</a> </li>
-                            <li style="text-align: center;"><a href="https://www.baokim.vn/promote/gioithieuthatnhieu.html">
+                            <li style="text-align: center;"><a href="#">
                                 5</a> </li>
                         </ul>
                         <div class="pics" id="slideshow">
                             <a>
-                                <img onclick="window.open('https://www.baokim.vn/accounts/login?return_url=L3RyYW5zYWN0aW9ucy90b3B1cA==')"
+                                <img onclick="window.open('#')"
                                     width="592" height="193" src="../../Content/images/topup_ba.jpg"></a> <a>
-                                        <img onclick="window.open('https://www.baokim.vn/faq/category/huong-dan-nap-tien-truc-tiep-tu-tai-khoan-bao-kim')"
+                                        <img onclick="window.open('#')"
                                             width="592" height="193" src="../../Content/images/topup-ba.jpg"></a>
                             <a>
-                                <img onclick="window.open('http://www.baokim.vn/events/kiem_tien_hay_nap_ngay_cho_de/?utm_source=google&amp;utm_medium=cpc&amp;utm_term=kiem-tien&amp;utm_campaign=kiem_tien_hay_nap_ngay_cho_de')"
+                                <img onclick="window.open('#')"
                                     width="592" height="193" src="../../Content/images/kiem_tie.jpg"></a> <a>
-                                        <img onclick="window.open('https://www.baokim.vn/promote/landding/ha-tang-thanh-toan-baokim.html')"
+                                        <img onclick="window.open('#')"
                                             width="592" height="193" src="../../Content/images/592x1930.jpg"></a>
                             <a>
-                                <img onclick="window.open('https://www.baokim.vn/promote/gioithieuthatnhieu.html')"
+                                <img onclick="window.open('#')"
                                     width="592" height="193" src="../../Content/images/landding.jpg"></a>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                             Bạn có thể thanh toán tại nhà chỉ với thẻ ATM, thẻ tín dụng hoặc tài khoản internet
                             của 1 trong 20 Ngân Hàng, thậm chí không cần đăng ký tài khoản baokim.vn</div>
                         <div class="hb-more">
-                            <a class="a-hb-more" href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang">Xem
+                            <a class="a-hb-more" href="#">Xem
                                 thêm &gt;&gt; </a>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                             Khi mua hàng và thanh toán qua Baokim.vn bạn được đảm bảo nhận được hàng đúng mô
                             tả, hoặc sẽ được hoàn 100% giá trị giao dịch</div>
                         <div class="hb-more">
-                            <a class="a-hb-more" href="https://www.baokim.vn/faq/category/thanh-toan-an-toan">Xem
+                            <a class="a-hb-more" href="#">Xem
                                 thêm &gt;&gt; </a>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                             Là chủ website bán hàng online ? bạn có thể tích hợp công cụ thanh toán cho mình
                             hoàn toàn miễn phí và đơn giản , kỹ thuật viên baokim.vn sẽ hỗ trợ bạn</div>
                         <div class="hb-more">
-                            <a class="a-hb-more" href="https://www.baokim.vn/faq/category/tich-hop-ban-hang">Xem
+                            <a class="a-hb-more" href="#">Xem
                                 thêm &gt;&gt; </a>
                         </div>
                     </div>
@@ -226,18 +226,18 @@
                             </div>
                             <div class="hb-news-content">
                                 <ul class="a-news">
-                                    <li><a href="https://www.baokim.vn/news/21672438/hoa247.vn-thay-ban-noi-loi-yeu-thuong"
+                                    <li><a href="#"
                                         class="a-news">Hoa247.vn - Thay bạn nói lời yêu thương</a></li>
-                                    <li><a href="https://www.baokim.vn/news/21672435/bigsale-the-game-lon-nhat-trong-nam-tai-hungwar.com-1"
+                                    <li><a href="#"
                                         class="a-news">Bigsale thẻ game lớn nhất trong năm tại Hungwar.com</a></li>
-                                    <li><a href="https://www.baokim.vn/news/21672425/vinet24h.com.vn-vi-cuoc-song-tuoi-dep"
+                                    <li><a href="#"
                                         class="a-news">Vinet24h.com.vn - Vì cuộc sống tươi đẹp</a></li>
-                                    <li><a href="https://www.baokim.vn/news/21672411/cuoc-song-tien-loi-va-tot-dep-hon-voi-kicomart.com"
+                                    <li><a href="#"
                                         class="a-news">Cuộc sống tiện lợi và tốt đẹp hơn với Kicomart.com</a></li>
-                                    <li><a href="https://www.baokim.vn/news/21672464/cuoc-taxi-dong-loat-tang" class="a-news">
+                                    <li><a href="#" class="a-news">
                                         Cước taxi đồng loạt tăng</a></li>
                                     <p style="margin-bottom: 0px; text-align: right; padding-right: 10px;">
-                                        <a href="https://www.baokim.vn/news">Xem thêm...</a></p>
+                                        <a href="#">Xem thêm...</a></p>
                                 </ul>
                             </div>
                         </div>
@@ -248,14 +248,14 @@
                         <div class="hb-news-title">
                             Chuyển tiền và mua sắm trên mạng</div>
                         <ul>
-                            <li><a href="https://www.baokim.vn/faq/category/thanh-toan-mua-hang"><span class="hb-news-bold">
-                                Mua sắm trực tuyến</span></a> từ hàng ngàn website, gian hàng và được <a href="https://www.baokim.vn/faq/category/thanh-toan-an-toan">
+                            <li><a href="#"><span class="hb-news-bold">
+                                Mua sắm trực tuyến</span></a> từ hàng ngàn website, gian hàng và được <a href="#">
                                     <span class="hb-news-a">bảo hiểm</span></a> khi chọn thanh toán an toàn.</li>
-                            <li><a href="https://www.baokim.vn/faq/category/chuyen-tien"><span class="hb-news-bold">
-                                Chuyển tiền trực tuyến</span></a><a href="https://www.baokim.vn/faq/category/chuyen-tien-an-toan"><span
+                            <li><a href="#"><span class="hb-news-bold">
+                                Chuyển tiền trực tuyến</span></a><a href="#"><span
                                     class="hb-news-a"> an toàn</span></a> và nhanh chóng cho bất kỳ ai với 1 địa
                                 chỉ Email.</li>
-                            <li><a href="https://www.baokim.vn/ho-tro-da-dang-the-Ngan-Hang"><span class="hb-news-bold">
+                            <li><a href="#"><span class="hb-news-bold">
                                 Thanh toán, nạp tiền </span></a>trực tiếp từ hơn 20 ngân hàng lớn với thẻ nội địa,
                                 tín dụng quốc tế Visa, Master, Amex...</li>
                         </ul>
@@ -266,12 +266,12 @@
                         <div class="hb-news-title">
                             Bán hàng và nhận hàng trực tuyến</div>
                         <ul>
-                            <li><a href="https://www.baokim.vn/payment/deal"><span class="hb-news-bold">Tích hợp
+                            <li><a href="#"><span class="hb-news-bold">Tích hợp
                                 thanh toán</span></a> miễn phí vào Website bán hàng, Forum, Blog, Rao vặt đơn giản
                                 và linh hoạt.</li>
-                            <li><a href="https://www.baokim.vn/faq/category/rut-tien"><span class="hb-news-bold">
+                            <li><a href="#"><span class="hb-news-bold">
                                 Nhận tiền siêu tốc</span></a> và tăng doanh số bán hàng online.</li>
-                            <li><a href="https://www.baokim.vn/faq/category/yeu-cau-chuyen-tien"><span class="hb-news-bold">
+                            <li><a href="#"><span class="hb-news-bold">
                                 Gửi yêu cầu chuyển tiền</span></a> nhắc nhở ai đó chuyển tiền cho mình qua SMS,
                                 Email hoàn toàn miễn phí.</li>
                         </ul>
