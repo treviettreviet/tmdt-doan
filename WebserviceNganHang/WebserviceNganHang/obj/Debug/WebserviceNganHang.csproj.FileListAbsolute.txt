@@ -1,0 +1,5 @@
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceNganHang\WebserviceNganHang\bin\WebserviceNganHang.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceNganHang\WebserviceNganHang\bin\WebserviceNganHang.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceNganHang\WebserviceNganHang\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceNganHang\WebserviceNganHang\obj\Debug\WebserviceNganHang.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceNganHang\WebserviceNganHang\obj\Debug\WebserviceNganHang.pdb
