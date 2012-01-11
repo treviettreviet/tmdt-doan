@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MoiGioiModelStoreContainer" CdmEntityContainer="MoiGioiEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="MoiGioiModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaNhans">
+      <EntityTypeMapping TypeName="MoiGioiModel.CaNhan">
+        <MappingFragment StoreEntitySet="CaNhan">
+          <ScalarProperty Name="MaCaNhan" ColumnName="MaCaNhan" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="CMNDHoChieu" ColumnName="CMNDHoChieu" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiaChis">
+      <EntityTypeMapping TypeName="MoiGioiModel.DiaChi">
+        <MappingFragment StoreEntitySet="DiaChi">
+          <ScalarProperty Name="MaDiaChi" ColumnName="MaDiaChi" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+          <ScalarProperty Name="SoNha" ColumnName="SoNha" />
+          <ScalarProperty Name="Duong" ColumnName="Duong" />
+          <ScalarProperty Name="PhuongXa" ColumnName="PhuongXa" />
+          <ScalarProperty Name="QuanHuyen" ColumnName="QuanHuyen" />
+          <ScalarProperty Name="TinhThanh" ColumnName="TinhThanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghieps">
+      <EntityTypeMapping TypeName="MoiGioiModel.DoanhNghiep">
+        <MappingFragment StoreEntitySet="DoanhNghiep">
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+          <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
+          <ScalarProperty Name="TenCongTy" ColumnName="TenCongTy" />
+          <ScalarProperty Name="DienThoaiCongTy" ColumnName="DienThoaiCongTy" />
+          <ScalarProperty Name="SoGiayPhepKinhDoanh" ColumnName="SoGiayPhepKinhDoanh" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichSuGiaoDiches">
+      <EntityTypeMapping TypeName="MoiGioiModel.LichSuGiaoDich">
+        <MappingFragment StoreEntitySet="LichSuGiaoDich">
+          <ScalarProperty Name="MaLichSuGiaoDich" ColumnName="MaLichSuGiaoDich" />
+          <ScalarProperty Name="MaThe" ColumnName="MaThe" />
+          <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
+          <ScalarProperty Name="SoTheNhan" ColumnName="SoTheNhan" />
+          <ScalarProperty Name="NgayGiaoDich" ColumnName="NgayGiaoDich" />
+          <ScalarProperty Name="SoTienGiaoDich" ColumnName="SoTienGiaoDich" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiGiaoDiches">
+      <EntityTypeMapping TypeName="MoiGioiModel.LoaiGiaoDich">
+        <MappingFragment StoreEntitySet="LoaiGiaoDich">
+          <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
+          <ScalarProperty Name="TenLoaiGiaoDich" ColumnName="TenLoaiGiaoDich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiGiayPhepKinhDoanhs">
+      <EntityTypeMapping TypeName="MoiGioiModel.LoaiGiayPhepKinhDoanh">
+        <MappingFragment StoreEntitySet="LoaiGiayPhepKinhDoanh">
+          <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
+          <ScalarProperty Name="TenLoaiGiayPhepKinhDoanh" ColumnName="TenLoaiGiayPhepKinhDoanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiTaiKhoans">
+      <EntityTypeMapping TypeName="MoiGioiModel.LoaiTaiKhoan">
+        <MappingFragment StoreEntitySet="LoaiTaiKhoan">
+          <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
+          <ScalarProperty Name="TenLoaiTaiKhoan" ColumnName="TenLoaiTaiKhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiThes">
+      <EntityTypeMapping TypeName="MoiGioiModel.LoaiThe">
+        <MappingFragment StoreEntitySet="LoaiThe">
+          <ScalarProperty Name="MaLoaiThe" ColumnName="MaLoaiThe" />
+          <ScalarProperty Name="TenLoaiThe" ColumnName="TenLoaiThe" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhiGiaoDiches">
+      <EntityTypeMapping TypeName="MoiGioiModel.PhiGiaoDich">
+        <MappingFragment StoreEntitySet="PhiGiaoDich">
+          <ScalarProperty Name="MaPhiGiaoDich" ColumnName="MaPhiGiaoDich" />
+          <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
+          <ScalarProperty Name="Phi" ColumnName="Phi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="MoiGioiModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+          <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
+          <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
+          <ScalarProperty Name="SoDu" ColumnName="SoDu" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="MatKhauGiaoDich" ColumnName="MatKhauGiaoDich" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThamSoes">
+      <EntityTypeMapping TypeName="MoiGioiModel.ThamSo">
+        <MappingFragment StoreEntitySet="ThamSo">
+          <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+          <ScalarProperty Name="TenThamSo" ColumnName="TenThamSo" />
+          <ScalarProperty Name="Kieu" ColumnName="Kieu" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thes">
+      <EntityTypeMapping TypeName="MoiGioiModel.The">
+        <MappingFragment StoreEntitySet="The">
+          <ScalarProperty Name="MaThe" ColumnName="MaThe" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+          <ScalarProperty Name="MaLoaiThe" ColumnName="MaLoaiThe" />
+          <ScalarProperty Name="SoThe" ColumnName="SoThe" />
+          <ScalarProperty Name="SoBaoMat" ColumnName="SoBaoMat" />
+          <ScalarProperty Name="NgayMoThe" ColumnName="NgayMoThe" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

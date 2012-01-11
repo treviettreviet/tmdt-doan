@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="http://localhost/BankWS/" deleteExistingFiles="False" ftpAnonymousLogin="True" ftpPassiveMode="True" msdeploySite="BankWS" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BankWS" publishMethod="FTP" replaceMatchingFiles="True" userName="ecmoney" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjH96cp++z0mK+At8KWqbAgAAAAACAAAAAAAQZgAAAAEAACAAAABDsGvZDfdHec0s3dd2dm4Nvi24+tCkxyJtIS8ZgQnxOQAAAAAOgAAAAAIAACAAAABhkLqXJhAv1tZoSTMji/xvmHHH1DnMO4a6yIZfNKiBASAAAADZlouhX7+YX/Ex5dMHejv5of/2lCE/nQiTUC2Ri0tvhkAAAAAaKDBmtzLf885whHhvWmBK6SE1+jvAU/10zJnpkg/dXqDK9ZNM0cOYhKxQe2l/cWsxP81E54Mzfg9f4+IWjoG0" SelectedForPublish="True">
-    <file relUrl="wsTransfer.asmx" publishTime="12/29/2011 09:57:12" />
-    <file relUrl="bin/WSWorkFlow.pdb" publishTime="01/10/2012 12:22:52" />
-    <file relUrl="bin/WSWorkFlow.dll" publishTime="01/10/2012 12:22:52" />
-    <file relUrl="WebServiceMoiGioiKinhDoanh.asmx" publishTime="12/29/2011 15:23:03" />
-    <file relUrl="Web.config" publishTime="01/10/2012 12:18:14" />
+  <publishProfile publishUrl="http://localhost/Money10Services/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="BankWS" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BankWS" publishMethod="FTP" replaceMatchingFiles="True" userName="money10" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf/oS9W0Skkyf4hUqKFVExgAAAAACAAAAAAAQZgAAAAEAACAAAADbUdB8XgH4ZOtjKjGWmE2cNuh4jdNhDdQbjOmlIDV9ewAAAAAOgAAAAAIAACAAAAB83cJ9mmEft81kudYgYPRGcFdfezQF7NjchvJRdiYbCyAAAACNA0bPspFYkJwOVB88Qfh35l0YdUGd3fZgrYtfs5wwnkAAAABO5r5VVtZzmhnOHBpbWcI53o2y9RjYhGgObvNuNhNx3mQZZwsOezudOXZtjHmfYoPn74qNIskHGVJDTRFdpf/7" SelectedForPublish="True">
+    <file relUrl="CardValid.aspx" publishTime="01/05/2012 16:25:46" />
+    <file relUrl="Web.config" publishTime="01/10/2012 17:02:46" />
+    <file relUrl="bin/WSWorkFlow.dll" publishTime="01/10/2012 17:02:38" />
+    <file relUrl="wsTransfer.asmx" publishTime="12/29/2011 21:56:51" />
+    <file relUrl="Default.aspx" publishTime="12/30/2011 16:19:31" />
+    <file relUrl="frmTransfer.aspx" publishTime="01/07/2012 23:41:33" />
+    <file relUrl="bin/WSWorkFlow.pdb" publishTime="01/10/2012 17:02:38" />
+    <file relUrl="WebServiceMoiGioiKinhDoanh.asmx" publishTime="12/29/2011 21:56:51" />
   </publishProfile>
 </publishData>

@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WSWorkFlow</RootNamespace>
     <AssemblyName>WSWorkFlow</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
     <!--<UseIISExpress>false</UseIISExpress>-->
@@ -39,13 +39,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -63,6 +64,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\EMVServices\EMVServices.disco" />
+    <Content Include="CardValid.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="frmTransfer.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -78,10 +82,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardValid.aspx.cs">
+      <DependentUpon>CardValid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CardValid.aspx.designer.cs">
+      <DependentUpon>CardValid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dbNganHangOnline.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransfer.aspx.cs">
+      <DependentUpon>frmTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTransfer.aspx.designer.cs">
+      <DependentUpon>frmTransfer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
