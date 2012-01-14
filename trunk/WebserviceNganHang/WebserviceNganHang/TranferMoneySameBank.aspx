@@ -27,7 +27,7 @@
                     CardNoSend:</td>
                 <td>
                     &nbsp;
-                    <asp:TextBox ID="CardNoSend" runat="server" Width="300px" Text="5119358602641937"></asp:TextBox>
+                    <asp:TextBox ID="CardNoSend" runat="server" Width="300px" Text="340429813757143"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
                     CardNoReceive:</td>
                 <td>
                     &nbsp;
-                    <asp:TextBox ID="CardNoReceive" runat="server" Width="300px" Text="340429813757143"></asp:TextBox>
+                    <asp:TextBox ID="CardNoReceive" runat="server" Width="300px" Text="5119358602641937"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -45,16 +45,7 @@
                     Amount:</td>
                 <td>
                     &nbsp;
-                    <asp:TextBox ID="Amount" runat="server" Width="300px" Text="400000"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                    SecurityNumberCardNoSend:</td>
-                <td>
-                    &nbsp;
-                    <asp:TextBox ID="SecurityNumberCardNoSend" runat="server" Width="300px" Text="5C7A3"></asp:TextBox>
+                    <asp:TextBox ID="Amount" runat="server" Width="300px" Text="80000"></asp:TextBox>
                 </td>
             </tr>
             <tr>

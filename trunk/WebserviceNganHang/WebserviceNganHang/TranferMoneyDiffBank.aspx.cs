@@ -16,22 +16,20 @@ namespace WebserviceNganHang
 
         protected void Transfer_Click(object sender, EventArgs e)
         {
-            string IdBankLinking = txtIdBankLinking.Text;
+            string sid = "";
             string ccsend = txtCardIDSend.Text;
             string ccreceive = txtCardIDReceive.Text;
             string amount = txtAmount.Text;
-            string ccsendsecurenum = txtSendSecureNum.Text;
 
-            string UrlWebservice = "http://localhost:1834/WebServiceNganHangMoney10.asmx";
+            string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
             string MethodName = "TransferMoneyDiffBank";
 
-            object[] arrOb = new object[5];
-            arrOb[0] = IdBankLinking;
+            object[] arrOb = new object[4];
+            arrOb[0] = sid;
             arrOb[1] = ccsend;
             arrOb[2] = ccreceive;
             arrOb[3] = amount;
-            arrOb[4] = ccsendsecurenum;
 
             int result = -404;
             object obResult = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName, arrOb);
