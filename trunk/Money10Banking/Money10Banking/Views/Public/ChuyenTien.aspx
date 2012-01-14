@@ -270,22 +270,20 @@
                        <div class="form">                        
 <div class="form-content">
 <table class="form_tab_padding_top" cellspacing="10px">
-	<tr style="height:0px;"><td><p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
-                       		<p style="margin-left:80px;"><input type="radio" name="account[]" value  onclick="j('#register_account_personal').hide();j('#register_account_business').show(); j('#type_register').val(2);" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p></td></tr>
+	<tr style="height:0px;"><td><p style="margin-left:80px;"><input type="radio" name="id" value checked="checked" onclick="" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
+                       		<p style="margin-left:80px;"><input type="radio" name="id" value  onclick="" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p></td></tr>
 </table>
 </div>                      </div>
                        <div class="form-content clear">
                             <form action="" onsubmit=" id="form" name="form_TransferMoneySameBank" accept-charset="utf-8" method="post">                      
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal"> 
-                                                  <tr>
+                             <tr>
 			                    <th>Số thẻ người gửi<span style="color: red;">*</span>:</th>
-			                    <td><input type="text" name="email" value size="42"></td>
+			                    <td><input type="text" name="" value size="42"></td>
 		                    </tr>
-		                    <tr>
-			                    <th id="phoneNoTitle" style="display:none">Số thẻ người nhận :</th>
-			                    <td id="phoneNoValue" style="display:none">
-				                    <input type="text" name="to_phone_no" value>.			</td>
-			
+		                     <tr>
+			                    <th>Số thẻ người nhận<span style="color: red;">*</span>:</th>
+			                    <td><input type="text" name="" value size="42"></td>
 		                    </tr>
 		                    <tr>
 			                    <th>Số tiền chuyển<span style="color: red;">*</span>:</th>
