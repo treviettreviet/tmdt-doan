@@ -39,7 +39,7 @@
     	<div class="taskbar-sort">
         	<ul>
             
-				<li><a href="http://localhost:16108/Public/TrangChu" class="active" target><span class="icon-tasbar-nl"></span><span>NgânLượng.vn</span></a></li>
+				<li><a href="/Public/TrangChu" class="active" target><span class="icon-tasbar-nl"></span><span>NgânLượng.vn</span></a></li>
 				<li><a href="" class target><span class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
 				<li><a href="" class="" target=""><span>Nội dung số</span></a></li>
 				<li><a href="" class="" target=""><span>Mua sắm</span></a></li>
@@ -79,7 +79,7 @@
 						<span class="sp-skype end"><a href="callto:nganluong_sup_tech" title="Chat với dịch vụ hỗ trợ khách hàng của NgânLượng.vn bằng Skype"><img src="../../Content/images/icon-skz.gif" title="Chat với dịch vụ hỗ trợ khách hàng của NgânLượng.vn bằng Skype">Hỗ trợ tích hợp 1</a></span>
 					</li>					
 				</ul>
-				<p>- <strong>Hỏi đáp</strong>: <a href="http://vizum.vn/" target="_blank" rel="nofollow">Trao đổi trên diễn đàn vizum.vn</a></p>
+				<p>- <strong>Hỏi đáp</strong>: <a href="#" target="_blank" rel="nofollow">Trao đổi trên diễn đàn vizum.vn</a></p>
 				<p>- Đường dây nóng lãnh đạo tiếp nhận ý kiến khách hàng: <span style="color:#ff5a00;font-weight:bold;">093.665.1441</span></p>
             </div>
         </div>
@@ -174,20 +174,20 @@
     }
 </script>
 <div id="body-top">
-	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="http://localhost:16108/Public/TrangChu">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
+	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="/Public/TrangChu">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
 	
 	
 	
 	<div class="news-hot" id="news_hot">  	
 		   <ul class="news-view" id="news_view">
                 
-	<li class="active"><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
+	<li class="active"><a href="#" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
             </ul>
             <div class="news-hot-box">
                 <span class="btn-news-hot"><a href="javascript:;" id="hot-new"></a></span>
                 <ul class="news-hot-sub" id="news_view_list">
 					
-	<li class="active"><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
+	<li class="active"><a href="#" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
                 </ul>
             </div>
         </div>	
@@ -207,12 +207,12 @@
 	<div id="footer">
 		<div id="menu-footer">
 
-	<a href="http://help.nganluong.vn/chi-tiet-49/2/419/Gioi-thieu-ve-NganLuong.vn.html" target="_blank" rel="nofollow">Về NgânLượng.vn</a>
-	|<a href="http://help.nganluong.vn/chi-tiet-4/27/373/Chinh-sach-su-dung-NganLuong.vn.html" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
-	|<a href="http://help.nganluong.vn/chi-tiet-17/27/372/Chinh-sach-quyen-rieng-tu-(Privacy-Policy).html" target="_blank" rel="nofollow">Quyền riêng tư</a>
-	|<a href="http://help.nganluong.vn/danh-muc-27/27/1/Quy-dinh---Chinh-sach.html" target="_blank" rel="nofollow">Quy định - Chính sách</a>
-	|<a href="http://help.nganluong.vn/danh-muc-2/2/1/Tro-giup---Huong-dan.html" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
-	|<a href="http://vizum.vn/" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
+	<a href="#" target="_blank" rel="nofollow">Về NgânLượng.vn</a>
+	|<a href="#" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
+	|<a href="#" target="_blank" rel="nofollow">Quyền riêng tư</a>
+	|<a href="#" target="_blank" rel="nofollow">Quy định - Chính sách</a>
+	|<a href="#" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
+	|<a href="#" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
 </div>
 <div id="footer-add">
     <div id="footer-add-right">
@@ -228,10 +228,10 @@
         <p style="margin-bottom:5px;">Bản quyền © 2009-2011 NgânLượng.vn: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="http://www.peacesoft.net/" target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
         <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
         <p style="margin-bottom:5px;">Các liên kết khác:
-			<a href="http://chodientu.vn/" target="_blank" rel="nofollow">www.chodientu.vn</a> | 
-			<a href="http://chodientu.vn/ebay" target="_blank" rel="nofollow">www.ebay.vn</a> | 
-			<a href="http://adnet.vn/" target="_blank" rel="nofollow">www.adnet.vn</a> | 
-			<a href="http://vizum.vn/" target="_blank" rel="nofollow">www.vizum.vn</a></p>                
+			<a href="#" target="_blank" rel="nofollow">www.chodientu.vn</a> | 
+			<a href="#" target="_blank" rel="nofollow">www.ebay.vn</a> | 
+			<a href="#" target="_blank" rel="nofollow">www.adnet.vn</a> | 
+			<a href="#" target="_blank" rel="nofollow">www.vizum.vn</a></p>                
     </div>
 </div>
 
@@ -280,5 +280,5 @@
 <script type="text/javascript" src="../../Scripts/js/heartbao.js"></script>
 </body>
 </html>
-<!-- This document saved from https://www.nganluong.vn/ -->
+
 

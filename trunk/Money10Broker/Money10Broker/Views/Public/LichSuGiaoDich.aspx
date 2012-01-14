@@ -2,30 +2,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div id="menu-nav-content">
+   <div id="menu-nav-content">
 	<div id="menu-nav-content-l"></div>
 	<div id="menu-nav-content-r"></div>
 	<div id="menu-nav-content-c">
 		<div id="menu-nav-content-main">
 			<ul>
 			
-				<li class="active " style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=user_transaction_info"><span>GIAO DỊCH</span></a></li>
-				<li class=" " style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=complaint&amp;type=all"><span>KHIẾU NẠI</span></a></li>
-				<li class=" " style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=user_info"><span>TÀI KHOẢN</span></a></li>
-				<li class=" end" style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=payment_integrate_homepage"><span>TÍCH HỢP THANH TOÁN</span></a></li>
+				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
+				<li class=" " style="display:block"><a href="#"><span>KHIẾU NẠI</span></a></li>
+				<li class=" " style="display:block"><a href="#"><span>TÀI KHOẢN</span></a></li>
+				<li class=" end" style="display:block"><a href="#"><span>TÍCH HỢP THANH TOÁN</span></a></li>
 			</ul>
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
 			
-				<li class=" " style="display:block"><a href="DangNhapThanhCong.aspx"><span>Tổng hợp</span></a></li>
-				<li class="active " style="display:block"><a href="LichSuGiaoDich.aspx"><span>Lịch sử giao dịch</span></a></li>
-				<li class=" " style="display:block"><a href="GiaoDichTheCao.aspx"><span>Giao dịch thẻ cào</span></a></li>
-				<li class=" " style="display:block"><a href="NapTien.aspx"><span>Nạp tiền</span></a></li>
-				<li class=" " style="display:block"><a href="ChonChuyenTien.aspx"><span>Chuyển tiền</span></a></li>
-				<li class=" " style="display:block"><a href="RutTien.aspx"><span>Rút tiền</span></a></li>
-				<li class=" " style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=payment_request"><span>Đề nghị thanh toán</span></a></li>
-				<li class=" end" style="display:block"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=receiving_refund"><span>Nhận tiền hoàn lại</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" active" style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
+				<li class=" " style="display:block"><a href="#"><span>Giao dịch thẻ cào</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
+				<li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>
+				<li class=" " style="display:block"><a href="#"><span>Đề nghị thanh toán</span></a></li>
+				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
 	</div>
