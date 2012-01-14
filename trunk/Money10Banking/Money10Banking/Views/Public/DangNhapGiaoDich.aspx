@@ -12,8 +12,9 @@
                     <div class="login_header">
                     </div>
                     <div class="login_content">
-                        <form action="XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
+                        <form action="XuLyXacNhanDangNhap" id="form_login" accept-charset="utf-8" method="post">
                         <div class="header">
+                            Xác Nhận
                             Đăng Nhập</div>
                         <div class="login_label">
                             Email / Số điện thoại</div>
@@ -22,16 +23,7 @@
                         <div class="login_label">
                             Mật khẩu</div>
                         <div>
-                            <input type="password" name="password" value="" /></div>
-                        <div class="login_label">
-                            Chuyển đến</div>
-                        <div>
-                            <select name="goTo">
-                                <option value="accounts/info">Thông tin tài khoản</option>
-                                <option value="transactions/log">Lịch sử giao dịch</option>
-                                <option value="accounts/profile/money_receiving_config">Cấu hình tài khoản</option>
-                            </select>
-                        </div>
+                            <input type="password" name="password" value="" /></div>                       
                         <div>
                             <input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
                         <div class="login_link">
