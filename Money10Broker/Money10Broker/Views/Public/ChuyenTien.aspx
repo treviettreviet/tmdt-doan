@@ -40,8 +40,13 @@
 		<div>
 			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
 		</div>	
+        <div id="title">
+        <span class="yel">Chuyển Tiền Trên Ngân Lượng</span>
+         </div>
 		  <form method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
-		  <table border="0" cellspacing="10" cellpadding="0" width="100%">			  	
+		  <table border="0" cellspacing="10" cellpadding="0" width="100%">	
+          <p style="margin-left:80px;"><input type="radio" name="id" value checked="checked" onclick="" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
+                       		<p style="margin-left:80px;"><input type="radio" name="id" value  onclick="" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>		  	
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người gửi:</th>
 				<td><input name="" type="text" value="" class="input-business input-amount field-check" autocomplete="off"></td>
@@ -60,16 +65,10 @@
 			  <tr class="cashout-fee">
 				<th>Phí rút tiền:</th>
 				<td><strong>Theo phí chuyển khoản quy định của từng ngân hàng</strong></td>
-			  </tr>              			  	  					  
-			  <tr>
-				<th><span class="required">*</span>Mã xác nhận:</th>
-				<td><input name="verify_image" type="text" class="input-business field-check" maxlength="5" autocomplete="off" style="width:80px;"><img src="../../Content/images/captcha0.gif" border="0" style="margin-left:10px;" align="absmiddle">
-                	<span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập mã xác nhận</span>
-                </td>
-			  </tr>						  				  
+			  </tr>              			 	  					  		  				  
 			  <tr>
 				<th>&nbsp;</th>
-				<td><input name="btnSubmit" type="submit" value="Tiếp tục »" class="button-content"></td>
+				<td><input name="btnSubmit" type="submit" value="Chuyển Tiền" class="button-content"></td>
 			  </tr>
 		</table>
 		</form>
