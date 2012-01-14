@@ -78,8 +78,15 @@ namespace Money10Broker.Controllers
         public ActionResult RutTien()
         {
             return View();
-        }       
-
+        }
+        public ActionResult ChuyenTien()
+        {
+            return View();
+        }
+        public ActionResult DangNhapGiaoDich()
+        {
+            return View();
+        }
         //MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
         xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
