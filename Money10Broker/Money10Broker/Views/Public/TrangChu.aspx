@@ -72,26 +72,35 @@
                         <img src="../../Content/images/hotrothb.png" width="655" height="128" border="0"
                             usemap="#map_thanhtoan">
                         <map name="map_thanhtoan" id="map_thanhtoan">
-                            <area shape="rect" coords="6,2,57,35" href="http://www.visa.com/globalgateway/gg_selectcountry_ng.jsp">
-                            <area shape="rect" coords="65,1,131,34" href="http://www.mastercard.com/index.html">
-                            <area shape="rect" coords="140,1,219,37" href="http://www.vietcombank.com.vn/">
-                            <area shape="rect" coords="227,1,305,37" href="https://www.techcombank.com.vn/">
-                            <area shape="rect" coords="310,0,378,34" href="http://www.eab.com.vn/">
-                            <area shape="rect" coords="385,1,486,35" href="http://www.vietinbank.vn/web/home/vn/index.html">
-                            <area shape="rect" coords="493,1,560,36" href="http://www.vib.com.vn/default.aspx">
-                            <area shape="rect" coords="569,2,663,36" href="http://www.shb.com.vn/">
-                            <area shape="rect" coords="204,50,289,80" href="http://www.bidv.com.vn/">
-                            <area shape="rect" coords="294,52,401,80" href="http://agribank.com.vn/">
-                            <area shape="rect" coords="9,52,59,83" href="http://www.acb.com.vn/">
-                            <area shape="rect" coords="64,49,197,79" href="http://www.sacombank.com.vn/vn/Pages/default.aspx">
-                            <area shape="rect" coords="402,52,464,80" href="http://mbbank.com.vn/">
-                            <area shape="rect" coords="471,52,546,80" href="http://www.vpb.com.vn/">
-                            <area shape="rect" coords="554,50,660,81" href="http://www.seabank.com.vn/">
-                            <area shape="rect" coords="3,96,78,127" href="http://www.tpb.com.vn/vn/">
-                            <area shape="rect" coords="80,98,172,127" href="http://www.msb.com.vn/">
-                            <area shape="rect" coords="176,93,278,127" href="http://www.pgbank.com.vn/pages/pghome.aspx">
-                            <area shape="rect" coords="282,97,372,127" href="http://mb.softbank.jp/en/">
-                            <area shape="rect" coords="378,99,517,125" href="https://ebank.vtc.vn/media/news.1615.html">
+                            <area shape="rect" coords="6, 2, 57, 35" 
+                                href="http://www.visa.com/globalgateway/gg_selectcountry_ng.jsp">
+                            <area shape="rect" coords="65, 1, 131, 34" 
+                                href="http://www.mastercard.com/index.html">
+                            <area shape="rect" coords="140, 1, 219, 37" 
+                                href="http://www.vietcombank.com.vn/">
+                            <area shape="rect" coords="227, 1, 305, 37" 
+                                href="https://www.techcombank.com.vn/">
+                            <area shape="rect" coords="310, 0, 378, 34" href="http://www.eab.com.vn/">
+                            <area shape="rect" coords="385, 1, 486, 35" 
+                                href="http://www.vietinbank.vn/web/home/vn/index.html">
+                            <area shape="rect" coords="493, 1, 560, 36" 
+                                href="http://www.vib.com.vn/default.aspx">
+                            <area shape="rect" coords="569, 2, 663, 36" href="http://www.shb.com.vn/">
+                            <area shape="rect" coords="204, 50, 289, 80" href="http://www.bidv.com.vn/">
+                            <area shape="rect" coords="294, 52, 401, 80" href="http://agribank.com.vn/">
+                            <area shape="rect" coords="9, 52, 59, 83" href="http://www.acb.com.vn/">
+                            <area shape="rect" coords="64, 49, 197, 79" 
+                                href="http://www.sacombank.com.vn/vn/Pages/default.aspx">
+                            <area shape="rect" coords="402, 52, 464, 80" href="http://mbbank.com.vn/">
+                            <area shape="rect" coords="471, 52, 546, 80" href="http://www.vpb.com.vn/">
+                            <area shape="rect" coords="554, 50, 660, 81" href="http://www.seabank.com.vn/">
+                            <area shape="rect" coords="3, 96, 78, 127" href="http://www.tpb.com.vn/vn/">
+                            <area shape="rect" coords="80, 98, 172, 127" href="http://www.msb.com.vn/">
+                            <area shape="rect" coords="176, 93, 278, 127" 
+                                href="http://www.pgbank.com.vn/pages/pghome.aspx">
+                            <area shape="rect" coords="282, 97, 372, 127" href="http://mb.softbank.jp/en/">
+                            <area shape="rect" coords="378, 99, 517, 125" 
+                                href="https://ebank.vtc.vn/media/news.1615.html">
                         </map>
                     </div>
                 </div>
