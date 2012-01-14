@@ -262,28 +262,29 @@
 <div class="form-container" style="padding-bottom:20px;">
     <div class="text_header">
         <div class="left">
-            <h2 class="title">Chuyển khoản cùng ngân hàng</h2>
+            <h2 class="title">Chuyển khoản </h2>
         </div>
         <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif">
     </div>
     <div class="clear"></div>
                        <div class="form">                        
 <div class="form-content">
-<table class="form_tab_padding_top" cellspacing="10px">
-	<tr style="height:0px;"><td><p style="margin-left:80px;"><input type="radio" name="id" value checked="checked" onclick="" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
-                       		<p style="margin-left:80px;"><input type="radio" name="id" value  onclick="" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p></td></tr>
-</table>
+<%--<table class="form_tab_padding_top" cellspacing="10px">
+	
+</table>--%>
 </div>                      </div>
                        <div class="form-content clear">
-                            <form action="" onsubmit=" id="form" name="form_TransferMoneySameBank" accept-charset="utf-8" method="post">                      
-                            <table class="form-content-table" cellspacing="10px" id="register_account_personal"> 
+                            <form action="TransferMoneyBank" onsubmit=" id="form" name="form_TransferMoneyBank" accept-charset="utf-8" method="post">                      
+                            <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank"> 
+                            <p style="margin-left:80px;"><input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
+                       		<p style="margin-left:80px;"><input type="radio" name="id" value="2"  onclick="" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>
                              <tr>
 			                    <th>Số thẻ người gửi<span style="color: red;">*</span>:</th>
-			                    <td><input type="text" name="" value size="42"></td>
+			                    <td><input type="text" name="Cardsend" value size="42"></td>
 		                    </tr>
 		                     <tr>
 			                    <th>Số thẻ người nhận<span style="color: red;">*</span>:</th>
-			                    <td><input type="text" name="" value size="42"></td>
+			                    <td><input type="text" name="CardRec" value size="42"></td>
 		                    </tr>
 		                    <tr>
 			                    <th>Số tiền chuyển<span style="color: red;">*</span>:</th>
@@ -336,7 +337,8 @@
 			                    <td></td>
 		                        <td><input type="submit" name="btn_next" value="Chuyển tiền" class="button"></td>  
                           </table> 
-                            </form>                         
+                            </form>
+                                                  
                         </div>                        
                     </div>                    
     <div>        
