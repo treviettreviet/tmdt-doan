@@ -9,7 +9,7 @@
                 <div id="login-box-left">
                     <div id="login-box-left-content">
                         <div id="login-title">
-                            Đăng nhập tài khoản ví điện tử NgânLượng.vn</div>
+                            Xác Nhận Đăng Nhập</div>
                         <div id="login-box-content">
                             <form method="post" action="/Public/XuLyDangNhap">
                             <div id="message-box-login" style="display: block;" class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
