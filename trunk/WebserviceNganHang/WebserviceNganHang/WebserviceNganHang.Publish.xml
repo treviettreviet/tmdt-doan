@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\public" deleteExistingFiles="False" ftpAnonymousLogin="True" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/WebserviceNganHang.dll" publishTime="01/14/2012 17:38:27" />
+    <file relUrl="bin/WebserviceNganHang.pdb" publishTime="01/14/2012 17:38:27" />
+    <file relUrl="Web.config" publishTime="01/14/2012 17:38:48" />
+    <file relUrl="TranferMoneyDiffBank.aspx" publishTime="01/14/2012 17:02:06" />
+    <file relUrl="TranferMoneySameBank.aspx" publishTime="01/14/2012 16:30:35" />
+    <file relUrl="WebServiceNganHangMoney10.asmx" publishTime="01/11/2012 01:10:07" />
+  </publishProfile>
+</publishData>
