@@ -209,6 +209,85 @@
                             </div>
                             <script type="text/javascript">
 
+<div class="wrapper-wide">
+	<div class="page-wide">
+    <div id="Header">
+			<div class="top-header">
+<div class="logo left">
+    <a href="/Public/TrangChu" title="baokim.vn">
+        <img src="../../Content/images/logo0000.png" alt="baokim.vn" title="baokim.vn">
+    </a>
+</div>
+<div class="right" style="padding-right:30px;">
+    <div class="linkexpress right">
+      <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
+ 		<div style="width:360px;display: inline;">
+		<div style="display:inline;cursor: pointer;position: relative;float: right;" onmouseover="showSupportEx()" onmouseout="hideSupportEx()">
+				<div>
+		    	  <div id="support_yahoo_skype" style="display:none;cursor:default; position: absolute;width:245px;padding-top:0px;z-index:1;margin-left: -175px;">
+		        		<div style="background-color: white; border:solid 1px gray;padding:5px;">
+		        			<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+							  <tr>
+							    <td><div class="ys-image"><a href="#">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="#">Hỗ trợ chung</a></div></td>
+							    <td style="width: 10px;"></td>
+							    <td><div class="ys-image"><a href="#"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="#"> Hỗ trợ chung</a></div> </td>
+							  </tr>
+							 <tr>
+							    <td><div class="ys-image"><a href="#">  <img src="../../Content/images/yahoo-ic.gif">  </a> </div><div class="ys-text"><a href="#">Hỗ trợ nghiệp vụ</a></div></td>
+							    <td style="width: 10px;"></td>
+							    <td><div class="ys-image"><a href="#"> <img src="../../Content/images/skype000.png" width="14" height="14"></a></div><div class="ys-text"> <a href="#"> Hỗ trợ nghiệp vụ</a></div> </td>
+							  </tr>
+							 <tr>
+							    <td valign="top"><div class="ys-image"><a href="#"> <img src="../../Content/images/yahoo-ic.gif"> </a></div> <div class="ys-text"><a href="#">Hỗ trợ tích hợp</a></div></td>
+							    <td style="width: 10px;"></td>
+							    <td><div><div class="ys-image"><a href="#">   <img src="../../Content/images/skype000.png" width="14" height="14"> </a></div> <div class="ys-text"><a href="#">Hỗ trợ tích hợp</a></div></div> </td>
+							 </tr>
+						</table>
+		        		</div>        		
+		        	</div>
+		         </div>	
+		</div>
+		
+		
+		<div style="display:inline;float:right;cursor: pointer;position: relative;" onmouseover="showAcccountEx()" onmouseout="hideAcccountEx()">
+		<p style="margin-top: 5px; color: #1b6ea0;" >Chúc một ngày tốt lành, <%= Session["Login"] %><span><img src="../../Content/images/support_.png"></span><a href="http://localhost:13307" ><b><%Session.Abandon(); %> [Thoát]</b></a>
+		</p>
+		<div>
+		    	  <div id="AccountBlog" style="display:none;cursor:default; position: absolute;width:258px;padding-top:0px;z-index:1;color:#578E01">
+		        		<div style="background-color: white; border:solid 1px gray;padding:5px;margin-top: -13px;">
+		        			<table width="250" border="0" cellspacing="0" cellpadding="0" class="account-table-blog">
+								 <tr>
+								    <td><a href="/Public/CapNhatThongTinTaiKhoan">Cập nhật thông tin tài khoản</a></td>
+								  </tr>								  			  
+								  <tr>
+								    <td><a href="/Public/DoiMatKhau">Đổi mật khẩu</a></td>
+								  </tr>
+								  <tr>
+								    <td><a href="#">Câu hỏi bảo mật</a></td>
+								  </tr>
+								  <tr>
+								    <td><a href="#">Cấu hình tài khoản</a></td>
+								  </tr>
+								  <tr>
+								    <td><a href="#">Tùy chọn hiển thị thông tin cá nhân trên trang thanh toán</a></td>
+								  </tr>							
+								  <tr>
+								  								    		<td><a href="https#">Đăng ký đại lý</a></td>
+								    									
+								  </tr>
+							</table>
+		        		</div>        		
+		        	</div>
+		         </div>	
+		
+		</div>
+		
+		
+		</div>
+		 
+<script type="text/javascript">
+
                                 function showSupportEx() {
                                     j("#support_yahoo_skype").show();
                                 }
@@ -270,6 +349,7 @@
                             'width': 800,
                             'height': 600
                         });
+
 
                     });
 </script>
