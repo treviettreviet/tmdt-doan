@@ -24,12 +24,6 @@
 	            <td class="style2" style="border-right: 2px solid white;" colspan="2"><strong>
                     Transfer Money Difference Bank</strong></td>
             </tr>
-            <tr>
-            <td class="frmText" style="color: #000000; font-weight: normal;">IdBankLinking:</td>
-            <td>
-                <asp:TextBox ID="txtIdBankLinking" runat="server" Text="1"></asp:TextBox>
-                </td>
-            </tr>
                         
             <tr>
             <td class="frmText" style="color: #000000; font-weight: normal;">CardIdSend:</td>
@@ -49,13 +43,6 @@
             <td class="frmText" style="color: #000000; font-weight: normal;">AmountMoney:</td>
             <td class="style1">
                 <asp:TextBox ID="txtAmount" runat="server">100000</asp:TextBox>
-                </td>
-            </tr>
-                        
-            <tr>
-            <td class="frmText" style="color: #000000; font-weight: normal;">SendSecuNum:</td>
-            <td class="style1">
-                <asp:TextBox ID="txtSendSecureNum" runat="server">1424E</asp:TextBox>
                 </td>
             </tr>
                         

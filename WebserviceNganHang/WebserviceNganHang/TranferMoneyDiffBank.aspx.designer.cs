@@ -22,15 +22,6 @@ namespace WebserviceNganHang {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtIdBankLinking control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdBankLinking;
-        
-        /// <summary>
         /// txtCardIDSend control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace WebserviceNganHang {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAmount;
-        
-        /// <summary>
-        /// txtSendSecureNum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSendSecureNum;
         
         /// <summary>
         /// Transfer control.

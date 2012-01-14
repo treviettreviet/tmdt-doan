@@ -57,13 +57,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\EMVServices\EMVServices.disco" />
-    <None Include="Service References\EMVServices\configuration91.svcinfo" />
-    <None Include="Service References\EMVServices\configuration.svcinfo" />
-    <None Include="Service References\EMVServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="TranferMoneyDiffBank.aspx" />
     <Content Include="TranferMoneySameBank.aspx" />
     <Content Include="Web.config" />
@@ -86,11 +79,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\EMVServices\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="TranferMoneyDiffBank.aspx.cs">
       <DependentUpon>TranferMoneyDiffBank.aspx</DependentUpon>
@@ -119,7 +107,6 @@
       <LastGenOutput>dbNganHangOnline.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EMVServices\EMVServices.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -128,12 +115,6 @@
     <None Include="dbNganHangOnline.dbml.layout">
       <DependentUpon>dbNganHangOnline.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\EMVServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

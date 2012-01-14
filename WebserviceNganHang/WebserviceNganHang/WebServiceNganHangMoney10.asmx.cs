@@ -17,93 +17,139 @@ namespace WebserviceNganHang
     public class WebServiceNganHangMoney10 : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public int TransferMoneySameBank(string SID, string CardNoSend, string CardNoReceive, string Amount, string SecurityNumberCardNoSend)
+        /// <summary>
+        /// MD5 - Dùng để tạo ra chuỗi SID bằng thuật toán MD5
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string GetMD5Hash(string input)
         {
-            dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
-            System.Net.ServicePointManager.Expect100Continue = false;
-            EMVServices.EMVServicesSoapClient ws = new EMVServices.EMVServicesSoapClient(); // WS cua Thay Minh
-
-            decimal dSoDu = decimal.Parse(Amount);
-            string bankSID = ws.Authenticate("OCBCBank", "X2ugS2E37S");
-            //WSProxy.CallWebService(URLWebservice, ServiceName, MethodName, new object[] { "OCBCBank", "X2ugS2E37S" }).ToString();
-            SID = bankSID;
-            if (SID == bankSID)
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.UTF8.GetBytes(input);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
             {
-                //Lấy dữ liệu thẻ có trong ngân hàng
-                //Thẻ gửi
-                var sendCard = (from row in dbNganHang.Thes where row.SoThe.Equals(CardNoSend) select row).First();
+                s.Append(b.ToString("x2").ToLower());
+            }
+            string password = s.ToString();
+            return password;
+        }
 
-                //Kiểm tra có thẻ trong ngân hàng không
-                if (sendCard == null)
-                    return 1;   // Thẻ gửi không tồn tại trong ngân hàng
+        /// <summary>
+        /// Lên - Đăng nhập người dùng
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool LogonUser(string email, string password)
+        {
+            dbNganHangOnlineDataContext dbNganHangOnline = new dbNganHangOnlineDataContext();
+            TaiKhoan TK = new TaiKhoan();
+            try
+            {
+                string md5Pass = GetMD5Hash(password);
+                TK = dbNganHangOnline.TaiKhoans.Single(m => m.Email == email && m.MatKhau == md5Pass);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
-                //Thẻ nhận
-                var receiveCard = (from row in dbNganHang.Thes where row.SoThe.Equals(CardNoReceive) select row).First();
+        
+        /// <summary>
+        /// Lên - Chứng thực tài khoản trước khi thực hiện các thao tác: Rút tiền, nạp tiền, chuyển khoản
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        /// 
 
-                //Kiểm tra thẻ gửi
-                int iSendCardState = ws.CardValid1(bankSID, sendCard.MaThe, 1, SecurityNumberCardNoSend, "Huynh Tan Len", sendCard.NgayMoThe.Value, sendCard.NgayHetHan.Value);
-                //(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, sendCard.MaThe, 2, SecurityNumberCardNoSend, "Huynh Tan Len", sendCard.NgayMoThe, sendCard.NgayHetHan });
-
-                if (iSendCardState == -1)
+        [WebMethod]
+        public string AuthenticateForTransaction(string email, string password)
+        {
+            string sID = "";
+            try
+            {
+                bool flag = LogonUser(email, password);
+                if (flag == true)
                 {
-                    iSendCardState = 0;
-                }
-
-                switch (iSendCardState)
-                {
-                    case -1: //Invalid SID
-                        return 2;
-                    case 0: //Card valid 
-                    {
-                        TaiKhoan cusSend = sendCard.TaiKhoan;
-                        TaiKhoan cusReceive = receiveCard.TaiKhoan;
-                        if (sendCard.SoDu >= dSoDu)
-                        {
-                            //Kiểm tra thẻ nhận
-                            int iReceiveCardState = ws.CardValid1(bankSID, receiveCard.SoThe, 1, SecurityNumberCardNoSend, "Le Ngoc Tin", receiveCard.NgayMoThe.Value, receiveCard.NgayHetHan.Value);
-                            //(int)WSProxy.CallWebService(URLWebservice, ServiceName, "CardValid1", new object[] { bankSID, receiveCard.SoThe, 1, CardNoReceivesecurenum, "Le Ngoc Tin", receiveCard.NgayMoThe, receiveCard.NgayHetHan });
-                            if (iReceiveCardState == -1)
-                            {
-                                iReceiveCardState = 0;
-                            }
-                            if (iReceiveCardState == 0)
-                            {
-                                sendCard.SoDu -= dSoDu;
-                                receiveCard.SoDu += dSoDu;
-                                dbNganHang.SubmitChanges();
-                                //WriteTransaction(sendCard, receiveCard, Amount);
-                                return 0; // Giao dịch thành công! ^_^ ^_^
-                            }
-                            else
-                            {
-                                return 2;   // Không xác định được lỗi
-                            }
-                        }
-                        else
-                        {
-                            return 3;   // Số dư của thẻ gửi không đủ để thực hiện giao địch
-                        }
-                        //break;
-                    }
-                    case 1: //Card ID is not valid for this bank 
-                        return 2;
-                    case 2: //Card Type is not valid (Visa/Master) 
-                        return 2;
-                    case 3: //Customer Name not valid
-                        return 2;
-                    case 4: //Secure Number of the Credit card is not valid
-                        return 2;
-                    case 5: //Input Date of user for the credit card are not valid
-                        return 2;
-                    case 6: //Out of valid date from now 
-                        return 2;
-                    case 7: //Card is stolen
-                        return 2;
+                    string time = DateTime.Now.ToString();
+                    string input = email + time;
+                    sID = GetMD5Hash(input);
                 }
             }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return sID; // Trả về chuỗi sID khi đăng nhập thành công
+        }
 
-            return 0;
+        [WebMethod]
+        public int TransferMoneySameBank(string SID, string CardNoSend, string CardNoReceive, decimal Amount)
+        {
+            // B1: Lấy thông tin thẻ gửi
+            // B2: Kiểm tra thông tin thẻ gửi
+            // B3: Lấy thông tin thẻ nhận
+            // B4: Kiểm tra thông tin thẻ nhận
+            // B5: Kiểm tra số dư của thẻ gửi có đủ để giao dịch không?
+            // B6: Cộng tiền cho thẻ nhân
+            // B7: Trừ tiền của thẻ gửi
+
+            // Danh sách các kết quả giao dịch trả về
+                // 0: Giao dịch thành công
+                // -1: Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank
+                // -2: Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank   
+                // -3: Số dư tài khoản gửi không đủ để giao dịch
+                // -4: Không lưu được thông tin thay đổi xuống CSDL   
+            
+            System.Net.ServicePointManager.Expect100Continue = false;
+            dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
+
+            // B1: Lấy thông tin thẻ gửi
+            The TheGui = new The();
+            try
+            {
+                TheGui = dbNganHang.Thes.Single(m => m.SoThe == CardNoSend);
+            }
+            catch
+            {
+                return -1;   // Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank
+            }
+
+            // B3: Lấy thông tin thẻ nhận
+            The TheNhan = new The();
+            try
+            {
+                TheNhan = dbNganHang.Thes.Single(m => m.SoThe == CardNoReceive);
+            }
+            catch
+            {
+                return -2;  // Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank   
+            }
+
+            // B5: Kiểm tra số dư của thẻ gửi có đủ để giao dịch không?
+            if (TheGui.SoDu < Amount)
+            {
+                return -3;  // Số dư tài khoản gửi không đủ để giao dịch
+            }
+
+            // B6: Cộng tiền cho thẻ nhân
+            // B7: Trừ tiền của thẻ gửi
+            try
+            {
+                TheGui.SoDu = TheGui.SoDu - Amount;
+                TheNhan.SoDu = TheNhan.SoDu + Amount;
+                dbNganHang.SubmitChanges();
+                return 0;   // Giao dịch thành công
+            }
+            catch
+            {
+                return -4; // Không lưu được thông tin thay đổi xuống CSDL   
+            }
         }
 
         /// <summary>
@@ -137,82 +183,111 @@ namespace WebserviceNganHang
         }
 
         [WebMethod]
-        public int TransferMoneyDiffBank(string IdBankLinking, string CardNoSend, string CardNoReceive, string Amount, string SecurityNumberCardNoSend)
+        public int TransferMoneyDiffBank(string sID, string CardNoSend, string CardNoReceive, decimal Amount)
         {
+            // B1: Lấy thông tin thẻ nhận
+            // B2: Lấy tên của ngân hàng chứa thẻ gửi
+            // B3: Lấy thông tin Ngân Hàng Liên Kết dựa vào tên ngân hàng chứa thử gửi ở B1
+            // B4: Lấy Thông tin tài khoản của ngân hàng liên kết dựa vào NganHangLienKet.TaiKhoanNganHangLienKet
+            // B5: Lấy thông tin thẻ của ngân hàng liên kết.
+            // B6: Cộng tiền gửi cho thẻ nhận
+            // B7: Trừ tiền của thẻ ngân hàng liên kết = Tiền gửi + 10% phí
+            // B8: Trả kết quả trả về
+
+            // Danh sách các kết quả giao dịch trả về
+                // -1: Không lấy được thông tin Thẻ Nhận | hoặc thông tin thẻ nhận không tồn tại trong hệ thống OCBCBank   
+                // -2: Không gọi được hàm GetBankCommercialNameOfCreditCard Webservice của Thầy Minh
+                // -3: Tên ngân hàng liên kết không tồn tại trong hệ thống của OCBCBank    
+                // -4: Không lấy được tài khoản ngân hàng liên kết trong hệ thống OCBCBank
+                // -5: Không lấy được thông tin Thẻ của ngân hàng liên kết
+                // -6: Số dư trong tài khoản của ngân hàng liên kết không đủ để giao dịch cho thẻ nhận
+                // -7: Không lưu được xuống csdl cho các tài khoản.        
+
+            System.Net.ServicePointManager.Expect100Continue = false;
+            dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
+
+            // B1: Lấy thông tin Thẻ Nhận thông qua Số Thẻ Nhận
+            The TheNhan = new The();
             try
             {
-                System.Net.ServicePointManager.Expect100Continue = false;
-                EMVServices.EMVServicesSoapClient ws = new EMVServices.EMVServicesSoapClient();
-                dbNganHangOnlineDataContext dbNganHang = new dbNganHangOnlineDataContext();
-
-                decimal deAmount = decimal.Parse(Amount);
-
-                // Lấy thông tin thẻ gửi dựa vào mã thẻ gửi
-                var SendCard = (from row in dbNganHang.Thes where row.SoThe.Equals(CardNoSend) select row).First();
-                if (SendCard == null)
-                {
-                    return 1;   // Thẻ gửi không tồn tại trong hệ thống của ngân hàng
-                }
-
-                // Lấy thông tin thẻ nhân dựa vào mã thẻ nhận
-                var RecieveCard = (from row in dbNganHang.Thes where row.SoThe.Equals(CardNoReceive) select row).First();
-                if (RecieveCard == null)
-                {
-                    return 2;   // Thẻ nhận không tồn tại trong hệ thống của ngân hàng
-                }
-
-                //int SendCardState = ws.CardValid1("", SendCard.SoThe, 1, SendCard.SoBaoMat, "", SendCard.NgayMoThe.Value, SendCard.NgayHetHan.Value);
-
-                // Lấy số dư tài khoản thẻ gửi
-                decimal SendCardBalance = getBalanceAccount(SendCard.SoThe);
-                
-                decimal FeeTransaction = deAmount * (decimal)0.1;     // Phí giao dịch 10%
-                decimal TotalCost = deAmount + FeeTransaction;    // Tổng phí đủ để giao dịch
-                if (SendCardBalance > 0 && SendCardBalance >= TotalCost)     // Đủ tiền để giao dịch
-                {
-                    // Lấy thông tin của tài khoản ngân hàng liên kết trong bảng NganHangLienKet
-                    int idBank_Link = int.Parse(IdBankLinking); // Chuyển mã sang kiểu int
-                    var BankLinking = (from row in dbNganHang.NganHangLienKets where row.MaNganHangLienKet.Equals(idBank_Link) select row).First();
-                    if (BankLinking != null)
-                    {
-                        // Lấy thẻ dựa vào tên tài khoản ngân hàng
-                        var CardBankLinking = (from row in dbNganHang.Thes where row.TaiKhoan.Email.Equals(BankLinking.TaiKhoanNgangHangLienKet) select row).First();
-
-                        // Lấy thẻ của hệ thống ngân hàng Money10
-                        var CardBankMoney10 = (from row in dbNganHang.Thes where row.TaiKhoan.Email.Equals("money10@gmail.com") select row).First();
-                        if (CardBankLinking != null)
-                        {
-                            // Tiến hành cộng tiền chuyển của người gửi vào tài khoản của ngân hàng liên kết ở hệ thống ngân hàng này
-                            // Và trừ tiền của tài khoản gửi
-                            // Cộng thêm mức phí giao dịch 10% lấy từ tài khoản gửi
-                            CardBankLinking.SoDu += deAmount; // Cộng tiền cho tài khoản môi giới
-                            CardBankMoney10.SoDu += FeeTransaction;     // Cộng tiền phí giao dịch
-                            SendCard.SoDu = SendCard.SoDu - TotalCost;  // Trừ tiền của thẻ gửi
-
-                            // Cập nhật thông tin số dư
-                            //dbNganHang.Thes.InsertOnSubmit(CardBankLinking);
-                            //dbNganHang.Thes.InsertOnSubmit(CardBankMoney10);
-                            //dbNganHang.Thes.InsertOnSubmit(SendCard);
-                            dbNganHang.SubmitChanges();
-                            return 0; // Giao dịch thành công.! ^_^ () ^_^
-
-                        }
-                    }
-                }
-                else
-                {
-                    return 3;   // Số dư của thẻ gửi không đủ để thực hiện giao dịch
-                }
+                TheNhan = dbNganHang.Thes.Single(m=>m.SoThe == CardNoReceive);
             }
-            catch (Exception ex)
+            catch
             {
-                //throw new Exception(ex.Message);
-                throw new Exception(ex.ToString());
-                //return;
+                return -1;  // Không lấy được thông tin Thẻ Nhận | hoặc thông tin thẻ nhận không tồn tại trong hệ thống OCBCBank   
             }
-            return 4;   // Không xác định được lỗi
+
+            // B2: Lấy BankID của ngân hàng gửi
+            string BankID = "";
+            try
+            {
+                string UrlService = "http://www.is.fit.hcmus.edu.vn/EMV_Service/EMVServices.asmx";
+                string ServiceName = "EMVServices";
+                string MethodName = "GetBankCommercialNameOfCreditCard";
+                object[] arrOb = new object[1];
+                arrOb[0] = CardNoSend;
+                object obResult = WSProxy.CallWebService(UrlService, ServiceName, MethodName, arrOb);
+                BankID = obResult.ToString();
+            }
+            catch
+            {
+                return -2; // Không gọi được hàm GetBankCommercialNameOfCreditCard Webservice của Thầy Minh
+            }
+
+            // B3: Lấy thông tin Ngân Hàng Liên Kết dựa vào tên ngân hàng chứa thử gửi ở B1
+            NganHangLienKet NHLK = new NganHangLienKet();
+            try
+            {
+                NHLK = dbNganHang.NganHangLienKets.Single(m => m.TenNgangHangLienKet == BankID);
+            }
+            catch
+            {
+                return -3;   // Tên ngân hàng liên kết không tồn tại trong hệ thống của OCBCBank    
+            }
+
+            // B4: Lấy Thông tin tài khoản của ngân hàng liên kết dựa vào NganHangLienKet.TaiKhoanNganHangLienKet
+            TaiKhoan TaiKhoanNganHangLienKet = new TaiKhoan();  
+            try
+            {
+                TaiKhoanNganHangLienKet = dbNganHang.TaiKhoans.Single(m => m.Email == NHLK.TaiKhoanNgangHangLienKet);
+            }
+            catch
+            {
+                return -4; // Không lấy được tài khoản ngân hàng liên kết trong hệ thống OCBCBank
+            }
+            
+            // B5: Lấy thông tin thẻ nhận của ngân hàng liên kết thông qua thông tin tài khoản ngân hàng liên kết ở trên
+            The TheNganHangLienKet = new The();
+            try
+            {
+                TheNganHangLienKet = dbNganHang.Thes.Single(m => m.TaiKhoan.Email == TaiKhoanNganHangLienKet.Email);
+            }
+            catch
+            {
+                return -5; // Không lấy được thông tin Thẻ của ngân hàng liên kết
+            }
+
+            // B6: Cộng tiền gửi cho thẻ nhận
+            // B7: Trừ tiền của thẻ ngân hàng liên kết = Tiền gửi + 10% phí
+            // B8: Trả kết quả trả về
+            decimal PhiGiaoDich = Amount * (10/100);
+            decimal TotalFee = Amount + PhiGiaoDich;
+            if (TheNganHangLienKet.SoDu < TotalFee)
+            {
+                return -6;  // Số dư trong tài khoản của ngân hàng liên kết không đủ để giao dịch cho thẻ nhận
+            }
+            try
+            {
+                TheNhan.SoDu += Amount;
+                TheNganHangLienKet.SoDu = TheNganHangLienKet.SoDu - Amount - PhiGiaoDich;
+                dbNganHang.SubmitChanges();
+                return 0;
+            }
+            catch
+            {
+                return -7; // Không lưu được xuống csdl cho các tài khoản.        
+            }
         }
 
-       
     }
 }

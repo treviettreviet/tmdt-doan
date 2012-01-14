@@ -286,6 +286,7 @@
     <Content Include="Views\Public\CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="Views\Public\CapNhatThongTinTaiKhoanCaNhan.aspx" />
     <Content Include="Views\Public\ChuyenTien.aspx" />
+    <Content Include="Views\Public\ChuyenTienLienNganHang.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Public\Default.aspx" />
