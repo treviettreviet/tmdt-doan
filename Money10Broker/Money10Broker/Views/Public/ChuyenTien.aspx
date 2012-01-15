@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ChuyenTien
+	Giao dịch chuyển tiền
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -52,16 +52,16 @@
                        		<p style="margin-left:80px;"><input type="radio" name="id" value  onclick="" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>		  	
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người gửi:</th>
-				<td><input name="sendcardnum" id="sendcardnum" type="text" value="4024007181375311" class="input-business input-amount field-check" autocomplete="off"></td>
+				<td><input name="sendcardnum" id="sendcardnum" type="text" value="340426820759153" ></td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người nhận:</th>
-				<td><input name="receivecardnum" id="receivecardnum" type="text" value="4024007182425917" maxlength="11" class="input-business input-amount field-check" autocomplete="off"> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="receivecardnum" id="receivecardnum" type="text" value="340429813757143" > <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		
 			  <tr>
 				<th><span class="required">*</span>Số tiền muốn chuyển khoản</th>
-				<td><input name="amount" id="amount" type="text" value="10000" maxlength="11" class="input-business input-amount field-check" autocomplete="off"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="amount" id="amount" type="text" value="10000" maxlength="16" class="input-business input-amount field-check" autocomplete="off"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		  			  
 			 		  
