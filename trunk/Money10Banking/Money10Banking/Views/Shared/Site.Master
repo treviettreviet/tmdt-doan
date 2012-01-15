@@ -72,7 +72,7 @@
             <div id="Header">
                 <div class="top-header">
                     <div class="logo left">
-                        <a href="https://www.baokim.vn/" title="baokim.vn">
+                        <a href="http://ecmoney10bank.tk/" title="baokim.vn">
                             <img src="../../Content/images/logo0000.png" alt="baokim.vn" title="baokim.vn">
                         </a>
                     </div>
@@ -294,7 +294,7 @@
                     </script>
                     <div class="parent">
                         <ul>
-                            <li id="cat0" class="m_home first"><a href="http://localhost:13307" onmouseout="resetMenu()"
+                            <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service">
                                     <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
                                         <span>Dịch vụ</span></a></li><li id="cat2" class="m_payment"><a href="#"
@@ -400,7 +400,7 @@
                     <table style="float: left;" class="table_menu">
                         <tr>
                             <td style="text-align: left; padding-right: 20px">
-                                <a href="#" class="menu_link">Trang chủ</a>
+                                <a href="http://ecmoney10bank.tk/" class="menu_link">Trang chủ</a>
                             </td>
                             <td class="l_menu">
                                 <a href="#" class="menu_link">Giới thiệu</a>
