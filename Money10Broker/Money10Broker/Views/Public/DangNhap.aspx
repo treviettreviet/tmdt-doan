@@ -59,7 +59,7 @@
                             <p>
                                 Bạn chưa có tài khoản ví điện tử NgânLượng.vn?</p>
                             <p>
-                                <a href="/Puoblic/ChonDangKy">
+                                <a href="/Public/ChonDangKy">
                                     <img src="../../Content/images/button-r.gif"/></a></p>
                             <p style="font-weight: normal; margin-top: 10px;">
                                 <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=fast_access">Hãy click
