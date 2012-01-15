@@ -274,7 +274,7 @@
 </table>--%>
 </div>                      </div>
                        <div class="form-content clear">
-                            <form action="Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank" accept-charset="utf-8" method="post">                      
+                            <form action="/Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank" accept-charset="utf-8" method="post">                      
                             <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank"> 
                             <p style="margin-left:80px;"><input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
                        		<p style="margin-left:80px;"><input type="radio" name="id" value="2"  onclick="" id="TransferMoneyDiffBank"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>
