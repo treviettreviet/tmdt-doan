@@ -705,6 +705,8 @@ namespace Money10Banking.Controllers
                            sendcard.SoDu -= fee;
                            bankcard.SoDu += fee;
 
+                           dbNganHangOnline.SaveChanges();
+
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
                            return View("LichSuGiaoDich");
 
