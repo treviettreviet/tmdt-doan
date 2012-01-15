@@ -195,6 +195,7 @@ namespace WebserviceNganHang
             // B8: Trả kết quả trả về
 
             // Danh sách các kết quả giao dịch trả về
+                // 0: Giao dịch thành công
                 // -1: Không lấy được thông tin Thẻ Nhận | hoặc thông tin thẻ nhận không tồn tại trong hệ thống OCBCBank   
                 // -2: Không gọi được hàm GetBankCommercialNameOfCreditCard Webservice của Thầy Minh
                 // -3: Tên ngân hàng liên kết không tồn tại trong hệ thống của OCBCBank    
@@ -270,7 +271,7 @@ namespace WebserviceNganHang
             // B6: Cộng tiền gửi cho thẻ nhận
             // B7: Trừ tiền của thẻ ngân hàng liên kết = Tiền gửi + 10% phí
             // B8: Trả kết quả trả về
-            decimal PhiGiaoDich = Amount * (10/100);
+            decimal PhiGiaoDich = Amount * (10m/100m);
             decimal TotalFee = Amount + PhiGiaoDich;
             if (TheNganHangLienKet.SoDu < TotalFee)
             {
