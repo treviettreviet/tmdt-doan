@@ -32,15 +32,5 @@ namespace Money10Broker.Properties {
                 return ((string)(this["Money10Broker_Transfer_wsTransfer"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1248/wsTransfer.asmx")]
-        public string Money10Broker_Transfer1_wsTransfer {
-            get {
-                return ((string)(this["Money10Broker_Transfer1_wsTransfer"]));
-            }
-        }
     }
 }

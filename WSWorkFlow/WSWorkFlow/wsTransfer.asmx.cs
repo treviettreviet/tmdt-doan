@@ -190,7 +190,7 @@ namespace WSWorkFlow
         public int TransferMoneyDiffBank(string sid, string ccrsend, string ccreceive, float amount, string ccreceivesecurenum)
         {
             System.Net.ServicePointManager.Expect100Continue = false;
-            string bankreceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
+            //string bankreceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             string bankReceiveSID = WSProxy.CallWebService("linkWS_Bank","WS-E2","Authentication",new object[] {"OCBCBan", "X2ugS2E37S"}).ToString();
             
             if(sid == "123456abcdef")

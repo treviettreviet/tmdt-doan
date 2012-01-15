@@ -101,6 +101,8 @@ namespace Money10Broker.Controllers
                 Session["user"] = user;
                 if (CheckAccount(amount, (decimal)user.SoDu) == 1)
                     RedirectToAction("KetQuaGiaoDich", "Không đủ tiền trong tài khoảng");
+                else
+                    return View("ChuyenTien");
             }
             else if (state == 1)
             {
@@ -266,6 +268,43 @@ namespace Money10Broker.Controllers
             {
                 return -1;
             }
+        }
+
+        string wsURL = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+        string wsMethod = "TransferMoneySameBank";
+        string WebService = "WebServiceNganHangMoney10";
+
+        public ActionResult TransferByBroker(string sendcardnum, string receivecardnum, decimal amount)
+        {
+            string brokerCardNum = "340426820759153";
+            string sid = WSProxy.CallWebService(wsURL, WebService, "AuthenticateForTransaction", new object[] {"lengoctin@gmail.com", "12345678" }).ToString();
+
+            //Thu phí 10% số tiền giao dịch
+            decimal fee = amount + amount * (10m / 100m);
+
+            //Chuyển tiền vào tk môi giới
+            int result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
+
+            //Chuyển thành công vào môi giới
+            if (result == 0)
+            {
+                result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, brokerCardNum, receivecardnum, amount });
+
+                //Giao dịch thành công
+                if (result == 0)
+                {
+                    ViewData["messege"] = "<div id='message-box-login' class='message-box'>Chuyển Tiền Thành Công</div>";
+                    return View("LichSuGiaoDich");
+                }
+                else
+                {
+                    //Giao dịch thất bại, trả tiền lại cho người gửi
+                    result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, brokerCardNum, sendcardnum, fee });
+                }
+            }
+
+            ViewData["messege"] = "<div id='message-box-login' class='message-box'>Chuyển Tiền Thất Bại</div>";
+            return View("ChuyenTien");
         }
    }
 }

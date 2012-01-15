@@ -673,8 +673,8 @@ namespace Money10Banking.Controllers
                    System.Net.ServicePointManager.Expect100Continue = false;
                    string UrlWebservice = "http://stardustbankv0.somee.com/Service1.asmx";
                    string ServiceName = "Service1";
-                   string MethodName1 = "Login";
-                   string MethodName2 = "TranferMoneyDiffBank";
+                   string MethodName1 = "LoginForBank";
+                   string MethodName2 = "TranferMoneyDiffBankForBank";
                    string card_no_send = Cardsend;
                    string card_no_receive = CardRec;
                    double deAmount = double.Parse(amount);
@@ -696,6 +696,15 @@ namespace Money10Banking.Controllers
 
                        if (kq == 0)
                        {
+                           The sendcard = (from row in dbNganHangOnline.Thes where row.MaThe.Equals(card_no_send) select row).First<The>();
+                           The bankcard = (from row in dbNganHangOnline.Thes where row.MaThe.Equals("4024007182426910") select row).First<The>();
+
+                           decimal fee = decimal.Parse(amount);
+                           fee += fee * 0.1m;
+
+                           sendcard.SoDu -= fee;
+                           bankcard.SoDu += fee;
+
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
                            return View("LichSuGiaoDich");
 
