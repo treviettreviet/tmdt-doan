@@ -36,11 +36,13 @@
 </div>		
 <div class="box-content">	
 	<div class="box-content-square" style="padding-top:0;">	
-         <%=Html.Encode(ViewData["messege"]) %>
+         
+         <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["messege"]) %></div>
+         
 		<div id="complaints-left">		 
-		<div>
+		<%--<div>
 			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
-		</div>	
+		</div>--%>	
         <div id="title">
         <span class="yel">Chuyển Tiền Trên Ngân Lượng</span>
          </div>

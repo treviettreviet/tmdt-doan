@@ -293,7 +293,8 @@ namespace Money10Broker.Controllers
                 //Giao dịch thành công
                 if (result == 0)
                 {
-                    ViewData["messege"] = "<div id='message-box-login' class='message-box'>Chuyển Tiền Thành Công</div>";
+                    ViewData["div"] = "message-box";
+                    ViewData["messege"] = "Chuyển Tiền Thành Công";
                     return View("LichSuGiaoDich");
                 }
                 else
@@ -302,8 +303,8 @@ namespace Money10Broker.Controllers
                     result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, brokerCardNum, sendcardnum, fee });
                 }
             }
-
-            ViewData["messege"] = "<div id='message-box-login' class='message-box'>Chuyển Tiền Thất Bại</div>";
+            ViewData["div"] = "message-box";
+            ViewData["messege"] = "Chuyển Tiền Thất Bại";
             return View("ChuyenTien");
         }
    }
