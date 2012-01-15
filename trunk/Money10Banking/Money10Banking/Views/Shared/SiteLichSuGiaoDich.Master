@@ -112,7 +112,7 @@
 		
 		
 		<div style="display:inline;float:right;cursor: pointer;position: relative;" onmouseover="showAcccountEx()" onmouseout="hideAcccountEx()">
-		<p style="margin-top: 5px; color: #1b6ea0;">Chúc một ngày tốt lành, <%=Html.Encode(ViewData["Login"]) %>"><span><img src="../../Content/images/support_.png"></span><a href="http://localhost:13307" ><b> [Thoát]</b></a>
+		<p style="margin-top: 5px; color: #1b6ea0;">#<span><img src="../../Content/images/support_.png"></span><a href="http://localhost:13307" ><b> [Thoát]</b></a>
 		</p>
 		<div>
 		    	  <div id="AccountBlog" style="display:none;cursor:default; position: absolute;width:258px;padding-top:0px;z-index:1;color:#578E01">
