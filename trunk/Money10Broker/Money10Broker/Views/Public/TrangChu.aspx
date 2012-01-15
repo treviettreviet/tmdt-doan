@@ -202,9 +202,7 @@
                                         title="Tổng Công ty Cổ phần Bảo hiểm Ngân hàng Đầu tư và Phát triển Việt Nam (BIC)"></a>
                             </td>
                         </tr>
-                        <tr>
-                        </tr>
-                    </table>
+                        </table>
                     <div class="clear">
                     </div>
                 </div>
