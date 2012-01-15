@@ -71,15 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CapNhatThongTinTaiKhoanCaNhanController.cs" />
-    <Compile Include="Controllers\ChuyenTienController.cs" />
-    <Compile Include="Controllers\DangKyController.cs" />
-    <Compile Include="Controllers\DangNhapController.cs" />
-    <Compile Include="Controllers\DoiMatKhauController.cs" />
-    <Compile Include="Controllers\LichSuGiaoDichController.cs" />
-    <Compile Include="Controllers\NapTienController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
-    <Compile Include="Controllers\RutTienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -89,6 +81,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbNganHangOnline.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\WebServiceInvoker.cs" />
+    <Compile Include="Models\WSProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Transfer\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -289,6 +283,7 @@
     <Content Include="Views\Public\ChuyenTienLienNganHang.aspx" />
     <Content Include="Views\Public\DangKy.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
+    <Content Include="Views\Public\DangNhapGiaoDich.aspx" />
     <Content Include="Views\Public\Default.aspx" />
     <Content Include="Views\Public\DoiMatKhau.aspx" />
     <Content Include="Views\Public\LichSuGiaoDich.aspx" />

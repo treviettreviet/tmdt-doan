@@ -16,7 +16,6 @@ namespace Money10Banking.Controllers
 
         // Khai báo đối tượng kết nối cơ sở dữ liệu
         private NganHangEntities dbNganHangOnline = new NganHangEntities();
-        //private string url = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
         private Random r = new Random(); // Để phát sinh số ngẫu nhiên
         public ActionResult DangNhapGiaoDich()
         {
@@ -154,6 +153,13 @@ namespace Money10Banking.Controllers
             return 1;
 
             }
+        /// <summary>
+        /// kiểm tra tài khoản thẻ tương ứng với tài khoản web-thắng
+        /// </summary>
+        /// <param name="receive"></param>
+        /// <param name="SoTaiKhoan"></param>
+        /// <param name="Login"></param>
+        /// <returns></returns>
         public ActionResult XuLyNapTien(string receive, string SoTaiKhoan, string Login)
         {
             try
@@ -368,7 +374,7 @@ namespace Money10Banking.Controllers
 
 
         /// <summary>
-        /// Đăng Ký cá nhân
+        /// Đăng Ký cá nhân-thắng
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
@@ -574,7 +580,7 @@ namespace Money10Banking.Controllers
         /// chứng thực - thắng
         /// </summary>
         string sid = "";
-        public ActionResult XuLyXacNhanDangNhap(string email, string password)
+        public ActionResult XuLyChuyenTien(string email, string password)
         {
             System.Net.ServicePointManager.Expect100Continue = false;
             string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
@@ -604,137 +610,251 @@ namespace Money10Banking.Controllers
         /// <param name="amount"></param>
         /// <returns></returns>
         /// 
-        public void TransferMoneyBank(string Cardsend, string CardRec, string amount ,string id)
+        public ActionResult TransferMoneyBank(string Cardsend, string CardRec, string amount ,string id)
         {
             if (id == "1")
             {
-                TransferMoneySameBank(Cardsend, CardRec, amount);
+               // TransferMoneySameBank(Cardsend, CardRec, amount);
+             
+                    System.Net.ServicePointManager.Expect100Continue = false;
+                    string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+                    string ServiceName = "WebServiceNganHangMoney10";
+                    //string MethodName1 = "AuthenticateForTransaction";
+                    string MethodName2 = "TransferMoneySameBank";
+                    string card_no_send = Cardsend;
+                    string card_no_receive = CardRec;
+                    decimal deAmount = decimal.Parse(amount);
+
+                    object[] arrOb2 = new object[4];
+                    arrOb2[0] = sid;
+                    arrOb2[1] = card_no_send;
+                    arrOb2[2] = card_no_receive;
+                    arrOb2[3] = deAmount;
+                    object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+                    if (obResult2 != null)
+                    {
+                        int kq = (int)obResult2;
+
+                        if (kq == 0)
+                        {
+                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                            return View("LichSuGiaoDich");
+
+                        }
+                        string div = "error-box";
+                        ViewData["div"] = div;
+                        if (kq == -1)
+                        {
+                            string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
+                            ViewData["error"] = error;
+                            return View("ChuyenTien");
+                        }
+                        if (kq == -2)
+                        {
+                            string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
+                            ViewData["error"] = error;
+                            return View("ChuyenTien");
+                        }
+                        if (kq == -3)
+                        {
+                            string error = "Số dư không đủ cho giao dịch";
+                            ViewData["error"] = error;
+                            return View("ChuyenTien");
+                        }
+
+                        // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+                    }
+                  //  return View("ChuyenTien");
+               
             }
            if (id=="2") {
-                TransferMoneyDiffBank(Cardsend, CardRec, amount);
-            }
- 
-        }
-        public ActionResult TransferMoneySameBank(string Cardsend, string CardRec, string amount)
-        {
-            try
-            {
-                System.Net.ServicePointManager.Expect100Continue = false;
-                string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
-                string ServiceName = "WebServiceNganHangMoney10";
-                //string MethodName1 = "AuthenticateForTransaction";
-                string MethodName2 = "TransferMoneySameBank";
-                string card_no_send = Cardsend;
-                string card_no_receive = CardRec;
-                decimal deAmount = decimal.Parse(amount);
+                //TransferMoneyDiffBank(Cardsend, CardRec, amount);
+              
+                   System.Net.ServicePointManager.Expect100Continue = false;
+                   string UrlWebservice = "http://stardustbankv0.somee.com/Service1.asmx";
+                   string ServiceName = "Service1";
+                   string MethodName1 = "Login";
+                   string MethodName2 = "TranferMoneyDiffBank";
+                   string card_no_send = Cardsend;
+                   string card_no_receive = CardRec;
+                   double deAmount = double.Parse(amount);
+                   object[] arr= new object[2];
+                   arr[0]="money10";
+                   arr[1] = "123456";
+                   string sid1 = "";
+                   object obResult1 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName1,arr);
+                   sid1 = (string)obResult1;
+                   object[] arrOb2 = new object[4];
+                   arrOb2[0] = sid1;
+                   arrOb2[1] = card_no_send;
+                   arrOb2[2] = card_no_receive;
+                   arrOb2[3] = deAmount;
+                   object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+                   if (obResult2 != null)
+                   {
+                       int kq = (int)obResult2;
 
-                object[] arrOb2 = new object[4];
-                arrOb2[0] = sid;
-                arrOb2[1] = card_no_send;
-                arrOb2[2] = card_no_receive;
-                arrOb2[3] = deAmount;
-                object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
-                if (obResult2 != null)
-                {
-                    int kq = (int)obResult2;
+                       if (kq == 0)
+                       {
+                           Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                           return View("LichSuGiaoDich");
+
+                       }
+                       string div = "error-box";
+                       ViewData["div"] = div;
+                       if (kq == -1)
+                       {
+                           string error = "sid ko hợp lệ";
+                           ViewData["error"] = error;
+                           return View("ChuyenTien");
+                       }
+                       if (kq == -2)
+                       {
+                           string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
+                           ViewData["error"] = error;
+                           return View("ChuyenTien");
+                       }
+                       if (kq == -3)
+                       {
+                           string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
+                           ViewData["error"] = error;
+                           return View("ChuyenTien");
+                       }
+
+                       // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+                   }
+                 
+             
+            }
+           return View("ChuyenTien");
+        }
+        //public ActionResult TransferMoneySameBank(string Cardsend, string CardRec, string amount)
+        //{
+        //    try
+        //    {
+        //        System.Net.ServicePointManager.Expect100Continue = false;
+        //        string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+        //        string ServiceName = "WebServiceNganHangMoney10";
+        //        //string MethodName1 = "AuthenticateForTransaction";
+        //        string MethodName2 = "TransferMoneySameBank";
+        //        string card_no_send = Cardsend;
+        //        string card_no_receive = CardRec;
+        //        decimal deAmount = decimal.Parse(amount);
+
+        //        object[] arrOb2 = new object[4];
+        //        arrOb2[0] = sid;
+        //        arrOb2[1] = card_no_send;
+        //        arrOb2[2] = card_no_receive;
+        //        arrOb2[3] = deAmount;
+        //        object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+        //        if (obResult2 != null)
+        //        {
+        //            int kq = (int)obResult2;
                    
-                    if (kq == 0)
-                    {
-                        Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                        return View("LichSuGiaoDich");
+        //            if (kq == 0)
+        //            {
+        //                Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+        //                return RedirectToAction("LichSuGiaoDich");
                         
-                    }
-                    string div = "error-box";
-                    ViewData["div"] = div;
-                    if(kq==-1)
-                    {
-                    string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
-                    ViewData["error"] = error;
-                    return View("ChuyenTien");
-                    }
-                    if (kq == -2)
-                    {
-                        string error = "Thẻ nhan không tồn tại trong hệ thống ngân hàng OCBCBank";
-                        ViewData["error"] = error;
-                        return View("ChuyenTien");
-                    }
-                    if (kq == -3)
-                    {
-                        string error = "So dư không đủ cho giao dịch";
-                        ViewData["error"] = error;
-                        return View("ChuyenTien");
-                    }
+        //            }
+        //            string div = "error-box";
+        //            ViewData["div"] = div;
+        //            if(kq==-1)
+        //            {
+        //            string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
+        //            ViewData["error"] = error;
+        //            return View("ChuyenTien");
+        //            }
+        //            if (kq == -2)
+        //            {
+        //                string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
+        //                ViewData["error"] = error;
+        //                return View("ChuyenTien");
+        //            }
+        //            if (kq == -3)
+        //            {
+        //                string error = "Số dư không đủ cho giao dịch";
+        //                ViewData["error"] = error;
+        //                return View("ChuyenTien");
+        //            }
 
-                   // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
-                }
-                return View("ChuyenTien");
-            }
-            catch (Exception)
-            {
+        //           // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+        //        }
+        //        return View("ChuyenTien");
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
-        public ActionResult TransferMoneyDiffBank(string Cardsend, string CardRec, string amount)
-        {
-            try
-            {
-                System.Net.ServicePointManager.Expect100Continue = false;
-                string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
-                string ServiceName = "WebServiceNganHangMoney10";
-                //string MethodName1 = "AuthenticateForTransaction";
-                string MethodName2 = "TransferMoneyDiffBank";
-                string card_no_send = Cardsend;
-                string card_no_receive = CardRec;
-                decimal deAmount = decimal.Parse(amount);
+        //        throw;
+        //    }
+        //}
+        ///// <summary>
+        ///// chuyển tiền khác ngân hàng-thắng
+        ///// </summary>
+        ///// <param name="Cardsend"></param>
+        ///// <param name="CardRec"></param>
+        ///// <param name="amount"></param>
+        ///// <returns></returns>
+        //public ActionResult TransferMoneyDiffBank(string Cardsend, string CardRec, string amount)
+        //{
+        //    try
+        //    {
+        //        System.Net.ServicePointManager.Expect100Continue = false;
+        //        string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+        //        string ServiceName = "WebServiceNganHangMoney10";
+        //        //string MethodName1 = "AuthenticateForTransaction";
+        //        string MethodName2 = "TransferMoneyDiffBank";
+        //        string card_no_send = Cardsend;
+        //        string card_no_receive = CardRec;
+        //        decimal deAmount = decimal.Parse(amount);
 
-                object[] arrOb2 = new object[4];
-                arrOb2[0] = sid;
-                arrOb2[1] = card_no_send;
-                arrOb2[2] = card_no_receive;
-                arrOb2[3] = deAmount;
-                object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
-                if (obResult2 != null)
-                {
-                    int kq = (int)obResult2;
+        //        object[] arrOb2 = new object[4];
+        //        arrOb2[0] = sid;
+        //        arrOb2[1] = card_no_send;
+        //        arrOb2[2] = card_no_receive;
+        //        arrOb2[3] = deAmount;
+        //        object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+        //        if (obResult2 != null)
+        //        {
+        //            int kq = (int)obResult2;
 
-                    if (kq == 0)
-                    {
-                        Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                        return View("LichSuGiaoDich");
+        //            if (kq == 0)
+        //            {
+        //                Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+        //                return View("LichSuGiaoDich");
 
-                    }
-                    string div = "error-box";
-                    ViewData["div"] = div;
-                    if (kq == -1)
-                    {
-                        string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
-                        ViewData["error"] = error;
-                        return View("ChuyenTien");
-                    }
-                    if (kq == -2)
-                    {
-                        string error = "Thẻ nhan không tồn tại trong hệ thống ngân hàng OCBCBank";
-                        ViewData["error"] = error;
-                        return View("ChuyenTien");
-                    }
-                    if (kq == -3)
-                    {
-                        string error = "So dư không đủ cho giao dịch";
-                        ViewData["error"] = error;
-                        return View("ChuyenTien");
-                    }
+        //            }
+        //            string div = "error-box";
+        //            ViewData["div"] = div;
+        //            if (kq == -1)
+        //            {
+        //                string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
+        //                ViewData["error"] = error;
+        //                return View("ChuyenTien");
+        //            }
+        //            if (kq == -2)
+        //            {
+        //                string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
+        //                ViewData["error"] = error;
+        //                return View("ChuyenTien");
+        //            }
+        //            if (kq == -3)
+        //            {
+        //                string error = "Số dư không đủ cho giao dịch";
+        //                ViewData["error"] = error;
+        //                return View("ChuyenTien");
+        //            }
 
-                    // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
-                }
-                return View("ChuyenTien");
-            }
-            catch (Exception)
-            {
+        //            // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+        //        }
+        //        return View("ChuyenTien");
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
         /// <summary>
         /// Lên - Gọi View LichSuGiaoDich
         /// </summary>
