@@ -7,8 +7,10 @@
 	<div id="menu-nav-content-r"></div>
 	<div id="menu-nav-content-c">
 		<div id="menu-nav-content-main">
+
+            <%=Html.Encode(ViewData["messege"]) %>
+
 			<ul>
-			
 				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
 				<li class=" " style="display:block"><a href="#"><span>KHIẾU NẠI</span></a></li>
 				<li class=" " style="display:block"><a href="#"><span>TÀI KHOẢN</span></a></li>
@@ -31,7 +33,7 @@
 	</div>
 </div>
     <div id="title">
-        <span class="yel">Lịch sử giao dịch trên hệ thống NgânLượng.vn</span>
+        <span class="yel">Lịch sử giao dịch trên hệ thống</span>
     </div>
     <div id="balance-activities">
         <div id="balance-activities-content">
