@@ -696,8 +696,8 @@ namespace Money10Banking.Controllers
 
                        if (kq == 0)
                        {
-                           The sendcard = (from row in dbNganHangOnline.Thes where row.MaThe.Equals(card_no_send) select row).First<The>();
-                           The bankcard = (from row in dbNganHangOnline.Thes where row.MaThe.Equals("4024007182426910") select row).First<The>();
+                           The sendcard = dbNganHangOnline.Thes.Single(p=>p.SoThe.Equals(card_no_send));
+                           The bankcard = dbNganHangOnline.Thes.Single(m=>m.SoThe.Equals("4024007182426915"));
 
                            decimal fee = decimal.Parse(amount);
                            fee += fee * 0.1m;
