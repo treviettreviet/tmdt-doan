@@ -7,7 +7,7 @@ using System.Web.Routing;
 
 namespace Money10Banking
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // Note: For instructions on enabling IIS6 or IIS7 classic mode,
     // visit http://go.microsoft.com/?LinkId=9394801
 
     public class MvcApplication : System.Web.HttpApplication
@@ -19,7 +19,7 @@ namespace Money10Banking
             routes.MapRoute(
                 "TrangChu", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Public", action = "TrangChu", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Public", action = "ChuyenTien", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
