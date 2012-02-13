@@ -72,6 +72,7 @@ namespace Money10Banking.Controllers
                 if (user.MatKhau == GetMD5Hash(password))
                 {
                     check = 0;  //Đăng nhập thành công
+                    Session["User"] = user;
                     return check;
                 }
 
@@ -101,7 +102,7 @@ namespace Money10Banking.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    //Session sesKhachHang = 
+                    //Session sesKhachHang =
                     Session["Login"] = email;
 
                     return View("LichSuGiaoDich");
@@ -166,9 +167,12 @@ namespace Money10Banking.Controllers
             {
                 if (Login!=""|| Login!=null)
                 {
-                    string email= Session["Login"].ToString();
-                    TaiKhoan tk = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                    string matk = tk.MaTaiKhoan;
+                    //string email= Session["Login"].ToString();
+                    
+                    TaiKhoan tkdn = (TaiKhoan)Session["User"];
+                    string email = tkdn.Email;
+                    //TaiKhoan tk = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+                    string matk = tkdn.MaTaiKhoan;
                     
                     decimal naptien = decimal.Parse(receive);
                     NganHangEntities db = new NganHangEntities();
@@ -550,7 +554,7 @@ namespace Money10Banking.Controllers
                 MoiGioiMoi.TenCongTy = companyName;
 
                 ////mg.SoGiayPhepKinhDoanh = txtGPKD.Text.ToString();
-                //mg.TenCongTy = txtTenCty.Text.ToString();
+                //mg.TenCongTy = txtTenCty.Text.ToString();         
                 MoiGioiMoi.DienThoaiCongTy = phoneNo_company;
                 dbNganHang.MoiGiois.AddObject(MoiGioiMoi);
 
