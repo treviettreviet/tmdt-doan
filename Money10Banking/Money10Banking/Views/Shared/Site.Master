@@ -317,9 +317,13 @@
                                                             onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
                         </ul>
                     </div>
-                    <div class="sub">
+                    <div class="sub">                    
                         <ul id="subcat0" style="display: none;">
-                            <li>&nbsp;</li></ul>
+
+                           <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="/Public/LichSuGiaoDich">
+                                Lịch sử giao dịch</a><div id="subsub00" class="sub_sub_menu" style="display: none">                                    
+                                </div>
+                            </li>         </ul>
                         <ul id="subcat1" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
                                 Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
