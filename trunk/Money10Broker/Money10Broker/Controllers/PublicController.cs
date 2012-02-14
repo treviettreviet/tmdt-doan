@@ -12,6 +12,8 @@ namespace Money10Broker.Controllers
         //
         // GET: /Public/
 
+        private xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
+
         public ActionResult Index()
         {
             return View();
@@ -20,22 +22,15 @@ namespace Money10Broker.Controllers
         public ActionResult ThanhToanTrucTuyen()
         {
             ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
-
+            return View();
+        }
+        
+        public ActionResult TrangChu()
+        {
             return View();
         }
 
-        //public ActionResult XuLyDangNhapThanhToanTrucTuyen(string email, string password)
-        //{
-        //    // Xử lý code tại đây.
-        //    TaiKhoan acc = Login(email, password, 1000);
-        //    if (acc == null)
-        //        Redirect("http://google.com");
-
-        //    return View();
-        //}
-        
-        
-        public ActionResult TrangChu()
+        public ActionResult DangNhap()
         {
             return View();
         }
@@ -87,14 +82,11 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
-        //MoiGioiEntities dbMoiGioi = new MoiGioiEntities();
-        xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
-        private ActionResult Login(string email, string password, decimal amount)
+        public ActionResult Login(string email, string password, decimal amount)
         {
             int state = UserValidation(email, password);
             TaiKhoan user = null;
-
             if (state == 0)
             {
                 user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
@@ -102,25 +94,23 @@ namespace Money10Broker.Controllers
                 if (CheckAccount(amount, (decimal)user.SoDu) == 1)
                     RedirectToAction("KetQuaGiaoDich", "Không đủ tiền trong tài khoảng");
                 else
-                    return View("ChuyenTien");
+                    return RedirectToAction("ChuyenTien");
             }
             else if (state == 1)
             {
-                RedirectToAction("DangNhapThatBai", "Sai password !");
+                return RedirectToAction("DangNhapThatBai", "Sai password !");
             }
             else
             {
-                RedirectToAction("DangNhapThatBai", "E-mail chưa đăng ký !");
+                return RedirectToAction("DangNhapThatBai", "E-mail chưa đăng ký !");
             }
-
             return View();
         }
 
-        private int CheckAccount(decimal amount, decimal balance)
+        public int CheckAccount(decimal amount, decimal balance)
         {
             if (amount > balance)
                 return -1;
-
             return 0;
         }
 
@@ -135,17 +125,39 @@ namespace Money10Broker.Controllers
             try
             {
                 TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-
                 if (user.Email == email && user.MatKhau == password)
+                {
+                    Session["User"] = user;
                     return 0;//Đăng nhập thành công
+                }
                 else
+                {
                     return 1;//Đăng nhập không thành công, sai password
+                }
             }
             catch
             {
                 return -1; //Email chưa đăng ký
             }
+        }
 
+        /// <summary>
+        /// Thắng - Ma hoa MD5
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string GetMD5Hash(string input)
+        {
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.UTF8.GetBytes(input);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2").ToLower());
+            }
+            string password = s.ToString();
+            return password;
         }
 
 
@@ -157,7 +169,6 @@ namespace Money10Broker.Controllers
         [HttpPost]
         public ActionResult XuLyDangNhap(string email, string password)
         {
-            //
             int user_validation = UserValidation(email, password);
             if (user_validation == 0)
             {
@@ -180,11 +191,7 @@ namespace Money10Broker.Controllers
                 ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                 ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                 return View("DangNhap");
-
-                //return View("DangNhapThatBai");
-                //return RedirectToAction("DangNhapThatBai");
             }
-            //return View();
         }
 
       
@@ -194,10 +201,6 @@ namespace Money10Broker.Controllers
         // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
         public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string sex, string address, string city_id)
         {
-
-            //Transfer1.wsTransfer ws = new Transfer1.wsTransfer();
-            //ws.TransferMoneySameBank();
-
             if (cmdRegister != null)
             {
                 if (KiemTraEmail(email) == 1)
@@ -295,7 +298,7 @@ namespace Money10Broker.Controllers
                 {
                     ViewData["div"] = "message-box";
                     ViewData["messege"] = "Chuyển Tiền Thành Công";
-                    return View("LichSuGiaoDich");
+                    return RedirectToAction("LichSuGiaoDich");
                 }
                 else
                 {
@@ -305,7 +308,7 @@ namespace Money10Broker.Controllers
             }
             ViewData["div"] = "message-box";
             ViewData["messege"] = "Chuyển Tiền Thất Bại";
-            return View("ChuyenTien");
+            return RedirectToAction("ChuyenTien");
         }
    }
 }
