@@ -178,7 +178,7 @@ namespace Money10Banking.Controllers
                     }
                     ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                     ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                    return RedirectToAction("DangNhap");
+                    return View("DangNhap");
                 }
             }
             catch (Exception ex)
