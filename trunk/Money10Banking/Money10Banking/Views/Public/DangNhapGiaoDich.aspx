@@ -17,24 +17,17 @@
                         <form action="XuLyChuyenTien" id="form_login" accept-charset="utf-8" method="post">
 
                         <div class="header">
-                            Xác Nhận
-                            Đăng Nhập</div>
+                            Đăng Nhập Tài Khoản Thẻ</div>
                         <div class="login_label">
-                            Email / Số điện thoại</div>
+                            &nbsp;Số Tài Khoản (Số Thẻ)</div>
                         <div>
                             <input type="text" name="email" value="" /></div>
                         <div class="login_label">
-                            Mật khẩu</div>
+                            Mật khẩu(Số Pin)</div>
                         <div>
                             <input type="password" name="password" value="" /></div>                       
                         <div>
                             <input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
-                        <div class="login_link">
-                            <a href="/Public/DangKy" title="Đăng ký tài khoản Bảo Kim miễn phí">
-                                Đăng ký tài khoản Bảo Kim <b>Miễn phí</b></a> <a href="#"
-                                    title="Quên mật khẩu">Quên mật khẩu?</a> <a href="#"
-                                        title="Quên email">Quên email?</a>
-                        </div>
                         </form>
                     </div>
                     <div class="login_bottom">

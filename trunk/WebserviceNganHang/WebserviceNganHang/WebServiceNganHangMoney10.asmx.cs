@@ -89,6 +89,27 @@ namespace WebserviceNganHang
         }
 
         [WebMethod]
+        public string AuthenticateForCard(string email, string password)
+        {
+            string sID = "";
+            try
+            {
+                bool flag = LogonUser(email, password);
+                if (flag == true)
+                {
+                    string time = DateTime.Now.ToString();
+                    string input = email + time;
+                    sID = GetMD5Hash(input);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return sID; // Trả về chuỗi sID khi đăng nhập thành công
+        }
+
+        [WebMethod]
         public int TransferMoneySameBank(string SID, string CardNoSend, string CardNoReceive, decimal Amount)
         {
             // B1: Lấy thông tin thẻ gửi
