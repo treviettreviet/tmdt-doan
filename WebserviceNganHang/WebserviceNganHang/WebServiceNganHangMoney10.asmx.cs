@@ -58,6 +58,21 @@ namespace WebserviceNganHang
             }
         }
 
+        public bool LogonCard(string cardno, string password)
+        {
+            dbNganHangOnlineDataContext dbNganHangOnline = new dbNganHangOnlineDataContext();
+            The TK = new The();
+            try
+            {
+                //string md5Pass = GetMD5Hash(password);
+                TK = dbNganHangOnline.Thes.Single(m => m.SoThe == cardno && m.SoPin == password);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         
         /// <summary>
         /// Lên - Chứng thực tài khoản trước khi thực hiện các thao tác: Rút tiền, nạp tiền, chuyển khoản
@@ -89,16 +104,16 @@ namespace WebserviceNganHang
         }
 
         [WebMethod]
-        public string AuthenticateForCard(string email, string password)
+        public string AuthenticateForCard(string cardno, string password)
         {
             string sID = "";
             try
             {
-                bool flag = LogonUser(email, password);
+                bool flag = LogonCard(cardno, password);
                 if (flag == true)
                 {
                     string time = DateTime.Now.ToString();
-                    string input = email + time;
+                    string input = cardno + time;
                     sID = GetMD5Hash(input);
                 }
             }

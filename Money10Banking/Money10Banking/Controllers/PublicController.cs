@@ -587,16 +587,17 @@ namespace Money10Banking.Controllers
         /// chứng thực - thắng
         /// </summary>
         string sid = "";
-        public ActionResult XuLyChuyenTien(string email, string password)
+        public ActionResult XuLyChuyenTien(string cardno, string password)
         {
-            
+        
             System.Net.ServicePointManager.Expect100Continue = false;
-            string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+            //string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+            string UrlWebservice = "http://localhost:1834/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
-            string MethodName1 = "AuthenticateForTransaction";
+            string MethodName1 = "AuthenticateForCard";
         
             object[] arrOb1 = new object[2];
-            arrOb1[0] = email;
+            arrOb1[0] = cardno ;
             arrOb1[1] = password;
             object obResult1 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName1, arrOb1);
             sid = obResult1.ToString();
