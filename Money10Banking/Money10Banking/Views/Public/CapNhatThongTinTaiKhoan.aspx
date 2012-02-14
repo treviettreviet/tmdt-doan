@@ -43,11 +43,11 @@
                                         0</div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    Mã TK : 90D7E017B4DBC1
+                                    Mã TK : <%=Session["SoThe"] %>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/mail_ico.png" style="float: left;"><div style="margin-bottom: 0px;
-                                            float: left; padding-left: 10px;">
-                                            quangkhai1289@gmail.com</div>
+                                            float: left; padding-left: 10px;"> <%= Session["Login"] %>
+                                           </div>
                                     </div>
                                     </br>
                                     <div style="margin-top: 5px; width: 100%;">

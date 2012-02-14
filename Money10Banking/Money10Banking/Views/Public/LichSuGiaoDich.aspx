@@ -26,9 +26,7 @@
                                     </div>
                                     <div class="font2">
                                         <%=Session["SoTienThe"] %></div>
-                                    <div>
-                                        <a target="_blank" style="font-size: 12px; margin-left: -5px; color: #FFF; text-decoration: underline;"
-                                            href="#">Bắn tiền ngay vào ĐT di động</a></div>
+                                  
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">

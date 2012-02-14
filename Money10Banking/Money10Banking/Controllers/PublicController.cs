@@ -133,11 +133,14 @@ namespace Money10Banking.Controllers
 
         public ActionResult ChuyenTien()
         {
-            if(sid!=null)
+            if (Session["sid"] != null)
             {
                 return View("ChuyenTien");
             }
-            return View("DangNhapGiaoDich");
+            else
+            {
+                return View("DangNhapGiaoDich");
+            }
         }
 
         public ActionResult RutTien()
@@ -586,6 +589,7 @@ namespace Money10Banking.Controllers
         string sid = "";
         public ActionResult XuLyChuyenTien(string email, string password)
         {
+            
             System.Net.ServicePointManager.Expect100Continue = false;
             string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
@@ -630,7 +634,7 @@ namespace Money10Banking.Controllers
                     decimal deAmount = decimal.Parse(amount);
 
                     object[] arrOb2 = new object[4];
-                    arrOb2[0] = sid;
+                    arrOb2[0] = Session["sid"];
                     arrOb2[1] = card_no_send;
                     arrOb2[2] = card_no_receive;
                     arrOb2[3] = deAmount;

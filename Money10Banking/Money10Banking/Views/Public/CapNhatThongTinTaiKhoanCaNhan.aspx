@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CapNhatThongTinCaNhan
+    CapNhatThongTinTaiKhoan
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -20,10 +20,7 @@
                                         Số dư tài khoản
                                     </div>
                                     <div class="font2">
-                                        0</div>
-                                    <div>
-                                        <a target="_blank" style="font-size: 12px; margin-left: -5px; color: #FFF; text-decoration: underline;"
-                                            href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
+                                        <%=Session["SoTienThe"] %></div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
@@ -38,17 +35,16 @@
                                         0</div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    Mã TK : 90D7E017B4DBC1
+                                    Mã TK : <%=Session["SoThe"] %>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/mail_ico.png" style="float: left;"><div style="margin-bottom: 0px;
-                                            float: left; padding-left: 10px;">
-                                            quangkhai1289@gmail.com</div>
+                                            float: left; padding-left: 10px;"><%= Session["Login"] %></div>
                                     </div>
                                     </br>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/Box-Supp.png" style="float: left;"><div style="margin-bottom: 0px;
                                             float: left; padding-left: 10px;">
-                                            841698726280</div>
+                                           #</div>
                                     </div>
                                 </td>
                             </tr>
@@ -107,15 +103,15 @@
             <div class="payment-title">
                 <div class="pay-method-title">
                     THAY ĐỔI THÔNG TIN TÀI KHOẢN</div>
-                <div class="payment-help">
+               <%-- <div class="payment-help">
                     <div class="icon-help">
                         <img src="../../Content/images/icon-hel.png"></div>
-                    <div class="text-help">
+                   <%-- <div class="text-help">
                         <a href="https://www.baokim.vn/faq/category/quan-ly-tai-khoan" class="help_link_top bold"
                             target="popup" onclick="window.open(&quot;&quot;,&quot;popup&quot;,&quot;height=500,width=810,scrollbars=yes&quot;)">
                             <b>Xem trợ giúp</b></a>
-                    </div>
-                </div>
+                    </div>--%>
+                </div>--%>
             </div>
         </div>
         <!-- new -->
@@ -131,7 +127,7 @@
             <div class="form">
             </div>
             <div class="form-content clear">
-                <form action="https://www.baokim.vn/accounts/profile/edit" name="fprofile" id="fprofile"
+                <form action="CapNhatCaNhan" name="fprofile" id="fprofile"
                 accept-charset="utf-8" method="post">
                 <input type="hidden" name="_form_action" value="accounts/profile/edit">
                 <input type="hidden" name="_form_token" value="73c6840b7bc23d428efe2482fa8d88767738686d">
@@ -186,8 +182,7 @@
                    
                     <tr>
                         <th>
-                            Nhận thông báo từ Bảo Kim
-                        </th>
+                            Nhận thông báo qua email</th>
                         <td>
                             <input type="checkbox" name="receiveReport" value="1" id="receiveReport">
                             <label for="receiveReport" class="clear">
@@ -205,8 +200,8 @@
                         <td colspan="2">
                             <div class="acc_link" style="margin: 10px 10px 0 20px;">
                                 <p style="margin-bottom: 10px;">
-                                    <a href="https://www.baokim.vn/accounts/profile/change_password">Đổi mật khẩu</a>
-                                    Bạn click vào đây để thay đổi mật khẩu đăng nhập vào tài khoản Bảo Kim.</p>
+                                    <a href=#>Đổi mật khẩu</a>
+                                    Bạn click vào đây để thay đổi mật khẩu đăng nhập vào tài khoản Ngân Hàng</p>
 
                             </div>
                         </td>
