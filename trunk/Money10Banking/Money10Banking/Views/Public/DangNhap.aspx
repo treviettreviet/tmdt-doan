@@ -4,7 +4,6 @@
     <div id="Main">
         <%--<div class="error-box">Thông tin đăng nhập không chính xác</div>--%>
         <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
-        
         <!-- Body -->
         <div class="home-form-login">
             <div class="frm-login-left left" style="padding-bottom: 20px;">
@@ -12,7 +11,7 @@
                     <div class="login_header">
                     </div>
                     <div class="login_content">
-                        <form action="XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
+                        <form action="/Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
                         <div class="header">
                             Đăng Nhập</div>
                         <div class="login_label">
