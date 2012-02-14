@@ -432,7 +432,7 @@
                             <li id="cat0" class="m_home first"><a href="http://localhost:13307" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_accounts">
                                     <a href="/Public/CapNhatTaiKhoan" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
-                                        <span>Tài khoản</span></a></li><li id="cat2" class="m_transactions"><a href="/Public/DangNhapGiaoDich"
+                                        <span>Tài khoản</span></a></li><li id="cat2" class="m_transactions"><a href="/Public/ChuyenTien"
                                             onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Chuyển tiền</span></a></li><li
                                                 id="cat3" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(3)">
                                                     <span>Tích hợp thanh toán</span></a></li><li id="cat4" class="m_shopping"><a href="#"
@@ -457,10 +457,10 @@
                                             ký tài khoản</a></li></ul>
                                 </div>
                             </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;02&quot;);"><a href="/Public/DangNhapGiaoDich">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;02&quot;);"><a href="/Public/ChuyenTien">
                                 Chuyển tiền</a><div id="subsub02" class="sub_sub_menu" style="display: none">
                                     <ul>
-                                        <li><a href="/Public/DangNhapGiaoDich">Chuyển tiền an toàn</a></li><li><a href="/Public/DangNhapGiaoDich">
+                                        <li><a href="/Public/ChuyenTien">Chuyển tiền an toàn</a></li><li><a href="/Public/ChuyenTien">
                                             Chuyển tiền cho người chưa đăng ký tài khoản</a></li><li><a href="#">Gửi yêu cầu chuyển
                                                 tiền</a></li></ul>
                                 </div>
@@ -510,7 +510,7 @@
                                 <font color="red">Đăng ký đại lý </font>
                                 <img src="../../Content/images/hot00000.gif" border="0"></a></li></ul>
                         <ul id="subcat2" style="display: none;">
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="/Public/DangNhapGiaoDich">
+                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="/Public/ChuyenTien">
                                 Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
                                     <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li><li onmouseout="resetMenu()"
                                         onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="/Public/LichSuGiaoDich">Lịch
