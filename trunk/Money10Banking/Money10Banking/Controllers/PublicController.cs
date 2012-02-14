@@ -72,7 +72,30 @@ namespace Money10Banking.Controllers
                 if (user.MatKhau == GetMD5Hash(password))
                 {
                     check = 0;  //Đăng nhập thành công
-                    Session["User"] = user;
+                    Session["User"] = user; // Set sesion cho user vừa đăng nhập thành công
+
+                    // Lấy thông tin của Môi Giới hoặc Khách Hàng dựa vào tài khoản vừa đăng nhập thành công.
+                    try
+                    {
+                        The the = (from row in dbNganHangOnline.Thes where row.MaTaiKhoan.Equals(user.MaTaiKhoan) select row).First<The>();
+                        Session["The"] = the;
+                    }
+                    catch
+                    {
+                        //
+                    }
+
+                    //// Lấy thông tin tài khoản
+                    //try
+                    //{
+
+                    //}
+                    //catch
+                    //{
+                        
+                    //    throw;
+                    //}
+
                     return check;
                 }
 
@@ -102,9 +125,6 @@ namespace Money10Banking.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    //Session sesKhachHang =
-                    Session["Login"] = email;
-
                     return View("LichSuGiaoDich");
                 }
                 else
@@ -155,8 +175,7 @@ namespace Money10Banking.Controllers
         public int KiemTraTheTonTai(string Login, string SoTaiKhoan)
         {
             return 1;
-
-            }
+        }
         /// <summary>
         /// kiểm tra tài khoản thẻ tương ứng với tài khoản web-thắng
         /// </summary>
@@ -205,19 +224,15 @@ namespace Money10Banking.Controllers
                             ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                             ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                             return View("NapTien");
-
-
                         }
                     }
                     else
                     {
-                                   error += "Số tài khoản không đúng";
-                                   ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                                   ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                                   return View("NapTien");
+                        error += "Số tài khoản không đúng";
+                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                        return View("NapTien");
                     }
-                   
-                    
                 }
                 else
                 {
@@ -913,6 +928,11 @@ namespace Money10Banking.Controllers
             return maTuDong;
         }
 
-
+        // Lên - Xử lý thoát
+        public ActionResult XuLyThoat()
+        {
+            Session.Remove("User");
+            return View("TrangChu");
+        }
     }
 }
