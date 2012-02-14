@@ -17,9 +17,9 @@ namespace Money10Banking.Controllers
         // Khai báo đối tượng kết nối cơ sở dữ liệu
         private NganHangEntities dbNganHangOnline = new NganHangEntities();
         private Random r = new Random(); // Để phát sinh số ngẫu nhiên
+
         public ActionResult DangNhapGiaoDich()
         {
-
             return View();
         }
         public ActionResult ChuyenTienCungNganHang()
@@ -44,10 +44,41 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+
         public ActionResult NapTien()
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("DangNhap");
+            }
+            else
+            {
+                return RedirectToAction("NapTien");
+            }
+        }
+
+        public ActionResult ChuyenTien()
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("DangNhap");
+            }
+            else
+            {
+                return RedirectToAction("DangNhapGiaoDich");
+            }
+        }
+
+        public ActionResult RutTien()
         {
             return View();
         }
+
+        public ActionResult CapNhatTaiKhoan() //Khi đăng nhập thành công
+        {
+            return View();
+        }
+
         public ActionResult DangNhap()
         {
             return View();
@@ -57,6 +88,12 @@ namespace Money10Banking.Controllers
         {
             return View();
         }
+
+        public ActionResult LichSuGiaoDich()
+        {
+            return View();
+        }
+
         /// <summary>
         /// Lên - Kiểm tra đăng nhập, trả về nhiều kết quả
         /// </summary>
@@ -125,7 +162,7 @@ namespace Money10Banking.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    return View("LichSuGiaoDich");
+                    return RedirectToAction("LichSuGiaoDich");
                 }
                 else
                 {
@@ -141,37 +178,16 @@ namespace Money10Banking.Controllers
                     }
                     ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                     ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                    return View("DangNhap");
+                    return RedirectToAction("DangNhap");
                 }
             }
             catch (Exception ex)
             {
-                
                 throw new Exception(ex.Message);
             }
         }
 
-        public ActionResult ChuyenTien()
-        {
-            if (Session["sid"] != null)
-            {
-                return View("ChuyenTien");
-            }
-            else
-            {
-                return View("DangNhapGiaoDich");
-            }
-        }
-
-        public ActionResult RutTien()
-        {
-            return View();
-        }
         
-        public ActionResult CapNhatTaiKhoan() //Khi đăng nhập thành công
-        {
-            return View();
-        }
         public int KiemTraTheTonTai(string Login, string SoTaiKhoan)
         {
             return 1;
@@ -216,14 +232,14 @@ namespace Money10Banking.Controllers
                             // db.Thes.AddObject(tienthe);
                             db.SaveChanges();
                             Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                            return View("NapTien");
+                            return RedirectToAction("NapTien");
                         }
                         else
                         {
                             error += "Tài khoản Web ko đúng";
                             ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                             ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                            return View("NapTien");
+                            return RedirectToAction("NapTien");
                         }
                     }
                     else
@@ -231,21 +247,18 @@ namespace Money10Banking.Controllers
                         error += "Số tài khoản không đúng";
                         ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                         ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                        return View("NapTien");
+                        return RedirectToAction("NapTien");
                     }
                 }
                 else
                 {
-                    return View("DangNhap");
+                    return RedirectToAction("DangNhap");
                 }
             }
             catch (Exception)
             {
-                
                 throw;
             }
-
-            
         }
 
         public ActionResult CapNhatThongTinTaiKhoan()
@@ -429,7 +442,7 @@ namespace Money10Banking.Controllers
                     string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    return View("DangKy");
+                    return RedirectToAction("DangKy");
                 }
                 tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, 2, "TK");
                 tk.MaLoaiTaiKhoan = "LTK001";
@@ -499,13 +512,12 @@ namespace Money10Banking.Controllers
                 db1.KhachHangs.AddObject(kh);
 
                 db1.SaveChanges();
-
-                return View("DangNhap");
+                return RedirectToAction("DangNhap");
             }
             catch 
             {
                 //throw new Exception("Error on # of clients.", ex);
-                return View("BaoLoi");
+                return RedirectToAction("BaoLoi");
             }
         }
 
@@ -548,7 +560,7 @@ namespace Money10Banking.Controllers
                     string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    return View("DangKy");
+                    return RedirectToAction("DangKy");
                 }
 
                 string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
@@ -590,7 +602,7 @@ namespace Money10Banking.Controllers
                 DiaChiMoi.MaTaiKhoan = MoiGioiMoi.MaTaiKhoan;
                 dbNganHang.DiaChis.AddObject(DiaChiMoi);
                 dbNganHang.SaveChanges();   // Save xuống CSDL
-                return View("DangNhap");
+                return RedirectToAction("DangNhap");
 	        }
 	        catch (Exception ex)
 	        {
@@ -604,10 +616,8 @@ namespace Money10Banking.Controllers
         string sid = "";
         public ActionResult XuLyChuyenTien(string cardno, string password)
         {
-        
             System.Net.ServicePointManager.Expect100Continue = false;
             string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
-            //string UrlWebservice = "http://localhost:1834/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
             string MethodName1 = "AuthenticateForCard";
         
@@ -619,11 +629,10 @@ namespace Money10Banking.Controllers
             if (sid != null)
             {
                 Session["sid"]=sid;
-                return View("ChuyenTien");
-
+                return RedirectToAction("ChuyenTien");
             }
             else
-                return View("DangNhapGiaoDich");
+                return RedirectToAction("DangNhapGiaoDich");
  
         }
         /// <summary>
@@ -662,7 +671,7 @@ namespace Money10Banking.Controllers
                         if (kq == 0)
                         {
                             Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                            return View("LichSuGiaoDich");
+                            return RedirectToAction("LichSuGiaoDich");
 
                         }
                         string div = "error-box";
@@ -671,19 +680,19 @@ namespace Money10Banking.Controllers
                         {
                             string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
                             ViewData["error"] = error;
-                            return View("ChuyenTien");
+                            return RedirectToAction("ChuyenTien");
                         }
                         if (kq == -2)
                         {
                             string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
                             ViewData["error"] = error;
-                            return View("ChuyenTien");
+                            return RedirectToAction("ChuyenTien");
                         }
                         if (kq == -3)
                         {
                             string error = "Số dư không đủ cho giao dịch";
                             ViewData["error"] = error;
-                            return View("ChuyenTien");
+                            return RedirectToAction("ChuyenTien");
                         }
 
                         // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
@@ -732,7 +741,7 @@ namespace Money10Banking.Controllers
                            dbNganHangOnline.SaveChanges();
 
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                           return View("LichSuGiaoDich");
+                           return RedirectToAction("LichSuGiaoDich");
 
                        }
                        string div = "error-box";
@@ -741,19 +750,19 @@ namespace Money10Banking.Controllers
                        {
                            string error = "sid ko hợp lệ";
                            ViewData["error"] = error;
-                           return View("ChuyenTien");
+                           return RedirectToAction("ChuyenTien");
                        }
                        if (kq == -2)
                        {
                            string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
                            ViewData["error"] = error;
-                           return View("ChuyenTien");
+                           return RedirectToAction("ChuyenTien");
                        }
                        if (kq == -3)
                        {
                            string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
                            ViewData["error"] = error;
-                           return View("ChuyenTien");
+                           return RedirectToAction("ChuyenTien");
                        }
 
                        // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
@@ -761,7 +770,7 @@ namespace Money10Banking.Controllers
                  
              
             }
-           return View("ChuyenTien");
+           return RedirectToAction("ChuyenTien");
         }
         //public ActionResult TransferMoneySameBank(string Cardsend, string CardRec, string amount)
         //{
@@ -890,15 +899,6 @@ namespace Money10Banking.Controllers
         //        throw;
         //    }
         //}
-        /// <summary>
-        /// Lên - Gọi View LichSuGiaoDich
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult LichSuGiaoDich()
-        {
-            return View();
-        }
-
 
         /// <summary>
         /// Lên - Tạo mã tăng tự động cho tất cả các bảng
@@ -932,7 +932,7 @@ namespace Money10Banking.Controllers
         public ActionResult XuLyThoat()
         {
             Session.Remove("User");
-            return View("TrangChu");
+            return RedirectToAction("TrangChu");
         }
     }
 }

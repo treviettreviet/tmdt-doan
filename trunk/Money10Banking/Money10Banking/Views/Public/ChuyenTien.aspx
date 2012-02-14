@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
+    Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-  <div id="Main">
-    
-    <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
-    
-      <script type="text/javascript">
+    <div id="Main">
+        <div class="<%=Html.Encode(ViewData["div"]) %>">
+            <%=Html.Encode(ViewData["error"]) %></div>
+        <script type="text/javascript">
 					    		    			    //initiate validator on load
 					    		    			    j(document).ready(function () {
 					    		    			        // validate contact form on keyup and submit
@@ -193,155 +192,186 @@
 					    		    			            }
 					    		    			        });
 					    		    			    });
-      </script>
-<script>
-    /**
-    * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
-    */
-    function check_personal_name() {
-        var y = document.form_register_personal.name.value;
-        //var y=w.value;
-        var r = 0;
-        a = y.replace(/\s/g, ' ');
-        a = a.split(' ');
-        var cnt = 0;
-        for (z = 0; z < a.length; z++) {
-            if (a[z].length > 0)
-                r++;
-            if (a[z].length > 0 && a[z].length < 2)
-                cnt++;
-        }
-        //x.value=r;
-        if (cnt >= 2 && r < 2) {
-            document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        } else if (r < 2) {
-            document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        } else if (cnt >= 2) {
-            document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        }
-    }
+        </script>
+        <script>
+            /**
+            * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
+            */
+            function check_personal_name() {
+                var y = document.form_register_personal.name.value;
+                //var y=w.value;
+                var r = 0;
+                a = y.replace(/\s/g, ' ');
+                a = a.split(' ');
+                var cnt = 0;
+                for (z = 0; z < a.length; z++) {
+                    if (a[z].length > 0)
+                        r++;
+                    if (a[z].length > 0 && a[z].length < 2)
+                        cnt++;
+                }
+                //x.value=r;
+                if (cnt >= 2 && r < 2) {
+                    document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                } else if (r < 2) {
+                    document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                } else if (cnt >= 2) {
+                    document.getElementById("error_name_personal").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                }
+            }
 
-    /**
-    * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
-    */
-    function check_company_name() {
-        var y = document.form_register_company.name.value;
-        //var y=w.value;
-        var r = 0;
-        a = y.replace(/\s/g, ' ');
-        a = a.split(' ');
-        var cnt = 0;
-        for (z = 0; z < a.length; z++) {
-            if (a[z].length > 0)
-                r++;
-            if (a[z].length > 0 && a[z].length < 2)
-                cnt++;
-        }
-        //x.value=r;
-        if (cnt >= 2 && r < 2) {
-            document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        } else if (r < 2) {
-            document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        } else if (cnt >= 2) {
-            document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
-            return false;
-        }
-    }
-</script>
-<div id="dhtmltooltip"></div>
-<script type="text/javascript" src="../../Scripts/js/small000.js"></script>
-<style>
-#register_wrap .main_reg .instruction{font-size:0.95em;width:250px}
-    </style>
-
-<div class="form-container" style="padding-bottom:20px;">
-    <div class="text_header">
-        <div class="left">
-            <h2 class="title">Chuyển khoản </h2>
+            /**
+            * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
+            */
+            function check_company_name() {
+                var y = document.form_register_company.name.value;
+                //var y=w.value;
+                var r = 0;
+                a = y.replace(/\s/g, ' ');
+                a = a.split(' ');
+                var cnt = 0;
+                for (z = 0; z < a.length; z++) {
+                    if (a[z].length > 0)
+                        r++;
+                    if (a[z].length > 0 && a[z].length < 2)
+                        cnt++;
+                }
+                //x.value=r;
+                if (cnt >= 2 && r < 2) {
+                    document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                } else if (r < 2) {
+                    document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                } else if (cnt >= 2) {
+                    document.getElementById("error_name_company").innerHTML = "Bạn vui lòng viết họ tên thật !";
+                    return false;
+                }
+            }
+        </script>
+        <div id="dhtmltooltip">
         </div>
-        <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif">
-    </div>
-    <div class="clear"></div>
-                       <div class="form">                        
-<div class="form-content">
-<%--<table class="form_tab_padding_top" cellspacing="10px">
+        <script type="text/javascript" src="../../Scripts/js/small000.js"></script>
+        <style>
+            #register_wrap .main_reg .instruction
+            {
+                font-size: 0.95em;
+                width: 250px;
+            }
+        </style>
+        <div class="form-container" style="padding-bottom: 20px;">
+            <div class="text_header">
+                <div class="left">
+                    <h2 class="title">
+                        Chuyển khoản
+                    </h2>
+                </div>
+                <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif">
+            </div>
+            <div class="clear">
+            </div>
+            <div class="form">
+                <div class="form-content">
+                    <%--<table class="form_tab_padding_top" cellspacing="10px">
 	
 </table>--%>
-</div>                      </div>
-                       <div class="form-content clear">
-                            <form action="/Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank" accept-charset="utf-8" method="post">                      
-                            <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank"> 
-                            <p style="margin-left:80px;"><input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
-                       		<p style="margin-left:80px;"><input type="radio" name="id" value="2"  onclick="" id="TransferMoneyDiffBank"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>
-                             <tr>
-			                    <th>Số thẻ người gửi<span style="color: red;">*</span>:</th>
-			                    <td><input type="text" name="Cardsend" value size="42"></td>
-		                    </tr>
-		                     <tr>
-			                    <th>Số thẻ người nhận<span style="color: red;">*</span>:</th>
-			                    <td><input type="text" name="CardRec" value size="42"></td>
-		                    </tr>
-		                    <tr>
-			                    <th>Số tiền chuyển<span style="color: red;">*</span>:</th>
-			                    <td>
-				                    <script type="text/javascript">
-				                        j(document).ready(function () {
-				                            j("#amount").bind("keyup", function () {
-				                                initFormatNumber_amount();
-				                            });
-				                            initFormatNumber_amount();
-				                        });
-				                        function initFormatNumber_amount() {
-				                            j("#detail_amount").text(j("#amount").val());
+                </div>
+            </div>
+            <div class="form-content clear">
+                <form action="/Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank"
+                accept-charset="utf-8" method="post">
+                <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank">
+                    <p style="margin-left: 80px;">
+                        <input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank"><label
+                            for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span
+                                class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
+                    <p style="margin-left: 80px;">
+                        <input type="radio" name="id" value="2" onclick="" id="TransferMoneyDiffBank"><label
+                            for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span
+                                class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>
+                    <tr>
+                        <th>
+                            Số thẻ người gửi<span style="color: red;">*</span>:
+                        </th>
+                        <td>
+                            <input type="text" name="Cardsend" value size="42">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Số thẻ người nhận<span style="color: red;">*</span>:
+                        </th>
+                        <td>
+                            <input type="text" name="CardRec" value size="42">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Số tiền chuyển<span style="color: red;">*</span>:
+                        </th>
+                        <td>
+                            <script type="text/javascript">
+                                j(document).ready(function () {
+                                    j("#amount").bind("keyup", function () {
+                                        initFormatNumber_amount();
+                                    });
+                                    initFormatNumber_amount();
+                                });
+                                function initFormatNumber_amount() {
+                                    j("#detail_amount").text(j("#amount").val());
 
-				                            if (j("#amount").val() != "") {
-				                                j("#detail_amount").format();
-				                            }
-				                        } function numbersonly(myfield, e, dec) {
-				                            var key;
-				                            var keychar;
+                                    if (j("#amount").val() != "") {
+                                        j("#detail_amount").format();
+                                    }
+                                } function numbersonly(myfield, e, dec) {
+                                    var key;
+                                    var keychar;
 
-				                            if (window.event)
-				                                key = window.event.keyCode;
-				                            else if (e)
-				                                key = e.which;
-				                            else
-				                                return true;
-				                            keychar = String.fromCharCode(key);
+                                    if (window.event)
+                                        key = window.event.keyCode;
+                                    else if (e)
+                                        key = e.which;
+                                    else
+                                        return true;
+                                    keychar = String.fromCharCode(key);
 
-				                            // control keys
-				                            if ((key == null) || (key == 0) || (key == 8) ||
+                                    // control keys
+                                    if ((key == null) || (key == 0) || (key == 8) ||
 								                        (key == 9) || (key == 13) || (key == 27))
-				                                return true;
+                                        return true;
 
-				                            // numbers
-				                            else if ((("0123456789").indexOf(keychar) > -1))
-				                                return true;
+                                    // numbers
+                                    else if ((("0123456789").indexOf(keychar) > -1))
+                                        return true;
 
-				                            // decimal point jump
-				                            else if (dec && (keychar == ".")) {
-				                                myfield.form.elements[dec].focus();
-				                                return false;
-				                            }
-				                            else
-				                                return false;
-				                        }</script><input style="text-align:right; width: 125px;"  size="10" autocomplete="off" onkeypress="return numbersonly(this, event)"  id="amount" 
-                                        type="text" value name="amount"><b>₫</b><div style="font-weight:bold; padding-right:3px;" id="detail_amount"></div>			</td>
-		                    </tr>               
-		                    <tr>		
-			                    <td></td>
-		                        <td><input type="submit" name="btn_next" value="Chuyển tiền" class="button"></td>  
-                          </table> 
-                            </form>
-                                                  
-                        </div>                        
-                    </div>                    
-    <div>        
-    </div>                    
- </div>
+                                    // decimal point jump
+                                    else if (dec && (keychar == ".")) {
+                                        myfield.form.elements[dec].focus();
+                                        return false;
+                                    }
+                                    else
+                                        return false;
+                                }</script>
+                            <input style="text-align: right; width: 125px;" size="10" autocomplete="off" onkeypress="return numbersonly(this, event)"
+                                id="amount" type="text" value name="amount"><b>₫</b><div style="font-weight: bold;
+                                    padding-right: 3px;" id="detail_amount">
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" name="btn_next" value="Chuyển tiền" class="button">
+                        </td>
+                </table>
+                </form>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
 </asp:Content>
