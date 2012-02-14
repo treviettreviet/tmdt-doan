@@ -606,8 +606,8 @@ namespace Money10Banking.Controllers
         {
         
             System.Net.ServicePointManager.Expect100Continue = false;
-            //string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
-            string UrlWebservice = "http://localhost:1834/WebServiceNganHangMoney10.asmx";
+            string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+            //string UrlWebservice = "http://localhost:1834/WebServiceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
             string MethodName1 = "AuthenticateForCard";
         
