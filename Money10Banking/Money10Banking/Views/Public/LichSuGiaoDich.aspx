@@ -1,13 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
-
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     LichSuGiaoDich
 </asp:Content>
@@ -20,39 +12,45 @@
                     <div class="tran-tab-bg">
                         <table width="100%" cellspacing="0">
                             <tr>
-                                <td width="25%" class="tran-first">
-                                    <div class="font1">
-                                        Số dư tài khoản
-                                    </div>
-                                    <div class="font2">
-                                        <%=Session["SoTienThe"] %></div>
-                                  
-                                </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    <div class="font1">
-                                        Số dư đóng băng</div>
-                                    <div class="font2">
-                                        0</div>
-                                </td>
-                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    <div class="font1">
-                                        Số tiền thưởng</div>
-                                    <div class="font2">
-                                        0</div>
-                                </td>
-                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    Mã TK : <%=Session["SoThe"] %>
+                                    Mã TK : 
+                                    <% Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.SoTaiKhoan%>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/mail_ico.png" style="float: left;" ><div style="margin-bottom: 0px;
                                             float: left; padding-left: 10px;">
-                                           <%= Session["Login"] %></div>
+                                           <%=tk.Email%></div>
                                     </div>
                                     </br>
-                                    <div style="margin-top: 5px; width: 100%;">
+                                    <%--<div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/Box-Supp.png" style="float: left;"><div style="margin-bottom: 0px;
                                             float: left; padding-left: 10px;" >
                                            </div>
+                                    </div>--%>
+                                </td>
+                                
+                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
+                                    <div class="font1">
+                                        Thông tin thẻ Master Card</div>
+                                    <div>
+                                        <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; %>
+                                        <ul>
+                                        <li>Số Thẻ: <%=the.SoThe %><br /></li>
+                                        <li>Số dư: <%=the.SoDu%> đ</li>
+                                        </ul>
+                                        </div>
+                                </td>
+                                <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
+                                    <div class="font1">
+                                        Thông tin thẻ Visa Card</div>
+                                    <div class="font2">
+                                        0</div>
+                                </td>
+                                <td width="25%" class="tran-first">
+                                    <div class="font1">
+                                        Thông tin khác
                                     </div>
+                                    <div class="font2">
+                                        <%=Session["SoTienThe"] %></div>
                                 </td>
                             </tr>
                         </table>

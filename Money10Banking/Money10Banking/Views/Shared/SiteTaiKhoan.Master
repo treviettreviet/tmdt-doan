@@ -163,7 +163,7 @@
                                     onmouseover="showAcccountEx()" onmouseout="hideAcccountEx()">
                                     <p style="margin-top: 5px; color: #1b6ea0;">
                                         Chúc một ngày tốt lành,
-                                        <%= Session["Login"] %><span><img src="../../Content/images/support_.png"></span><a
+                                        <%Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.Email %><span><img src="../../Content/images/support_.png"></span><a
                                             href="http://localhost:13307"><b> [Thoát]</b></a>
                                     </p>
                                     <div>

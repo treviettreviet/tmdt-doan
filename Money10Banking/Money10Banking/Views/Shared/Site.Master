@@ -81,9 +81,26 @@
                             <script type="text/javascript" src="../../Scripts/js/keyboard.js"></script>
                             <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
                             <div style="margin-bottom: 15px;">
-                                <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
+                            <% 
+                                if (Session["User"] == null)
+                                {
+                            %>
+                                    <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
                                     title="Đăng ký">Đăng ký</a><span>|</span> <a href="#"
-                                        title="Liên hệ">Liên hệ</a>
+                                        title="Liên hệ">Liên hệ</a>    
+                            <%        
+                                }
+                                else
+                                {
+                            %>
+                                    Chúc một ngày tốt lành,
+                                        <%Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.Email %><span><img src="../../Content/images/support_.png"></span><a
+                                            href="/Public/XuLyThoat"><b> [Thoát]</b></a>
+                            <%        
+                                }
+                            %>
+
+                                
                             </div>
                             <div style="display: inline; cursor: pointer; position: relative;" onmouseover="showSupportEx()"
                                 onmouseout="hideSupportEx()">

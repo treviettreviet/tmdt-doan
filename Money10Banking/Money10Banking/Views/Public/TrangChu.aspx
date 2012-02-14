@@ -9,59 +9,96 @@
                         <div class="form_login">
                             <form action="Public/XuLyDangNhap" method="post" id="login_small"
                             autocomplete="off" accept-charset="utf-8">
-                            <%--<input type="hidden" name="_form_action" value="accounts/login">
-                            <input type="hidden" name="_form_token" value="12e3b3a73d4d99b6fc645b18ec243b974b28a301">--%>
-                            <table width="170" border="0" cellpadding="0" cellspacing="0">
 
-                                <tr>
-                                    <td height="34">
-                                        <div class="home-form-login-title">
-                                            ĐĂNG NHẬP HỆ THỐNG</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="15" class="form-content-text">
-                                        Địa chỉ Email / Số điện thoại
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="30">
-                                        <label>
-                                            <input type="text" name="email" value id="email" class="keyboardInput" style="width: 128px;">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="14" class="form-content-text">
-                                        Mật khẩu
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="30">
-                                        <label>
-                                            <input type="password" name="password" value id="password" class="keyboardInput"
-                                                style="width: 128px;">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="27">
-                                        <label>
-                                            <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="form-content-text">
-                                        <a href="#" class="home-fr-a">Quên
-                                            mật khẩu</a>&nbsp;&nbsp; <a href="#"
-                                                class="home-fr-a">Quên email ? </a>
-                                        <div style="padding-top: 5px">
-                                            Chưa có tài khoản? <a href="/Public/DangKy" class="home-fr-a">
-                                                Đăng ký</a></div>
-                                    </td>
-                                </tr>
-                            </table>
+                            <% 
+                                if (Session["User"] == null)
+                                {
+                            %>
+                                    <table width="170" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td height="34">
+                                                <div class="home-form-login-title">
+                                                    ĐĂNG NHẬP HỆ THỐNG</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="15" class="form-content-text">
+                                                Địa chỉ Email / Số điện thoại
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="30">
+                                                <label>
+                                                    <input type="text" name="email" value="huynhtanlen@gmail.com" id="email" class="keyboardInput" style="width: 128px;">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="14" class="form-content-text">
+                                                Mật khẩu
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="30">
+                                                <label>
+                                                    <input type="password" name="password" value="12345678" id="password" class="keyboardInput"
+                                                        style="width: 128px;">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="27">
+                                                <label>
+                                                    <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="form-content-text">
+                                                <a href="#" class="home-fr-a">Quên
+                                                    mật khẩu</a>&nbsp;&nbsp; <a href="#"
+                                                        class="home-fr-a">Quên email ? </a>
+                                                <div style="padding-top: 5px">
+                                                    Chưa có tài khoản? <a href="/Public/DangKy" class="home-fr-a">
+                                                        Đăng ký</a></div>
+                                            </td>
+                                        </tr>
+                                    </table>    
+                            <%        
+                                }
+                                else
+                                {
+                                    Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"];
+                            %>
+                                    <table width="170px" border="0" cellpadding="0" cellspacing="0">
+	                                    <tbody>
+		                                    <tr>
+			                                    <td height="45">
+			                                    <div class="home-form-login-title">Thông tin tài khoản</div>
+			                                    </td>
+		                                    </tr>
+		                                    <tr>
+			                                    <td height="25" class="form-content-text">
+			                                    <b>Email :</b> <%=tk.Email %></td>
+		                                    </tr>
+		                                    <tr>
+			                                    <td height="25" class="form-content-text"><b>Loại tài khoản:</b> Cá nhân</td>
+		                                    </tr>
+		                                    <tr>
+			                                    <td height="25" class="form-content-text"><b>Tình trạng:</b>[ <a href="https://www.baokim.vn/accounts/register/activate">Chưa xác thực</a>]</td>
+		                                    </tr>
+		                                    <tr>
+			                                    <td height="25" class="form-content-text"><b>Lần đăng nhập gần nhất: </b>
+			                                    <b><%=tk.Email %></b> vào lúc
+			                                    11:36  ngày 
+			                                    14-2-2012</td>
+		                                    </tr>
+	                                    </tbody>
+                                    </table>
+                            <%        
+                                }
+                            %>
+
                             </form>
                             <script type="text/javascript">
                         <script type="text/javascript">
