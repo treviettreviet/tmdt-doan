@@ -36,7 +36,7 @@
                             <input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
                         <div class="login_link">
                             <a href="/Public/DangKy" title="Đăng ký tài khoản Bảo Kim miễn phí">
-                                Đăng ký tài khoản Bảo Kim <b>Miễn phí</b></a> <a href="#"
+                                Đăng ký tài khoản Ecmoney10 <b>Miễn phí</b></a> <a href="#"
                                     title="Quên mật khẩu">Quên mật khẩu?</a> <a href="#"
                                         title="Quên email">Quên email?</a>
                         </div>
