@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\public" deleteExistingFiles="False" ftpAnonymousLogin="True" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/WebserviceNganHang.dll" publishTime="02/14/2012 10:16:39" />
-    <file relUrl="bin/WebserviceNganHang.pdb" publishTime="02/14/2012 10:16:39" />
-    <file relUrl="Web.config" publishTime="02/14/2012 10:26:27" />
-    <file relUrl="TranferMoneyDiffBank.aspx" publishTime="02/06/2012 09:40:18" />
-    <file relUrl="TranferMoneySameBank.aspx" publishTime="02/06/2012 09:40:18" />
-    <file relUrl="WebServiceNganHangMoney10.asmx" publishTime="02/06/2012 09:40:18" />
+  <publishProfile publishUrl="C:\WebserviceNganHang" deleteExistingFiles="False" ftpAnonymousLogin="True" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/WebserviceNganHang.dll" publishTime="02/14/2012 14:02:46" />
+    <file relUrl="bin/WebserviceNganHang.pdb" publishTime="02/14/2012 14:02:46" />
+    <file relUrl="Web.config" publishTime="02/14/2012 14:02:48" />
+    <file relUrl="TranferMoneyDiffBank.aspx" publishTime="02/11/2012 22:16:02" />
+    <file relUrl="TranferMoneySameBank.aspx" publishTime="02/11/2012 22:16:02" />
+    <file relUrl="WebServiceNganHangMoney10.asmx" publishTime="02/11/2012 22:16:02" />
   </publishProfile>
 </publishData>
