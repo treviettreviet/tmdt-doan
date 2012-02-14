@@ -62,7 +62,7 @@
 //-->
 </script>
     <meta name="keywords" content="Thanh toán trực tuyến, Mua hàng an toàn, Tích hợp bán hàng, Mua sắm trực tuyến, Chuyển tiền trực tuyến, Thanh toán, Nạp tiền, Tích hợp thanh toán, Nhận tiền siêu tốc, Gửi yêu cầu chuyển tiền" />
-    <meta name="description" content="Bảo Kim - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam" />
+    <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam" />
     <script src="../../Scripts/js/jquery0C.js" type="text/javascript"></script>
     <script type="text/javascript">
         var j = jQuery.noConflict();
@@ -446,8 +446,8 @@
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="#">
                                 Tìm hiểu</a><div id="subsub00" class="sub_sub_menu" style="display: none">
                                     <ul>
-                                        <li><a href="#">Tại sao dùng Bảo Kim</a></li><li><a href="#">Bảo Kim hoạt động như thế
-                                            nào</a></li><li><a href="#">Thanh toán với Bảo Kim tại đâu</a></li></ul>
+                                        <li><a href="#">Tại sao dùng Ecmoney10bank.tk</a></li><li><a href="#">Ecmoney10bank.tk hoạt động như thế
+                                            nào</a></li><li><a href="#">Thanh toán với Ecmoney10bank.tk tại đâu</a></li></ul>
                                 </div>
                             </li>
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;01&quot;);"><a href="#">
@@ -524,7 +524,7 @@
                                             <a href="#">Tích hợp toàn bộ Website</a></li></ul>
                         <ul id="subcat4" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;40&quot;);"><a href="#">
-                                Sản phẩm thanh toán qua Bảo Kim</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;41&quot;);">
+                                Sản phẩm thanh toán qua Ecmoney10bank.tk</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;41&quot;);">
                                     <a href="#"><font color="red">Chuyên trang khuyến mại</font><img src="../../Content/images/hot00000.gif"
                                         border="0"></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;42&quot;);">
                                             <a href="#">Đăng ký giảm giá</a></li></ul>
@@ -532,8 +532,8 @@
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;50&quot;);"><a href="#">
                                 Tìm hiểu</a><div id="subsub50" class="sub_sub_menu" style="display: none">
                                     <ul>
-                                        <li><a href="#">Tại sao dùng Bảo Kim</a></li><li><a href="#">Bảo Kim hoạt động như thế
-                                            nào</a></li><li><a href="#">Thanh toán với Bảo Kim tại đâu</a></li></ul>
+                                        <li><a href="#">Tại sao dùng Ecmoney10bank.tk</a></li><li><a href="#">Ecmoney10bank.tk hoạt động như thế
+                                            nào</a></li><li><a href="#">Thanh toán với Ecmoney10bank.tk tại đâu</a></li></ul>
                                 </div>
                             </li>
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;51&quot;);"><a href="#">
@@ -605,9 +605,9 @@
                 </div>
                 <div class="footer_bottom_left">
                     <div style="font-size: 11px; font-weight: bold; padding-top: 5px;">
-                        CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ BẢO KIM</div>
+                        CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ Ecmoney10bank.tk</div>
                     <br>
-                    <b>Bảo Kim</b> - <span class="thin">Dịch vụ thanh toán trực tuyến thúc đẩy thương mại
+                    <b>Ecmoney10bank.tk</b> - <span class="thin">Dịch vụ thanh toán trực tuyến thúc đẩy thương mại
                         điện tử Việt Nam</span>
                     <p>
                         <p>
