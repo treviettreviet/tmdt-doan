@@ -38,19 +38,6 @@
                     </div>
                 </a>
                 <div class="frm_login_right_bottom">
-                    <b style="padding-top: 5px;">Khi là thành viên của Bảo Kim, bạn được hưởng các tiện
-                        ích:</b>
-                    <div class="baokim_tienich">
-                        <ul>
-                            <li>Mua hàng được tích lũy <a href="#"
-                                class="c006699">tiền thưởng</a></li>
-                            <li><a href=#" class="c006699">
-                                Kiếm tiền</a> tại nhà với Bảo Kim</li>
-                            <li><a href="#"
-                                class="c006699">Nạp thẻ điện thoại</a> tại nhà được chiết khấu ...<a href="#"
-                                    class="c006699"> xem thêm &gt;&gt;</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="clear">

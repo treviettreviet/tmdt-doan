@@ -23,7 +23,7 @@
                                         </tr>
                                         <tr>
                                             <td height="15" class="form-content-text">
-                                                Địa chỉ Email / Số điện thoại
+                                                Địa chỉ Email 
                                             </td>
                                         </tr>
                                         <tr>
@@ -90,8 +90,7 @@
 		                                    <tr>
 			                                    <td height="25" class="form-content-text"><b>Lần đăng nhập gần nhất: </b>
 			                                    <b><%=tk.Email %></b> vào lúc
-			                                    11:36  ngày 
-			                                    14-2-2012</td>
+			                                     <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%></td>
 		                                    </tr>
 	                                    </tbody>
                                     </table>
