@@ -35,7 +35,7 @@
                                         <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; %>
                                         <ul>
                                         <li>Số Thẻ: <%=the.SoThe %><br /></li>
-                                        <li>Số dư: <%=the.SoDu%> đ</li>
+                                        <li>Số dư: <%=the.SoDu %> đ</li>
                                         </ul>
                                         </div>
                                 </td>
@@ -58,11 +58,9 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="title">Nạp tiền trực tiếp
-            từ Bảo Kim vào các thuê bao di động trả trước</a>
         <div class="account-content">
             <div class="word-line">
-                Lần cập nhật cuối : 31-12-2011 00:52:13</div>
+                Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div>
             <div class="dot">
             </div>
             <div style="width: 630px; float: left">
@@ -74,7 +72,7 @@
                             </div>
                             <div class="right-title">
                                 <a href="https://www.baokim.vn/transactions/pre_reg_log" class="white-color">Xem các
-                                    giao dịch trước khi đăng ký tài khoản Bảo Kim</a> | <a href="https://www.baokim.vn/transactions/log"
+                                    giao dịch </a>&nbsp;| <a href="https://www.baokim.vn/transactions/log"
                                         class="white-color">Xem toàn bộ giao dịch</a>
                             </div>
                         </div>
@@ -123,7 +121,7 @@
                                     Thời gian
                                 </th>
                                 <th width="30%" class="left-boder">
-                                    IP
+                                    IP 
                                 </th>
                                 <th width="40%" class="left-boder">
                                     Email/Điện thoại
@@ -133,44 +131,36 @@
                         <tbody>
                             <tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
                                 <td class="color-date">
-                                    2012-01-08 17:53:53
-                                </td>
+                                    &nbsp;</td>
                                 <td>
-                                    118.68.51.85
-                                </td>
+                                    &nbsp;</td>
                                 <td class="color-email">
                                     Dang nhap lenhuynh3003@gmail.com
                                 </td>
                             </tr>
                             <tr class="row_odd" onmouseover="this.className='row_over'" onmouseout="this.className='row_odd'">
                                 <td class="color-date">
-                                    2012-01-08 17:52:45
-                                </td>
+                                    &nbsp;</td>
                                 <td>
-                                    118.68.51.85
-                                </td>
+                                    &nbsp;</td>
                                 <td class="color-email">
                                     Dang nhap lenhuynh3003@gmail.com
                                 </td>
                             </tr>
                             <tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
                                 <td class="color-date">
-                                    2012-01-08 15:41:38
-                                </td>
+                                    &nbsp;</td>
                                 <td>
-                                    118.68.51.85
-                                </td>
+                                    &nbsp;</td>
                                 <td class="color-email">
                                     Dang nhap lenhuynh3003@gmail.com
                                 </td>
                             </tr>
                             <tr class="row_odd" onmouseover="this.className='row_over'" onmouseout="this.className='row_odd'">
                                 <td class="color-date">
-                                    2011-12-31 00:42:24
-                                </td>
+                                    &nbsp;</td>
                                 <td>
-                                    113.22.190.145
-                                </td>
+                                    &nbsp;</td>
                                 <td class="color-email">
                                     Dang nhap lenhuynh3003@gmail.com
                                 </td>

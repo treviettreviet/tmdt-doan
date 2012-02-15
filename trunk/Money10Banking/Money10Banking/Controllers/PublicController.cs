@@ -510,7 +510,6 @@ namespace Money10Banking.Controllers
                 kh.CMNDHoChieu = int.Parse(CMND);
                 kh.TinhTrang = 0;
                 db1.KhachHangs.AddObject(kh);
-
                 db1.SaveChanges();
                 return RedirectToAction("DangNhap");
             }
@@ -629,7 +628,8 @@ namespace Money10Banking.Controllers
             if (sid != null)
             {
                 Session["sid"]=sid;
-                return RedirectToAction("ChuyenTien");
+                //return RedirectToAction("ChuyenTien");
+                return View("ChuyenTien");
             }
             else
                 return RedirectToAction("DangNhapGiaoDich");
@@ -645,6 +645,7 @@ namespace Money10Banking.Controllers
         /// 
         public ActionResult TransferMoneyBank(string Cardsend, string CardRec, string amount ,string id)
         {
+            
             if (id == "1")
             {
                // TransferMoneySameBank(Cardsend, CardRec, amount);
@@ -671,7 +672,36 @@ namespace Money10Banking.Controllers
                         if (kq == 0)
                         {
                             Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                            return RedirectToAction("LichSuGiaoDich");
+                            //Session["Amount"] = deAmount;
+                            // lay lai user
+                            // set lai session
+                            try
+                            {
+                                  NganHangEntities dbNH= new NganHangEntities();
+                                The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
+                                Session["The"] = th;
+                                string MaGDMax = dbNH.LichSuGiaoDiches.Max(p=> p.MaLichSuGiaoDich);
+                                LichSuGiaoDich LSGD = new LichSuGiaoDich();
+                                LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, 2, "GD");
+                                LSGD.MaThe = th.MaThe ;
+                                //LSGD.MaThe = "123456";
+                                LSGD.MaLoaiGiaoDich="LGD003";
+                               // LSGD.SoTheNhan = card_no_receive;
+                                //LSGD.SoTheNhan = "123456";
+                                LSGD.NgayGiaoDich = DateTime.Now;
+                                LSGD.SoTienGiaoDich = deAmount;
+                                LSGD.TinhTrang = 0;
+                                dbNH.LichSuGiaoDiches.AddObject(LSGD);
+                                dbNH.SaveChanges();
+                                return RedirectToAction("LichSuGiaoDich");
+                                
+                            }
+                            catch (Exception ex)
+                            {
+                                
+                                throw new Exception(ex.Message);
+                            }
+                           
 
                         }
                         string div = "error-box";
@@ -770,6 +800,7 @@ namespace Money10Banking.Controllers
                  
              
             }
+           
            return RedirectToAction("ChuyenTien");
         }
         //public ActionResult TransferMoneySameBank(string Cardsend, string CardRec, string amount)

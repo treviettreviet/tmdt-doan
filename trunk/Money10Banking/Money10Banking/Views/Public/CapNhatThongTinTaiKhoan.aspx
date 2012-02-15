@@ -146,7 +146,7 @@
                             Tên chủ tài khoản
                         </th>
                         <td>
-                            <span class="acc_name">Phan Quang Khải</span>
+                            <span class="acc_name"> </span>
                         </td>
                     </tr>
                     <tr>
@@ -199,7 +199,7 @@
                    
                     <tr>
                         <th>
-                            Nhận thông báo từ Bảo Kim
+                            Nhận thông báo qua email
                         </th>
                         <td>
                             <input type="checkbox" name="receiveReport" value="1" id="receiveReport">
@@ -214,21 +214,11 @@
                             <input type="submit" name="submit" value="Cập nhật" class="button">
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="acc_link" style="margin: 10px 10px 0 20px;">
-                                <p style="margin-bottom: 10px;">
-                                    <a href="https://www.baokim.vn/accounts/profile/change_password">Đổi mật khẩu</a>
-                                    Bạn click vào đây để thay đổi mật khẩu đăng nhập vào tài khoản Bảo Kim.</p>
-
-                            </div>
-                        </td>
-                    </tr>
+                  
                 </table>
                 </form>
             </div>
-            <div class="form-bottom">
-            </div>
+            
             <div class="clear">
             </div>
         </div>

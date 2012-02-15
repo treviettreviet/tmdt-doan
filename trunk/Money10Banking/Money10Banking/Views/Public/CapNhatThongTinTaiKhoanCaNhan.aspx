@@ -127,17 +127,15 @@
             <div class="form">
             </div>
             <div class="form-content clear">
-                <form action="CapNhatCaNhan" name="fprofile" id="fprofile"
+                <form action="XLCapNhatTaiKhoan" name="fprofile" id="fprofile"
                 accept-charset="utf-8" method="post">
-                <input type="hidden" name="_form_action" value="accounts/profile/edit">
-                <input type="hidden" name="_form_token" value="73c6840b7bc23d428efe2482fa8d88767738686d">
                 <table class="form-content-table" cellspacing="10px">
                     <tr>
                         <th>
                             Tên chủ tài khoản
                         </th>
                         <td>
-                            <span class="acc_name">Phan Quang Khải</span>
+                            <span class="acc_name"></span>
                         </td>
                     </tr>
                     <tr>
