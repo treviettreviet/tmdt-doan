@@ -399,7 +399,7 @@
     <Content Include="Views\Public\ChonDangKy.aspx" />
     <Content Include="Views\Public\DangKyCaNhan.aspx" />
     <Content Include="Views\Public\DangKyDoanhNghiep.aspx" />
-    <Content Include="Views\Public\DangNhapThanhCong.aspx" />
+    <Content Include="Views\Public\TongHop.aspx" />
     <Content Include="Views\Public\DangNhapThatBai.aspx" />
     <Content Include="Views\Public\Default.aspx" />
     <Content Include="Views\Public\TrangChu.aspx" />

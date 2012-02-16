@@ -218,55 +218,98 @@
             </script>
         </div>
         <div id="content-left">
-            <!-- start đăng nhập -->
-            <div class="box" id="login">
-                <h4 class="title">
-                    Đăng nhập tài khoản ví điện tử</h4>
-                <form method="post" action="/Public/XuLyDangNhap" onsubmit="return checkLogin();"
-                style="margin: 0px; padding: 0px;">
-                <input type="hidden" name="form_module_id" value="1647" />
-                <input type="hidden" name="_token_form" value="1debc3f0be12fcf3b463750bb6b42ff8" />
-                <input type="hidden" name="form_module_id" value="1646" />
-                <div id="input-login">
-                    <!-- thông báo lỗi-->
-                   <%-- <div class="message-box">
-                    </div>--%>
-                    <!--hết thông báo lỗi-->
-                    <table border="0" cellspacing="0" width="100%">
-                        <tr>
-                            <td style="padding-bottom: 10px;">
-                                Tài khoản:
-                            </td>
-                            <td align="right">
-                                <input name="email" type="text" value="Email hoặc tên đăng nhập" id="email" style="color: #777;
-                                    width: 150px; margin: 0px; padding: 0px; height: 18px; font-size: 12px; border: 1px solid #a5b4bc;"
-                                    onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};" onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Mật khẩu:
-                            </td>
-                            <td align="right">
-                                <input class="keyboardInput" name="password" type="password" id="password" autocomplete="off"
-                                    value="money10" style="color: #777; width: 130px; margin: 0px; padding: 0px; height: 18px;
-                                    font-size: 12px; border: 1px solid #a5b4bc;" />
-                        </tr>
-                    </table>
+
+        <%
+            if (Session["User"] == null)
+            {
+        %>
+                <!-- start đăng nhập -->
+                <div class="box" id="login">
+                    <h4 class="title">
+                        Đăng nhập tài khoản ví điện tử</h4>
+                    <form method="post" action="/Public/XuLyDangNhap" onsubmit="return checkLogin();"
+                    style="margin: 0px; padding: 0px;">
+                    <input type="hidden" name="form_module_id" value="1647" />
+                    <input type="hidden" name="_token_form" value="1debc3f0be12fcf3b463750bb6b42ff8" />
+                    <input type="hidden" name="form_module_id" value="1646" />
+                    <div id="input-login">
+                        <!-- thông báo lỗi-->
+                        <%-- <div class="message-box"></div> --%>
+                        <!--hết thông báo lỗi-->
+                        <table border="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td style="padding-bottom: 10px;">
+                                    Tài khoản:
+                                </td>
+                                <td align="right">
+                                    <input name="email" type="text" value="Email hoặc tên đăng nhập" id="email" style="color: #777;
+                                        width: 150px; margin: 0px; padding: 0px; height: 18px; font-size: 12px; border: 1px solid #a5b4bc;"
+                                        onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};" onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Mật khẩu:
+                                </td>
+                                <td align="right">
+                                    <input class="keyboardInput" name="password" type="password" id="password" autocomplete="off"
+                                        value="12345678" style="color: #777; width: 130px; margin: 0px; padding: 0px; height: 18px;
+                                        font-size: 12px; border: 1px solid #a5b4bc;" />
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="box-button-login" style="margin-top: 6px;">
+                        <input name="cmdLogin" type="submit" value="Đăng nhập" class="button-content" />
+                        <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=forgot_login_password">
+                            Quên mật khẩu?</a>
+                    </div>
+                    </form>
+                    <div id="dangky">
+                        Bạn chưa có ví điện tử NgânLượng.vn?</br>
+                        <a href="/Public/ChonDangKy">
+                            <img src="../../Content/images/button-s.gif" border="0" /></a>
+                    </div>
                 </div>
-                <div id="box-button-login" style="margin-top: 6px;">
-                    <input name="cmdLogin" type="submit" value="Đăng nhập" class="button-content" />
-                    <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=forgot_login_password">
-                        Quên mật khẩu?</a>
+                <!-- end đăng nhập -->
+        <%                    
+            }
+            else
+            {
+                Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
+        %>
+                <div class="nlh-boxmdule nlh-btm">
+                    <div class="nlh-topbx2"></div>
+                    <div class="nlh-accLinks">
+                        <div class="clearfix"><h2><i class="accIcon"></i><%=tk.Email %></h2></div>
+                        <div class="nlh-topbrd clearfix">
+                            <p class="fl labelAcc">TỔNG TIỀN:</p>
+                            <p class="totalbalance fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        </div>
+                        <div class="nlh-topbrd clearfix">
+                            <p class="fl labelAcc">SỐ DƯ KHẢ DỤNG:</p>
+                            <p class="balanceavailable fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        </div>
+                        <div class="nlh-topbrd clearfix">
+                            <p class="fl labelAcc">ÐÓNG BĂNG:</p>
+                            <p class="freeze fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        </div>
+                    </div>
+                    <div class="nlh-mdbx nlh-formUsrlg">
+                        <ul>
+                            <li><a href="/Public/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
+                            <li><a href="/Public/TongHop">Quản trị giao dịch</a></li>
+                            <li><a href="#">Thực hiện giao dịch</a></li>
+                            <li><a href="#">Trung tâm khiếu nại</a></li>
+                            <li><a href="#">Tích hợp thanh toán</a></li>
+                        </ul>
+                        <div class="clearfix nlh-accRecharge">
+                            <a href="?portal=nganluong&amp;page=deposit" class="fl rechargeNL"></a>
+                            <p align="right" class="nlh-logout fr"><a href="/Public/XuLyDangXuat">Ðăng xuất</a></p>
+                        </div>
+                    </div>
                 </div>
-                </form>
-                <div id="dangky">
-                    Bạn chưa có ví điện tử NgânLượng.vn?</br>
-                    <a href="/Public/ChonDangKy">
-                        <img src="../../Content/images/button-s.gif" border="0" /></a>
-                </div>
-            </div>
-            <!-- end đăng nhập -->
+        <% }%>
+
             <script language="javascript">
                 function checkLogin() {
                     if ($('#email').val() == 'Email hoặc tên đăng nhập') {

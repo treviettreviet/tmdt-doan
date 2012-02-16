@@ -35,7 +35,13 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult DangNhapThanhCong()
+        public ActionResult XuLyDangXuat()
+        {
+            Session.Remove("User");
+            return RedirectToAction("TrangChu");
+        }
+
+        public ActionResult TongHop()
         {
             return View();
         }
@@ -125,7 +131,7 @@ namespace Money10Broker.Controllers
             try
             {
                 TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (user.Email == email && user.MatKhau == password)
+                if (user.Email == email && user.MatKhau == GetMD5Hash(password))
                 {
                     Session["User"] = user;
                     return 0;//Đăng nhập thành công
@@ -142,26 +148,6 @@ namespace Money10Broker.Controllers
         }
 
         /// <summary>
-        /// Thắng - Ma hoa MD5
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static string GetMD5Hash(string input)
-        {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] bs = System.Text.Encoding.UTF8.GetBytes(input);
-            bs = x.ComputeHash(bs);
-            System.Text.StringBuilder s = new System.Text.StringBuilder();
-            foreach (byte b in bs)
-            {
-                s.Append(b.ToString("x2").ToLower());
-            }
-            string password = s.ToString();
-            return password;
-        }
-
-
-        /// <summary>
         /// Kiểm tra đăng nhập tài khoản, tại trang chủ
         /// </summary>
         /// 
@@ -173,7 +159,7 @@ namespace Money10Broker.Controllers
             if (user_validation == 0)
             {
                 //return View("DangNhapThanhCong");
-                return RedirectToAction("DangNhapThanhCong");
+                return RedirectToAction("TongHop");
             }
             else
             {
@@ -203,47 +189,41 @@ namespace Money10Broker.Controllers
         {
             if (cmdRegister != null)
             {
-                if (KiemTraEmail(email) == 1)
+                if (KiemTraEmail(email) == 0)
                 {
-                    TaiKhoan newUser = new TaiKhoan();
-                    CaNhan newInfo = new CaNhan();
-
-                    //Phát sinh mã cho  tài khoản
-                    var maTk = from mtk in dbMoiGioi.TaiKhoans select mtk;
-                    int j = maTk.Count() + 1;
-                    if (j <= 9)
+                    try
                     {
-                        newUser.MaTaiKhoan = "TK00" + j.ToString();
+                        TaiKhoan newUser = new TaiKhoan();
+                        CaNhan newInfo = new CaNhan();
+                        string MaTaiKhoanMax = dbMoiGioi.CaNhans.Max(m => m.MaTaiKhoan);
+                        string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");
+                        newUser.MaTaiKhoan = MaTaiKhoanNext;
+                        newUser.SoTaiKhoan = TaoSoTaiKhoan();   // Tạo số tài khoản tự động gồm 6 số không trùng nhau.
+                        newUser.MaLoaiTaiKhoan = "LTK001";
+                        newUser.SoDu = 0;
+                        newUser.Email = email;
+                        newUser.MatKhau = GetMD5Hash(password);
+                        newUser.MatKhauGiaoDich = password_payment;
+                        newUser.TinhTrang = 0;
+                        dbMoiGioi.TaiKhoans.AddObject(newUser);
+                        dbMoiGioi.SaveChanges();
+                        return RedirectToAction("TrangChu");
+
+                        //newInfo.CMNDHoChieu = Request["social_id"];
+                        //newInfo.NgaySinh = DateTime.Parse(Request["date"]);
+                        //newInfo.HoTen = Request["fullname"];
+                        //newInfo.GioiTinh = Request["sex"];
+                        //Request["addresss"];
+                        //Request["city_id"];
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (j > 9 && j <= 99)
-                        {
-                            newUser.MaTaiKhoan = "TK0" + j.ToString();
-                        }
-                        else if (j > 99 && j <= 999)
-                        {
-                            newUser.MaTaiKhoan = "TK" + j.ToString();
-                        }
+                        throw new Exception(ex.Message);
                     }
-
-                    newUser.Email = email;
-                    newUser.MatKhau =  password;
-                    newUser.MatKhauGiaoDich = password_payment;
-                    newUser.MaLoaiTaiKhoan = "LTK002";
-                    newUser.TinhTrang = 0;
-                    newUser.SoTaiKhoan = "67890";
-
-                    dbMoiGioi.TaiKhoans.AddObject(newUser);
-                    dbMoiGioi.SaveChanges();
-
-
-                    //newInfo.CMNDHoChieu = Request["social_id"];
-                    //newInfo.NgaySinh = DateTime.Parse(Request["date"]);
-                    //newInfo.HoTen = Request["fullname"];
-                    //newInfo.GioiTinh = Request["sex"];
-                    //Request["addresss"];
-                    //Request["city_id"];
+                }
+                else
+                {
+                    return RedirectToAction("ChonDangKy");
                 }
             }
 
@@ -256,20 +236,11 @@ namespace Money10Broker.Controllers
             try
             {
                 TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (!user.Email.Equals(email))
-                {
-                    // Email không tồn tại
-                    return 1;
-                }
-                else
-                {
-                    // email ton tai
-                    return 0;
-                }
+                return 1;   // Email không tồn tại
             }
             catch
             {
-                return -1;
+                return 0;   // Email không tồn tại
             }
         }
 
@@ -310,5 +281,110 @@ namespace Money10Broker.Controllers
             ViewData["messege"] = "Chuyển Tiền Thất Bại";
             return RedirectToAction("ChuyenTien");
         }
+
+
+        /// <summary>
+        /// Lên - Tạo mã tăng tự động cho tất cả các bảng
+        /// Trước khi gọi hàm này, ta cần gọi hàm lấy mã cuối cùng của bảng bất kỳ cần thêm mới mã.
+        /// Ví dụ: ta gọi hàm TaoMaTangTuDong("TK008", 2, "TK")
+        /// Trong đó TK008: là kết quả trả về của hàm lấy mã cuối cùng trong bảng TaiKhoan
+        /// Số 2: là vị trí of 2 prefix đầu trong mã TK008
+        /// TK: là prefix cần thêm vào, trường hợp khác nếu ta thêm vào bảng Thẻ thì prefix là TH, bảng giao dịch là GD,....
+        /// </summary>
+        /// <param name="maHienTai"></param>
+        /// <param name="vitri"></param>
+        /// <param name="prefix"></param>
+        /// <returns></returns>
+        public string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        {
+            string maTuDong = prefix;
+            try
+            {
+                int intMa = 0;
+                intMa = int.Parse(maHienTai.Substring(vitri));
+                maTuDong = maTuDong + (intMa + 1).ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
+            }
+            return maTuDong;
+        }
+
+        /// <summary>
+        /// // Dang ky-THang
+        /// </summary>
+        /// <returns></returns>
+        private int createKeyCode()
+        {
+            //int seed = int.Parse(txt.Text);
+            Random r = new Random();
+            return r.Next(0, 1000000) + Convert.ToInt32(DateTime.Now.Day.ToString()) + Convert.ToInt32(DateTime.Now.Month.ToString()) + Convert.ToInt32(DateTime.Now.Year.ToString()) + Convert.ToInt32(DateTime.Now.Minute.ToString()) + Convert.ToInt32(DateTime.Now.Second.ToString()) + Convert.ToInt32(DateTime.Now.Millisecond.ToString());
+        }
+
+        /// <summary>
+        /// Thắng - Tao so tai khoan ngau nhien
+        /// </summary>
+        /// <returns></returns>
+        public string TaoSoTaiKhoan()
+        {
+            int stk = createKeyCode();
+            string tk = "";
+            if (stk.ToString().Count() == 6)
+            {
+                tk = stk.ToString();
+            }
+            if (stk.ToString().Count() == 5)
+            {
+                tk = "0" + stk.ToString();
+            }
+            else
+                if (stk.ToString().Count() == 4)
+                {
+                    tk = "00" + stk.ToString();
+                }
+                else
+                    if (stk.ToString().Count() == 3)
+                    {
+                        tk = "000" + stk.ToString();
+                    }
+                    else
+                        if (stk.ToString().Count() == 2)
+                        {
+                            tk = "0000" + stk.ToString();
+                        }
+                        else
+                            if (stk.ToString().Count() == 1 && stk != 0)
+                            {
+                                tk = "000000" + stk.ToString();
+                            }
+                            else
+                                if (stk == 0)
+                                {
+                                    createKeyCode();
+                                }
+            return tk;
+        }
+
+        /// <summary>
+        /// Thắng - Ma hoa MD5
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string GetMD5Hash(string input)
+        {
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.UTF8.GetBytes(input);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2").ToLower());
+            }
+            string password = s.ToString();
+            return password;
+        }
+
+
    }
 }
