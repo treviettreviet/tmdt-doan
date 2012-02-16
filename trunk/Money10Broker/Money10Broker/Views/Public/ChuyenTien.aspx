@@ -44,7 +44,7 @@
 			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
 		</div>--%>	
         <div id="title">
-        <span class="yel">Chuyển Tiền Trên Ngân Lượng</span>
+        <span class="yel">Chuyển Tiền Trên Ecmoney10broker</span>
          </div>
 		  <form method="post" action="/Public/TransferByBroker" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">	
