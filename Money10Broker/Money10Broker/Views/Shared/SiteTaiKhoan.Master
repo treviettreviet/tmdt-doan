@@ -7,32 +7,6 @@
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
     <meta name="revisit-after" content="1 days">
-<<<<<<< .mine
-<meta name="verify-v1" content="5aMXCOH9gNNFj+gs9RUKoOCWGV9t35FxOxCaokfoiWs=">
-<meta name="keywords" content="Ví điện tử, Cổng thanh toán trực tuyến, Giao dịch an toàn, Bảo vệ người mua, bảo hiểm giao dịch, Thanh toán Tạm giữ, Thanh toán Ngay,  Thanh toán Nhanh chóng - Tiện lợi, Tích hợp thanh toán, Thanh toán, Nạp tiền, Rút tiền, Chuyển tiền, Yêu cầu thanh toán, Mua sắm trực tuyến">	
-<meta name="description" content="Ecmoney10Broker là Ví điện tử và Cổng Thanh toán Trực tuyến (TTTT) chuyên dùng cho Thương mại Điện tử (TMĐT) tiên phong và hàng đầu tại Việt Nam, cả về sản phẩm dịch vụ, độ phủ thị trường và lưu lượng thanh toán">
-
-<script type="text/javascript" src="../../Scripts/js/jquery_m.js"></script>
-<script type="text/javascript" src="../../Scripts/js/heart_me.js"></script>
-<script type="text/javascript" src="../../Scripts/js/set_inpu.js"></script>
-<script type="text/javascript" src="../../Scripts/js/datepick.js"></script>
-<script type="text/javascript" src="../../Scripts/js/date0000.js"></script>
-<script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
-<script type="text/javascript" src="../../Scripts/js/transfer.js"></script>
-<script type="text/javascript" src="../../Scripts/js/deposit0.js"></script>
-<script type="text/javascript" src="../../Scripts/js/datepick.js"></script>
-<script type="text/javascript" src="../../Scripts/js/withdraw.js"></script>
-<script type="text/javascript" src="../../Scripts/js/validation.js"></script>
-<script type="text/javascript" src="../../Scripts/js/ga.js"></script>
-
-<link rel="stylesheet" href="../../Content/css/styles00.css" type="text/css">
-<link rel="stylesheet" href="../../Content/css/include0.css" type="text/css">
-<link rel="stylesheet" href="../../Content/css/taskbar0.css" type="text/css">
-<link rel="stylesheet" href="../../Content/css/hotnews0.css" type="text/css">
-<link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css">
-<link rel="stylesheet" href="../../Content/css/deposit-.css" type="text/css"> 
-<link rel="stylesheet" href="../../Content/css/nganluong_form_check.css" type="text/css">
-=======
     <meta name="verify-v1" content="5aMXCOH9gNNFj+gs9RUKoOCWGV9t35FxOxCaokfoiWs=">
     <meta name="keywords" content="Ví điện tử, Cổng thanh toán trực tuyến, Giao dịch an toàn, Bảo vệ người mua, bảo hiểm giao dịch, Thanh toán Tạm giữ, Thanh toán Ngay,  Thanh toán Nhanh chóng - Tiện lợi, Tích hợp thanh toán, Thanh toán, Nạp tiền, Rút tiền, Chuyển tiền, Yêu cầu thanh toán, Mua sắm trực tuyến">
     <meta name="description" content="NgânLượng.vn là Ví điện tử và Cổng Thanh toán Trực tuyến (TTTT) chuyên dùng cho Thương mại Điện tử (TMĐT) tiên phong và hàng đầu tại Việt Nam, cả về sản phẩm dịch vụ, độ phủ thị trường và lưu lượng thanh toán">
@@ -55,64 +29,14 @@
     <link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css">
     <link rel="stylesheet" href="../../Content/css/deposit-.css" type="text/css">
     <link rel="stylesheet" href="../../Content/css/nganluong_form_check.css" type="text/css">
->>>>>>> .r213
 </head>
 <body>
-<<<<<<< .mine
-<div id="taskbar">
-	<div class="taskbar">
-    	<div class="taskbar-sort">
-        	<ul>
-            
-				<li><a href="http://ecmoney10broker.tk" class="active" target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker</span></a></li>
-				<li><a href="#" class target><span class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
-				<li><a href="#" class="" target=""><span>Nội dung số</span></a></li>
-				<li><a href="#" class="" target=""><span>Mua sắm</span></a></li>
-				<li><a href="#" class="" target=""><span>Tin tức</span></a></li>
-				<li><a href="#" class="" target=""><span>Trợ giúp &amp; Tích hợp</span></a></li>    
-            </ul>
-        </div>
-        <div class="taskbar-support">
-        	<a href class="bt-support"></a>
-            <div class="support-content" style="display:none;">
-				<h3>Hỗ trợ trực tuyến</h3>
-				<p><span style="color:#006699"><strong>Thời gian làm việc: </strong></span></p>
-				<p>- <b>Thứ 2 đến thứ 6</b>: từ 08h30 đến 12h, 13h đến 17h30</p>
-				<p>- <b>Thứ 7</b>:  từ 08h30 - 12h</p>
-				<p>- <b>Ngoài giờ hành chính</b>: gọi tới số hotline <span style="color:#ff5a00;font-weight:bold;">0984-863-761</span> hoặc email tới support@nganluong.vn</p>				
-				<h4><span>Hỗ trợ chung</span></h4>
-				<ul>
-					<li>
-						<label>» Hà Nội:</label>
-						<span class="sp-phone"><img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (máy lẻ 111)</span>
-						<span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger"><img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger">Hỗ trợ dịch vụ 1</a></span>
-						<span class="sp-skype end"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype"><img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype">Hỗ trợ dịch vụ 1</a></span>
-					</li>
-					<li>
-						<label>» TP.HCM:</label>
-						<span class="sp-phone"><img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (máy lẻ 101)</span>
-						<span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger"><img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger">Hỗ trợ dịch vụ 2</a></span>
-						<span class="sp-skype end"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype"><img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype">Hỗ trợ dịch vụ 2</a></span>
-					</li>
-				</ul>
-				<h4><span>Hỗ trợ tích hợp</span></h4>
-				<ul>
-					<li>
-						<label>Hỗ trợ:</label>
-						<span class="sp-phone"><img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (ext 102)</span>
-						<span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger"><img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Yahoo! Messenger">Hỗ trợ tích hợp 1</a></span>
-						<span class="sp-skype end"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype"><img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype">Hỗ trợ tích hợp 1</a></span>
-					</li>					
-				</ul>
-				<p>- <strong>Hỏi đáp</strong>: <a href="#" target="_blank" rel="nofollow">Trao đổi trên diễn đàn vizum.vn</a></p>
-				<p>- Đường dây nóng lãnh đạo tiếp nhận ý kiến khách hàng: <span style="color:#ff5a00;font-weight:bold;">093.665.1441</span></p>
-=======
     <div id="taskbar">
         <div class="taskbar">
             <div class="taskbar-sort">
                 <ul>
-                    <li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=home" class="active"
-                        target><span class="icon-tasbar-nl"></span><span>NgânLượng.vn</span></a></li>
+                    <li><a href="/Public/TrangChu" class="active"
+                        target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker.tk</span></a></li>
                     <li><a href="https://www.nganluong.vn/?portal=paypal&amp;page=home" class target><span
                         class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
                     <li><a href="http://dg.nganluong.vn/" class="" target=""><span>Nội dung số</span></a></li>
@@ -121,7 +45,6 @@
                     <li><a href="http://help.nganluong.vn/" class="" target=""><span>Trợ giúp &amp; Tích
                         hợp</span></a></li>
                 </ul>
->>>>>>> .r213
             </div>
             <div class="taskbar-support">
                 <a href class="bt-support"></a>
@@ -278,51 +201,6 @@
                 })
             });
 
-<<<<<<< .mine
-    function hideBox() {
-        $('.news-hot-sub').slideUp();
-    }
-</script>
-<div id="body-top">
-	<div id="logo"><h1 style="padding:0;height:65px;margin:0;"><a href="http://ecmoney10broker.tk">Ecmoney10Broker - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1></div>
-		
-	<div id="account-top">
-		<div id="use-login">
-			<span id="link-use-login">&nbsp;&nbsp;[ <a href="#">Xem tài khoản</a> ]&nbsp;&nbsp;[ <a href="#">Đăng xuất</a> ]</span>			
-			<span id="name-use-login">Phan Quang Khải</span>
-			<span id="icon-man-login" style="margin-right:5px;"><a href="#"><img src="../../Content/images/icon-man.gif" border="0"></a></span>
-		</div>
-		<div id="acc-type-payment">
-			<a href="#" class="icon-question">
-				<img src="../../Content/images/icon-que.gif">
-				<div id="acc-type-payment-tooltip">
-					<div class="acc-type-payment-tooltip">
-						<span><img src="../../Content/images/acc-stat.gif"></span>
-						<div class="acc-type-payment-tooltip-ct">
-							<p>Cài đặt này chỉ dùng cho các tài khoản tích hợp thanh toán Ecmoney10Broker vào website bán hàng. Nó tác động đến hầu hết các mặt của giao dịch: cách tích hợp, giới hạn giao dịch, phí và hình thức giao dịch (ngay hay tạm giữ), OTP, xử lý quy trình xử lý khiếu nại.</p>
-							<p><strong>Ghi chú:</strong> nếu bạn chỉ dùng Ecmoney10Broker để mua hàng thì không cần quan tâm đến cài đặt này.</p>
-						</div>
-					</div>
-				</div>
-			</a>
-			<span>Hình thức bán hàng:</span>
-			<span class="acc-type-payment">Hàng hóa vật chất</span>
-			[ <a href="#">Thay đổi</a> ]
-		</div>
-	</div>
-	
-	
-	<div class="news-hot" id="news_hot">  	
-		   <ul class="news-view" id="news_view">
-                
-	<li class="active"><a href="#" class="active">Ecmoney10Broker TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
-            </ul>
-            <div class="news-hot-box">
-                <span class="btn-news-hot"><a href="javascript:;" id="hot-new"></a></span>
-                <ul class="news-hot-sub" id="news_view_list">
-					
-	<li class="active"><a href="#" class="active">Ecmoney10Broker TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
-=======
             function hideBox() {
                 $('.news-hot-sub').slideUp();
             }
@@ -330,7 +208,7 @@
         <div id="body-top">
             <div id="logo">
                 <h1 style="padding: 0; height: 65px; margin: 0;">
-                    <a href="https://www.nganluong.vn/">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực
+                    <a href="/Public/TrangChu">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực
                         tuyến - Bảo vệ người mua</a></h1>
             </div>
             <%
@@ -349,38 +227,12 @@
                             <%=tk.Email %></span> <span id="icon-man-login" style="margin-right: 5px;"><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=transaction_history#">
                                 <img src="../../Content/images/icon-man.gif" border="0"></a></span>
                 </div>
-                <div id="acc-type-payment">
-                    <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=transaction_history#"
-                        class="icon-question">
-                        <img src="../../Content/images/icon-que.gif">
-                        <div id="acc-type-payment-tooltip">
-                            <div class="acc-type-payment-tooltip">
-                                <span>
-                                    <img src="../../Content/images/acc-stat.gif"></span>
-                                <div class="acc-type-payment-tooltip-ct">
-                                    <p>
-                                        Cài đặt này chỉ dùng cho các tài khoản tích hợp thanh toán NgânLượng.vn vào website
-                                        bán hàng. Nó tác động đến hầu hết các mặt của giao dịch: cách tích hợp, giới hạn
-                                        giao dịch, phí và hình thức giao dịch (ngay hay tạm giữ), OTP, xử lý quy trình xử
-                                        lý khiếu nại.</p>
-                                    <p>
-                                        <strong>Ghi chú:</strong> nếu bạn chỉ dùng NgânLượng.vn để mua hàng thì không cần
-                                        quan tâm đến cài đặt này.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <%--<span>Hình thức bán hàng:</span>
-			        <span class="acc-type-payment">Hàng hóa vật chất</span>
-			        [ <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=user_setup">Thay đổi</a> ]--%>
-                </div>
             </div>
             <% }%>
             <div class="news-hot" id="news_hot">
                 <ul class="news-view" id="news_view">
                     <li class="active"><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html"
-                        class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
->>>>>>> .r213
+                        class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a></li>
                 </ul>
                 <div class="news-hot-box">
                     <span class="btn-news-hot"><a href="javascript:;" id="hot-new"></a></span>
@@ -390,70 +242,6 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< .mine
-        </div>	
-</div>
-<div class="clear"></div>
-
-<div id="shortcut-use-login" style="display:none; position:absolute;">
-	<div id="name-use-login-shortcut"><a href>Phan Quang Khải</a></div>
-	<div id="tag-use-login-shortcut">
-		<ul>
-			<li><a href="#">Xem thông tin tài khoản</a></li>
-			<li><a href="#">Lịch sử giao dịch</a></li>
-			<li><a href="#">Thực hiện giao dịch</a></li>
-			<li><a href="#">Quản trị khiếu nại</a></li>
-            <li><a href="#">Tích hợp thanh toán</a></li>
-		</ul>
-	</div>
-	<div id="button-use-login-shortcut"><a href="#"><input name type="button" class="button-content" value="Đăng xuất" onclick="document.location.href='?portal=nganluong&amp;page=user_logout';"></a></div>
-</div>
-	<div id="body">
-		<div id="content">	
-		
-	<!-- start content -->
-            
-    <!-- end content -->
-		    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-		</div>
-    </div>
-	<div id="footer">
-	<div id="menu-footer">
-
-	<a href="#" target="_blank" rel="nofollow">Về Ecmoney10Broker</a>
-	|<a href="#" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
-	|<a href="#" target="_blank" rel="nofollow">Quyền riêng tư</a>
-	|<a href="#" target="_blank" rel="nofollow">Quy định - Chính sách</a>
-	|<a href="#" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
-	|<a href="#" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
-</div>
-<div id="footer-add">
-    <div id="footer-add-right">
-        <address style="margin-bottom:5px;">
-            <strong>Hà Nội:</strong> Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng; Hotline: 0984-863-761; Điện thoại: 1900-5858-99 (ext 111).
-        </address>
-        <address style="margin-bottom:5px;">
-            <strong>TP.HCM:</strong> Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12,
-       <br>
-        quận Tân Bình; Điện thoại: 1900-5858-99 (ext 101).
-        </address>
-    </div><div id="footer-add-left" style="width:490px;">
-        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 Ecmoney10Broker: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="http://www.peacesoft.net/" target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
-        <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
-        <p style="margin-bottom:5px;">Các liên kết khác:
-			<a href="#" target="_blank" rel="nofollow">www.chodientu.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.ebay.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.adnet.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.vizum.vn</a></p>                
-    </div>
-</div>
-
-	<!-- Start of Zopim Live Chat Script -->
-	<script type="text/javascript">
-	    window.$zopim || (function (d, s) {
-	        var z = $zopim = function (c) { z._.push(c) }, $ =
-=======
         </div>
         <div class="clear">
         </div>
@@ -527,7 +315,6 @@
             <script type="text/javascript">
                 window.$zopim || (function (d, s) {
                     var z = $zopim = function (c) { z._.push(c) }, $ =
->>>>>>> .r213
 	z.s = d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o
 	) { z.set._.push(o) }; $.setAttribute('charset', 'utf-8'); $.async = !0; z.set.
 	_ = []; $.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://cdn') +

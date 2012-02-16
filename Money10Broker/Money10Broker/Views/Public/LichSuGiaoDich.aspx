@@ -20,7 +20,7 @@
 		<div id="menu-nav-content-sub">
 			<ul>
 			
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/TongHop"><span>Tổng hợp</span></a></li>
 				<li class=" active" style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
 				<li class=" " style="display:block"><a href="#"><span>Giao dịch thẻ cào</span></a></li>
 				<li class=" " style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
