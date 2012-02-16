@@ -6,8 +6,8 @@
 		<!--begin register-->
 	    <div id="register">
             <div id="title">
-                <span class="yel">Đăng ký mở tài khoản Ví điện tử NgânLượng.vn miễn phí</span>&nbsp;&nbsp;[
-                <a href="http://help.nganluong.vn/danh-muc-56/2/1/Dang-ky-mo-tai-khoan.html" 
+                <span class="yel">Đăng ký mở tài khoản Ví điện tử Ecmoney10broker.tk miễn phí</span>&nbsp;&nbsp;[
+                <a href="#" 
                     target="_blank">Xem hướng dẫn mở tài khoản ví</a> ]</div>
 		<!-- BEGIN LEFT BOX------>
 		    <div id="register-left">
@@ -33,7 +33,7 @@
                                 khoản doanh nghiệp tại chức năng &quot;Thông tin tài khoản &gt; Nâng cấp TK doanh 
                                 nghiệp&quot;.</li>
                         </ul>
-                        <a href="http://help.nganluong.vn/danh-muc-55/2/1/Cac-loai-tai-khoan.html" 
+                        <a href="#" 
                             target="_blank">Tìm hiểu thêm về ví cá nhân</a><br />
                         <br />
                         <a class="button-round-yell" href="/Public/DangKyCaNhan"><span>Tiếp tục »</span></a>
@@ -70,11 +70,11 @@
                             <li>Dành cho các tổ chức có đăng ký tư cách pháp nhân với nhà nước như Công ty kinh 
                                 doanh, Cơ quan nhà nước, Tổ chức xã hội...</li>
                             <li>Chủ tài khoản có thể phân quyền cho nhiều người cùng tham gia sử dụng và quản 
-                                trị như kế toán, thủ quỹ, kinh doanh... và được NgânLượng.vn hỗ trợ tích hợp 
+                                trị như kế toán, thủ quỹ, kinh doanh... và được Ecmoney10broker.tk hỗ trợ tích hợp 
                                 thanh toán tốt hơn.</li>
                         </ul>
                         <ul>
-                            <a href="http://help.nganluong.vn/danh-muc-55/2/1/Cac-loai-tai-khoan.html" 
+                            <a href="#" 
                                 target="_blank">Tìm hiểu thêm về ví doanh nghiệp</a><br />
                             <br />
                         </ul>
