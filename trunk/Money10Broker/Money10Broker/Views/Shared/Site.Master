@@ -39,7 +39,7 @@
     	<div class="taskbar-sort">
         	<ul>
             
-				<li><a href="http://ecmoney10broker.tk" class="active" target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker</span></a></li>
+				<li><a href="/Public/TrangChu" class="active" target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker</span></a></li>
 				<li><a href="" class target><span class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
 				<li><a href="" class="" target=""><span>Nội dung số</span></a></li>
 				<li><a href="" class="" target=""><span>Mua sắm</span></a></li>
@@ -79,7 +79,7 @@
 						<span class="sp-skype end"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype"><img src="../../Content/images/icon-skz.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10Broker bằng Skype">Hỗ trợ tích hợp 1</a></span>
 					</li>					
 				</ul>
-				<p>- <strong>Hỏi đáp</strong>: <a href="#" target="_blank" rel="nofollow">Trao đổi trên diễn đàn vizum.vn</a></p>
+				<p>- <strong>Hỏi đáp</strong>: <a href="#" target="" rel="nofollow">Trao đổi trên diễn đàn vizum.vn</a></p>
 				<p>- Đường dây nóng lãnh đạo tiếp nhận ý kiến khách hàng: <span style="color:#ff5a00;font-weight:bold;">093.665.1441</span></p>
             </div>
         </div>
@@ -175,7 +175,7 @@
 </script>
 <div id="body-top">
 	<div id="logo">
-    <h1 style="padding:0;height:65px;margin:0;"><a href="http://ecmoney10broker.tk">NgânLượng.vn - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1>
+    <h1 style="padding:0;height:65px;margin:0;"><a href="/Public/TrangChu">Ecmoney10broker.tk - Ví điện tử, Cổng thanh toán trực tuyến - Bảo vệ người mua</a></h1>
     </div>
     <%
         if (Session["User"] != null)
@@ -194,7 +194,7 @@
 	<div class="news-hot" id="news_hot">  	
 	   <ul class="news-view" id="news_view">
 	       <li class="active">
-             <a href="#" class="active">NgânLượng.vn TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a>
+             <a href="#" class="active">Ecmoney10broker.tk TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a>
            </li>
         </ul>
         </div>	
@@ -204,22 +204,64 @@
    <!-- <div id="line-yell"></div>-->
 	<!-- end header-->	
 	<div id="body">
+    <div id="heart-banner" style="height:220px;margin-top:0;">
+
+	<div id="pic-heart">
+    	<div id="frame-banner" style="width: 6580px; left: -3760px; ">
+        
+            <div><a href="http://www.1top.vn/HaNoi" target="_blank"><img src="../Content/images/1top_940x220 copy.jpg" alt="1top.vn" border="0" width="940" height="220"></a></div>
+            <div><a href="http://www.sacombank.com.vn/canhan/Pages/Shopping-online-rinh--ngay-de-xin-voi-the-Sacombank.aspx" target="_blank"><img src="../../Content/images/Sacombank_nganluong_940x220.jpg" alt="Sacombank" border="0" width="940" height="220"></a></div>
+            <div><a href="https://www.nganluong.vn/techcombank-nganluong-felix/" target="_blank"><img src="../../Content/images/Baomoi-TechcomBank-NL copy1.jpg" alt="Báo Mới - Techcombank" border="0" width="940" height="220"></a></div>
+            <div><a href="http://news.nganluong.vn/?portal=news&page=news_detail&category_id=78&id=1009%C6%B0" target="_blank"><img src="../../Content/images/banner hello chao (NL) .jpg" alt="HelloChao.vn" border="0" width="940" height="220"></a></div>
+            <div><a href="http://3nana.vn/" target="_blank"><img src="../../Content/images/banner Giao Long.jpg" alt="3nana.vn ưu đãi" border="0" width="940" height="220"></a></div>
+            <div><a href="http://365win.vn/" target="_blank"><img src="../../Content/images/365win.jpg" alt="365win ưu đãi" border="0" width="940" height="220"></a></div>
+            <div><a href="http://chodientu.vn/pro/42/dau-gia-shock-thu-5.html" target="_blank"><img src="../../Content/images/DG nguoc kinh 42.jpg" alt="Đấu giá shock" border="0" width="940" height="220"></a></div>
+
+        	<div class="clear"></div>
+    	</div>
+        <div id="title-heartbanner">
+            <ul>
+            
+                <li class="" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>1top.vn</a></li>            
+                <li class="" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>Sacombank</a></li>            
+                <li class="" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>Báo Mới - Techcombank</a></li>            
+                <li class="" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>HelloChao.vn</a></li>            
+                <li class="active" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>3nana.vn ưu đãi</a></li>            
+                <li class="" style="width:134px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>365win ưu đãi</a></li>            
+                <li class="end" style="width:136px;"><a href="https://www.nganluong.vn/#" style="padding-right:0px;"><span>&nbsp;</span>Đấu giá shock</a></li>            
+            </ul>
+
+        </div>
+	</div>
+    <div id="timeout-heartbanner" style="display:none;">
+    
+        <p>6000</p>
+        <p>5000</p>
+        <p>5000</p>
+        <p>6000</p>
+
+        <p>6000</p>
+        <p>6000</p>
+        <p>6000</p>
+    </div>
+    </div>
 		 <!-- end slideshow -->
          <!-- start nội dung -->
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>	     
          <!-- end nội dung -->
-	</div>
+	
+    </div>
 	<!--start footer-->
 	<div id="footer">
 		<div id="menu-footer">
 
-	<a href="#" target="_blank" rel="nofollow">Về Ecmoney10Broker</a>
-	|<a href="#" target="_blank" rel="nofollow">Thoả thuận người dùng</a>
-	|<a href="#" target="_blank" rel="nofollow">Quyền riêng tư</a>
-	|<a href="#" target="_blank" rel="nofollow">Quy định - Chính sách</a>
-	|<a href="#" target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a>
-	|<a href="#" target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
+	<a href="#" target="" rel="nofollow">Về Ecmoney10Broker</a>
+	|<a href="#" target="" rel="nofollow">Thoả thuận người dùng</a>
+	|<a href="#" target="" rel="nofollow">Quyền riêng tư</a>
+	|<a href="#" target="" rel="nofollow">Quy định - Chính sách</a>
+	|<a href="#" target="" rel="nofollow">Trợ giúp - Hướng dẫn</a>
+	|<a href="#" target="" rel="nofollow">Hỏi đáp - Thảo luận</a>
 </div>
 <div id="footer-add">
     <div id="footer-add-right">
@@ -232,13 +274,13 @@
         quận Tân Bình; Điện thoại: 1900-5858-99 (ext 101).
         </address>
     </div><div id="footer-add-left" style="width:490px;">
-        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 Ecmoney10Broker: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="http://www.peacesoft.net/" target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
+        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 Ecmoney10Broker: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="#" target="" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
         <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
         <p style="margin-bottom:5px;">Các liên kết khác:
-			<a href="#" target="_blank" rel="nofollow">www.chodientu.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.ebay.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.adnet.vn</a> | 
-			<a href="#" target="_blank" rel="nofollow">www.vizum.vn</a></p>                
+			<a href="#" target="" rel="nofollow">www.chodientu.vn</a>
+                        | <a href="#" target="" rel="nofollow">www.ebay.vn</a>
+                        | <a href="#" target="" rel="nofollow">www.adnet.vn</a> | <a
+                            href="#" target="" rel="nofollow">www.vizum.vn</a></p>                
     </div>
 </div>
 
