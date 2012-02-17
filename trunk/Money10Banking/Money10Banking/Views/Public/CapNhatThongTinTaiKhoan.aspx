@@ -26,9 +26,7 @@
                                     </div>
                                     <div class="font2">
                                         0</div>
-                                    <div>
-                                        <a target="_blank" style="font-size: 12px; margin-left: -5px; color: #FFF; text-decoration: underline;"
-                                            href="https://www.baokim.vn/transactions/topup">Bắn tiền ngay vào ĐT di động</a></div>
+                                    
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
@@ -112,16 +110,7 @@
             <div class="payment-title">
                 <div class="pay-method-title">
                     THAY ĐỔI THÔNG TIN TÀI KHOẢN</div>
-                <div class="payment-help">
-                    <div class="icon-help">
-                        <img src="../../Content/images/icon-hel.png"></div>
-                    <div class="text-help">
-                        <a href="https://www.baokim.vn/faq/category/quan-ly-tai-khoan" class="help_link_top bold"
-                            target="popup" onclick="window.open(&quot;&quot;,&quot;popup&quot;,&quot;height=500,width=810,scrollbars=yes&quot;)">
-                            <b>Xem trợ giúp</b></a>
-                    </div>
-                </div>
-            </div>
+              
         </div>
         <!-- new -->
         <div class="form-container" style="padding-bottom: 20px;">
@@ -136,7 +125,7 @@
             <div class="form">
             </div>
             <div class="form-content clear">
-                <form action="https://www.baokim.vn/accounts/profile/edit" name="fprofile" id="fprofile"
+                <form action="CapNhat" name="fprofile" id="fprofile"
                 accept-charset="utf-8" method="post">
                 <input type="hidden" name="_form_action" value="accounts/profile/edit">
                 <input type="hidden" name="_form_token" value="73c6840b7bc23d428efe2482fa8d88767738686d">

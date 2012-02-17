@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CapNhatThongTinTaiKhoan
+    CapNhatThongTinTaiKhoanCaNhan
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -143,24 +143,32 @@
                             Chứng minh thư/Hộ chiếu
                         </th>
                         <td>
-                            <input type="text" name="address0" value class="text address" maxlength="50"></td>
+                            <input type="text" name="cmnd" value class="text address" maxlength="50"></td>
                     </tr>
                     <tr>
                         <th>
                             Địa chỉ
                         </th>
                         <td>
-                            <input type="text" name="address" value class="text address" maxlength="50">
+                            <input type="text" name="diachi" value class="text address" maxlength="50">
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            Tỉnh/Thành phố
+                            Đường
                         </th>
                         <td>
-                             <input type="text" name="city" value class="text address" maxlength="50">
+                            <input type="text" name="street" value class="text address" maxlength="50">
                         </td>
                     </tr>
+                     <tr>
+                        <th>
+                            Phường/ Xã</th>
+                        <td>
+                            <input type="text" name="phuong" value class="text address" maxlength="50">
+                        </td>
+                    </tr>      
+                    
                     <tr>
                         <th>
                             Quận/Huyện
@@ -171,12 +179,13 @@
                     </tr>
                     <tr>
                         <th>
-                           Số điện thoại
+                            Tỉnh/Thành phố
                         </th>
                         <td>
-                            <input type="text" name="phone" value class="text address" maxlength="50">
+                             <input type="text" name="city" value class="text address" maxlength="50">
                         </td>
-                    </tr>                    
+                    </tr>
+                                 
                    
                     <tr>
                         <th>
