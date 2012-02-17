@@ -297,8 +297,9 @@
                             Số thẻ người gửi<span style="color: red;">*</span>:
                         </th>
                         <td>
-                        <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; %>
-                            <input type="text" name="Cardsend" value="<%=the.SoThe %>" size="42">
+                        
+                            <input type="text" name="Cardsend" value="<% =ViewData["cardno"] %>" size="42" 
+                                readonly="readonly"/>
                         </td>
                     </tr>
                     <tr>

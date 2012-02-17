@@ -1,5 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     LichSuGiaoDich
 </asp:Content>
@@ -63,18 +71,82 @@
                 Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div>
             <div class="dot">
             </div>
-            <div style="width: 630px; float: left">
+            <div style="width: 630px; float: left" >
+                <div class="box">
+                  <div class="box-title">
+                        <div class="title-content">
+                            <div class="left-title">
+                                Thông Tin Giao Dịch</div>
+                            <div class="right-title">
+                                &nbsp;</div>
+                        </div>
+                    </div>
+                    <table class="table" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="20%" class="style3">
+                                    Thời gian
+                                </th>
+                                <th width="15%" class="style3">
+                                    Loại giao dịch
+                                </th>
+                                <th width="25%" class="style3">
+                                    Số Thẻ Gửi</th>
+                                <th width="25%" class="style3">
+                                    Số Thẻ Nhận</th>
+                                <th width="15%" class="style2">
+                                    Số Tiền</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                           
+                            <thead>
+                            <%
+                               
+                                if (ViewData["ListData"] != null)
+                                {
+                                    List<Money10Banking.Models.LichSuGiaoDichModels> lsgd = (List<Money10Banking.Models.LichSuGiaoDichModels>)ViewData["ListData"];
+                                    for (int i = 0; i < lsgd.Count; i++)
+                                    {
+                                        
+                            %>
+                                        <tr>
+                                            <th width="20%" class="style4" >
+                                            <%=lsgd[i].ThoiGian %></th>
+                           
+                                            <th width="15%" class="style4">
+                                            <%= lsgd[i].LoaiGD%></th>
+                           
+                                            <th width="25%" class="style4">
+                                            <%= lsgd[i].TheGui%></th>
+                           
+                                            <th width="25%" class="style4">
+                                            <%= lsgd[i].TheNhan%></th>
+                          
+                                            <th width="15%" class="style4">
+                                            <%= lsgd[i].TienGui%></th>
+                                        </tr>
+                            <%            
+                                    }
+                                }
+                             
+                            %>
+                            
+                        </thead>
+                           
+                        </tbody>
+                    </table>
+                </div>
+             <%--   <p>
+                    &nbsp;</p>
                 <div class="box">
                     <div class="box-title">
                         <div class="title-content">
                             <div class="left-title">
-                                5 giao dịch gần nhất
-                            </div>
+                                Thông Tin Giao Dịch</div>
                             <div class="right-title">
-                                <a href="https://www.baokim.vn/transactions/pre_reg_log" class="white-color">Xem các
-                                    giao dịch </a>&nbsp;| <a href="https://www.baokim.vn/transactions/log"
-                                        class="white-color">Xem toàn bộ giao dịch</a>
-                            </div>
+                                &nbsp;</div>
                         </div>
                     </div>
                     <table class="table" width="100%" cellspacing="0">
@@ -87,14 +159,11 @@
                                     Loại giao dịch
                                 </th>
                                 <th width="25%" class="left-boder">
-                                    Tên/Email
-                                </th>
+                                    Số Thẻ Gửi</th>
                                 <th width="15%" class="left-boder">
-                                    Trạng thái
-                                </th>
+                                    Số Thẻ Nhận</th>
                                 <th width="15%">
-                                    Trạng thái
-                                </th>
+                                    Số Tiền</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -102,72 +171,7 @@
                             </td>
                         </tbody>
                     </table>
-                </div>
-                <p>
-                    &nbsp;</p>
-                <div class="box">
-                    <div class="box-title">
-                        <div class="title-content">
-                            <div class="left-title">
-                                5 đăng nhập gần nhất</div>
-                            <div class="right-title">
-                                &nbsp;</div>
-                        </div>
-                    </div>
-                    <table width="100%" class="table" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th width="30%" class="left-boder">
-                                    Thời gian
-                                </th>
-                                <th width="30%" class="left-boder">
-                                    IP 
-                                </th>
-                                <th width="40%" class="left-boder">
-                                    Email/Điện thoại
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
-                                <td class="color-date">
-                                    &nbsp;</td>
-                                <td>
-                                    &nbsp;</td>
-                                <td class="color-email">
-                                    Dang nhap lenhuynh3003@gmail.com
-                                </td>
-                            </tr>
-                            <tr class="row_odd" onmouseover="this.className='row_over'" onmouseout="this.className='row_odd'">
-                                <td class="color-date">
-                                    &nbsp;</td>
-                                <td>
-                                    &nbsp;</td>
-                                <td class="color-email">
-                                    Dang nhap lenhuynh3003@gmail.com
-                                </td>
-                            </tr>
-                            <tr class="row_even" onmouseover="this.className='row_over'" onmouseout="this.className='row_even'">
-                                <td class="color-date">
-                                    &nbsp;</td>
-                                <td>
-                                    &nbsp;</td>
-                                <td class="color-email">
-                                    Dang nhap lenhuynh3003@gmail.com
-                                </td>
-                            </tr>
-                            <tr class="row_odd" onmouseover="this.className='row_over'" onmouseout="this.className='row_odd'">
-                                <td class="color-date">
-                                    &nbsp;</td>
-                                <td>
-                                    &nbsp;</td>
-                                <td class="color-email">
-                                    Dang nhap lenhuynh3003@gmail.com
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                </div>--%>
             </div>
             <div style="width: 225px; float: right">
                 <script type="text/javascript">
@@ -297,6 +301,20 @@
                     .main-news .paging ul li a:hover
                     {
                         cursor: pointer;
+                    }
+                    .style2
+                    {
+                        height: 16px;
+                    }
+                    .style3
+                    {
+                        border-right: 1px solid #CCCCCC;
+                        height: 16px;
+                    }
+                    .style4
+                    {
+                        border-right: 1px solid #CCCCCC;
+                        height: 36px;
                     }
                 </style>
                 <!-- code new -->

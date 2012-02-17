@@ -196,7 +196,7 @@
                     </table>
                 </div>
             </div>
-            <form action="XuLyNapTien" method="post" accept-charset="utf-8">
+            <form action="/Public/XuLyNapTien" method="post" accept-charset="utf-8">
             <div class="form-content">
                 <table class="form-content-table">
                     <tbody>
@@ -339,7 +339,8 @@
                                 </strong></span>
                             </th>
                             <td>
-                                <input type="text" name="SoTaiKhoan" value="340426820759153" class="text qtip" autocomplete="off"
+
+                                <input type="text" name="SoTaiKhoan" value="<% =ViewData["cardno"] %>" class="text qtip" autocomplete="off"
                                     onkeypress="return numbersonly(this, event)" title="- Số Tài Khoản ( 16 số)">
                             </td>
                         </tr>
