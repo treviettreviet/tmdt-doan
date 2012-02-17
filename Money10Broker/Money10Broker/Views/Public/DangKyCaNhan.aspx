@@ -26,19 +26,19 @@
 					<table width="880" border="0" cellspacing="5" cellpadding="0">
 					  <tr>
 						<td width="200" align="right"><span class="required">*</span>Địa chỉ Email:</td>
-						<td class="blear"><input name="email" id="email" type="text" value="huynhtanlen2@gmail.com" class="input-business field-check"><div class="field-notification field-alert">Ngân Lượng.vn sử dụng Email làm tên đăng nhập và định danh trong giao dịch, xin vui lòng nhập chính xác một địa chỉ email bạn thường sử dụng (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Địa chỉ Email không đúng định dạng</span><span class="field-check-function blur" title="checkExistEmail(_value_,_obj_,_error_,'Bạn có thể sử dụng email này!')">Địa chỉ Email này đã được sử dụng</span></td>
+						<td class="blear"><input name="email" id="email" type="text" value="" class="input-business field-check"><div class="field-notification field-alert">Ngân Lượng.vn sử dụng Email làm tên đăng nhập và định danh trong giao dịch, xin vui lòng nhập chính xác một địa chỉ email bạn thường sử dụng (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Địa chỉ Email không đúng định dạng</span><span class="field-check-function blur" title="checkExistEmail(_value_,_obj_,_error_,'Bạn có thể sử dụng email này!')">Địa chỉ Email này đã được sử dụng</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Nhập lại địa chỉ Email:</td>
-						<td class="blear"><input name="confirm_email" type="text" value="huynhtanlen2@gmail.com" class="input-business field-check" autocomplete="off"><div class="field-notification field-alert">Nhập lại địa chỉ Email (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa xác nhận lại địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Xác nhận địa chỉ Email sai định dạng</span><span class="field-check-function blur" title="isConfirmObject(_value_,'email')">Xác nhận địa chỉ Email chưa chính xác</span></td>
+						<td class="blear"><input name="confirm_email" type="text" value="" class="input-business field-check" autocomplete="off"><div class="field-notification field-alert">Nhập lại địa chỉ Email (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa xác nhận lại địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Xác nhận địa chỉ Email sai định dạng</span><span class="field-check-function blur" title="isConfirmObject(_value_,'email')">Xác nhận địa chỉ Email chưa chính xác</span></td>
 					  </tr>
 					  <tr>
 						<td width="200" align="right"><span class="required">*</span>Mật khẩu đăng nhập:</td>
-						<td class="blear"><input style="width:200px;" name="password" id="password" value="12345678" type="password" autocomplete="off" ><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu đăng nhập</span><span class="field-check-function blur submit" title="isPassword(_value_)" />Mật khẩu đăng nhập chưa đúng quy tắc</span></td>
+						<td class="blear"><input style="width:200px;" name="password" id="password" value="" type="password" autocomplete="off" ><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu đăng nhập</span><span class="field-check-function blur submit" title="isPassword(_value_)" />Mật khẩu đăng nhập chưa đúng quy tắc</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Nhập lại mật khẩu đăng nhập:</td>
-						<td class="blear"><input id="confirm_password" name="confirm_password" style="width:200px;" value="12345678" type="password" autocomplete="off" ><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password')">Xin xác nhận lại mật khẩu của bạn!</span></td>
+						<td class="blear"><input id="confirm_password" name="confirm_password" style="width:200px;" value="" type="password" autocomplete="off" ><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password')">Xin xác nhận lại mật khẩu của bạn!</span></td>
 					  </tr>
 					</table>
 				</div>
@@ -50,11 +50,11 @@
                         <table width="880" border="0" cellspacing="5" cellpadding="0">
                           <tr>
                             <td width="200" align="right"><font color="#FF0000">* </font>Mật khẩu thanh toán:</td>
-                            <td class="blear"><input style="width:200px;" name="password_payment" id="password_payment" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span></td>
+                            <td class="blear"><input style="width:200px;" name="password_payment" id="password_payment" autocomplete="off" type="password" value="" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span></td>
                           </tr>
                           <tr>
                             <td align="right"><font color="#FF0000">* </font>Nhập lại mật khẩu thanh toán:</td>
-                            <td class="blear"><input style="width:200px;" name="confirm_password_payment" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password_payment')">Xin xác nhận lại mật khẩu của bạn!</span></td>
+                            <td class="blear"><input style="width:200px;" name="confirm_password_payment" autocomplete="off" type="password" value="" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password_payment')">Xin xác nhận lại mật khẩu của bạn!</span></td>
                           </tr>
                         </table>
                     </div>
@@ -67,12 +67,12 @@
 					<table width="880" border="0" cellspacing="5" cellpadding="0">
 					  <tr>
                         <td align="right"><span class="required">*</span><span class="label">Số CMTND:</span><span class="label" style="display:none;">Số hộ chiếu:</span></td>
-					    <td class="blear"><input name="social_id" type="text" value="362203265" class="input-business field-check">
+					    <td class="blear"><input name="social_id" type="text" value="" class="input-business field-check">
 					      <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số chứng thực!</span><span class="field-check-function blur submit" title="isVerifyNumber(_value_)">Số chứng thực bạn nhập không đúng yêu cầu, không bao gồm khoảng trống!</span></td>
 				      </tr>
                       <tr>
 						<td width="200" align="right"><span class="required">*</span>Họ tên đầy đủ:</td>
-						<td class="blear"><input id="fullname" name="fullname" type="text" value="Huynh Tan Len 2" class="input-business field-check">
+						<td class="blear"><input id="fullname" name="fullname" type="text" value="" class="input-business field-check">
                         <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập họ tên!</span></td>
 					  </tr>
 					  <tr>
@@ -85,7 +85,7 @@
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Chỗ ở hiện tại:</td>
-						<td class="blear"><input id="address" name="address" type="text" value="227 Nguyen Van Cu, Quan 5" class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
+						<td class="blear"><input id="address" name="address" type="text" value="" class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Địa phương:</td>

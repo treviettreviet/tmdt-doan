@@ -185,7 +185,7 @@ namespace Money10Broker.Controllers
         // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
         // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
         // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
-        public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string sex, string address, string city_id)
+        public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string month, string year, string sex, string address, string city_id)
         {
             if (cmdRegister != null)
             {
@@ -193,9 +193,10 @@ namespace Money10Broker.Controllers
                 {
                     try
                     {
+                        xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
                         TaiKhoan newUser = new TaiKhoan();
                         CaNhan newInfo = new CaNhan();
-                        string MaTaiKhoanMax = dbMoiGioi.CaNhans.Max(m => m.MaTaiKhoan);
+                        string MaTaiKhoanMax = dbXuLyDangKy.TaiKhoans.Max(m => m.MaTaiKhoan);
                         string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");
                         newUser.MaTaiKhoan = MaTaiKhoanNext;
                         newUser.SoTaiKhoan = TaoSoTaiKhoan();   // Tạo số tài khoản tự động gồm 6 số không trùng nhau.
@@ -205,16 +206,27 @@ namespace Money10Broker.Controllers
                         newUser.MatKhau = GetMD5Hash(password);
                         newUser.MatKhauGiaoDich = password_payment;
                         newUser.TinhTrang = 0;
-                        dbMoiGioi.TaiKhoans.AddObject(newUser);
-                        dbMoiGioi.SaveChanges();
-                        return RedirectToAction("TrangChu");
+                        dbXuLyDangKy.TaiKhoans.AddObject(newUser);
 
-                        //newInfo.CMNDHoChieu = Request["social_id"];
-                        //newInfo.NgaySinh = DateTime.Parse(Request["date"]);
-                        //newInfo.HoTen = Request["fullname"];
-                        //newInfo.GioiTinh = Request["sex"];
-                        //Request["addresss"];
-                        //Request["city_id"];
+                        // Thêm thông tin vào bảng cá nhân
+                        string MaCaNhanMax = dbXuLyDangKy.CaNhans.Max(m => m.MaCaNhan);
+                        string MaCaNhanNext = TaoMaTangTuDong(MaCaNhanMax, 2, "CN");
+                        newInfo.MaCaNhan = MaCaNhanNext;
+                        newInfo.MaTaiKhoan = MaTaiKhoanNext;
+                        newInfo.HoTen = fullname;
+                        string birthday = date + "/" + month + "/" + year;
+                        newInfo.NgaySinh = DateTime.Parse(birthday);
+                        if (sex.Equals("1"))
+                            newInfo.GioiTinh = "Nam";
+                        else
+                            newInfo.GioiTinh = "Nữ";
+                        newInfo.CMNDHoChieu = 0;
+                        if (!social_id.Equals(""))
+                            newInfo.CMNDHoChieu = int.Parse(social_id);
+                        newInfo.TinhTrang = 0;
+                        dbXuLyDangKy.CaNhans.AddObject(newInfo);
+                        dbXuLyDangKy.SaveChanges();
+                        return RedirectToAction("DangNhap");
                     }
                     catch (Exception ex)
                     {
@@ -223,10 +235,9 @@ namespace Money10Broker.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("ChonDangKy");
+                    return RedirectToAction("DangKyCaNhan");
                 }
             }
-
             return View();
         }
 
