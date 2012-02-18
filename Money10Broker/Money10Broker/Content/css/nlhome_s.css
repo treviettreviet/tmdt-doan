@@ -24,8 +24,12 @@ body { font-family:Arial, Helvetica, sans-serif;}
 .nlh-accLinks { background:url(../../Content/images/mdgray_2.png) repeat-y scroll top left;}
 .nlh-accLinks div { border-bottom:1px solid #e8e8e8; padding-bottom:2px; padding-top:2px; margin-left:1px; margin-right:1px;}
 .nlh-accLinks p { margin:0px; padding:2px 5px; font-size:12px; text-transform:uppercase; line-height:16px;}
-.nlh-accLinks p.labelAcc { width:110px; padding-top:4px; font-weight:normal; padding-right:0px; color:#464646;}
-.nlh-accLinks p.totalbalance, .nlh-accLinks p.balanceavailable, .nlh-accLinks p.freeze { font-weight:bold; width:110px; padding-left:0px; text-align:right}
+.nlh-accLinks p.labelAcc { width:90px; 
+padding-top:4px; font-weight:normal; padding-right:0px; color:#464646;
+}
+.nlh-accLinks p.totalbalance, .nlh-accLinks p.balanceavailable, .nlh-accLinks p.freeze { font-weight:bold; width:85px; 
+padding-left:0px; text-align:right
+}
 .nlh-accLinks p.totalbalance { font-size:15px; color:#ff6600;}
 .nlh-accLinks p.balanceavailable { font-size:14px; color:#339900;}
 .nlh-accLinks p.freeze { font-size:13px; color:#464646;}

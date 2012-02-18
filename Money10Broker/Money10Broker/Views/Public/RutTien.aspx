@@ -17,23 +17,22 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Giao dịch thẻ cào</span></a></li>
+			    <li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
 				<li class=" " style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
+                <li class=" active" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>	
 				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
-				<li class=" active" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Đề nghị thanh toán</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
 				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
 	</div>
 </div>
-		<div id="title"><span class="yel">Yêu cầu rút tiền từ ví</span><span class="title-link">[ <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=transaction_history&amp;type=withdraw" target="_blank">Xem lịch sử rút tiền</a> ]</span></div>
+		<div id="title"><span class="yel">Yêu cầu rút tiền từ ví</span><span class="title-link"></span></div>
  <!-- BEGIN BlockAlert -->
 <div id="note-content-warning" class="note-content-warning">
-	<p>Bạn chưa chứng thực tài khoản vì vậy bạn chỉ được phép rút tiền về tài khoản Ngân hàng không quá <strong>500.000</strong> VND/ngày. Để dỡ bỏ hạn chế này, xin vui lòng <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=user_verify_request">chứng thực tài khoản ví của bạn</a></p>
+	<p>Bạn chưa chứng thực tài khoản vì vậy bạn chỉ được phép rút tiền về tài khoản Ngân hàng không quá <strong>500.000</strong> VND/ngày. Để dỡ bỏ hạn chế này, xin vui lòng <a href="#">chứng thực tài khoản ví của bạn</a></p>
 </div>
  <!-- END BlockAlert -->	
 <div class="box-content">	
@@ -61,7 +60,7 @@
 			  </tr>
 			  <tr>
 				<th>Số tiền đã rút trong ngày:</th>
-				<td><span class="yel">0</span> <span class="span-grey">VND</span> [ <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=transaction_history&amp;type=withdraw" target="_blank">Xem lịch sử rút tiền</a> ]</td>
+				<td><span class="yel">0</span> <span class="span-grey">VND</span> [ <a href="#" target="_blank">Xem lịch sử rút tiền</a> ]</td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số tiền yêu cầu rút:</th>
@@ -85,7 +84,7 @@
 				<th><span class="required">*</span>Chọn tài khoản ngân hàng:</th>
 				<td>
                 <!-- BEGIN BlockAddBank -->
-                	<span class="yel">Tài khoản ngân hàng chưa được khai báo</span>&nbsp;&nbsp;[ <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=user_bank&amp;cmd=addbank" target="_blank">Khai báo</a> ]<br>(<span class="span-grey">sau khi khai báo, xin vui lòng refresh lại trang này)</span>
+                	<span class="yel">Tài khoản ngân hàng chưa được khai báo</span>&nbsp;&nbsp;[ <a href="#" target="_blank">Khai báo</a> ]<br>(<span class="span-grey">sau khi khai báo, xin vui lòng refresh lại trang này)</span>
                 <!-- END BlockAddBank -->
                  
 				</td>
