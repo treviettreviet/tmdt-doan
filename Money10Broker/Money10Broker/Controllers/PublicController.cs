@@ -180,8 +180,6 @@ namespace Money10Broker.Controllers
             }
         }
 
-      
-
         // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
         // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
         // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
@@ -395,7 +393,5 @@ namespace Money10Broker.Controllers
             string password = s.ToString();
             return password;
         }
-
-
    }
 }
