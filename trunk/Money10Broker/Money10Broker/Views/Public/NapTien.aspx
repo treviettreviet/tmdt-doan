@@ -17,32 +17,31 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Giao dịch thẻ cào</span></a></li>
+			<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
 				<li class=" active" style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
+                <li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>	
 				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
-				<li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Đề nghị thanh toán</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
 				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 		
-		<div id="title"><span class="yel">Nạp tiền vào tài khoản NgânLượng.vn</span>&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=transaction_history&amp;type=deposit">Xem lịch sử nạp tiền</a> ]</div>
+		<div id="title"><span class="yel">Nạp tiền vào tài khoản NgânLượng.vn</span>&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="#">Xem lịch sử nạp tiền</a> ]</div>
 
 <div class="note-deposit-info">
 	<p>Xin vui lòng chọn một hình thức dưới đây để nạp tiền. Khuyên bạn nên dùng các hình thức Online để nhận được tiền ngay trong tài khoản NgânLượng.vn.</p>	
 </div>
 <div class="deposit-list" style="border:1px solid #ccc;padding:10px;">
 	<div class="deposit-list-row active">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Dùng thẻ Tín dụng và Ghi nợ quốc tế</span>
 			<!--<span class="deposit-charge">(Phí 3.600đ + 2,75%)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/visacard.gif" border="0" height="30" alt="Thanh toán bằng Visa Card"></a></li>								
 			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/masterca.gif" border="0" height="30" alt="Thanh toán bằng Master Card"></a></li>
@@ -52,11 +51,11 @@
 	</div>				
 	
 	<div class="deposit-list-row active">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Online dùng thẻ ATM</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_tcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_tcb_ck_on';"><img src="../../Content/images/tcb_1299.gif" alt="Ngân hàng Kỹ Thương" border="0" height="30"></a></li>
@@ -70,11 +69,11 @@
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_nvb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_nvb_ck_on';"><img src="../../Content/images/nvb_1324.jpg" alt="Ngân hàng Nam Việt" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row active">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Online bằng Internet-Banking</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vnbc_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vnbc_ck_on';"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
@@ -82,11 +81,11 @@
 	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=shb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=shb_ck_on';"><img src="../../Content/images/shb_1299.gif" alt="Ngân hàng Sài Gòn - Hà Nội" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row active">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Chuyển khoản Offline bằng Internet-Banking</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=107&amp;id=386&amp;news_name=Chuyen-khoan-tai-nha-thong-qua-Internet--Mobile-Banking&amp;cat=2" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=107&amp;id=386&amp;news_name=Chuyen-khoan-tai-nha-thong-qua-Internet--Mobile-Banking&amp;cat=2', '_blank');newWindow.focus();return false;"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=387&amp;page_no=1" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=387&amp;page_no=1', '_blank');newWindow.focus();return false;"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
@@ -100,11 +99,11 @@
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=124&amp;id=438&amp;news_name=PG-Bank---Chuyen-khoan-tai-nha-thong-qua-Internet-Banking&amp;cat=2" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=124&amp;id=438&amp;news_name=PG-Bank---Chuyen-khoan-tai-nha-thong-qua-Internet-Banking&amp;cat=2', '_blank');newWindow.focus();return false;"><img src="../../Content/images/pgb_1299.gif" alt="Ngân hàng Xăng dầu Petrolimex" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row ">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Chuyển khoản Offline tại cây ATM</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=107&amp;category_name=&amp;cat=2&amp;id=402&amp;page_no=1" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=107&amp;category_name=&amp;cat=2&amp;id=402&amp;page_no=1', '_blank');newWindow.focus();return false;"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=377&amp;page_no=1" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=377&amp;page_no=1', '_blank');newWindow.focus();return false;"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
@@ -120,11 +119,11 @@
 	<li><a href="http://help.nganluong.vn/chi-tiet-124/2/429/PG-Bank---Chuyen-khoan-qua-cay-ATM.html" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/chi-tiet-124/2/429/PG-Bank---Chuyen-khoan-qua-cay-ATM.html', '_blank');newWindow.focus();return false;"><img src="../../Content/images/pgb_1299.gif" alt="Ngân hàng Xăng dầu Petrolimex" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row ">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Chuyển khoản Offline tại quầy giao dịch Ngân hàng</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
-		</a></h3>
+		</a>
 		<ul>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=107&amp;category_name=&amp;cat=2&amp;id=401&amp;page_no=1" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=107&amp;category_name=&amp;cat=2&amp;id=401&amp;page_no=1', '_blank');newWindow.focus();return false;"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
 	<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=403&amp;page_no=1" target="_blank" onclick="var newWindow = window.open('http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=111&amp;category_name=&amp;cat=2&amp;id=403&amp;page_no=1', '_blank');newWindow.focus();return false;"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
@@ -144,12 +143,12 @@
 	<li><a href target="_blank" onclick="var newWindow = window.open('', '_blank');newWindow.focus();return false;"><img src="../../Content/images/nl_cash_.gif" alt="Tiền mặt tại văn phòng NgânLượng.vn" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row">
-		<h3><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
+		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Nộp tiền mặt tại văn phòng NgânLượng.vn</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
 			<span class="deposit-alert"></span>
-		</a></h3>
+		</a>
 		<ul>
 			<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=108&amp;category_name=&amp;cat=2&amp;id=399&amp;page_no=1">Tại văn phòng <strong>Hà Nội</strong></a></li>
 			<li><a href="http://help.nganluong.vn/?portal=help&amp;page=help_browse&amp;category_id=108&amp;category_name=&amp;cat=2&amp;id=399&amp;page_no=1">Tại văn phòng <strong>TP.HCM</strong></a></li>

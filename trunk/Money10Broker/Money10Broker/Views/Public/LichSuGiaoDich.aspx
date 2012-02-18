@@ -19,14 +19,13 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			
-				<li class=" " style="display:block"><a href="/Public/TongHop"><span>Tổng hợp</span></a></li>
-				<li class=" active" style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Giao dịch thẻ cào</span></a></li>
+		    	<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" active " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
 				<li class=" " style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
+                <li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>	
 				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
-				<li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>Đề nghị thanh toán</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
 				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>

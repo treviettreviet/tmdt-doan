@@ -35,6 +35,11 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+        public ActionResult ChuyenTienCungMoiGioi()
+        {
+            return View();
+        }
+
         public ActionResult XuLyDangXuat()
         {
             Session.Remove("User");
@@ -84,6 +89,10 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+        //public ActionResult ChuyenTienThanhCong()
+        //{
+
+        //}
         public ActionResult DangNhapGiaoDich()
         {
             return View();
