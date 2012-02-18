@@ -182,22 +182,22 @@
                                         title="Công ty CP CNTT Nam Á - Hệ thống phân phối toàn Quốc Máy tính Sony vaio,Apple,Lenovo Thinkpad, Dell, HP,ComPaq,Asus,Acer,Toshiba,Desktop,Server,Thiết bị văn phòng,Sản phẩm chính Hãng , Bảo hành toàn cầu..."></a>
                             </td>
                             <td>
-                                <a href="http://go.chodientu.vn/" target="">
+                                <a href="#" target="">
                                     <img src="../../Content/images/large_1X.png" alt="Địa chỉ mua sắm dành riêng cho thành viên Go.vn của ChợĐiệnTử - Mua gì cũng có!"
                                         title="Địa chỉ mua sắm dành riêng cho thành viên Go.vn của ChợĐiệnTử - Mua gì cũng có!"></a>
                             </td>
                             <td>
-                                <a href="http://anhvumobile.vn/" target="">
+                                <a href="#" target="">
                                     <img src="../../Content/images/large_1Y.png" alt="Điện thoại, anhvumobile, nokia, samsung, sony ericsson, mobell, mobistar, LG, HTC, iPhone, Apple"
                                         title="Điện thoại, anhvumobile, nokia, samsung, sony ericsson, mobell, mobistar, LG, HTC, iPhone, Apple"></a>
                             </td>
                             <td>
-                                <a href="http://www.babylon.vn/" target="">
+                                <a href="#" target="">
                                     <img src="../../Content/images/large_1Z.png" alt="Babylon.vn - Trang thương mại điện tử, mua sắm trực tuyến uy tín nhất Việt Nam, khởi tạo gian hàng cùng Babylon"
                                         title="Babylon.vn - Trang thương mại điện tử, mua sắm trực tuyến uy tín nhất Việt Nam, khởi tạo gian hàng cùng Babylon"></a>
                             </td>
                             <td>
-                                <a href="http://bic.vn/" target="">
+                                <a href="#" target="">
                                     <img src="../../Content/images/large_20.png" alt="Tổng Công ty Cổ phần Bảo hiểm Ngân hàng Đầu tư và Phát triển Việt Nam (BIC)"
                                         title="Tổng Công ty Cổ phần Bảo hiểm Ngân hàng Đầu tư và Phát triển Việt Nam (BIC)"></a>
                             </td>
@@ -265,7 +265,7 @@
                     </div>
                     </form>
                     <div id="dangky">
-                        Bạn chưa có ví điện tử NgânLượng.vn?</br>
+                        Bạn chưa có ví điện tử Ecmoney10broker.tk?</br>
                         <a href="/Public/ChonDangKy">
                             <img src="../../Content/images/button-s.gif" border="0" /></a>
                     </div>
@@ -277,24 +277,26 @@
             {
                 Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
         %>
-                <div class="nlh-boxmdule nlh-btm">
+        
+	        <div class="nlh-col235">
+                <div class="nlh-boxmdule">
                     <div class="nlh-topbx2"></div>
                     <div class="nlh-accLinks">
                         <div class="clearfix"><h2><i class="accIcon"></i><%=tk.Email %></h2></div>
-                        <div class="nlh-topbrd clearfix">
-                            <p class="fl labelAcc">TỔNG TIỀN:</p>
-                            <p class="totalbalance fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        <div class="nlh-topbrd">
+                            <p class="labelAcc">TỔNG TIỀN:</p>
+                            <p class="totalbalance">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
                         </div>
-                        <div class="nlh-topbrd clearfix">
-                            <p class="fl labelAcc">SỐ DƯ KHẢ DỤNG:</p>
-                            <p class="balanceavailable fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        <div class="nlh-topbrd">
+                            <p class="labelAcc">SỐ DƯ KHẢ DỤNG:</p>
+                            <p class="balanceavailable">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
                         </div>
-                        <div class="nlh-topbrd clearfix">
-                            <p class="fl labelAcc">ÐÓNG BĂNG:</p>
-                            <p class="freeze fr">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
+                        <div class="nlh-topbrd">
+                            <p class="labelAcc">ÐÓNG BĂNG:</p>
+                            <p class="freeze">0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
                         </div>
                     </div>
-                    <div class="nlh-mdbx nlh-formUsrlg">
+                    <div class="nlh-mdbx"><!--  nlh-formUsrlg-->
                         <ul>
                             <li><a href="/Public/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
                             <li><a href="/Public/TongHop">Quản trị giao dịch</a></li>
@@ -302,12 +304,14 @@
                             <li><a href="#">Trung tâm khiếu nại</a></li>
                             <li><a href="#">Tích hợp thanh toán</a></li>
                         </ul>
-                        <div class="clearfix nlh-accRecharge">
-                            <a href="?portal=nganluong&amp;page=deposit" class="fl rechargeNL"></a>
+                        <div class="nlh-accRecharge">
+                            <a href="#" class="rechargeNL"></a>
                             <p align="right" class="nlh-logout fr"><a href="/Public/XuLyDangXuat">Ðăng xuất</a></p>
                         </div>
                     </div>
                 </div>
+                </div>
+                          
         <% }%>
 
             <script language="javascript">
@@ -362,7 +366,7 @@
                         ...</a></li>
                 </ul>
                 <p class="redmove">
-                    <a href="h#" target="">Xem thêm</a></p>
+                    <a href="#" target="">Xem thêm</a></p>
             </div>
         </div>
     </div>
