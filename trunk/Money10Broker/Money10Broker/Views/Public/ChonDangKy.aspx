@@ -78,7 +78,7 @@
                                 target="_blank">Tìm hiểu thêm về ví doanh nghiệp</a><br />
                             <br />
                         </ul>
-                        <a class="button-round-yell" href="/Public/DangKyDoanhNghiep"><span>Tiếp tục »</span></a>
+                        <a class="button-round-yell" href="/Account/DangKyDoanhNghiep"><span>Tiếp tục »</span></a>
                     </div>
                 </div>
                 <div id="register-right-bottom">

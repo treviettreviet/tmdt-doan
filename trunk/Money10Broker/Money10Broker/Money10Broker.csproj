@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Global.asax.cs">
@@ -398,7 +399,7 @@
     <Content Include="Views\Public\ThanhToanTrucTuyen.aspx" />
     <Content Include="Views\Public\ChonDangKy.aspx" />
     <Content Include="Views\Public\DangKyCaNhan.aspx" />
-    <Content Include="Views\Public\DangKyDoanhNghiep.aspx" />
+    <Content Include="Views\Account\DangKyDoanhNghiep.aspx" />
     <Content Include="Views\Public\TongHop.aspx" />
     <Content Include="Views\Public\DangNhapThatBai.aspx" />
     <Content Include="Views\Public\Default.aspx" />
