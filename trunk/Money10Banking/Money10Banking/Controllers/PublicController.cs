@@ -860,8 +860,9 @@ namespace Money10Banking.Controllers
 
                        if (kq == 0)
                        {
-                           The sendcard = dbNganHangOnline.Thes.Single(p=>p.SoThe.Equals(card_no_send));
-                           The bankcard = dbNganHangOnline.Thes.Single(m=>m.SoThe.Equals("4024007182426915"));
+                           NganHangEntities dbNH = new NganHangEntities();
+                           The sendcard = dbNH.Thes.Single(p=>p.SoThe==card_no_send);
+                           The bankcard = dbNH.Thes.Single(m => m.SoThe=="4024007182426915");
 
                            decimal fee = decimal.Parse(amount);
                            fee += fee * 0.1m;
@@ -869,8 +870,25 @@ namespace Money10Banking.Controllers
                            sendcard.SoDu -= fee;
                            bankcard.SoDu += fee;
 
-                           dbNganHangOnline.SaveChanges();
+                          
+                           //The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
+                           //Session["The"] = sendcard;
+                           string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
+                           LichSuGiaoDich LSGD = new LichSuGiaoDich();
+                           LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, 2, "GD");
+                           LSGD.MaThe = sendcard.MaThe;
+                           //LSGD.MaThe = "123456";
+                           LSGD.MaLoaiGiaoDich = "LGD003";
+                           LSGD.SoTheNhan = card_no_receive;
+                           //LSGD.SoTheNhan = "123456";
+                           LSGD.NgayGiaoDich = DateTime.Now;
+                           LSGD.SoTienGiaoDich = fee;
+                           LSGD.TinhTrang = 0;
+                           dbNH.LichSuGiaoDiches.AddObject(LSGD);
 
+                           dbNH.SaveChanges();
+                           List<LichSuGiaoDichModels> listData = LSGiaoDich();
+                           ViewData["ListData"] = listData;
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
                            return RedirectToAction("LichSuGiaoDich");
 
