@@ -40,6 +40,15 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+        public ActionResult ChuyenTienKhacMoiGioi()
+        {
+            return View();
+        }
+
+        public ActionResult CapNhatThongTin()
+        {
+            return View();
+        }
         public ActionResult XuLyDangXuat()
         {
             Session.Remove("User");
