@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main">
+    
         <div class="tab-acount">
             <div id="account_info">
                 <div id="account_info_inner">
@@ -32,6 +33,7 @@
         </div>
         <div class="form-container" style="padding-bottom: 20px;">
             <div class="text_header">
+            <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
                 <div class="left">
                     <div class="title">
                         Thay đổi mật khẩu</div>
@@ -48,17 +50,15 @@
                         </tr>
                     </tbody>
                 </table>
-                <form action="https://www.baokim.vn/accounts/profile/change_password" method="post"
-                accept-charset="utf-8">
+                <form action="/Public/XLDoiPass" method="post" accept-charset="utf-8">
                 <input type="hidden" name="_form_action" value="/accounts/profile/change_password">
                 <input type="hidden" name="_form_token" value="fda1e295824f105eaf2d62af42ff7d2c8e4012c7">
                 <table class="form-content-table" cellspacing="10px">
                     <tr>
                         <td colspan="2">
                             <p style="padding-left: 20px;">
-                                Chúng tôi đề nghị bạn sử dụng mật khẩu không phải là một từ có thể tra trong từ
-                                điền, có cả kí tự viết hoa, không viết hoa và ít nhất có một kí tự đặc biệt như
-                                @, $, %...</p>
+                                Chúng tôi đề nghị bạn sử dụng mật khẩu không phải là một từ có thể tra trong từ 
+                                điền, có cả kí tự viết hoa, không viết hoa</p>
                         </td>
                     </tr>
                     <tr>

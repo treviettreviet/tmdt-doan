@@ -29,7 +29,7 @@
                                         <tr>
                                             <td height="30">
                                                 <label>
-                                                    <input type="text" name="email" value="huynhtanlen@gmail.com" id="email" class="keyboardInput" style="width: 128px;">
+                                                    <input type="text" name="email" value="huynhtanlen3003@gmail.com" id="email" class="keyboardInput" style="width: 128px;">
                                                 </label>
                                             </td>
                                         </tr>
