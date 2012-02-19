@@ -184,7 +184,7 @@
     %>
             <div id="account-top">
                 <div id="use-login">
-                    <span id="link-use-login">&nbsp;&nbsp;[ <a href="/Account/CapNhatThongTin">Xem tài khoản</a> ]&nbsp;&nbsp;[
+                    <span id="link-use-login">&nbsp;&nbsp;[ <a href="/Account/ThongTinTaiKhoan">Xem tài khoản</a> ]&nbsp;&nbsp;[
                     <a href="/Account/XuLyDangXuat">Đăng xuất</a> ]</span> <span id="name-use-login">Chào,
                     <%=tk.Email %></span> <span id="icon-man-login" style="margin-right: 5px;"><a href="#">
                     <img src="../../Content/images/icon-man.gif" border="0"/></a></span>
