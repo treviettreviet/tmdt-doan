@@ -63,14 +63,18 @@ namespace Money10Banking.Controllers
 
         public ActionResult ChuyenTien()
         {
-            if (Session["User"] == null)
+            if (Session["User"] != null)
             {
-                return RedirectToAction("DangNhap");
+                if (Session["sid"] != null)
+                {
+
+                    return View("ChuyenTien");
+                }
+                else
+                    return RedirectToAction("DangNhapGiaoDich");
+               
             }
-            else
-            {
-                return RedirectToAction("DangNhapGiaoDich");
-            }
+            return RedirectToAction("DangNhap");
         }
 
         public ActionResult RutTien()
@@ -98,6 +102,41 @@ namespace Money10Banking.Controllers
             List<LichSuGiaoDichModels> lst = LSGiaoDich();
             ViewData["ListData"] = lst;
             return View();
+        }
+
+        /// <summary>
+        /// Lên - Tạo mã tăng tự động cho tất cả các bảng
+        /// Trước khi gọi hàm này, ta cần gọi hàm lấy mã cuối cùng của bảng bất kỳ cần thêm mới mã.
+        /// Ví dụ: ta gọi hàm TaoMaTangTuDong("TK008", 2, "TK")
+        /// Trong đó TK008: là kết quả trả về của hàm lấy mã cuối cùng trong bảng TaiKhoan
+        /// Số 2: là vị trí of 2 prefix đầu trong mã TK008
+        /// TK: là prefix cần thêm vào, trường hợp khác nếu ta thêm vào bảng Thẻ thì prefix là TH, bảng giao dịch là GD,....
+        /// </summary>
+        /// <param name="maHienTai"></param>
+        /// <param name="vitri"></param>
+        /// <param name="prefix"></param>
+        /// <returns></returns>
+        public static string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        {
+            string maTuDong = prefix;
+            try
+            {
+                int intMa = 0;
+                intMa = int.Parse(maHienTai.Substring(vitri));
+                maTuDong = maTuDong + (intMa + 1).ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
+            }
+            return maTuDong;
+        }
+
+        // Lên - Xử lý thoát
+        public ActionResult XuLyThoat()
+        {
+            Session.Remove("User");
+            return RedirectToAction("TrangChu");
         }
 
         /// <summary>
@@ -216,11 +255,11 @@ namespace Money10Banking.Controllers
                         tk.MatKhau = newpass;
                         NH.SaveChanges();
                         Response.Write("<script> alert ('Đổi Mật Khẩu thành công!');</script>");
-                        string sto = pass.Email;
-                        string from= "tmdthca@gmail.com" ;
-                        string subject = "Bạn đã đổi mật khẩu thành công lúc" + DateTime.Now + "!";
-                        string body = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
-                        sendMail(sto, from, subject,body);
+                        string sTo = pass.Email;
+                        string sFrom = "tmdthca@gmail.com";
+                        string sSubject = "Bạn đã đổi mật khẩu thành công lúc" + DateTime.Now + "!";
+                        string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                        sendMail(sTo, sFrom, sSubject, sBody);
                         return View("DoiMatKhau");
                     }
                     else
@@ -248,14 +287,20 @@ namespace Money10Banking.Controllers
             }
  
         }
-
+        /// <summary>
+        /// send mail khi khách hàng giao dịch
+        /// </summary>
+        /// <param name="sTo"></param>
+        /// <param name="sFrom"></param>
+        /// <param name="sSubject"></param>
+        /// <param name="sBody"></param>
         public void sendMail(string sTo, string sFrom , string sSubject,string sBody)
         {
             
-            //string sFileName = string.Empty;
+            string sFileName = string.Empty;
             string server = "smtp.gmail.com";
             string port = "587";
-            string user = "tmdthca@gmail.com";
+            string user = sFrom;
             string pass = "tmdt123456";
             String[] addr = sTo.Split(',');// Danh sach mail nhan
             System.Net.Mail.SmtpClient smtp = new SmtpClient();
@@ -273,41 +318,35 @@ namespace Money10Banking.Controllers
                 if (sFrom.Length > 0 && sTo.Length > 0 && sSubject.Length > 0 && sBody.Length >= 0)
                 {
                    
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
-                    msg.From = new MailAddress(sFrom, "ADMIN MONEY10 Gui Mail", System.Text.Encoding.UTF8);
 
-                            //msg.To.Add(sTo);
-                            //msg.Subject = sSubject;
-                            //msg.Body = sBody;
-                            //msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-                            //msg.ReplyTo = new MailAddress(sTo);
-                            //smtp.Send(msg);
-                            //lblError.Text = "Email đã được gửi đến: " + sTo + ".";
-                            //lblError.Visible = true;
+                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
+                    msg.From = new MailAddress(sFrom, "Thang Gui Mail", System.Text.Encoding.UTF8);
                     Byte i;
                     for (i = 0; i < addr.Length; i++)
                     {
-                        //bool result = regex.IsMatch(addr[i]);
-                        //if (result == false)
-                        //{
-                        //    lblError.Visible = true;
-                        //    lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
-                        //}
-                        //else
-                        //{
+                        bool result = regex.IsMatch(addr[i]);
+                        if (result == false)
+                        {
+                            //lblError.Visible = true;
+                            //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
+                            Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
+                            
+                        }
+                        else
+                        {
                             msg.To.Add(addr[i]);
                             msg.Subject = sSubject;
                             msg.Body = sBody;
                             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
-                         //   lblError.Text = "Email đã được gửi đến: " + sTo + ".";
+                           // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
                            // lblError.Visible = true;
-                       // }
-                    }
-                        
+                        }
                     }
                 }
+            }
+            
             
             catch (Exception ex)
             {
@@ -778,6 +817,18 @@ namespace Money10Banking.Controllers
                 //return View("BaoLoi");
 	        }
         }
+        /// <summary>
+        /// cập nhật thông tin tài khoản
+        /// 
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <param name="diachi"></param>
+        /// <param name="street"></param>
+        /// <param name="phuong"></param>
+        /// <param name="city"></param>
+        /// <param name="distric"></param>
+        /// <param name="receiveReport"></param>
+        /// <returns></returns>
         public ActionResult XLCapNhatTaiKhoan(string cmnd, string diachi,string street,string phuong, string city, string distric, string receiveReport)
         {
             TaiKhoan tk = (TaiKhoan)Session["User"];
@@ -882,22 +933,6 @@ namespace Money10Banking.Controllers
                                 dbNH.LichSuGiaoDiches.AddObject(LSGD);
 
 
-                                //List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
-                                //List<LichSuGiaoDich> gd = (from lsgd in dbNganHangOnline.LichSuGiaoDiches where lsgd.MaThe == th.MaThe select lsgd).ToList();
-                                //for (int i = 0; i < gd.Count; i++)
-                                //{
-
-                                //    string maldg = gd[i].MaLoaiGiaoDich;
-                                //    LoaiGiaoDich Lgd = dbNganHangOnline.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
-                                //    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
-                                //    ls.ThoiGian = gd[i].NgayGiaoDich.ToString();
-                                //    ls.LoaiGD = Lgd.TenLoaiGiaoDich;
-                                //    ls.TheGui = th.SoThe;
-                                //    ls.TheNhan = gd[i].SoTheNhan;
-                                //    ls.TienGui = gd[i].SoTienGiaoDich.ToString();
-                                //    listData.Add(ls);
-
-                                //}
                                 dbNH.SaveChanges();
                                 List<LichSuGiaoDichModels> listData = LSGiaoDich();
                                 ViewData["ListData"] = listData;
@@ -1160,39 +1195,6 @@ namespace Money10Banking.Controllers
         //    }
         //}
 
-        /// <summary>
-        /// Lên - Tạo mã tăng tự động cho tất cả các bảng
-        /// Trước khi gọi hàm này, ta cần gọi hàm lấy mã cuối cùng của bảng bất kỳ cần thêm mới mã.
-        /// Ví dụ: ta gọi hàm TaoMaTangTuDong("TK008", 2, "TK")
-        /// Trong đó TK008: là kết quả trả về của hàm lấy mã cuối cùng trong bảng TaiKhoan
-        /// Số 2: là vị trí of 2 prefix đầu trong mã TK008
-        /// TK: là prefix cần thêm vào, trường hợp khác nếu ta thêm vào bảng Thẻ thì prefix là TH, bảng giao dịch là GD,....
-        /// </summary>
-        /// <param name="maHienTai"></param>
-        /// <param name="vitri"></param>
-        /// <param name="prefix"></param>
-        /// <returns></returns>
-        public static string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
-        {
-            string maTuDong = prefix;
-            try
-            {
-                int intMa = 0;
-                intMa = int.Parse(maHienTai.Substring(vitri));
-                maTuDong = maTuDong + (intMa + 1).ToString();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
-            }
-            return maTuDong;
-        }
-
-        // Lên - Xử lý thoát
-        public ActionResult XuLyThoat()
-        {
-            Session.Remove("User");
-            return RedirectToAction("TrangChu");
-        }
+       
     }
 }
