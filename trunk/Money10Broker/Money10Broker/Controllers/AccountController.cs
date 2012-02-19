@@ -57,10 +57,36 @@ namespace Money10Broker.Controllers
         {
             try
             {
-                TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+                xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+                TaiKhoan user = (from row in mg.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
                 if (user.Email == email && user.MatKhau == GetMD5Hash(password))
                 {
                     Session["User"] = user;
+                    if (user.MaLoaiTaiKhoan.Equals("LTK001"))   // Tài khoản thuộc Cá Nhân
+                    {
+                        try
+                        {
+                            CaNhan canhan = mg.CaNhans.Single(m => m.MaTaiKhoan == user.MaTaiKhoan);
+                            Session["TaiKhoanCaNhan"] = canhan;
+                        }
+                        catch (Exception ex)
+                        {
+                            //throw new Exception(ex.Message);
+                            Response.Write(ex.ToString());
+                        }
+                    }
+                    else    // Tài khoản thuộc Doanh Nghiệp
+                    {
+                        try
+                        {
+                            DoanhNghiep dn = mg.DoanhNghieps.Single(m=>m.MaTaiKhoan==user.MaTaiKhoan);
+                            Session["TaiKhoanDoanhNghiep"] = dn;
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.Write(ex.ToString());
+                        }
+                    }
                     return 0;//Đăng nhập thành công
                 }
                 else
@@ -85,7 +111,6 @@ namespace Money10Broker.Controllers
             int user_validation = UserValidation(email, password);
             if (user_validation == 0)
             {
-                //return View("DangNhapThanhCong");
                 return RedirectToAction("../Public/TongHop");
             }
             else

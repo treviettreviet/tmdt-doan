@@ -49,14 +49,23 @@
                                 Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
                                 string LoaiTaiKhoan = "";
                                 string TinhTrangTaiKhoan = "";
+                                Money10Broker.Models.CaNhan cn = new Money10Broker.Models.CaNhan();
+                                Money10Broker.Models.DoanhNghiep dn = new Money10Broker.Models.DoanhNghiep();
                                 if (tk.MaLoaiTaiKhoan.Equals("LTK001"))
+                                {
                                     LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁC NHÂN";
+                                    
+                                }
                                 else
+                                {
                                     LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO DOANH NGHIỆP";
+                                }
                                 if (tk.TinhTrang == 0)
                                     TinhTrangTaiKhoan = "Đang hoạt động";
                                 else
                                     TinhTrangTaiKhoan = "Không hoạt động";
+                                
+                                
                         %>
                         <div class="menu-vertical-right-content-title">
                             Thông tin tài khoẢn</div>
