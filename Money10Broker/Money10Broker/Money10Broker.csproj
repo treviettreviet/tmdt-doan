@@ -390,15 +390,11 @@
     <Content Include="Scripts\js\validatj.js" />
     <Content Include="Scripts\js\vtip0000.js" />
     <Content Include="Scripts\js\withdraw.js" />
+	
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Admin\Admin.aspx" />
-<<<<<<< .mine
     <Content Include="Views\Transaction\ChuyenTien.aspx" />
-    <Content Include="Views\Account\CapNhatThongTin.aspx" />
-=======
     <Content Include="Views\Account\ThongTinTaiKhoan.aspx" />
->>>>>>> .r226
-    <Content Include="Views\Public\ChuyenTien.aspx" />
     <Content Include="Views\Account\DangNhap.aspx" />
     <Content Include="Views\Transaction\LichSuGiaoDich.aspx" />
     <Content Include="Views\Transaction\NapTien.aspx" />
