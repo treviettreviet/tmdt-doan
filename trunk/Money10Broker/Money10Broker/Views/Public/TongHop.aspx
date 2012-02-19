@@ -14,13 +14,13 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			    <li class=" active" style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
-				<li class=" " style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
-                <li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>	
-				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
-                <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
-                <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
+			    <li class=" active" style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
+				<li class=" " style="display:block"><a href="/Transaction/NapTien"><span>Nạp tiền</span></a></li>
+                <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
+				<li class=" " style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
+                <li class=" " style="display:block"><a href="/Transaction/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                <li class=" " style="display:block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
 			</ul>
 		</div>
 	</div>
