@@ -394,6 +394,10 @@
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Transaction\ChuyenTien.aspx" />
+<<<<<<< .mine
+    <Content Include="Views\Account\CapNhatThongTin.aspx" />
+=======
+>>>>>>> .r230
     <Content Include="Views\Account\ThongTinTaiKhoan.aspx" />
     <Content Include="Views\Account\DangNhap.aspx" />
     <Content Include="Views\Transaction\LichSuGiaoDich.aspx" />

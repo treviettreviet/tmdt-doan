@@ -108,20 +108,29 @@ namespace Money10Broker.Controllers
             string brokerCardNum = "340426820759153";
             string sid = WSProxy.CallWebService(wsURL, WebService, "AuthenticateForTransaction", new object[] {"lengoctin@gmail.com", "12345678" }).ToString();
 
-            //Thu phí 10% số tiền giao dịch
-            decimal fee = amount + amount * (10m / 100m);
-
-            //Chuyển tiền vào tk môi giới
-            int result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
+            //Chuyển tiền 2 tài khoản
+            int result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, receivecardnum, amount });
 
             //Chuyển thành công vào môi giới
             if (result == 0)
             {
-                result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, brokerCardNum, receivecardnum, amount });
+                //Thu phí 3% số tiền giao dịch
+                decimal fee = amount * (3m / 100m);
+
+                //Chuyển tiền vào tk môi giới
+                result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
 
                 //Giao dịch thành công
                 if (result == 0)
                 {
+                    LichSuGiaoDich log = new Models.LichSuGiaoDich();
+                    log.NgayGiaoDich = DateTime.Now;
+                    log.MaThe = sendcardnum;
+                    log.SoTheNhan = receivecardnum;
+                    log.SoTienGiaoDich = amount;
+                    
+
+
                     ViewData["div"] = "message-box";
                     ViewData["messege"] = "Chuyển Tiền Thành Công";
                     return RedirectToAction("LichSuGiaoDich");
