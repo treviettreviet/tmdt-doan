@@ -214,8 +214,8 @@ input[type='button']{
 	padding-left:2px;
 	float:right;
 	font-size:12px;
-	/*background:url(../../Content/images/icon-man-login.gif) no-repeat 0 50%;*/
-	}
+    height: 21px;
+}
 #shortcut-login-infomation{
 	float:right;
 	margin-left:10px;

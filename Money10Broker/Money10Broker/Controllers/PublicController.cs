@@ -14,11 +14,6 @@ namespace Money10Broker.Controllers
 
         private xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult ThanhToanTrucTuyen()
         {
             ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
@@ -30,7 +25,7 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult DangNhap()
+        public ActionResult TongHop()
         {
             return View();
         }
@@ -41,41 +36,6 @@ namespace Money10Broker.Controllers
         }
 
         public ActionResult ChuyenTienKhacMoiGioi()
-        {
-            return View();
-        }
-
-        public ActionResult CapNhatThongTin()
-        {
-            return View();
-        }
-        public ActionResult XuLyDangXuat()
-        {
-            Session.Remove("User");
-            return RedirectToAction("TrangChu");
-        }
-
-        public ActionResult TongHop()
-        {
-            return View();
-        }
-
-        public ActionResult DangNhapThatBai()
-        {
-            return View();
-        }
-
-        public ActionResult ChonDangKy()
-        {
-            return View();
-        }
-
-        public ActionResult DangKyCaNhan()
-        {
-            return View();
-        }
-
-        public ActionResult DangKyDoanhNghiep()
         {
             return View();
         }
@@ -94,19 +54,18 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+
         public ActionResult ChuyenTien()
         {
             return View();
         }
-        //public ActionResult ChuyenTienThanhCong()
-        //{
-
-        //}
+        
         public ActionResult DangNhapGiaoDich()
         {
             return View();
         }
 
+        /**
         public ActionResult Login(string email, string password, decimal amount)
         {
             int state = UserValidation(email, password);
@@ -131,144 +90,13 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+         */
+         
         public int CheckAccount(decimal amount, decimal balance)
         {
             if (amount > balance)
                 return -1;
             return 0;
-        }
-
-        /// <summary>
-        /// Xác nhận tài khoản
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        private int UserValidation(string email, string password)
-        {
-            try
-            {
-                TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (user.Email == email && user.MatKhau == GetMD5Hash(password))
-                {
-                    Session["User"] = user;
-                    return 0;//Đăng nhập thành công
-                }
-                else
-                {
-                    return 1;//Đăng nhập không thành công, sai password
-                }
-            }
-            catch
-            {
-                return -1; //Email chưa đăng ký
-            }
-        }
-
-        /// <summary>
-        /// Kiểm tra đăng nhập tài khoản, tại trang chủ
-        /// </summary>
-        /// 
-
-        [HttpPost]
-        public ActionResult XuLyDangNhap(string email, string password)
-        {
-            int user_validation = UserValidation(email, password);
-            if (user_validation == 0)
-            {
-                //return View("DangNhapThanhCong");
-                return RedirectToAction("TongHop");
-            }
-            else
-            {
-                //<div class="message-box" id="message-box-login" style="display: block; ">Mật khẩu không đúng</div>
-                string div = "message-box";
-                string error = "";
-                if (user_validation == -1)
-                {
-                    error += "Email không tồn tại";
-                }
-                if (user_validation == 1)
-                {
-                    error += "Sai mật khẩu";
-                }
-                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                return View("DangNhap");
-            }
-        }
-
-        // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
-        // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
-        // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
-        public ActionResult XuLyDangKyCaNhan(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string date, string month, string year, string sex, string address, string city_id)
-        {
-            if (cmdRegister != null)
-            {
-                if (KiemTraEmail(email) == 0)
-                {
-                    try
-                    {
-                        xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
-                        TaiKhoan newUser = new TaiKhoan();
-                        CaNhan newInfo = new CaNhan();
-                        string MaTaiKhoanMax = dbXuLyDangKy.TaiKhoans.Max(m => m.MaTaiKhoan);
-                        string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");
-                        newUser.MaTaiKhoan = MaTaiKhoanNext;
-                        newUser.SoTaiKhoan = TaoSoTaiKhoan();   // Tạo số tài khoản tự động gồm 6 số không trùng nhau.
-                        newUser.MaLoaiTaiKhoan = "LTK001";
-                        newUser.SoDu = 0;
-                        newUser.Email = email;
-                        newUser.MatKhau = GetMD5Hash(password);
-                        newUser.MatKhauGiaoDich = password_payment;
-                        newUser.TinhTrang = 0;
-                        dbXuLyDangKy.TaiKhoans.AddObject(newUser);
-
-                        // Thêm thông tin vào bảng cá nhân
-                        string MaCaNhanMax = dbXuLyDangKy.CaNhans.Max(m => m.MaCaNhan);
-                        string MaCaNhanNext = TaoMaTangTuDong(MaCaNhanMax, 2, "CN");
-                        newInfo.MaCaNhan = MaCaNhanNext;
-                        newInfo.MaTaiKhoan = MaTaiKhoanNext;
-                        newInfo.HoTen = fullname;
-                        string birthday = date + "/" + month + "/" + year;
-                        newInfo.NgaySinh = DateTime.Parse(birthday);
-                        if (sex.Equals("1"))
-                            newInfo.GioiTinh = "Nam";
-                        else
-                            newInfo.GioiTinh = "Nữ";
-                        newInfo.CMNDHoChieu = 0;
-                        if (!social_id.Equals(""))
-                            newInfo.CMNDHoChieu = int.Parse(social_id);
-                        newInfo.TinhTrang = 0;
-                        dbXuLyDangKy.CaNhans.AddObject(newInfo);
-                        dbXuLyDangKy.SaveChanges();
-                        return RedirectToAction("DangNhap");
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception(ex.Message);
-                    }
-                }
-                else
-                {
-                    return RedirectToAction("DangKyCaNhan");
-                }
-            }
-            return View();
-        }
-
-        //Kiểm tra email đăng ký
-        private int KiemTraEmail(string email)
-        {
-            try
-            {
-                TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                return 1;   // Email không tồn tại
-            }
-            catch
-            {
-                return 0;   // Email không tồn tại
-            }
         }
 
         string wsURL = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
