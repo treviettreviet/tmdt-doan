@@ -15,8 +15,8 @@
                 <h2 class="title-page">
                     THANH TOÁN TRỰC TUYẾN AN TOÀN, NHANH CHÓNG, TIỆN LỢI</h2>
                 <div class="flag">
-                    <a class="flag-vn active" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;lang=vn">
-                        Tiếng Việt</a> <a class="flag-el" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=pay_direct&amp;lang=en">
+                    <a class="flag-vn active" href="#"
+                        Tiếng Việt</a> <a class="flag-el" href="#">
                             English</a>
                 </div>
             </div>
@@ -25,13 +25,13 @@
         <div class="intro">
             NgânLượng.vn được Ngân Hàng Nhà Nước bảo hộ và cấp phép hoạt động, cam kết ĐẢM BẢO
             AN TOÀN cho giao dịch thanh toán của bạn với phương châm: NGƯỜI BÁN CHỈ NHẬN ĐƯỢC
-            TIỀN KHI BẠN ĐÃ NHẬN HÀNG ĐÚNG MÔ TẢ! [ <a href="http://help.nganluong.vn/chi-tiet-49/2/419/Gioi-thieu-ve-NganLuong.vn.html"
+            TIỀN KHI BẠN ĐÃ NHẬN HÀNG ĐÚNG MÔ TẢ! [ <a href="#"
                 target="_blank">Tìm hiểu thêm</a> ]
         </div>
         <!-- END BlockIntro -->
         <div class="box-info-left box-cart">
             <div class="title">
-                <span>Thông tin đơn hàng</span> <a class="btn-zoom btn-zoom-out" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                <span>Thông tin đơn hàng</span> <a class="btn-zoom btn-zoom-out" href="#">
                     Xem giản lược</a>
             </div>
             <div class="box-info-content">
@@ -54,7 +54,7 @@
                         <td>
                             <!-- BEGIN BlockUpdateQuantity -->
                             <asp:Label ID="lblSoLuong" runat="server" Text="Label"></asp:Label>
-                            <span>[<a id="update_quantity_button" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <span>[<a id="update_quantity_button" href="#">
                                 Cập nhật </a>]</span>
                             <!-- END BlockUpdateQuantity -->
                         </td>
@@ -116,7 +116,7 @@
         </script>
         <div class="box-info-right box-cart" style="margin-bottom: 5px;">
             <div class="title">
-                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="#">
                     Xem giản lược</a>
             </div>
             <div class="box-info-content">
@@ -190,11 +190,11 @@
         <div id="box-payment" class="box main-box">
             <div class="main-title">
                 <ul>
-                    <li class="active"><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                    <li class="active"><a href="#">
                         Thanh toán trực tuyến</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=83&amp;id=433&amp;news_name=Huong-dan-thanh-toan-truc-tuyen&amp;cat=2"
+                    <a href="#"
                         target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
@@ -221,12 +221,12 @@
         <div id="option-payment-type" class="box main-box box-payment" style="display: none;">
             <div class="main-title">
                 <ul>
-                    <li class="active"><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                    <li class="active"><a href="#">
                         Thanh toán bằng tài khoản Ngân hàng</a></li>
                     <li class="end"><a class="link-payment-type" href="">Sử dụng số dư tài khoản NgânLượng.vn</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=83&amp;id=433&amp;news_name=Huong-dan-thanh-toan-truc-tuyen&amp;cat=2"
+                    <a href="#"
                         target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
@@ -251,108 +251,106 @@
 				-->
                     <div class="row-bank">
                         <div class="title-row-bank active">
-                            <a class="active" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <a class="active" href="#">
                                 <!--<span class="step-sub">Cách 1:</span>-->
                                 <span class="name-title">Dùng thẻ Tín dụng và Ghi nợ quốc tế</span> <span class="charge">
                                     (Phí 3.600đ + 2,75%)</span> </a>
                         </div>
                         <div class="row-bank-c">
                             <ul>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng Visa Card" border="0" height="30" src="../images/visacard.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng Master Card" border="0" height="30" src="../images/masterca.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href=#">
                                     <img alt="Thanh toán bằng thẻ American Express" border="0" height="30" src="../images/americia.gif" /></a></li>
-                                <li><a href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;cmd=payment_type&amp;method=sml_visa_ck_on#option-payment-type">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng thẻ JCB" border="0" height="30" src="../images/jcbcard0.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="row-bank">
                         <div class="title-row-bank active">
-                            <a class="active" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <a class="active" href="#">
                                 <!--<span class="step-sub">Cách 2:</span>-->
                                 <span class="name-title">Online dùng thẻ ATM</span> <span class="charge">(Miễn phí)</span>
                             </a>
                         </div>
                         <div class="row-bank-c">
                             <ul>
-                                <li><a id="email" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vcb_ck_on#option-payment-type">
+                                <li><a id="email" href="#">
                                     <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
-                                <li><a id="email0" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_tcb_ck_on#option-payment-type">
+                                <li><a id="email0" href="#">
                                     <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
-                                <li><a id="email1" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_mb_ck_on#option-payment-type">
+                                <li><a id="email1" href="#">
                                     <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
-                                <li><a id="email2" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vib_ck_on#option-payment-type">
-                                    <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
-                                <li><a id="email3" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_vtb_ck_on#option-payment-type"
+                                <li><a id="email2" href="##"
                                     style="width: 90px;">
                                     <img border="0" height="30" src="../images/icb_1299.gif" /></a></li>
-                                <li><a id="email4" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_exb_ck_on#option-payment-type"
+                                <li><a id="email4" href="#"
                                     style="width: 90px;">
                                     <img border="0" height="30" src="../images/exb_1299.gif" /></a></li>
-                                <li><a id="email5" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_acb_ck_on#option-payment-type">
+                                <li><a id="email5" href="#">
                                     <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
-                                <li><a id="email6" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_hdb_ck_on#option-payment-type">
+                                <li><a id="email6" href="#">
                                     <img border="0" height="30" src="../images/hdb_1307.png" /></a></li>
-                                <li><a id="email7" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_msb_ck_on#option-payment-type">
+                                <li><a id="email7" href="#">
                                     <img border="0" height="30" src="../images/msb_1299.gif" /></a></li>
-                                <li><a id="email8" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sml_atm_nvb_ck_on#option-payment-type">
+                                <li><a id="email8" href="#">
                                     <img border="0" height="30" src="../images/nvb_1324.jpg" /></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="row-bank">
                         <div class="title-row-bank active">
-                            <a class="active" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <a class="active" href="#">
                                 <!--<span class="step-sub">Cách 3:</span>-->
                                 <span class="name-title">Online bằng Internet-Banking</span> <span class="charge">(Miễn
                                     phí)</span> </a>
                         </div>
                         <div class="row-bank-c">
                             <ul>
-                                <li><a id="email9" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_ck_on#option-payment-type">
+                                <li><a id="email9" href="#">
                                     <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
-                                <li><a id="email10" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vnbc_ck_on#option-payment-type">
+                                <li><a id="email10" href="#">
                                     <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
-                                <li><a id="email11" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_ck_on#option-payment-type">
+                                <li><a id="email11" href="#">
                                     <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
-                                <li><a id="email12" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_ck_on#option-payment-type">
+                                <li><a id="email12" href="#">
                                     <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="row-bank">
                         <div class="title-row-bank ">
-                            <a class="" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <a class="" href="#">
                                 <!--<span class="step-sub">Cách 4:</span>-->
                                 <span class="name-title">Chuyển khoản bằng Internet-Banking</span> <span class="charge">
                                     (Miễn phí)</span> </a>
                         </div>
                         <div class="row-bank-c" style="display: none">
                             <ul>
-                                <li><a id="email13" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vcb_ck_in#option-payment-type">
+                                <li><a id="email13" href="#">
                                     <img border="0" height="30" src="../images/vcb_1299.gif" /></a></li>
-                                <li><a id="email14" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=dab_ck_in#option-payment-type">
+                                <li><a id="email14" href="#">
                                     <img border="0" height="30" src="../images/dab_1299.gif" /></a></li>
-                                <li><a id="email15" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tcb_ck_in#option-payment-type">
+                                <li><a id="email15" href="#">
                                     <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
-                                <li><a id="email16" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=mb_ck_in#option-payment-type">
+                                <li><a id="email16" href="#">
                                     <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
-                                <li><a id="email17" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=shb_ck_in#option-payment-type">
+                                <li><a id="email17" href="#">
                                     <img border="0" height="30" src="../images/shb_1299.gif" /></a></li>
-                                <li><a id="email18" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=vib_ck_in#option-payment-type">
+                                <li><a id="email18" href="#">
                                     <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
-                                <li><a id="email19" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=acb_ck_in#option-payment-type">
+                                <li><a id="email19" href="#">
                                     <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
-                                <li><a id="email20" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=sb_ck_in#option-payment-type"
+                                <li><a id="email20" href="#"
                                     style="width: 90px;">
                                     <img border="0" height="30" src="../images/sb_12785.gif" /></a></li>
-                                <li><a id="email21" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=tpb_ck_in#option-payment-type"
+                                <li><a id="email21" href="#"
                                     style="width: 90px;">
                                     <img border="0" height="30" src="../images/tpb_1291.gif" /></a></li>
-                                <li><a id="email22" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5&amp;&amp;cmd=payment_type&amp;method=pgb_ck_in#option-payment-type"
+                                <li><a id="email22" href="#"
                                     style="width: 90px;">
                                     <img border="0" height="30" src="../images/pgb_1299.gif" /></a></li>
                             </ul>
@@ -360,7 +358,7 @@
                     </div>
                     <div class="row-bank">
                         <div class="title-row-bank ">
-                            <a class="" href="https://www.nganluong.vn/index.php?portal=checkout&amp;page=express2&amp;lang=vn&amp;session=7d3d6ba1f0cac68baf560e8adeaaaec5#">
+                            <a class="" href="#">
                                 <!--<span class="step-sub">Cách 5:</span>-->
                                 <span class="name-title">Chuyển khoản tại cây ATM</span> <span class="charge">(Miễn
                                     phí)</span> </a>
