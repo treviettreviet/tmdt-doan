@@ -271,7 +271,7 @@
                                         <option value="1986">1986</option>
                                         <option value="1987">1987</option>
                                         <option value="1988">1988</option>
-                                        <option value="1989" selected>1989</option>
+                                        <option value="1989">1989</option>
                                         <option value="1990">1990</option>
                                         <option value="1991">1991</option>
                                         <option value="1992">1992</option>
@@ -293,7 +293,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <span class="required">*</span>Giới tính:
+                                    <span class="required">*</span>Giới tính : :
                                 </th>
                                 <td>
                                     <select name="gender" id="gender" style="width: ">
@@ -349,7 +349,7 @@
                                         <option value="27">Hải Phòng</option>
                                         <option value="28">Hòa Bình</option>
                                         <option value="29">Hưng Yên</option>
-                                        <option value="30" selected>Hồ Chí Minh</option>
+                                        <option value="30"> Hồ Chí Minh</option>
                                         <option value="31">Khánh Hòa</option>
                                         <option value="32">Kiên Giang</option>
                                         <option value="33">Kon Tum</option>
@@ -431,19 +431,8 @@
         </div>
         <div id="menu-vertical-left">
             <ul>
-                <li class="active"><a href="/Public/CapNhatTaiKhoan">Thông tin tài khoản</a></li>
-                <li class><a href="#">Hình thức bán hàng</a></li>
-                <li class><a href="#">Địa chỉ Email</a></li>
-                <li class><a href="#">Điện thoại di động</a></li>
-                <li class><a href="#">Địa chỉ nhận hàng</a></li>
-                <li class><a href="#">Tài khoản ngân hàng</a></li>
-                <li class><a href="#">Danh bạ đối tác giao dịch</a></li>
-                <li class><a href="#">Phân quyền truy cập</a></li>
-                <li class><a href="#">Lịch sử hoạt động</a></li>
-                <li class><a href="#">Hình thức xác minh GD</a></li>
-                <li class><a href="#">Chuyển đổi loại tài khoản</a></li>
-                <li class><a href="#">Phí vận chuyển</a></li>
-                <li class><a href="#">Đổi mật khẩu</a></li>
+                <li class="active"><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>                        
+                <li class><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
             </ul>
         </div>
     </div>
