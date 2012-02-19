@@ -36,7 +36,7 @@
                         <a href="#" 
                             target="_blank">Tìm hiểu thêm về ví cá nhân</a><br />
                         <br />
-                        <a class="button-round-yell" href="/Public/DangKyCaNhan"><span>Tiếp tục »</span></a>
+                        <a class="button-round-yell" href="/Account/DangKyCaNhan"><span>Tiếp tục »</span></a>
                     </div>
                 </div>
                 <div id="register-left-bottom">
