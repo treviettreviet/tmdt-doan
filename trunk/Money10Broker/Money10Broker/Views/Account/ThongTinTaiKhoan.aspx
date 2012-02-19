@@ -14,9 +14,7 @@
             <div id="menu-nav-content-main">
                 <ul>
                     <li class="active " style="display: block"><a href="#"><span>GIAO DỊCH</span></a></li>
-                    <li class=" " style="display: block"><a href="#"><span>KHIẾU NẠI</span></a></li>
                     <li class=" " style="display: block"><a href="#"><span>TÀI KHOẢN</span></a></li>
-                    <li class=" end" style="display: block"><a href="#"><span>TÍCH HỢP THANH TOÁN</span></a></li>
                 </ul>
             </div>
             <div id="menu-nav-content-sub">
@@ -32,7 +30,6 @@
                         tiền cùng môi giới</span></a></li>
                     <li class=" " style="display: block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển
                         tiền khác môi giới</span></a></li>
-                    <li class=" end" style="display: block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
                 </ul>
             </div>
         </div>
@@ -42,64 +39,66 @@
             <div class="menu-vertical-right-content-form">
                 <div id="menu-vertical-right-content">
                     <div class="menu-vertical-right-content">
-                    <%
-                        if (Session["User"] == null)
-                        {
-                            Response.Redirect("../Public/DangNhap");
-                        }
-                        else
-                        {
-                            Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
-                            string LoaiTaiKhoan = "";
-                            string TinhTrangTaiKhoan = "";
-                            if(tk.MaLoaiTaiKhoan.Equals("LTK001"))
-                                LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁC NHÂN";
+                        <%
+                            if (Session["User"] == null)
+                            {
+                                Response.Redirect("../Public/DangNhap");
+                            }
                             else
-                                LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO DOANH NGHIỆP";
-                            if (tk.TinhTrang == 0)
-                                TinhTrangTaiKhoan = "Đang hoạt động";
-                            else
-                                TinhTrangTaiKhoan = "Không hoạt động";
-                    %>
-                            <div class="menu-vertical-right-content-title">Thông tin tài khoẢn</div>
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <th>
-                                        Loại tài khoản:
-                                    </th>
-                                    <td>
-                                        <strong><%=LoaiTaiKhoan%></strong>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        Mã tài khoản:
-                                    </th>
-                                    <td>
-                                        <strong><%=tk.SoTaiKhoan %></strong>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        Tình trạng tài khoản:
-                                    </th>
-                                    <td>
-                                        <%=TinhTrangTaiKhoan %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        Hình thức xác minh giao dịch:
-                                    </th>
-                                    <td>
-                                        Sử dụng mật khẩu giao dịch<span style="margin-left: 10px;">[ <a href="#">Thay đổi</a>]</span>
-                                    </td>
-                                </tr>
-                            </table>
-                    <%       
+                            {
+                                Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
+                                string LoaiTaiKhoan = "";
+                                string TinhTrangTaiKhoan = "";
+                                if (tk.MaLoaiTaiKhoan.Equals("LTK001"))
+                                    LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁC NHÂN";
+                                else
+                                    LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO DOANH NGHIỆP";
+                                if (tk.TinhTrang == 0)
+                                    TinhTrangTaiKhoan = "Đang hoạt động";
+                                else
+                                    TinhTrangTaiKhoan = "Không hoạt động";
+                        %>
+                        <div class="menu-vertical-right-content-title">
+                            Thông tin tài khoẢn</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th>
+                                    Loại tài khoản:
+                                </th>
+                                <td>
+                                    <strong>
+                                        <%=LoaiTaiKhoan%></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Mã tài khoản:
+                                </th>
+                                <td>
+                                    <strong>
+                                        <%=tk.SoTaiKhoan %></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Tình trạng tài khoản:
+                                </th>
+                                <td>
+                                    <%=TinhTrangTaiKhoan %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Hình thức xác minh giao dịch:
+                                </th>
+                                <td>
+                                    Sử dụng mật khẩu giao dịch<span style="margin-left: 10px;">[ <a href="#">Thay đổi</a>]</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <%       
                         } 
-                    %>
-                        
+                        %>
                     </div>
                     <div class="menu-vertical-right-content">
                         <div class="menu-vertical-right-content-title">
