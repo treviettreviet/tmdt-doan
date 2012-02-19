@@ -11,9 +11,7 @@ namespace Money10Broker.Controllers
     {
         private xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
 
-        
-
-        public ActionResult CapNhatThongTin()
+        public ActionResult ThongTinTaiKhoan()
         {
             return View();
         }

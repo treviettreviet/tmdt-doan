@@ -271,23 +271,15 @@
                         </div>
                         <div class="nlh-topbrd">
                             <p class="labelAcc">
-                                TỔNG TIỀN:</p>
+                                SỐ DƯ VÍ:</p>
                             <p class="totalbalance">
-                                0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
-                        </div>
-                        <div class="nlh-topbrd">
-                            <p class="labelAcc">
-                                SỐ DƯ KHẢ DỤNG:</p>
-                            <p class="balanceavailable">
-                                0<sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
-                        </div>
-                        <div class="nlh-topbrd">
+                                <%=tk.SoDu %><sup style="font-size: 10px; font-weight: normal; text-transform: none">vnd</sup></p>
                         </div>
                     </div>
                     <div class="nlh-mdbx">
                         <!--  nlh-formUsrlg-->
                         <ul>
-                            <li><a href="/Account/CapNhatThongTin">Thông tin tài khoản</a></li>
+                            <li><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
                             <li><a href="/Public/TongHop">Quản trị giao dịch</a></li>
                             <li><a href="/Transaction/NapTien">Nạp tiền</a> | <a href="/Transaction/ChuyenTien">
                                 Chuyển tiền</a></li>

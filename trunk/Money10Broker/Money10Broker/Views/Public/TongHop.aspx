@@ -8,11 +8,8 @@
 	<div id="menu-nav-content-c">
 		<div id="menu-nav-content-main">
 			<ul>
-			
 				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>KHIẾU NẠI</span></a></li>
 				<li class=" " style="display:block"><a href="#"><span>TÀI KHOẢN</span></a></li>
-				<li class=" end" style="display:block"><a href="#"><span>TÍCH HỢP THANH TOÁN</span></a></li>
 			</ul>
 		</div>
 		<div id="menu-nav-content-sub">
@@ -24,7 +21,6 @@
 				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
                 <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
                 <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
-				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
 	</div>
