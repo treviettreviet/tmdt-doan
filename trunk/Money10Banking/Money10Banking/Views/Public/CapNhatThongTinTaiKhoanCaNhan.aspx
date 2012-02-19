@@ -103,15 +103,6 @@
             <div class="payment-title">
                 <div class="pay-method-title">
                     THAY ĐỔI THÔNG TIN TÀI KHOẢN</div>
-               <%-- <div class="payment-help">
-                    <div class="icon-help">
-                        <img src="../../Content/images/icon-hel.png"></div>
-                   <%-- <div class="text-help">
-                        <a href="https://www.baokim.vn/faq/category/quan-ly-tai-khoan" class="help_link_top bold"
-                            target="popup" onclick="window.open(&quot;&quot;,&quot;popup&quot;,&quot;height=500,width=810,scrollbars=yes&quot;)">
-                            <b>Xem trợ giúp</b></a>
-                    </div>--%>
-                </div>--%>
             </div>
         </div>
         <!-- new -->
@@ -135,7 +126,10 @@
                             Tên chủ tài khoản
                         </th>
                         <td>
-                            <span class="acc_name"></span>
+                         <% Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"];  %>
+                         <% Money10Banking.Models.NganHangEntities db = new Money10Banking.Models.NganHangEntities(); %>
+                         <% Money10Banking.Models.KhachHang kh = db.KhachHangs.Single(p => p.MaTaiKhoan == tk.MaTaiKhoan);%>
+                            <span class="acc_name"> <%= kh.HoTen%></span>
                         </td>
                     </tr>
                     <tr>

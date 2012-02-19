@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Money10Banking.Models;
 using System.Security.Cryptography;
+using System.Net.Mail;
+using System.Net;
 
 namespace Money10Banking.Controllers
 {
@@ -158,27 +160,7 @@ namespace Money10Banking.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    //int i;
-
-                    //TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.Email == email);
-                    //The th = dbNganHangOnline.Thes.Single(a => a.MaTaiKhoan == tk.MaTaiKhoan);
-                    ////LichSuGiaoDich ls= new LichSuGiaoDich();
-                    //List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
-                    //List<LichSuGiaoDich> gd = (from LSGD in dbNganHangOnline.LichSuGiaoDiches where LSGD.MaThe == th.MaThe select LSGD).ToList();
-                    //for (int i=0; i<gd.Count;i++)
-                    //{
-                        
-                    //    string maldg = gd[i].MaLoaiGiaoDich;
-                    //    LoaiGiaoDich Lgd = dbNganHangOnline.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
-                    //    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
-                    //    ls.ThoiGian=gd[i].NgayGiaoDich.ToString();
-                    //    ls.LoaiGD=Lgd.TenLoaiGiaoDich;
-                    //    ls.TheGui=th.SoThe;
-                    //    ls.TheNhan=gd[i].SoTheNhan;
-                    //    ls.TienGui=gd[i].SoTienGiaoDich.ToString();
-                    //    listData.Add(ls);
-                       
-                    //}
+                    
                     List<LichSuGiaoDichModels> listData = LSGiaoDich();
                     ViewData["ListData"] = listData;
                     return View("LichSuGiaoDich");
@@ -205,6 +187,134 @@ namespace Money10Banking.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        /// <summary>
+        /// Đổi mật khẩu
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="newPassword"></param>
+        /// <param name="confirmNewPassword"></param>
+        /// <returns></returns>
+        public ActionResult XLDoiPass(string password, string newPassword, string confirmNewPassword)
+        {
+            
+            //TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MatKhau == pass.MatKhau);
+            try
+            {
+                string pas = GetMD5Hash(password);
+                
+                TaiKhoan pass = (TaiKhoan)Session["User"];
+                string div = "error-box";
+                string error = "";
+                if (pass.MatKhau==pas)
+                {
+                    if (newPassword == confirmNewPassword)
+                    {
+                        NganHangEntities NH = new NganHangEntities();
+                        TaiKhoan tk = NH.TaiKhoans.Single(p => p.MaTaiKhoan == pass.MaTaiKhoan);
+                        string newpass = GetMD5Hash(newPassword);
+                        //tk.MatKhau = newpass;
+                        tk.MatKhau = newpass;
+                        NH.SaveChanges();
+                        Response.Write("<script> alert ('Đổi Mật Khẩu thành công!');</script>");
+                        string sto = pass.Email;
+                        string from= "tmdthca@gmail.com" ;
+                        string subject = "Bạn đã đổi mật khẩu thành công lúc" + DateTime.Now + "!";
+                        string body = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                        sendMail(sto, from, subject,body);
+                        return View("DoiMatKhau");
+                    }
+                    else
+                    {
+                        error += "Mật Khẩu mới Không Khớp";
+                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                        return View("DoiMatKhau");
+ 
+                    }
+                    
+                    
+                }
+                else
+                {
+                    error += "Sai mật khẩu";
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    return View("DoiMatKhau");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+ 
+        }
+
+        public void sendMail(string sTo, string sFrom , string sSubject,string sBody)
+        {
+            
+            //string sFileName = string.Empty;
+            string server = "smtp.gmail.com";
+            string port = "587";
+            string user = "tmdthca@gmail.com";
+            string pass = "tmdt123456";
+            String[] addr = sTo.Split(',');// Danh sach mail nhan
+            System.Net.Mail.SmtpClient smtp = new SmtpClient();
+            System.Net.Mail.MailMessage msg = new MailMessage();
+            msg.IsBodyHtml = true;
+            smtp.Port = Int32.Parse(port);
+            smtp.EnableSsl = true;//chứng thực việc gửi mail
+            //smtp.Host = "smtp.gmail.com";//Sử dụng SMTP của gmail 
+            smtp.Host = server;
+            smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
+            try
+            {
+               
+
+                if (sFrom.Length > 0 && sTo.Length > 0 && sSubject.Length > 0 && sBody.Length >= 0)
+                {
+                   
+                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
+                    msg.From = new MailAddress(sFrom, "ADMIN MONEY10 Gui Mail", System.Text.Encoding.UTF8);
+
+                            //msg.To.Add(sTo);
+                            //msg.Subject = sSubject;
+                            //msg.Body = sBody;
+                            //msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                            //msg.ReplyTo = new MailAddress(sTo);
+                            //smtp.Send(msg);
+                            //lblError.Text = "Email đã được gửi đến: " + sTo + ".";
+                            //lblError.Visible = true;
+                    Byte i;
+                    for (i = 0; i < addr.Length; i++)
+                    {
+                        //bool result = regex.IsMatch(addr[i]);
+                        //if (result == false)
+                        //{
+                        //    lblError.Visible = true;
+                        //    lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
+                        //}
+                        //else
+                        //{
+                            msg.To.Add(addr[i]);
+                            msg.Subject = sSubject;
+                            msg.Body = sBody;
+                            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                            msg.ReplyTo = new MailAddress(addr[i]);
+                            smtp.Send(msg);
+                         //   lblError.Text = "Email đã được gửi đến: " + sTo + ".";
+                           // lblError.Visible = true;
+                       // }
+                    }
+                        
+                    }
+                }
+            
+            catch (Exception ex)
+            {
+                throw new Exception( ex.Message);
+            }
+        }
+
         /// <summary>
         /// danh sach lich su giao dich
         /// </summary>
