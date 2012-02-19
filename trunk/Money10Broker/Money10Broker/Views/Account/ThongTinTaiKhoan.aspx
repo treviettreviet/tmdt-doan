@@ -54,11 +54,18 @@
                                 if (tk.MaLoaiTaiKhoan.Equals("LTK001"))
                                 {
                                     LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁC NHÂN";
-                                    
+                                    if (Session["TaiKhoanCaNhan"] != null)
+                                    {
+                                        cn = (Money10Broker.Models.CaNhan)Session["TaiKhoanCaNhan"];
+                                    }
                                 }
                                 else
                                 {
                                     LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO DOANH NGHIỆP";
+                                    if(Session["TaiKhoanDoanhNghiep"] !=null)
+                                    {
+                                        dn = (Money10Broker.Models.DoanhNghiep)Session["TaiKhoanDoanhNghiep"];
+                                    }
                                 }
                                 if (tk.TinhTrang == 0)
                                     TinhTrangTaiKhoan = "Đang hoạt động";
@@ -67,16 +74,14 @@
                                 
                                 
                         %>
-                        <div class="menu-vertical-right-content-title">
-                            Thông tin tài khoẢn</div>
+                        <div class="menu-vertical-right-content-title">Thông tin tài khoẢn</div>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <th>
                                     Loại tài khoản:
                                 </th>
                                 <td>
-                                    <strong>
-                                        <%=LoaiTaiKhoan%></strong>
+                                    <strong><%=LoaiTaiKhoan%></strong>
                                 </td>
                             </tr>
                             <tr>
