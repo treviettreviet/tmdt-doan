@@ -15,7 +15,10 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
-
+        public ActionResult DoiMatKhau()
+        {
+            return View();
+        }
         public ActionResult DangNhap()
         {
             return View();
