@@ -296,13 +296,16 @@ namespace Money10Banking.Controllers
         /// <param name="sBody"></param>
         public void sendMail(string sTo, string sFrom , string sSubject,string sBody)
         {
-            
+            string to = sTo;
+            string from = sFrom;
+            string subject = sSubject;
+            string body = sBody;
             string sFileName = string.Empty;
             string server = "smtp.gmail.com";
             string port = "587";
-            string user = sFrom;
+            string user = from;
             string pass = "tmdt123456";
-            String[] addr = sTo.Split(',');// Danh sach mail nhan
+            String[] addr = to.Split(',');// Danh sach mail nhan
             System.Net.Mail.SmtpClient smtp = new SmtpClient();
             System.Net.Mail.MailMessage msg = new MailMessage();
             msg.IsBodyHtml = true;
@@ -315,12 +318,12 @@ namespace Money10Banking.Controllers
             {
                
 
-                if (sFrom.Length > 0 && sTo.Length > 0 && sSubject.Length > 0 && sBody.Length >= 0)
+                if (from.Length > 0 && to.Length > 0 && subject.Length > 0 && body.Length >= 0)
                 {
                    
 
                     System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
-                    msg.From = new MailAddress(sFrom, "Thang Gui Mail", System.Text.Encoding.UTF8);
+                    msg.From = new MailAddress(from, "Money10Bank Gui Mail", System.Text.Encoding.UTF8);
                     Byte i;
                     for (i = 0; i < addr.Length; i++)
                     {
@@ -335,11 +338,12 @@ namespace Money10Banking.Controllers
                         else
                         {
                             msg.To.Add(addr[i]);
-                            msg.Subject = sSubject;
-                            msg.Body = sBody;
+                            msg.Subject = subject;
+                            msg.Body = body;
                             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
+                            Response.Flush();
                            // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
                            // lblError.Visible = true;
                         }
