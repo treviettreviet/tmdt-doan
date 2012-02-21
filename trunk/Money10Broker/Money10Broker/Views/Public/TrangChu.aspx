@@ -236,9 +236,9 @@
                                 Mật khẩu:
                             </td>
                             <td align="right">
-                                <input name="password" type="password" id="password" autocomplete="off"
-                                    value="12345678" style="color: #777; width: 130px; margin: 0px; padding: 0px;
-                                    height: 18px; font-size: 12px; border: 1px solid #a5b4bc;" />
+                                <input name="password" type="password" id="password" autocomplete="off" value="12345678"
+                                    style="color: #777; width: 130px; margin: 0px; padding: 0px; height: 18px; font-size: 12px;
+                                    border: 1px solid #a5b4bc;" />
                         </tr>
                     </table>
                 </div>
@@ -254,10 +254,10 @@
             </div>
             <!-- end đăng nhập -->
             <%                    
-            }
-            else
-            {
-                Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
+                }
+                else
+                {
+                    Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
             %>
             <div class="nlh-col235">
                 <div class="nlh-boxmdule">
@@ -323,8 +323,7 @@
                 }
             </script>
             <div class="box" id="help-index-left">
-                <h4 class="title">
-                    Tin mới cập nhật</h4>
+                <h4 class="title">Tin mới cập nhật</h4>
                 <ul>
                     <li><a href="#" class="{act}" target="" title="Trợ giá đặc biệt nhân dịp ra mắt mạng học tiếng Anh trực tuyến HelloChao.vn">
                         Trợ giá đặc biệt nhân dịp ra mắt mạng học tiếng Anh trực tuyến HelloChao.vn</a></li>

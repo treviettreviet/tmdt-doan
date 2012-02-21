@@ -40,11 +40,9 @@
         	<ul>
             
 				<li><a href="/Public/TrangChu" class="active" target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker</span></a></li>
-				<li><a href="" class target><span class="icon-tasbar-pp"></span><span>PayPal</span></a></li>
-				<li><a href="" class="" target=""><span>Nội dung số</span></a></li>
+				<li><a href="" class target><span class="icon-tasbar-pp"></span><span>Money04.TK</span></a></li>
 				<li><a href="" class="" target=""><span>Mua sắm</span></a></li>
-				<li><a href="" class="" target=""><span>Tin tức</span></a></li>
-				<li><a href="" class="" target=""><span>Trợ giúp &amp; Tích hợp</span></a></li>    
+				<%--<li><a href="" class="" target=""><span>Tin tức</span></a></li>--%>
             </ul>
         </div>
         <div class="taskbar-support">
