@@ -9,7 +9,7 @@
 		<div id="menu-nav-content-main">
 			<ul>
 				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>TÀI KHOẢN</span></a></li>
+				<li class=" " style="display:block"><a href="/Account/ThongTinTaiKhoan"><span>TÀI KHOẢN</span></a></li>
 			</ul>
 		</div>
 		<div id="menu-nav-content-sub">

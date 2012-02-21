@@ -11,7 +11,7 @@
                         <div id="login-title">
                             Đăng nhập tài khoản ví điện tử Ngân Lượng</div>
                         <div id="login-box-content">
-                            <form method="post" action="/Public/XuLyDangNhap">
+                            <form method="post" action="/Account/XuLyDangNhap">
                             <div id="message-box-login" style="display: block;" class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -60,7 +60,7 @@
                             <p>
                                 Bạn chưa có tài khoản ví điện tử NgânLượng.vn?</p>
                             <p>
-                                <a href="/Public/ChonDangKy">
+                                <a href="/Account/ChonDangKy">
                                     <img src="../../Content/images/button-r.gif"/></a></p>
                             <p style="font-weight: normal; margin-top: 10px;">
                                 <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=fast_access">Hãy click
