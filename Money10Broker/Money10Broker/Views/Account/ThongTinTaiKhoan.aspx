@@ -37,7 +37,7 @@
                         <%
                             if (Session["User"] == null)
                             {
-                                Response.Redirect("../Public/DangNhap");
+                                //Response.Redirect("/Public/TrangChu");
                             }
                             else
                             {
@@ -110,12 +110,10 @@
                         %>
                     </div>
                     <div class="menu-vertical-right-content">
-                        <div class="menu-vertical-right-content-title">
-                            <span>Thông tin chỦ tài khoẢn</span></div>
+                        <div class="menu-vertical-right-content-title"><span>Thông tin chỦ tài khoẢn</span></div>
                         <form method="post" action="">
-                        <div class="message-success">
-                        </div>
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <div class="message-success"></div>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <th>
                                     Tên chủ tài khoản
