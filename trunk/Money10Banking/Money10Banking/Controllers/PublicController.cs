@@ -116,20 +116,44 @@ namespace Money10Banking.Controllers
         /// <param name="vitri"></param>
         /// <param name="prefix"></param>
         /// <returns></returns>
-        public static string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        //public static string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        //{
+        //    string maTuDong = prefix;
+        //    try
+        //    {
+        //        int intMa = 0;
+        //        intMa = int.Parse(maHienTai.Substring(vitri));
+        //        maTuDong = maTuDong + (intMa + 1).ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
+        //    }
+        //    return maTuDong;
+        //}
+
+        public static string TaoMaTangTuDong(string lastID, string prefixID)
         {
-            string maTuDong = prefix;
-            try
+            if (lastID == "")
             {
-                int intMa = 0;
-                intMa = int.Parse(maHienTai.Substring(vitri));
-                maTuDong = maTuDong + (intMa + 1).ToString();
+                return prefixID + "0001";  // fix
             }
-            catch (Exception ex)
+            int nextID = int.Parse(lastID.Remove(0, prefixID.Length)) + 1;
+            int lengthNumerID = lastID.Length - prefixID.Length;
+            string zeroNumber = "";
+            for (int i = 1; i <= lengthNumerID; i++)
             {
-                throw new Exception("Lỗi, không tạo mã khách hàng tự động được", ex);
+                if (nextID < Math.Pow(10, i))
+                {
+                    for (int j = 1; j <= lengthNumerID - i; i++)
+                    {
+                        zeroNumber += "0";
+                    }
+                    return prefixID + zeroNumber + nextID.ToString();
+                }
             }
-            return maTuDong;
+            return prefixID + nextID;
+
         }
 
         // Lên - Xử lý thoát
@@ -433,7 +457,7 @@ namespace Money10Banking.Controllers
                             //Session["The"] = th;
                             string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
                             LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                            LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, 2, "GD");
+                            LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
                             LSGD.MaThe = th.MaThe;
                             LSGD.MaLoaiGiaoDich = "LGD002";       
                             LSGD.NgayGiaoDich = DateTime.Now;
@@ -444,6 +468,13 @@ namespace Money10Banking.Controllers
                             List<LichSuGiaoDichModels> listData = LSGiaoDich();
                             ViewData["ListData"] = listData;                        
                             Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
+                            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p=>p.MaTaiKhoan== th.MaTaiKhoan);
+                            string sTo = tk.Email;
+                            string sFrom = "tmdthca@gmail.com";
+                            string sSubject = "Money10Bank thông báo!";
+                            string sBody = "Bạn đã nạp tiền thành công lúc" + DateTime.Now + " vào số TK:" +th.SoThe+".Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                            sendMail(sTo, sFrom, sSubject, sBody);
+                            
                             return View("LichSuGiaoDich");
                         }
                         else
@@ -656,7 +687,7 @@ namespace Money10Banking.Controllers
                     ViewData["error"] = error;
                     return RedirectToAction("DangKy");
                 }
-                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, 2, "TK");
+                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, "TK");
                 tk.MaLoaiTaiKhoan = "LTK001";
                 tk.SoTaiKhoan = TaoSoTaiKhoan();
                 tk.MatKhauGiaoDich = PassWord(6);
@@ -668,7 +699,7 @@ namespace Money10Banking.Controllers
                 // Thêm vào bảng DiaChi
                 string max = db1.DiaChis.Max(m => m.MaDiaChi);// lấy record cuối cùng cột mã địa chỉ
                 DiaChi dc = new DiaChi();
-                dc.MaDiaChi = TaoMaTangTuDong(max, 2, "DC");
+                dc.MaDiaChi = TaoMaTangTuDong(max, "DC");
 
                 if (SoNha == "" || SoNha == null)
                 {
@@ -701,7 +732,7 @@ namespace Money10Banking.Controllers
                 // Thêm vào bảng Khách Hàng
                 string maxkh = db1.KhachHangs.Max(m=>m.MaKhachHang);//lấy giá trị cuôiis cùng cột Mã kh
                 KhachHang kh = new KhachHang();
-                kh.MaKhachHang = TaoMaTangTuDong(maxkh, 2, "KH");
+                kh.MaKhachHang = TaoMaTangTuDong(maxkh, "KH");
                 kh.MaTaiKhoan = tk.MaTaiKhoan;
                 kh.HoTen = name;
                 string ngaysinh = date + "-" + month + "-" + year;
@@ -722,6 +753,12 @@ namespace Money10Banking.Controllers
                 kh.CMNDHoChieu = int.Parse(CMND);
                 kh.TinhTrang = 0;
                 db1.KhachHangs.AddObject(kh);
+               
+                string sTo = email;
+                string sFrom = "tmdthca@gmail.com";
+                string sSubject = "Money10Banking Thông báo";
+                string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                sendMail(sTo, sFrom, sSubject, sBody);
                 db1.SaveChanges();
                 return RedirectToAction("DangNhap");
             }
@@ -774,7 +811,7 @@ namespace Money10Banking.Controllers
                     return RedirectToAction("DangKy");
                 }
 
-                string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");   // Tăng mã tự động lên 1
+                string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, "TK");   // Tăng mã tự động lên 1
                 TaiKhoanMoi.MaTaiKhoan = MaTaiKhoanNext;
                 TaiKhoanMoi.MaLoaiTaiKhoan = "LTK002";
                 TaiKhoanMoi.SoTaiKhoan = TaoSoTaiKhoan();
@@ -786,7 +823,7 @@ namespace Money10Banking.Controllers
                 MoiGioi MoiGioiMoi = new MoiGioi();
                 //MoiGioi MoiGioiMax = dbNganHang.MoiGiois.LastOrDefault();    // Trả về record cuối cùng trong bảng Môi Giới
                 string MaMoiGioiMax = dbNganHang.MoiGiois.Max(m => m.MaMoiGioi);    // Trả về mã cuối cùng trong bảng Môi Giới
-                string MaMoiGioiNext = TaoMaTangTuDong(MaMoiGioiMax, 2, "MG");
+                string MaMoiGioiNext = TaoMaTangTuDong(MaMoiGioiMax, "MG");
                 MoiGioiMoi.MaMoiGioi = MaMoiGioiNext;
 
                 MoiGioiMoi.MaTaiKhoan = TaiKhoanMoi.MaTaiKhoan;
@@ -802,7 +839,7 @@ namespace Money10Banking.Controllers
                 
                 string DiaChiMax = (dbNganHang.DiaChis).Max(m=>m.MaDiaChi);  // Lấy mã địa chỉ cuối cùng
                 DiaChi DiaChiMoi = new DiaChi();
-                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, 2, "DC");
+                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, "DC");
                 DiaChiMoi.MaDiaChi = MaDiaChiNext;
 
                 DiaChiMoi.SoNha = SoNha;
@@ -812,6 +849,12 @@ namespace Money10Banking.Controllers
                 DiaChiMoi.TinhThanh = ThanhPho;
                 DiaChiMoi.MaTaiKhoan = MoiGioiMoi.MaTaiKhoan;
                 dbNganHang.DiaChis.AddObject(DiaChiMoi);
+               
+                string sTo = email_company;
+                string sFrom = "tmdthca@gmail.com";
+                string sSubject = "Money10Banking Thông báo";
+                string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                sendMail(sTo, sFrom, sSubject, sBody);
                 dbNganHang.SaveChanges();   // Save xuống CSDL
                 return RedirectToAction("DangNhap");
 	        }
@@ -847,6 +890,12 @@ namespace Money10Banking.Controllers
             updateDC.PhuongXa = phuong;
             updateDC.QuanHuyen = distric;
             updateDC.TinhThanh = city;
+            
+            string sTo = email;
+            string sFrom = "tmdthca@gmail.com";
+            string sSubject = "Money10Banking Thông báo";
+            string sBody = "Bạn đã cập nhật tài khoản thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+            sendMail(sTo, sFrom, sSubject, sBody);
             dbN.SaveChanges();
             return View("TrangChu");
 
@@ -869,7 +918,7 @@ namespace Money10Banking.Controllers
             sid = obResult1.ToString();
             if (sid != null)
             {
-                ViewData["cardno"]=cardno;
+                Session["cardno"]=cardno;
                 Session["sid"]=sid;
                 //return RedirectToAction("ChuyenTien");
                 return View("ChuyenTien");
@@ -921,11 +970,11 @@ namespace Money10Banking.Controllers
                             try
                             {
                                   NganHangEntities dbNH= new NganHangEntities();
-                                The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
+                                The th = dbNH.Thes.Single(m => m.SoThe == card_no_send);
                                 Session["The"] = th;
                                 string MaGDMax = dbNH.LichSuGiaoDiches.Max(p=> p.MaLichSuGiaoDich);
                                 LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                                LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, 2, "GD");
+                                LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
                                 LSGD.MaThe = th.MaThe ;
                                 //LSGD.MaThe = "123456";
                                 LSGD.MaLoaiGiaoDich="LGD003";
@@ -936,12 +985,19 @@ namespace Money10Banking.Controllers
                                 LSGD.TinhTrang = 0;
                                 dbNH.LichSuGiaoDiches.AddObject(LSGD);
 
-
                                 dbNH.SaveChanges();
+                                
                                 List<LichSuGiaoDichModels> listData = LSGiaoDich();
                                 ViewData["ListData"] = listData;
                                 
                                 Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                                TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == th.MaTaiKhoan);
+                                string sTo = tk.Email;
+                                string sFrom = "tmdthca@gmail.com";
+                                string sSubject = "Money10Banking Thông báo";
+                                string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                                sendMail(sTo, sFrom, sSubject, sBody);
+                                
                                 return View("LichSuGiaoDich");
                                 
                                 
@@ -1024,7 +1080,7 @@ namespace Money10Banking.Controllers
                            //Session["The"] = sendcard;
                            string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
                            LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                           LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, 2, "GD");
+                           LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
                            LSGD.MaThe = sendcard.MaThe;
                            //LSGD.MaThe = "123456";
                            LSGD.MaLoaiGiaoDich = "LGD003";
@@ -1039,6 +1095,14 @@ namespace Money10Banking.Controllers
                            List<LichSuGiaoDichModels> listData = LSGiaoDich();
                            ViewData["ListData"] = listData;
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                           TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == sendcard.MaTaiKhoan);
+                          
+                           string sTo = tk.Email;
+                           string sFrom = "tmdthca@gmail.com";
+                           string sSubject = "Money10Banking Thông báo";
+                           string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                           sendMail(sTo, sFrom, sSubject, sBody);
+                           
                            return RedirectToAction("LichSuGiaoDich");
 
                        }

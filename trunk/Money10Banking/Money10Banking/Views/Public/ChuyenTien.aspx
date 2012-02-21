@@ -298,7 +298,7 @@
                         </th>
                         <td>
                         
-                            <input type="text" name="Cardsend" value="<% =ViewData["cardno"] %>" size="42" 
+                            <input type="text" name="Cardsend" value="<% =Session["cardno"] %>" size="42" 
                                 readonly="readonly"/>
                         </td>
                     </tr>
