@@ -63,10 +63,8 @@ namespace Money10Banking.Controllers
 
         public ActionResult ChuyenTien()
         {
-            TaiKhoan tk = new TaiKhoan();
-            tk= (TaiKhoan)Session["User"];
-            The th = new The();
-            if(tk.MaTaiKhoan==th.MaTaiKhoan)
+            List<LichSuGiaoDichModels> lst = LSGiaoDich();
+            if (lst != null)
             {
             if (Session["User"] != null)
             {
@@ -1043,19 +1041,19 @@ namespace Money10Banking.Controllers
                         {
                             string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
                             ViewData["error"] = error;
-                            return RedirectToAction("ChuyenTien");
+                            return View("ChuyenTien");
                         }
                         if (kq == -2)
                         {
                             string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
                             ViewData["error"] = error;
-                            return RedirectToAction("ChuyenTien");
+                            return View("ChuyenTien");
                         }
                         if (kq == -3)
                         {
                             string error = "Số dư không đủ cho giao dịch";
                             ViewData["error"] = error;
-                            return RedirectToAction("ChuyenTien");
+                            return View("ChuyenTien");
                         }
 
                         // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
@@ -1130,7 +1128,7 @@ namespace Money10Banking.Controllers
                            string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                            sendMail(sTo, sFrom, sSubject, sBody);
                            
-                           return RedirectToAction("LichSuGiaoDich");
+                           return View("LichSuGiaoDich");
 
                        }
                        string div = "error-box";
@@ -1139,19 +1137,19 @@ namespace Money10Banking.Controllers
                        {
                            string error = "sid ko hợp lệ";
                            ViewData["error"] = error;
-                           return RedirectToAction("ChuyenTien");
+                           return View("ChuyenTien");
                        }
                        if (kq == -2)
                        {
                            string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
                            ViewData["error"] = error;
-                           return RedirectToAction("ChuyenTien");
+                           return View("ChuyenTien");
                        }
                        if (kq == -3)
                        {
-                           string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
+                           string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
                            ViewData["error"] = error;
-                           return RedirectToAction("ChuyenTien");
+                           return View("ChuyenTien");
                        }
 
                        // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
@@ -1160,7 +1158,7 @@ namespace Money10Banking.Controllers
              
             }
            
-           return RedirectToAction("ChuyenTien");
+           return View("ChuyenTien");
         }
         //public ActionResult TransferMoneySameBank(string Cardsend, string CardRec, string amount)
         //{
