@@ -30,7 +30,19 @@
     <link rel="stylesheet" href="../../Content/css/deposit-.css" type="text/css">
     <link rel="stylesheet" href="../../Content/css/nganluong_form_check.css" type="text/css">
 </head>
-<body>
+<script language="JavaScript">
+<!--
+
+    function enable_text(status) {
+        status = !status;
+        document.formtt.txtemail.disabled = status;
+        document.formtt.txtdienthoai.disabled = status;
+        document.formtt.txtdienthoaididong.disabled = status;
+        document.formtt.txtdiachi.disabled = status; 
+         }
+//-->
+</script>
+<body onload=enable_text(false);>
     <div id="taskbar">
         <div class="taskbar">
             <div class="taskbar-sort">

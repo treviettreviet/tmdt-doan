@@ -19,6 +19,14 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+        public ActionResult DoiMatKhauThanhToan()
+        {
+            return View();
+        }
+        public ActionResult ThemTheNganHang()
+        {
+            return View();
+        }
         public ActionResult DangNhap()
         {
             return View();
