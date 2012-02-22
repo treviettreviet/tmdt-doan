@@ -5,6 +5,7 @@
     Thông tin tài khoản
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <div id="menu-nav-content">
         <div id="menu-nav-content-l">
         </div>
@@ -13,14 +14,14 @@
         <div id="menu-nav-content-c">
             <div id="menu-nav-content-main">
                <ul>
-				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
-				<li class=" " style="display:block"><a href="/Account/ThongTinTaiKhoan"><span>TÀI KHOẢN</span></a></li>			
+				<li class=" " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
+				<li class="active " style="display:block"><a href="/Account/ThongTinTaiKhoan"><span>TÀI KHOẢN</span></a></li>			
 			</ul>
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-		    	<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" active " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>			
+		    	<li class="active " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>			
                 <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
 				<li class=" " style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
                 <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
@@ -53,9 +54,9 @@
                         if (tk.SoDu != null)
                             SoDu = tk.SoDu.ToString();
                         if (tk.Email != null)
-                            Email = tk.Email + "  [<a href=''>Thay đổi</a>]";
+                            Email = tk.Email;
                         if (tk.MatKhauGiaoDich != null)
-                            MatKhauGiaoDich = tk.MatKhauGiaoDich + "  [<a href=''>Thay đổi</a>]";
+                            MatKhauGiaoDich = tk.MatKhauGiaoDich;
                         
                         Money10Broker.Models.CaNhan cn = new Money10Broker.Models.CaNhan();
                         Money10Broker.Models.DoanhNghiep dn = new Money10Broker.Models.DoanhNghiep();
@@ -73,25 +74,25 @@
                             string NgaySinh = "Chưa khai báo Ngày Sinh [<a href=''>Khai báo</a>]";
                             string GioiTinh = "Không phân biệt được Giới Tính [<a href=''>Khai báo</a>]";
                             string CMNDHoChieu = "Chưa khai báo CNMND/Hộ Chiếu [<a href=''>Khai báo</a>]";
-                            string DienThoai = "Chưa khai báo Điện Thoại [<a href=''>Khai báo</a>]";
-                            string DiaChi = "Chưa khai báo Địa Chỉ";
+                            string DienThoai = "";
+                            string DiaChi = "";
                             if (Session["TaiKhoanCaNhan"] != null)
                             {
                                 cn = (Money10Broker.Models.CaNhan)Session["TaiKhoanCaNhan"];
                                 if (cn.MaTaiKhoan != null)
                                     MaTaiKhoan = cn.MaTaiKhoan;
                                 if (cn.HoTen != null)
-                                    HoTen = cn.HoTen + " [<a href=''>Thay đổi</a>]";
+                                    HoTen = cn.HoTen;
                                 if (cn.NgaySinh != null)
-                                    NgaySinh = cn.NgaySinh.ToString() + " [<a href=''>Thay đổi</a>]";
+                                    NgaySinh = cn.NgaySinh.ToString();
                                 if (cn.GioiTinh != null)
                                     GioiTinh = cn.GioiTinh;
                                 if (cn.CMNDHoChieu != null)
-                                    CMNDHoChieu = cn.CMNDHoChieu.ToString() + " [<a href=''>Thay đổi</a>]";
+                                    CMNDHoChieu = cn.CMNDHoChieu.ToString();
                                 if (cn.DienThoai != null)
-                                    DienThoai = cn.DienThoai + " [<a href=''>Thay đổi</a>]";
+                                    DienThoai = cn.DienThoai;
                                 if (cn.DiaChi != null)
-                                    DiaChi = cn.DiaChi + " [<a href=''>Thay đổi</a>]";
+                                    DiaChi = cn.DiaChi;
                 %>
                                 <!-- Thêm code hiển thị thông tin tại đây. -->
                                 <div class="menu-vertical-right-content">
@@ -134,7 +135,7 @@
                                 </div>
                                 <div class="menu-vertical-right-content">
                                 <div class="menu-vertical-right-content-title"><span>Thông tin chỦ tài khoẢn</span></div>
-                                    <form method="post" action="">
+                                    <form name="formtt" method="post" action="">
                                         <div class="message-success"></div>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
@@ -150,15 +151,17 @@
                                                     Địa chỉ Email chính:
                                                 </th>
                                                 <td>
-                                                    <%=Email %>
+                                                    <input name="txtemail" type="text" value="<%=Email %>" />
+                                                    <input type="checkbox" name="email" onclick="enable_text(this.checked)" ><span style="color:Red">Thay đổi thông tin</span>
                                                 </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <th>
                                                     Số điện thoại di động chính:
                                                 </th>
                                                 <td>
-                                                    <%=DienThoai %>
+                                                 <input name="txtdienthoai" type="text" value="<%=DienThoai %>" />                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -344,7 +347,7 @@
                                                     <span class="required">*</span>Địa chỉ chỗ ở hiện tại:
                                                 </th>
                                                 <td>
-                                                    <input name="address" type="text" value="<%=DiaChi %>" class="input-business" />
+                                                    <input name="txtdiachi" type="text" value="<%=DiaChi %>" />
                                                     <%--<div class="message-box"></div>--%>
                                                 </td>
                                             </tr>
@@ -365,24 +368,24 @@
                         else
                         {
                             LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO DOANH NGHIỆP";
-                            string TenCongTy = "Chưa khai báo Tên Công Ty [<a href=''>Khai báo</a>]";
-                            string DienThoaiCongTy = "Chưa khai báo Điện Thoại Công Ty [<a href=''>Khai báo</a>]";
-                            string SoGiayPhepKinhDoanh = "Chưa khai báo Số Giấy Phép Kinh Doanh [<a href=''>Khai báo</a>]";
-                            string DiaChiCongTy = "Chưa khai báo Địa Chỉ Công Ty [<a href=''>Khai báo</a>]";
-                            string DienThoaiDiDongCongTy = "Chưa khai báo Điện Thoại Di Động [<a href=''>Khai báo</a>]";
+                            string TenCongTy = "";
+                            string DienThoaiCongTy = "";
+                            string SoGiayPhepKinhDoanh = "";
+                            string DiaChiCongTy = "";
+                            string DienThoaiDiDongCongTy = "";
                             if (Session["TaiKhoanDoanhNghiep"] != null)
                             {
                                 dn = (Money10Broker.Models.DoanhNghiep)Session["TaiKhoanDoanhNghiep"];
                                 if (dn.TenCongTy != null)
-                                    TenCongTy = dn.TenCongTy + " [<a href=''>Thay đổi</a>]";
+                                    TenCongTy = dn.TenCongTy;
                                 if (dn.DienThoaiCongTy != null)
-                                    DienThoaiCongTy = dn.DienThoaiCongTy.ToString() + " [<a href=''>Thay đổi</a>]";
+                                    DienThoaiCongTy = dn.DienThoaiCongTy.ToString();
                                 if (dn.SoGiayPhepKinhDoanh != null)
                                     SoGiayPhepKinhDoanh = dn.SoGiayPhepKinhDoanh;
                                 if (dn.DiaChiCongTy != null)
-                                    DiaChiCongTy = dn.DiaChiCongTy + " [<a href=''>Thay đổi</a>]";
+                                    DiaChiCongTy = dn.DiaChiCongTy;
                                 if (dn.DienThoaiDiDong != null)
-                                    DienThoaiDiDongCongTy = dn.DienThoaiDiDong + " [<a href=''>Thay đổi</a>]";
+                                    DienThoaiDiDongCongTy = dn.DienThoaiDiDong;
                 %>
                                 <!-- Thêm code hiển thị thông tin tại đây. -->
                                 <div class="menu-vertical-right-content">
@@ -425,7 +428,7 @@
                                 </div>
                                 <div class="menu-vertical-right-content">
                                 <div class="menu-vertical-right-content-title"><span>Thông tin chỦ tài khoẢn</span></div>
-                                    <form method="post" action="">
+                                    <form name="formtt" method="post" action="">
                                         <div class="message-success"></div>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
@@ -433,7 +436,7 @@
                                                     Tên chủ tài khoản
                                                 </th>
                                                 <td>
-                                                    <strong><%=TenCongTy %></strong>
+                                                    <%=TenCongTy %>                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -441,7 +444,8 @@
                                                     Địa chỉ Email chính:
                                                 </th>
                                                 <td>
-                                                    <%=Email %>
+                                                    <input name="txtemail" type="text" value="<%=Email %>"  />         
+                                                    <input type="checkbox" name="chkcheck" onclick="enable_text(this.checked)" ><span style="color:Red">Thay đổi thông tin</span>                                                                                             
                                                 </td>
                                             </tr>
                                             <tr>
@@ -465,7 +469,8 @@
                                                     Điện thoại chính:
                                                 </th>
                                                 <td>
-                                                    <%=DienThoaiCongTy %>
+                                                     <input name="txtdienthoai" type="text" value="<%=DienThoaiCongTy %>"  />      
+                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -473,7 +478,7 @@
                                                     Điện thoại di động:
                                                 </th>
                                                 <td>
-                                                    <%=DienThoaiDiDongCongTy %>
+                                                 <input name="txtdienthoaididong" type="text" value=" <%=DienThoaiDiDongCongTy %>"  />                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -481,7 +486,8 @@
                                                     Trụ sở công ty:
                                                 </th>
                                                 <td>
-                                                    <%=DiaChiCongTy %>
+                                                  <input name="txtdiachi" type="text" value=" <%=DiaChiCongTy %>"  />         
+                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -494,8 +500,9 @@
                                             </tr>
                                             
                                             <tr>
-                                                <td>
-                                                    <input class="button-content" type="submit" value="Cập nhật" />
+                                                <td>                                                    
+                                                </td>
+                                                <td><input class="button-content" type="submit" value="Cập nhật" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -514,8 +521,9 @@
         </div>
         <div id="menu-vertical-left">
             <ul>
-                <li class="active"><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>                        
-                <li class><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
+                <li class=""><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>                        
+                       <li class=""><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
+                       <li class="active"><a href="/Account/DoiMatKhauThanhToan">Đổi mật khẩu thanh toán</a></li>
             </ul>
         </div>
     </div>
