@@ -176,7 +176,7 @@ namespace Money10Broker.Controllers
                         newInfo.MaCaNhan = MaCaNhanNext;
                         newInfo.MaTaiKhoan = MaTaiKhoanNext;
                         newInfo.HoTen = fullname;
-                        string birthday = date + "/" + month + "/" + year;
+                        string birthday = month + "/" + date + "/" + year;
                         newInfo.NgaySinh = DateTime.Parse(birthday);
                         if (sex.Equals("1"))
                             newInfo.GioiTinh = "Nam";

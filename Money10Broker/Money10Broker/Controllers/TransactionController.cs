@@ -22,7 +22,7 @@ namespace Money10Broker.Controllers
         {
             decimal amt = decimal.Parse(amount);
             TransferByBroker(sendcardnum, receivecardnum, amt);
-            return View();
+            return View("LichSuGiaoDich");
         }
 
         string wsURL = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
@@ -51,11 +51,12 @@ namespace Money10Broker.Controllers
                 {
                     LichSuGiaoDich log = new Models.LichSuGiaoDich();
                     log.NgayGiaoDich = DateTime.Now;
-                    log.MaThe = sendcardnum;
+                    log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
+                    log.MaThe = log.The.MaThe;
                     log.SoTheNhan = receivecardnum;
                     log.SoTienGiaoDich = amount;
                     log.MaLoaiGiaoDich = "LGD003";
-                    log.MaLichSuGiaoDich = "GD1";
+                    log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
                     log.TinhTrang = 0;
                     dbMoiGioi.LichSuGiaoDiches.AddObject(log);
                     dbMoiGioi.SaveChanges();
@@ -73,6 +74,20 @@ namespace Money10Broker.Controllers
             ViewData["div"] = "message-box";
             ViewData["messege"] = "Chuyển Tiền Thất Bại";
             return RedirectToAction("ChuyenTien");
+        }
+
+        private string PhatSinhMaGiaoDich()
+        {
+            string MaMoiNhat = dbMoiGioi.LichSuGiaoDiches.Max(id => id.MaLichSuGiaoDich);
+            int max;
+            if (MaMoiNhat == null)
+            {
+                max = 0;
+            }
+            else
+                max = int.Parse(MaMoiNhat.Substring(2));
+            max++;
+            return "GD" + max.ToString();
         }
     }
 }

@@ -8,7 +8,7 @@
 	<div id="menu-nav-content-c">
 		<div id="menu-nav-content-main">
 
-            <%=Html.Encode(ViewData["messege"]) %>
+            
 
 			<ul>
 				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>

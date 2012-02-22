@@ -8,7 +8,7 @@
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form action="/Public/XuLyDangKyCaNhan" method="post">
+		<form action="/Account/XuLyDangKyCaNhan" method="post">
             <input type="hidden" name="form_module_id" value="273">
 			<div id="step-flow">
 				<ul id="step-three">
