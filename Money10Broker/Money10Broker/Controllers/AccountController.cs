@@ -223,6 +223,16 @@ namespace Money10Broker.Controllers
         }
 
 
+        public ActionResult XuLyCapNhatTaiKhoanCaNhan(string txthoten, string txtemail, string txtdienthoai, string date, string month, string year, string gender, string txtdiachi)
+        {
+            CaNhan cn = new CaNhan();
+            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+            cn = (CaNhan)Session["TaiKhoanCaNhan"];
+
+            return View();
+        }
+
+
         /// <summary>
         /// Lên - Tạo mã tăng tự động cho tất cả các bảng
         /// Trước khi gọi hàm này, ta cần gọi hàm lấy mã cuối cùng của bảng bất kỳ cần thêm mới mã.
