@@ -60,7 +60,10 @@ namespace Money10Banking.Controllers
                 return View("NapTien");
             }
         }
-
+        public ActionResult QuenMatKhau()
+        {
+            return View();
+        }
         public ActionResult ChuyenTien()
         {
             List<LichSuGiaoDichModels> lst = LSGiaoDich();

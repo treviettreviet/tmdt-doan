@@ -10,6 +10,10 @@
         var APPPATH_URI = "/application/";
         var BASE_URI = "/";
     </script>
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     <link rel="shortcut icon" href="../../Content/images/icon0000.png" />
     <link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css" />
@@ -35,6 +39,13 @@
     <script type="text/javascript" src="../../Scripts/js/shBrushX.js"></script>
     <link href="../../Content/css/SyntaxHi.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/jquery01.css" rel="stylesheet" type="text/css" />
+    <script>
+        var $ca = jQuery.noConflict();
+
+        $ca(function () {
+            $ca("#datepicker").datepicker();
+        });
+	</script>
     <script type="text/javascript">
 <!--
         var j = jQuery.noConflict();
