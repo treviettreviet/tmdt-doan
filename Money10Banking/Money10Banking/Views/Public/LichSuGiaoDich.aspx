@@ -67,6 +67,19 @@
             </div>
         </div>
         <div class="account-content">
+        
+        <div class="word-line">
+                Tìm kiếm: </div>
+            <div class="dot">
+           <p><div>Loại giao dịch:&nbsp;&nbsp;
+            <select>
+            <option value="1">==Chuyển khoản==</option>
+            <option value="2">==Rút tiên==</option>                       
+            </select>
+        </div></p> 
+        <div class="demo">
+        <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White" name="btnTim" value="Tìm" /></p>
+        </div>               
             <div class="word-line">
                 Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div>
             <div class="dot">
@@ -173,7 +186,7 @@
                     </table>
                 </div>--%>
             </div>
-            <div style="width: 225px; float: right">
+            <%--<div style="width: 225px; float: right">
                 <script type="text/javascript">
                     // wait for the DOM to be loaded 
                     j(document).ready(function () {
@@ -338,7 +351,7 @@
                         <!--  code new -->
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
         <div class="clear">
         </div>
