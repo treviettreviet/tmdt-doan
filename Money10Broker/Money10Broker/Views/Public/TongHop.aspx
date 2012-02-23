@@ -197,14 +197,14 @@ table .cls-red-last td{
 	<div class="install-account" style="margin-top:0px;">
 		<h3><span>CẤU HÌNH TÀI KHOẢN </span></h3>
 		<ul>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_info">Thay đổi thông tin cá nhân</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=change_pay_password">Thay đổi mật khẩu</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_email">Đổi email chính</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_mobile">Đổi điện thoại chính</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_bank">Tài khoản ngân hàng</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_otp_config">Hình thức xác minh OTP</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_contact">Danh bạ đối tác giao dịch</a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&page=user_fee_shipping">Phí vận chuyển</a></li>						
+			<li><a href="#">Thay đổi thông tin cá nhân</a></li>
+			<li><a href="#">Thay đổi mật khẩu</a></li>
+			<li><a href="#">Đổi email chính</a></li>
+			<li><a href="#">Đổi điện thoại chính</a></li>
+			<li><a href="#">Tài khoản ngân hàng</a></li>
+			<li><a href="#">Hình thức xác minh OTP</a></li>
+			<li><a href="#">Danh bạ đối tác giao dịch</a></li>
+			<li><a href="#">Phí vận chuyển</a></li>						
 		</ul>
 	</div>
 	<!--

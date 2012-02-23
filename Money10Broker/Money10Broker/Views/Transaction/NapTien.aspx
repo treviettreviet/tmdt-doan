@@ -17,13 +17,13 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" " style="display:block"><a href="/Public/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
-				<li class=" active" style="display:block"><a href="/Public/NapTien"><span>Nạp tiền</span></a></li>
-                <li class="" style="display:block"><a href="/Public/RutTien"><span>Rút tiền</span></a></li>	
-				<li class=" " style="display:block"><a href="/Public/ChuyenTien"><span>Chuyển tiền</span></a></li>
-                <li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
-                <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
+			<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
+				<li class=" active" style="display:block"><a href="/Transaction/NapTien"><span>Nạp tiền</span></a></li>
+                <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
+				<li class=" " style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
+                <li class=" " style="display:block"><a href="/Transaction/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                <li class=" " style="display:block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
 				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
@@ -43,42 +43,42 @@
 			<!--<span class="deposit-charge">(Phí 3.600đ + 2,75%)</span>-->
 		</a>
 		<ul>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/visacard.gif" border="0" height="30" alt="Thanh toán bằng Visa Card"></a></li>								
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/masterca.gif" border="0" height="30" alt="Thanh toán bằng Master Card"></a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/americia.gif" height="30" border="0" alt="Thanh toán bằng thẻ American Express"></a></li>
-			<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_visa_ck_on"><img src="../../Content/images/jcbcard0.gif" border="0" height="30" alt="Thanh toán bằng thẻ JCB"></a></li>
+			<li><a href="#"><img src="../../Content/images/visacard.gif" border="0" height="30" alt="Thanh toán bằng Visa Card"></a></li>								
+			<li><a href="#"><img src="../../Content/images/masterca.gif" border="0" height="30" alt="Thanh toán bằng Master Card"></a></li>
+			<li><a href="#"><img src="../../Content/images/americia.gif" height="30" border="0" alt="Thanh toán bằng thẻ American Express"></a></li>
+			<li><a href="#"><img src="../../Content/images/jcbcard0.gif" border="0" height="30" alt="Thanh toán bằng thẻ JCB"></a></li>
 		</ul>
 	</div>				
 	
 	<div class="deposit-list-row active">
-		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Online dùng thẻ ATM</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
 		</a>
 		<ul>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_tcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_tcb_ck_on';"><img src="../../Content/images/tcb_1299.gif" alt="Ngân hàng Kỹ Thương" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_mb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_mb_ck_on';"><img src="../../Content/images/mb_12990.gif" alt="Ngân hàng Quân Đội" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vib_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vib_ck_on';"><img src="../../Content/images/vib_1299.gif" alt="Ngân hàng Quốc tế" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vtb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vtb_ck_on';"><img src="../../Content/images/icb_1299.gif" alt="Ngân hàng Công Thương Việt Nam" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_exb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_exb_ck_on';"><img src="../../Content/images/exb_1299.gif" alt="Ngân hàng Xuất Nhập Khẩu" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_acb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_acb_ck_on';"><img src="../../Content/images/acb_1299.gif" alt="Ngân hàng Á Châu" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_hdb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_hdb_ck_on';"><img src="../../Content/images/hdb_1307.png" alt="Ngân hàng Phát triển Nhà TPHCM" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_msb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_msb_ck_on';"><img src="../../Content/images/msb_1299.gif" alt="Ngân hàng Hàng Hải" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_nvb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_nvb_ck_on';"><img src="../../Content/images/nvb_1324.jpg" alt="Ngân hàng Nam Việt" border="0" height="30"></a></li></ul>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_tcb_ck_on';"><img src="../../Content/images/tcb_1299.gif" alt="Ngân hàng Kỹ Thương" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_mb_ck_on';"><img src="../../Content/images/mb_12990.gif" alt="Ngân hàng Quân Đội" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vib_ck_on';"><img src="../../Content/images/vib_1299.gif" alt="Ngân hàng Quốc tế" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_vtb_ck_on';"><img src="../../Content/images/icb_1299.gif" alt="Ngân hàng Công Thương Việt Nam" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_exb_ck_on';"><img src="../../Content/images/exb_1299.gif" alt="Ngân hàng Xuất Nhập Khẩu" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_acb_ck_on';"><img src="../../Content/images/acb_1299.gif" alt="Ngân hàng Á Châu" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_hdb_ck_on';"><img src="../../Content/images/hdb_1307.png" alt="Ngân hàng Phát triển Nhà TPHCM" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_msb_ck_on';"><img src="../../Content/images/msb_1299.gif" alt="Ngân hàng Hàng Hải" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=sml_atm_nvb_ck_on';"><img src="../../Content/images/nvb_1324.jpg" alt="Ngân hàng Nam Việt" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row active">
-		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">
+		<a href="#" class="active">
 			<span class="deposit-step"></span>
 			<span class="deposit-name">Online bằng Internet-Banking</span>
 			<!--<span class="deposit-charge">(Miễn phí)</span>-->
 		</a>
 		<ul>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vnbc_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vnbc_ck_on';"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=tcb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=tcb_ck_on';"><img src="../../Content/images/tcb_1299.gif" alt="Ngân hàng Kỹ Thương" border="0" height="30"></a></li>
-	<li><a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=shb_ck_on" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=shb_ck_on';"><img src="../../Content/images/shb_1299.gif" alt="Ngân hàng Sài Gòn - Hà Nội" border="0" height="30"></a></li></ul>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vcb_ck_on';"><img src="../../Content/images/vcb_1299.gif" alt="Ngân hàng TMCP Ngoại Thương Việt Nam" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=vnbc_ck_on';"><img src="../../Content/images/dab_1299.gif" alt="Ngân hàng Đông Á" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=tcb_ck_on';"><img src="../../Content/images/tcb_1299.gif" alt="Ngân hàng Kỹ Thương" border="0" height="30"></a></li>
+	<li><a href="" target="" onclick="document.location.href = '?portal=nganluong&amp;page=deposit&amp;cmd=process&amp;option=shb_ck_on';"><img src="../../Content/images/shb_1299.gif" alt="Ngân hàng Sài Gòn - Hà Nội" border="0" height="30"></a></li></ul>
 	</div>
 	<div class="deposit-list-row active">
 		<a href="https://www.nganluong.vn/?portal=nganluong&amp;page=deposit#" class="active">

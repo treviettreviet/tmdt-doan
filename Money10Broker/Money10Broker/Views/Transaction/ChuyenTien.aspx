@@ -82,10 +82,23 @@
                 <option value='2'>ECMoney 4</option>
             </select>
           </p>
+          <% 
+              try
+              {
+                  //Money10Broker.Models.xnvaufit_MoiGioiEntities db = new Money10Broker.Models.xnvaufit_MoiGioiEntities();
+                  Money10Broker.Models.TaiKhoan account = (Money10Broker.Models.TaiKhoan)Session["User"];
+                  //Money10Broker.Models.The tk = db.Thes.Single(m => m.MaTaiKhoan == account.MaTaiKhoan);
+              }
+              catch (Exception ex)
+              {
 
+                  throw ex;
+              }
+              
+          %>
               <tr>
 				<th><span class="required">*</span>Số thẻ người gửi:</th>
-				<td><input name="sendcardnum" id="sendcardnum" type="text" value="340426820759153" ></td>
+				<td><input name="sendcardnum" id="sendcardnum" type="text" value="" ></td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người nhận:</th>
