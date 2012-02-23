@@ -14,10 +14,10 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-		    	<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
-				<li class=" active " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>			
-                <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
-				<li class=" " style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
+		    	<li class="" style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+				<li class="" style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>			
+                <li class="active" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
+				<li class="" style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
                 <%--<li class=" " style="display:block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
                 <li class=" " style="display:block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>				--%>
 				
@@ -44,19 +44,16 @@
 		<div>
 			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
 		</div>	
-		  <form method="post" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
+            <% Money10Broker.Models.TaiKhoan account = (Money10Broker.Models.TaiKhoan)Session["User"]; %>
+		  <form method="post" action="/Transaction/XuLyRutTien"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">
 			  <tr>
-				<th>Tài khoản NgânLượng.vn:</th>
-				<td style="width:150px;"><strong>Phan Quang Khải</strong> (quangkhai1289@gmail.com)</td>
+				<th>Tài khoản ví:</th>
+				<td style="width:150px;"><strong><%=account.Email%></strong></td>
 			  </tr>			
 			  <tr>
 				<th>Số dư khả dụng:</th>
-				<td><span class="yel">0</span> <span class="span-grey">VND</span></td>
-			  </tr>
-			  <tr>
-				<th>Số tiền đã rút trong ngày:</th>
-				<td><span class="yel">0</span> <span class="span-grey">VND</span> [ <a href="#" target="_blank">Xem lịch sử rút tiền</a> ]</td>
+				<td><span class="yel"><%=account.SoDu%></span> <span class="span-grey">VND</span></td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số tiền yêu cầu rút:</th>
@@ -80,14 +77,14 @@
 				<th><span class="required">*</span>Chọn tài khoản ngân hàng:</th>
 				<td>
                 <!-- BEGIN BlockAddBank -->
-                	<span class="yel">Tài khoản ngân hàng chưa được khai báo</span>&nbsp;&nbsp;[ <a href="#" target="_blank">Khai báo</a> ]<br>(<span class="span-grey">sau khi khai báo, xin vui lòng refresh lại trang này)</span>
+                	<span class="yel">Money 10 Banking</span>
                 <!-- END BlockAddBank -->
                  
 				</td>
 			  </tr>					  					  
 			  <tr class="cashout-method ">
 				<th><span class="required">*</span>Địa chỉ nhận tiền:</th>
-				<td><select name="location" id="location" style="width: 330px" class="list-business"><option value="1">Hà nội: Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng</option><option value="0" selected>&nbsp;</option><option value="2">TP.HCM: Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12, quận Tân Bình</option></select></td>
+				<td><select name="location" id="location" style="width: 330px" class="list-business"><option value="1"></option><option value="0" selected>&nbsp;</option><option value="2">TP.HCM: Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12, quận Tân Bình</option></select></td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Mã xác nhận:</th>
@@ -105,7 +102,7 @@
 		</div>
 		<div id="complaints-right">
 			<h4>Trợ giúp - Hướng dẫn</h4>
-			<p>1. Thời gian để NgânLượng.vn phê chuẩn yêu cầu rút tiền của bạn không quá <strong><u>4</u></strong> giờ làm việc hoặc không quá <strong><u>24</u></strong> giờ kể từ thời điểm bạn yêu cầu rút.</p>
+			<p>1. Thời gian để phê chuẩn yêu cầu rút tiền của bạn không quá <strong><u>4</u></strong> giờ làm việc hoặc không quá <strong><u>24</u></strong> giờ kể từ thời điểm bạn yêu cầu rút.</p>
 			<p>2. Khi yêu cầu rút tiền xin vui lòng kiểm tra lại địa chỉ nhận tiền (trường hợp nhận tiền tại địa điểm giao dịch của NgânLượng.vn) hoặc thông tin tài khoản (nếu rút tiền về tài khoản ngân hàng).</p>
 			<p>3. Trường hợp rút tiền về tài khoản ngân hàng, tên chủ tài khoản ngân hàng phải trùng với tên chủ tài khoản NgânLượng.vn "<strong>Phan Quang Khải</strong>", nếu thông tin tài khoản ngân hàng của bạn bị sai và lệnh chuyển khoản đã thực hiện, bạn phải chịu phí chuyển khoản ngân hàng theo quy định.</p>
 		</div>
