@@ -43,11 +43,6 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult ChuyenTienCungMoiGioi()
-        {
-            return View();
-        }
-
         public ActionResult ChuyenTienKhacMoiGioi()
         {
             return View();

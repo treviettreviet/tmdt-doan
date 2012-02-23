@@ -390,6 +390,9 @@
     <Content Include="Scripts\js\validatj.js" />
     <Content Include="Scripts\js\vtip0000.js" />
     <Content Include="Scripts\js\withdraw.js" />
+    <Content Include="Views\Account\DoiMatKhau.aspx" />
+    <Content Include="Views\Account\DoiMatKhauThanhToan.aspx" />
+    <Content Include="Views\Account\ThemTheNganHang.aspx" />
     <Content Include="Views\Admin\Default.aspx" />
     <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Transaction\ChuyenTien.aspx" />
