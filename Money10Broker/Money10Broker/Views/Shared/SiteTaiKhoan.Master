@@ -319,7 +319,7 @@
                 </div>
             </div>
             <!-- Start of Zopim Live Chat Script -->
-            <script type="text/javascript">
+           <%-- <script type="text/javascript">
                 window.$zopim || (function (d, s) {
                     var z = $zopim = function (c) { z._.push(c) }, $ =
 	z.s = d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o
@@ -341,7 +341,7 @@
                         'away': ['Click để gửi lời nhắn', 'Cảm ơn bạn đã ghé thăm. Hiện nhân viên CSKH đi vắng, bạn vui lòng để lại câu hỏi hoặc lời nhắn, chúng tôi sẽ trả lời qua email cho bạn trong thời gian sớm nhất.']
                     });
                 });
-            </script>
+            </script>--%>
             <!-- End of Zopim Live Chat Script -->
             <script type="text/javascript">
                 var _gaq = _gaq || [];
