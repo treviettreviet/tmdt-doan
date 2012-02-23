@@ -447,57 +447,57 @@
                                 onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_accounts">
                                     <a href="/Public/CapNhatTaiKhoan" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
                                         <span>Tài khoản</span></a></li><li id="cat2" class="m_transactions"><a href="/Public/ChuyenTien"
-                                            onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Chuyển tiền</span></a></li><li
+                                            onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span>Chuyển tiền</span></a></li><%--<li
                                                 id="cat3" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(3)">
                                                     <span>Tích hợp thanh toán</span></a></li><li id="cat4" class="m_shopping"><a href="#"
                                                         onmouseout="resetMenu()" onmouseover="showSubMenu(4)"><span>Shopping</span></a></li><li
                                                             id="cat5" class="m_faq"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(5)">
-                                                                <span>Trợ giúp</span></a></li>
+                                                                <span>Trợ giúp</span></a></li>--%>
                         </ul>
                     </div>
                     <div class="sub">
                         <ul id="subcat0" style="display: none;">
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="#">
+                           <%-- <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="#">
                                 Tìm hiểu</a><div id="subsub00" class="sub_sub_menu" style="display: none">
                                     <ul>
                                         <li><a href="#">Tại sao dùng Ecmoney10bank.tk</a></li><li><a href="#">Ecmoney10bank.tk hoạt động như thế
                                             nào</a></li><li><a href="#">Thanh toán với Ecmoney10bank.tk tại đâu</a></li></ul>
                                 </div>
-                            </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;01&quot;);"><a href="#">
+                            </li>--%>
+                           <%-- <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;01&quot;);"><a href="#">
                                 Thanh toán</a><div id="subsub01" class="sub_sub_menu" style="display: none">
                                     <ul>
                                         <li><a href="#">Thanh toán an toàn</a></li><li><a href="#">Thanh toán không cần đăng
                                             ký tài khoản</a></li></ul>
                                 </div>
-                            </li>
+                            </li>--%>
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;02&quot;);"><a href="/Public/ChuyenTien">
                                 Chuyển tiền</a><div id="subsub02" class="sub_sub_menu" style="display: none">
                                     <ul>
-                                        <li><a href="/Public/ChuyenTien">Chuyển tiền an toàn</a></li><li><a href="/Public/ChuyenTien">
-                                            Chuyển tiền cho người chưa đăng ký tài khoản</a></li><li><a href="#">Gửi yêu cầu chuyển
-                                                tiền</a></li></ul>
+                                        <li><a href="/Public/ChuyenTien">Chuyển tiền an toàn</a></li><li><%--<a href="/Public/ChuyenTien">
+                                            Chuyển tiền cho người chưa đăng ký tài khoản</a>--%></li><%--<li><a href="#">Gửi yêu cầu chuyển
+                                                tiền</a></li>--%></ul>
                                 </div>
                             </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;03&quot;);"><a href="#">
+                            <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;03&quot;);"><a href="#">
                                 Tích hợp bán hàng</a><div id="subsub03" class="sub_sub_menu" style="display: none">
                                     <ul>
                                         <li><a href="#">Tích hợp thỏa thuận</a></li><li><a href="#">Tích hợp sản phẩm</a></li><li>
                                             <a href="#">Tích hợp toàn bộ website</a></li></ul>
                                 </div>
-                            </li>
+                            </li>--%>
                         </ul>
                         <ul id="subcat1" style="display: none;">
                             <li class="sub_selected" onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
                                 <a href="/Public/CapNhatTaiKhoan">Cập nhật</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/RutTien">Rút tiền</a><div id="subsub12" class="sub_sub_menu" style="display: none">
+                                        <a href="/Public/RutTien">Rút tiền</a><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
                                             <ul>
                                                 <li><a href="#">Rút về tài khoản Ngân hàng</a></li><li><a href="#">Rút tiền mặt tại
                                                     trụ sở</a></li><li><a href="#">Rút tiền mặt trả tại nhà bạn</a></li><li><a href="#">
                                                         <font color="red">Bắn tiền ngay vào ĐT di động (có chiết khấu)</font><img src="../../Content/images/hot00000.gif"
                                                             border="0"></a></li><li><a href="#">Mua thẻ Visa trả trước RÊV</a></li></ul>
-                                        </div>
+                                        </div>--%>
                                     </li>
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);"><a href="/Public/LichSuGiaoDich">
                                 Lịch sử giao dịch</a><div id="subsub13" class="sub_sub_menu" style="display: none">
@@ -520,17 +520,17 @@
                                                                         lý</a></li></ul>
                                 </div>
                             </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;15&quot;);"><a href="#">
+                            <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;15&quot;);"><a href="#">
                                 <font color="red">Đăng ký đại lý </font>
-                                <img src="../../Content/images/hot00000.gif" border="0"></a></li></ul>
+                                <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%></ul>
                         <ul id="subcat2" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="/Public/ChuyenTien">
                                 Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
                                     <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li><li onmouseout="resetMenu()"
                                         onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="/Public/LichSuGiaoDich">Lịch
-                                            sử chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
-                                                <a href="#">Lịch sử thanh toán</a></li></ul>
-                        <ul id="subcat3" style="display: none;">
+                                            sử chuyển tiền</a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
+                                                <a href="#">Lịch sử thanh toán</a></li>--%></ul>
+                       <%-- <ul id="subcat3" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;30&quot;);"><a href="#">
                                 Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;31&quot;);">
                                     <a href="#">Nút thanh toán thỏa thuận</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;32&quot;);">
@@ -571,7 +571,7 @@
                                             <a href="#">Tích hợp toàn bộ website</a></li></ul>
                                 </div>
                             </li>
-                        </ul>
+                        </ul>--%>
                     </div>
                     <div class="clear">
                     </div>

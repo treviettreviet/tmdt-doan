@@ -78,7 +78,7 @@
             </select>
         </div></p> 
         <div class="demo">
-        <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White" name="btnTim" value="Tìm" /></p>
+        <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
         </div>               
             <div class="word-line">
                 Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div>
