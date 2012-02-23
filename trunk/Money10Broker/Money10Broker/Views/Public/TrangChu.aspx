@@ -293,7 +293,7 @@
                 </div>
             </div>
             <% }%>
-            <script language="javascript">
+            <script language="javascript"  type="text/javascript">
                 function checkLogin() {
                     if ($('#email').val() == 'Email hoặc tên đăng nhập') {
                         $('#email').val('');
