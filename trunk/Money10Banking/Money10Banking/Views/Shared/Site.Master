@@ -309,13 +309,13 @@
                         <ul>
                             <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service">
-                                    <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><li
+                                    <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><%--<li
                                         id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
                                             <span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="#"
                                                 onmouseout="resetMenu()" onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li
                                                     id="cat4" class="m_news"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
                                                         <span>Tin tức</span></a></li></a></li><li id="cat5" class="m_faq"><a href="#" onmouseout="resetMenu()"
-                                                            onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>
+                                                            onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>--%>
                         </ul>
                     </div>
                     <div class="sub">                    
@@ -329,11 +329,11 @@
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
                                 Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/ChuyenTien">Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
+                                        <a href="/Public/NapTien">Nạp tiền</a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
                                             <a href="#"><font color="red">Đăng ký đại lý </font>
-                                                <img src="../../Content/images/hot00000.gif" border="0"></a></li><li onmouseout="resetMenu()"
-                                                    onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="#">Mua thẻ Visa trả trước RÊV</a></li></ul>
-                        <ul id="subcat2" style="display: none;">
+                                                <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%><%--<li onmouseout="resetMenu()"
+                                                    onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="#">Mua thẻ Visa trả trước RÊV</a></li>--%></ul>
+                        <%--<ul id="subcat2" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="#">
                                 Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
                                     <a href="#">Nút thanh toán thỏa thuận</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;22&quot;);">
@@ -381,7 +381,7 @@
                                 </div>
                             </li>
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;54&quot;);"><a href="#">
-                                Câu hỏi thường gặp</a></li></ul>
+                                Câu hỏi thường gặp</a></li></ul>--%>
                     </div>
                     <div class="clear">
                     </div>
