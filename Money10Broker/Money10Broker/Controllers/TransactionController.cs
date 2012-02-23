@@ -13,6 +13,31 @@ namespace Money10Broker.Controllers
         //
         // GET: /Transaction/
 
+        public ActionResult ChuyenTienCungMoiGioi()
+        {
+            return View();
+        }
+
+        public ActionResult ChuyenTienKhacMoiGioi()
+        {
+            return View();
+        }
+
+        public ActionResult LichSuGiaoDich()
+        {
+            return View();
+        }
+
+        public ActionResult NapTien()
+        {
+            return View();
+        }
+
+        public ActionResult RutTien()
+        {
+            return View();
+        }
+
         public ActionResult ChuyenTien()
         {
             return View();
