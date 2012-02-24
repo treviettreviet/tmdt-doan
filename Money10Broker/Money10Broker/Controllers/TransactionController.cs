@@ -43,14 +43,11 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-<<<<<<< .mine
         public ActionResult XuLyRutTien()
         {
             return View();
         }
 
-=======
->>>>>>> .r252
         public ActionResult TransferByBroker(string id, string banktransfer, string banksend, string bankreceive, string sendcardnum, string receivecardnum, string amount)
         {
             decimal amt = decimal.Parse(amount);
