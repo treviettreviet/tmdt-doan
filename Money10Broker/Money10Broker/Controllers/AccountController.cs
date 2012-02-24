@@ -228,7 +228,18 @@ namespace Money10Broker.Controllers
             CaNhan cn = new CaNhan();
             xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
             cn = (CaNhan)Session["TaiKhoanCaNhan"];
-
+            if (!txthoten.Equals(""))
+                cn.HoTen = txthoten;
+            if (!txtdienthoai.Equals(""))
+                cn.DienThoai = txtdienthoai;
+            //string NgaySinh = "";
+            //if(!date.Equals(""))
+            if (!gender.Equals(""))
+                cn.GioiTinh = gender;
+            if (!txtdiachi.Equals(""))
+                cn.DiaChi = txtdiachi;
+            //mg.CaNhans.AddObject(cn);
+            mg.SaveChanges();
             return View();
         }
 
