@@ -240,7 +240,8 @@ namespace Money10Broker.Controllers
                 cn.DiaChi = txtdiachi;
             //mg.CaNhans.AddObject(cn);
             mg.SaveChanges();
-            return View();
+            Session.["TaiKhoanCaNhan"] = cn;
+            return View("ThongTinTaiKhoan");
         }
 
 
