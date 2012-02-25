@@ -222,7 +222,14 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Xu Ly cap nhat tai khoản
+        /// </summary>
+        /// <param name="txtemail"></param>
+        /// <param name="txtdienthoai"></param>
+        /// <param name="txtdienthoaididong"></param>
+        /// <param name="txtdiachi"></param>
+        /// <returns></returns>
         public ActionResult XuLyCapNhatTaiKhoanDoanhNghiep(string txtemail, string txtdienthoai,string txtdienthoaididong, string txtdiachi)
         {
             
@@ -238,17 +245,58 @@ namespace Money10Broker.Controllers
                 tk.Email = txtemail;
             }
             if (!txtdienthoai.Equals(""))
+            {
                 cn.DienThoaiCongTy = int.Parse(txtdienthoai);
+            }
             if (!txtdienthoaididong.Equals(""))
-                cn.DienThoaiDiDong= txtdienthoaididong;
+            {
+                cn.DienThoaiDiDong = txtdienthoaididong;
+            }
             if (!txtdiachi.Equals(""))
-
+            {
                 cn.DiaChiCongTy = txtdiachi;
-            
+            }
             dbMG.SaveChanges();
             return View("ThongTinTaiKhoan");
         }
 
+        public ActionResult XuLyCapNhatTaiKhoanCaNhan(string txthoten,string txtemail, string txtdienthoai, int date, int month, string year,string gender, string txtdiachi)
+        {
+
+            xnvaufit_MoiGioiEntities dbMG = new xnvaufit_MoiGioiEntities();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            CaNhan cn = new CaNhan();
+            cn = dbMG.CaNhans.SingleOrDefault(p => p.MaTaiKhoan == tk.MaTaiKhoan);
+            if (!txtemail.Equals("") && tk != null)
+            {
+                tk.Email = txtemail;
+            }
+            if(!txthoten.Equals(""))
+            {
+                cn.HoTen= txthoten;
+            }
+            if (!txtdienthoai.Equals(""))
+            {
+                cn.DienThoai = txtdienthoai;
+            }
+            if (!date.Equals("") && !month.Equals("") && !year.Equals(""))
+            {
+                string birthday = month + "/" + date + "/" + year;
+                cn.NgaySinh = DateTime.Parse(birthday);
+            }
+            if(!gender.Equals(""))
+            {
+                cn.GioiTinh = gender;
+
+            }
+            if (!txtdiachi.Equals(""))
+            {
+                cn.DiaChi = txtdiachi;
+            }
+
+            dbMG.SaveChanges();
+            return View("ThongTinTaiKhoan");
+        }
 
         /// <summary>
         /// Lên - Tạo mã tăng tự động cho tất cả các bảng
