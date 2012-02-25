@@ -906,19 +906,39 @@ namespace Money10Banking.Controllers
         /// <returns></returns>
         public ActionResult XLCapNhatTaiKhoan(string cmnd, string diachi,string street,string phuong, string city, string distric, string receiveReport)
         {
+            try
+            {
             TaiKhoan tk = (TaiKhoan)Session["User"];
             NganHangEntities dbN = new NganHangEntities();
            
             string email = tk.Email;
             KhachHang updateKH = dbN.KhachHangs.Single(m=>m.MaTaiKhoan==tk.MaTaiKhoan);
             updateKH.CMNDHoChieu = int.Parse(cmnd);
-            DiaChi updateDC = dbN.DiaChis.Single(p=>p.MaTaiKhoan==tk.MaTaiKhoan);
-            updateDC.SoNha = diachi;
-            updateDC.Duong = street;
-            updateDC.PhuongXa = phuong;
-            updateDC.QuanHuyen = distric;
-            updateDC.TinhThanh = city;
-            
+            DiaChi updateDC = new DiaChi(); 
+            updateDC = dbN.DiaChis.SingleOrDefault(p=>p.MaTaiKhoan==tk.MaTaiKhoan);
+            if (updateDC != null)
+            {
+                updateDC.SoNha = diachi;
+                updateDC.Duong = street;
+                updateDC.PhuongXa = phuong;
+                updateDC.QuanHuyen = distric;
+                updateDC.TinhThanh = city;
+            }
+            else
+            {
+                string DiaChiMax = (dbN.DiaChis).Max(m => m.MaDiaChi);
+                DiaChi DiaChiMoi = new DiaChi();
+                string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, "DC");
+                DiaChiMoi.MaDiaChi = MaDiaChiNext;
+                DiaChiMoi.SoNha = diachi;
+                DiaChiMoi.Duong = street;
+                DiaChiMoi.PhuongXa = phuong;
+                DiaChiMoi.QuanHuyen = distric;
+                DiaChiMoi.TinhThanh = city;
+                DiaChiMoi.MaTaiKhoan = tk.MaTaiKhoan;
+                dbN.DiaChis.AddObject(DiaChiMoi);
+ 
+            }
             string sTo = email;
             string sFrom = "tmdthca@gmail.com";
             string sSubject = "Money10Banking Thông báo";
@@ -926,7 +946,12 @@ namespace Money10Banking.Controllers
             sendMail(sTo, sFrom, sSubject, sBody);
             dbN.SaveChanges();
             return View("TrangChu");
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
         /// <summary>
         /// chứng thực - thắng
