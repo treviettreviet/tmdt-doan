@@ -14,43 +14,39 @@
             <div id="menu-nav-content-c">
                 <div id="menu-nav-content-main">
                     <ul>
-                        <li class="active " style="display: block"><a href="#"><span>GIAO DỊCH</span></a></li>
+                        <li class="active" style="display: block"><a href="/Public/TongHop"><span>GIAO DỊCH</span></a></li>
                         <li class=" " style="display: block"><a href="/Account/ThongTinTaiKhoan"><span>TÀI KHOẢN</span></a></li>
                     </ul>
                 </div>
                 <div id="menu-nav-content-sub">
                     <ul>
-                        <li class=" " style="display: block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng
-                            hợp</span></a></li>
-                        <li class="  " style="display: block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch
-                            sử giao dịch</span></a></li>
+                        <li class="" style="display: block"><a href="/Public/TongHop"><span>Tổng hợp</span></a></li>
+                        <li class="" style="display: block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>
                         <li class="" style="display: block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>
-                        <li class=" " style="display: block"><a href="/Transaction/ChuyenTien"><span>Chuyển
-                            tiền</span></a></li>
-                        <li class=" " style="display: block"><a href="/Public/ChuyenTienCungMoigioi"><span>Chuyển
-                            tiền cùng môi giới</span></a></li>
-                        <li class=" " style="display: block"><a href="/Public/ChuyenTienKhacMoigioi"><span>Chuyển
-                            tiền khác môi giới</span></a></li>
+                        <li class=" " style="display: block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
+                        <li class="active " style="display: block"><a href="/Transaction/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
+                        <li class=" " style="display: block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="box-content-square" style="padding-top: 0; margin-bottom: 0; padding-bottom: 15px;">
             <div class="box-content-square-content" id="transfer-friends">
-            <%
-                if (Session["User"] == null)
-                {
-                    //Response.Redirect("/Public/TrangChu");
-                }
-                else
-                {
-                    Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
-                    string message = "";
-                    if(ViewData["message"]!=null)
-                        message = ViewData["message"].ToString();
-            %>
+                <%
+                    if (Session["User"] == null)
+                    {
+                        //Response.Redirect("/Public/TrangChu");
+                    }
+                    else
+                    {
+                        Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
+                        string message = "";
+                        if (ViewData["message"] != null)
+                            message = ViewData["message"].ToString();
+                %>
                 <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi">
-                <div class="message-box"><%=message%></div>
+                <div class="message-box">
+                    <%=message%></div>
                 <h4 style="margin-top: 10px;">
                     Tài khoản người nhận</h4>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -60,7 +56,8 @@
                                 <span class="required">*</span>Tài khoản của tôi:
                             </th>
                             <td>
-                                <strong><%=tk.Email %></strong>
+                                <strong>
+                                    <%=tk.Email %></strong>
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +103,8 @@
                                 Số dư khả dụng:
                             </th>
                             <td>
-                                <span class="yel-large"><%=tk.SoDu %></span> <span class="span-grey"> VND</span>
+                                <span class="yel-large">
+                                    <%=tk.SoDu %></span> <span class="span-grey">VND</span>
                             </td>
                         </tr>
                         <tr>
@@ -116,8 +114,10 @@
                             <td class="blear">
                                 <%--<input name="price" value="" type="text" class="field-check input-amount" maxlength="20" />--%>
                                 <input name="price" value="" type="text" maxlength="20" />
-                                <span class="span-grey">VND</span><div class="field-notification field-alert">Tối thiểu 2.000 VND/lần</div>
-                                <span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn chuyển không đúng yêu cầu</span>
+                                <span class="span-grey">VND</span><div class="field-notification field-alert">
+                                    Tối thiểu 2.000 VND/lần</div>
+                                <span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn
+                                    chuyển không đúng yêu cầu</span>
                             </td>
                         </tr>
                         <tr>
@@ -155,10 +155,10 @@
                     </tbody>
                 </table>
                 </form>
-            <%
+                <%
                 }
-            %>
-                <script type="text/javascript" language="javascript">setFormCheck();</script>
+                %>
+                <script type="text/javascript" language="javascript">                    setFormCheck();</script>
             </div>
         </div>
     </div>
