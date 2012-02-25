@@ -78,8 +78,6 @@
                                 if (Session["TaiKhoanCaNhan"] != null)
                                 {
                                     cn = (Money10Broker.Models.CaNhan)Session["TaiKhoanCaNhan"];
-                                    if (cn.MaTaiKhoan != null)
-                                        MaTaiKhoan = cn.MaTaiKhoan;
                                     if (cn.HoTen != null)
                                         HoTen = cn.HoTen;
                                     if (cn.NgaySinh != null)
@@ -324,23 +322,22 @@
                                 <td>
                                     <select name="gender" id="gender" style="width: ">
                                         <%
-                                if (GioiTinh.Equals("Nam"))
-                                {
+                                            if (GioiTinh.Equals("Nam"))
+                                            {
                                         %>
-                                        <option value="Nam" selected="selected">Nam</option>
-                                        <option value="Nữ">Nữ</option>
+                                                <option value="Nam" selected="selected">Nam</option>
+                                                <option value="Nữ">Nữ</option>
                                         <%                
                                             }
                                             else
                                             {
                                         %>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ" selected="selected">Nữ</option>
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ" selected="selected">Nữ</option>
                                         <%
-                                                        }
+                                            }
                                         %>
                                     </select>
-                                    <%--<div class="message-box"></div>--%>
                                 </td>
                             </tr>
                             <!-- END BlockNotVerify -->
@@ -431,8 +428,7 @@
                         </table>
                     </div>
                     <div class="menu-vertical-right-content">
-                        <div class="menu-vertical-right-content-title">
-                            <span>Thông tin chỦ tài khoẢn</span></div>
+                        <div class="menu-vertical-right-content-title"><span>Thông tin chỦ tài khoẢn</span></div>
                         <form name="formtt" method="post" action="XuLyCapNhatTaiKhoanDoanhNghiep">
                         <div class="message-success">
                         </div>
@@ -516,7 +512,6 @@
                     <%                                
                             }
                         }
-
                     }            
                                 
                     %>
