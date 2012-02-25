@@ -57,14 +57,16 @@ namespace Money10Broker.Controllers
         {
             TaiKhoan tkGui = new TaiKhoan();
             tkGui = (TaiKhoan)Session["User"];
+             
             TaiKhoan tkNhan = new TaiKhoan();
             xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+            TaiKhoan tkGuiNew = mg.TaiKhoans.SingleOrDefault(a=>a.MaTaiKhoan==tkGui.MaTaiKhoan);
             string message = "";
             
             // Kiểm tra email người nhận có tồn tại trong hệ thống Ecmoney10Broker.tk không?
             try
             {
-                tkNhan = mg.TaiKhoans.Single(m => m.Email == receiver_email);   // SingleOrDefault
+                tkNhan = mg.TaiKhoans.SingleOrDefault(m => m.Email == receiver_email);   // SingleOrDefault
             }
             catch
             {
@@ -75,7 +77,7 @@ namespace Money10Broker.Controllers
 
             // Kiểm tra thông tin về số dư của tài khoản gửi
             decimal price_transfer = decimal.Parse(price);
-            if (tkGui.SoDu < price_transfer)
+            if (tkGuiNew.SoDu < price_transfer)
             {
                 message = "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền >> <a href='/Transaction/NapTien'>Nạp tiền</a>";
                 ViewData["message"] = message;
@@ -83,7 +85,7 @@ namespace Money10Broker.Controllers
             }
 
             // Xử lý Gửi tiền
-            tkGui.SoDu = tkGui.SoDu - price_transfer;
+            tkGuiNew.SoDu = tkGui.SoDu - price_transfer;
             tkNhan.SoDu = tkNhan.SoDu + price_transfer;
             mg.SaveChanges();
             message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
