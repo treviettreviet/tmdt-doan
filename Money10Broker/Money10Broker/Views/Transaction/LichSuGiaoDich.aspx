@@ -24,18 +24,29 @@
 		</div>
 	</div>
 </div>
-    <div id="title">
-        <span class="yel">Lịch sử giao dịch trên hệ thống</span>
-    </div>
+    <div id="title"><span class="yel">Lịch sử giao dịch trên hệ thống</span></div>
+    <%
+        if (Session["User"] == null)
+        {
+            //Response.Redirect("/Public/TrangChu");
+        }
+        else
+        {
+            Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
+    %>
+    
     <div id="balance-activities">
         <div id="balance-activities-content">
             <p id="balance-activities-content-title">
                 Số dư khả dụng</p>
             <p id="balance-activities-content-view">
-                <span id="balance-content" class="yel">0</span><br />
+                <span id="balance-content" class="yel"><%=tk.SoDu.ToString()%></span><br />
                 <span class="span-grey">(VND)</span></p>
         </div>
     </div>
+    <%            
+        }
+    %>
     <form method="get" name="frm_search">
     <input name="portal" type="hidden" value="nganluong" />
     <input id="page" name="page" type="hidden" value="transaction_history" />
