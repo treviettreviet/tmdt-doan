@@ -55,7 +55,8 @@ namespace Money10Broker.Controllers
 
         public ActionResult XuLyChuyenTienCungMoiGioi(string receiver_email, string price, string reason)
         {
-            TaiKhoan tkGui = (TaiKhoan)Session["User"];
+            TaiKhoan tkGui = new TaiKhoan();
+            tkGui = (TaiKhoan)Session["User"];
             TaiKhoan tkNhan = new TaiKhoan();
             xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
             string message = "";
@@ -76,17 +77,17 @@ namespace Money10Broker.Controllers
             decimal price_transfer = decimal.Parse(price);
             if (tkGui.SoDu < price_transfer)
             {
-                message = "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền >> <a href=''>Nạp tiền</a>";
+                message = "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền >> <a href='/Transaction/NapTien'>Nạp tiền</a>";
                 ViewData["message"] = message;
                 return View("ChuyenTienCungMoiGioi");
             }
 
             // Xử lý Gửi tiền
-            tkGui.SoDu -= price_transfer;
-            tkNhan.SoDu += price_transfer;
+            tkGui.SoDu = tkGui.SoDu - price_transfer;
+            tkNhan.SoDu = tkNhan.SoDu + price_transfer;
             mg.SaveChanges();
             message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
-            message += " Một thông báo đã được gửi đến Email của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
+            message += " Một thông báo đã được gửi đến Email <b><i>" + tkGui.Email + "</i></b> của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
             ViewData["message"] = message;
             return View("ThongBaoKetQuaGiaoDich");
         }
