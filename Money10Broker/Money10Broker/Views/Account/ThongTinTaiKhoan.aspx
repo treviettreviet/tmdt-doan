@@ -433,7 +433,7 @@
                     <div class="menu-vertical-right-content">
                         <div class="menu-vertical-right-content-title">
                             <span>Thông tin chỦ tài khoẢn</span></div>
-                        <form name="formtt" method="post" action="">
+                        <form name="formtt" method="post" action="XuLyCapNhatTaiKhoanDoanhNghiep">
                         <div class="message-success">
                         </div>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -484,7 +484,7 @@
                                     Điện thoại di động:
                                 </th>
                                 <td>
-                                    <input name="txtdienthoaididong" type="text" value=" <%=DienThoaiDiDongCongTy %>" />
+                                    <input name="txtdienthoaididong" type="text" value="<%=DienThoaiDiDongCongTy %>" />
                                 </td>
                             </tr>
                             <tr>
@@ -492,7 +492,7 @@
                                     Trụ sở công ty:
                                 </th>
                                 <td>
-                                    <input name="txtdiachi" type="text" value=" <%=DiaChiCongTy %>" />
+                                    <input name="txtdiachi" type="text" value="<%=DiaChiCongTy %>" />
                                 </td>
                             </tr>
                             <tr>
