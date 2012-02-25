@@ -2,7 +2,7 @@
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    ChuyenTienCungMoiGioi
+    Chuyển tiền giữa 2 Ví trên cùng hệ thống môi giới
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="content">
@@ -158,7 +158,7 @@
                 <%
                 }
                 %>
-                <script type="text/javascript" language="javascript">                    setFormCheck();</script>
+                <script type="text/javascript" language="javascript">setFormCheck();</script>
             </div>
         </div>
     </div>
