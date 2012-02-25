@@ -223,24 +223,29 @@ namespace Money10Broker.Controllers
         }
 
 
-        public ActionResult XuLyCapNhatTaiKhoanCaNhan(string txthoten, string txtemail, string txtdienthoai, string date, string month, string year, string gender, string txtdiachi)
+        public ActionResult XuLyCapNhatTaiKhoanDoanhNghiep(string txtemail, string txtdienthoai,string txtdienthoaididong, string txtdiachi)
         {
-            CaNhan cn = new CaNhan();
-            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
-            cn = (CaNhan)Session["TaiKhoanCaNhan"];
-            if (!txthoten.Equals(""))
-                cn.HoTen = txthoten;
+            
+            xnvaufit_MoiGioiEntities dbMG = new xnvaufit_MoiGioiEntities();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            DoanhNghiep cn = new DoanhNghiep();
+           // cn = (DoanhNghiep)Session["TaiKhoanDoanhNghiep"];
+
+            //TaiKhoan tk= new TaiKhoan();
+            cn = dbMG.DoanhNghieps.SingleOrDefault(p=>p.MaTaiKhoan==tk.MaTaiKhoan);
+            if(!txtemail.Equals("") && tk!=null)
+            {
+                tk.Email = txtemail;
+            }
             if (!txtdienthoai.Equals(""))
-                cn.DienThoai = txtdienthoai;
-            //string NgaySinh = "";
-            //if(!date.Equals(""))
-            if (!gender.Equals(""))
-                cn.GioiTinh = gender;
+                cn.DienThoaiCongTy = int.Parse(txtdienthoai);
+            if (!txtdienthoaididong.Equals(""))
+                cn.DienThoaiDiDong= txtdienthoaididong;
             if (!txtdiachi.Equals(""))
-                cn.DiaChi = txtdiachi;
-            //mg.CaNhans.AddObject(cn);
-            mg.SaveChanges();
-            Session["TaiKhoanCaNhan"] = cn;
+
+                cn.DiaChiCongTy = txtdiachi;
+            
+            dbMG.SaveChanges();
             return View("ThongTinTaiKhoan");
         }
 
