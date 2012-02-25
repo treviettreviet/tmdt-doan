@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Money10Broker.Models;
+using System.Net.Mail;
+using System.Net;
 
 namespace Money10Broker.Controllers
 {
@@ -52,7 +54,76 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// send mail khi khách hàng giao dịch
+        /// </summary>
+        /// <param name="sTo"></param>
+        /// <param name="sFrom"></param>
+        /// <param name="sSubject"></param>
+        /// <param name="sBody"></param>
+        public void sendMail(string sTo, string sFrom, string sSubject, string sBody)
+        {
+            string to = sTo;
+            string from = sFrom;
+            string subject = sSubject;
+            string body = sBody;
+            string sFileName = string.Empty;
+            string server = "smtp.gmail.com";
+            string port = "587";
+            string user = from;
+            string pass = "tmdt123456";
+            String[] addr = to.Split(',');// Danh sach mail nhan
+            System.Net.Mail.SmtpClient smtp = new SmtpClient();
+            System.Net.Mail.MailMessage msg = new MailMessage();
+            msg.IsBodyHtml = true;
+            smtp.Port = Int32.Parse(port);
+            smtp.EnableSsl = true;//chứng thực việc gửi mail
+            //smtp.Host = "smtp.gmail.com";//Sử dụng SMTP của gmail 
+            smtp.Host = server;
+            smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
+            try
+            {
 
+
+                if (from.Length > 0 && to.Length > 0 && subject.Length > 0 && body.Length >= 0)
+                {
+
+
+                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
+                    msg.From = new MailAddress(from, "Money10Bank Gui Mail", System.Text.Encoding.UTF8);
+                    Byte i;
+                    for (i = 0; i < addr.Length; i++)
+                    {
+                        bool result = regex.IsMatch(addr[i]);
+                        if (result == false)
+                        {
+                            //lblError.Visible = true;
+                            //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
+                            Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
+
+                        }
+                        else
+                        {
+                            msg.To.Add(addr[i]);
+                            msg.Subject = subject;
+                            msg.Body = body;
+                            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                            msg.ReplyTo = new MailAddress(addr[i]);
+                            smtp.Send(msg);
+                            Response.Flush();
+                            // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
+                            // lblError.Visible = true;
+                        }
+                    }
+                }
+            }
+
+
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public ActionResult XuLyChuyenTienCungMoiGioi(string receiver_email, string price, string reason)
         {
             TaiKhoan tkGui = new TaiKhoan();
@@ -91,6 +162,11 @@ namespace Money10Broker.Controllers
             message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
             message += " Một thông báo đã được gửi đến Email <b><i>" + tkGui.Email + "</i></b> của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
             ViewData["message"] = message;
+            string sTo = tkGui.Email;
+            string sFrom = "tmdthca@gmail.com";
+            string sSubject = "Bạn đã chuyển tiền thành công luc " + DateTime.Now + "!";
+            string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+            sendMail(sTo, sFrom, sSubject, sBody);
             return View("ThongBaoKetQuaGiaoDich");
         }
 
