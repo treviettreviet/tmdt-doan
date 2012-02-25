@@ -48,6 +48,49 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+        public ActionResult ThongBaoKetQuaGiaoDich()
+        {
+            return View();
+        }
+
+        public ActionResult XuLyChuyenTienCungMoiGioi(string receiver_email, string price, string reason)
+        {
+            TaiKhoan tkGui = (TaiKhoan)Session["User"];
+            TaiKhoan tkNhan = new TaiKhoan();
+            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+            string message = "";
+            
+            // Kiểm tra email người nhận có tồn tại trong hệ thống Ecmoney10Broker.tk không?
+            try
+            {
+                tkNhan = mg.TaiKhoans.Single(m => m.Email == receiver_email);   // SingleOrDefault
+            }
+            catch
+            {
+                message = "Tài khoản người nhận không tồn tại trong hệ thống EcMoney10Broker.tk";
+                ViewData["message"] = message;
+                return View("ChuyenTienCungMoiGioi");   
+            }
+
+            // Kiểm tra thông tin về số dư của tài khoản gửi
+            decimal price_transfer = decimal.Parse(price);
+            if (tkGui.SoDu < price_transfer)
+            {
+                message = "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền >> <a href=''>Nạp tiền</a>";
+                ViewData["message"] = message;
+                return View("ChuyenTienCungMoiGioi");
+            }
+
+            // Xử lý Gửi tiền
+            tkGui.SoDu -= price_transfer;
+            tkNhan.SoDu += price_transfer;
+            mg.SaveChanges();
+            message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
+            message += " Một thông báo đã được gửi đến Email của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
+            ViewData["message"] = message;
+            return View("ThongBaoKetQuaGiaoDich");
+        }
+
         public ActionResult TransferByBroker(string id, string banktransfer, string banksend, string bankreceive, string sendcardnum, string receivecardnum, string amount)
         {
             decimal amt = decimal.Parse(amount);

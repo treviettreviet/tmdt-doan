@@ -414,6 +414,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Transaction\ThongBaoKetQuaGiaoDich.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
