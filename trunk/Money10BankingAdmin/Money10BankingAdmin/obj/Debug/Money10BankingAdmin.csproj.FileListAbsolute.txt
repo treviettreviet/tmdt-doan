@@ -1,0 +1,5 @@
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\bin\Money10BankingAdmin.dll
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\bin\Money10BankingAdmin.pdb
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\ResolveAssemblyReference.cache
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.dll
+E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.pdb
