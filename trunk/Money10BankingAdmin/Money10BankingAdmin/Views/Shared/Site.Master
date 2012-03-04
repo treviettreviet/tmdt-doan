@@ -39,7 +39,7 @@
 			
 				
 				<li> 
-					<a href="/Public/QuanLyThe.aspx" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+					<a href="/Public/QuanLyThe" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
                     QUẢN LÝ THẺ
 					</a>
 					<%--<ul>
@@ -55,7 +55,7 @@
 						QUẢN LÝ GIAO DỊCH
 					</a>
 					<ul>
-						<li><a href="/Public/NapTien.aspx">Nạp Tiền</a></li>
+						<li><a href="/Public/NapTien">Nạp Tiền</a></li>
 						<li><a class="current" href="#">Chuyển Tiền</a></li> <!-- Add class "current" to sub menu items also -->
 						<%--<li><a href="#">Xóa Môi Giới</a></li>
 						<li><a href="#">Cập Nhật Thông Tin Môi Giới</a></li>--%>
@@ -67,9 +67,9 @@
 						QUẢN LÝ USER
 					</a>
 					<ul>
-						<li><a href="/Admin/TaoUser.aspx">Tạo User</a></li>
+						<li><a href="/Admin/TaoUser">Tạo User</a></li>
 						<li><a href="#">Phân Quyền</a></li>
-						<li><a href="#">Danh Sách User</a></li>
+						<li><a href="/Admin/DanhSachUser">Danh Sách User</a></li>
 						<%--<li><a href="#">Cập Nhật Thông Tin Thẻ</a></li>--%>
 					</ul>
 				</li>
