@@ -3,3 +3,8 @@ E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\bin\Money1
 E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\ResolveAssemblyReference.cache
 E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.dll
 E:\HoanChinh\HK3\2. TMDT\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10BankingAdmin\Money10BankingAdmin\bin\Money10BankingAdmin.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10BankingAdmin\Money10BankingAdmin\bin\Money10BankingAdmin.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\Money10BankingAdmin\Money10BankingAdmin\obj\Debug\Money10BankingAdmin.pdb
