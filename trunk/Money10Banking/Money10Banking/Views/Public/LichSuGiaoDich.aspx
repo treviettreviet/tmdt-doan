@@ -71,12 +71,7 @@
         <div class="word-line">
                 Tìm kiếm: </div>
             <div class="dot">
-           <p><div>Loại giao dịch:&nbsp;&nbsp;
-            <select>
-            <option value="1">==Chuyển khoản==</option>
-            <option value="2">==Rút tiên==</option>                       
-            </select>
-        </div></p> 
+          
         <div class="demo">
         <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
         </div>               
