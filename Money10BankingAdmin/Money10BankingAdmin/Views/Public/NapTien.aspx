@@ -22,7 +22,7 @@
                     
                 </div>
             </div>
-            <form accept-charset="utf-8" action="../../Public/XuLyNapTien" method="post">
+            <form accept-charset="utf-8" action="../../Controllers/Mod/XuLyNapTien" method="post">
             <div class="form-content">
                 <table class="form-content-table">                  
                     <tr>
