@@ -7,9 +7,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="Main">
-        <div class='<%=Html.Encode(ViewData["div"]) %>'>
-            <%=Html.Encode(ViewData["error"]) %>
-        </div>
 
         
         <div id="form_nap_tien" class="form-container">
@@ -19,10 +16,11 @@
             <div class="form">
                 
                 <div class="form-content">
-                    
+                    <div class="<%=Html.Encode(ViewData["div"]) %>">
+            <%=Html.Encode(ViewData["error"]) %></div>
                 </div>
             </div>
-            <form accept-charset="utf-8" action="../../Controllers/Mod/XuLyNapTien" method="post">
+            <form accept-charset="utf-8" action="/Mod/XuLyNapTien" method="post">
             <div class="form-content">
                 <table class="form-content-table">                  
                     <tr>
@@ -81,7 +79,7 @@
                             </div>--%>
                         </td>
                     </tr>
-                    <tr>
+<%--                    <tr>
                         <th>
                             Số tiền nhận<span style="color: red;"><strong> *</strong></span>:<br />
                             <span class="explain_message">(sau khi trừ phí)</span>
@@ -153,7 +151,7 @@
                             <span id="bankFee">0 </span><b>₫</b> <span class="explain_message">(=0<b>₫</b> 
                             phí cố định + 0% số tiền giao dịch)</span>
                         </td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <th>
                             Số tài khoản<span style="color: red;"><strong> *<br />
@@ -162,7 +160,7 @@
                         <td>
                             <input autocomplete="off" class="text qtip" name="SoTaiKhoan" 
                                 onkeypress="return numbersonly(this, event)" title="- Số Tài Khoản ( 16 số)" 
-                                type="text" value='<% =ViewData["cardno"] %>' />
+                                type="text" value='' />
                         </td>
                     </tr>
                         <%--<tr>
