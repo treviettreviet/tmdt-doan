@@ -12,26 +12,7 @@ namespace Money10BankingAdmin.Controllers
         //
         // GET: /Public/
         private DB_NganHangEntities dbNganHang = new DB_NganHangEntities();
-        public ActionResult NapTien()
-        {
-             Admin ad= (Admin) Session["User"];
-            if (ad.GroupID == 1 || ad.GroupID == 3)
-            {
-                return View();
-            }
-            else
-            {
-                string div = "error-box";
-                string error = "Ban Khong The Truy Cap.Trang Nay Chi Danh Cho Admin Va Mod!";
-               
-                    error += "";
-                    ViewData["div"] = div;  
-                    ViewData["error"] = error;  
-                //Response.Write("<script> alert ('Ban Khong The Truy Cap.Trang Nay Chi Danh Cho Admin Va Mod!');</script>");
-                return View("../Admin/Index");
-            }
-            
-        }
+       
         public ActionResult QuanLyThe()
         {
             return View();
