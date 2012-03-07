@@ -17,24 +17,24 @@
                                 </tr>
                               
                                 <tr>
-                                    <th>Mật khẩu<span class="mandatory">*</span></th>
+                                    <th>Password<span class="mandatory">*</span></th>
                                     <td class="style1">
                                         <input type="password" name="password" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
                                 </tr>
                                 <tr>
-                                    <th>Xác nhận mật khẩu<span class="mandatory">*</span></th>
+                                    <th>Confirm Password<span class="mandatory">*</span></th>
                                     <td class="style1">
                                     <input type="password" name="passwordConfirm" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
                                 </tr>                                          
                                 <tr>
-                                    <th>Họ và tên<span class="mandatory">*</span></th>
+                                    <th>Name<span class="mandatory">*</span></th>
                                     <td class="style1">
                                      <input type="text" name="name" value="Phan Quang Khải" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
                                      <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
                                      <br><span class="error" id="error_name_personal"></span>
                                     </td>
                                 </tr>  
-                                  <tr>
+                                 <%-- <tr>
                                     <th>Ngày Sinh<span class="mandatory">*</span></th>
                                     <td class="style1">
                                         <select class="text" name="date" id="provinceId">                                        
@@ -94,11 +94,25 @@
                                     <td class="style1">
                                       <input type="text" name="QuanHuyen" value="Quan 3" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                                
                                     </td>
-                                </tr>
+                                </tr>--%>
+
                                 <tr>
-                                    <th>Tỉnh/Thành Phố<span class="mandatory"></span></th>
+                                    <th>Group<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="ThanhPho" value="TP HCM" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
+                                    <% Money10BankingAdmin.Models.Admin ad = (Money10BankingAdmin.Models.Admin)Session["User"]; %>
+                                     <% if (ad.GroupID == 1)
+                                        {
+                                            Money10BankingAdmin.Models.DB_NganHangEntities db = new Money10BankingAdmin.Models.DB_NganHangEntities();
+                                            //Money10BankingAdmin.Models.Admin adm = (from add in db.Admins select add).FirstOrDefault<Money10BankingAdmin.Models.Admin>;
+                                        }
+                                             %>
+                                       <select class="text" name="group" id="provinceId">  
+                                        <option value="">---Group---</option>                                      
+                                            <%for (int i = 1; i < 32; i++)
+                                              { %>                                            
+                                            <option value="<%=i %>"><%=i %></option>
+                                            <%} %>
+                                        </select>                          
                                     </td>
                                 </tr>
                                 <%--             <tr>                                               	 
@@ -128,7 +142,7 @@
                                 <tr>
                                     <th></th>
                                     <td class="style1">                     
-                                  	  <input type="submit" name="submit" value="Khởi tạo tài khoản" id="id_submit" class="button">                                    </td>
+                                  	  <input type="submit" name="submit" value="Accept" id="id_submit" class="button">                                    </td>
                                 </tr>
                                  </table>
 

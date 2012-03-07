@@ -14,14 +14,22 @@ namespace Money10BankingAdmin.Controllers
         private DB_NganHangEntities dbNganHang = new DB_NganHangEntities();
         public ActionResult NapTien()
         {
-            Admin ad= (Admin) Session["User"];
-            if(ad.GroupID==1 || ad.GroupID==3)
+             Admin ad= (Admin) Session["User"];
+            if (ad.GroupID == 1 || ad.GroupID == 3)
             {
                 return View();
             }
             else
-                Response.Write("<script> alert ('Ban Khong The Truy Cap.Trang Nay Chi Danh Cho Admin Va Mod!');</script>");
-                return View("Index");
+            {
+                string div = "error-box";
+                string error = "Ban Khong The Truy Cap.Trang Nay Chi Danh Cho Admin Va Mod!";
+               
+                    error += "";
+                    ViewData["div"] = div;  
+                    ViewData["error"] = error;  
+                //Response.Write("<script> alert ('Ban Khong The Truy Cap.Trang Nay Chi Danh Cho Admin Va Mod!');</script>");
+                return View("../Admin/Index");
+            }
             
         }
         public ActionResult QuanLyThe()
@@ -33,7 +41,11 @@ namespace Money10BankingAdmin.Controllers
             return View();
         }
 
-
+        public ActionResult XuLyThoat()
+        {
+            Session.Remove("User");
+            return RedirectToAction("DangNhap");
+        }
         private int UserValidation(string email, string password)
         {
             int check = -1; // Đăng nhập thất bại: Sai Username và Password
@@ -78,7 +90,7 @@ namespace Money10BankingAdmin.Controllers
                     //{
                     //    return View("TaoUser");
                     //}
-                    return View("NapTien");
+                    return RedirectToAction("../Admin/Index");
                 }
                 else
                 {
