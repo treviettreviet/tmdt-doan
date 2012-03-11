@@ -223,7 +223,6 @@ namespace Money10BankingAdmin.Controllers
         public ActionResult Details()
         {
             List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
-
             return View();
         }
     }
