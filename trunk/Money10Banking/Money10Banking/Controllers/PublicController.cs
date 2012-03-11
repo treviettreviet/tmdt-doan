@@ -93,9 +93,61 @@ namespace Money10Banking.Controllers
             return View();
         }
 
-        public ActionResult CapNhatTaiKhoan() //Khi đăng nhập thành công
+        public ActionResult AddCard() //Khi đăng nhập thành công
         {
             return View();
+        }
+
+        public ActionResult XuLyAddCard(string SoTaiKhoan)
+        {
+            NganHangEntities dbb = new NganHangEntities();
+            string div = "error-box";
+            string error = "";
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            List<The> card = (from th in dbb.Thes select th).ToList<The>();
+            for(int i=0 ; i<card.Count; i++)
+            {
+            if (card[i].SoThe.Equals(SoTaiKhoan) == false)
+            {
+                
+                error = "Ban Chua Co So The trong He Thong NH";
+                //ViewData["div"] = div;
+                //ViewData["error"] = error;
+                //return View("AddCard");
+            }
+            else
+            {
+                if (card[i].TinhTrang == 0)
+                {
+                    if (card[i].MaTaiKhoan == tk.MaTaiKhoan)
+                    {
+                        card[i].TinhTrang = 1;
+                        dbb.SaveChanges();
+                        return View("LichSuGiaoDich");
+                    }
+                    else
+                    {
+                        error = "So The Nay Khong Phai Cua Ban. ";
+                        //ViewData["div"] = div;
+                        //ViewData["error"] = error;
+                       // return View("AddCard");
+                    }
+
+                }
+                else
+                {
+                    error = "So The Nay Da Duoc Dung ";
+                    //ViewData["div"] = div;
+                    //ViewData["error"] = error;
+                   // return View("AddCard");
+                }
+            }
+            ViewData["div"] = div;
+            ViewData["error"] = error;
+           
+            }
+            return View("AddCard");
+           
         }
 
         public ActionResult DangNhap()
@@ -389,8 +441,7 @@ namespace Money10Banking.Controllers
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
                             Response.Flush();
-                           // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
-                           // lblError.Visible = true;
+                      
                         }
                     }
                 }
