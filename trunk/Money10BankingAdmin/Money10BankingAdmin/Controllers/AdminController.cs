@@ -198,7 +198,6 @@ namespace Money10BankingAdmin.Controllers
             {
                 //throw new Exception("Error on # of clients.", ex);
                 return View("BaoLoi");
-
             }
             return View();
         }
@@ -216,12 +215,16 @@ namespace Money10BankingAdmin.Controllers
             return View();
         }
 
+        public ActionResult PhanQuyen()
+        {
+            return View();
+        }
+
         public ActionResult Details()
         {
             List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
 
             return View();
         }
-
     }
 }

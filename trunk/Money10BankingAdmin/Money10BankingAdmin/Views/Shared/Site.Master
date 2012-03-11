@@ -60,7 +60,7 @@
 					</a>
 					<ul>
 						<li><a href="/Admin/TaoUser">Tạo User</a></li>
-						<li><a href="#">Phân Quyền</a></li>
+						<li><a href="/Admin/PhanQuyen">Phân Quyền</a></li>
 						<li><a href="/Admin/DanhSachUser">Danh Sách User</a></li>
 					</ul>
 				</li>
