@@ -12,11 +12,10 @@
             <%=Html.Encode(ViewData["error"]) %>
         </div>
     <form action="/Public/XuLyDangNhap" method="post">
-        <table align="center" style="width:20%">
+        <table align="center" style="width:20%" border="1">
             <tr>
                 <td colspan="2">
-                    Dang Nhap</td>
-                
+                    <strong>Login to System</strong></td>
             </tr>
             <tr>
                 <td>
@@ -28,7 +27,7 @@
                 <td>
                     Password</td>
                 <td>
-                    <input name="password" type="password" /></td>
+                    <input name="password" type="password" value="12345678" /></td>
                 
             </tr>
             <tr>

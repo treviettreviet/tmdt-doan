@@ -62,7 +62,6 @@ namespace Money10BankingAdmin.Controllers
                     db.SaveChanges();
                     Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
                     return RedirectToAction ("NapTien");
-                
                 }
                 else
                 {
