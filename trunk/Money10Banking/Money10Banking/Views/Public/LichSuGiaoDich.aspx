@@ -34,18 +34,30 @@
                                 
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
-                                        Thông tin thẻ Master Card</div>
+                                        Thông tin thẻ</div>
                                     <div>
-                                        <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; %>
+                                        <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; 
+                                        if (the == null || the.TinhTrang==0)
+                                          {
+                                                %>
                                         <ul>
+                                        <li>Số Thẻ: 0<br /></li>
+                                        <li>Số dư: 0 đ</li>
+                                        </ul>
+                                          <%  }
+                                          else
+                                          { %>
+                                                <ul>
                                         <li>Số Thẻ: <%=the.SoThe %><br /></li>
                                         <li>Số dư: <%=the.SoDu %> đ</li>
                                         </ul>
+                                        <%  }
+                                              %>
                                         </div>
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
-                                        Thông tin thẻ Visa Card</div>
+                                        Thông tin thẻ</div>
                                     <div class="font2">
                                         0</div>
                                 </td>
@@ -54,7 +66,7 @@
                                         Thông tin khác
                                     </div>
                                     <div class="font2">
-                                        <%=Session["SoTienThe"] %></div>
+                                       </div>
                                 </td>
                             </tr>
                         </table>

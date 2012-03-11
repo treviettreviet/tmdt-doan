@@ -102,50 +102,54 @@ namespace Money10Banking.Controllers
         {
             NganHangEntities dbb = new NganHangEntities();
             string div = "error-box";
-            string error = "";
+            
             TaiKhoan tk = (TaiKhoan)Session["User"];
             List<The> card = (from th in dbb.Thes select th).ToList<The>();
             for(int i=0 ; i<card.Count; i++)
             {
-            if (card[i].SoThe.Equals(SoTaiKhoan) == false)
+            if (card[i].SoThe!=SoTaiKhoan)
             {
-                
+                string error = "";
                 error = "Ban Chua Co So The trong He Thong NH";
-                //ViewData["div"] = div;
-                //ViewData["error"] = error;
+                ViewData["div"] = div;
+                ViewData["error"] = error;
                 //return View("AddCard");
             }
             else
             {
-                if (card[i].TinhTrang == 0)
+                if (card[i].TinhTrang == 0 && card[i].MaTaiKhoan == tk.MaTaiKhoan)
                 {
-                    if (card[i].MaTaiKhoan == tk.MaTaiKhoan)
-                    {
+                    //if (card[i].MaTaiKhoan == tk.MaTaiKhoan)
+                    //{
                         card[i].TinhTrang = 1;
                         dbb.SaveChanges();
-                        return View("LichSuGiaoDich");
-                    }
-                    else
-                    {
-                        error = "So The Nay Khong Phai Cua Ban. ";
-                        //ViewData["div"] = div;
-                        //ViewData["error"] = error;
-                       // return View("AddCard");
-                    }
+                        return RedirectToAction("LichSuGiaoDich");
+                    //}
+                    //else
+                    //{
+                    //    string error = "";
+                    //    error = "So The Nay Khong Phai Cua Ban. ";
+                    //    ViewData["div"] = div;
+                    //    ViewData["error"] = error;
+                    //    //return View("AddCard");
+                    //}
 
                 }
                 else
                 {
-                    error = "So The Nay Da Duoc Dung ";
-                    //ViewData["div"] = div;
-                    //ViewData["error"] = error;
-                   // return View("AddCard");
+                    string error = "";
+                    error = "So The Nay Da Duoc Dung hoac So The Nay Khong Phai Cua Ban.  ";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                   
                 }
+                return View("AddCard");
             }
-            ViewData["div"] = div;
-            ViewData["error"] = error;
+           
            
             }
+            //ViewData["div"] = div;
+            //ViewData["error"] = error;
             return View("AddCard");
            
         }
@@ -162,15 +166,16 @@ namespace Money10Banking.Controllers
 
         public ActionResult LichSuGiaoDich()
         {
-            List<LichSuGiaoDichModels> lst = LSGiaoDich();
-            if (lst != null)
-            {
-                ViewData["ListData"] = lst;
-                return View();
-            }
-            else
-                Response.Write("<script> alert ('Bạn chưa có thẻ Ngân Hàng!');</script>");
-                return View("TrangChu");
+            //List<LichSuGiaoDichModels> lst = LSGiaoDich();
+            //if (lst != null)
+            //{
+            //    ViewData["ListData"] = lst;
+            //    return View();
+            //}
+            //else
+            //    Response.Write("<script> alert ('Bạn chưa có thẻ Ngân Hàng!');</script>");
+            //    return View("TrangChu");
+            return View();
         }
 
         /// <summary>
@@ -277,6 +282,41 @@ namespace Money10Banking.Controllers
                 return check; 
             }
             return check;
+        }
+
+        /// <summary>
+        /// danh sach lich su giao dich
+        /// </summary>
+        /// <returns></returns>
+        public List<LichSuGiaoDichModels> LSGiaoDich()
+        {
+            TaiKhoan mail = (TaiKhoan)Session["User"];
+            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.Email == mail.Email);
+            // The th= new The();
+            var the = from th in dbNganHangOnline.Thes where th.MaTaiKhoan == tk.MaTaiKhoan select th.MaTaiKhoan;
+            if (the.Count() != 0)
+            {
+                The th = dbNganHangOnline.Thes.Single(a => a.MaTaiKhoan == tk.MaTaiKhoan);
+                List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
+                List<LichSuGiaoDich> gd = (from LSGD in dbNganHangOnline.LichSuGiaoDiches where LSGD.MaThe == th.MaThe select LSGD).ToList();
+                for (int i = 0; i < gd.Count; i++)
+                {
+
+                    string maldg = gd[i].MaLoaiGiaoDich;
+                    LoaiGiaoDich Lgd = dbNganHangOnline.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
+                    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
+                    ls.ThoiGian = gd[i].NgayGiaoDich.ToString();
+                    ls.LoaiGD = Lgd.TenLoaiGiaoDich;
+                    ls.TheGui = th.SoThe;
+                    ls.TheNhan = gd[i].SoTheNhan;
+                    ls.TienGui = gd[i].SoTienGiaoDich.ToString();
+                    listData.Add(ls);
+
+                }
+                return listData;
+            }
+            else
+                return null;
         }
 
         /// <summary>
@@ -452,41 +492,6 @@ namespace Money10Banking.Controllers
             {
                 throw new Exception( ex.Message);
             }
-        }
-
-        /// <summary>
-        /// danh sach lich su giao dich
-        /// </summary>
-        /// <returns></returns>
-        public List<LichSuGiaoDichModels> LSGiaoDich()
-        {
-            TaiKhoan mail= (TaiKhoan)Session["User"];
-            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.Email == mail.Email);
-           // The th= new The();
-            var the = from th in dbNganHangOnline.Thes where th.MaTaiKhoan == tk.MaTaiKhoan select th.MaTaiKhoan;
-            if (the.Count() !=0)
-            {
-                 The th = dbNganHangOnline.Thes.Single(a => a.MaTaiKhoan == tk.MaTaiKhoan);
-                List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
-                List<LichSuGiaoDich> gd = (from LSGD in dbNganHangOnline.LichSuGiaoDiches where LSGD.MaThe == th.MaThe select LSGD).ToList();
-                for (int i = 0; i < gd.Count; i++)
-                {
-
-                    string maldg = gd[i].MaLoaiGiaoDich;
-                    LoaiGiaoDich Lgd = dbNganHangOnline.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
-                    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
-                    ls.ThoiGian = gd[i].NgayGiaoDich.ToString();
-                    ls.LoaiGD = Lgd.TenLoaiGiaoDich;
-                    ls.TheGui = th.SoThe;
-                    ls.TheNhan = gd[i].SoTheNhan;
-                    ls.TienGui = gd[i].SoTienGiaoDich.ToString();
-                    listData.Add(ls);
-
-                }
-                return listData;
-            }
-            else
-                return null;
         }
 
         
