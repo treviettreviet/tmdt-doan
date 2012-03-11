@@ -55,31 +55,29 @@ namespace Money10BankingAdmin.Controllers
                   
                 decimal naptien = decimal.Parse(amount);
                 DB_NganHangEntities db = new DB_NganHangEntities();
-                    The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
-                    if (tienthe.SoThe != "")
-                    {
-                            sodu = tienthe.SoDu.Value;
-                            tienthe.SoDu = naptien + sodu;
-                            db.SaveChanges();
-                            Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                            return View("../Public/NapTien");
+                The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
+                if (tienthe.SoThe != "")
+                {
+                        sodu = tienthe.SoDu.Value;
+                        tienthe.SoDu = naptien + sodu;
+                        db.SaveChanges();
+                        Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
+                        return RedirectToAction ("NapTien");
                 
-                    }
-                    else
+                }
+                else
+                {
+                    string div = "error-box";
+                    string error = "";
+                    if( tienthe.SoThe==null)
                     {
-                        string div = "error-box";
-                        string error = "";
-                        if( tienthe.SoThe==null)
-                        {
-                         error += "Số tài khoản không đúng";
+                        error += "Số tài khoản không đúng";
                         
-                        }
-                        ViewData["div"] = div;
-                        ViewData["error"] = error;
-                        return View("../Public/NapTien");
                     }
-
-                    
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("../Public/NapTien");
+                }
             }
             catch (Exception)
             {
