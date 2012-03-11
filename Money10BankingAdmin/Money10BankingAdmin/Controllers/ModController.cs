@@ -41,39 +41,41 @@ namespace Money10BankingAdmin.Controllers
         {
             try
             {
-                
-                    if (amount == "" || amount== null)
-                    {
-                        amount = "0";
-                   
-                    }
-                    decimal naptien = decimal.Parse(amount);
-                    DB_NganHangEntities db = new DB_NganHangEntities();
-                    The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
-                    decimal sodu;
-                    string div = "error-box";
-                    string error = "";
-                    if (tienthe.SoThe != null)
-                    {
+                //string amountNew="";
+                //if (amount == "" || amount == null)
+                //{
+                //    amount = "0";
 
-                        //if (tienthe.MaTaiKhoan == matk)
-                        //{
-                            //Session["SoThe"] = tienthe.SoThe;
+                //}
+                //else
+                //{
+                //   amountNew = amount;
+                //}
+                decimal sodu;
+                  
+                decimal naptien = decimal.Parse(amount);
+                DB_NganHangEntities db = new DB_NganHangEntities();
+                    The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
+                    if (tienthe.SoThe != "")
+                    {
                             sodu = tienthe.SoDu.Value;
                             tienthe.SoDu = naptien + sodu;
-                        
                             db.SaveChanges();
-                           
                             Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                         
                             return View("../Public/NapTien");
                 
                     }
                     else
                     {
+                        string div = "error-box";
+                        string error = "";
+                        if( tienthe.SoThe==null)
+                        {
                          error += "Số tài khoản không đúng";
-                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                        
+                        }
+                        ViewData["div"] = div;
+                        ViewData["error"] = error;
                         return View("../Public/NapTien");
                     }
 
