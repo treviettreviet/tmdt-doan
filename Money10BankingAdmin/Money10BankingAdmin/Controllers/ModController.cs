@@ -52,17 +52,16 @@ namespace Money10BankingAdmin.Controllers
                 //   amountNew = amount;
                 //}
                 decimal sodu;
-                  
                 decimal naptien = decimal.Parse(amount);
                 DB_NganHangEntities db = new DB_NganHangEntities();
                 The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
                 if (tienthe.SoThe != "")
                 {
-                        sodu = tienthe.SoDu.Value;
-                        tienthe.SoDu = naptien + sodu;
-                        db.SaveChanges();
-                        Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                        return RedirectToAction ("NapTien");
+                    sodu = tienthe.SoDu.Value;
+                    tienthe.SoDu = naptien + sodu;
+                    db.SaveChanges();
+                    Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
+                    return RedirectToAction ("NapTien");
                 
                 }
                 else
@@ -72,7 +71,6 @@ namespace Money10BankingAdmin.Controllers
                     if( tienthe.SoThe==null)
                     {
                         error += "Số tài khoản không đúng";
-                        
                     }
                     ViewData["div"] = div;
                     ViewData["error"] = error;
