@@ -29,11 +29,7 @@
                                            <%=tk.Email%></div>
                                     </div>
                                     </br>
-                                    <%--<div style="margin-top: 5px; width: 100%;">
-                                        <img src="../../Content/images/Box-Supp.png" style="float: left;"><div style="margin-bottom: 0px;
-                                            float: left; padding-left: 10px;" >
-                                           </div>
-                                    </div>--%>
+                                   
                                 </td>
                                 
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
@@ -76,9 +72,7 @@
         <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
         </div>               
             <div class="word-line">
-                Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div>
-            <div class="dot">
-            </div>
+                Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div
             <div style="width: 630px; float: left" >
                 <div class="box">
                   <div class="box-title">
@@ -146,42 +140,9 @@
                         </tbody>
                     </table>
                 </div>
-             <%--   <p>
-                    &nbsp;</p>
-                <div class="box">
-                    <div class="box-title">
-                        <div class="title-content">
-                            <div class="left-title">
-                                Thông Tin Giao Dịch</div>
-                            <div class="right-title">
-                                &nbsp;</div>
-                        </div>
-                    </div>
-                    <table class="table" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th width="25%" class="left-boder">
-                                    Thời gian
-                                </th>
-                                <th width="20%" class="left-boder">
-                                    Loại giao dịch
-                                </th>
-                                <th width="25%" class="left-boder">
-                                    Số Thẻ Gửi</th>
-                                <th width="15%" class="left-boder">
-                                    Số Thẻ Nhận</th>
-                                <th width="15%">
-                                    Số Tiền</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <td colspan="6">
-                            </td>
-                        </tbody>
-                    </table>
-                </div>--%>
+          
             </div>
-            <%--<div style="width: 225px; float: right">
+            
                 <script type="text/javascript">
                     // wait for the DOM to be loaded 
                     j(document).ready(function () {
@@ -326,29 +287,8 @@
                     }
                 </style>
                 <!-- code new -->
-                <div class="wrap-notification">
-                    <div class="right-notification">
-                        <div class="notification">
-                            <div class="notification-title">
-                                Bạn có 0 thông báo từ hệ thống :
-                            </div>
-                        </div>
-                        <div class="notification-content">
-                            <ul class="color-notification" id="list_notification">
-                                <!-- <input type="hidden" name="notificationId" id="notificationId"></input>  -->
-                            </ul>
-                        </div>
-                        <!--  code new -->
-                        <div class="main-news" style="clear: both; margin-left: 25px; margin-bottom: 15px;
-                            width: 225px;" align="center">
-                        </div>
-                        <input type="hidden" name="page_current_name" id="page_current_id" value="1"></input>
-                        <!--  code new -->
-                    </div>
-                </div>
-            </div>--%>
-        </div>
-        <div class="clear">
+            </div>   
+           
         </div>
     </div>
 </asp:Content>

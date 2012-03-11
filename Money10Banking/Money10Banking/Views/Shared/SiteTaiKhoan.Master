@@ -209,26 +209,7 @@
                                                             <a href="/Public/DoiMatKhau">Đổi mật khẩu</a>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="#">Câu hỏi bảo mật</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="#">Cấu hình tài khoản</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="#">Tùy chọn hiển thị thông tin cá nhân trên trang thanh toán</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="https#">Đăng ký đại lý</a>
-                                                        </td>
-                                                    </tr>
+                                                 
                                                 </table>
                                             </div>
                                         </div>
@@ -489,7 +470,7 @@
                         </ul>
                         <ul id="subcat1" style="display: none;">
                             <li class="sub_selected" onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
-                                <a href="/Public/CapNhatTaiKhoan">Cập nhật</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                                <a href="/Public/AddCard">AddCard</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
                                         <a href="/Public/RutTien">Rút tiền</a><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
                                             <ul>

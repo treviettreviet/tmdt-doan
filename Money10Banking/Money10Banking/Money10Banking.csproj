@@ -279,7 +279,7 @@
     </None>
     <Content Include="Views\Admin\Admin.aspx" />
     <Content Include="Views\Admin\Default.aspx" />
-    <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
+    <Content Include="Views\Public\AddCard.aspx" />
     <Content Include="Views\Public\CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="Views\Public\CapNhatThongTinTaiKhoanCaNhan.aspx" />
     <Content Include="Views\Public\ChuyenTienLienNganHang.aspx" />
