@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Money10BankingAdmin.Models;
 using System.Net.Mail;
 using System.Net;
+using System.Data;
+using System.Data.Objects;
 namespace Money10BankingAdmin.Controllers
 {
     public class AdminController : Controller
@@ -208,6 +210,18 @@ namespace Money10BankingAdmin.Controllers
             return View(listUser);
         }
 
-      
+        public ActionResult UpdateUser()
+        {
+            List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
+            return View();
+        }
+
+        public ActionResult Details()
+        {
+            List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
+
+            return View();
+        }
+
     }
 }
