@@ -135,8 +135,8 @@
     <Content Include="Scripts\jquery.datePicker.js" />
     <Content Include="Scripts\jquery.wysiwyg.js" />
     <Content Include="Scripts\simpla.jquery.configuration.js" />
-    <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Admin\DanhSachUser.aspx" />
+    <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Admin\TaoUser.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
