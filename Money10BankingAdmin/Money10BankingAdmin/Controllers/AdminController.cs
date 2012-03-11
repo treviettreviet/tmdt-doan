@@ -203,7 +203,9 @@ namespace Money10BankingAdmin.Controllers
 
         public ActionResult DanhSachUser()
         {
-            return View();
+            List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
+
+            return View(listUser);
         }
 
       
