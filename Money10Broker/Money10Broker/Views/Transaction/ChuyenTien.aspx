@@ -100,7 +100,7 @@
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người nhận:</th>
-				<td><input name="receivecardnum" id="receivecardnum" type="text" value="340429813757143" > <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="receivecardnum" id="receivecardnum" type="text" value="" > <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		
 			  <tr>
