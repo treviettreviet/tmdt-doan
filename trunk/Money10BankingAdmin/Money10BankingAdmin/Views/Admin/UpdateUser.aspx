@@ -49,11 +49,12 @@
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.GroupID) %>
             </div>
+
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.GroupID) %>
-                <%: Html.ValidationMessageFor(model => model.GroupID) %>
+                <%: Html.TextBoxFor(model => model.Group.GroupName) %>
+                <%: Html.ValidationMessageFor(model => model.Group.GroupName)%>
             </div>
-            
+
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Status) %>
             </div>

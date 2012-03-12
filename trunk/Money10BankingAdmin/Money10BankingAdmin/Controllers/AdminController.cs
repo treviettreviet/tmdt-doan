@@ -199,7 +199,6 @@ namespace Money10BankingAdmin.Controllers
                 //throw new Exception("Error on # of clients.", ex);
                 return View("BaoLoi");
             }
-            return View();
         }
 
         public ActionResult DanhSachUser()
@@ -209,21 +208,24 @@ namespace Money10BankingAdmin.Controllers
             return View(listUser);
         }
 
-        public ActionResult UpdateUser()
+        public ActionResult UpdateUser(int id)
         {
-            List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
-            return View();
+            Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
+            List<Group> grouplist = dbNganHang.Groups.ToList<Group>();
+
+            return View(dbNganHang);
         }
 
         public ActionResult PhanQuyen()
         {
+
             return View();
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            List<Admin> listUser = dbNganHang.Admins.ToList<Admin>();
-            return View();
+            Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
+            return View(user);
         }
     }
 }
