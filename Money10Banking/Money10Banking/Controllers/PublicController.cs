@@ -104,6 +104,15 @@ namespace Money10Banking.Controllers
             string div = "error-box";
             
             TaiKhoan tk = (TaiKhoan)Session["User"];
+            //try
+            //{
+
+            //}
+            //catch
+            //{
+                
+                
+            //}
             List<The> card = (from th in dbb.Thes select th).ToList<The>();
             for(int i=0 ; i<card.Count; i++)
             {
