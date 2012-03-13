@@ -27,10 +27,5 @@ namespace Money10BrokerAdmin.Controllers
         {
             return View();
         }
-        public ActionResult DangNhap()
-        {
-            return View();
-        }
-
     }
 }
