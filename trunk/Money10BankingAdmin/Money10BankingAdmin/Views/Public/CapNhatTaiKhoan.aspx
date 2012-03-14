@@ -260,13 +260,13 @@
             }
         }
     </script>
-   <form action="" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
+   <form action="/Public/XuLyCapNhatUser" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
     <table class="form-content-table" cellspacing="10px" id="register_account_personal">
         <tr>
             <th>Email<span class="mandatory">*</span></th>
             <td class="style1">
                 <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
-                    title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
+                    title="Bạn sẽ dùng mail để đăng nhập " size="50" id="txtUserName">&nbsp;
                 <br>                            
             </td>
         </tr>         
