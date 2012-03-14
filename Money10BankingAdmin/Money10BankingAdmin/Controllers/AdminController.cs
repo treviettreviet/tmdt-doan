@@ -208,12 +208,13 @@ namespace Money10BankingAdmin.Controllers
             return View(listUser);
         }
 
-        public ActionResult UpdateUser(int id)
+        public ActionResult UpdateUser(int id, string email, string group, string status)
         {
             Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
-            List<Group> grouplist = dbNganHang.Groups.ToList<Group>();
+            
 
-            return View(dbNganHang);
+
+            return View(user);
         }
 
         public ActionResult PhanQuyen()
