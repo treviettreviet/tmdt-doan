@@ -21,7 +21,14 @@ namespace Money10BankingAdmin.Controllers
         {
             return View();
         }
-
+        public ActionResult CapNhatTaiKhoan()
+        {
+            return View();
+        }
+        public ActionResult DoiMatKhau()
+        {
+            return View();
+        }
         public ActionResult XuLyThoat()
         {
             Session.Remove("User");
