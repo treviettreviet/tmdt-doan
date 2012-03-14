@@ -12,67 +12,38 @@
         <%: Html.ValidationSummary(true) %>
         
         <fieldset>
-            <legend>Fields</legend>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.ID) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID) %>
+                <b>ID: </b><%: Html.TextBoxFor(model => model.ID) %>
                 <%: Html.ValidationMessageFor(model => model.ID) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Insert) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Insert) %>
+                <b>Insert: </b><%: Html.TextBoxFor(model => model.Insert) %>
                 <%: Html.ValidationMessageFor(model => model.Insert) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Update) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Update) %>
+                <b>Update: </b><%: Html.TextBoxFor(model => model.Update) %>
                 <%: Html.ValidationMessageFor(model => model.Update) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Delete) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Delete) %>
+                <b>Delete: </b><%: Html.TextBoxFor(model => model.Delete) %>
                 <%: Html.ValidationMessageFor(model => model.Delete) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.TableName) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.TableName) %>
+                <b>Table Name: </b><%: Html.TextBoxFor(model => model.TableName) %>
                 <%: Html.ValidationMessageFor(model => model.TableName) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.GroupID) %>
-            </div>
+
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.GroupID) %>
+                <b>Group: </b><%: Html.TextBoxFor(model => model.GroupID) %>
                 <%: Html.ValidationMessageFor(model => model.GroupID) %>
             </div>
             
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Status) %>
-            </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Status) %>
+                <b>Status: </b><%: Html.TextBoxFor(model => model.Status) %>
                 <%: Html.ValidationMessageFor(model => model.Status) %>
             </div>
             
-            <p>
-                <input type="submit" value="Save" />
-            </p>
+            <p><input type="submit" value="Save" /></p>
         </fieldset>
 
     <% } %>

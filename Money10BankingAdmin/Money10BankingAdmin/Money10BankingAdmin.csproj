@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ModController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Controllers\SuperModController.cs" />
@@ -137,6 +138,7 @@
     <Content Include="Scripts\simpla.jquery.configuration.js" />
     <Content Include="Views\Admin\DanhSachQuyen.aspx" />
     <Content Include="Views\Admin\Details.aspx" />
+    <Content Include="Views\Admin\Edit.aspx" />
     <Content Include="Views\Admin\PhanQuyen.aspx" />
     <Content Include="Views\Admin\DanhSachUser.aspx" />
     <Content Include="Views\Admin\UpdateUser.aspx" />
