@@ -6,8 +6,24 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>XuLyChonNhom</h2>
+    <h2>Danh sách phân quyền truy cập theo Group</h2>
+    <script language="javascript" type="text/javascript">
+        function selectOption() {
+            var selected = document.forms.frm.group.value;
+            if (selected != "-1") {
+                document.forms.frm.submit();
+            }
+        }
+    </script>
 
+    <form method="post" id="frm" name="frm" action="/Admin/XuLyChonNhom">
+        <b>Chọn nhóm</b>
+        <select name="group" onchange="return selectOption();" style="width:120px">
+            <option value="-1">------[Group]------</option>
+            <option value="2">Super Mod</option>
+            <option value="3">Mod</option>
+        </select>
+    </form>
     <table>
         <tr>
             <th></th>
