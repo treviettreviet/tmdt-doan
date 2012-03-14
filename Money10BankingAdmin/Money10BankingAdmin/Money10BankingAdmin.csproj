@@ -141,9 +141,11 @@
     <Content Include="Views\Admin\DanhSachUser.aspx" />
     <Content Include="Views\Admin\UpdateUser.aspx" />
     <Content Include="Views\Admin\XuLyChonNhom.aspx" />
+    <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Admin\TaoUser.aspx" />
+    <Content Include="Views\Public\DoiMatKhau.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
     <Content Include="Views\Public\QuanLyThe.aspx" />
     <Content Include="Web.config" />
