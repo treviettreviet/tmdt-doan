@@ -23,7 +23,6 @@ namespace Money10BrokerAdmin
             );
 
         }
-
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
