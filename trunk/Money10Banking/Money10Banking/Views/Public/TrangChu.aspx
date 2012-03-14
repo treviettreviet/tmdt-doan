@@ -4,8 +4,6 @@
         
                 <div class="home-top">
                     <div class="home-top-left">
-                        <%--<script type="text/javascript" src="Scripts/js/keyboard.js"></script>
-                        <link rel="stylesheet" type="text/css" href="Content/css/keyboard.css">--%>
                         <div class="form_login">
                             <form action="Public/XuLyDangNhap" method="post" id="login_small"
                             autocomplete="off" accept-charset="utf-8">
@@ -319,7 +317,7 @@
                 <!-- start Ngan hang doi tac -->
                 <div class="home-banks">
                     <div class="home-banks-title">
-                        Danh sách các Ngân hàng đối tác của Bảo Kim</div>
+                        Danh sách các Ngân hàng đối tác của Money 10</div>
                     <div class="home-banks-content">
                         <table width="100%">
                             <tr>

@@ -88,7 +88,7 @@
             <div id="Header">
                 <div class="top-header">
                     <div class="logo left">
-                        <a href="/Public/TrangChu" title="baokim.vn">
+                        <a href="/Public/TrangChu" title="ecmoney10bank.tk">
                             <img src="../../Content/images/logo0000.png" alt="ecmoney10bank.tk" title="ecmoney10bank.tk">
                         </a>
                     </div>
@@ -345,6 +345,9 @@
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
                             </div>
+                            <div style="display: inline; cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
+                                <a>Tiếng Việt</a> | <a>Tiếng Anh</a>
+                             </div>
                         </div>
                     </div>
                     <br class="clear">

@@ -37,7 +37,6 @@
     <link href="../../Content/css/SyntaxHi.css" rel="stylesheet" type="text/css">
     <link href="../../Content/css/jquery01.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
-<!--
         var j = jQuery.noConflict();
 
         j(document).ready(function () {
@@ -60,9 +59,77 @@
 
             j("a.fancybox").fancybox();
         });
-//-->
     </script>
-    <link rel="canonical" href="https://www.baokim.vn/">
+
+    <style type="text/css">
+            .footer_div
+            {
+                width: 100%;
+                height: 153px;
+                margin: 0 auto;
+                background: #eaf2f5;
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+            .footer_top
+            {
+                width: 685px;
+                height: 34px;
+                margin-top: 30px;
+                border-top: 1px solid #bababa;
+                border-bottom: 1px solid #bababa;
+                float: left;
+            }
+            .blue_color
+            {
+                color: #0072b9;
+            }
+            .l_menu
+            {
+                background: url("Content/images/ll000000.jpg") no-repeat scroll 0 0 transparent;
+                padding-left: 16px;
+                padding-right: 18px;
+            }
+            .menu_link
+            {
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 13px;
+            }
+            .table_menu td
+            {
+                padding-top: 8px;
+            }
+            .footer_bottom_left
+            {
+                width: 457px;
+                height: 77px;
+                float: left;
+                padding-top: 7px;
+            }
+            .foorer_bottom_right
+            {
+                height: 46px;
+                float: right;
+                width: 360px;
+            }
+            .veri_sign_secured
+            {
+                width: 138px;
+                height: 96px;
+                float: right;
+                margin-top: 0px;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 10px;
+            }
+            .thin
+            {
+                font-weight: 100;
+            }
+        </style>
+
+    <link rel="canonical" href="http://ecmoney10bank.tk/">
     <meta name="keywords" content="Thanh toán trực tuyến, Mua hàng an toàn, Tích hợp bán hàng, Mua sắm trực tuyến, Chuyển tiền trực tuyến, Thanh toán, Nạp tiền, Tích hợp thanh toán, Nhận tiền siêu tốc, Gửi yêu cầu chuyển tiền">
     <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
@@ -72,7 +139,7 @@
             <div id="Header">
                 <div class="top-header">
                     <div class="logo left">
-                        <a href="http://ecmoney10bank.tk/" title="baokim.vn">
+                        <a href="http://ecmoney10bank.tk/" title="Money10.tk">
                             <img src="../../Content/images/logo0000.png" alt="ecmoney10bank.tk" title="ecmoney10bank.tk">
                         </a>
                     </div>
@@ -86,14 +153,14 @@
                                 <% 
                                     if (Session["User"] == null)
                                     {
-                                %>
+                                %><!--Thay đổi ngôn ngữ Đăng nhập, Đăng ký, Liên Hệ-->
                                 <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
                                     title="Đăng ký">Đăng ký</a><span>|</span> <a href="#" title="Liên hệ">Liên hệ</a>
                                 <%        
                                 }
                                 else
                                 {
-                                %>
+                                %><!--Thay đổi ngôn ngữ Lời chào-->
                                 Chúc một ngày tốt lành,
                                 <%Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.Email %><span><img
                                     src="../../Content/images/support_.png"></span><a href="/Public/XuLyThoat"><b> [Thoát]</b></a>
@@ -109,7 +176,7 @@
                                                         <td>
                                                             <a href="/Public/CapNhatThongTinTaiKhoanCaNhan">Cập nhật thông tin tài khoản</a>
                                                         </td>
-                                                    </tr>
+                                                    </tr><!--Thay đổi ngôn ngữ cập nhật thông tin, mật khẩu-->
                                                     <tr>
                                                         <td>
                                                             <a href="/Public/DoiMatKhau">Đổi mật khẩu</a>
@@ -123,7 +190,7 @@
                                     </div>
                               </div>
                             </div>
-                                    
+                                    <!--Thay đổi ngôn ngữ các mục Hỗ Trợ-->
                             <div style="display: inline; cursor: pointer; position: relative;" onmouseover="showSupportEx()"
                                 onmouseout="hideSupportEx()">
                                 <a href="#"></a><a href="#"></a>
@@ -251,7 +318,10 @@
                                 <a class="fancybox_hotline" href="#" style="text-decoration: none;">
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
-                            </div>
+                             </div>
+                             <div style="display: inline; cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
+                                <a>Tiếng Việt</a> | <a>Tiếng Anh</a>
+                             </div>
                         </div>
                     </div>
                     <br class="clear">
@@ -344,7 +414,7 @@
                     </div>
                     <div class="sub">                    
                         <ul id="subcat0" style="display: none;">
-
+                        <!--Thay đổi ngôn ngữ Trang chủ, Lịch sử giao dịch, Thanh toán, nạp tiền, chuyển tiền-->
                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="/Public/LichSuGiaoDich">
                                 Lịch sử giao dịch</a><div id="subsub00" class="sub_sub_menu" style="display: none">                                    
                                 </div>
@@ -421,7 +491,7 @@
     <div id="Footer">
         <div class="footer-container">
             <div class="footer_div">
-                <div class="footer_top">
+                <div class="footer_top"><!--Thay đổi ngôn ngữ menu footer-->
                     <table style="float: left;" class="table_menu">
                         <tr>
                             <td style="text-align: left; padding-right: 20px">
@@ -452,7 +522,7 @@
                         pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always"
                         align="" height="72" width="100">
                 </div>
-                <div class="footer_bottom_left">
+                <div class="footer_bottom_left"><!--Thay đổi ngôn ngữ Footer-->
                     <div style="font-size: 11px; font-weight: bold; padding-top: 5px;">
                         CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ Ecmoney10bank.tk</div>
                     <br>
@@ -460,99 +530,17 @@
                         điện tử Việt Nam</span>
                     <p>
                         <p>
-                            <b>Giấy phép ĐKKD</b>:<span class="thin"> 0104432131. Cấp tại: Sở Kế hoạch và Đầu tư
-                                Hà Nội. Ngày cấp: 08/02/2010</span>
+                            <b>Giấy phép ĐKKD</b>:<span class="thin"> 1234567890. Cấp tại: Sở Kế hoạch và Đầu tư
+                                Hà Nội. Ngày cấp: 15/03/2012</span>
                 </div>
                 <div class="foorer_bottom_right">
-                    <b>Trụ sở</b>: <span class="thin">Tầng 7, 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span>
+                    <b>Trụ sở</b>: <span class="thin">Tầng 8, 227 Nguyễn Văng Cừ, Q.5, Tp.HCM</span>
                     <p>
                         <p>
-                            <b>VP TP.HCM</b>:<span class="thin">Lầu 10 tòa nhà MeKong Tower,235 Cộng Hòa F.13,Q.Tân
-                                Bình.</span>
+                            <b>VP TP.HCM</b>:<span class="thin">Lầu 8 tòa nhà I,227 Nguyễn Văn Cừ, Q.5.</span>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-16248977-1']);
-            _gaq.push(['_setDomainName', '.baokim.vn']);
-            _gaq.push(['_trackPageview']);
-
-            (function () {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-
-        </script>
-        <style type="text/css">
-            .footer_div
-            {
-                width: 100%;
-                height: 153px;
-                margin: 0 auto;
-                background: #eaf2f5;
-                font-size: 11px;
-                margin-bottom: 20px;
-            }
-            .footer_top
-            {
-                width: 685px;
-                height: 34px;
-                margin-top: 30px;
-                border-top: 1px solid #bababa;
-                border-bottom: 1px solid #bababa;
-                float: left;
-            }
-            .blue_color
-            {
-                color: #0072b9;
-            }
-            .l_menu
-            {
-                background: url("Content/images/ll000000.jpg") no-repeat scroll 0 0 transparent;
-                padding-left: 16px;
-                padding-right: 18px;
-            }
-            .menu_link
-            {
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 13px;
-            }
-            .table_menu td
-            {
-                padding-top: 8px;
-            }
-            .footer_bottom_left
-            {
-                width: 457px;
-                height: 77px;
-                float: left;
-                padding-top: 7px;
-            }
-            .foorer_bottom_right
-            {
-                height: 46px;
-                float: right;
-                width: 360px;
-            }
-            .veri_sign_secured
-            {
-                width: 138px;
-                height: 96px;
-                float: right;
-                margin-top: 0px;
-                vertical-align: middle;
-                text-align: center;
-                padding-top: 10px;
-            }
-            .thin
-            {
-                font-weight: 100;
-            }
-        </style>
     </div>
 </body>
 </html>
