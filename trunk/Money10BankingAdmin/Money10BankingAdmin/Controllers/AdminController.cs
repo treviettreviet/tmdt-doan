@@ -254,10 +254,17 @@ namespace Money10BankingAdmin.Controllers
             return View(lst);
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-
-            return View();
+            try
+            {
+                Permission per = dbNganHang.Permissions.SingleOrDefault(m => m.ID == id);
+                return View(per);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
