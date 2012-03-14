@@ -33,7 +33,7 @@
 				Hello, <a href="#" title="Edit your profile"><%=ad.Name %></a>, 
                 <br />
 				<br />
-				<a href="#" title="View the Site">Thông tin</a> | <a href="/Public/XuLyThoat" title="Sign Out">Thoát</a>
+				<a href="/Public/CapNhatTaiKhoan" title="View the Site">Thông tin</a> | <a href="/Public/XuLyThoat" title="Sign Out">Thoát</a>
 			</div>        
 			
 			<ul id="main-nav">  <!-- Accordion Menu -->

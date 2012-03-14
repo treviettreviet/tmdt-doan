@@ -261,29 +261,27 @@
             }
         }
     </script>
-   <form action="" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
+   <form action="/Public/XuLyDoiPass" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
     <table class="form-content-table" cellspacing="10px" id="register_account_personal">
         <tr>
             <th>Mật khẩu cũ:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="email"  value="" class="text qtip" autocomplete="off"
-                    title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
+                <input type="text" name="pass"  value="" class="text qtip" autocomplete="off"
+                    title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtPass">&nbsp;
                 <br>                            
             </td>
         </tr>         
         <tr>
             <th>Mật khẩu mới:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="name" value="" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
-                <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
+                <input type="text" name="passnew" value="" class="text qtip" autocomplete="off" title="Mật Khẩu mới !" size="50">                              
                 <br><span class="error" id="Span1"></span>
             </td>
         </tr>  
         <tr>
             <th>Nhập lại MK mới:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="name" value="" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
-                <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
+                <input type="text" name="confirmpass" value="" class="text qtip" autocomplete="off" title="Nhập lại MK mới!" size="50">                              
                 <br><span class="error" id="error_name_personal"></span>
             </td>
         </tr>  

@@ -25,15 +25,92 @@ namespace Money10BankingAdmin.Controllers
         {
             return View();
         }
+        public ActionResult XuLyCapNhatUser(string email, string name)
+        {
+            try
+            {
+                DB_NganHangEntities db = new DB_NganHangEntities();
+                Admin ad = (Admin)Session["User"];
+                Admin updateAD = db.Admins.SingleOrDefault(p=>p.Email== ad.Email);
+                updateAD.Email = email;
+                updateAD.Name = name;
+                db.SaveChanges();
+                Response.Write("<script> alert ('Bạn cập nhật thành công!');</script>");
+                return RedirectToAction("../Admin/Index");
+                
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
+        }
+
         public ActionResult DoiMatKhau()
         {
             return View();
+        }
+
+        public ActionResult XuLyDoiPass(string pass, string passnew, string confirmpass)
+        {
+            try
+            {
+                DB_NganHangEntities db = new DB_NganHangEntities();
+                Admin ad = (Admin)Session["User"];
+                Admin updateAD = db.Admins.SingleOrDefault(p => p.Email == ad.Email);
+                if (passnew == confirmpass)
+                {
+                    if (ad.Password == GetMD5Hash(pass))
+                    {
+                        updateAD.Password = GetMD5Hash(passnew);
+
+                        db.SaveChanges();
+                        Response.Write("<script> alert ('Bạn cập nhật MK thành công!');</script>");
+                        return RedirectToAction("../Admin/Index");
+                    }
+                    else
+                    {
+                        string div = "error-box";
+                        string error = "";
+
+                        error += "MK cũ không đúng.";
+
+                        ViewData["div"] = div;
+                        ViewData["error"] = error;
+                        return View("DoiMatKhau");
+                    }
+                }
+                else
+                {
+                    string div = "error-box";
+                    string error = "";
+                   
+                    error += "MK mới không khớp";
+                   
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("DoiMatKhau");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult XuLyThoat()
         {
             Session.Remove("User");
             return RedirectToAction("DangNhap");
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private int UserValidation(string email, string password)
         {
             int check = -1; // Đăng nhập thất bại: Sai Username và Password
@@ -61,7 +138,12 @@ namespace Money10BankingAdmin.Controllers
             return check;
         }
 
-        
+        /// <summary>
+        /// Dang NHap Admin
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public ActionResult XuLyDangNhap(string email, string password)
         {
             try
@@ -92,8 +174,8 @@ namespace Money10BankingAdmin.Controllers
                     {
                         error += "Sai mật khẩu";
                     }
-                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["div"] = div; 
+                    ViewData["error"] = error;  
                     return View("DangNhap");
                 }
             }
@@ -102,6 +184,12 @@ namespace Money10BankingAdmin.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        /// <summary>
+        /// Ma tang tu động
+        /// </summary>
+        /// <param name="lastID"></param>
+        /// <param name="prefixID"></param>
+        /// <returns></returns>
         public static string TaoMaTangTuDong(string lastID, string prefixID)
         {
             if (lastID == "")
