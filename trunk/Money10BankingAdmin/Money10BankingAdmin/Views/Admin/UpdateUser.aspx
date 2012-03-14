@@ -18,7 +18,7 @@
                 <%: Html.LabelFor(model => model.ID) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID) %>
+                <%: Html.TextBoxFor(model => model.ID, new object { "name = 'id'" })%>
                 <%: Html.ValidationMessageFor(model => model.ID) %>
             </div>
             
@@ -26,7 +26,7 @@
                 <%: Html.LabelFor(model => model.Email) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Email) %>
+                <%: Html.TextBoxFor(model => model.Email, new object { "name = 'email'" })%>
                 <%: Html.ValidationMessageFor(model => model.Email) %>
             </div>
             
@@ -42,7 +42,7 @@
                 <%: Html.LabelFor(model => model.Name) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Name) %>
+                <%: Html.TextBoxFor(model => model.Name, new object { "name = 'name'" })%>
                 <%: Html.ValidationMessageFor(model => model.Name) %>
             </div>
             
@@ -51,7 +51,7 @@
             </div>
 
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Group.GroupName) %>
+                <%: Html.TextBoxFor(model => model.Group.GroupName, new object { "name = 'group'" })%>
                 <%: Html.ValidationMessageFor(model => model.Group.GroupName)%>
             </div>
 
@@ -59,7 +59,7 @@
                 <%: Html.LabelFor(model => model.Status) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Status) %>
+                <%: Html.TextBoxFor(model => model.Status, new object { "name = 'status'" })%>
                 <%: Html.ValidationMessageFor(model => model.Status) %>
             </div>
             
