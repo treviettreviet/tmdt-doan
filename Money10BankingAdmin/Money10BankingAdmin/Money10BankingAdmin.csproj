@@ -135,10 +135,12 @@
     <Content Include="Scripts\jquery.datePicker.js" />
     <Content Include="Scripts\jquery.wysiwyg.js" />
     <Content Include="Scripts\simpla.jquery.configuration.js" />
+    <Content Include="Views\Admin\DanhSachQuyen.aspx" />
     <Content Include="Views\Admin\PhanQuyen.aspx" />
     <Content Include="Views\Admin\DanhSachUser.aspx" />
     <Content Include="Views\Admin\Details.aspx" />
     <Content Include="Views\Admin\UpdateUser.aspx" />
+    <Content Include="Views\Admin\XuLyChonNhom.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Admin\TaoUser.aspx" />

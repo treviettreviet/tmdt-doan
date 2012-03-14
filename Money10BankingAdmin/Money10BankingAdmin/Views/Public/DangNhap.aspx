@@ -21,7 +21,7 @@
                 <td>
                     Email</td>
                 <td>
-                    <input name="email" type="text" /></td>
+                    <input name="email" type="text" value="len@gmail.com" /></td>
                             </tr>
             <tr>
                 <td>

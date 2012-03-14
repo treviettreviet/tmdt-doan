@@ -1,20 +1,32 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	PhanQuyen
+	Phân quyền cho Super Mod & Mod | Admin Banking
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Phân Quyền</h2>
+<script language="javascript" type="text/javascript">
+    function selectOption() {
+        var selected = document.forms.frm.group.value;
+        if (selected != "-1") {
+            document.forms.frm.submit();
+        }
+    }
+</script>
+
+    <h2>Phân Quyền</h2><br />
     <div>
-    <strong>Chọn nhóm</strong>
-        <select id="group">
-            <option>---[Group]---</option>
-            <option>Super Mod</option>
-            <option>Mod</option>
-        </select><br />
-        <strong>Danh sách các bảng</strong>
+    <b>Chọn nhóm</b>
+    <form method="post" id="frm" name="frm" action="/Admin/XuLyChonNhom">
+        <%--<select name="group" onchange="javascript:document.forms.frm.submit();">--%>
+        <select name="group" onchange="return selectOption();">
+            <option value="-1">---[Group]---</option>
+            <option value="2">Super Mod</option>
+            <option value="3">Mod</option>
+        </select>
+    </form><br />
+        <%--<strong>Danh sách các bảng</strong>
         <table border="1">
             <tr>
                 <td>
@@ -31,6 +43,9 @@
                 </td>
                 <td>
                    Delete
+                </td>
+                <td>
+                   <b>Group: <i></i></b>
                 </td>
             </tr>
             <tr>
@@ -67,6 +82,6 @@
                     <input id="Checkbox6" type="checkbox" />
                 </td>
             </tr>
-        </table>
+        </table>--%>
     </div>
 </asp:Content>
