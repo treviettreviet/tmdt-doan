@@ -206,9 +206,6 @@ namespace Money10BankingAdmin.Controllers
         public ActionResult UpdateUser(int id, string email, string group, string status)
         {
             Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
-            
-
-
             return View(user);
         }
 
@@ -219,8 +216,15 @@ namespace Money10BankingAdmin.Controllers
 
         public ActionResult Details(int id)
         {
-            Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
-            return View(user);
+            try
+            {
+                Permission per = dbNganHang.Permissions.SingleOrDefault(m => m.ID == id);
+                return View(per);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public ActionResult XuLyChonNhom(string group)
@@ -235,7 +239,7 @@ namespace Money10BankingAdmin.Controllers
                 try
                 {
                     List<Permission> lst = (from r in dbNganHang.Permissions where r.GroupID==g select r).ToList<Permission>();
-                    return View();
+                    return View(lst);
                 }
                 catch
                 {
@@ -248,6 +252,12 @@ namespace Money10BankingAdmin.Controllers
         public ActionResult DanhSachQuyen(List<Permission> lst)
         {
             return View(lst);
+        }
+
+        public ActionResult Edit()
+        {
+
+            return View();
         }
     }
 }

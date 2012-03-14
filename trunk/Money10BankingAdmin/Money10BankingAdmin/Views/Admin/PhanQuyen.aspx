@@ -17,15 +17,14 @@
 
     <h2>Phân Quyền</h2><br />
     <div>
-    <b>Chọn nhóm</b>
     <form method="post" id="frm" name="frm" action="/Admin/XuLyChonNhom">
-        <%--<select name="group" onchange="javascript:document.forms.frm.submit();">--%>
-        <select name="group" onchange="return selectOption();">
-            <option value="-1">---[Group]---</option>
+        <b>Chọn nhóm</b>
+        <select name="group" onchange="return selectOption();" style="width:120px">
+            <option value="-1">------[Group]------</option>
             <option value="2">Super Mod</option>
             <option value="3">Mod</option>
         </select>
-    </form><br />
+    </form>
         <%--<strong>Danh sách các bảng</strong>
         <table border="1">
             <tr>
