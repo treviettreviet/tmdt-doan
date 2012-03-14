@@ -118,12 +118,8 @@ namespace Money10BankingAdmin.Controllers
             smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
             try
             {
-
-
                 if (from.Length > 0 && to.Length > 0 && subject.Length > 0 && body.Length >= 0)
                 {
-
-
                     System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
                     msg.From = new MailAddress(from, "Money10Bank Gui Mail", System.Text.Encoding.UTF8);
                     Byte i;
@@ -135,7 +131,6 @@ namespace Money10BankingAdmin.Controllers
                             //lblError.Visible = true;
                             //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
                             Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
-
                         }
                         else
                         {
@@ -219,7 +214,6 @@ namespace Money10BankingAdmin.Controllers
 
         public ActionResult PhanQuyen()
         {
-
             return View();
         }
 
@@ -227,6 +221,33 @@ namespace Money10BankingAdmin.Controllers
         {
             Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
             return View(user);
+        }
+
+        public ActionResult XuLyChonNhom(string group)
+        {
+            if (group == null)
+            {
+                return RedirectToAction("PhanQuyen");
+            }
+            if(!group.Equals("-1"))
+            {
+                int g = int.Parse(group);
+                try
+                {
+                    List<Permission> lst = (from r in dbNganHang.Permissions where r.GroupID==g select r).ToList<Permission>();
+                    return View();
+                }
+                catch
+                {
+                    return RedirectToAction("PhanQuyen");        
+                }
+            }
+            return RedirectToAction("PhanQuyen");
+        }
+
+        public ActionResult DanhSachQuyen(List<Permission> lst)
+        {
+            return View(lst);
         }
     }
 }
