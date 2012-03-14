@@ -41,21 +41,12 @@ namespace Money10BankingAdmin.Controllers
         {
             try
             {
-                //string amountNew="";
-                //if (amount == "" || amount == null)
-                //{
-                //    amount = "0";
-
-                //}
-                //else
-                //{
-                //   amountNew = amount;
-                //}
+               
                 decimal sodu;
                 decimal naptien = decimal.Parse(amount);
                 DB_NganHangEntities db = new DB_NganHangEntities();
                 The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
-                if (tienthe.SoThe != "")
+                if (tienthe.SoThe != null)
                 {
                     sodu = tienthe.SoDu.Value;
                     tienthe.SoDu = naptien + sodu;
