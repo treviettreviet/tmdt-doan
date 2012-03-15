@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteThanhToan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    ThanhToanTrucTuyen
-</asp:Content>--%>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Thanh toán trực tuyến
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <div class="header-bottom">
@@ -15,9 +15,7 @@
                 <h2 class="title-page">
                     THANH TOÁN TRỰC TUYẾN AN TOÀN, NHANH CHÓNG, TIỆN LỢI</h2>
                 <div class="flag">
-                    <a class="flag-vn active" href="#"
-                        Tiếng Việt</a> <a class="flag-el" href="#">
-                            English</a>
+                    <a class="flag-vn active" href="#">Tiếng Việt</a><a class="flag-el" href="#">English</a>
                 </div>
             </div>
         </div>
@@ -25,14 +23,13 @@
         <div class="intro">
             NgânLượng.vn được Ngân Hàng Nhà Nước bảo hộ và cấp phép hoạt động, cam kết ĐẢM BẢO
             AN TOÀN cho giao dịch thanh toán của bạn với phương châm: NGƯỜI BÁN CHỈ NHẬN ĐƯỢC
-            TIỀN KHI BẠN ĐÃ NHẬN HÀNG ĐÚNG MÔ TẢ! [ <a href="#"
-                target="_blank">Tìm hiểu thêm</a> ]
+            TIỀN KHI BẠN ĐÃ NHẬN HÀNG ĐÚNG MÔ TẢ! [ <a href="#" target="_blank">Tìm hiểu thêm</a>
+            ]
         </div>
         <!-- END BlockIntro -->
         <div class="box-info-left box-cart">
             <div class="title">
-                <span>Thông tin đơn hàng</span> <a class="btn-zoom btn-zoom-out" href="#">
-                    Xem giản lược</a>
+                <span>Thông tin đơn hàng</span> <a class="btn-zoom btn-zoom-out" href="#">Xem giản lược</a>
             </div>
             <div class="box-info-content">
                 <table>
@@ -43,7 +40,6 @@
                         <td>
                             <%--<asp:Label ID="lblMaSanPham" runat="server" Text="Label"></asp:Label>--%>
                             <%: Html.Encode(ViewData["MaDonHang"]) %>
-                            
                         </td>
                     </tr>
                     <!-- BEGIN BlockQuantity -->
@@ -54,8 +50,7 @@
                         <td>
                             <!-- BEGIN BlockUpdateQuantity -->
                             <asp:Label ID="lblSoLuong" runat="server" Text="Label"></asp:Label>
-                            <span>[<a id="update_quantity_button" href="#">
-                                Cập nhật </a>]</span>
+                            <span>[<a id="update_quantity_button" href="#"> Cập nhật </a>]</span>
                             <!-- END BlockUpdateQuantity -->
                         </td>
                     </tr>
@@ -71,7 +66,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="box-info-content" style="display: none;">
+           <%-- <div class="box-info-content" style="display: none;">
                 <table>
                     <tr>
                         <th>
@@ -90,9 +85,9 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
         </div>
-        <script language="javascript">
+        <script type="text/javascript" language="javascript">
             $(function () {
                 $('.box-cart').each(function (index) {
                     $(this).find('.btn-zoom').click(function () {
@@ -116,8 +111,8 @@
         </script>
         <div class="box-info-right box-cart" style="margin-bottom: 5px;">
             <div class="title">
-                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="#">
-                    Xem giản lược</a>
+                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="#">Xem giản
+                    lược</a>
             </div>
             <div class="box-info-content">
                 <table>
@@ -163,7 +158,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="box-info-content" style="display: none">
+           <%-- <div class="box-info-content" style="display: none">
                 <table>
                     <tr>
                         <th>
@@ -182,20 +177,17 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
         </div>
-        <div class="clear">
-        </div>
+        <div class="clear"></div>
         <!-- BEGIN BlockPaymentOptions -->
         <div id="box-payment" class="box main-box">
             <div class="main-title">
                 <ul>
-                    <li class="active"><a href="#">
-                        Thanh toán trực tuyến</a></li>
+                    <li class="active"><a href="#">Thanh toán trực tuyến</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="#"
-                        target="_blank">Hướng dẫn thanh toán</a>
+                    <a href="#" target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
             <div class="border boxCt" style="height: 170px;">
@@ -208,7 +200,7 @@
                                 Ngân hàng hoặc Tiền mặt</a></div>
                         <div class="btn-payment-NL">
                             <a class="button-payment-nl button-payment-type" href="">Thanh toán bằng số dư ví điện
-                                tử NgânLượng.vn</a></div>
+                                tử EcMoney10.tk</a></div>
                     </div>
                     <div class="clear">
                     </div>
@@ -221,13 +213,11 @@
         <div id="option-payment-type" class="box main-box box-payment" style="display: none;">
             <div class="main-title">
                 <ul>
-                    <li class="active"><a href="#">
-                        Thanh toán bằng tài khoản Ngân hàng</a></li>
-                    <li class="end"><a class="link-payment-type" href="">Sử dụng số dư tài khoản NgânLượng.vn</a></li>
+                    <li class="active"><a href="#">Thanh toán bằng tài khoản Ngân hàng</a></li>
+                    <li class="end"><a class="link-payment-type" href="">Sử dụng số dư tài khoản EcMoney10Broker.tk</a></li>
                 </ul>
                 <div class="checkout-help">
-                    <a href="#"
-                        target="_blank">Hướng dẫn thanh toán</a>
+                    <a href="#" target="_blank">Hướng dẫn thanh toán</a>
                 </div>
             </div>
             <div class="border boxCt">
@@ -262,7 +252,7 @@
                                     <img alt="Thanh toán bằng Visa Card" border="0" height="30" src="../images/visacard.gif" /></a></li>
                                 <li><a href="#">
                                     <img alt="Thanh toán bằng Master Card" border="0" height="30" src="../images/masterca.gif" /></a></li>
-                                <li><a href=#">
+                                <li><a href="#">
                                     <img alt="Thanh toán bằng thẻ American Express" border="0" height="30" src="../images/americia.gif" /></a></li>
                                 <li><a href="#">
                                     <img alt="Thanh toán bằng thẻ JCB" border="0" height="30" src="../images/jcbcard0.gif" /></a></li>
@@ -284,11 +274,9 @@
                                     <img border="0" height="30" src="../images/tcb_1299.gif" /></a></li>
                                 <li><a id="email1" href="#">
                                     <img border="0" height="30" src="../images/mb_12990.gif" /></a></li>
-                                <li><a id="email2" href="##"
-                                    style="width: 90px;">
+                                <li><a id="email2" href="##" style="width: 90px;">
                                     <img border="0" height="30" src="../images/icb_1299.gif" /></a></li>
-                                <li><a id="email4" href="#"
-                                    style="width: 90px;">
+                                <li><a id="email4" href="#" style="width: 90px;">
                                     <img border="0" height="30" src="../images/exb_1299.gif" /></a></li>
                                 <li><a id="email5" href="#">
                                     <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
@@ -344,14 +332,11 @@
                                     <img border="0" height="30" src="../images/vib_1299.gif" /></a></li>
                                 <li><a id="email19" href="#">
                                     <img border="0" height="30" src="../images/acb_1299.gif" /></a></li>
-                                <li><a id="email20" href="#"
-                                    style="width: 90px;">
+                                <li><a id="email20" href="#" style="width: 90px;">
                                     <img border="0" height="30" src="../images/sb_12785.gif" /></a></li>
-                                <li><a id="email21" href="#"
-                                    style="width: 90px;">
+                                <li><a id="email21" href="#" style="width: 90px;">
                                     <img border="0" height="30" src="../images/tpb_1291.gif" /></a></li>
-                                <li><a id="email22" href="#"
-                                    style="width: 90px;">
+                                <li><a id="email22" href="#" style="width: 90px;">
                                     <img border="0" height="30" src="../images/pgb_1299.gif" /></a></li>
                             </ul>
                         </div>
@@ -493,7 +478,8 @@
                         <input name="_token_form" type="hidden" value="3c876ba6934ed87724b5daaf2ca9678c" />
                         <div class="message-box">
                         </div>
-                        <%using (Html.BeginForm("XuLyDangNhapThanhToanTrucTuyen", "Public", FormMethod.Post)){ %>
+                        <%using (Html.BeginForm("XuLyDangNhapThanhToanTrucTuyen", "Public", FormMethod.Post))
+                          { %>
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <th>
@@ -537,12 +523,12 @@
                             </tr>
                         </table>
                         <%} %>
-                        <script type="text/javascript" language="javascript">setFormCheck();</script>
+                        <script type="text/javascript" language="javascript">                            setFormCheck();</script>
                     </div>
                 </div>
             </div>
         </div>
-        <script language="javascript">
+        <script type="text/javascript" language="javascript">
             $('.title-row-bank a').each(function (index) {
                 $(this).click(function () {
                     if (!$(this).hasClass('active')) {
@@ -591,7 +577,7 @@
                     Xin vui lòng chờ đợi!</div>
             </div>
         </div>
-        <script language="javascript">
+        <script type="text/javascript" language="javascript">
             $(function () {
                 $('form').bind('submit', function () {
                     if (!$(this).find('.field-error, .field-exist').length) {
@@ -645,7 +631,7 @@
                 </table>
             </div>
         </div>
-        <script language="javascript">            setUpdateQuantity();</script>
+        <script language="javascript">setUpdateQuantity();</script>
         <div id="support_box" class="support-box">
             <div class="frame-support-box">
                 <div class="support">

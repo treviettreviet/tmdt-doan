@@ -13,12 +13,6 @@ namespace Money10Broker.Controllers
         // GET: /Public/
 
         private xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
-
-        public ActionResult ThanhToanTrucTuyen()
-        {
-            ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
-            return View();
-        }
         
         public ActionResult TrangChu()
         {
