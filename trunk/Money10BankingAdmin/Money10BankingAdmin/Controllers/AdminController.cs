@@ -289,7 +289,7 @@ namespace Money10BankingAdmin.Controllers
             p.TableName = per.TableName;
             p.Status = per.Status;
             dbNganHang.SaveChanges();
-            return View("Details", per.ID);
+            return RedirectToAction("CapNhatThanhCong");
         }
     }
 }
