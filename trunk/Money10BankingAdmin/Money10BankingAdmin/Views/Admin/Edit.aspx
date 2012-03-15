@@ -8,12 +8,11 @@
 
     <h2>Edit</h2>
 
-    <% using (Html.BeginForm()) {%>
+    <% using (Html.BeginForm("XuLyEdit", "Admin")) {%>
         <%: Html.ValidationSummary(true) %>
-        
         <fieldset>
             <div class="editor-field">
-                <b>ID: </b><%: Html.TextBoxFor(model => model.ID) %>
+                <b>ID: </b><%: Html.TextBoxFor(model => model.ID, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.ID) %>
             </div>
             <div class="editor-field">
@@ -34,7 +33,7 @@
             </div>
 
             <div class="editor-field">
-                <b>Group: </b><%: Html.TextBoxFor(model => model.GroupID) %>
+                <b>Group: </b><%: Html.DropDownList("groups")%>
                 <%: Html.ValidationMessageFor(model => model.GroupID) %>
             </div>
             
@@ -49,7 +48,7 @@
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Back to List", "XuLyChonNhom") %>
     </div>
 
 </asp:Content>

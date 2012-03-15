@@ -259,12 +259,37 @@ namespace Money10BankingAdmin.Controllers
             try
             {
                 Permission per = dbNganHang.Permissions.SingleOrDefault(m => m.ID == id);
+                string g = "";
+                if (per.GroupID == 1)
+                    g = "Admin";
+                if (per.GroupID == 2)
+                    g = "Super Mod";
+                if (per.GroupID == 3)
+                    g = "Mod";
+                List<string> lst = new List<string>();
+                lst.Add(g);
+                lst.Add("Admin");
+                lst.Add("Super Mod");
+                lst.Add("Mod");
+                ViewData["groups"] = new SelectList(lst);
                 return View(per);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public ActionResult XuLyEdit(Permission per)
+        {
+            Permission p = dbNganHang.Permissions.SingleOrDefault(m => m.ID == per.ID);
+            p.Insert = per.Insert;
+            p.Update = per.Update;
+            p.Delete = per.Delete;
+            p.TableName = per.TableName;
+            p.Status = per.Status;
+            dbNganHang.SaveChanges();
+            return View("Details", per.ID);
         }
     }
 }
