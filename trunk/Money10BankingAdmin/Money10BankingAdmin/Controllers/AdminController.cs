@@ -289,7 +289,34 @@ namespace Money10BankingAdmin.Controllers
             p.TableName = per.TableName;
             p.Status = per.Status;
             dbNganHang.SaveChanges();
-            return RedirectToAction("CapNhatThanhCong");
+            return RedirectToAction("XuLyChonNhom");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                Permission per = dbNganHang.Permissions.SingleOrDefault(m => m.ID == id);
+                return View(per);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public ActionResult XuLyDelete(string hidden)
+        {
+            int id = int.Parse(hidden);
+            Permission p = dbNganHang.Permissions.SingleOrDefault(m => m.ID == id);
+            p.Status = 0;
+            dbNganHang.SaveChanges();
+            return RedirectToAction("PhanQuyen");
+        }
+
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
