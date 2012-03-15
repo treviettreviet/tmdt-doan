@@ -19,7 +19,7 @@ namespace Money10BrokerAdmin
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Public", action = "NapTien", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Public", action = "DangNhap", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
