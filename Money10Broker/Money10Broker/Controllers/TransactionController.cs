@@ -241,5 +241,11 @@ namespace Money10Broker.Controllers
             max++;
             return "GD" + max.ToString();
         }
+
+        public ActionResult ThanhToanTrucTuyen()
+        {
+            ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
+            return View();
+        }
     }
 }
