@@ -135,7 +135,9 @@
     <Content Include="Scripts\jquery.datePicker.js" />
     <Content Include="Scripts\jquery.wysiwyg.js" />
     <Content Include="Scripts\simpla.jquery.configuration.js" />
+    <Content Include="Views\Admin\Create.aspx" />
     <Content Include="Views\Admin\DanhSachQuyen.aspx" />
+    <Content Include="Views\Admin\Delete.aspx" />
     <Content Include="Views\Admin\Details.aspx" />
     <Content Include="Views\Admin\Edit.aspx" />
     <Content Include="Views\Admin\PhanQuyen.aspx" />
