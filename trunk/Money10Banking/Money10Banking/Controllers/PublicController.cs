@@ -34,7 +34,8 @@ namespace Money10Banking.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+
+            return View("<script>alert('abc')</script>");
         }
 
         public ActionResult TrangChu()

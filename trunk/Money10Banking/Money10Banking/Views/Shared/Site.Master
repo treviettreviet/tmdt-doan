@@ -11,18 +11,11 @@
         var APPPATH_URI = "/application/";
         var BASE_URI = "/";
     </script>
-    <link rel="shortcut icon" href="../../Content/images/icon0000.png" />
-    <link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/css/login000.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/js/jquery00.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery01.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery02.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery-u.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery03.js"></script>
-    <link href="../../Content/css/jquery-u.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../../Scripts/js/jquery04.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery05.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery06.js"></script>
@@ -31,11 +24,20 @@
     <script type="text/javascript" src="../../Scripts/js/jquery09.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery0A.js"></script>
     <script type="text/javascript" src="../../Scripts/js/jquery0B.js"></script>
-    <link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css" media="screen">
     <script type="text/javascript" src="../../Scripts/js/shCore00.js"></script>
     <script type="text/javascript" src="../../Scripts/js/shBrushX.js"></script>
+    <link rel="stylesheet" href="../../Content/css/jquery00.css" type="text/css" media="screen">
+    <link href="../../Content/css/jquery-u.css" rel="stylesheet" type="text/css">
     <link href="../../Content/css/SyntaxHi.css" rel="stylesheet" type="text/css">
     <link href="../../Content/css/jquery01.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../../Content/images/icon0000.png" />
+    <link href="../../Content/css/layout00.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/news0000.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/payment0.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/home0000.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/login000.css" rel="stylesheet" type="text/css" />
+     <link rel="canonical" href="http://ecmoney10bank.tk/">
+
     <script type="text/javascript">
         var j = jQuery.noConflict();
 
@@ -128,12 +130,15 @@
                 font-weight: 100;
             }
         </style>
-
-    <link rel="canonical" href="http://ecmoney10bank.tk/">
+  
     <meta name="keywords" content="Thanh toán trực tuyến, Mua hàng an toàn, Tích hợp bán hàng, Mua sắm trực tuyến, Chuyển tiền trực tuyến, Thanh toán, Nạp tiền, Tích hợp thanh toán, Nhận tiền siêu tốc, Gửi yêu cầu chuyển tiền">
     <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
 <body>
+    <%
+    
+        
+     %>
     <div class="wrapper">
         <div class="page-normal">
             <div id="Header">
@@ -319,7 +324,7 @@
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
                              </div>
-                             <div style="display: inline; cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
+                             <div style="cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
                                 <a>Tiếng Việt</a> | <a>Tiếng Anh</a>
                              </div>
                         </div>
@@ -516,7 +521,7 @@
                     </table>
                 </div>
                 <div class="veri_sign_secured">
-                    <embed onclick="window.open(&quot;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.baokim.vn&amp;lang=en&quot;,&quot;popup&quot;,&quot;height=500,width=550,scrollbars=yes&quot;)"
+                    <embed onclick="window.open(&quot;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=ecmoney10.tk&amp;lang=en&quot;,&quot;popup&quot;,&quot;height=500,width=550,scrollbars=yes&quot;)"
                         src="../../Content/images/getseal0.swf" loop="false" menu="false" quality="best"
                         wmode="transparent" swliveconnect="FALSE" name="s_s" type="application/x-shockwave-flash"
                         pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always"
