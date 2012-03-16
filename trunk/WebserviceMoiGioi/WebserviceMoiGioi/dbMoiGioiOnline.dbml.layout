@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 16.375" name="dbMoiGioiOnline">
+  <DataContextMoniker Name="/dbMoiGioiOnlineDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2e464edb-a317-4e55-bae6-dcae8cca2749" absoluteBounds="0.75, 9.375, 2, 1.7535424804687487">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ac56fa5-f0a3-467d-8ef9-dc115338b969" absoluteBounds="0.765, 9.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" absoluteBounds="6.25, 4.375, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/The" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e720d91-f0a1-4b9b-99b9-3b4997e6b2ee" absoluteBounds="6.265, 4.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80ce50e7-a3d8-419f-8bb6-7fd17695c13c" absoluteBounds="6.25, 10.625, 2, 2.2465844726562487">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/CaNhan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ec8365d-8be3-4551-b24f-8a2254b3c15a" absoluteBounds="6.265, 11.085, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a630b636-883f-4d69-a664-9b21cd34acba" absoluteBounds="6.25, 7.75, 2, 2.0822371419270835">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/DiaChi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df606e9c-1133-4f41-b087-a71c7ba29870" absoluteBounds="6.265, 8.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e23e022b-36de-4b18-8313-92939d16a468" absoluteBounds="9.25, 6.375, 2, 2.2465844726562514">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/DoanhNghiep" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e32dded-7c7b-4682-99c7-dab2ab1e769a" absoluteBounds="9.265, 6.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34c7d70c-f222-43e1-b882-37ec390c4032" absoluteBounds="8.75, 9.375, 2, 2.2465844726562487">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9301675-92ce-4bad-9e0e-d6a9b9bcc08e" absoluteBounds="8.765, 9.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e705d1f3-98bf-4fcc-a554-153512d9e2ad" absoluteBounds="0.75, 1.375, 2, 1.26050048828125">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd320b19-ccee-4423-9a00-ccb7fc025a0a" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f6951d3-d8e5-435a-9722-0eb6b4231b95" absoluteBounds="9, 3.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LichSuGiaoDich" />
+      <nestedChildShapes>
+        <elementListCompartment Id="251bc159-8f28-4a91-ba02-a74559328109" absoluteBounds="9.015, 3.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6043561b-d8df-49fa-80ec-22137b6c1297" absoluteBounds="6.25, 1.875, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiaoDich" />
+      <nestedChildShapes>
+        <elementListCompartment Id="223c651b-94ea-439c-b7d1-4e9e996f1587" absoluteBounds="6.265, 2.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3734bf94-1fb2-4857-9cbb-68314ae3195b" absoluteBounds="6.5, 14.875, 2, 1.2605004882812469">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiayPhepKinhDoanh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29f153d2-70a0-4f16-9778-a155844a4891" absoluteBounds="6.515, 15.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e10781e-aeb0-4795-9c2d-a47a9f1874a9" absoluteBounds="0.75, 6.875, 2, 1.2605004882812514">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LoaiTaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4af0391-b845-4763-af04-40344ef0812c" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0efe7e20-5441-4575-a29e-0d7df7fd2ff6" absoluteBounds="3.5, 3.875, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LoaiThe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc1df494-7548-4146-ad45-f8c26b312933" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e24ab768-def2-4717-ae06-516d21e1985a" absoluteBounds="11.75, 1.375, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/LogAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21af0c8e-8fa7-42f0-a3b6-987879668655" absoluteBounds="11.765, 1.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0f6f527-2496-4f0a-be41-8b0fc8f58a0e" absoluteBounds="0.75, 12.375, 2, 1.7535424804687487">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/MoiGioiLienKet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e64fc2b6-5878-4b10-92b3-be3f0592f506" absoluteBounds="0.765, 12.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a899b5ed-43f8-4264-9db3-7b9c035d7d40" absoluteBounds="11.75, 4.375, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/NgonNgu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="daa44e67-18b0-44c6-af89-16e514469caa" absoluteBounds="11.765, 4.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="001f1720-3b8a-4912-80af-596d9edbf96b" absoluteBounds="11.75, 7.375, 2, 1.5891951497395835">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/NoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a120495b-8756-4547-9106-b73261714b9d" absoluteBounds="11.765, 7.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a81bcff-1c1c-4066-918e-5d33ec03e563" absoluteBounds="11.75, 10.375, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/Permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20d64049-e56d-4904-a508-9f075b91c1a6" absoluteBounds="11.765, 10.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c27d4808-37ae-4795-b376-e71fb1fd1ce9" absoluteBounds="9, 0.75, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/PhiGiaoDich" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c6061fb-eb0e-4b0e-9da1-b5d72db43f3d" absoluteBounds="9.015, 1.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10407baa-1de1-4839-91c6-f0c3a797e3bf" absoluteBounds="9.75, 13.375, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/SessionID" />
+      <nestedChildShapes>
+        <elementListCompartment Id="534bf63e-8147-4dbb-abba-7530b7062aa7" absoluteBounds="9.765, 13.835, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0379604-119a-40a9-a678-1e3d1d7df496" absoluteBounds="3.5, 6.375, 2, 2.0822371419270818">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="973a26b4-de73-4d1f-b0c1-78647510f95c" absoluteBounds="3.515, 6.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3484c078-0097-45da-974a-3aea67abde95" absoluteBounds="12.75, 13.375, 2, 1.7535424804687487">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/ThamSo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e29868f-ce4d-4006-b303-7f434c0381e6" absoluteBounds="12.765, 13.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 4.89644490559896); (9 : 4.89644490559896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/The/The_LichSuGiaoDich" />
+      <nodes>
+        <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
+        <classShapeMoniker Id="7f6951d3-d8e5-435a-9722-0eb6b4231b95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.9703089628155); (8.625 : 3.3453089628155); (8.625 : 3.12352570014523); (9.00147429985477 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiaoDich/LoaiGiaoDich_LichSuGiaoDich" />
+      <nodes>
+        <classShapeMoniker Id="6043561b-d8df-49fa-80ec-22137b6c1297" />
+        <classShapeMoniker Id="7f6951d3-d8e5-435a-9722-0eb6b4231b95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 14.875); (8.40625 : 7.10361857096354); (9.25 : 7.10361857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiayPhepKinhDoanh/LoaiGiayPhepKinhDoanh_DoanhNghiep" />
+      <nodes>
+        <classShapeMoniker Id="3734bf94-1fb2-4857-9cbb-68314ae3195b" />
+        <classShapeMoniker Id="e23e022b-36de-4b18-8313-92939d16a468" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.75525024414063); (6.25 : 4.75525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiThe/LoaiThe_The" />
+      <nodes>
+        <classShapeMoniker Id="0efe7e20-5441-4575-a29e-0d7df7fd2ff6" />
+        <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.02492390950521); (9 : 2.02492390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiaoDich/LoaiGiaoDich_PhiGiaoDich" />
+      <nodes>
+        <classShapeMoniker Id="6043561b-d8df-49fa-80ec-22137b6c1297" />
+        <classShapeMoniker Id="c27d4808-37ae-4795-b376-e71fb1fd1ce9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.375); (5.875 : 6); (5.875 : 6.83223714192708); (6.25 : 6.45723714192708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_The" />
+      <nodes>
+        <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
+        <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 8.45723714192708); (4.5 : 11.7482922363281); (6.25 : 11.7482922363281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_CaNhan" />
+      <nodes>
+        <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
+        <classShapeMoniker Id="80ce50e7-a3d8-419f-8bb6-7fd17695c13c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.10361857096354); (6.25 : 8.10361857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_DiaChi" />
+      <nodes>
+        <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
+        <classShapeMoniker Id="a630b636-883f-4d69-a664-9b21cd34acba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.45805928548177); (8.32291666666667 : 7.45805928548177 : JumpStart); (8.48958333333333 : 7.45805928548177 : JumpEnd); (9.25 : 7.45805928548177)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_DoanhNghiep" />
+      <nodes>
+        <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
+        <classShapeMoniker Id="e23e022b-36de-4b18-8313-92939d16a468" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.50525024414063); (3.5 : 7.50525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiTaiKhoan/LoaiTaiKhoan_TaiKhoan" />
+      <nodes>
+        <classShapeMoniker Id="1e10781e-aeb0-4795-9c2d-a47a9f1874a9" />
+        <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
