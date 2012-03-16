@@ -242,10 +242,17 @@ namespace Money10Broker.Controllers
             return "GD" + max.ToString();
         }
 
-        public ActionResult ThanhToanTrucTuyen()
+        public ActionResult ThanhToanTrucTuyen(string id)
         {
-            ViewData["MaDonHang"] = Request.QueryString["MaDonHang"];
-            return View();
+            try
+            {
+                DonHang dh = dbMoiGioi.DonHangs.SingleOrDefault(m => m.MaHoaDon.Equals(id));
+                return View(dh);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
