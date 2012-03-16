@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteThanhToan.Master"
-    Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteThanhToan.Master" Inherits="System.Web.Mvc.ViewPage<Money10Broker.Models.DonHang>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Thanh toán trực tuyến
@@ -38,8 +37,7 @@
                             Hoá đơn/Sản phẩm:
                         </th>
                         <td>
-                            <%--<asp:Label ID="lblMaSanPham" runat="server" Text="Label"></asp:Label>--%>
-                            <%: Html.Encode(ViewData["MaDonHang"]) %>
+                            <%:Model.MaHoaDon %>
                         </td>
                     </tr>
                     <!-- BEGIN BlockQuantity -->
@@ -49,8 +47,8 @@
                         </th>
                         <td>
                             <!-- BEGIN BlockUpdateQuantity -->
-                            <asp:Label ID="lblSoLuong" runat="server" Text="Label"></asp:Label>
-                            <span>[<a id="update_quantity_button" href="#"> Cập nhật </a>]</span>
+                            <asp:Label ID="lblSoLuong" runat="server" Text="Label"><%:Model.SoLuong %></asp:Label>
+                            <%--<span>[<a id="update_quantity_button" href="#"> Cập nhật </a>]</span>--%>
                             <!-- END BlockUpdateQuantity -->
                         </td>
                     </tr>
@@ -60,32 +58,46 @@
                             Tổng thanh toán:
                         </th>
                         <td>
-                            &nbsp;<asp:Label ID="lblTongTien" runat="server" Text="Label"></asp:Label>
-                            VND
+                            &nbsp;<asp:Label ID="lblTongTien" runat="server" Text="Label"><%:Model.TongThanhToan %></asp:Label> VND
                         </td>
                     </tr>
                 </table>
             </div>
-           <%-- <div class="box-info-content" style="display: none;">
+            <!-- Ẩn/Hiện -->
+            <div class="box-info-content" style="display: none;">
                 <table>
                     <tr>
                         <th>
                             Hoá đơn/Sản phẩm:
                         </th>
                         <td>
-                            16
+                            <%:Model.MaHoaDon %>
                         </td>
                     </tr>
+                    <!-- BEGIN BlockQuantity -->
+                    <tr>
+                        <th>
+                            Số lượng:
+                        </th>
+                        <td>
+                            <!-- BEGIN BlockUpdateQuantity -->
+                            <asp:Label ID="Label1" runat="server" Text="Label"><%:Model.SoLuong %></asp:Label>
+                            <%--<span>[<a id="update_quantity_button" href="#"> Cập nhật </a>]</span>--%>
+                            <!-- END BlockUpdateQuantity -->
+                        </td>
+                    </tr>
+                    <!-- END BlockQuantity -->
                     <tr>
                         <th>
                             Tổng thanh toán:
                         </th>
                         <td>
-                            <span class="yell">2.700.000</span> VND
+                            &nbsp;<asp:Label ID="Label2" runat="server" Text="Label"><%:Model.TongThanhToan %></asp:Label> VND
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
+            <!-- Ẩn/Hiện -->
         </div>
         <script type="text/javascript" language="javascript">
             $(function () {
@@ -111,8 +123,7 @@
         </script>
         <div class="box-info-right box-cart" style="margin-bottom: 5px;">
             <div class="title">
-                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="#">Xem giản
-                    lược</a>
+                <span>Tài khoản nhận tiền</span> <a class="btn-zoom btn-zoom-out" href="#">Xem giản lược</a>
             </div>
             <div class="box-info-content">
                 <table>
@@ -121,7 +132,7 @@
                             Chủ tài khoản:
                         </th>
                         <td>
-                            <asp:Label ID="lblTenNguoiNhan" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblTenNguoiNhan" runat="server" Text="Label"><%:Model.ChuTaiKhoan %></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -137,7 +148,7 @@
                             Email:
                         </th>
                         <td>
-                            <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblEmail" runat="server" Text="Label"><%:Model.Email %></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -145,7 +156,7 @@
                             Điện thoại:
                         </th>
                         <td>
-                            <asp:Label ID="lblSoDienThoai" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblSoDienThoai" runat="server" Text="Label"><%:Model.DienThoai %></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -153,19 +164,27 @@
                             Địa chỉ:
                         </th>
                         <td>
-                            <asp:Label ID="lblDiaChi" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblDiaChi" runat="server" Text="Label"><%:Model.DiaChi %></asp:Label>
                         </td>
                     </tr>
                 </table>
             </div>
-           <%-- <div class="box-info-content" style="display: none">
+            <div class="box-info-content" style="display: none">
                 <table>
                     <tr>
                         <th>
                             Chủ tài khoản:
                         </th>
                         <td>
-                            TRẦN THỊ NGỌC TRÂM
+                            <asp:Label ID="Label3" runat="server" Text="Label"><%:Model.ChuTaiKhoan %></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Tình trạng:
+                        </th>
+                        <td>
+                            Đã xác thực
                         </td>
                     </tr>
                     <tr>
@@ -173,11 +192,27 @@
                             Email:
                         </th>
                         <td>
-                            chino_collection@yahoo.com
+                            <asp:Label ID="Label4" runat="server" Text="Label"><%:Model.Email %></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Điện thoại:
+                        </th>
+                        <td>
+                            <asp:Label ID="Label5" runat="server" Text="Label"><%:Model.DienThoai %></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Địa chỉ:
+                        </th>
+                        <td>
+                            <asp:Label ID="Label6" runat="server" Text="Label"><%:Model.DiaChi %></asp:Label>
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
         </div>
         <div class="clear"></div>
         <!-- BEGIN BlockPaymentOptions -->
@@ -631,7 +666,7 @@
                 </table>
             </div>
         </div>
-        <script language="javascript">setUpdateQuantity();</script>
+        <script type="text/javascript" language="javascript">setUpdateQuantity();</script>
         <div id="support_box" class="support-box">
             <div class="frame-support-box">
                 <div class="support">
@@ -646,7 +681,7 @@
 		-->
             </div>
         </div>
-        <script language="javascript">
+        <script type="text/javascript" language="javascript">
             var moveBoxTimeOut = null;
             $(window).bind('scroll', function () {
                 if (moveBoxTimeOut != null) {
