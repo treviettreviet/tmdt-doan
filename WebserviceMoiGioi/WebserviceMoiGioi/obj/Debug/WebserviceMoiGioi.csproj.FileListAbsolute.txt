@@ -1,0 +1,5 @@
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceMoiGioi\WebserviceMoiGioi\bin\WebserviceMoiGioi.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceMoiGioi\WebserviceMoiGioi\bin\WebserviceMoiGioi.pdb
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceMoiGioi\WebserviceMoiGioi\obj\Debug\ResolveAssemblyReference.cache
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceMoiGioi\WebserviceMoiGioi\obj\Debug\WebserviceMoiGioi.dll
+F:\001. UNIVERSITY 2010\GOOGLE CODE\TMDT\WebserviceMoiGioi\WebserviceMoiGioi\obj\Debug\WebserviceMoiGioi.pdb
