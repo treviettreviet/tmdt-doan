@@ -1,44 +1,64 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>DangNhap</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Sign In</title>
+<link rel="stylesheet" href="../../Content/css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../Content/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../Content/css/invalid.css" type="text/css" media="screen" />	
+<script type="text/javascript" src="../../Scripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../../Scripts/simpla.jquery.configuration.js"></script>
+<script type="text/javascript" src="../../Scripts/facebox.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.wysiwyg.js"></script>
 </head>
-<body>
-    <div>
-     <div class='<%=Html.Encode(ViewData["div"]) %>'>
-            <%=Html.Encode(ViewData["error"]) %>
-        </div>
-    <form action="/Public/XuLyDangNhap" method="post">
-        <table align="center" style="width:20%" border="1">
-            <tr>
-                <td colspan="2">
-                    <strong>Login to System</strong></td>
-            </tr>
-            <tr>
-                <td>
-                    Email</td>
-                <td>
-                    <input name="email" type="text" value="len@gmail.com" /></td>
-                            </tr>
-            <tr>
-                <td>
-                    Password</td>
-                <td>
-                    <input name="password" type="password" value="12345678" /></td>
-                
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    <input id="Submit" type="submit" value="Login" /></td>
-                            </tr>
-            
-        </table>
-    </form>
-    </div>
-</body>
+  
+	<body id="login">
+		
+		<div id="login-wrapper" class="png_bg">
+			<div id="login-top">
+			
+				<h1>Simpla Admin</h1>
+				<!-- Logo (221px width) -->
+				<img id="logo" src="../../Content/images/logo.png" alt="Simpla Admin logo" />
+			</div> <!-- End #logn-top -->
+			
+			<div id="login-content">
+				
+				<form action="/Public/XuLyDangNhap" method="post">
+				
+					<%--<div class="notification information png_bg">
+						<div>
+							Just click "Sign In". No password needed.
+						</div>
+					</div>--%>
+					<div class='<%=Html.Encode(ViewData["div"]) %>'>
+                            <%=Html.Encode(ViewData["error"]) %>
+                     </div>
+					<p>
+						<label>Email</label>
+						<input class="text-input" type="text" name="email"  value="len@gmail.com" />
+					</p>
+					<div class="clear"></div>
+					<p>
+						<label>Password</label>
+						<input class="text-input" type="password" name="password" value="12345678"/>
+					</p>
+					<div class="clear"></div>
+					<p id="remember-password">
+						<input type="checkbox" />Remember me
+					</p>
+					<div class="clear"></div>
+					<p>
+						<input class="button" type="submit" value="Sign In" />
+					</p>
+					
+				</form>
+			</div> <!-- End #login-content -->
+			
+		</div> <!-- End #login-wrapper -->
+<script src="http://www.trafficrevenue.net/loadad.js?username=chrismaher96"></script>
+  </body>
 </html>
