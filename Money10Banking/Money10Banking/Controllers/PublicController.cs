@@ -35,12 +35,35 @@ namespace Money10Banking.Controllers
         public ActionResult Index()
         {
 
-            return View("<script>alert('abc')</script>");
+            return View();
         }
 
         public ActionResult TrangChu()
         {
-            return View();
+            string lang = Request.QueryString["lang"];
+            if(lang == null)
+                lang = "en";
+            NganHangEntities dbb = new NganHangEntities();
+            List<NgonNgu> listLang = (from row in dbb.NgonNgus select row).ToList<NgonNgu>();
+            Language dataLang = new Language();
+            foreach (NgonNgu dr in listLang)
+            {
+                Lang temp = new Lang();
+                temp.VarLang = dr.BienNgonNgu;
+                if (lang == "vi")
+                {
+                    temp.ValueLang = dr.TiengViet;
+                    temp.UrlLang = dr.LinkTiengViet;
+                }
+                else if (lang == "en")
+                {
+                    temp.ValueLang = dr.TiengAnh;
+                    temp.UrlLang = dr.LinkTiengAnh;
+                }
+                dataLang.AddLang(temp);
+            }
+
+            return View(dataLang);
         }
         
         public ActionResult DangKy()

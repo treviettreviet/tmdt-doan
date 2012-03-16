@@ -135,10 +135,10 @@
     <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
 <body>
-    <%
-    
-        
-     %>
+    <%  Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        if(Model != null)
+            dataLang = (Money10Banking.Models.Language)Model;
+    %>
     <div class="wrapper">
         <div class="page-normal">
             <div id="Header">
@@ -154,23 +154,24 @@
                             <link rel="stylesheet" type="text/css" href="../../Content/css/keyboard.css">
                             <div style="margin-bottom: 15px;">
                              <div style="display: inline; float: right; cursor: pointer; position: relative;"
-                                    onmouseover="showAcccountEx()" onmouseout="hideAcccountEx()">
+                                    onmouseover="" onmouseout="">
                                 <% 
                                     if (Session["User"] == null)
                                     {
                                 %><!--Thay đổi ngôn ngữ Đăng nhập, Đăng ký, Liên Hệ-->
-                                <a href="/Public/DangNhap" title="Đăng nhập">Đăng nhập</a><span>|</span> <a href="/Public/DangKy"
-                                    title="Đăng ký">Đăng ký</a><span>|</span> <a href="#" title="Liên hệ">Liên hệ</a>
+                                <a href="/Public/DangNhap" title="Đăng nhập"><%=dataLang["TITLE_LOGIN"].ValueLang%></a><span>|</span> <a href="/Public/DangKy"
+                                    title="Đăng ký"><%=dataLang["TITLE_REGISTER"].ValueLang%></a><span>|</span> <a href="#" title="Liên hệ"><%=dataLang["TITLE_CONTACT"].ValueLang%></a>
                                 <%        
-                                }
-                                else
-                                {
-                                %><!--Thay đổi ngôn ngữ Lời chào-->
-                                Chúc một ngày tốt lành,
-                                <%Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.Email %><span><img
-                                    src="../../Content/images/support_.png"></span><a href="/Public/XuLyThoat"><b> [Thoát]</b></a>
+                                    }
+                                    else
+                                    {
+                                %>
+                                <%=dataLang["TITLE_WELCOME"].ValueLang%>
+                                <%Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.Email%><span><img
+                                    src="../../Content/images/support_.png"></span><a href="/Public/XuLyThoat"><b><%=dataLang["TITLE_LOOUT"].ValueLang%></b></a>
                                 <%        
-                                }
+                                    }
+        
                                 %>
                                  <div>
                                         <div id="AccountBlog" style="display: none; cursor: default; position: absolute;
@@ -179,12 +180,12 @@
                                                 <table width="250" border="0" cellspacing="0" cellpadding="0" class="account-table-blog">
                                                     <tr>
                                                         <td>
-                                                            <a href="/Public/CapNhatThongTinTaiKhoanCaNhan">Cập nhật thông tin tài khoản</a>
+                                                            <a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["TITLE_UPDATEINFO"].ValueLang%></a>
                                                         </td>
                                                     </tr><!--Thay đổi ngôn ngữ cập nhật thông tin, mật khẩu-->
                                                     <tr>
                                                         <td>
-                                                            <a href="/Public/DoiMatKhau">Đổi mật khẩu</a>
+                                                            <a href="/Public/DoiMatKhau"><%=dataLang["TITLE_CHANGEPASSWORD"].ValueLang%></a>
                                                         </td>
                                                     </tr>
                                                    
@@ -325,7 +326,7 @@
                                 </a>
                              </div>
                              <div style="cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
-                                <a>Tiếng Việt</a> | <a>Tiếng Anh</a>
+                                <a href="/Public/TrangChu?lang=vi"><%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
                              </div>
                         </div>
                     </div>
@@ -407,7 +408,7 @@
                     <div class="parent">
                         <ul>
                             <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
-                                onmouseover="showSubMenu(0)"><span>Trang chủ</span></a></li><li id="cat1" class="m_service">
+                                onmouseover="showSubMenu(0)"><span><%=dataLang["TITLE_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
                                     <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><%--<li
                                         id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
                                             <span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="#"
