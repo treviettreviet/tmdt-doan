@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NganHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="NganHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="NganHangModelStoreContainer">
           <EntitySet Name="Admin" EntityType="NganHangModel.Store.Admin" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DiaChi" EntityType="NganHangModel.Store.DiaChi" store:Type="Tables" Schema="dbo" />
@@ -15,6 +15,8 @@
           <EntitySet Name="LoaiTaiKhoan" EntityType="NganHangModel.Store.LoaiTaiKhoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="LoaiThe" EntityType="NganHangModel.Store.LoaiThe" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MoiGioi" EntityType="NganHangModel.Store.MoiGioi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NgonNgu" EntityType="NganHangModel.Store.NgonNgu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NoiDung" EntityType="NganHangModel.Store.NoiDung" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PhiGiaoDich" EntityType="NganHangModel.Store.PhiGiaoDich" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TaiKhoan" EntityType="NganHangModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ThamSo" EntityType="NganHangModel.Store.ThamSo" store:Type="Tables" Schema="dbo" />
@@ -39,6 +41,10 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
             <End Role="MoiGioi" EntitySet="MoiGioi" />
           </AssociationSet>
+          <AssociationSet Name="FK_PhiGiaoDich_LoaiGiaoDich" Association="NganHangModel.Store.FK_PhiGiaoDich_LoaiGiaoDich">
+            <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDich" />
+            <End Role="PhiGiaoDich" EntitySet="PhiGiaoDich" />
+          </AssociationSet>
           <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="NganHangModel.Store.FK_TaiKhoan_LoaiTaiKhoan">
             <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoan" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
@@ -54,14 +60,14 @@
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
-            <PropertyRef Name="MaAdmin" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="MaAdmin" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
-          <Property Name="MatKhau" Type="varchar" MaxLength="50" />
-          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="TinhTrang" Type="int" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="DiaChi">
           <Key>
@@ -74,6 +80,7 @@
           <Property Name="PhuongXa" Type="nvarchar" MaxLength="50" />
           <Property Name="QuanHuyen" Type="nvarchar" MaxLength="50" />
           <Property Name="TinhThanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -94,7 +101,7 @@
           <Property Name="MaLichSuGiaoDich" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="MaThe" Type="varchar" MaxLength="10" />
           <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
-          <Property Name="SoTheNhan" Type="varchar" MaxLength="10" />
+          <Property Name="SoTheNhan" Type="varchar" MaxLength="16" />
           <Property Name="NgayGiaoDich" Type="datetime" />
           <Property Name="SoTienGiaoDich" Type="decimal" />
           <Property Name="TinhTrang" Type="int" />
@@ -105,6 +112,7 @@
           </Key>
           <Property Name="MaLoaiGiaoDich" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiGiaoDich" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiGiayPhepKinhDoanh">
           <Key>
@@ -112,6 +120,7 @@
           </Key>
           <Property Name="MaLoaiGiayPhepKinhDoanh" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiGiayPhepKinhDoanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiTaiKhoan">
           <Key>
@@ -119,6 +128,7 @@
           </Key>
           <Property Name="MaLoaiTaiKhoan" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiTaiKhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiThe">
           <Key>
@@ -139,13 +149,36 @@
           <Property Name="SoGiayPhepKinhDoanh" Type="nvarchar" MaxLength="50" />
           <Property Name="TinhTrang" Type="int" />
         </EntityType>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNgonNgu" />
+          </Key>
+          <Property Name="MaNgonNgu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BienNgonNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TiengViet" Type="nvarchar" MaxLength="128" />
+          <Property Name="TiengAnh" Type="nvarchar" MaxLength="128" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="256" />
+          <Property Name="LinkTiengViet" Type="nvarchar" MaxLength="512" />
+          <Property Name="LinkTiengAnh" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="NoiDung">
+          <Key>
+            <PropertyRef Name="MaNoiDung" />
+          </Key>
+          <Property Name="MaNoiDung" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BienNoiDung" Type="nvarchar" MaxLength="128" />
+          <Property Name="TiengViet" Type="ntext" />
+          <Property Name="TiengAnh" Type="text" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="256" />
+        </EntityType>
         <EntityType Name="PhiGiaoDich">
           <Key>
             <PropertyRef Name="MaPhiGiaoDich" />
           </Key>
           <Property Name="MaPhiGiaoDich" Type="int" Nullable="false" />
-          <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="7" />
+          <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
           <Property Name="Phi" Type="decimal" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -245,6 +278,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PhiGiaoDich_LoaiGiaoDich">
+          <End Role="LoaiGiaoDich" Type="NganHangModel.Store.LoaiGiaoDich" Multiplicity="0..1" />
+          <End Role="PhiGiaoDich" Type="NganHangModel.Store.PhiGiaoDich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiGiaoDich">
+              <PropertyRef Name="MaLoaiGiaoDich" />
+            </Principal>
+            <Dependent Role="PhiGiaoDich">
+              <PropertyRef Name="MaLoaiGiaoDich" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TaiKhoan_LoaiTaiKhoan">
           <End Role="LoaiTaiKhoan" Type="NganHangModel.Store.LoaiTaiKhoan" Multiplicity="0..1" />
           <End Role="TaiKhoan" Type="NganHangModel.Store.TaiKhoan" Multiplicity="*" />
@@ -281,13 +326,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NganHangModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="NganHangEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="NganHangModel.Admin" />
           <EntitySet Name="DiaChis" EntityType="NganHangModel.DiaChi" />
           <EntitySet Name="KhachHangs" EntityType="NganHangModel.KhachHang" />
           <EntitySet Name="LichSuGiaoDiches" EntityType="NganHangModel.LichSuGiaoDich" />
@@ -332,18 +375,14 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
             <End Role="The" EntitySet="Thes" />
           </AssociationSet>
+          <EntitySet Name="NgonNgus" EntityType="NganHangModel.NgonNgu" />
+          <EntitySet Name="NoiDungs" EntityType="NganHangModel.NoiDung" />
+          <AssociationSet Name="FK_PhiGiaoDich_LoaiGiaoDich" Association="NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich">
+            <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDiches" />
+            <End Role="PhiGiaoDich" EntitySet="PhiGiaoDiches" />
+          </AssociationSet>
+          <EntitySet Name="Admins" EntityType="NganHangModel.Admin" />
         </EntityContainer>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="MaAdmin" />
-          </Key>
-          <Property Name="MaAdmin" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="TenDangNhap" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="HoTen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="TinhTrang" Type="Int32" />
-        </EntityType>
         <EntityType Name="DiaChi">
           <Key>
             <PropertyRef Name="MaDiaChi" />
@@ -356,6 +395,7 @@
           <Property Name="QuanHuyen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="TinhThanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="TaiKhoan" Relationship="NganHangModel.FK_DiaChi_TaiKhoan" FromRole="DiaChi" ToRole="TaiKhoan" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -391,6 +431,8 @@
           <Property Name="MaLoaiGiaoDich" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="TenLoaiGiaoDich" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="LichSuGiaoDiches" Relationship="NganHangModel.FK_LichSuGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="LichSuGiaoDich" />
+          <Property Type="Int32" Name="TinhTrang" />
+          <NavigationProperty Name="PhiGiaoDiches" Relationship="NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="PhiGiaoDich" />
         </EntityType>
         <EntityType Name="LoaiGiayPhepKinhDoanh">
           <Key>
@@ -398,6 +440,7 @@
           </Key>
           <Property Name="MaLoaiGiayPhepKinhDoanh" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="TenLoaiGiayPhepKinhDoanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="LoaiTaiKhoan">
           <Key>
@@ -406,6 +449,7 @@
           <Property Name="MaLoaiTaiKhoan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="TenLoaiTaiKhoan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="TaiKhoans" Relationship="NganHangModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="LoaiThe">
           <Key>
@@ -435,6 +479,8 @@
           <Property Name="MaPhiGiaoDich" Type="Int32" Nullable="false" />
           <Property Name="MaLoaiGiaoDich" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
           <Property Name="Phi" Type="Decimal" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="TinhTrang" />
+          <NavigationProperty Name="LoaiGiaoDich" Relationship="NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="PhiGiaoDich" ToRole="LoaiGiaoDich" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -578,22 +624,60 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNgonNgu" />
+          </Key>
+          <Property Type="Int32" Name="MaNgonNgu" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BienNgonNgu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengViet" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengAnh" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MoTa" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LinkTiengViet" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LinkTiengAnh" MaxLength="512" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NoiDung">
+          <Key>
+            <PropertyRef Name="MaNoiDung" />
+          </Key>
+          <Property Type="Int32" Name="MaNoiDung" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BienNoiDung" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengViet" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengAnh" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MoTa" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_PhiGiaoDich_LoaiGiaoDich">
+          <End Type="NganHangModel.LoaiGiaoDich" Role="LoaiGiaoDich" Multiplicity="0..1" />
+          <End Type="NganHangModel.PhiGiaoDich" Role="PhiGiaoDich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiGiaoDich">
+              <PropertyRef Name="MaLoaiGiaoDich" />
+            </Principal>
+            <Dependent Role="PhiGiaoDich">
+              <PropertyRef Name="MaLoaiGiaoDich" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GroupID" Nullable="false" />
+          <Property Type="Int32" Name="Status" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NganHangModelStoreContainer" CdmEntityContainer="NganHangEntities">
-          <EntitySetMapping Name="Admins"><EntityTypeMapping TypeName="NganHangModel.Admin"><MappingFragment StoreEntitySet="Admin">
-            <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
-            <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
-            <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-            <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-            <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="DiaChis"><EntityTypeMapping TypeName="NganHangModel.DiaChi"><MappingFragment StoreEntitySet="DiaChi">
-            <ScalarProperty Name="MaDiaChi" ColumnName="MaDiaChi" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaDiaChi" ColumnName="MaDiaChi" />
             <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
             <ScalarProperty Name="SoNha" ColumnName="SoNha" />
             <ScalarProperty Name="Duong" ColumnName="Duong" />
@@ -620,15 +704,18 @@
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiGiaoDiches"><EntityTypeMapping TypeName="NganHangModel.LoaiGiaoDich"><MappingFragment StoreEntitySet="LoaiGiaoDich">
-            <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
             <ScalarProperty Name="TenLoaiGiaoDich" ColumnName="TenLoaiGiaoDich" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiGiayPhepKinhDoanhs"><EntityTypeMapping TypeName="NganHangModel.LoaiGiayPhepKinhDoanh"><MappingFragment StoreEntitySet="LoaiGiayPhepKinhDoanh">
-            <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
             <ScalarProperty Name="TenLoaiGiayPhepKinhDoanh" ColumnName="TenLoaiGiayPhepKinhDoanh" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiTaiKhoans"><EntityTypeMapping TypeName="NganHangModel.LoaiTaiKhoan"><MappingFragment StoreEntitySet="LoaiTaiKhoan">
-            <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
             <ScalarProperty Name="TenLoaiTaiKhoan" ColumnName="TenLoaiTaiKhoan" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiThes"><EntityTypeMapping TypeName="NganHangModel.LoaiThe"><MappingFragment StoreEntitySet="LoaiThe">
@@ -645,7 +732,8 @@
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="PhiGiaoDiches"><EntityTypeMapping TypeName="NganHangModel.PhiGiaoDich"><MappingFragment StoreEntitySet="PhiGiaoDich">
-            <ScalarProperty Name="MaPhiGiaoDich" ColumnName="MaPhiGiaoDich" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaPhiGiaoDich" ColumnName="MaPhiGiaoDich" />
             <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
             <ScalarProperty Name="Phi" ColumnName="Phi" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -678,6 +766,42 @@
             <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NgonNgus">
+            <EntityTypeMapping TypeName="NganHangModel.NgonNgu">
+              <MappingFragment StoreEntitySet="NgonNgu">
+                <ScalarProperty Name="LinkTiengAnh" ColumnName="LinkTiengAnh" />
+                <ScalarProperty Name="LinkTiengViet" ColumnName="LinkTiengViet" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+                <ScalarProperty Name="TiengViet" ColumnName="TiengViet" />
+                <ScalarProperty Name="BienNgonNgu" ColumnName="BienNgonNgu" />
+                <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoiDungs">
+            <EntityTypeMapping TypeName="NganHangModel.NoiDung">
+              <MappingFragment StoreEntitySet="NoiDung">
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+                <ScalarProperty Name="TiengViet" ColumnName="TiengViet" />
+                <ScalarProperty Name="BienNoiDung" ColumnName="BienNoiDung" />
+                <ScalarProperty Name="MaNoiDung" ColumnName="MaNoiDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="NganHangModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -699,31 +823,30 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="dbNganHangOnline">
-        <EntityTypeShape EntityType="NganHangModel.Admin" Width="1.5" PointX="0.75" PointY="1.25" Height="2.172587890625" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.DiaChi" Width="1.5" PointX="5.25" PointY="4.125" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.KhachHang" Width="1.5" PointX="5.25" PointY="7.5" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.LichSuGiaoDich" Width="1.5" PointX="10.5" PointY="7.25" Height="2.7494921874999996" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.LoaiGiaoDich" Width="1.5" PointX="8.25" PointY="3.875" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="NganHangModel.LoaiGiayPhepKinhDoanh" Width="1.5" PointX="2.75" PointY="1.25" Height="1.4033821614583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="NganHangModel.LoaiGiayPhepKinhDoanh" Width="1.5" PointX="3.625" PointY="0.75" Height="1.4033821614583326" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="7.875" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.LoaiThe" Width="1.5" PointX="6" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.MoiGioi" Width="1.5" PointX="5.25" PointY="10.75" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="NganHangModel.PhiGiaoDich" Width="1.5" PointX="0.75" PointY="4.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NganHangModel.PhiGiaoDich" Width="1.5" PointX="2.375" PointY="3.625" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.TaiKhoan" Width="1.5" PointX="3" PointY="7" Height="3.3263964843750031" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.ThamSo" Width="1.5" PointX="10.75" PointY="1.25" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="NganHangModel.The" Width="1.5" PointX="8.25" PointY="6.875" Height="3.5186979166666674" IsExpanded="true" />
         <AssociationConnector Association="NganHangModel.FK_DiaChi_TaiKhoan" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="7" />
-          <ConnectorPoint PointX="3.75" PointY="5.4035953776041659" />
-          <ConnectorPoint PointX="5.25" PointY="5.4035953776041659" />
+          <ConnectorPoint PointX="4.21875" PointY="7" />
+          <ConnectorPoint PointX="4.21875" PointY="6.2711393229166665" />
+          <ConnectorPoint PointX="5.25" PointY="6.2711393229166665" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_KhachHang_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="8.7785953776041659" />
           <ConnectorPoint PointX="5.25" PointY="8.7785953776041659" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_LichSuGiaoDich_LoaiGiaoDich" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="4.672841796875" />
-          <ConnectorPoint PointX="11.25" PointY="4.672841796875" />
+          <ConnectorPoint PointX="9.75" PointY="4.8651432291666659" />
+          <ConnectorPoint PointX="11.25" PointY="4.8651432291666659" />
           <ConnectorPoint PointX="11.25" PointY="7.25" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_LichSuGiaoDich_The" ManuallyRouted="false">
@@ -731,13 +854,13 @@
           <ConnectorPoint PointX="10.5" PointY="8.62474609375" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_TaiKhoan_LoaiTaiKhoan" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.672841796875" />
-          <ConnectorPoint PointX="3" PointY="8.672841796875" />
+          <ConnectorPoint PointX="2.25" PointY="8.7689925130208337" />
+          <ConnectorPoint PointX="3" PointY="8.7689925130208337" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_The_LoaiThe" ManuallyRouted="false">
           <ConnectorPoint PointX="7.15625" PointY="2.5379850260416674" />
-          <ConnectorPoint PointX="7.15625" PointY="7.15625" />
-          <ConnectorPoint PointX="8.25" PointY="7.15625" />
+          <ConnectorPoint PointX="7.53125" PointY="7.15625" />
+          <ConnectorPoint PointX="8.625" PointY="7.15625" />
         </AssociationConnector>
         <AssociationConnector Association="NganHangModel.FK_MoiGioi_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="10.326396484375003" />
@@ -748,6 +871,15 @@
           <ConnectorPoint PointX="4.5" PointY="10.223043619791667" />
           <ConnectorPoint PointX="8.25" PointY="10.223043619791667" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="NganHangModel.NgonNgu" Width="1.5" PointX="10.75" PointY="10.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="NganHangModel.NoiDung" Width="1.5" PointX="0.75" PointY="11.75" Height="1.9802864583333388" />
+        <AssociationConnector Association="NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" >
+          <ConnectorPoint PointX="8.25" PointY="3.96875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="3.9687499999999996" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="3.96875" />
+          <ConnectorPoint PointX="3.875" PointY="3.96875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="NganHangModel.Admin" Width="1.5" PointX="7.375" PointY="11.75" Height="2.1725878906250031" />
       </Diagram>
     </Diagrams>
   </Designer>
