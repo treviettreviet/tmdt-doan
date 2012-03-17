@@ -30,17 +30,12 @@
         <div id="header">
             ﻿<div class="header-top" style="margin: 0; padding: 0;">
                 <div class="logo-nl">
-                    <a href="https://www.nganluong.vn/index.php?portal=nganluong&amp;page=home" target="_blank"
+                    <a href="/Public/TrangChu" target="_blank"
                         class="logo-nl"></a>
                 </div>
                 <div class="label-logo">
-                    <a href="http://news.nganluong.vn/chi-tiet-3/75/429/Ket-qua-Chuong-trinh-binh-chon-Website-va-Dich-vu-TMDT-duoc-Nguoi-tieu-dung-ua-thich-nhat.html"
-                        target="_blank">
-                        <img src="../../Content/images/bannerTo.gif" border="0" alt="" />
-                    </a><a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html"
-                        target="_blank">
-                        <img src="../../Content/images/bannerTp.gif" border="0" alt="" />
-                    </a>
+                    <a href="#" target="_blank"><img src="../../Content/images/bannerTo.gif" border="0" alt="" /></a>
+                    <a href="#" target="_blank"><img src="../../Content/images/bannerTp.gif" border="0" alt="" /></a>
                 </div>
                 <div class="logo-partner">
                 </div>
@@ -60,7 +55,7 @@
         <div id="footer">
             <div class="ft-t">
                 <div class="coppyright">
-                    Bản quyền © 2009-2011 NgânLượng.vn</div>
+                    Bản quyền © 2009-2011 EcMoney10Broker.tk</div>
                 <div class="sloggan">
                     Thanh toán trực tuyến An toàn - Nhanh chóng - Tiện lợi</div>
             </div>
@@ -78,7 +73,7 @@
                     hiệu Sao Khuê 2011.</div>
             </div>
             <!-- Start of Zopim Live Chat Script -->
-            <script type="text/javascript">
+            <%--<script type="text/javascript">
                 window.$zopim || (function (d, s) {
                     var z = $zopim = function (c) { z._.push(c) }, $ =
 	z.s = d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o
@@ -100,7 +95,7 @@
                         'away': ['Click để gửi lời nhắn', 'Cảm ơn bạn đã ghé thăm. Hiện nhân viên CSKH đi vắng, bạn vui lòng để lại câu hỏi hoặc lời nhắn, chúng tôi sẽ trả lời qua email cho bạn trong thời gian sớm nhất.']
                     });
                 });
-            </script>
+            </script>--%>
             <!-- End of Zopim Live Chat Script -->
             <script type="text/javascript">
 

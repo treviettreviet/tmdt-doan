@@ -244,15 +244,113 @@ namespace Money10Broker.Controllers
 
         public ActionResult ThanhToanTrucTuyen(string id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("../Public/TrangChu");
+            }
             try
             {
-                DonHang dh = dbMoiGioi.DonHangs.SingleOrDefault(m => m.MaHoaDon.Equals(id));
+                DonHang dh = dbMoiGioi.DonHangs.Single(m => m.MaHoaDon.Equals(id));
                 return View(dh);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return View("../Public/TrangChu");
+                //throw new Exception(ex.Message);
             }
+        }
+
+        public ActionResult XuLyDangNhapTTTT(string email, string password, string id)
+        {
+            int user_validation = UserValidation(email, password);
+            if (user_validation == 0)
+            {
+                return RedirectToAction("../Public/TongHop");
+            }
+            else
+            {
+                //<div class="message-box" id="message-box-login" style="display: block; ">Mật khẩu không đúng</div>
+                string div = "message-box";
+                string error = "";
+                if (user_validation == -1)
+                {
+                    error += "Email không tồn tại, vui lòng nhập lại Email.";
+                }
+                if (user_validation == 1)
+                {
+                    error += "Sai mật khẩu, vui lòng nhập lại mật khẩu.";
+                }
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return RedirectToAction("ThanhToanTrucTuyen" + "/" + id, new { div, error });   // Chỗ này hay nè anh em :D
+                //Response.Redirect("/Transaction/ThanhToanTrucTuyen" + "/" + id);
+            }
+        }
+
+        private int UserValidation(string email, string password)
+        {
+            try
+            {
+                xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+                TaiKhoan user = (from row in mg.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+                if (user.Email == email && user.MatKhau == GetMD5Hash(password))
+                {
+                    Session["User"] = user;
+                    if (user.MaLoaiTaiKhoan.Equals("LTK001"))   // Tài khoản thuộc Cá Nhân
+                    {
+                        try
+                        {
+                            CaNhan canhan = mg.CaNhans.Single(m => m.MaTaiKhoan == user.MaTaiKhoan);
+                            Session["TaiKhoanCaNhan"] = canhan;
+                        }
+                        catch (Exception ex)
+                        {
+                            //throw new Exception(ex.Message);
+                            Response.Write(ex.ToString());
+                        }
+                    }
+                    else    // Tài khoản thuộc Doanh Nghiệp
+                    {
+                        try
+                        {
+                            DoanhNghiep dn = mg.DoanhNghieps.Single(m => m.MaTaiKhoan == user.MaTaiKhoan);
+                            Session["TaiKhoanDoanhNghiep"] = dn;
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.Write(ex.ToString());
+                        }
+                    }
+                    return 0;//Đăng nhập thành công
+                }
+                else
+                {
+                    return 1;//Đăng nhập không thành công, sai password
+                }
+            }
+            catch
+            {
+                return -1; //Email chưa đăng ký
+            }
+        }
+
+        /// <summary>
+        /// Thắng - Ma hoa MD5
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string GetMD5Hash(string input)
+        {
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.UTF8.GetBytes(input);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2").ToLower());
+            }
+            string password = s.ToString();
+            return password;
         }
     }
 }
