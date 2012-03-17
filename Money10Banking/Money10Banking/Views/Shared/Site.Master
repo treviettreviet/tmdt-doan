@@ -135,7 +135,8 @@
     <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
 <body>
-    <%  Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+    <%       
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
         if(Model != null)
             dataLang = (Money10Banking.Models.Language)Model;
     %>
@@ -408,7 +409,7 @@
                     <div class="parent">
                         <ul>
                             <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
-                                onmouseover="showSubMenu(0)"><span><%=dataLang["TITLE_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
+                                onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
                                     <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><%--<li
                                         id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
                                             <span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="#"
