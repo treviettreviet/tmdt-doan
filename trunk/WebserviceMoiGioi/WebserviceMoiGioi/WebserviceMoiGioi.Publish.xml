@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
   <publishProfile publishUrl="C:\WSMoiGioi" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/WebserviceMoiGioi.dll" publishTime="03/17/2012 10:38:45" />
-    <file relUrl="bin/WebserviceMoiGioi.pdb" publishTime="03/17/2012 10:38:45" />
+    <file relUrl="bin/WebserviceMoiGioi.dll" publishTime="03/17/2012 14:28:53" />
+    <file relUrl="bin/WebserviceMoiGioi.pdb" publishTime="03/17/2012 14:28:53" />
     <file relUrl="WebServiceMoiGioiMoney10.asmx" publishTime="03/16/2012 14:34:07" />
-    <file relUrl="Web.config" publishTime="03/17/2012 10:39:05" />
+    <file relUrl="Web.config" publishTime="03/17/2012 14:29:04" />
     <file relUrl="Default.aspx" publishTime="03/16/2012 16:49:50" />
   </publishProfile>
 </publishData>
