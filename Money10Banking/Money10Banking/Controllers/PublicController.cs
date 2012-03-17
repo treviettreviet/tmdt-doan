@@ -71,51 +71,55 @@ namespace Money10Banking.Controllers
             return View();
         }
 
-        public ActionResult NapTien()
-        {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("DangNhap");
-            }
-            else
-            {
-                The the= (The)Session["The"];
-                ViewData["cardno"]=the.SoThe;
-                return View("NapTien");
-            }
-        }
+        //public ActionResult NapTien()
+        //{
+        //    if (Session["User"] == null)
+        //    {
+        //        return RedirectToAction("DangNhap");
+        //    }
+        //    else
+        //    {
+        //        The the= (The)Session["The"];
+        //        ViewData["cardno"]=the.SoThe;
+        //        return View("NapTien");
+        //    }
+        //}
         public ActionResult QuenMatKhau()
         {
             return View();
         }
         public ActionResult ChuyenTien()
         {
-            List<LichSuGiaoDichModels> lst = LSGiaoDich();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if (Session["User"] != null)
+
+            {
+            List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
             if (lst != null)
             {
-            if (Session["User"] != null)
-            {
+            
                 if (Session["sid"] != null)
                 {
 
                     return View("ChuyenTien");
                 }
                 else
-                    return RedirectToAction("DangNhapGiaoDich");
+                    return View("DangNhapGiaoDich");
                
-            }
-            return RedirectToAction("DangNhap");
+            
             }
             else
                 Response.Write("<script> alert ('Bạn chưa có thẻ Ngân Hàng!');</script>");
             return View("TrangChu");
+            }
+            return View("DangNhap");
            
         }
 
-        public ActionResult RutTien()
-        {
-            return View();
-        }
+        //public ActionResult RutTien()
+        //{
+        //    return View();
+        //}
 
         public ActionResult AddCard() //Khi đăng nhập thành công
         {
@@ -124,19 +128,13 @@ namespace Money10Banking.Controllers
 
         public ActionResult XuLyAddCard(string SoTaiKhoan)
         {
+            if (Session["User"] != null)
+            {
             NganHangEntities dbb = new NganHangEntities();
             string div = "error-box";
             
             TaiKhoan tk = (TaiKhoan)Session["User"];
-            //try
-            //{
-
-            //}
-            //catch
-            //{
-                
-                
-            //}
+           
             List<The> card = (from th in dbb.Thes select th).ToList<The>();
             for(int i=0 ; i<card.Count; i++)
             {
@@ -152,20 +150,11 @@ namespace Money10Banking.Controllers
             {
                 if (card[i].TinhTrang == 0 && card[i].MaTaiKhoan == tk.MaTaiKhoan)
                 {
-                    //if (card[i].MaTaiKhoan == tk.MaTaiKhoan)
-                    //{
+                    
                         card[i].TinhTrang = 1;
                         dbb.SaveChanges();
                         return RedirectToAction("LichSuGiaoDich");
-                    //}
-                    //else
-                    //{
-                    //    string error = "";
-                    //    error = "So The Nay Khong Phai Cua Ban. ";
-                    //    ViewData["div"] = div;
-                    //    ViewData["error"] = error;
-                    //    //return View("AddCard");
-                    //}
+                   
 
                 }
                 else
@@ -181,9 +170,11 @@ namespace Money10Banking.Controllers
            
            
             }
-            //ViewData["div"] = div;
-            //ViewData["error"] = error;
+          
             return View("AddCard");
+            }
+            else
+             return RedirectToAction("DangNhap");
            
         }
 
@@ -194,7 +185,13 @@ namespace Money10Banking.Controllers
 
         public ActionResult DoiMatKhau()
         {
-            return View();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if(tk.Email!=null)
+            {
+                return View("DoiMatKhau");
+            }
+            else
+                return View("DangNhap");
         }
 
         public ActionResult LichSuGiaoDich()
@@ -208,7 +205,15 @@ namespace Money10Banking.Controllers
             //else
             //    Response.Write("<script> alert ('Bạn chưa có thẻ Ngân Hàng!');</script>");
             //    return View("TrangChu");
-            return View();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if (Session["User"] != null)
+            {
+                List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
+                ViewData["ListData"] = lst;
+                return View("LichSuGiaoDich");
+            }
+            else
+            return RedirectToAction("DangNhap");
         }
 
         /// <summary>
@@ -321,10 +326,10 @@ namespace Money10Banking.Controllers
         /// danh sach lich su giao dich
         /// </summary>
         /// <returns></returns>
-        public List<LichSuGiaoDichModels> LSGiaoDich()
+        public List<LichSuGiaoDichModels> LSGiaoDich(string email)
         {
-            TaiKhoan mail = (TaiKhoan)Session["User"];
-            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.Email == mail.Email);
+            //TaiKhoan mail = (TaiKhoan)Session["User"];
+            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.Email == email);
             // The th= new The();
             var the = from th in dbNganHangOnline.Thes where th.MaTaiKhoan == tk.MaTaiKhoan select th.MaTaiKhoan;
             if (the.Count() != 0)
@@ -364,15 +369,17 @@ namespace Money10Banking.Controllers
             {
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
-                {   
-                    List<LichSuGiaoDichModels> listData = LSGiaoDich();
-                    if (listData != null)
-                    {
+                {
+                    TaiKhoan tk = (TaiKhoan)Session["User"];
+                    List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
+                    //if (listData != null)
+                    //{
                         ViewData["ListData"] = listData;
-                        return View("LichSuGiaoDich");
-                    }
-                    else
-                        return View("TrangChu");
+                    //    return View("LichSuGiaoDich");
+                    //}
+                    //else
+                    //    return View("TrangChu");
+                    return View("LichSuGiaoDich");
                 }
                 else
                 {
@@ -412,6 +419,7 @@ namespace Money10Banking.Controllers
                 string pas = GetMD5Hash(password);
                 
                 TaiKhoan pass = (TaiKhoan)Session["User"];
+                
                 string div = "error-box";
                 string error = "";
                 if (pass.MatKhau==pas)
@@ -450,6 +458,7 @@ namespace Money10Banking.Controllers
                     ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                     return View("DoiMatKhau");
                 }
+               
             }
             catch (Exception ex)
             {
@@ -539,95 +548,102 @@ namespace Money10Banking.Controllers
         /// <param name="SoTaiKhoan"></param>
         /// <param name="Login"></param>
         /// <returns></returns>
-        public ActionResult XuLyNapTien(string receive, string SoTaiKhoan, string Login)
-        {
-            try
-            {
-                if (Login!=""|| Login!=null)
-                {
-                    //string email= Session["Login"].ToString();
+        //public ActionResult XuLyNapTien(string receive, string SoTaiKhoan, string Login)
+        //{
+        //    try
+        //    {
+        //        if (Login!=""|| Login!=null)
+        //        {
+        //            //string email= Session["Login"].ToString();
                     
-                    TaiKhoan tkdn = (TaiKhoan)Session["User"];
-                    string email = tkdn.Email;
-                    //TaiKhoan tk = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                    string matk = tkdn.MaTaiKhoan;
+        //            TaiKhoan tkdn = (TaiKhoan)Session["User"];
+        //            string email = tkdn.Email;
+        //            //TaiKhoan tk = (from row in dbNganHangOnline.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+        //            string matk = tkdn.MaTaiKhoan;
                     
-                    decimal naptien = decimal.Parse(receive);
-                    NganHangEntities db = new NganHangEntities();
-                    The tienthe= db.Thes.Single(m => m.SoThe==SoTaiKhoan);
-                    decimal sodu;
-                      string div = "error-box";
-                               string error = "";
-                    if (tienthe.SoThe!=null)
-                    {
+        //            decimal naptien = decimal.Parse(receive);
+        //            NganHangEntities db = new NganHangEntities();
+        //            The tienthe= db.Thes.Single(m => m.SoThe==SoTaiKhoan);
+        //            decimal sodu;
+        //              string div = "error-box";
+        //                       string error = "";
+        //            if (tienthe.SoThe!=null)
+        //            {
                        
-                        if (tienthe.MaTaiKhoan == matk)
-                        {
-                            Session["SoThe"] = tienthe.SoThe;
-                            sodu = tienthe.SoDu.Value;
-                            tienthe.SoDu = naptien + sodu;
-                            Session["SoTienThe"] = tienthe.SoDu;
+        //                if (tienthe.MaTaiKhoan == matk)
+        //                {
+        //                    Session["SoThe"] = tienthe.SoThe;
+        //                    sodu = tienthe.SoDu.Value;
+        //                    tienthe.SoDu = naptien + sodu;
+        //                    Session["SoTienThe"] = tienthe.SoDu;
 
-                            NganHangEntities dbNH = new NganHangEntities();
-                            The th = dbNganHangOnline.Thes.Single(m => m.SoThe == tienthe.SoThe);
-                            //Session["The"] = th;
-                            string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
-                            LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                            LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
-                            LSGD.MaThe = th.MaThe;
-                            LSGD.MaLoaiGiaoDich = "LGD002";       
-                            LSGD.NgayGiaoDich = DateTime.Now;
-                            LSGD.SoTienGiaoDich = naptien;
-                            LSGD.TinhTrang = 0;
-                            dbNH.LichSuGiaoDiches.AddObject(LSGD);
-                            dbNH.SaveChanges();
-                            List<LichSuGiaoDichModels> listData = LSGiaoDich();
-                            ViewData["ListData"] = listData;                        
-                            Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p=>p.MaTaiKhoan== th.MaTaiKhoan);
-                            string sTo = tk.Email;
-                            string sFrom = "tmdthca@gmail.com";
-                            string sSubject = "Money10Bank thông báo!";
-                            string sBody = "Bạn đã nạp tiền thành công lúc" + DateTime.Now + " vào số TK:" +th.SoThe+".Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
-                            sendMail(sTo, sFrom, sSubject, sBody);
+        //                    NganHangEntities dbNH = new NganHangEntities();
+        //                    The th = dbNganHangOnline.Thes.Single(m => m.SoThe == tienthe.SoThe);
+        //                    //Session["The"] = th;
+        //                    string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
+        //                    LichSuGiaoDich LSGD = new LichSuGiaoDich();
+        //                    LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
+        //                    LSGD.MaThe = th.MaThe;
+        //                    LSGD.MaLoaiGiaoDich = "LGD002";       
+        //                    LSGD.NgayGiaoDich = DateTime.Now;
+        //                    LSGD.SoTienGiaoDich = naptien;
+        //                    LSGD.TinhTrang = 0;
+        //                    dbNH.LichSuGiaoDiches.AddObject(LSGD);
+        //                    dbNH.SaveChanges();
+        //                    List<LichSuGiaoDichModels> listData = LSGiaoDich();
+        //                    ViewData["ListData"] = listData;                        
+        //                    Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
+        //                    TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p=>p.MaTaiKhoan== th.MaTaiKhoan);
+        //                    string sTo = tk.Email;
+        //                    string sFrom = "tmdthca@gmail.com";
+        //                    string sSubject = "Money10Bank thông báo!";
+        //                    string sBody = "Bạn đã nạp tiền thành công lúc" + DateTime.Now + " vào số TK:" +th.SoThe+".Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+        //                    sendMail(sTo, sFrom, sSubject, sBody);
                             
-                            return View("LichSuGiaoDich");
-                        }
-                        else
-                        {
-                            error += "Tài khoản Web ko đúng";
-                            ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                            ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                            return RedirectToAction("NapTien");
-                        }
-                    }
-                    else
-                    {
-                        error += "Số tài khoản không đúng";
-                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
-                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
-                        return RedirectToAction("NapTien");
-                    }
-                }
-                else
-                {
-                    return RedirectToAction("DangNhap");
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //                    return View("LichSuGiaoDich");
+        //                }
+        //                else
+        //                {
+        //                    error += "Tài khoản Web ko đúng";
+        //                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+        //                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+        //                    return RedirectToAction("NapTien");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                error += "Số tài khoản không đúng";
+        //                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+        //                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+        //                return RedirectToAction("NapTien");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            return RedirectToAction("DangNhap");
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
-        public ActionResult CapNhatThongTinTaiKhoan()
-        {
-            return View();
-        }
+        //public ActionResult CapNhatThongTinTaiKhoan()
+        //{
+        //    return View();
+        //}
 
         public ActionResult CapNhatThongTinTaiKhoanCaNhan()
         {
-            return View();
+
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if (tk.Email != null)
+            {
+                return View("CapNhatThongTinTaiKhoanCaNhan");
+            }
+            else
+                return View("DangNhap");
         }
         public ActionResult ThayDoiMatKhau()
         {
@@ -1128,8 +1144,8 @@ namespace Money10Banking.Controllers
                                 dbNH.LichSuGiaoDiches.AddObject(LSGD);
 
                                 dbNH.SaveChanges();
-                                
-                                List<LichSuGiaoDichModels> listData = LSGiaoDich();
+                                TaiKhoan mail = (TaiKhoan)Session["User"];
+                                List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
                                 ViewData["ListData"] = listData;
                                 
                                 Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
@@ -1232,9 +1248,9 @@ namespace Money10Banking.Controllers
                            LSGD.SoTienGiaoDich = fee;
                            LSGD.TinhTrang = 0;
                            dbNH.LichSuGiaoDiches.AddObject(LSGD);
-
+                           TaiKhoan mail = (TaiKhoan)Session["User"];
                            dbNH.SaveChanges();
-                           List<LichSuGiaoDichModels> listData = LSGiaoDich();
+                           List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
                            ViewData["ListData"] = listData;
                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
                            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == sendcard.MaTaiKhoan);
