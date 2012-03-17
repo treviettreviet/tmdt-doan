@@ -47,6 +47,7 @@ namespace WebserviceMoiGioi
                 dh.Email = Email;
                 dh.DienThoai = DienThoai;
                 dh.DiaChi = DiaChi;
+                db.DonHangs.InsertOnSubmit(dh);
                 db.SubmitChanges();
                 return 0;   // Ghi nhận Đơn Hàng thành công.!
             }
