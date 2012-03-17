@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="xnvaufit_NganHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="xnvaufit_NganHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="xnvaufit_NganHangModelStoreContainer">
           <EntitySet Name="Admin" EntityType="xnvaufit_NganHangModel.Store.Admin" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DiaChi" EntityType="xnvaufit_NganHangModel.Store.DiaChi" store:Type="Tables" Schema="dbo" />
@@ -28,19 +28,23 @@
       [NganHangLienKet].[TinhTrang] AS [TinhTrang]
       FROM [dbo].[NganHangLienKet] AS [NganHangLienKet]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="NgonNgu" EntityType="xnvaufit_NganHangModel.Store.NgonNgu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NoiDung" EntityType="xnvaufit_NganHangModel.Store.NoiDung" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Permission" EntityType="xnvaufit_NganHangModel.Store.Permission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PhiGiaoDich" EntityType="xnvaufit_NganHangModel.Store.PhiGiaoDich" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="SessionID" EntityType="xnvaufit_NganHangModel.Store.SessionID" store:Type="Tables" store:Schema="dbo" store:Name="SessionID">
             <DefiningQuery>SELECT 
       [SessionID].[Id] AS [Id], 
       [SessionID].[UserName] AS [UserName], 
-      [SessionID].[sID] AS [sID]
+      [SessionID].[sID] AS [sID], 
+      [SessionID].[Status] AS [Status]
       FROM [dbo].[SessionID] AS [SessionID]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="sysdiagrams" EntityType="xnvaufit_NganHangModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TaiKhoan" EntityType="xnvaufit_NganHangModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ThamSo" EntityType="xnvaufit_NganHangModel.Store.ThamSo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="The" EntityType="xnvaufit_NganHangModel.Store.The" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TheTam" EntityType="xnvaufit_NganHangModel.Store.TheTam" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Admin_Group" Association="xnvaufit_NganHangModel.Store.FK_Admin_Group">
             <End Role="Group" EntitySet="Group" />
             <End Role="Admin" EntitySet="Admin" />
@@ -64,6 +68,10 @@
           <AssociationSet Name="FK_MoiGioi_TaiKhoan" Association="xnvaufit_NganHangModel.Store.FK_MoiGioi_TaiKhoan">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
             <End Role="MoiGioi" EntitySet="MoiGioi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Permission_Group" Association="xnvaufit_NganHangModel.Store.FK_Permission_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Permission" EntitySet="Permission" />
           </AssociationSet>
           <AssociationSet Name="FK_PhiGiaoDich_LoaiGiaoDich" Association="xnvaufit_NganHangModel.Store.FK_PhiGiaoDich_LoaiGiaoDich">
             <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDich" />
@@ -104,6 +112,7 @@
           <Property Name="PhuongXa" Type="nvarchar" MaxLength="50" />
           <Property Name="QuanHuyen" Type="nvarchar" MaxLength="50" />
           <Property Name="TinhThanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -143,6 +152,7 @@
           </Key>
           <Property Name="MaLoaiGiaoDich" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiGiaoDich" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiGiayPhepKinhDoanh">
           <Key>
@@ -150,6 +160,7 @@
           </Key>
           <Property Name="MaLoaiGiayPhepKinhDoanh" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiGiayPhepKinhDoanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiTaiKhoan">
           <Key>
@@ -157,6 +168,7 @@
           </Key>
           <Property Name="MaLoaiTaiKhoan" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="TenLoaiTaiKhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="LoaiThe">
           <Key>
@@ -170,13 +182,14 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="ThoiGian" Type="datetime" />
           <Property Name="BangLienQuan" Type="varchar" MaxLength="100" />
           <Property Name="ThaoTac" Type="varchar" MaxLength="100" />
           <Property Name="DuLieuCu" Type="nvarchar" MaxLength="500" />
           <Property Name="DuLieuMoi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <EntityType Name="MoiGioi">
           <Key>
@@ -204,6 +217,28 @@
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
           <Property Name="TinhTrang" Type="int" />
         </EntityType>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNgonNgu" />
+          </Key>
+          <Property Name="MaNgonNgu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BienNgonNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TiengViet" Type="nvarchar" MaxLength="128" />
+          <Property Name="TiengAnh" Type="nvarchar" MaxLength="128" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="256" />
+          <Property Name="LinkTiengViet" Type="nvarchar" MaxLength="512" />
+          <Property Name="LinkTiengAnh" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="NoiDung">
+          <Key>
+            <PropertyRef Name="MaNoiDung" />
+          </Key>
+          <Property Name="MaNoiDung" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BienNoiDung" Type="nvarchar" MaxLength="128" />
+          <Property Name="TiengViet" Type="ntext" />
+          <Property Name="TiengAnh" Type="text" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="256" />
+        </EntityType>
         <EntityType Name="Permission">
           <Key>
             <PropertyRef Name="ID" />
@@ -223,6 +258,7 @@
           <Property Name="MaPhiGiaoDich" Type="int" Nullable="false" />
           <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
           <Property Name="Phi" Type="decimal" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'xnvaufit_NganHang.dbo.SessionID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -236,6 +272,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="sID" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -283,6 +320,20 @@
           <Property Name="SoDu" Type="decimal" />
           <Property Name="NgayMoThe" Type="datetime" />
           <Property Name="NgayHetHan" Type="datetime" />
+          <Property Name="TinhTrang" Type="int" />
+        </EntityType>
+        <EntityType Name="TheTam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiThe" Type="varchar" MaxLength="100" />
+          <Property Name="SoThe" Type="varchar" MaxLength="16" />
+          <Property Name="SoPin" Type="varchar" MaxLength="6" />
+          <Property Name="SoBaoMat" Type="varchar" MaxLength="10" />
+          <Property Name="NgayMoThe" Type="datetime" />
+          <Property Name="NgayHetHan" Type="datetime" />
+          <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
           <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <Association Name="FK_Admin_Group">
@@ -354,6 +405,18 @@
             </Principal>
             <Dependent Role="MoiGioi">
               <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Permission_Group">
+          <End Role="Group" Type="xnvaufit_NganHangModel.Store.Group" Multiplicity="1" />
+          <End Role="Permission" Type="xnvaufit_NganHangModel.Store.Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -441,8 +504,7 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="xnvaufit_NganHangModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -506,6 +568,13 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
             <End Role="The" EntitySet="Thes" />
           </AssociationSet>
+          <EntitySet Name="NgonNgus" EntityType="xnvaufit_NganHangModel.NgonNgu" />
+          <EntitySet Name="NoiDungs" EntityType="xnvaufit_NganHangModel.NoiDung" />
+          <EntitySet Name="TheTams" EntityType="xnvaufit_NganHangModel.TheTam" />
+          <AssociationSet Name="FK_Permission_Group" Association="xnvaufit_NganHangModel.FK_Permission_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Permission" EntitySet="Permissions" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -531,6 +600,7 @@
           <Property Name="QuanHuyen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="TinhThanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="TaiKhoan" Relationship="xnvaufit_NganHangModel.FK_DiaChi_TaiKhoan" FromRole="DiaChi" ToRole="TaiKhoan" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -540,6 +610,7 @@
           <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Status" Type="Int32" />
           <NavigationProperty Name="Admins" Relationship="xnvaufit_NganHangModel.FK_Admin_Group" FromRole="Group" ToRole="Admin" />
+          <NavigationProperty Name="Permissions" Relationship="xnvaufit_NganHangModel.FK_Permission_Group" FromRole="Group" ToRole="Permission" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -576,6 +647,7 @@
           <Property Name="TenLoaiGiaoDich" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="LichSuGiaoDiches" Relationship="xnvaufit_NganHangModel.FK_LichSuGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="LichSuGiaoDich" />
           <NavigationProperty Name="PhiGiaoDiches" Relationship="xnvaufit_NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="PhiGiaoDich" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="LoaiGiayPhepKinhDoanh">
           <Key>
@@ -583,6 +655,7 @@
           </Key>
           <Property Name="MaLoaiGiayPhepKinhDoanh" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="TenLoaiGiayPhepKinhDoanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="LoaiTaiKhoan">
           <Key>
@@ -591,6 +664,7 @@
           <Property Name="MaLoaiTaiKhoan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="TenLoaiTaiKhoan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="TaiKhoans" Relationship="xnvaufit_NganHangModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="LoaiThe">
           <Key>
@@ -612,6 +686,7 @@
           <Property Name="ThaoTac" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="DuLieuCu" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="DuLieuMoi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="MoiGioi">
           <Key>
@@ -648,6 +723,7 @@
           <Property Name="TableName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="GroupID" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Group" Relationship="xnvaufit_NganHangModel.FK_Permission_Group" FromRole="Permission" ToRole="Group" />
         </EntityType>
         <EntityType Name="PhiGiaoDich">
           <Key>
@@ -657,6 +733,7 @@
           <Property Name="MaLoaiGiaoDich" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Phi" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="LoaiGiaoDich" Relationship="xnvaufit_NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="PhiGiaoDich" ToRole="LoaiGiaoDich" />
+          <Property Type="Int32" Name="TinhTrang" />
         </EntityType>
         <EntityType Name="SessionID">
           <Key>
@@ -667,6 +744,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="sID" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -844,6 +922,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNgonNgu" />
+          </Key>
+          <Property Type="Int32" Name="MaNgonNgu" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BienNgonNgu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengViet" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengAnh" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MoTa" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LinkTiengViet" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LinkTiengAnh" MaxLength="512" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NoiDung">
+          <Key>
+            <PropertyRef Name="MaNoiDung" />
+          </Key>
+          <Property Type="Int32" Name="MaNoiDung" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BienNoiDung" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengViet" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TiengAnh" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MoTa" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TheTam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TenLoaiThe" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoThe" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoPin" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoBaoMat" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="NgayMoThe" />
+          <Property Type="DateTime" Name="NgayHetHan" />
+          <Property Type="String" Name="MaTaiKhoan" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TinhTrang" />
+        </EntityType>
+        <Association Name="FK_Permission_Group">
+          <End Type="xnvaufit_NganHangModel.Group" Role="Group" Multiplicity="1" />
+          <End Type="xnvaufit_NganHangModel.Permission" Role="Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -859,7 +985,8 @@
             <ScalarProperty Name="Status" ColumnName="Status" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="DiaChis"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.DiaChi"><MappingFragment StoreEntitySet="DiaChi">
-            <ScalarProperty Name="MaDiaChi" ColumnName="MaDiaChi" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaDiaChi" ColumnName="MaDiaChi" />
             <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
             <ScalarProperty Name="SoNha" ColumnName="SoNha" />
             <ScalarProperty Name="Duong" ColumnName="Duong" />
@@ -891,15 +1018,18 @@
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiGiaoDiches"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.LoaiGiaoDich"><MappingFragment StoreEntitySet="LoaiGiaoDich">
-            <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
             <ScalarProperty Name="TenLoaiGiaoDich" ColumnName="TenLoaiGiaoDich" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiGiayPhepKinhDoanhs"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.LoaiGiayPhepKinhDoanh"><MappingFragment StoreEntitySet="LoaiGiayPhepKinhDoanh">
-            <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiGiayPhepKinhDoanh" ColumnName="MaLoaiGiayPhepKinhDoanh" />
             <ScalarProperty Name="TenLoaiGiayPhepKinhDoanh" ColumnName="TenLoaiGiayPhepKinhDoanh" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiTaiKhoans"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.LoaiTaiKhoan"><MappingFragment StoreEntitySet="LoaiTaiKhoan">
-            <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaLoaiTaiKhoan" ColumnName="MaLoaiTaiKhoan" />
             <ScalarProperty Name="TenLoaiTaiKhoan" ColumnName="TenLoaiTaiKhoan" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LoaiThes"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.LoaiThe"><MappingFragment StoreEntitySet="LoaiThe">
@@ -908,7 +1038,8 @@
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="LogActions"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.LogAction"><MappingFragment StoreEntitySet="LogAction">
-            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="Email" ColumnName="Email" />
             <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
             <ScalarProperty Name="BangLienQuan" ColumnName="BangLienQuan" />
@@ -943,12 +1074,14 @@
             <ScalarProperty Name="Status" ColumnName="Status" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="PhiGiaoDiches"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.PhiGiaoDich"><MappingFragment StoreEntitySet="PhiGiaoDich">
-            <ScalarProperty Name="MaPhiGiaoDich" ColumnName="MaPhiGiaoDich" />
+            <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaPhiGiaoDich" ColumnName="MaPhiGiaoDich" />
             <ScalarProperty Name="MaLoaiGiaoDich" ColumnName="MaLoaiGiaoDich" />
             <ScalarProperty Name="Phi" ColumnName="Phi" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="SessionIDs"><EntityTypeMapping TypeName="xnvaufit_NganHangModel.SessionID"><MappingFragment StoreEntitySet="SessionID">
-            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="UserName" ColumnName="UserName" />
             <ScalarProperty Name="sID" ColumnName="sID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -988,6 +1121,45 @@
             <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NgonNgus">
+            <EntityTypeMapping TypeName="xnvaufit_NganHangModel.NgonNgu">
+              <MappingFragment StoreEntitySet="NgonNgu">
+                <ScalarProperty Name="LinkTiengAnh" ColumnName="LinkTiengAnh" />
+                <ScalarProperty Name="LinkTiengViet" ColumnName="LinkTiengViet" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+                <ScalarProperty Name="TiengViet" ColumnName="TiengViet" />
+                <ScalarProperty Name="BienNgonNgu" ColumnName="BienNgonNgu" />
+                <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoiDungs">
+            <EntityTypeMapping TypeName="xnvaufit_NganHangModel.NoiDung">
+              <MappingFragment StoreEntitySet="NoiDung">
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+                <ScalarProperty Name="TiengViet" ColumnName="TiengViet" />
+                <ScalarProperty Name="BienNoiDung" ColumnName="BienNoiDung" />
+                <ScalarProperty Name="MaNoiDung" ColumnName="MaNoiDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheTams">
+            <EntityTypeMapping TypeName="xnvaufit_NganHangModel.TheTam">
+              <MappingFragment StoreEntitySet="TheTam">
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+                <ScalarProperty Name="NgayMoThe" ColumnName="NgayMoThe" />
+                <ScalarProperty Name="SoBaoMat" ColumnName="SoBaoMat" />
+                <ScalarProperty Name="SoPin" ColumnName="SoPin" />
+                <ScalarProperty Name="SoThe" ColumnName="SoThe" />
+                <ScalarProperty Name="TenLoaiThe" ColumnName="TenLoaiThe" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1029,21 +1201,21 @@
         <EntityTypeShape EntityType="xnvaufit_NganHangModel.ThamSo" Width="1.5" PointX="12.75" PointY="12.25" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="xnvaufit_NganHangModel.The" Width="1.5" PointX="8.25" PointY="6.875" Height="3.5186979166666674" IsExpanded="true" />
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_Admin_Group" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.25" PointY="12.643992513020834" />
-          <ConnectorPoint PointX="10" PointY="12.643992513020834" />
+          <ConnectorPoint PointX="9.25" PointY="12.740143229166666" />
+          <ConnectorPoint PointX="10" PointY="12.740143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_DiaChi_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="7" />
-          <ConnectorPoint PointX="3.75" PointY="5.4035953776041659" />
-          <ConnectorPoint PointX="5.25" PointY="5.4035953776041659" />
+          <ConnectorPoint PointX="3.75" PointY="5.49974609375" />
+          <ConnectorPoint PointX="5.25" PointY="5.49974609375" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_KhachHang_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="8.7785953776041659" />
           <ConnectorPoint PointX="5.25" PointY="8.7785953776041659" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_LichSuGiaoDich_LoaiGiaoDich" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="5.5368301798878212" />
-          <ConnectorPoint PointX="10.125" PointY="5.9118301798878212" />
+          <ConnectorPoint PointX="9.75" PointY="5.7291316121794855" />
+          <ConnectorPoint PointX="10.125" PointY="6.1041316121794855" />
           <ConnectorPoint PointX="10.125" PointY="8.62474609375" />
           <ConnectorPoint PointX="10.5" PointY="8.62474609375" />
         </AssociationConnector>
@@ -1054,16 +1226,18 @@
           <ConnectorPoint PointX="10.5" PointY="7.874873046875" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_PhiGiaoDich_LoaiGiaoDich" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="4.61216258994391" />
-          <ConnectorPoint PointX="10.5" PointY="4.61216258994391" />
+          <ConnectorPoint PointX="9.75" PointY="4.7083133060897424" />
+          <ConnectorPoint PointX="10.5" PointY="4.7083133060897424" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_TaiKhoan_LoaiTaiKhoan" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.672841796875" />
-          <ConnectorPoint PointX="3" PointY="8.672841796875" />
+          <ConnectorPoint PointX="2.25" PointY="8.7689925130208337" />
+          <ConnectorPoint PointX="3" PointY="8.7689925130208337" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_The_LoaiThe" ManuallyRouted="false">
           <ConnectorPoint PointX="7.15625" PointY="2.5379850260416674" />
           <ConnectorPoint PointX="7.15625" PointY="7.15625" />
+          <ConnectorPoint PointX="7.885416666666667" PointY="7.1562499999999991" />
+          <ConnectorPoint PointX="8.0520833333333339" PointY="7.15625" />
           <ConnectorPoint PointX="8.25" PointY="7.15625" />
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_MoiGioi_TaiKhoan" ManuallyRouted="false">
@@ -1073,7 +1247,19 @@
         </AssociationConnector>
         <AssociationConnector Association="xnvaufit_NganHangModel.FK_The_TaiKhoan" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="10.223043619791664" />
+          <ConnectorPoint PointX="7.885416666666667" PointY="10.223043619791664" />
+          <ConnectorPoint PointX="8.0520833333333339" PointY="10.223043619791664" />
           <ConnectorPoint PointX="8.25" PointY="10.223043619791664" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="xnvaufit_NganHangModel.NgonNgu" Width="1.5" PointX="0.75" PointY="14.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="xnvaufit_NganHangModel.NoiDung" Width="1.5" PointX="8.75" PointY="0.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="xnvaufit_NganHangModel.TheTam" Width="1.5" PointX="2.75" PointY="14.75" Height="2.7494921875000085" />
+        <AssociationConnector Association="xnvaufit_NganHangModel.FK_Permission_Group" >
+          <ConnectorPoint PointX="7.96875" PointY="11.75" />
+          <ConnectorPoint PointX="7.96875" PointY="6.3026432291666667" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="6.3026432291666659" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="6.3026432291666667" />
+          <ConnectorPoint PointX="12.75" PointY="6.3026432291666667" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

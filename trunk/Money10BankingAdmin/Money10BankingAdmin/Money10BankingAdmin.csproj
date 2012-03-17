@@ -81,6 +81,7 @@
       <DependentUpon>DBNganHangAdmin.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\GroupModels.cs" />
+    <Compile Include="Models\LogActionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -151,6 +152,7 @@
     <Content Include="Views\Public\DoiMatKhau.aspx" />
     <Content Include="Views\Public\NapTien.aspx" />
     <Content Include="Views\Public\QuanLyThe.aspx" />
+    <Content Include="Views\Public\TaoTK.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

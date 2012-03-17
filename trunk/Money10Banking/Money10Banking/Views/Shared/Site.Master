@@ -427,13 +427,19 @@
                                 </div>
                             </li>         </ul>
                         <ul id="subcat1" style="display: none;">
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
-                                Thanh toán</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                            <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
+                                Thanh toán</a></li>--%><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/ChuyenTien">Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/NapTien">Nạp tiền</a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
+                                        <a href="/Public/AddCard">AddCard</a></li>
+                                          <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                                    <a href="/Public/CapNhatThongTinTaiKhoanCaNhan">Cập Nhật Tài Khoản</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/DoiMatKhau">Đổi Mật Khẩu</a></li>
+                                        <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
                                             <a href="#"><font color="red">Đăng ký đại lý </font>
                                                 <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%><%--<li onmouseout="resetMenu()"
-                                                    onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="#">Mua thẻ Visa trả trước RÊV</a></li>--%></ul>
+                                                    onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="#">Mua thẻ Visa trả trước RÊV</a></li>--%>
+                                                    </ul>
+                                          
                         <%--<ul id="subcat2" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="#">
                                 Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">

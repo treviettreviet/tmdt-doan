@@ -32,9 +32,20 @@ namespace Money10BankingAdmin.Controllers
                 DB_NganHangEntities db = new DB_NganHangEntities();
                 Admin ad = (Admin)Session["User"];
                 Admin updateAD = db.Admins.SingleOrDefault(p=>p.Email== ad.Email);
+                string mail= updateAD.Email;
+                string nameold= updateAD.Name;
                 updateAD.Email = email;
+                 
                 updateAD.Name = name;
                 db.SaveChanges();
+                //string mail= updateAD.Email;
+                string bang="Admin";
+                string thaotac="update";
+                string dulieuold="";
+                dulieuold = "<email>" + mail + "</email>" + "<name>" +nameold+"</name>";
+                 string dulieunew="";
+                dulieunew = "<email>" + email + "</email>" + "<name>" +name+"</name>";
+                LogActionModel.LogAct(mail,DateTime.Now,bang,thaotac,dulieuold,dulieunew);
                 Response.Write("<script> alert ('Bạn cập nhật thành công!');</script>");
                 return RedirectToAction("../Admin/Index");
                 
@@ -59,6 +70,7 @@ namespace Money10BankingAdmin.Controllers
                 DB_NganHangEntities db = new DB_NganHangEntities();
                 Admin ad = (Admin)Session["User"];
                 Admin updateAD = db.Admins.SingleOrDefault(p => p.Email == ad.Email);
+                string password = updateAD.Password;
                 if (passnew == confirmpass)
                 {
                     if (ad.Password == GetMD5Hash(pass))
@@ -66,6 +78,14 @@ namespace Money10BankingAdmin.Controllers
                         updateAD.Password = GetMD5Hash(passnew);
 
                         db.SaveChanges();
+                        string bang = "Admin";
+                        string thaotac = "Đổi Pass";
+                        string dulieuold = "";
+                        string mail = updateAD.Email;
+                        dulieuold = "<PassWord>" + password + "</PassWord>";
+                        string dulieunew = "";
+                        dulieunew = "<PassWord>" + GetMD5Hash(passnew) + "</PassWord>";
+                        LogActionModel.LogAct(mail, DateTime.Now, bang, thaotac, dulieuold, dulieunew);
                         Response.Write("<script> alert ('Bạn cập nhật MK thành công!');</script>");
                         return RedirectToAction("../Admin/Index");
                     }
@@ -226,5 +246,26 @@ namespace Money10BankingAdmin.Controllers
             string password = s.ToString();
             return password;
         }
+
+
+        public ActionResult TaoTK()
+        {
+            return View();
+        }
+
+        //public void LogAct(string email, DateTime thoigian, string banglienquan, string thaotac, string dulieucu, string dulieumoi)
+        //{
+        //    DB_NganHangEntities db = new DB_NganHangEntities();
+
+        //    LogAction lg = new LogAction();
+        //    lg.Email = email;
+        //    lg.ThoiGian = thoigian;
+        //    lg.BangLienQuan = banglienquan;
+        //    lg.ThaoTac = thaotac;
+        //    lg.DuLieuCu = dulieucu;
+        //    lg.DuLieuMoi = dulieumoi;
+        //    db.LogActions.AddObject(lg);
+        //    db.SaveChanges();
+        //}
     }
 }

@@ -271,7 +271,7 @@
 								  <tr>
 								    <td><a href="/Public/DoiMatKhau">Đổi mật khẩu</a></td>
 								  </tr>
-								  <tr>
+								<%--  <tr>
 								    <td><a href="#">Câu hỏi bảo mật</a></td>
 								  </tr>
 								  <tr>
@@ -283,7 +283,7 @@
 								  <tr>
 								  								    		<td><a href="https#">Đăng ký đại lý</a></td>
 								    									
-								  </tr>
+								  </tr>--%>
 							</table>
 		        		</div>        		
 		        	</div>
@@ -474,8 +474,8 @@
                         <ul id="subcat1" style="display: none;">
                             <li class="sub_selected" onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
                                 <a href="/Public/AddCard">AddCard</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
-                                    <a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/RutTien">Rút tiền</a><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
+                                    <%--<a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/RutTien">Rút tiền</a>--%><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
                                             <ul>
                                                 <li><a href="#">Rút về tài khoản Ngân hàng</a></li><li><a href="#">Rút tiền mặt tại
                                                     trụ sở</a></li><li><a href="#">Rút tiền mặt trả tại nhà bạn</a></li><li><a href="#">
@@ -486,11 +486,11 @@
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);"><a href="/Public/LichSuGiaoDich">
                                 Lịch sử giao dịch</a><div id="subsub13" class="sub_sub_menu" style="display: none">
                                     <ul>
-                                        <li><a href="/Public/LichSuGiaoDich">Lịch sử chuyển tiền</a></li><li><a href="/Public/LichSuGiaoDich">
-                                            Lịch sử thanh toán đơn hàng</a></li></ul>
+                                        <li><a href="/Public/LichSuGiaoDich">Lịch sử chuyển tiền</a></li><%--<li><a href="/Public/LichSuGiaoDich">
+                                            Lịch sử thanh toán đơn hàng</a></li>--%></ul>
                                 </div>
                             </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="/Public/CapNhatThongTinTaiKhoan">
+                            <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="/Public/CapNhatThongTinTaiKhoan">
                                 Thông tin cá nhân</a><div id="subsub14" class="sub_sub_menu" style="display: none">
                                     <ul>
                                         <li><a href="/Public/CapNhatThongTinTaiKhoanCaNhan">Thêm / Sửa Email</a></li><li><a
@@ -503,14 +503,14 @@
                                                                     href="/Public/CapNhatTaiKhoan">Cấu hình tài khoản</a></li><li><a href="#">Đăng ký đại
                                                                         lý</a></li></ul>
                                 </div>
-                            </li>
+                            </li>--%>
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;15&quot;);"><a href="#">
                                 <font color="red">Đăng ký đại lý </font>
                                 <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%></ul>
                         <ul id="subcat2" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="/Public/ChuyenTien">
-                                Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
-                                    <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li><li onmouseout="resetMenu()"
+                                Chuyển tiền</a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
+                                    <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li>--%><li onmouseout="resetMenu()"
                                         onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="/Public/LichSuGiaoDich">Lịch
                                             sử chuyển tiền</a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
                                                 <a href="#">Lịch sử thanh toán</a></li>--%></ul>
