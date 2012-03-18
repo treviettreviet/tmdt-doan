@@ -103,7 +103,7 @@ namespace Money10Banking.Controllers
         public ActionResult ChuyenTien()
         {
             TaiKhoan tk = (TaiKhoan)Session["User"];
-            if (Session["User"] != null)
+            if (tk != null)
 
             {
             List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
@@ -135,7 +135,13 @@ namespace Money10Banking.Controllers
 
         public ActionResult AddCard() //Khi đăng nhập thành công
         {
-            return View();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if (tk != null)
+            {
+                return View("AddCard");
+            }
+            else
+                return View("DangNhap");
         }
 
         public ActionResult XuLyAddCard(string SoTaiKhoan)
@@ -198,7 +204,7 @@ namespace Money10Banking.Controllers
         public ActionResult DoiMatKhau()
         {
             TaiKhoan tk = (TaiKhoan)Session["User"];
-            if(tk.Email!=null)
+            if(tk !=null)
             {
                 return View("DoiMatKhau");
             }
@@ -218,7 +224,7 @@ namespace Money10Banking.Controllers
             //    Response.Write("<script> alert ('Bạn chưa có thẻ Ngân Hàng!');</script>");
             //    return View("TrangChu");
             TaiKhoan tk = (TaiKhoan)Session["User"];
-            if (Session["User"] != null)
+            if (tk != null)
             {
                 List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
                 ViewData["ListData"] = lst;
@@ -650,7 +656,7 @@ namespace Money10Banking.Controllers
         {
 
             TaiKhoan tk = (TaiKhoan)Session["User"];
-            if (tk.Email != null)
+            if (tk != null)
             {
                 return View("CapNhatThongTinTaiKhoanCaNhan");
             }
