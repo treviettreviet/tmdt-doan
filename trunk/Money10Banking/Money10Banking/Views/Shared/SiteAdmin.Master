@@ -14,6 +14,11 @@
 <script type="text/javascript" src="../../resources/scripts/jquery.wysiwyg.js"></script>
 <script type="text/javascript" src="../../resources/scripts/jquery.datePicker.js"></script>
 <script type="text/javascript" src="../../resources/scripts/jquery.date.js"></script>
+<%
+    Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+    if (Session["Language"] != null)
+        dataLang = (Money10Banking.Models.Language)Session["Language"];
+%>
 </head>
 <body>
     <div>

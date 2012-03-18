@@ -38,11 +38,9 @@ namespace Money10Banking.Controllers
             return View();
         }
 
-        public ActionResult TrangChu()
+        private Language GetLang(string lang)
         {
-            string lang = Request.QueryString["lang"];
-            if(lang == null)
-                lang = "en";
+
             NganHangEntities dbb = new NganHangEntities();
             List<NgonNgu> listLang = (from row in dbb.NgonNgus select row).ToList<NgonNgu>();
             Language dataLang = new Language();
@@ -63,7 +61,21 @@ namespace Money10Banking.Controllers
                 dataLang.AddLang(temp);
             }
 
-            return View(dataLang);
+            return dataLang;
+
+        }
+
+        public ActionResult TrangChu()
+        {
+            string lang = Request.QueryString["lang"];
+            if(lang == null)
+                lang = "en";
+
+            Language dataLang = GetLang(lang);
+
+            Session["Language"] = dataLang;
+
+            return View();
         }
         
         public ActionResult DangKy()

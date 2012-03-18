@@ -137,8 +137,8 @@
 <body>
     <%       
         Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
-        if(Model != null)
-            dataLang = (Money10Banking.Models.Language)Model;
+        if(Session["Language"] != null)
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
     %>
     <div class="wrapper">
         <div class="page-normal">
