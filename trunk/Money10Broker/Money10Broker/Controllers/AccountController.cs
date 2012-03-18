@@ -257,7 +257,7 @@ namespace Money10Broker.Controllers
                         string sSubject = "Money10Broker Thông báo";
                         string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                         sendMail(sTo, sFrom, sSubject, sBody);
-                        return RedirectToAction("DangNhap");
+                        return View("DangNhap");
                     }
                     catch (Exception ex)
                     {
@@ -266,7 +266,12 @@ namespace Money10Broker.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("DangKyCaNhan");
+                    string div = "error-box";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    //return View("DangKy");
+                    return View("DangKyCaNhan");
                 }
             }
             return View();
