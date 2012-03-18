@@ -835,7 +835,7 @@ namespace Money10Banking.Controllers
                     string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    return RedirectToAction("DangKy");
+                    return View("DangKy");
                 }
                 tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, "TK");
                 tk.MaLoaiTaiKhoan = "LTK001";
@@ -959,7 +959,7 @@ namespace Money10Banking.Controllers
                     string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    return RedirectToAction("DangKy");
+                    return View("DangKy");
                 }
 
                 string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, "TK");   // Tăng mã tự động lên 1
