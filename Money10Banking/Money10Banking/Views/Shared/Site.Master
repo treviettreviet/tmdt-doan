@@ -188,16 +188,13 @@
                                                         <td>
                                                             <a href="/Public/DoiMatKhau"><%=dataLang["TITLE_CHANGEPASSWORD"].ValueLang%></a>
                                                         </td>
-                                                    </tr>
-                                                   
-                                                   
+                                                    </tr>    
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                               </div>
                             </div>
-                                    <!--Thay đổi ngôn ngữ các mục Hỗ Trợ-->
                             <div style="display: inline; cursor: pointer; position: relative;" onmouseover="showSupportEx()"
                                 onmouseout="hideSupportEx()">
                                 <a href="#"></a><a href="#"></a>
@@ -214,7 +211,8 @@
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="#">Hỗ trợ chung</a></div>
+                                                             
+                                                            <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
@@ -223,7 +221,7 @@
                                                             <a href="#">
                                                                 <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
                                                         <div class="ys-text">
-                                                            <a href="#">Hỗ trợ chung</a></div>
+                                                            <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -234,7 +232,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="#">Hỗ trợ nghiệp vụ</a></div>
+                                                            <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
@@ -243,7 +241,7 @@
                                                             <a href="#">
                                                                 <img src="../../Content/images/skype000.png" width="14" height="14"></a></div>
                                                         <div class="ys-text">
-                                                            <a href="#">Hỗ trợ nghiệp vụ</a></div>
+                                                            <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -254,7 +252,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="ys-text">
-                                                            <a href="#">Hỗ trợ tích hợp</a></div>
+                                                            <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                     </td>
                                                     <td style="width: 10px;">
                                                     </td>
@@ -266,7 +264,7 @@
                                                                 </a>
                                                             </div>
                                                             <div class="ys-text">
-                                                                <a href="#">Hỗ trợ tích hợp</a></div>
+                                                                <a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang%></a></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -410,7 +408,7 @@
                         <ul>
                             <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
-                                    <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>Dịch vụ</span></a></li><%--<li
+                                    <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span>><%=dataLang["MENU_SERVICE"].ValueLang%></span></a></li><%--<li
                                         id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
                                             <span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="#"
                                                 onmouseout="resetMenu()" onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li
@@ -423,17 +421,17 @@
                         <ul id="subcat0" style="display: none;">
                         <!--Thay đổi ngôn ngữ Trang chủ, Lịch sử giao dịch, Thanh toán, nạp tiền, chuyển tiền-->
                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="/Public/LichSuGiaoDich">
-                                Lịch sử giao dịch</a><div id="subsub00" class="sub_sub_menu" style="display: none">                                    
+                                <%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a><div id="subsub00" class="sub_sub_menu" style="display: none">                                    
                                 </div>
                             </li>         </ul>
                         <ul id="subcat1" style="display: none;">
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
                                 Thanh toán</a></li>--%><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
-                                    <a href="/Public/ChuyenTien">Chuyển tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/AddCard">AddCard</a></li>
+                                    <a href="/Public/ChuyenTien"><%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/AddCard"><%=dataLang["MENU_ADDCARD"].ValueLang%></a></li>
                                           <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
-                                    <a href="/Public/CapNhatThongTinTaiKhoanCaNhan">Cập Nhật Tài Khoản</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/DoiMatKhau">Đổi Mật Khẩu</a></li>
+                                    <a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/DoiMatKhau"><%=dataLang["MENU_CHANGEPASSWORD"].ValueLang%></a></li>
                                         <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
                                             <a href="#"><font color="red">Đăng ký đại lý </font>
                                                 <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%><%--<li onmouseout="resetMenu()"
@@ -508,22 +506,22 @@
                     <table style="float: left;" class="table_menu">
                         <tr>
                             <td style="text-align: left; padding-right: 20px">
-                                <a href="http://ecmoney10bank.tk/" class="menu_link">Trang chủ</a>
+                                <a href="/Public/TrangChu" class="menu_link"><%=dataLang["MENU_HOME"].ValueLang%></a>
                             </td>
                             <td class="l_menu">
-                                <a href="#" class="menu_link">Giới thiệu</a>
+                                <a href="#" class="menu_link"><%=dataLang["MENU_ABOUTUS"].ValueLang%></a>
                             </td>
                             <td class="l_menu">
-                                <a href="#" class="menu_link">Chính sách bảo mật</a>
+                                <a href="#" class="menu_link"><%=dataLang["MENU_ PRIVACYNOTICE"].ValueLang%></a>
                             </td>
                             <td class="l_menu">
-                                <a href="#" class="menu_link">Quy định sử dụng</a>
+                                <a href="#" class="menu_link"><%=dataLang["MENU_ TERMS"].ValueLang%></a>
                             </td>
                             <td class="l_menu">
-                                <a href="#" class="menu_link">Trợ giúp</a>
+                                <a href="#" class="menu_link"><%=dataLang["MENU_ HELP"].ValueLang%></a>
                             </td>
                             <td class="l_menu">
-                                <a href="#" class="menu_link">Liên hệ</a>
+                                <a href="#" class="menu_link"><%=dataLang["MENU_ CONTACT"].ValueLang%></a>
                             </td>
                         </tr>
                     </table>
