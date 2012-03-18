@@ -13,11 +13,11 @@
                             <tr>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     Mã TK : 
-                                    <% Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.SoTaiKhoan%>
+                                    <% Money10Banking.Models.TaiKhoan tka = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tka.SoTaiKhoan%>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/mail_ico.png" style="float: left;" ><div style="margin-bottom: 0px;
                                             float: left; padding-left: 10px;">
-                                           <%=tk.Email%></div>
+                                           <%=tka.Email%></div>
                                     </div>
                                     </br>
                                    
