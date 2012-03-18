@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 
-			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
+			<!-- thông báo lỗi--><div id="message-box-login" style="display: block;"  class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div><!--hết thông báo lỗi-->
 					
 			<h4>Thông tin đăng nhập tài khoản </h4>
 			<div class="frame_focus">
