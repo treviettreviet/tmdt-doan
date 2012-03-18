@@ -5,41 +5,45 @@
                 <div class="home-top">
                     <div class="home-top-left">
                         <div class="form_login">
-                            <form action="Public/XuLyDangNhap" method="post" id="login_small"
+                            <form action="/Public/XuLyDangNhap" method="post" id="login_small"
                             autocomplete="off" accept-charset="utf-8">
 
                             <% 
+                                Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+                                if (Session["Language"] != null)
+                                    dataLang = (Money10Banking.Models.Language)Session["Language"];
+                                
                                 if (Session["User"] == null)
                                 {
                             %>
                                     <table width="170" border="0" cellpadding="0" cellspacing="0">
                                         <tr>
                                             <td height="34">
-                                                <div class="home-form-login-title">
-                                                    ĐĂNG NHẬP HỆ THỐNG</div>
+                                                <div class="home-form-login-title"> 
+                                                    <%=dataLang["BOX_TITLE"].ValueLang%></div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td height="15" class="form-content-text">
-                                                Địa chỉ Email 
+                                                <%=dataLang["BOX_EMAIL"].ValueLang%></div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td height="30">
                                                 <label>
-                                                    <input type="text" name="email" value="huynhtanlen3003@gmail.com" id="email" class="keyboardInput" style="width: 128px;">
+                                                    <input type="text" name="email" value="huynhtanlen3003@gmail.com" id="email" class="" style="width: 128px;">
                                                 </label>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td height="14" class="form-content-text">
-                                                Mật khẩu
+                                                <%=dataLang["BOX_PASSWORD"].ValueLang%>    
                                             </td>
                                         </tr>
                                         <tr>
                                             <td height="30">
                                                 <label>
-                                                    <input type="password" name="password" value="12345678" id="password" class="keyboardInput"
+                                                    <input type="password" name="password" value="12345678" id="password" class=""
                                                         style="width: 128px;">
                                                 </label>
                                             </td>
@@ -47,21 +51,20 @@
                                         <tr>
                                             <td height="27">
                                                 <label>
-                                                    <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login">
+                                                    <input type="submit" name="btnLogin" value="Login" class="home-bt-login">
                                                 </label>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="form-content-text">
-                                                <a href="#" class="home-fr-a">Quên
-                                                    mật khẩu</a>&nbsp;&nbsp; <a href="#"
-                                                        class="home-fr-a">Quên email ? </a>
+                                                <a href="#" class="home-fr-a"><%=dataLang["BOX_FORGETPASS"].ValueLang%></a>&nbsp;&nbsp; <a href="#"
+                                                        class="home-fr-a"><%=dataLang["BOX_FORGETEMAIL"].ValueLang%></a>
                                                 <div style="padding-top: 5px">
-                                                    Chưa có tài khoản? <a href="/Public/DangKy" class="home-fr-a">
-                                                        Đăng ký</a></div>
+                                                    <%=dataLang["BOX_NOACC"].ValueLang%><a href="/Public/DangKy" class="home-fr-a">
+                                                         <%=dataLang["TITLE_REGISTER"].ValueLang%></a></div>
                                             </td>
                                         </tr>
-                                    </table>    
+                                    </table>
                             <%        
                                 }
                                 else
@@ -73,22 +76,22 @@
 	                                    <tbody>
 		                                    <tr>
 			                                    <td height="45">
-			                                    <div class="home-form-login-title">Thông tin tài khoản</div>
+			                                    <div class="home-form-login-title"><%=dataLang["BOX_ACCINFO"].ValueLang%></div>
 			                                    </td>
 		                                    </tr>
 		                                    <tr>
 			                                    <td height="25" class="form-content-text">
-			                                    <b>Email :</b> <%=tk.Email %></td>
+			                                    <b><%=dataLang["BOX_EMAIL"].ValueLang%>: </b> <%=tk.Email %></td>
 		                                    </tr>
 		                                    <tr>
-			                                    <td height="25" class="form-content-text"><b>Loại tài khoản:</b> Cá nhân</td>
+			                                    <td height="25" class="form-content-text"><b><%=dataLang["BOX_ACCTYPE"].ValueLang%>:</b> Cá nhân</td>
 		                                    </tr>
 		                                    <tr>
-			                                    <td height="25" class="form-content-text"><b>Tình trạng:</b>[ <a href="https://www.baokim.vn/accounts/register/activate">Chưa xác thực</a>]</td>
+			                                    <td height="25" class="form-content-text"><b><%=dataLang["BOX_STATES"].ValueLang%>:</b>[ <a href="#">Chưa xác thực</a>]</td>
 		                                    </tr>
 		                                    <tr>
-			                                    <td height="25" class="form-content-text"><b>Lần đăng nhập gần nhất: </b>
-			                                    <b><%=tk.Email %></b> vào lúc
+			                                    <td height="25" class="form-content-text"><b><%=dataLang["BOX_LASTLOGIN"].ValueLang%>: </b>
+			                                    <b><%=tk.Email %></b> <%=dataLang["BOX_IN"].ValueLang%>
 			                                     <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%></td>
 		                                    </tr>
 	                                    </tbody>

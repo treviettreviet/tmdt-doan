@@ -172,8 +172,6 @@ namespace Money10Banking.Controllers
                         card[i].TinhTrang = 1;
                         dbb.SaveChanges();
                         return RedirectToAction("LichSuGiaoDich");
-                   
-
                 }
                 else
                 {
@@ -226,6 +224,13 @@ namespace Money10Banking.Controllers
             TaiKhoan tk = (TaiKhoan)Session["User"];
             if (tk != null)
             {
+                string lang = Request.QueryString["lang"];
+                if (lang == null)
+                    lang = "vi";
+
+                Language dataLang = GetLang(lang);
+
+                Session["Language"] = dataLang;
                 List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
                 ViewData["ListData"] = lst;
                 return View("LichSuGiaoDich");
@@ -385,6 +390,14 @@ namespace Money10Banking.Controllers
         {
             try
             {
+                string lang = Request.QueryString["lang"];
+                if (lang == null)
+                    lang = "vi";
+
+                Language dataLang = GetLang(lang);
+
+                Session["Language"] = dataLang;
+
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {

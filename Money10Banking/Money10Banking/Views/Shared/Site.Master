@@ -145,7 +145,7 @@
             <div id="Header">
                 <div class="top-header">
                     <div class="logo left">
-                        <a href="http://ecmoney10bank.tk/" title="Money10.tk">
+                        <a href="/Public/TrangChu" title="Money10.tk">
                             <img src="../../Content/images/logo0000.png" alt="ecmoney10bank.tk" title="ecmoney10bank.tk">
                         </a>
                     </div>
@@ -325,7 +325,7 @@
                                 </a>
                              </div>
                              <div style="cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
-                                <a href="/Public/TrangChu?lang=vi"><%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
+                                <a href="/Public/TrangChu?lang=vi"><img src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><img src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
                              </div>
                         </div>
                     </div>
@@ -406,7 +406,7 @@
                     </script>
                     <div class="parent">
                         <ul>
-                            <li id="cat0" class="m_home first"><a href="http://ecmoney10bank.tk/" onmouseout="resetMenu()"
+                            <li id="cat0" class="m_home first"><a href="/Public/TrangChu" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
                                     <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span></span></a></li><%--<li
                                         id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
