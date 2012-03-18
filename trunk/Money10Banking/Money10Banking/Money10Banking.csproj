@@ -165,7 +165,9 @@
     <Content Include="Content\images\home-but.gif" />
     <Content Include="Content\images\hot00000.gif" />
     <Content Include="Content\images\hotrothb.png" />
+    <Content Include="Content\images\icon-en.gif" />
     <Content Include="Content\images\icon-hel.png" />
+    <Content Include="Content\images\icon-vi.gif" />
     <Content Include="Content\images\icon0000.png" />
     <Content Include="Content\images\icon_dan.gif" />
     <Content Include="Content\images\keyboard.png" />
