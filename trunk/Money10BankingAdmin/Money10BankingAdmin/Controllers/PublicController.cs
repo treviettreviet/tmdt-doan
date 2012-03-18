@@ -87,7 +87,7 @@ namespace Money10BankingAdmin.Controllers
                         dulieunew = "<PassWord>" + GetMD5Hash(passnew) + "</PassWord>";
                         LogActionModel.LogAct(mail, DateTime.Now, bang, thaotac, dulieuold, dulieunew);
                         Response.Write("<script> alert ('Bạn cập nhật MK thành công!');</script>");
-                        return RedirectToAction("../Admin/Index");
+                        return View("../Admin/Index");
                     }
                     else
                     {
