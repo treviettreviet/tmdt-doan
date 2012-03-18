@@ -69,7 +69,7 @@ namespace Money10Banking.Controllers
         {
             string lang = Request.QueryString["lang"];
             if(lang == null)
-                lang = "en";
+                lang = "vi";
 
             Language dataLang = GetLang(lang);
 
