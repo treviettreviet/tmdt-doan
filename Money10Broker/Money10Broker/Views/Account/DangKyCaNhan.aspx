@@ -4,7 +4,7 @@
 
 	<div id="content">
 	<div id="register">
-		<div id="title"><span class="yel">Đăng ký mở ví điện tử cá nhân</span>&nbsp;&nbsp;[ <a href="DangKy_DoanhNghiep.aspx">Chuyển sang đăng ký mở ví điện tử doanh nghiệp</a> ]</div>
+		<div id="title"><span class="yel">Đăng ký mở ví điện tử cá nhân</span>&nbsp;&nbsp;[ <a href="/Account/DangKyDoanhNghiep">Chuyển sang đăng ký mở ví điện tử doanh nghiệp</a> ]</div>
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">

@@ -244,7 +244,7 @@
                 </div>
                 <div id="box-button-login" style="margin-top: 6px;">
                     <input name="cmdLogin" type="submit" value="Đăng nhập" class="button-content" />
-                    <a href="#">Quên mật khẩu?</a>
+                    <%--<a href="#">Quên mật khẩu?</a>--%>
                 </div>
                 </form>
                 <div id="dangky">

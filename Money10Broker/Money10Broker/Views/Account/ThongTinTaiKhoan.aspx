@@ -520,7 +520,7 @@
         </div>
         <div id="menu-vertical-left">
             <ul>
-                <li class=""><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
+                <li class="active"><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
                 <li class=""><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
                 <li class=""><a href="/Account/DoiMatKhauThanhToan">Đổi mật khẩu thanh toán</a></li>
             </ul>

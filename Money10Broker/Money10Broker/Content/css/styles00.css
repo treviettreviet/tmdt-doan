@@ -3420,6 +3420,8 @@ table #active{
 /*--add for MenuMain javascript--*/
 #menu-nav-content-sub {
  position:relative;
+    top: 0px;
+    left: 0px;
 }
 #menu-nav-content-sub ul.group-sub-menu {
  display:none;
