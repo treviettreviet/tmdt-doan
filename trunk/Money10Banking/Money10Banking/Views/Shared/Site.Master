@@ -135,10 +135,14 @@
     <meta name="description" content="Ecmoney10bank.tk - Dịch vụ thanh toán trực tuyến thúc đẩy thương mại điện tử Việt Nam">
 </head>
 <body>
-    <%       
+    <%
         Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
-        if(Session["Language"] != null)
+        Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+        {
             dataLang = (Money10Banking.Models.Language)Session["Language"];
+            dataContent = (Money10Banking.Models.Language)Session["Content"];
+        }
     %>
     <div class="wrapper">
         <div class="page-normal">
@@ -523,23 +527,7 @@
                         pluginspage="https://www.macromedia.com/go/getflashplayer" allowscriptaccess="always"
                         align="" height="72" width="100">
                 </div>
-                <div class="footer_bottom_left"><!--Thay đổi ngôn ngữ Footer-->
-                    <div style="font-size: 11px; font-weight: bold; padding-top: 5px;">
-                        CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ Ecmoney10bank.tk</div>
-                    <br>
-                    <b>Ecmoney10bank.tk</b> - <span class="thin">Dịch vụ thanh toán trực tuyến thúc đẩy thương mại
-                        điện tử Việt Nam</span>
-                    <p>
-                        <p>
-                            <b>Giấy phép ĐKKD</b>:<span class="thin"> 1234567890. Cấp tại: Sở Kế hoạch và Đầu tư
-                                Hà Nội. Ngày cấp: 15/03/2012</span>
-                </div>
-                <div class="foorer_bottom_right">
-                    <b>Trụ sở</b>: <span class="thin">Tầng 8, 227 Nguyễn Văng Cừ, Q.5, Tp.HCM</span>
-                    <p>
-                        <p>
-                            <b>VP TP.HCM</b>:<span class="thin">Lầu 8 tòa nhà I,227 Nguyễn Văn Cừ, Q.5.</span>
-                </div>
+                <%=dataContent["PAGE_FOOTER"].ValueLang%>
             </div>
         </div>
     </div>

@@ -10,9 +10,14 @@
 
                             <% 
                                 Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
-                                if (Session["Language"] != null)
+                                Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+                                if (Session["Language"] != null && Session["Content"] != null)
+                                {
                                     dataLang = (Money10Banking.Models.Language)Session["Language"];
-                                
+                                    dataContent = (Money10Banking.Models.Language)Session["Content"];
+                                }
+                            %>
+                            <%  
                                 if (Session["User"] == null)
                                 {
                             %>
@@ -195,54 +200,7 @@
        
         <div style="margin: 0pt auto; width: 805px;">
             <div class="hb-home-banner">
-                <div class="hb-banner left">
-                    <div class="hb-text" style="display: none;">
-                        <div class="hb-title">
-                            Thanh Toán Trực Tuyến</div>
-                        <div class="hb-short-content">
-                            Bạn có thể thanh toán tại nhà chỉ với thẻ ATM, thẻ tín dụng hoặc tài khoản internet
-                            của 1 trong 20 Ngân Hàng, thậm chí không cần đăng ký tài khoản baokim.vn</div>
-                        <div class="hb-more">
-                            <a class="a-hb-more" href="#">Xem
-                                thêm &gt;&gt; </a>
-                        </div>
-                    </div>
-                    <div class="hb-img">
-                        <img src="../../Content/images/home-bn0.jpg" width="260px" height="130px">
-                    </div>
-                </div>
-                <div class="hb-banner left">
-                    <div class="hb-text" style="display: none">
-                        <div class="hb-title">
-                            Mua Hàng An Toàn</div>
-                        <div class="hb-short-content">
-                            Khi mua hàng và thanh toán qua Baokim.vn bạn được đảm bảo nhận được hàng đúng mô
-                            tả, hoặc sẽ được hoàn 100% giá trị giao dịch</div>
-                        <div class="hb-more">
-                            <a class="a-hb-more" href="#">Xem
-                                thêm &gt;&gt; </a>
-                        </div>
-                    </div>
-                    <div class="hb-img">
-                        <img src="../../Content/images/home-bn-.jpg" width="260px" height="130px">
-                    </div>
-                </div>
-                <div class="hb-banner right">
-                    <div class="hb-text" style="display: none">
-                        <div class="hb-title">
-                            Tích Hợp Bán Hàng Đơn Giản</div>
-                        <div class="hb-short-content">
-                            Là chủ website bán hàng online ? bạn có thể tích hợp công cụ thanh toán cho mình
-                            hoàn toàn miễn phí và đơn giản , kỹ thuật viên baokim.vn sẽ hỗ trợ bạn</div>
-                        <div class="hb-more">
-                            <a class="a-hb-more" href="#">Xem
-                                thêm &gt;&gt; </a>
-                        </div>
-                    </div>
-                    <div class="hb-img">
-                        <img src="../../Content/images/home-bn1.jpg" width="260px" height="130px">
-                    </div>
-                </div>
+                <%=dataContent["PAGE_BANNER"].ValueLang%>
                 <script type="text/javascript">
                     j(".hb-banner").hover(function () {
                         j(this).find(".hb-text").addClass("hb-banner-gray");
@@ -256,71 +214,12 @@
                 </script>
             </div>
             <div class="hb-main-content">
-                <div class="hb-main-left">
-                    <div class="hb-news-wrapper">
-                        <div class="hb-news-box">
-                            <div class="home-news-title">
-                                TIN TỨC
-                            </div>
-                            <div class="hb-news-content">
-                                <ul class="a-news">
-                                    <li><a href="#"
-                                        class="a-news">Hoa247.vn - Thay bạn nói lời yêu thương</a></li>
-                                    <li><a href="#"
-                                        class="a-news">Bigsale thẻ game lớn nhất trong năm tại Hungwar.com</a></li>
-                                    <li><a href="#"
-                                        class="a-news">Vinet24h.com.vn - Vì cuộc sống tươi đẹp</a></li>
-                                    <li><a href="#"
-                                        class="a-news">Cuộc sống tiện lợi và tốt đẹp hơn với Kicomart.com</a></li>
-                                    <li><a href="#" class="a-news">
-                                        Cước taxi đồng loạt tăng</a></li>
-                                    <p style="margin-bottom: 0px; text-align: right; padding-right: 10px;">
-                                        <a href="#">Xem thêm...</a></p>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hb-main-right">
-                    <div class="hb-news">
-                        <div class="hb-news-title">
-                            Chuyển tiền và mua sắm trên mạng</div>
-                        <ul>
-                            <li><a href="#"><span class="hb-news-bold">
-                                Mua sắm trực tuyến</span></a> từ hàng ngàn website, gian hàng và được <a href="#">
-                                    <span class="hb-news-a">bảo hiểm</span></a> khi chọn thanh toán an toàn.</li>
-                            <li><a href="#"><span class="hb-news-bold">
-                                Chuyển tiền trực tuyến</span></a><a href="#"><span
-                                    class="hb-news-a"> an toàn</span></a> và nhanh chóng cho bất kỳ ai với 1 địa
-                                chỉ Email.</li>
-                            <li><a href="#"><span class="hb-news-bold">
-                                Thanh toán, nạp tiền </span></a>trực tiếp từ hơn 20 ngân hàng lớn với thẻ nội địa,
-                                tín dụng quốc tế Visa, Master, Amex...</li>
-                        </ul>
-                    </div>
-                    <div class="line-phancach">
-                        &nbsp;</div>
-                    <div class="hb-news">
-                        <div class="hb-news-title">
-                            Bán hàng và nhận hàng trực tuyến</div>
-                        <ul>
-                            <li><a href="#"><span class="hb-news-bold">Tích hợp
-                                thanh toán</span></a> miễn phí vào Website bán hàng, Forum, Blog, Rao vặt đơn giản
-                                và linh hoạt.</li>
-                            <li><a href="#"><span class="hb-news-bold">
-                                Nhận tiền siêu tốc</span></a> và tăng doanh số bán hàng online.</li>
-                            <li><a href="#"><span class="hb-news-bold">
-                                Gửi yêu cầu chuyển tiền</span></a> nhắc nhở ai đó chuyển tiền cho mình qua SMS,
-                                Email hoàn toàn miễn phí.</li>
-                        </ul>
-                    </div>
-                    <div id="text_html">
-                    </div>
-                </div>
+                <%=dataContent["MAIN_LEFT"].ValueLang%>
+                <%=dataContent["MAIN_RIGHT"].ValueLang%>
                 <!-- start Ngan hang doi tac -->
                 <div class="home-banks">
                     <div class="home-banks-title">
-                        Danh sách các Ngân hàng đối tác của Money 10</div>
+                        <%=dataLang["BOX_LISTBANK"].ValueLang%></div>
                     <div class="home-banks-content">
                         <table width="100%">
                             <tr>
