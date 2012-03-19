@@ -1,17 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
     Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    LichSuGiaoDich
+ <%       
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        if(Session["Language"] != null)
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+    %>
+    <%=dataLang["MENU_TRANSHISTORY"].ValueLang%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <%       
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        if(Session["Language"] != null)
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+    %>
     <div id="Main">
     <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
         <div class="tab-acount">
@@ -21,7 +24,7 @@
                         <table width="100%" cellspacing="0">
                             <tr>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                    Mã TK : 
+                                    <%=dataLang["BOX_ACCID"].ValueLang%> : 
                                     <% Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.SoTaiKhoan%>
                                     <div style="margin-top: 5px; width: 100%;">
                                         <img src="../../Content/images/mail_ico.png" style="float: left;" ><div style="margin-bottom: 0px;
@@ -34,22 +37,23 @@
                                 
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
-                                        Thông tin thẻ</div>
+                                        
+                                       <%=dataLang["BOX_CARDINFO"].ValueLang%></div>
                                     <div>
                                         <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"]; 
                                         if (the == null || the.TinhTrang==0)
                                           {
                                                 %>
                                         <ul>
-                                        <li>Số Thẻ: 0<br /></li>
-                                        <li>Số dư: 0 đ</li>
+                                        <li><%=dataLang["BOX_CARDNUM"].ValueLang%>: 0<br /></li>
+                                        <li><%=dataLang["BOX_ACCBALANCE"].ValueLang%>: 0 đ</li>
                                         </ul>
                                           <%  }
                                           else
                                           { %>
                                                 <ul>
-                                        <li>Số Thẻ: <%=the.SoThe %><br /></li>
-                                        <li>Số dư: <%=the.SoDu %> đ</li>
+                                        <li><%=dataLang["BOX_CARDNUM"].ValueLang%>: <%=the.SoThe %><br /></li>
+                                        <li><%=dataLang["BOX_ACCBALANCE"].ValueLang%>: <%=the.SoDu %> đ</li>
                                         </ul>
                                         <%  }
                                               %>
@@ -57,13 +61,13 @@
                                 </td>
                                 <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
                                     <div class="font1">
-                                        Thông tin thẻ</div>
+                                        <%=dataLang["BOX_CARDINFO"].ValueLang%></div>
                                     <div class="font2">
                                         0</div>
                                 </td>
                                 <td width="25%" class="tran-first">
                                     <div class="font1">
-                                        Thông tin khác
+                                        <%=dataLang["BOX_OTHERINFO"].ValueLang%>
                                     </div>
                                     <div class="font2">
                                        </div>
@@ -77,20 +81,20 @@
         <div class="account-content">
         
         <div class="word-line">
-                Tìm kiếm: </div>
+                <%=dataLang["BOX_SEARCH"].ValueLang%>: </div>
             <div class="dot">
           
         <div class="demo">
-        <p>Từ ngày: <input id="datepicker" type="text"> Đến ngày: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
+        <p><%=dataLang["BOX_FROM"].ValueLang%>: <input id="datepicker" type="text"> <%=dataLang["BOX_TO"].ValueLang%>: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
         </div>               
             <div class="word-line">
-                Lần cập nhật cuối : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div
+                <%=dataLang["BOX_LASTCHANGE"].ValueLang%> : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div
             <div style="width: 630px; float: left" >
                 <div class="box">
                   <div class="box-title">
                         <div class="title-content">
                             <div class="left-title">
-                                Thông Tin Giao Dịch</div>
+                                 <%=dataLang["BOX_TRANSINFO"].ValueLang%></div>
                             <div class="right-title">
                                 &nbsp;</div>
                         </div>
@@ -99,17 +103,17 @@
                         <thead>
                             <tr>
                                 <th width="20%" class="style3">
-                                    Thời gian
+                                    <%=dataLang["TRANS_TIME"].ValueLang%>
                                 </th>
                                 <th width="15%" class="style3">
-                                    Loại giao dịch
+                                    <%=dataLang["TRANS_TYPE"].ValueLang%>
                                 </th>
                                 <th width="25%" class="style3">
-                                    Số Thẻ Gửi</th>
+                                    <%=dataLang["TRANS_SENDCARD"].ValueLang%></th>
                                 <th width="25%" class="style3">
-                                    Số Thẻ Nhận</th>
+                                    <%=dataLang["TRANS_RECEIVECARD"].ValueLang%></th>
                                 <th width="15%" class="style2">
-                                    Số Tiền</th>
+                                    <%=dataLang["TRANS_AMOUNT"].ValueLang%></th>
                             </tr>
                         </thead>
 
