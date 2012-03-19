@@ -955,13 +955,14 @@ namespace Money10Banking.Controllers
                 string sSubject = "Money10Banking Thông báo";
                 string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                 sendMail(sTo, sFrom, sSubject, sBody);
-               
+                Response.Write("<script> alert ('Đăng Ký thành công!');</script>");
                 return View("DangNhap");
             }
-            catch 
+            catch (Exception ex)
             {
                 //throw new Exception("Error on # of clients.", ex);
-                return View("BaoLoi");
+                throw new Exception(ex.Message);
+               // return View("BaoLoi");
                 
             }
         }
@@ -1053,6 +1054,7 @@ namespace Money10Banking.Controllers
                 string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                 sendMail(sTo, sFrom, sSubject, sBody);
                 dbNganHang.SaveChanges();   // Save xuống CSDL
+                Response.Write("<script> alert ('Đăng Ký thành công!');</script>");
                 return View("DangNhap");
 	        }
 	        catch (Exception ex)
