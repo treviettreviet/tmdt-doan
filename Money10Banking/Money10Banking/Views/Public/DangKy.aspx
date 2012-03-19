@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <%
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
 
+    %>
   <div id="Main">
     
     <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
@@ -266,7 +271,7 @@
 <div class="form-container" style="padding-bottom:20px;">
     <div class="text_header">
         <div class="left">
-            <h2 class="title">Đăng ký tài khoản</h2>
+            <h2 class="title"><%=dataLang["TITLE_REGISTER"].ValueLang%></h2>
         </div>
         <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif">
     </div>
@@ -282,21 +287,21 @@
 	        01    
 	        </div>
 	        <div class="tab-label">
-	       Nhập thông tin	        </div>
+	       <%=dataLang["REG_GETINFO"].ValueLang%>	        </div>
 	    </li>
 		    <li class>
 	        <div class="number left">
 	        02    
 	        </div>
 	        <div class="tab-label">
-	       Nhập mã <br>kich hoạt tài khoản	        </div>
+	      <%=dataLang["REG_ACTIVECODE"].ValueLang%>	        </div>
 	    </li>
 		    <li class>
 	        <div class="number left">
 	        03    
 	        </div>
 	        <div class="tab-label">
-	       Hoàn thành	        </div>
+	       <%=dataLang["REG_FINISH"].ValueLang%>	        </div>
 	    </li>
 		</ul>	
 	<div class="clear"></div>	
@@ -314,7 +319,7 @@
                             <form action="XuLyDangKyCaNhan" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post">                      
                             <table class="form-content-table" cellspacing="10px" id="register_account_personal">
                                 <tr>
-                                    <th>Email<span class="mandatory">*</span></th>
+                                    <th>Mật Khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
                                        <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
                                             title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
@@ -407,30 +412,6 @@
                                       <input type="text" name="ThanhPho" value="TP HCM" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
                                     </td>
                                 </tr>
-                                <%--             <tr>                                               	 
-								<th></th>
-								<td class="style1">
-									<script type="text/javascript">
-									    function new_captcha1() {
-									        var now = new Date();
-									        document.images.captcha1.src = "/application/captcha/visual-captcha.php?" + now.getTime() + "&id=1";
-									    }
-		</script><img style="border: solid 1px lightgray;" id="captcha1" name="captcha1" src="../../Content/images/visual-c.jpg" height="48" alt="Visual CAPTCHA"><a href="javascript: new_captcha1();" tabindex="100"><img src="../../Content/images/Refresh_.png"></img></a>								</td>
-							</tr>
-                                <tr>
-                                    <th>Nhập mã an toàn<span style="color: red;">*</span><span class="mandatory"></span></th>
-                                    <td class="style1">
-								   <input type="text" name="captcha_personal" value class="text qtip" size="10" autocomplete="off">                                    </td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td class="style1">
-                                       	<div id="user_agreement" style="width:100%;padding-top:5px;">
-                                       	<input type="checkbox" name="acceptLicense" value id="id_agreement_per"><label for="id_agreement_per">Tôi đã đọc và xác nhận tuân thủ <a href="https://www.baokim.vn/user_agreement" style="margin-left:0px">Cam kết sử dụng dịch vụ</a> của Baokim.vn!</label></div>
-                                    </td>
-                                </tr>
-                              --%>
-                                
                                 <tr>
                                     <th></th>
                                     <td class="style1">                     
@@ -560,39 +541,6 @@
                                     <input type="text" name="ThanhPho" value="TP HCM" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
                                 </td>
                             </tr>
-                            <%--  <tr>
-							<th></th>
-							<td>
-								<script type="text/javascript">
-									function new_captcha2() {
-									    var now = new Date();
-									    document.images.captcha2.src = "/application/captcha/visual-captcha.php?" + now.getTime() + "&id=2";
-									}
-	</script><img style="border: solid 1px lightgray;" id="captcha2" name="captcha2" src="../../Content/images/visual-d.jpg" height="48" alt="Visual CAPTCHA"><a href="javascript: new_captcha2();" tabindex="100"><img src="../../Content/images/Refresh_.png"></img></a>								</td>
-						</tr>
-                            <tr>
-                                <th>Nhập mã an toàn<span style="color: red;">*</span><span class="mandatory"></span></th>
-                                <td>
-								<input type="text" name="captcha_company" value class="text" size="10" autocomplete="off" title="Nhập mã an toàn giống như trong ảnh trên.<br/>Trong trường hợp không nhìn rõ chữ, bạn có thể thay đổi mã an toàn bằng cách nhấn vào nút <img src='/application/captcha/Refresh_48.png' style='vertical-align:top;height:24px' alt='refresh'/> bên phải">                                    </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td>
-                                    <div id="user_agreement" style="width:100%;padding-top:5px;">
-                                    <input type="checkbox" name="acceptLicense_company" value id="id_agreement_company"><label for="id_agreement_company">Tôi đã đọc và xác nhận tuân thủ <a href="https://www.baokim.vn/user_agreement" style="margin-left:0px">Cam kết sử dụng dịch vụ</a> của Baokim.vn!</label></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="width: 100%;padding-left: 100px;color:#1C70A3;"><b>Thông Tin Thêm  .........................................................................................   </b> </td>
-                            </tr>
-                            <tr>
-                                <th>Bạn đăng kí Bảo Kim để :</th>
-                                <td>
-                                    	                                      	<input type="checkbox" name="purpose[]" value="1" id="purpose_buy_c"><label for="purpose_buy_c"><span class="font-acc-command">Mua Hàng</span></label>
-                                    	<input type="checkbox" name="purpose[]" value="2" id="purpose_sale_c"><label for="purpose_sale_c"><span class="font-acc-command">Bán Hàng</span></label>  
-                                    	<input type="checkbox" name="purpose[]" value="3" id="purpose_other_c"><label for="purpose_other_c"><span class="font-acc-command">Chưa xác định</span></label>   
-                                    </td>
-                            </tr>--%>
                             <tr>
                                 <th></th>
                                 <td>
