@@ -24,9 +24,9 @@
             </div>
             <form accept-charset="utf-8" action="/Mod/XuLyNapTien" method="post">
             <div class="form-content">
-                <table class="form-content-table">                  
+                <table class="form-content-table">
                     <tr>
-                        <th>
+                        <th aligN="right" style="text-align: right">
                             Số tiền nạp<span style="color: red;"><strong> *</strong></span>:<br />
                             <span class="explain_message">(chưa trừ phí)</span>
                         </th>
@@ -75,8 +75,8 @@
                                     }</script>
                                 <input id="amount" autocomplete="off" class="qtip" name="amount" 
                                 onkeypress="return numbersonly(this, event)" size="10" 
-                                style="text-align: right" title="Nhập vào số tiền muốn chuyển" type="text" 
-                                value="" /><b>₫</b><%--<div id="detail_amount" 
+                                style="text-align: right; width: 125px;" title="Nhập vào số tiền muốn chuyển" type="text" 
+                                value="" /><b> ₫</b><%--<div id="detail_amount" 
                                 style="font-weight: bold; padding-right: 3px;">
                             </div>--%>
                         </td>
@@ -155,7 +155,7 @@
                         </td>
                     </tr>--%>
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                             Số tài khoản<span style="color: red;"><strong> *<br />
                             </strong></span>
                         </th>
