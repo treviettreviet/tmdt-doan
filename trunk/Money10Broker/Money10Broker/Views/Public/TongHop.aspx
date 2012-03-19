@@ -196,14 +196,9 @@ table .cls-red-last td{
 	<div class="install-account" style="margin-top:0px;">
 		<h3><span>CẤU HÌNH TÀI KHOẢN </span></h3>
 		<ul>
-			<li><a href="#">Thay đổi thông tin cá nhân</a></li>
-			<li><a href="#">Thay đổi mật khẩu</a></li>
-			<li><a href="#">Đổi email chính</a></li>
-			<li><a href="#">Đổi điện thoại chính</a></li>
-			<li><a href="#">Tài khoản ngân hàng</a></li>
-			<li><a href="#">Hình thức xác minh OTP</a></li>
-			<li><a href="#">Danh bạ đối tác giao dịch</a></li>
-			<li><a href="#">Phí vận chuyển</a></li>						
+			<li><a href="/Account/ThongTinTaiKhoan">Thay đổi thông tin cá nhân</a></li>
+			<li ><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
+            <li ><a href="/Account/DoiMatKhauThanhToan">Đổi mật khẩu thanh toán</a></li>							
 		</ul>
 	</div>
 	<!--

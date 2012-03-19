@@ -22,7 +22,7 @@
                 <ul>
                     <li class=" " style="display: block"><a href="/Account/ThongTinTaiKhoan"><span>Thông
                         tin tài khoản</span></a></li>
-                    <li class=" " style="display: block"><a href="/Account/DoiMatKhau"><span>Đổi mật khẩu</span></a></li>
+                    <li class=" active" style="display: block"><a href="/Account/DoiMatKhau"><span>Đổi mật khẩu</span></a></li>
                     <li class="" style="display: block"><a href="/Account/DoiMatKhauThanhToan"><span>Đổi
                         mật khẩu thanh toán</span></a></li>
                 </ul>
@@ -41,7 +41,7 @@
                     <div id="acc-changepassword" style="padding: 0 1px 0 0; border: none;">
                         <div id="step-flow" style="width: auto;">
                             <ul id="step-three">
-                                <li class="active" style="width: 250px;"><span>1. </span>Yêu cầu thay đổi mật khẩu</li>
+                                <li class="active" style="width: 250px;"><span> </span>Yêu cầu thay đổi mật khẩu</li>
                             </ul>
                         </div>
                         <!--begin change pass-->
@@ -117,7 +117,7 @@
             <ul>
                 <li class=""><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
                 <li class="active"><a href="/Account/DoiMatKhau">Đổi mật khẩu</a></li>
-                <li class="active"><a href="/Account/DoiMatKhauThanhToan">Đổi mật khẩu thanh toán</a></li>
+                <li class=""><a href="/Account/DoiMatKhauThanhToan">Đổi mật khẩu thanh toán</a></li>
             </ul>
         </div>
     </div>

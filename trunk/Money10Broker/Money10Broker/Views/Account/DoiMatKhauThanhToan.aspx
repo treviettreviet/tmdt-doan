@@ -20,7 +20,7 @@
 			<ul>
 		    	<li class=" " style="display:block"><a href="/Account/ThongTinTaiKhoan"><span>Thông tin tài khoản</span></a></li>
 				<li class=" " style="display:block"><a href="/Account/DoiMatKhau"><span>Đổi mật khẩu</span></a></li>			
-                <li class="" style="display:block"><a href="/Account/DoiMatKhauThanhToan"><span>Đổi mật khẩu thanh toán</span></a></li>	
+                <li class="active" style="display:block"><a href="/Account/DoiMatKhauThanhToan"><span>Đổi mật khẩu thanh toán</span></a></li>	
 			</ul>
 		</div>
 	</div>

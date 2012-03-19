@@ -34,9 +34,9 @@
 	<div class="box-content-square" style="padding-top:0;">
 		<div id="step-flow">
 			<ul id="step-three">
-				<li class="active"><strong>1.</strong> &nbsp; &nbsp;Yêu cầu rút tiền</li>
-				<li><strong>2.</strong> &nbsp; &nbsp;NgânLượng.vn phê duyệt</li>
-				<li class="last"><strong>3.</strong> &nbsp; &nbsp;Hoàn tất</li>
+				<li class="active">&nbsp;&nbsp; &nbsp;Yêu cầu rút tiền</li>
+				<%--<li><strong>2.</strong> &nbsp; &nbsp;NgânLượng.vn phê duyệt</li>
+				<li class="last"><strong>3.</strong> &nbsp; &nbsp;Hoàn tất</li>--%>
 			</ul>
 		</div>
 		<div id="complaints-left">		 
