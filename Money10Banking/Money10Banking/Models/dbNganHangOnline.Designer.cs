@@ -27,6 +27,8 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("NganHangModel", "FK_MoiGioi_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Banking.Models.TaiKhoan), "MoiGioi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Banking.Models.MoiGioi), true)]
 [assembly: EdmRelationshipAttribute("NganHangModel", "FK_The_TaiKhoan", "TaiKhoan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Banking.Models.TaiKhoan), "The", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Banking.Models.The), true)]
 [assembly: EdmRelationshipAttribute("NganHangModel", "FK_PhiGiaoDich_LoaiGiaoDich", "LoaiGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Money10Banking.Models.LoaiGiaoDich), "PhiGiaoDich", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Banking.Models.PhiGiaoDich), true)]
+[assembly: EdmRelationshipAttribute("NganHangModel", "FK_Admin_Group", "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Money10Banking.Models.Group), "Admin", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Banking.Models.Admin), true)]
+[assembly: EdmRelationshipAttribute("NganHangModel", "FK_Permission_Group", "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Money10Banking.Models.Group), "Permission", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Money10Banking.Models.Permission), true)]
 
 #endregion
 
@@ -317,6 +319,118 @@ namespace Money10Banking.Models
             }
         }
         private ObjectSet<Admin> _Admins;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Group> Groups
+        {
+            get
+            {
+                if ((_Groups == null))
+                {
+                    _Groups = base.CreateObjectSet<Group>("Groups");
+                }
+                return _Groups;
+            }
+        }
+        private ObjectSet<Group> _Groups;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LogAction> LogActions
+        {
+            get
+            {
+                if ((_LogActions == null))
+                {
+                    _LogActions = base.CreateObjectSet<LogAction>("LogActions");
+                }
+                return _LogActions;
+            }
+        }
+        private ObjectSet<LogAction> _LogActions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<NganHangLienKet> NganHangLienKets
+        {
+            get
+            {
+                if ((_NganHangLienKets == null))
+                {
+                    _NganHangLienKets = base.CreateObjectSet<NganHangLienKet>("NganHangLienKets");
+                }
+                return _NganHangLienKets;
+            }
+        }
+        private ObjectSet<NganHangLienKet> _NganHangLienKets;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Permission> Permissions
+        {
+            get
+            {
+                if ((_Permissions == null))
+                {
+                    _Permissions = base.CreateObjectSet<Permission>("Permissions");
+                }
+                return _Permissions;
+            }
+        }
+        private ObjectSet<Permission> _Permissions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SessionID> SessionIDs
+        {
+            get
+            {
+                if ((_SessionIDs == null))
+                {
+                    _SessionIDs = base.CreateObjectSet<SessionID>("SessionIDs");
+                }
+                return _SessionIDs;
+            }
+        }
+        private ObjectSet<SessionID> _SessionIDs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<sysdiagram> sysdiagrams
+        {
+            get
+            {
+                if ((_sysdiagrams == null))
+                {
+                    _sysdiagrams = base.CreateObjectSet<sysdiagram>("sysdiagrams");
+                }
+                return _sysdiagrams;
+            }
+        }
+        private ObjectSet<sysdiagram> _sysdiagrams;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TheTam> TheTams
+        {
+            get
+            {
+                if ((_TheTams == null))
+                {
+                    _TheTams = base.CreateObjectSet<TheTam>("TheTams");
+                }
+                return _TheTams;
+            }
+        }
+        private ObjectSet<TheTam> _TheTams;
 
         #endregion
         #region AddTo Methods
@@ -439,6 +553,62 @@ namespace Money10Banking.Models
         public void AddToAdmins(Admin admin)
         {
             base.AddObject("Admins", admin);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Groups EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGroups(Group group)
+        {
+            base.AddObject("Groups", group);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LogActions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLogActions(LogAction logAction)
+        {
+            base.AddObject("LogActions", logAction);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NganHangLienKets EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNganHangLienKets(NganHangLienKet nganHangLienKet)
+        {
+            base.AddObject("NganHangLienKets", nganHangLienKet);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Permissions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPermissions(Permission permission)
+        {
+            base.AddObject("Permissions", permission);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the SessionIDs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSessionIDs(SessionID sessionID)
+        {
+            base.AddObject("SessionIDs", sessionID);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTosysdiagrams(sysdiagram sysdiagram)
+        {
+            base.AddObject("sysdiagrams", sysdiagram);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TheTams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTheTams(TheTam theTam)
+        {
+            base.AddObject("TheTams", theTam);
         }
 
         #endregion
@@ -630,6 +800,47 @@ namespace Money10Banking.Models
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("NganHangModel", "FK_Admin_Group", "Group")]
+        public Group Group
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Admin_Group", "Group").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Admin_Group", "Group").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Group> GroupReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Admin_Group", "Group");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Group>("NganHangModel.FK_Admin_Group", "Group", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>
@@ -889,6 +1100,158 @@ namespace Money10Banking.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TaiKhoan>("NganHangModel.FK_DiaChi_TaiKhoan", "TaiKhoan", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="Group")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Group : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Group object.
+        /// </summary>
+        /// <param name="groupID">Initial value of the GroupID property.</param>
+        /// <param name="groupName">Initial value of the GroupName property.</param>
+        public static Group CreateGroup(global::System.Int32 groupID, global::System.String groupName)
+        {
+            Group group = new Group();
+            group.GroupID = groupID;
+            group.GroupName = groupName;
+            return group;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 GroupID
+        {
+            get
+            {
+                return _GroupID;
+            }
+            set
+            {
+                if (_GroupID != value)
+                {
+                    OnGroupIDChanging(value);
+                    ReportPropertyChanging("GroupID");
+                    _GroupID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("GroupID");
+                    OnGroupIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _GroupID;
+        partial void OnGroupIDChanging(global::System.Int32 value);
+        partial void OnGroupIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String GroupName
+        {
+            get
+            {
+                return _GroupName;
+            }
+            set
+            {
+                OnGroupNameChanging(value);
+                ReportPropertyChanging("GroupName");
+                _GroupName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("GroupName");
+                OnGroupNameChanged();
+            }
+        }
+        private global::System.String _GroupName;
+        partial void OnGroupNameChanging(global::System.String value);
+        partial void OnGroupNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("NganHangModel", "FK_Admin_Group", "Admin")]
+        public EntityCollection<Admin> Admins
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Admin>("NganHangModel.FK_Admin_Group", "Admin");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Admin>("NganHangModel.FK_Admin_Group", "Admin", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("NganHangModel", "FK_Permission_Group", "Permission")]
+        public EntityCollection<Permission> Permissions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Permission>("NganHangModel.FK_Permission_Group", "Permission");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Permission>("NganHangModel.FK_Permission_Group", "Permission", value);
                 }
             }
         }
@@ -1926,6 +2289,229 @@ namespace Money10Banking.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="LogAction")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class LogAction : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new LogAction object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static LogAction CreateLogAction(global::System.Int32 id)
+        {
+            LogAction logAction = new LogAction();
+            logAction.Id = id;
+            return logAction;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ThoiGian
+        {
+            get
+            {
+                return _ThoiGian;
+            }
+            set
+            {
+                OnThoiGianChanging(value);
+                ReportPropertyChanging("ThoiGian");
+                _ThoiGian = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ThoiGian");
+                OnThoiGianChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ThoiGian;
+        partial void OnThoiGianChanging(Nullable<global::System.DateTime> value);
+        partial void OnThoiGianChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String BangLienQuan
+        {
+            get
+            {
+                return _BangLienQuan;
+            }
+            set
+            {
+                OnBangLienQuanChanging(value);
+                ReportPropertyChanging("BangLienQuan");
+                _BangLienQuan = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("BangLienQuan");
+                OnBangLienQuanChanged();
+            }
+        }
+        private global::System.String _BangLienQuan;
+        partial void OnBangLienQuanChanging(global::System.String value);
+        partial void OnBangLienQuanChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ThaoTac
+        {
+            get
+            {
+                return _ThaoTac;
+            }
+            set
+            {
+                OnThaoTacChanging(value);
+                ReportPropertyChanging("ThaoTac");
+                _ThaoTac = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ThaoTac");
+                OnThaoTacChanged();
+            }
+        }
+        private global::System.String _ThaoTac;
+        partial void OnThaoTacChanging(global::System.String value);
+        partial void OnThaoTacChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DuLieuCu
+        {
+            get
+            {
+                return _DuLieuCu;
+            }
+            set
+            {
+                OnDuLieuCuChanging(value);
+                ReportPropertyChanging("DuLieuCu");
+                _DuLieuCu = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DuLieuCu");
+                OnDuLieuCuChanged();
+            }
+        }
+        private global::System.String _DuLieuCu;
+        partial void OnDuLieuCuChanging(global::System.String value);
+        partial void OnDuLieuCuChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DuLieuMoi
+        {
+            get
+            {
+                return _DuLieuMoi;
+            }
+            set
+            {
+                OnDuLieuMoiChanging(value);
+                ReportPropertyChanging("DuLieuMoi");
+                _DuLieuMoi = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DuLieuMoi");
+                OnDuLieuMoiChanged();
+            }
+        }
+        private global::System.String _DuLieuMoi;
+        partial void OnDuLieuMoiChanging(global::System.String value);
+        partial void OnDuLieuMoiChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> TinhTrang
+        {
+            get
+            {
+                return _TinhTrang;
+            }
+            set
+            {
+                OnTinhTrangChanging(value);
+                ReportPropertyChanging("TinhTrang");
+                _TinhTrang = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TinhTrang");
+                OnTinhTrangChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _TinhTrang;
+        partial void OnTinhTrangChanging(Nullable<global::System.Int32> value);
+        partial void OnTinhTrangChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="MoiGioi")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2137,6 +2723,205 @@ namespace Money10Banking.Models
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="NganHangLienKet")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class NganHangLienKet : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new NganHangLienKet object.
+        /// </summary>
+        /// <param name="maNganHangLienKet">Initial value of the MaNganHangLienKet property.</param>
+        public static NganHangLienKet CreateNganHangLienKet(global::System.Int32 maNganHangLienKet)
+        {
+            NganHangLienKet nganHangLienKet = new NganHangLienKet();
+            nganHangLienKet.MaNganHangLienKet = maNganHangLienKet;
+            return nganHangLienKet;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaNganHangLienKet
+        {
+            get
+            {
+                return _MaNganHangLienKet;
+            }
+            set
+            {
+                if (_MaNganHangLienKet != value)
+                {
+                    OnMaNganHangLienKetChanging(value);
+                    ReportPropertyChanging("MaNganHangLienKet");
+                    _MaNganHangLienKet = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaNganHangLienKet");
+                    OnMaNganHangLienKetChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaNganHangLienKet;
+        partial void OnMaNganHangLienKetChanging(global::System.Int32 value);
+        partial void OnMaNganHangLienKetChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenNgangHangLienKet
+        {
+            get
+            {
+                return _TenNgangHangLienKet;
+            }
+            set
+            {
+                OnTenNgangHangLienKetChanging(value);
+                ReportPropertyChanging("TenNgangHangLienKet");
+                _TenNgangHangLienKet = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenNgangHangLienKet");
+                OnTenNgangHangLienKetChanged();
+            }
+        }
+        private global::System.String _TenNgangHangLienKet;
+        partial void OnTenNgangHangLienKetChanging(global::System.String value);
+        partial void OnTenNgangHangLienKetChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TaiKhoanNgangHangLienKet
+        {
+            get
+            {
+                return _TaiKhoanNgangHangLienKet;
+            }
+            set
+            {
+                OnTaiKhoanNgangHangLienKetChanging(value);
+                ReportPropertyChanging("TaiKhoanNgangHangLienKet");
+                _TaiKhoanNgangHangLienKet = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TaiKhoanNgangHangLienKet");
+                OnTaiKhoanNgangHangLienKetChanged();
+            }
+        }
+        private global::System.String _TaiKhoanNgangHangLienKet;
+        partial void OnTaiKhoanNgangHangLienKetChanging(global::System.String value);
+        partial void OnTaiKhoanNgangHangLienKetChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String WebserviceChuyenKhoanCungNganHang
+        {
+            get
+            {
+                return _WebserviceChuyenKhoanCungNganHang;
+            }
+            set
+            {
+                OnWebserviceChuyenKhoanCungNganHangChanging(value);
+                ReportPropertyChanging("WebserviceChuyenKhoanCungNganHang");
+                _WebserviceChuyenKhoanCungNganHang = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("WebserviceChuyenKhoanCungNganHang");
+                OnWebserviceChuyenKhoanCungNganHangChanged();
+            }
+        }
+        private global::System.String _WebserviceChuyenKhoanCungNganHang;
+        partial void OnWebserviceChuyenKhoanCungNganHangChanging(global::System.String value);
+        partial void OnWebserviceChuyenKhoanCungNganHangChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String WebserviceChuyenKhoanKhacNganHang
+        {
+            get
+            {
+                return _WebserviceChuyenKhoanKhacNganHang;
+            }
+            set
+            {
+                OnWebserviceChuyenKhoanKhacNganHangChanging(value);
+                ReportPropertyChanging("WebserviceChuyenKhoanKhacNganHang");
+                _WebserviceChuyenKhoanKhacNganHang = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("WebserviceChuyenKhoanKhacNganHang");
+                OnWebserviceChuyenKhoanKhacNganHangChanged();
+            }
+        }
+        private global::System.String _WebserviceChuyenKhoanKhacNganHang;
+        partial void OnWebserviceChuyenKhoanKhacNganHangChanging(global::System.String value);
+        partial void OnWebserviceChuyenKhoanKhacNganHangChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String GhiChu
+        {
+            get
+            {
+                return _GhiChu;
+            }
+            set
+            {
+                OnGhiChuChanging(value);
+                ReportPropertyChanging("GhiChu");
+                _GhiChu = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("GhiChu");
+                OnGhiChuChanged();
+            }
+        }
+        private global::System.String _GhiChu;
+        partial void OnGhiChuChanging(global::System.String value);
+        partial void OnGhiChuChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> TinhTrang
+        {
+            get
+            {
+                return _TinhTrang;
+            }
+            set
+            {
+                OnTinhTrangChanging(value);
+                ReportPropertyChanging("TinhTrang");
+                _TinhTrang = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TinhTrang");
+                OnTinhTrangChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _TinhTrang;
+        partial void OnTinhTrangChanging(Nullable<global::System.Int32> value);
+        partial void OnTinhTrangChanged();
+
+        #endregion
+    
     }
     
     /// <summary>
@@ -2492,6 +3277,250 @@ namespace Money10Banking.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="Permission")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Permission : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Permission object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="tableName">Initial value of the TableName property.</param>
+        /// <param name="groupID">Initial value of the GroupID property.</param>
+        public static Permission CreatePermission(global::System.Int32 id, global::System.String tableName, global::System.Int32 groupID)
+        {
+            Permission permission = new Permission();
+            permission.ID = id;
+            permission.TableName = tableName;
+            permission.GroupID = groupID;
+            return permission;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Insert
+        {
+            get
+            {
+                return _Insert;
+            }
+            set
+            {
+                OnInsertChanging(value);
+                ReportPropertyChanging("Insert");
+                _Insert = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Insert");
+                OnInsertChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Insert;
+        partial void OnInsertChanging(Nullable<global::System.Int32> value);
+        partial void OnInsertChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Update
+        {
+            get
+            {
+                return _Update;
+            }
+            set
+            {
+                OnUpdateChanging(value);
+                ReportPropertyChanging("Update");
+                _Update = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Update");
+                OnUpdateChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Update;
+        partial void OnUpdateChanging(Nullable<global::System.Int32> value);
+        partial void OnUpdateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Delete
+        {
+            get
+            {
+                return _Delete;
+            }
+            set
+            {
+                OnDeleteChanging(value);
+                ReportPropertyChanging("Delete");
+                _Delete = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Delete");
+                OnDeleteChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Delete;
+        partial void OnDeleteChanging(Nullable<global::System.Int32> value);
+        partial void OnDeleteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String TableName
+        {
+            get
+            {
+                return _TableName;
+            }
+            set
+            {
+                OnTableNameChanging(value);
+                ReportPropertyChanging("TableName");
+                _TableName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("TableName");
+                OnTableNameChanged();
+            }
+        }
+        private global::System.String _TableName;
+        partial void OnTableNameChanging(global::System.String value);
+        partial void OnTableNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 GroupID
+        {
+            get
+            {
+                return _GroupID;
+            }
+            set
+            {
+                OnGroupIDChanging(value);
+                ReportPropertyChanging("GroupID");
+                _GroupID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("GroupID");
+                OnGroupIDChanged();
+            }
+        }
+        private global::System.Int32 _GroupID;
+        partial void OnGroupIDChanging(global::System.Int32 value);
+        partial void OnGroupIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("NganHangModel", "FK_Permission_Group", "Group")]
+        public Group Group
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Permission_Group", "Group").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Permission_Group", "Group").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Group> GroupReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("NganHangModel.FK_Permission_Group", "Group");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Group>("NganHangModel.FK_Permission_Group", "Group", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="PhiGiaoDich")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2655,6 +3684,298 @@ namespace Money10Banking.Models
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="SessionID")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class SessionID : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new SessionID object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="userName">Initial value of the UserName property.</param>
+        /// <param name="sID">Initial value of the sID property.</param>
+        public static SessionID CreateSessionID(global::System.Int32 id, global::System.String userName, global::System.String sID)
+        {
+            SessionID sessionID = new SessionID();
+            sessionID.Id = id;
+            sessionID.UserName = userName;
+            sessionID.sID = sID;
+            return sessionID;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                if (_UserName != value)
+                {
+                    OnUserNameChanging(value);
+                    ReportPropertyChanging("UserName");
+                    _UserName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("UserName");
+                    OnUserNameChanged();
+                }
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String sID
+        {
+            get
+            {
+                return _sID;
+            }
+            set
+            {
+                if (_sID != value)
+                {
+                    OnsIDChanging(value);
+                    ReportPropertyChanging("sID");
+                    _sID = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("sID");
+                    OnsIDChanged();
+                }
+            }
+        }
+        private global::System.String _sID;
+        partial void OnsIDChanging(global::System.String value);
+        partial void OnsIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="sysdiagram")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class sysdiagram : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new sysdiagram object.
+        /// </summary>
+        /// <param name="name">Initial value of the name property.</param>
+        /// <param name="principal_id">Initial value of the principal_id property.</param>
+        /// <param name="diagram_id">Initial value of the diagram_id property.</param>
+        public static sysdiagram Createsysdiagram(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
+        {
+            sysdiagram sysdiagram = new sysdiagram();
+            sysdiagram.name = name;
+            sysdiagram.principal_id = principal_id;
+            sysdiagram.diagram_id = diagram_id;
+            return sysdiagram;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 principal_id
+        {
+            get
+            {
+                return _principal_id;
+            }
+            set
+            {
+                Onprincipal_idChanging(value);
+                ReportPropertyChanging("principal_id");
+                _principal_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("principal_id");
+                Onprincipal_idChanged();
+            }
+        }
+        private global::System.Int32 _principal_id;
+        partial void Onprincipal_idChanging(global::System.Int32 value);
+        partial void Onprincipal_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 diagram_id
+        {
+            get
+            {
+                return _diagram_id;
+            }
+            set
+            {
+                if (_diagram_id != value)
+                {
+                    Ondiagram_idChanging(value);
+                    ReportPropertyChanging("diagram_id");
+                    _diagram_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("diagram_id");
+                    Ondiagram_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _diagram_id;
+        partial void Ondiagram_idChanging(global::System.Int32 value);
+        partial void Ondiagram_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> version
+        {
+            get
+            {
+                return _version;
+            }
+            set
+            {
+                OnversionChanging(value);
+                ReportPropertyChanging("version");
+                _version = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("version");
+                OnversionChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _version;
+        partial void OnversionChanging(Nullable<global::System.Int32> value);
+        partial void OnversionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] definition
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_definition);
+            }
+            set
+            {
+                OndefinitionChanging(value);
+                ReportPropertyChanging("definition");
+                _definition = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("definition");
+                OndefinitionChanged();
+            }
+        }
+        private global::System.Byte[] _definition;
+        partial void OndefinitionChanging(global::System.Byte[] value);
+        partial void OndefinitionChanged();
+
+        #endregion
+    
     }
     
     /// <summary>
@@ -3530,6 +4851,253 @@ namespace Money10Banking.Models
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="NganHangModel", Name="TheTam")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TheTam : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TheTam object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        public static TheTam CreateTheTam(global::System.Int32 id)
+        {
+            TheTam theTam = new TheTam();
+            theTam.ID = id;
+            return theTam;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenLoaiThe
+        {
+            get
+            {
+                return _TenLoaiThe;
+            }
+            set
+            {
+                OnTenLoaiTheChanging(value);
+                ReportPropertyChanging("TenLoaiThe");
+                _TenLoaiThe = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenLoaiThe");
+                OnTenLoaiTheChanged();
+            }
+        }
+        private global::System.String _TenLoaiThe;
+        partial void OnTenLoaiTheChanging(global::System.String value);
+        partial void OnTenLoaiTheChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SoThe
+        {
+            get
+            {
+                return _SoThe;
+            }
+            set
+            {
+                OnSoTheChanging(value);
+                ReportPropertyChanging("SoThe");
+                _SoThe = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SoThe");
+                OnSoTheChanged();
+            }
+        }
+        private global::System.String _SoThe;
+        partial void OnSoTheChanging(global::System.String value);
+        partial void OnSoTheChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SoPin
+        {
+            get
+            {
+                return _SoPin;
+            }
+            set
+            {
+                OnSoPinChanging(value);
+                ReportPropertyChanging("SoPin");
+                _SoPin = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SoPin");
+                OnSoPinChanged();
+            }
+        }
+        private global::System.String _SoPin;
+        partial void OnSoPinChanging(global::System.String value);
+        partial void OnSoPinChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SoBaoMat
+        {
+            get
+            {
+                return _SoBaoMat;
+            }
+            set
+            {
+                OnSoBaoMatChanging(value);
+                ReportPropertyChanging("SoBaoMat");
+                _SoBaoMat = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SoBaoMat");
+                OnSoBaoMatChanged();
+            }
+        }
+        private global::System.String _SoBaoMat;
+        partial void OnSoBaoMatChanging(global::System.String value);
+        partial void OnSoBaoMatChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> NgayMoThe
+        {
+            get
+            {
+                return _NgayMoThe;
+            }
+            set
+            {
+                OnNgayMoTheChanging(value);
+                ReportPropertyChanging("NgayMoThe");
+                _NgayMoThe = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NgayMoThe");
+                OnNgayMoTheChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _NgayMoThe;
+        partial void OnNgayMoTheChanging(Nullable<global::System.DateTime> value);
+        partial void OnNgayMoTheChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> NgayHetHan
+        {
+            get
+            {
+                return _NgayHetHan;
+            }
+            set
+            {
+                OnNgayHetHanChanging(value);
+                ReportPropertyChanging("NgayHetHan");
+                _NgayHetHan = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NgayHetHan");
+                OnNgayHetHanChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _NgayHetHan;
+        partial void OnNgayHetHanChanging(Nullable<global::System.DateTime> value);
+        partial void OnNgayHetHanChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MaTaiKhoan
+        {
+            get
+            {
+                return _MaTaiKhoan;
+            }
+            set
+            {
+                OnMaTaiKhoanChanging(value);
+                ReportPropertyChanging("MaTaiKhoan");
+                _MaTaiKhoan = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MaTaiKhoan");
+                OnMaTaiKhoanChanged();
+            }
+        }
+        private global::System.String _MaTaiKhoan;
+        partial void OnMaTaiKhoanChanging(global::System.String value);
+        partial void OnMaTaiKhoanChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> TinhTrang
+        {
+            get
+            {
+                return _TinhTrang;
+            }
+            set
+            {
+                OnTinhTrangChanging(value);
+                ReportPropertyChanging("TinhTrang");
+                _TinhTrang = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TinhTrang");
+                OnTinhTrangChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _TinhTrang;
+        partial void OnTinhTrangChanging(Nullable<global::System.Int32> value);
+        partial void OnTinhTrangChanged();
+
+        #endregion
+    
     }
 
     #endregion
