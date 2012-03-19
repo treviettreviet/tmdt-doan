@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <%
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+        {
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+            dataContent = (Money10Banking.Models.Language)Session["Content"];
+        }
+    %>
     <div id="Main">
         <%--<div class="error-box">Thông tin đăng nhập không chính xác</div>--%>
         <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
@@ -13,32 +22,27 @@
                     <div class="login_content">
                         <form action="/Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
                         <div class="header">
-                            Đăng Nhập</div>
+                            <%=dataLang["TITLE_LOGIN"].ValueLang%></div>
                         <div class="login_label">
-                            Email / Số điện thoại</div>
+                             <%=dataLang["BOX_EMAIL"].ValueLang%></div>
                         <div>
                             <input type="text" name="email" value="" /></div>
                         <div class="login_label">
-                            Mật khẩu</div>
+                            <%=dataLang["BOX_PASSWORD"].ValueLang%></div>
                         <div>
                             <input type="password" name="password" value="" /></div>
                         <div class="login_label">
-                            Chuyển đến</div>
+                            Go to...</div>
                         <div>
                             <select name="goTo">
-                                <option value="accounts/info">Thông tin tài khoản</option>
-                                <option value="transactions/log">Lịch sử giao dịch</option>
-                                <option value="accounts/profile/money_receiving_config">Cấu hình tài khoản</option>
+                                <option value="accounts/info"><%=dataLang["BOX_ACCINFO"].ValueLang%></option>
+                                <option value="transactions/log"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></option>
+                                <option value="accounts/profile/money_receiving_config"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></option>
                             </select>
                         </div>
                         <div>
-                            <input type="submit" name="submit" value="Đăng Nhập" class="login_button"></div>
-                        <div class="login_link">
-                            <a href="/Public/DangKy" title="Đăng ký tài khoản Bảo Kim miễn phí">
-                                Đăng ký tài khoản Ecmoney10 <b>Miễn phí</b></a> <a href="#"
-                                    title="Quên mật khẩu">Quên mật khẩu?</a> <a href="#"
-                                        title="Quên email">Quên email?</a>
-                        </div>
+                            <input type="submit" name="submit" value="Login" class="login_button"></div>
+                        <%=dataContent["MAIN_REGLINK"].ValueLang%>
                         </form>
                     </div>
                     <div class="login_bottom">
@@ -50,21 +54,7 @@
                     <div class="frm_login_right_top">
                     </div>
                 </a>
-                <div class="frm_login_right_bottom">
-                    <b style="padding-top: 5px;">Khi là thành viên của EC Money 10 Bank, bạn được hưởng các tiện
-                        ích:</b>
-                    <div class="baokim_tienich">
-                        <ul>
-                            <li>Mua hàng được tích lũy <a href="#"
-                                class="c006699">tiền thưởng</a></li>
-                            <li><a href=#" class="c006699">
-                                Kiếm tiền</a> tại nhà với Money 10 Banking</li>
-                            <li><a href="#"
-                                class="c006699">Nạp thẻ điện thoại</a> tại nhà được chiết khấu ...<a href="#"
-                                    class="c006699"> xem thêm &gt;&gt;</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <%=dataContent["REG_TERM"].ValueLang%>
             </div>
             <div class="clear">
             </div>
