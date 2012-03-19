@@ -203,7 +203,7 @@ namespace Money10BankingAdmin.Controllers
             return View(listUser);
         }
 
-        public ActionResult UpdateUser(int id, string email, string group, string status)
+        public ActionResult UpdateUser(int id)
         {
             Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
             return View(user);

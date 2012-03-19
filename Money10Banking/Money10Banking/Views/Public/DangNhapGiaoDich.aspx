@@ -17,7 +17,7 @@
                     <div class="login_header">
                     </div>
                     <div class="login_content">
-                        <form action="XuLyChuyenTien" id="form_login" accept-charset="utf-8" method="post">
+                        <form action="/Public/XuLyChuyenTien" id="form_login" accept-charset="utf-8" method="post">
 
                         <div class="header">
                             <%=dataLang["TITLE_LOGIN"].ValueLang%></div>

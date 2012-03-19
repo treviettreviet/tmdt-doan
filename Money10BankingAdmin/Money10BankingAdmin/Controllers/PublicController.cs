@@ -25,6 +25,14 @@ namespace Money10BankingAdmin.Controllers
         {
             return View();
         }
+
+        public ActionResult DanhSachThe()
+        {
+            List<The> listcard = dbNganHang.Thes.ToList<The>();
+
+            return View(listcard);
+        }
+
         public ActionResult XuLyCapNhatUser(string email, string name)
         {
             try

@@ -1129,7 +1129,7 @@ namespace Money10Banking.Controllers
         public ActionResult XuLyChuyenTien(string cardno, string password)
         {
             System.Net.ServicePointManager.Expect100Continue = false;
-            string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+            string UrlWebservice = "http://ecmoney10.tk/WebserviceNganHang/WebserviceNganHangMoney10.asmx";
             string ServiceName = "WebServiceNganHangMoney10";
             string MethodName1 = "AuthenticateForCard";
         
@@ -1165,7 +1165,7 @@ namespace Money10Banking.Controllers
                // TransferMoneySameBank(Cardsend, CardRec, amount);
              
                     System.Net.ServicePointManager.Expect100Continue = false;
-                    string UrlWebservice = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+                    string UrlWebservice = "http://ecmoney10.tk/WebserviceNganHang/WebserviceNganHangMoney10.asmx";
                     string ServiceName = "WebServiceNganHangMoney10";
                     //string MethodName1 = "AuthenticateForTransaction";
                     string MethodName2 = "TransferMoneySameBank";
