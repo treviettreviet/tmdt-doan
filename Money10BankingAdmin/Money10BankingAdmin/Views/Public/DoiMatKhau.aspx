@@ -266,7 +266,7 @@
         <tr>
             <th>Mật khẩu cũ:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="pass"  value="" class="text qtip" autocomplete="off"
+                <input type="password" name="pass"  value="" class="text qtip" autocomplete="off"
                     title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtPass">&nbsp;
                 <br>                            
             </td>
@@ -274,14 +274,14 @@
         <tr>
             <th>Mật khẩu mới:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="passnew" value="" class="text qtip" autocomplete="off" title="Mật Khẩu mới !" size="50">                              
+                <input type="password" name="passnew" value="" class="text qtip" autocomplete="off" title="Mật Khẩu mới !" size="50">                              
                 <br><span class="error" id="Span1"></span>
             </td>
         </tr>  
         <tr>
             <th>Nhập lại MK mới:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="confirmpass" value="" class="text qtip" autocomplete="off" title="Nhập lại MK mới!" size="50">                              
+                <input type="password" name="confirmpass" value="" class="text qtip" autocomplete="off" title="Nhập lại MK mới!" size="50">                              
                 <br><span class="error" id="error_name_personal"></span>
             </td>
         </tr>  
