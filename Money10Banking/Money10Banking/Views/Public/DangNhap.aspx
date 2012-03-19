@@ -34,11 +34,11 @@
                         <div class="login_label">
                             Go to...</div>
                         <div>
-                            <select name="goTo">
+                            <%--<select name="goTo">
                                 <option value="accounts/info"><%=dataLang["BOX_ACCINFO"].ValueLang%></option>
                                 <option value="transactions/log"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></option>
                                 <option value="accounts/profile/money_receiving_config"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></option>
-                            </select>
+                            </select>--%>
                         </div>
                         <div>
                             <input type="submit" name="submit" value="Login" class="login_button"></div>
@@ -49,13 +49,13 @@
                     </div>
                 </div>
             </div>
-            <div class="frm-login-right right">
+            <%--<div class="frm-login-right right">
                 <a href="#">
                     <div class="frm_login_right_top">
                     </div>
                 </a>
                 <%=dataContent["REG_TERM"].ValueLang%>
-            </div>
+            </div>--%>
             <div class="clear">
             </div>
         </div>

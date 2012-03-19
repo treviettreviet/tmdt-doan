@@ -280,36 +280,7 @@
                     <div class="banner_login" onmouseover="ddrivetip('Tiếp tục chuyển qua bước 2 để khám phá bí mật','#3291c6','#fff','#004d83',300)" ; onmouseout="hideddrivetip()"></div>
                        
                        <div class="form">
-                        <div class="form-tab">
-	<ul>
-		    <li class="selected">
-	        <div class="number left">
-	        01    
-	        </div>
-	        <div class="tab-label">
-	       <%=dataLang["REG_GETINFO"].ValueLang%>	        </div>
-	    </li>
-		    <li class>
-	        <div class="number left">
-	        02    
-	        </div>
-	        <div class="tab-label">
-	      <%=dataLang["REG_ACTIVECODE"].ValueLang%>	        </div>
-	    </li>
-		    <li class>
-	        <div class="number left">
-	        03    
-	        </div>
-	        <div class="tab-label">
-	       <%=dataLang["REG_FINISH"].ValueLang%>	        </div>
-	    </li>
-		</ul>	
-	<div class="clear"></div>	
-</div>
 <div class="form-content">
-<table class="form_tab_padding_top" cellspacing="10px">
-	<tr style="height:0px;"><td></td></tr>
-</table>
 </div>                      </div>
                        <div class="form-content clear">                 
 	                     	<p style="margin-left:80px;"><input type="radio" name="account[]" value checked="checked" onclick="j('#register_account_personal').show();j('#register_account_business').hide(); j('#type_register').val(1);" id="id_account_per"><label for="id_account_per"><span class="font-acc">Tài khoản cá nhân</span><span class="font-acc-command">(Sử dụng thông tin cá nhân để thực hiện giao dịch)</span></label></p>
@@ -321,7 +292,7 @@
                                 <tr>
                                     <th>Mật Khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                       <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
+                                       <input type="text" name="email"  value="" class="text qtip" autocomplete="off"
                                             title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
                                         <br>                            
                                     </td>
@@ -330,17 +301,17 @@
                                 <tr>
                                     <th>Mật khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                        <input type="password" name="password" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
+                                        <input type="password" name="password" value="" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Xác nhận mật khẩu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                    <input type="password" name="passwordConfirm" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
+                                    <input type="password" name="passwordConfirm" value="" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
                                 </tr>                                          
                                 <tr>
                                     <th>Họ và tên<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                     <input type="text" name="name" value="Phan Quang Khải" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
+                                     <input type="text" name="name" value="" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
                                      <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
                                      <br><span class="error" id="error_name_personal"></span>
                                     </td>
@@ -371,45 +342,44 @@
                                   <tr>
                                     <th>CMND/Hộ Chiếu<span class="mandatory">*</span></th>
                                     <td class="style1">
-                                      <input type="text" name="CMND" value="123123123" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
+                                      <input type="text" name="CMND" value="" class="text qtip" autocomplete="off" title="- CMND hoặc Hộ Chiếu( 9 số)">                                
                                     </td>
                                 </tr>
                                   <tr>
                                     <th>Giới Tính<span class="mandatory">*</span></th>
-                                    <td class="style1">
-
-                                     <input type="radio" name="rdGioiTinh" value="Nam" checked="true"/><span class="font-acc">Nam</span>
-                                        <input type="radio" name="rdGioiTinh" value="Nu"/><span class="font-acc">Nữ</span>                                                                   
+                                    <td>
+                                     <input type="radio" name="rdGioiTinh" value="Nam" checked="true" style="width:25px"/><span class="font-acc">Nam</span>
+                                     <input type="radio" name="rdGioiTinh" value="Nu" style="width:25px"/><span class="font-acc">Nữ</span>                                                              
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Địa Chỉ<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="SoNha" value="123" class="text qtip" autocomplete="off" title="- Số Nhà thường trú">                                
+                                      <input type="text" name="SoNha" value="" class="text qtip" autocomplete="off" title="- Số Nhà thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Đường<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="Duong" value="Ly Thai To" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
+                                      <input type="text" name="Duong" value="" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Phường/xã<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="PhuongXa" value="Phuong 1" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
+                                      <input type="text" name="PhuongXa" value="" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Quận/Huyện<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="QuanHuyen" value="Quan 3" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                                
+                                      <input type="text" name="QuanHuyen" value="" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                                
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Tỉnh/Thành Phố<span class="mandatory"></span></th>
                                     <td class="style1">
-                                      <input type="text" name="ThanhPho" value="TP HCM" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
+                                      <input type="text" name="ThanhPho" value="" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
                                     </td>
                                 </tr>
                                 <tr>

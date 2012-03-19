@@ -36,7 +36,7 @@
                                         <tr>
                                             <td height="30">
                                                 <label>
-                                                    <input type="text" name="email" value="huynhtanlen3003@gmail.com" id="email" class="" style="width: 128px;">
+                                                    <input type="text" name="email" value="" id="email" class="" style="width: 128px;">
                                                 </label>
                                             </td>
                                         </tr>
@@ -48,7 +48,7 @@
                                         <tr>
                                             <td height="30">
                                                 <label>
-                                                    <input type="password" name="password" value="12345678" id="password" class=""
+                                                    <input type="password" name="password" value="" id="password" class=""
                                                         style="width: 128px;">
                                                 </label>
                                             </td>
@@ -62,8 +62,8 @@
                                         </tr>
                                         <tr>
                                             <td class="form-content-text">
-                                                <a href="#" class="home-fr-a"><%=dataLang["BOX_FORGETPASS"].ValueLang%></a>&nbsp;&nbsp; <a href="#"
-                                                        class="home-fr-a"><%=dataLang["BOX_FORGETEMAIL"].ValueLang%></a>
+                                               <%-- <a href="#" class="home-fr-a"><%=dataLang["BOX_FORGETPASS"].ValueLang%></a>&nbsp;&nbsp; <a href="#"
+                                                        class="home-fr-a"><%=dataLang["BOX_FORGETEMAIL"].ValueLang%></a>--%>
                                                 <div style="padding-top: 5px">
                                                     <%=dataLang["BOX_NOACC"].ValueLang%><a href="/Public/DangKy" class="home-fr-a">
                                                          <%=dataLang["TITLE_REGISTER"].ValueLang%></a></div>
