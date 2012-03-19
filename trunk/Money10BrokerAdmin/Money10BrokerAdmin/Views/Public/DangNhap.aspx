@@ -47,9 +47,6 @@
 						<input class="text-input" type="password" name="password" value="12345678"/>
 					</p>
 					<div class="clear"></div>
-					<p id="remember-password">
-						<input type="checkbox" />Remember me
-					</p>
 					<div class="clear"></div>
 					<p>
 						<input class="button" type="submit" value="Sign In" />

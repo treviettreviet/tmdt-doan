@@ -72,31 +72,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Địa Chỉ<span class="mandatory"></span></th>
+                                    <th style="text-align: right">Địa Chỉ<span class="mandatory"></span></th>
                                     <td class="style1">
                                       <input type="text" name="SoNha" value="123" class="text qtip" autocomplete="off" title="- Số Nhà thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Đường<span class="mandatory"></span></th>
+                                    <th style="text-align: right">Đường<span class="mandatory"></span></th>
                                     <td class="style1">
                                       <input type="text" name="Duong" value="Ly Thai To" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Phường/xã<span class="mandatory"></span></th>
+                                    <th style="text-align: right">Phường/xã<span class="mandatory"></span></th>
                                     <td class="style1">
                                       <input type="text" name="PhuongXa" value="Phuong 1" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú">                                
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Quận/Huyện<span class="mandatory"></span></th>
+                                    <th style="text-align: right">Quận/Huyện<span class="mandatory"></span></th>
                                     <td class="style1">
                                       <input type="text" name="QuanHuyen" value="Quan 3" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                                
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Tỉnh/Thành Phố<span class="mandatory"></span></th>
+                                    <th style="text-align: right">Tỉnh/Thành Phố<span class="mandatory"></span></th>
                                     <td class="style1">
                                       <input type="text" name="ThanhPho" value="TP HCM" class="text qtip" autocomplete="off" title="- Địa chỉ thường trú" >                               
                                     </td>

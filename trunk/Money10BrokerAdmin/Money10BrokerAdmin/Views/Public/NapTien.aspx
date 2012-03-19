@@ -25,7 +25,7 @@
             <div class="form-content">
                 <table class="form-content-table">                  
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                             Số tiền nạp<span style="color: red;"><strong> *</strong></span>:<br />
                             <span class="explain_message">(chưa trừ phí)</span>
                         </th>
@@ -81,7 +81,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                             Số tiền nhận<span style="color: red;"><strong> *</strong></span>:<br />
                             <span class="explain_message">(sau khi trừ phí)</span>
                         </th>
@@ -137,7 +137,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                         </th>
                         <td>
                             <span class="explain_message">(Số tiền nạp phải nằm trong khoản từ 30.000<b>₫</b> 
@@ -145,7 +145,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                             Phí tiện ích:
                         </th>
                         <td>
@@ -154,7 +154,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th style="text-align: right">
                             Số tài khoản<span style="color: red;"><strong> *<br />
                             </strong></span>
                         </th>
