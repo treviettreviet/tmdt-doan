@@ -7,6 +7,7 @@ namespace Money10BankingAdmin.Models
 {
     public class GroupModels
     {
+        public string ID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }

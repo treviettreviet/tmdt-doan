@@ -9,19 +9,19 @@
     
 
     <div id="Main">
-
+     <div class="<%=Html.Encode(ViewData["div"]) %>">
+            <%=Html.Encode(ViewData["error"]) %></div>
         
         <div id="form_nap_tien" class="form-container">
             <%--<div class="text_header">
                 <span class="title">Nạp tiền</span> <span>Nạp tiền Online vào thẻ ATM của Ngân 
                 hàng</span></div>--%>
-            <div class="form">
+           <%-- <div class="form">
                 
                 <div class="form-content">
-                    <div class="<%=Html.Encode(ViewData["div"]) %>">
-            <%=Html.Encode(ViewData["error"]) %></div>
+                   
                 </div>
-            </div>
+            </div>--%>
             <form accept-charset="utf-8" action="/Mod/XuLyNapTien" method="post">
             <div class="form-content">
                 <table class="form-content-table">

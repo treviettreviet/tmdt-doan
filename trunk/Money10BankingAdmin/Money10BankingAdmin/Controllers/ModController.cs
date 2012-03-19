@@ -43,34 +43,50 @@ namespace Money10BankingAdmin.Controllers
             {
                
                 decimal sodu;
+                if (amount == "" || amount == null)
+                {
+                    amount = "0";
+                }
                 decimal naptien = decimal.Parse(amount);
                 DB_NganHangEntities db = new DB_NganHangEntities();
-                The tienthe = db.Thes.SingleOrDefault(m => m.SoThe == SoTaiKhoan);
-                if (tienthe.SoThe != null)
-                {
-                    sodu = tienthe.SoDu.Value;
-                    tienthe.SoDu = naptien + sodu;
-                    db.SaveChanges();
-                    Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
-                    return RedirectToAction ("NapTien");
-                }
-                else
-                {
-                    string div = "error-box";
-                    string error = "";
-                    if( tienthe.SoThe==null)
+                List<The> tienthe = (from th in db.Thes select th).ToList();
+                for (int i=0 ; i < tienthe.Count() ; i++)
+                { 
+
+               
+                    if (tienthe[i].SoThe == SoTaiKhoan)
                     {
-                        error += "Số tài khoản không đúng";
+                        sodu = tienthe[i].SoDu.Value;
+                        tienthe[i].SoDu = naptien + sodu;
+                        db.SaveChanges();
+                        Response.Write("<script> alert ('Nạp tiền thành công!');</script>");
+                        return RedirectToAction("NapTien");
                     }
-                    ViewData["div"] = div;
-                    ViewData["error"] = error;
-                    return View("../Public/NapTien");
+                    else
+                    {
+                        string div = "error-box";
+                        string error = "";
+                       
+                        error = "Số tài khoản không đúng";
+                        
+                        ViewData["div"] = div;
+                        ViewData["error"] = error;
+                        return View("../Public/NapTien");
+                    }
                 }
+                return View("../Public/NapTien");
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
+        //public ActionResult DanhSachThe()
+        //{
+        //    List<The> listcard = dbNganHang.Thes.ToList<The>();
+        //    return View(listcard);
+        //}
+
     }
 }
