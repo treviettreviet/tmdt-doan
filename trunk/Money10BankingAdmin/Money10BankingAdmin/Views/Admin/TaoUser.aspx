@@ -270,7 +270,7 @@
 <form action="/Admin/XuLyTaoUser" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
     <table class="form-content-table" cellspacing="10px" id="register_account_personal">
         <tr>
-            <th>Email<span class="mandatory">*</span></th>
+            <th style="text-align: right">Email<span class="mandatory">*</span></th>
             <td class="style1">
                 <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
                     title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
@@ -278,17 +278,17 @@
             </td>
         </tr>         
         <tr>
-            <th>Password<span class="mandatory">*</span></th>
+            <th style="text-align: right">Password<span class="mandatory">*</span></th>
             <td class="style1">
                 <input type="password" name="password" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
         </tr>
         <tr>
-            <th>Confirm Password<span class="mandatory">*</span></th>
+            <th style="text-align: right">Confirm Password<span class="mandatory">*</span></th>
             <td class="style1">
             <input type="password" name="passwordConfirm" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
         </tr>                                          
         <tr>
-            <th>Name<span class="mandatory">*</span></th>
+            <th style="text-align: right">Name<span class="mandatory">*</span></th>
             <td class="style1">
                 <input type="text" name="name" value="Phan Quang Khải" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
                 <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
@@ -357,7 +357,7 @@
         </td>
     </tr>--%>
         <tr>
-            <th>Group<span class="mandatory"></span></th>
+            <th style="text-align: right">Group<span class="mandatory"></span></th>
             <td class="style1">
             <% Money10BankingAdmin.Models.Admin ad = (Money10BankingAdmin.Models.Admin)Session["User"]; %>
                 <% if (ad.GroupID == 1)
