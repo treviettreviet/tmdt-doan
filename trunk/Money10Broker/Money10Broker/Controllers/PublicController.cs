@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Money10Broker.Models;
+using Money10Banking.Models;
 
 namespace Money10Broker.Controllers
 {
@@ -13,9 +14,73 @@ namespace Money10Broker.Controllers
         // GET: /Public/
 
         private xnvaufit_MoiGioiEntities dbMoiGioi = new xnvaufit_MoiGioiEntities();
-        
+
+        private Language GetLang(string lang)
+        {
+
+            xnvaufit_MoiGioiEntities dbb = new xnvaufit_MoiGioiEntities();
+            List<NgonNgu> listLang = (from row in dbb.NgonNgus select row).ToList<NgonNgu>();
+            Language dataLang = new Language();
+            foreach (NgonNgu dr in listLang)
+            {
+                Lang temp = new Lang();
+                temp.VarLang = dr.BienNgonNgu;
+                if (lang == "vi")
+                {
+                    temp.ValueLang = dr.TiengViet;
+                    temp.UrlLang = dr.LinkTiengViet;
+                }
+                else if (lang == "en")
+                {
+                    temp.ValueLang = dr.TiengAnh;
+                    temp.UrlLang = dr.LinkTiengAnh;
+                }
+                dataLang.AddLang(temp);
+            }
+
+            return dataLang;
+
+        }
+
+        private Language GetContent(string lang)
+        {
+
+            xnvaufit_MoiGioiEntities dbb = new xnvaufit_MoiGioiEntities();
+            List<NoiDung> listLang = (from row in dbb.NoiDungs select row).ToList<NoiDung>();
+            Language dataLang = new Language();
+            foreach (NoiDung dr in listLang)
+            {
+                Lang temp = new Lang();
+                temp.VarLang = dr.BienNoiDung;
+                if (lang == "vi")
+                {
+                    temp.ValueLang = dr.TiengViet;
+                    temp.UrlLang = dr.MoTa;
+                }
+                else if (lang == "en")
+                {
+                    temp.ValueLang = dr.TiengAnh;
+                    temp.UrlLang = dr.MoTa;
+                }
+                dataLang.AddLang(temp);
+            }
+
+            return dataLang;
+
+        }
+
         public ActionResult TrangChu()
         {
+            string lang = Request.QueryString["lang"];
+            if (lang == null)
+                lang = "vi";
+
+            Language dataLang = GetLang(lang);
+            Language dataContent = GetContent(lang);
+
+            Session["Content"] = dataContent;
+            Session["Language"] = dataLang;
+
             return View();
         }
 
