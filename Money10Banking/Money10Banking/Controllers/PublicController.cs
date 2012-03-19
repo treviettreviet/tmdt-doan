@@ -65,6 +65,33 @@ namespace Money10Banking.Controllers
 
         }
 
+        private Language GetContent(string lang)
+        {
+
+            NganHangEntities dbb = new NganHangEntities();
+            List<NoiDung> listLang = (from row in dbb.NoiDungs select row).ToList<NoiDung>();
+            Language dataLang = new Language();
+            foreach (NoiDung dr in listLang)
+            {
+                Lang temp = new Lang();
+                temp.VarLang = dr.BienNoiDung;
+                if (lang == "vi")
+                {
+                    temp.ValueLang = dr.TiengViet;
+                    temp.UrlLang = dr.MoTa;
+                }
+                else if (lang == "en")
+                {
+                    temp.ValueLang = dr.TiengAnh;
+                    temp.UrlLang = dr.MoTa;
+                }
+                dataLang.AddLang(temp);
+            }
+
+            return dataLang;
+
+        }
+
         public ActionResult TrangChu()
         {
             string lang = Request.QueryString["lang"];
@@ -72,7 +99,9 @@ namespace Money10Banking.Controllers
                 lang = "vi";
 
             Language dataLang = GetLang(lang);
+            Language dataContent = GetContent(lang);
 
+            Session["Content"] = dataContent;
             Session["Language"] = dataLang;
 
             return View();
@@ -229,7 +258,9 @@ namespace Money10Banking.Controllers
                     lang = "vi";
 
                 Language dataLang = GetLang(lang);
+                Language dataContent = GetContent(lang);
 
+                Session["Content"] = dataContent;
                 Session["Language"] = dataLang;
                 List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
                 ViewData["ListData"] = lst;
@@ -395,7 +426,9 @@ namespace Money10Banking.Controllers
                     lang = "vi";
 
                 Language dataLang = GetLang(lang);
+                Language dataContent = GetContent(lang);
 
+                Session["Content"] = dataContent;
                 Session["Language"] = dataLang;
 
                 int user_validation = UserValidation(email, password);

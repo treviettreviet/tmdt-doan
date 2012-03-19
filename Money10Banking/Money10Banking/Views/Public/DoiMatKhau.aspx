@@ -1,8 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+     <%
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+        {
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+            dataContent = (Money10Banking.Models.Language)Session["Content"];
+        }
+    %>
     <div id="Main">
-    
         <div class="tab-acount">
             <div id="account_info">
                 <div id="account_info_inner">
@@ -36,7 +45,7 @@
             <div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
                 <div class="left">
                     <div class="title">
-                        Thay đổi mật khẩu</div>
+                        <%=dataLang["MENU_CHANGEPASSWORD"].ValueLang%></div>
                 </div>
             </div>
             <div class="clear">
@@ -54,45 +63,7 @@
                 <input type="hidden" name="_form_action" value="/accounts/profile/change_password">
                 <input type="hidden" name="_form_token" value="fda1e295824f105eaf2d62af42ff7d2c8e4012c7">
                 <table class="form-content-table" cellspacing="10px">
-                    <tr>
-                        <td colspan="2">
-                            <p style="padding-left: 20px;">
-                                Chúng tôi đề nghị bạn sử dụng mật khẩu không phải là một từ có thể tra trong từ 
-                                điền, có cả kí tự viết hoa, không viết hoa</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Mật khẩu hiện tại<span class="mandatory">*</span> :
-                        </th>
-                        <td>
-                            <input type="password" name="password" value>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Mật khẩu mới<span class="mandatory">*</span> :
-                        </th>
-                        <td>
-                            <input type="password" name="newPassword" value>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Xác nhận mật khẩu mới<span class="mandatory">*</span> :
-                        </th>
-                        <td>
-                            <input type="password" name="confirmNewPassword" value>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                        </th>
-                        <td>
-                            <input type="submit" name="ok" value="Thay đổi" class="button"><input type="submit"
-                                name="cancel" value="Hủy bỏ" class="button cancel">
-                        </td>
-                    </tr>
+                    <%=dataContent["PAGE_CHANGEPASS"].ValueLang%>
                 </table>
                 </form>
             </div>
