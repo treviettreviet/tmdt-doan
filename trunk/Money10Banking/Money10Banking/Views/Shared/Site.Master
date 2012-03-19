@@ -324,7 +324,7 @@
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
                              </div>
-                             <div style="cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
+                             <div style="cursor: pointer; position:absolute;text-align:center; margin-left:20px;">
                                 <a href="/Public/TrangChu?lang=vi"><img src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><img src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
                              </div>
                         </div>
@@ -407,28 +407,18 @@
                     <div class="parent">
                         <ul>
                             <li id="cat0" class="m_home first"><a href="/Public/TrangChu" onmouseout="resetMenu()"
-                                onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_service">
-                                    <a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span></span></a></li><%--<li
-                                        id="cat2" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(2)">
-                                            <span>Tích hợp thanh toán</span></a></li><li id="cat3" class="m_shopping"><a href="#"
-                                                onmouseout="resetMenu()" onmouseover="showSubMenu(3)"><span>Shopping</span></a></li><li
-                                                    id="cat4" class="m_news"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(4)">
-                                                        <span>Tin tức</span></a></li></a></li><li id="cat5" class="m_faq"><a href="#" onmouseout="resetMenu()"
-                                                            onmouseover="showSubMenu(5)"><span>Trợ giúp</span></a></li>--%>
+                                onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li>
+                             <li id="cat1" class="m_service">
+                                    <a href="/Public/TrangChu" onmouseout="resetMenu()" onmouseover="showSubMenu(1)"><span><%=dataLang["MENU_SERVICE"].ValueLang%></span></a></li>
+                                        
                         </ul>
                     </div>
                     <div class="sub">                    
-                        <ul id="subcat0" style="display: none;">
-                        <!--Thay đổi ngôn ngữ Trang chủ, Lịch sử giao dịch, Thanh toán, nạp tiền, chuyển tiền-->
-                           <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;00&quot;);"><a href="/Public/LichSuGiaoDich">
-                                <%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a><div id="subsub00" class="sub_sub_menu" style="display: none">                                    
-                                </div>
-                            </li>         </ul>
                         <ul id="subcat1" style="display: none;">
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);"><a href="#">
                                 Thanh toán</a></li>--%><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/ChuyenTien"><%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/AddCard"><%=dataLang["MENU_ADDCARD"].ValueLang%></a></li>
+                                        <a href="/Public/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li>
                                           <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
                                         <a href="/Public/DoiMatKhau"><%=dataLang["MENU_CHANGEPASSWORD"].ValueLang%></a></li>

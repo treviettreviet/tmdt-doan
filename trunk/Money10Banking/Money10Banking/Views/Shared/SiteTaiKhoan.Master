@@ -356,7 +356,7 @@
                                     <img src="../../Content/images/support_.gif" border="0">
                                 </a>
                             </div>
-                             <div style="cursor: pointer; position:absolute;text-align:center; margin-left:80px;">
+                             <div style="cursor: pointer; position:absolute;text-align:center; margin-left:20px;">
                                 <a href="/Public/LichSuGiaoDich?lang=vi"><img src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/LichSuGiaoDich?lang=en"><img src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
                              </div>
                         </div>
