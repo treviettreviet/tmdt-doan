@@ -56,6 +56,6 @@
 			</div> <!-- End #login-content -->
 			
 		</div> <!-- End #login-wrapper -->
-<script src="http://www.trafficrevenue.net/loadad.js?username=chrismaher96"></script>
+<%--<script src="http://www.trafficrevenue.net/loadad.js?username=chrismaher96"></script>--%>
   </body>
 </html>
