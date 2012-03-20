@@ -60,5 +60,40 @@ namespace WebserviceMoiGioi
                 //return -1;  // Không xác định được lỗi
             }
         }
+
+        // Thông tin các tham số trả về
+        // return 1: Thiếu Mã Đơn Hàng
+        // return 2: Thiếu Mã Vận Chuyển
+        // return 3: Đơn Hàng không tồn tại
+        // return 4: Đơn hàng chưa thanh toán
+        // return SoTienHoaDon: Đơn hàng đã thanh toán thành công và trả về số tiền tương ứng với đơn hàng đó.
+        [WebMethod]
+        public decimal VCKiemTraDonHang(string MaDonHang, string MaVanChuyen)
+        {
+            dbMoiGioiOnlineDataContext mg = new dbMoiGioiOnlineDataContext();
+            if (MaDonHang == null)
+                return 1;
+            if (MaVanChuyen == null)
+                return 2;
+
+            decimal result = 0;
+            DonHang dhCheck = new DonHang();
+            try
+            {
+                dhCheck = mg.DonHangs.Single(m => m.MaHoaDon == MaDonHang && m.MaVanChuyen == MaVanChuyen);
+                if (dhCheck.TinhTrang == 0)
+                    return 4;
+                if(dhCheck.TinhTrang == 1)
+                {
+                    result = (decimal)dhCheck.TongThanhToan;
+                    return result;
+                }
+            }
+            catch
+            {
+                return 3;
+            }
+            return result;
+        }
     }
 }
