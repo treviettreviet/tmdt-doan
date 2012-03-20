@@ -426,6 +426,17 @@
                                           <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
                                     <a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
                                         <a href="/Public/DoiMatKhau"><%=dataLang["MENU_CHANGEPASSWORD"].ValueLang%></a></li>
+                                         <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
+                                <a href="/Public/AddCard"><%=dataLang["MENU_ADDCARD"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                                    <%--<a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/RutTien">Rút tiền</a>--%><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
+                                            <ul>
+                                                <li><a href="#">Rút về tài khoản Ngân hàng</a></li><li><a href="#">Rút tiền mặt tại
+                                                    trụ sở</a></li><li><a href="#">Rút tiền mặt trả tại nhà bạn</a></li><li><a href="#">
+                                                        <font color="red">Bắn tiền ngay vào ĐT di động (có chiết khấu)</font><img src="../../Content/images/hot00000.gif"
+                                                            border="0"></a></li><li><a href="#">Mua thẻ Visa trả trước RÊV</a></li></ul>
+                                        </div>--%>
+                                    </li>
                                         <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);">
                                             <a href="#"><font color="red">Đăng ký đại lý </font>
                                                 <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%><%--<li onmouseout="resetMenu()"
