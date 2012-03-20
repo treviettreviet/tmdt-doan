@@ -105,7 +105,7 @@
 			  </tr>		
 			  <tr>
 				<th><span class="required">*</span>Số tiền muốn chuyển khoản</th>
-				<td><input name="amount" id="amount" type="text" value="10000" maxlength="16" class="input-business input-amount field-check" autocomplete="off"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="amount" id="amount" type="text" value="" maxlength="16" class="input-business input-amount field-check" autocomplete="off"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		  			  
 			 		  

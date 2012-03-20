@@ -67,7 +67,7 @@
                                 TinhTrangTaiKhoan = "Chưa khai báo tình trạng";
                             if (tk.MaLoaiTaiKhoan.Equals("LTK001"))
                             {
-                                LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁC NHÂN";
+                                LoaiTaiKhoan = "TÀI KHOẢN VÍ DÀNH CHO CÁ NHÂN";
                                 string MaTaiKhoan = "Chưa thiết lập";
                                 string HoTen = "Chưa khai báo Họ Tên [<a href=''>Khai báo</a>]";
                                 string NgaySinh = "Chưa khai báo Ngày Sinh [<a href=''>Khai báo</a>]";
