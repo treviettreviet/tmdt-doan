@@ -243,7 +243,7 @@ namespace Money10Broker.Controllers
                 DonHang dh = dbMoiGioi.DonHangs.Single(m => m.MaHoaDon.Equals(id) && m.TinhTrang==0);
                 return View(dh);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return RedirectToAction("../Public/TrangChu");
                 //throw new Exception(ex.Message);

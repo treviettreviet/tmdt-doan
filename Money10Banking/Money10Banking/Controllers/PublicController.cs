@@ -217,9 +217,9 @@ namespace Money10Banking.Controllers
                     
                         card[i].TinhTrang = 1;
                         card[i].MaTaiKhoan = tk.MaTaiKhoan;
-                        string max = dbb.Thes.Max(m => m.MaThe);
+                        List<string> lstID = (from col in dbb.Thes select col.MaThe).ToList<string>();
                         The the = new The();
-                        the.MaThe = TaoMaTangTuDong(max,"T");
+                        the.MaThe = TaoMaTangTuDong(lstID, "T");
                         the.MaTaiKhoan = tk.MaTaiKhoan;
                         the.MaLoaiThe = "LT001";
                         the.SoThe = card[i].SoThe;
@@ -356,27 +356,20 @@ namespace Money10Banking.Controllers
         //    return maTuDong;
         //}
 
-        public static string TaoMaTangTuDong(string lastID, string prefixID)
+        public static string TaoMaTangTuDong(List<string> lstID, string prefixID)
         {
-            if (lastID == "")
+            int max = 0;
+
+            foreach (string sub in lstID)
             {
-                return prefixID + "0001";  // fix
+                int temp = int.Parse(sub.Remove(0, prefixID.Length));
+                if (temp > max)
+                    max = temp;
             }
-            int nextID = int.Parse(lastID.Remove(0, prefixID.Length)) + 1;
-            int lengthNumerID = lastID.Length - prefixID.Length;
-            string zeroNumber = "";
-            for (int i = 1; i <= lengthNumerID; i++)
-            {
-                if (nextID < Math.Pow(10, i))
-                {
-                    for (int j = 1; j <= lengthNumerID - i; i++)
-                    {
-                        zeroNumber += "0";
-                    }
-                    return prefixID + zeroNumber + nextID.ToString();
-                }
-            }
-            return prefixID + nextID;
+            
+            
+            
+            return prefixID + max.ToString();
 
         }
 
@@ -928,7 +921,7 @@ namespace Money10Banking.Controllers
             try
             {
                 NganHangEntities db1 = new NganHangEntities();
-                string maxtk = db1.TaiKhoans.Max(m=>m.MaTaiKhoan);//lấy record cuối cùng của cột mã tài khoản
+                List<string> lstID = (from col in db1.TaiKhoans select col.MaTaiKhoan).ToList<string>();//lấy cột mã tài khoản
                 TaiKhoan tk = new TaiKhoan();
                 if (KiemTraEmail(email) == 1)
                 {
@@ -942,7 +935,7 @@ namespace Money10Banking.Controllers
                     ViewData["error"] = error;
                     return View("DangKy");
                 }
-                tk.MaTaiKhoan = TaoMaTangTuDong(maxtk, "TK");
+                tk.MaTaiKhoan = TaoMaTangTuDong(lstID, "TK");
                 tk.MaLoaiTaiKhoan = "LTK001";
                 tk.SoTaiKhoan = TaoSoTaiKhoan();
                 tk.MatKhauGiaoDich = PassWord(6);
@@ -952,9 +945,9 @@ namespace Money10Banking.Controllers
                 db1.TaiKhoans.AddObject(tk);
 
                 // Thêm vào bảng DiaChi
-                string max = db1.DiaChis.Max(m => m.MaDiaChi);// lấy record cuối cùng cột mã địa chỉ
+                List<string> lstMaDiaChi = (from col in db1.DiaChis select col.MaDiaChi).ToList<string>();// lấy record cuối cùng cột mã địa chỉ
                 DiaChi dc = new DiaChi();
-                dc.MaDiaChi = TaoMaTangTuDong(max, "DC");
+                dc.MaDiaChi = TaoMaTangTuDong(lstMaDiaChi, "DC");
 
                 if (SoNha == "" || SoNha == null)
                 {
@@ -985,7 +978,7 @@ namespace Money10Banking.Controllers
                 db1.DiaChis.AddObject(dc);
 
                 // Thêm vào bảng Khách Hàng
-                string maxkh = db1.KhachHangs.Max(m=>m.MaKhachHang);//lấy giá trị cuôiis cùng cột Mã kh
+                List<string> maxkh = (from col in db1.KhachHangs select col.MaKhachHang).ToList<string>(); ;//lấy giá trị cuôiis cùng cột Mã kh
                 KhachHang kh = new KhachHang();
                 kh.MaKhachHang = TaoMaTangTuDong(maxkh, "KH");
                 kh.MaTaiKhoan = tk.MaTaiKhoan;
@@ -1052,7 +1045,7 @@ namespace Money10Banking.Controllers
             try 
 	        {	
 		        NganHangEntities dbNganHang = new NganHangEntities();
-                string MaTaiKhoanMax = dbNganHang.TaiKhoans.Max(m => m.MaTaiKhoan);
+                List<string> MaTaiKhoanMax = (from col in dbNganHang.TaiKhoans select col.MaTaiKhoan).ToList<string>();
                 TaiKhoan TaiKhoanMoi = new TaiKhoan();
 
                 if (KiemTraEmail(email_company) == 1)
@@ -1079,7 +1072,7 @@ namespace Money10Banking.Controllers
 
                 MoiGioi MoiGioiMoi = new MoiGioi();
                 //MoiGioi MoiGioiMax = dbNganHang.MoiGiois.LastOrDefault();    // Trả về record cuối cùng trong bảng Môi Giới
-                string MaMoiGioiMax = dbNganHang.MoiGiois.Max(m => m.MaMoiGioi);    // Trả về mã cuối cùng trong bảng Môi Giới
+                List<string> MaMoiGioiMax = (from col in dbNganHang.MoiGiois select col.MaMoiGioi).ToList<string>();   // Trả về mã cuối cùng trong bảng Môi Giới
                 string MaMoiGioiNext = TaoMaTangTuDong(MaMoiGioiMax, "MG");
                 MoiGioiMoi.MaMoiGioi = MaMoiGioiNext;
 
@@ -1094,7 +1087,7 @@ namespace Money10Banking.Controllers
                 dbNganHang.MoiGiois.AddObject(MoiGioiMoi);
 
                 
-                string DiaChiMax = (dbNganHang.DiaChis).Max(m=>m.MaDiaChi);  // Lấy mã địa chỉ cuối cùng
+                List<string> DiaChiMax = (from col in dbNganHang.DiaChis select col.MaDiaChi).ToList<string>();  // Lấy mã địa chỉ cuối cùng
                 DiaChi DiaChiMoi = new DiaChi();
                 string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, "DC");
                 DiaChiMoi.MaDiaChi = MaDiaChiNext;
@@ -1156,7 +1149,7 @@ namespace Money10Banking.Controllers
             }
             else
             {
-                string DiaChiMax = (dbN.DiaChis).Max(m => m.MaDiaChi);
+                List<string> DiaChiMax = (from col in dbN.DiaChis select col.MaDiaChi).ToList<string>();//(dbN.DiaChis).Max(m => m.MaDiaChi);
                 DiaChi DiaChiMoi = new DiaChi();
                 string MaDiaChiNext = TaoMaTangTuDong(DiaChiMax, "DC");
                 DiaChiMoi.MaDiaChi = MaDiaChiNext;
@@ -1255,7 +1248,7 @@ namespace Money10Banking.Controllers
                                   NganHangEntities dbNH= new NganHangEntities();
                                 The th = dbNH.Thes.Single(m => m.SoThe == card_no_send);
                                 Session["The"] = th;
-                                string MaGDMax = dbNH.LichSuGiaoDiches.Max(p=> p.MaLichSuGiaoDich);
+                                List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
                                 LichSuGiaoDich LSGD = new LichSuGiaoDich();
                                 LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
                                 LSGD.MaThe = th.MaThe ;
@@ -1361,7 +1354,7 @@ namespace Money10Banking.Controllers
                           
                            //The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
                            //Session["The"] = sendcard;
-                           string MaGDMax = dbNH.LichSuGiaoDiches.Max(p => p.MaLichSuGiaoDich);
+                           List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
                            LichSuGiaoDich LSGD = new LichSuGiaoDich();
                            LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
                            LSGD.MaThe = sendcard.MaThe;
