@@ -67,19 +67,6 @@
       <Association Name="TaiKhoan_DoanhNghiep" Member="TaiKhoan" ThisKey="MaTaiKhoan" OtherKey="MaTaiKhoan" Type="TaiKhoan" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DonHang" Member="DonHangs">
-    <Type Name="DonHang">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaHoaDon" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TongThanhToan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="ChuTaiKhoan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DienThoai" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.[Group]" Member="Groups">
     <Type Name="Group">
       <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -227,6 +214,21 @@
       <Column Name="GiaTri" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonHang" Member="DonHangs">
+    <Type Name="DonHang">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHoaDon" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaVanChuyen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongThanhToan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="EmailKhachHangThanhToan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ChuTaiKhoan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -17,7 +17,7 @@ namespace WebserviceMoiGioi
     public class WebServiceMoiGioiMoney10 : System.Web.Services.WebService
     {
         [WebMethod]
-        public int GhiNhanDonHang(string MaDonHang, int SoLuong, decimal TongThanhToan, string ChuTaiKhoan, int TinhTrang, string Email, string DienThoai, string DiaChi)
+        public int GhiNhanDonHang(string MaDonHang, string MaVanChuyen, int SoLuong, decimal TongThanhToan, string ChuTaiKhoan, int TinhTrang, string Email, string DienThoai, string DiaChi)
         {
             dbMoiGioiOnlineDataContext db = new dbMoiGioiOnlineDataContext();
             DonHang dh = new DonHang();
@@ -39,16 +39,18 @@ namespace WebserviceMoiGioi
                     return 7;    // Thiếu thông tin Số Điện Thoại của Chủ Website Kinh Doanh
                 if(DiaChi==null)
                     return 8;    // Thiếu Địa Chỉ của Chủ Website Kinh Doanh
+                if (MaVanChuyen == null)
+                    return 9;   // Thiếu Mã Vận Chuyển
                 dh.MaHoaDon = MaDonHang;
+                dh.MaVanChuyen = MaVanChuyen;
                 dh.SoLuong = SoLuong;
                 dh.TongThanhToan = TongThanhToan;
                 dh.ChuTaiKhoan = ChuTaiKhoan;
-                dh.TinhTrang = TinhTrang;
+                dh.TinhTrang = 0;
                 dh.Email = Email;
                 dh.DienThoai = DienThoai;
                 dh.DiaChi = DiaChi;
                 db.DonHangs.InsertOnSubmit(dh);
-                //db.DonHangs.Add(dh);
                 db.SubmitChanges();
                 return 0;   // Ghi nhận Đơn Hàng thành công.!
             }

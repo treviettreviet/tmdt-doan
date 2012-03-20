@@ -32,12 +32,6 @@
         <elementListCompartment Id="4e32dded-7c7b-4682-99c7-dab2ab1e769a" absoluteBounds="9.265, 6.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="34c7d70c-f222-43e1-b882-37ec390c4032" absoluteBounds="8.75, 9.375, 2, 2.2465844726562487">
-      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/DonHang" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b9301675-92ce-4bad-9e0e-d6a9b9bcc08e" absoluteBounds="8.765, 9.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e705d1f3-98bf-4fcc-a554-153512d9e2ad" absoluteBounds="0.75, 1.375, 2, 1.26050048828125">
       <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/Group" />
       <nestedChildShapes>
@@ -128,7 +122,7 @@
         <elementListCompartment Id="0e29868f-ce4d-4006-b303-7f434c0381e6" absoluteBounds="12.765, 13.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 4.89644490559896); (9 : 4.89644490559896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.89644490559896); (9 : 4.89644490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/The/The_LichSuGiaoDich" />
       <nodes>
         <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
@@ -142,21 +136,21 @@
         <classShapeMoniker Id="7f6951d3-d8e5-435a-9722-0eb6b4231b95" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 14.875); (8.40625 : 7.10361857096354); (9.25 : 7.10361857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 14.875); (8.40625 : 6.95764571370443); (9.25 : 6.95764571370443)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiayPhepKinhDoanh/LoaiGiayPhepKinhDoanh_DoanhNghiep" />
       <nodes>
         <classShapeMoniker Id="3734bf94-1fb2-4857-9cbb-68314ae3195b" />
         <classShapeMoniker Id="e23e022b-36de-4b18-8313-92939d16a468" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.75525024414063); (6.25 : 4.75525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.75525024414063); (6.25 : 4.75525024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiThe/LoaiThe_The" />
       <nodes>
         <classShapeMoniker Id="0efe7e20-5441-4575-a29e-0d7df7fd2ff6" />
         <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 2.02492390950521); (9 : 2.02492390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 2.02492390950521); (9 : 2.02492390950521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiGiaoDich/LoaiGiaoDich_PhiGiaoDich" />
       <nodes>
         <classShapeMoniker Id="6043561b-d8df-49fa-80ec-22137b6c1297" />
@@ -170,33 +164,39 @@
         <classShapeMoniker Id="0de6d60c-3697-4f7f-b336-8e75e58aca74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 8.45723714192708); (4.5 : 11.7482922363281); (6.25 : 11.7482922363281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 8.45723714192708); (4.5 : 11.7482922363281); (6.25 : 11.7482922363281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_CaNhan" />
       <nodes>
         <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
         <classShapeMoniker Id="80ce50e7-a3d8-419f-8bb6-7fd17695c13c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.10361857096354); (6.25 : 8.10361857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 8.10361857096354); (6.25 : 8.10361857096354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_DiaChi" />
       <nodes>
         <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
         <classShapeMoniker Id="a630b636-883f-4d69-a664-9b21cd34acba" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.45805928548177); (8.32291666666667 : 7.45805928548177 : JumpStart); (8.48958333333333 : 7.45805928548177 : JumpEnd); (9.25 : 7.45805928548177)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.45805928548177); (8.32291666666667 : 7.45805928548177 : JumpStart); (8.48958333333333 : 7.45805928548177 : JumpEnd); (9.25 : 7.45805928548177)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/TaiKhoan/TaiKhoan_DoanhNghiep" />
       <nodes>
         <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
         <classShapeMoniker Id="e23e022b-36de-4b18-8313-92939d16a468" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.50525024414063); (3.5 : 7.50525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.50525024414063); (3.5 : 7.50525024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbMoiGioiOnlineDataContext/LoaiTaiKhoan/LoaiTaiKhoan_TaiKhoan" />
       <nodes>
         <classShapeMoniker Id="1e10781e-aeb0-4795-9c2d-a47a9f1874a9" />
         <classShapeMoniker Id="f0379604-119a-40a9-a678-1e3d1d7df496" />
       </nodes>
     </associationConnector>
+    <classShape Id="63a5bd4b-3cbc-408d-8a57-6271c6afe270" absoluteBounds="9.125, 9.75, 2, 2.5752791341145831">
+      <DataClassMoniker Name="/dbMoiGioiOnlineDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69498b7a-b2b9-4d42-af4f-9e8708102032" absoluteBounds="9.14, 10.21, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
