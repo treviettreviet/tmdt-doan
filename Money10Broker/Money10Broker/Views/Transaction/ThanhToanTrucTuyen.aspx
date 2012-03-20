@@ -327,8 +327,9 @@
                                 </th>
                                 <td>
                                     <p>
-                                        <input class="btn-login" type="submit" value="Đăng Nhập" />
-                                        <a href="#" style="text-decoration: underline;" target="_blank">Quên mật khẩu?</a></p>
+                                        <%--<input class="btn-login" type="submit" value="Đăng Nhập" />--%>
+                                        <input class="button-content" type="submit" value="Đăng Nhập" />
+                                        <%--<a href="#" style="text-decoration: underline;" target="_blank">Quên mật khẩu?</a></p>--%>
                                     <p style="margin-top: 20px;">
                                         Bạn chưa có tài khoản ví EcMoney10Broker.tk? Vui lòng đăng ký miễn phí <a href="/Account/ChonDangKy" style="text-decoration: underline;"
                                             target="_blank" title="Mở tài khoản miễn phí">tại đây</a></p>
