@@ -124,7 +124,7 @@ namespace Money10Broker.Controllers
             int user_validation = UserValidation(email, password);
             if (user_validation == 0)
             {
-                return RedirectToAction("../Public/TongHop");
+                return RedirectToAction("../Transaction/LichSuGiaoDich");
             }
             else
             {

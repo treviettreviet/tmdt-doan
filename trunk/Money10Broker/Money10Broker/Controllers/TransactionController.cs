@@ -79,12 +79,8 @@ namespace Money10Broker.Controllers
             smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
             try
             {
-
-
                 if (from.Length > 0 && to.Length > 0 && subject.Length > 0 && body.Length >= 0)
                 {
-
-
                     System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
                     msg.From = new MailAddress(from, "Money10Bank Gui Mail", System.Text.Encoding.UTF8);
                     Byte i;
@@ -96,7 +92,6 @@ namespace Money10Broker.Controllers
                             //lblError.Visible = true;
                             //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
                             Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
-
                         }
                         else
                         {
@@ -113,8 +108,6 @@ namespace Money10Broker.Controllers
                     }
                 }
             }
-
-
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
