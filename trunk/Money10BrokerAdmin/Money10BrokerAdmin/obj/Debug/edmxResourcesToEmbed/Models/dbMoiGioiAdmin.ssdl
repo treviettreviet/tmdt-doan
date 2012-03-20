@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoiGioiAdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MoiGioiAdminModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="MoiGioiAdminModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CaNhan" EntityType="MoiGioiAdminModel.Store.CaNhan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DiaChi" EntityType="MoiGioiAdminModel.Store.DiaChi" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoanhNghiep" EntityType="MoiGioiAdminModel.Store.DoanhNghiep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DonHang" EntityType="MoiGioiAdminModel.Store.DonHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group" EntityType="MoiGioiAdminModel.Store.Group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LichSuGiaoDich" EntityType="MoiGioiAdminModel.Store.LichSuGiaoDich" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiGiaoDich" EntityType="MoiGioiAdminModel.Store.LoaiGiaoDich" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiGiayPhepKinhDoanh" EntityType="MoiGioiAdminModel.Store.LoaiGiayPhepKinhDoanh" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiTaiKhoan" EntityType="MoiGioiAdminModel.Store.LoaiTaiKhoan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiThe" EntityType="MoiGioiAdminModel.Store.LoaiThe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LogAction" EntityType="MoiGioiAdminModel.Store.LogAction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MoiGioiLienKet" EntityType="MoiGioiAdminModel.Store.MoiGioiLienKet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NgonNgu" EntityType="MoiGioiAdminModel.Store.NgonNgu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NoiDung" EntityType="MoiGioiAdminModel.Store.NoiDung" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permission" EntityType="MoiGioiAdminModel.Store.Permission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhiGiaoDich" EntityType="MoiGioiAdminModel.Store.PhiGiaoDich" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="MoiGioiAdminModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaiKhoan" EntityType="MoiGioiAdminModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThamSo" EntityType="MoiGioiAdminModel.Store.ThamSo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="The" EntityType="MoiGioiAdminModel.Store.The" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Admin_Group" Association="MoiGioiAdminModel.Store.FK_Admin_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaNhan_TaiKhoan" Association="MoiGioiAdminModel.Store.FK_CaNhan_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="CaNhan" EntitySet="CaNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiaChi_TaiKhoan" Association="MoiGioiAdminModel.Store.FK_DiaChi_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="DiaChi" EntitySet="DiaChi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoanhNghiep_LoaiGiayPhepKinhDoanh" Association="MoiGioiAdminModel.Store.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh">
+      <End Role="LoaiGiayPhepKinhDoanh" EntitySet="LoaiGiayPhepKinhDoanh" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghiep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoanhNghiep_TaiKhoan" Association="MoiGioiAdminModel.Store.FK_DoanhNghiep_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghiep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichSuGiaoDich_LoaiGiaoDich" Association="MoiGioiAdminModel.Store.FK_LichSuGiaoDich_LoaiGiaoDich">
+      <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDich" />
+      <End Role="LichSuGiaoDich" EntitySet="LichSuGiaoDich" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichSuGiaoDich_The" Association="MoiGioiAdminModel.Store.FK_LichSuGiaoDich_The">
+      <End Role="The" EntitySet="The" />
+      <End Role="LichSuGiaoDich" EntitySet="LichSuGiaoDich" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permission_Group" Association="MoiGioiAdminModel.Store.FK_Permission_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Permission" EntitySet="Permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhiGiaoDich_LoaiGiaoDich" Association="MoiGioiAdminModel.Store.FK_PhiGiaoDich_LoaiGiaoDich">
+      <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDich" />
+      <End Role="PhiGiaoDich" EntitySet="PhiGiaoDich" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="MoiGioiAdminModel.Store.FK_TaiKhoan_LoaiTaiKhoan">
+      <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoan" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_The_LoaiThe" Association="MoiGioiAdminModel.Store.FK_The_LoaiThe">
+      <End Role="LoaiThe" EntitySet="LoaiThe" />
+      <End Role="The" EntitySet="The" />
+    </AssociationSet>
+    <AssociationSet Name="FK_The_TaiKhoan" Association="MoiGioiAdminModel.Store.FK_The_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="The" EntitySet="The" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="CaNhan">
+    <Key>
+      <PropertyRef Name="MaCaNhan" />
+    </Key>
+    <Property Name="MaCaNhan" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="CMNDHoChieu" Type="int" />
+    <Property Name="TinhTrang" Type="int" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DiaChi">
+    <Key>
+      <PropertyRef Name="MaDiaChi" />
+    </Key>
+    <Property Name="MaDiaChi" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="SoNha" Type="varchar" MaxLength="10" />
+    <Property Name="Duong" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhuongXa" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuanHuyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhThanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep">
+    <Key>
+      <PropertyRef Name="MaDoanhNghiep" />
+    </Key>
+    <Property Name="MaDoanhNghiep" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="MaLoaiGiayPhepKinhDoanh" Type="varchar" MaxLength="10" />
+    <Property Name="TenCongTy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoaiCongTy" Type="int" />
+    <Property Name="SoGiayPhepKinhDoanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+    <Property Name="DiaChiCongTy" Type="varchar" MaxLength="500" />
+    <Property Name="DienThoaiDiDong" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaHoaDon" Type="varchar" MaxLength="10" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="TongThanhToan" Type="decimal" />
+    <Property Name="ChuTaiKhoan" Type="nvarchar" MaxLength="200" />
+    <Property Name="TinhTrang" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="LichSuGiaoDich">
+    <Key>
+      <PropertyRef Name="MaLichSuGiaoDich" />
+    </Key>
+    <Property Name="MaLichSuGiaoDich" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MaThe" Type="varchar" MaxLength="10" />
+    <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
+    <Property Name="SoTheNhan" Type="varchar" MaxLength="16" />
+    <Property Name="NgayGiaoDich" Type="datetime" />
+    <Property Name="SoTienGiaoDich" Type="decimal" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiGiaoDich">
+    <Key>
+      <PropertyRef Name="MaLoaiGiaoDich" />
+    </Key>
+    <Property Name="MaLoaiGiaoDich" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TenLoaiGiaoDich" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoaiGiayPhepKinhDoanh">
+    <Key>
+      <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+    </Key>
+    <Property Name="MaLoaiGiayPhepKinhDoanh" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TenLoaiGiayPhepKinhDoanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiTaiKhoan">
+    <Key>
+      <PropertyRef Name="MaLoaiTaiKhoan" />
+    </Key>
+    <Property Name="MaLoaiTaiKhoan" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TenLoaiTaiKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiThe">
+    <Key>
+      <PropertyRef Name="MaLoaiThe" />
+    </Key>
+    <Property Name="MaLoaiThe" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TenLoaiThe" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="LogAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="ThoiGian" Type="datetime" />
+    <Property Name="BangLienQuan" Type="varchar" MaxLength="100" />
+    <Property Name="ThaoTac" Type="varchar" MaxLength="100" />
+    <Property Name="DuLieuCu" Type="nvarchar" MaxLength="500" />
+    <Property Name="DuLieuMoi" Type="nvarchar" MaxLength="500" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="MoiGioiLienKet">
+    <Key>
+      <PropertyRef Name="MaMoiGioiLienKet" />
+    </Key>
+    <Property Name="MaMoiGioiLienKet" Type="int" Nullable="false" />
+    <Property Name="TenMoiGioiLienKet" Type="nvarchar" MaxLength="100" />
+    <Property Name="TaiKhoanMoiGioiLienKet" Type="nvarchar" MaxLength="100" />
+    <Property Name="UrlWebservice" Type="nvarchar" MaxLength="100" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="NgonNgu">
+    <Key>
+      <PropertyRef Name="MaNgonNgu" />
+    </Key>
+    <Property Name="MaNgonNgu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BienNgonNgu" Type="nvarchar" MaxLength="128" />
+    <Property Name="TiengViet" Type="nvarchar" MaxLength="512" />
+    <Property Name="TiengAnh" Type="nvarchar" MaxLength="512" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="512" />
+    <Property Name="LinkTiengAnh" Type="nvarchar" MaxLength="512" />
+    <Property Name="LinkTiengViet" Type="nvarchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="NoiDung">
+    <Key>
+      <PropertyRef Name="MaNoiDung" />
+    </Key>
+    <Property Name="MaNoiDung" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BienNoiDung" Type="nvarchar" MaxLength="128" />
+    <Property Name="TiengViet" Type="ntext" />
+    <Property Name="TiengAnh" Type="text" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Insert" Type="int" />
+    <Property Name="Update" Type="int" />
+    <Property Name="Delete" Type="int" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PhiGiaoDich">
+    <Key>
+      <PropertyRef Name="MaPhiGiaoDich" />
+    </Key>
+    <Property Name="MaPhiGiaoDich" Type="int" Nullable="false" />
+    <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
+    <Property Name="Phi" Type="decimal" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="SoTaiKhoan" Type="varchar" MaxLength="6" />
+    <Property Name="MaLoaiTaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="SoDu" Type="decimal" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhauGiaoDich" Type="varchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="ThamSo">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="int" Nullable="false" />
+    <Property Name="TenThamSo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kieu" Type="varchar" MaxLength="50" />
+    <Property Name="GiaTri" Type="varchar" MaxLength="10" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="The">
+    <Key>
+      <PropertyRef Name="MaThe" />
+    </Key>
+    <Property Name="MaThe" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="MaLoaiThe" Type="varchar" MaxLength="10" />
+    <Property Name="SoThe" Type="varchar" MaxLength="16" />
+    <Property Name="SoBaoMat" Type="varchar" MaxLength="10" />
+    <Property Name="NgayMoThe" Type="datetime" />
+    <Property Name="NgayHetHan" Type="datetime" />
+    <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <Association Name="FK_Admin_Group">
+    <End Role="Group" Type="MoiGioiAdminModel.Store.Group" Multiplicity="1" />
+    <End Role="Admin" Type="MoiGioiAdminModel.Store.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaNhan_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.Store.TaiKhoan" Multiplicity="0..1" />
+    <End Role="CaNhan" Type="MoiGioiAdminModel.Store.CaNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="CaNhan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiaChi_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.Store.TaiKhoan" Multiplicity="0..1" />
+    <End Role="DiaChi" Type="MoiGioiAdminModel.Store.DiaChi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DiaChi">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoanhNghiep_LoaiGiayPhepKinhDoanh">
+    <End Role="LoaiGiayPhepKinhDoanh" Type="MoiGioiAdminModel.Store.LoaiGiayPhepKinhDoanh" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="MoiGioiAdminModel.Store.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiayPhepKinhDoanh">
+        <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoanhNghiep_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.Store.TaiKhoan" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="MoiGioiAdminModel.Store.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichSuGiaoDich_LoaiGiaoDich">
+    <End Role="LoaiGiaoDich" Type="MoiGioiAdminModel.Store.LoaiGiaoDich" Multiplicity="0..1" />
+    <End Role="LichSuGiaoDich" Type="MoiGioiAdminModel.Store.LichSuGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Principal>
+      <Dependent Role="LichSuGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichSuGiaoDich_The">
+    <End Role="The" Type="MoiGioiAdminModel.Store.The" Multiplicity="0..1" />
+    <End Role="LichSuGiaoDich" Type="MoiGioiAdminModel.Store.LichSuGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="The">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="LichSuGiaoDich">
+        <PropertyRef Name="MaThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permission_Group">
+    <End Role="Group" Type="MoiGioiAdminModel.Store.Group" Multiplicity="1" />
+    <End Role="Permission" Type="MoiGioiAdminModel.Store.Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhiGiaoDich_LoaiGiaoDich">
+    <End Role="LoaiGiaoDich" Type="MoiGioiAdminModel.Store.LoaiGiaoDich" Multiplicity="0..1" />
+    <End Role="PhiGiaoDich" Type="MoiGioiAdminModel.Store.PhiGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Principal>
+      <Dependent Role="PhiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_LoaiTaiKhoan">
+    <End Role="LoaiTaiKhoan" Type="MoiGioiAdminModel.Store.LoaiTaiKhoan" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.Store.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiTaiKhoan">
+        <PropertyRef Name="MaLoaiTaiKhoan" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaLoaiTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_The_LoaiThe">
+    <End Role="LoaiThe" Type="MoiGioiAdminModel.Store.LoaiThe" Multiplicity="0..1" />
+    <End Role="The" Type="MoiGioiAdminModel.Store.The" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiThe">
+        <PropertyRef Name="MaLoaiThe" />
+      </Principal>
+      <Dependent Role="The">
+        <PropertyRef Name="MaLoaiThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_The_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.Store.TaiKhoan" Multiplicity="0..1" />
+    <End Role="The" Type="MoiGioiAdminModel.Store.The" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="The">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>
