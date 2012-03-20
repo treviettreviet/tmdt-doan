@@ -50,7 +50,7 @@
                     <li><a href="/Public/TrangChu" class="active"
                         target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker.tk</span></a></li>
                     <li><a href="" class target><span class="icon-tasbar-pp"></span><span>Money04.TK</span></a></li>
-                    <li><a href="#" class="" target=""><span>Mua sắm</span></a></li>
+                    <%--<li><a href="#" class="" target=""><span>Mua sắm</span></a></li>--%>
                 </ul>
             </div>
             <div class="taskbar-support">
