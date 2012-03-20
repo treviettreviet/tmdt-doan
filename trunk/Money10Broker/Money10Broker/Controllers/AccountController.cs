@@ -222,8 +222,9 @@ namespace Money10Broker.Controllers
                         xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
                         TaiKhoan newUser = new TaiKhoan();
                         CaNhan newInfo = new CaNhan();
-                        string MaTaiKhoanMax = dbXuLyDangKy.TaiKhoans.Max(m => m.MaTaiKhoan);
-                        string MaTaiKhoanNext = TaoMaTangTuDong(MaTaiKhoanMax, 2, "TK");
+                       
+                        List<string> lstMaTaiKhoan = (from col in dbXuLyDangKy.TaiKhoans select col.MaTaiKhoan).ToList<string>();//dbXuLyDangKy.TaiKhoans.ToList<string>(m => m.MaTaiKhoan);
+                        string MaTaiKhoanNext = TaoMaTangTuDong(lstMaTaiKhoan, 2, "TK");
                         newUser.MaTaiKhoan = MaTaiKhoanNext;
                         newUser.SoTaiKhoan = TaoSoTaiKhoan();   // Tạo số tài khoản tự động gồm 6 số không trùng nhau.
                         newUser.MaLoaiTaiKhoan = "LTK001";
@@ -235,8 +236,8 @@ namespace Money10Broker.Controllers
                         dbXuLyDangKy.TaiKhoans.AddObject(newUser);
 
                         // Thêm thông tin vào bảng cá nhân
-                        string MaCaNhanMax = dbXuLyDangKy.CaNhans.Max(m => m.MaCaNhan);
-                        string MaCaNhanNext = TaoMaTangTuDong(MaCaNhanMax, 2, "CN");
+                        List<string> lstMaCaNhanMax = (from col in dbXuLyDangKy.CaNhans select col.MaCaNhan).ToList<string>();
+                        string MaCaNhanNext = TaoMaTangTuDong(lstMaCaNhanMax, 2, "CN");
                         newInfo.MaCaNhan = MaCaNhanNext;
                         newInfo.MaTaiKhoan = MaTaiKhoanNext;
                         newInfo.HoTen = fullname;
@@ -391,13 +392,22 @@ namespace Money10Broker.Controllers
         /// <param name="vitri"></param>
         /// <param name="prefix"></param>
         /// <returns></returns>
-        public string TaoMaTangTuDong(String maHienTai, int vitri, String prefix)
+        public string TaoMaTangTuDong(List<string> lstMaHienTai, int vitri, String prefix)
         {
             string maTuDong = prefix;
             try
             {
+                int max = 0;
+                foreach (string sub in lstMaHienTai)
+                {
+                    int temp = int.Parse(sub.Substring(vitri));
+                    if (max < temp)
+                        max = temp;
+                }
+
+
                 int intMa = 0;
-                intMa = int.Parse(maHienTai.Substring(vitri));
+                intMa = max;
                 maTuDong = maTuDong + (intMa + 1).ToString();
             }
             catch (Exception ex)
