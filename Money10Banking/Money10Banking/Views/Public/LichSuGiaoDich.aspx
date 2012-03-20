@@ -83,10 +83,11 @@
         <div class="word-line">
                 <%=dataLang["BOX_SEARCH"].ValueLang%>: </div>
             <div class="dot">
-          
+        <form action="/Public/XLTimKiem" method="post" >
         <div class="demo">
-        <p><%=dataLang["BOX_FROM"].ValueLang%>: <input id="datepicker" type="text"> <%=dataLang["BOX_TO"].ValueLang%>: <input id="datepicker1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
-        </div>               
+        <p><%=dataLang["BOX_FROM"].ValueLang%>: <input id="datepicker" type="text" name="tuNgay"> <%=dataLang["BOX_TO"].ValueLang%>: <input id="datepicker1" name="denNgay" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" style="background-color:Green; color:White; width:80px;" name="btnTim" value="Tìm" /></p>
+        </div> 
+        </form>              
             <div class="word-line">
                 <%=dataLang["BOX_LASTCHANGE"].ValueLang%> : <% =DateTime.Now.ToString("hh:mm:ss - dd/MM/yyyy")%> </div
             <div style="width: 630px; float: left" >

@@ -29,14 +29,23 @@
 				
 				<form action="/Public/XuLyDangNhap" method="post">
 				
-					<%--<div class="notification information png_bg">
-						<div>
-							Just click "Sign In". No password needed.
-						</div>
-					</div>--%>
-					<div class='<%=Html.Encode(ViewData["div"]) %>'>
-                            <%=Html.Encode(ViewData["error"]) %>
-                     </div>
+					<div class="clear"></div>
+                    <%
+                        string div = Request.QueryString["div"];
+                        string error = Request.QueryString["error"];
+                        if (div != null)
+                        {
+                    %>
+                            <div style="display: block;" class="notification attention png_bg">
+						        <a href="#" class="close"></a>
+						        <div>
+							        <%=Html.Encode(error) %>
+						        </div>
+					        </div>
+                    <%        
+                        }
+                    %>
+					
 					<p>
 						<label>Email</label>
 						<input class="text-input" type="text" name="email"  value="len@gmail.com" />
