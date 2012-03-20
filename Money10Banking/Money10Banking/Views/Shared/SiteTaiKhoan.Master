@@ -276,7 +276,7 @@
 		        		<div style="background-color: white; border:solid 1px gray;padding:5px;margin-top: -13px;">
 		        			<table width="250" border="0" cellspacing="0" cellpadding="0" class="account-table-blog">
 								 <tr>
-								    <td><a href="/Public/CapNhatThongTinTaiKhoan"><%=dataLang["TITLE_UPDATEINFO"].ValueLang%></a></td>
+								    <td><a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["TITLE_UPDATEINFO"].ValueLang%></a></td>
 								  </tr>								  			  
 								  <tr>
 								    <td><a href="/Public/DoiMatKhau"><%=dataLang["TITLE_CHANGEPASSWORD"].ValueLang%></a></td>
@@ -439,7 +439,7 @@
                         <ul>
                             <li id="cat0" class="m_home first"><a href="/Public/TrangChu" onmouseout="resetMenu()"
                                 onmouseover="showSubMenu(0)"><span><%=dataLang["MENU_HOME"].ValueLang%></span></a></li><li id="cat1" class="m_accounts">
-                                    <a href="/Public/CapNhatTaiKhoan" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
+                                    <a href="/Public/CapNhatTaiKhoanCaNhan" onmouseout="resetMenu()" onmouseover="showSubMenu(1)">
                                         <span><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></span></a></li><li id="cat2" class="m_transactions"><a href="/Public/ChuyenTien"
                                             onmouseout="resetMenu()" onmouseover="showSubMenu(2)"><span><%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></span></a></li><%--<li
                                                 id="cat3" class="m_payment"><a href="#" onmouseout="resetMenu()" onmouseover="showSubMenu(3)">
@@ -465,14 +465,16 @@
                                             ký tài khoản</a></li></ul>
                                 </div>
                             </li>--%>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;02&quot;);"><a href="/Public/ChuyenTien">
-                                <%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a><div id="subsub02" class="sub_sub_menu" style="display: none">
-                                    <ul>
-                                        <li><a href="/Public/ChuyenTien"><%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li><li><%--<a href="/Public/ChuyenTien">
-                                            Chuyển tiền cho người chưa đăng ký tài khoản</a>--%></li><%--<li><a href="#">Gửi yêu cầu chuyển
-                                                tiền</a></li>--%></ul>
-                                </div>
-                            </li>
+                           <%-- <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;02&quot;);"><a href="/Public/ChuyenTien">
+                                <%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a><div id="subsub02" class="sub_sub_menu" style="display: none">--%>
+
+                                   
+                                        <%--<li><a href="/Public/ChuyenTien"><%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li>--%><%--<a href="/Public/ChuyenTien">
+                                            Chuyển tiền cho người chưa đăng ký tài khoản</a>--%><%--<li><a href="#">Gửi yêu cầu chuyển
+                                                tiền</a></li>--%>
+                                                </ul>
+                               <%-- </div>--%>
+                            
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;03&quot;);"><a href="#">
                                 Tích hợp bán hàng</a><div id="subsub03" class="sub_sub_menu" style="display: none">
                                     <ul>
@@ -480,26 +482,15 @@
                                             <a href="#">Tích hợp toàn bộ website</a></li></ul>
                                 </div>
                             </li>--%>
-                        </ul>
+                        
                         <ul id="subcat1" style="display: none;">
-                            <li class="sub_selected" onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
-                                <a href="/Public/AddCard"><%=dataLang["MENU_ADDCARD"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
-                                    <%--<a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
-                                        <a href="/Public/RutTien">Rút tiền</a>--%><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
-                                            <ul>
-                                                <li><a href="#">Rút về tài khoản Ngân hàng</a></li><li><a href="#">Rút tiền mặt tại
-                                                    trụ sở</a></li><li><a href="#">Rút tiền mặt trả tại nhà bạn</a></li><li><a href="#">
-                                                        <font color="red">Bắn tiền ngay vào ĐT di động (có chiết khấu)</font><img src="../../Content/images/hot00000.gif"
-                                                            border="0"></a></li><li><a href="#">Mua thẻ Visa trả trước RÊV</a></li></ul>
-                                        </div>--%>
-                                    </li>
-                            <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);"><a href="/Public/LichSuGiaoDich">
-                               <%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a><div id="subsub13" class="sub_sub_menu" style="display: none">
-                                    <ul>
-                                        <li><a href="/Public/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li><%--<li><a href="/Public/LichSuGiaoDich">
-                                            Lịch sử thanh toán đơn hàng</a></li>--%></ul>
-                                </div>
-                            </li>
+                         <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">
+                                    <a href="/Public/CapNhatThongTinTaiKhoanCaNhan"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/DoiMatKhau"><%=dataLang["MENU_CHANGEPASSWORD"].ValueLang%></a></li>
+                            <%--<li><a href="/Public/LichSuGiaoDich">
+                                            Lịch sử thanh toán đơn hàng</a></li>--%>
+                                            </ul>
+                                
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;14&quot;);"><a href="/Public/CapNhatThongTinTaiKhoan">
                                 Thông tin cá nhân</a><div id="subsub14" class="sub_sub_menu" style="display: none">
                                     <ul>
@@ -516,13 +507,30 @@
                             </li>--%>
                             <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;15&quot;);"><a href="#">
                                 <font color="red">Đăng ký đại lý </font>
-                                <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%></ul>
+                                <img src="../../Content/images/hot00000.gif" border="0"></a></li>--%>
                         <ul id="subcat2" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;20&quot;);"><a href="/Public/ChuyenTien">
                                 <%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;21&quot;);">
-                                    <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li>--%><li onmouseout="resetMenu()"
-                                        onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="/Public/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li><%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
-                                                <a href="#">Lịch sử thanh toán</a></li>--%></ul>
+                                    <a href="/Public/DangNhapGiaoDich">Gửi yêu cầu chuyển tiền</a></li>--%>
+                                    <li onmouseout="resetMenu()"onmouseover="showSubSubMenu(&quot;22&quot;);"><a href="/Public/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li>
+                                        <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;10&quot;);">
+                                <a href="/Public/AddCard"><%=dataLang["MENU_ADDCARD"].ValueLang%></a></li>
+                                <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;11&quot;);">--%>
+                                    <%--<a href="/Public/NapTien">Nạp tiền</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;12&quot;);">
+                                        <a href="/Public/RutTien">Rút tiền</a>--%><%--<div id="subsub12" class="sub_sub_menu" style="display: none">
+                                            <ul>
+                                                <li><a href="#">Rút về tài khoản Ngân hàng</a></li><li><a href="#">Rút tiền mặt tại
+                                                    trụ sở</a></li><li><a href="#">Rút tiền mặt trả tại nhà bạn</a></li><li><a href="#">
+                                                        <font color="red">Bắn tiền ngay vào ĐT di động (có chiết khấu)</font><img src="../../Content/images/hot00000.gif"
+                                                            border="0"></a></li><li><a href="#">Mua thẻ Visa trả trước RÊV</a></li></ul>
+                                        </div>--%>
+                                  <%--  </li>--%>
+                            <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;13&quot;);"><a href="/Public/LichSuGiaoDich">
+                               <%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a><div id="subsub13" class="sub_sub_menu" style="display: none">--%>
+                                   <%-- <ul>
+                                        <li><a href="/Public/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li>--%>
+                                        <%--<li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;23&quot;);">
+                                                <a href="#">Lịch sử thanh toán</a></li>--%><%--</ul>--%>
                        <%-- <ul id="subcat3" style="display: none;">
                             <li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;30&quot;);"><a href="#">
                                 Giới thiệu tích hợp</a></li><li onmouseout="resetMenu()" onmouseover="showSubSubMenu(&quot;31&quot;);">
@@ -563,8 +571,8 @@
                                         <li><a href="#">Tích hợp thỏa thuận</a></li><li><a href="#">Tích hợp sản phẩm</a></li><li>
                                             <a href="#">Tích hợp toàn bộ website</a></li></ul>
                                 </div>
-                            </li>
-                        </ul>--%>
+                            </li>--%>
+                        </ul>
                     </div>
                     <div class="clear">
                     </div>
