@@ -1,42 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <% 
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+        {
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+            dataContent = (Money10Banking.Models.Language)Session["Content"];
+        }
+     %>
     <div id="content">
         <div id="content-right">
             <div id="services">
-                <div id="services-title">
-                    <div id="services-title-l" style="text-align: center">
-                        Mua sắm an toàn</div>
-                    <div id="services-title-r" style="text-align: center">
-                        Bán hàng tiện lợi
-                    </div>
-                    <div id="services-title-c" style="text-align: center">
-                        Bảo vệ người mua</div>
-                </div>
-                <div id="services-left">
-                    <ul style="font-size: 12px; color: #333;">
-                        <li><a href="#" target="">Ví điện tử </a>hỗ trợ thanh toán NHANH CHÓNG, TIỆN LỢI và
-                            BẢO VỆ bạn khỏi các nguy cơ lừa đảo trực tuyến.</li>
-                        <li>Hàng TRĂM NGHÌN cá nhân và <a href="#" target="">hàng NGHÌN doanh nghiệp</a> đang
-                            an tâm mua bán và thanh toán hàng ngày.</li>
-                    </ul>
-                </div>
-                <div id="services-right">
-                    <ul style="font-size: 12px; color: #333;">
-                        <li>Nhận THANH TOÁN TRỰC TUYẾN bằng thẻ quốc tế và nội địa để gia tăng doanh số bán
-                            hàng Online.</li>
-                        <li><a href="#" target="">Tích hợp chức năng thanh toán</a> vào Website bán hàng, Forum,
-                            Blog, tin Rao vặt chỉ từ 5 phút đến 4 giờ.</li>
-                    </ul>
-                </div>
-                <div id="services-content">
-                    <ul style="font-size: 12px; color: #333;">
-                        <li><a href="#" target="">Thanh toán tạm giữ</a>: người Bán chỉ nhận tiền khi người
-                            Mua ĐÃ NHẬN HÀNG đúng mô tả.</li>
-                        <li><a href="#" target="">Bảo hiểm giao dịch</a>: bồi thường lên đến 100% giá trị thiệt
-                            hại trong trường hợp người Mua bị lừa đảo.</li>
-                    </ul>
-                </div>
+                <%=dataContent["MAIN_SERVICE"].ValueLang %>
             </div>
             <div class="clear">
             </div>
@@ -56,9 +33,8 @@
             <div id="partner">
                 <div class="title" id="tab-box">
                     <ul>
-                        <li class="active"><a href="#">Hỗ trợ thanh toán </a></li>
-                        <li><a href="#" target="">Địa chỉ mua sắm</a></li>
-                        <!--	<li><a href="#" target="">Sản phẩm khuyến mãi</a></li>-->
+                        <li class="active"><a href="#"><%=dataLang["MENU_SUPPORT"].ValueLang %> </a></li>
+                        <li><a href="#" target=""><%=dataLang["MENU_ADDRESS"].ValueLang %></a></li>
                     </ul>
                 </div>
                 <div class="tab-content" id="logo-partner">
@@ -210,7 +186,7 @@
             <!-- start đăng nhập -->
             <div class="box" id="login">
                 <h4 class="title">
-                    Đăng nhập tài khoản ví điện tử</h4>
+                    <%=dataLang["BOX_TITTLE"].ValueLang %></h4>
                 <form method="post" action="/Account/XuLyDangNhap" onsubmit="return checkLogin();"
                 style="margin: 0px; padding: 0px;">
                 <input type="hidden" name="form_module_id" value="1647" />
@@ -223,7 +199,7 @@
                     <table border="0" cellspacing="0" width="100%">
                         <tr>
                             <td style="padding-bottom: 10px;">
-                                Tài khoản:
+                                <%=dataLang["BOX_ACC"].ValueLang %>:
                             </td>
                             <td align="right">
                                 <input name="email" type="text" value="Email hoặc tên đăng nhập" id="email" style="color: #777;
@@ -233,7 +209,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Mật khẩu:
+                                <%=dataLang["BOX_PASSWORD"].ValueLang %>:
                             </td>
                             <td align="right">
                                 <input name="password" type="password" id="password" autocomplete="off" value=""
@@ -243,12 +219,12 @@
                     </table>
                 </div>
                 <div id="box-button-login" style="margin-top: 6px;">
-                    <input name="cmdLogin" type="submit" value="Đăng nhập" class="button-content" />
+                    <input name="cmdLogin" type="submit" value="Login" class="button-content" />
                     <%--<a href="#">Quên mật khẩu?</a>--%>
                 </div>
                 </form>
                 <div id="dangky">
-                    Bạn chưa có ví điện tử Ecmoney10broker.tk?</br> <a href="/Account/ChonDangKy">
+                    <%=dataLang["BOX_NOACC"].ValueLang %></br> <a href="/Account/ChonDangKy">
                         <img src="../../Content/images/button-s.gif" border="0" /></a>
                 </div>
             </div>
@@ -279,15 +255,15 @@
                     <div class="nlh-mdbx">
                         <!--  nlh-formUsrlg-->
                         <ul>
-                            <li><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
-                            <li><a href="/Transaction/LichSuGiaoDich">Quản trị giao dịch</a></li>
-                            <li><a href="/Transaction/NapTien">Nạp tiền</a> | <a href="/Transaction/ChuyenTien">
-                                Chuyển tiền</a></li>
+                            <li><a href="/Account/ThongTinTaiKhoan"><%=dataLang["BOX_ACCINFO"].ValueLang %></a></li>
+                            <li><a href="/Transaction/LichSuGiaoDich"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li>
+                            <li><a href="/Transaction/NapTien"><%=dataLang["MENU_ADDCARD"].ValueLang%></a> | <a href="/Transaction/ChuyenTien">
+                                <%=dataLang["MENU_TRANSFERMONEY"].ValueLang%></a></li>
                         </ul>
                         <div class="nlh-accRecharge">
                             <a href="#" class="rechargeNL"></a>
                             <p align="right" class="nlh-logout fr">
-                                <a href="/Account/XuLyDangXuat">Ðăng xuất</a></p>
+                                <a href="/Account/XuLyDangXuat"><%=dataLang["TITLE_LOOUT"].ValueLang%></a></p>
                         </div>
                     </div>
                 </div>
