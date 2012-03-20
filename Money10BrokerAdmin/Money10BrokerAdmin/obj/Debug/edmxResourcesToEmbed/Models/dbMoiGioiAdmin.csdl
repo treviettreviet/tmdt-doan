@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoiGioiAdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MoiGioiAdminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="MoiGioiAdminModel.Admin" />
+    <EntitySet Name="CaNhans" EntityType="MoiGioiAdminModel.CaNhan" />
+    <EntitySet Name="DiaChis" EntityType="MoiGioiAdminModel.DiaChi" />
+    <EntitySet Name="DoanhNghieps" EntityType="MoiGioiAdminModel.DoanhNghiep" />
+    <EntitySet Name="DonHangs" EntityType="MoiGioiAdminModel.DonHang" />
+    <EntitySet Name="Groups" EntityType="MoiGioiAdminModel.Group" />
+    <EntitySet Name="LichSuGiaoDiches" EntityType="MoiGioiAdminModel.LichSuGiaoDich" />
+    <EntitySet Name="LoaiGiaoDiches" EntityType="MoiGioiAdminModel.LoaiGiaoDich" />
+    <EntitySet Name="LoaiGiayPhepKinhDoanhs" EntityType="MoiGioiAdminModel.LoaiGiayPhepKinhDoanh" />
+    <EntitySet Name="LoaiTaiKhoans" EntityType="MoiGioiAdminModel.LoaiTaiKhoan" />
+    <EntitySet Name="LoaiThes" EntityType="MoiGioiAdminModel.LoaiThe" />
+    <EntitySet Name="LogActions" EntityType="MoiGioiAdminModel.LogAction" />
+    <EntitySet Name="MoiGioiLienKets" EntityType="MoiGioiAdminModel.MoiGioiLienKet" />
+    <EntitySet Name="NgonNgus" EntityType="MoiGioiAdminModel.NgonNgu" />
+    <EntitySet Name="NoiDungs" EntityType="MoiGioiAdminModel.NoiDung" />
+    <EntitySet Name="Permissions" EntityType="MoiGioiAdminModel.Permission" />
+    <EntitySet Name="PhiGiaoDiches" EntityType="MoiGioiAdminModel.PhiGiaoDich" />
+    <EntitySet Name="sysdiagrams" EntityType="MoiGioiAdminModel.sysdiagram" />
+    <EntitySet Name="TaiKhoans" EntityType="MoiGioiAdminModel.TaiKhoan" />
+    <EntitySet Name="ThamSoes" EntityType="MoiGioiAdminModel.ThamSo" />
+    <EntitySet Name="Thes" EntityType="MoiGioiAdminModel.The" />
+    <AssociationSet Name="FK_Admin_Group" Association="MoiGioiAdminModel.FK_Admin_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Admin" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaNhan_TaiKhoan" Association="MoiGioiAdminModel.FK_CaNhan_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="CaNhan" EntitySet="CaNhans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiaChi_TaiKhoan" Association="MoiGioiAdminModel.FK_DiaChi_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="DiaChi" EntitySet="DiaChis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoanhNghiep_LoaiGiayPhepKinhDoanh" Association="MoiGioiAdminModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh">
+      <End Role="LoaiGiayPhepKinhDoanh" EntitySet="LoaiGiayPhepKinhDoanhs" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghieps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoanhNghiep_TaiKhoan" Association="MoiGioiAdminModel.FK_DoanhNghiep_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghieps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permission_Group" Association="MoiGioiAdminModel.FK_Permission_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Permission" EntitySet="Permissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichSuGiaoDich_LoaiGiaoDich" Association="MoiGioiAdminModel.FK_LichSuGiaoDich_LoaiGiaoDich">
+      <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDiches" />
+      <End Role="LichSuGiaoDich" EntitySet="LichSuGiaoDiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichSuGiaoDich_The" Association="MoiGioiAdminModel.FK_LichSuGiaoDich_The">
+      <End Role="The" EntitySet="Thes" />
+      <End Role="LichSuGiaoDich" EntitySet="LichSuGiaoDiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhiGiaoDich_LoaiGiaoDich" Association="MoiGioiAdminModel.FK_PhiGiaoDich_LoaiGiaoDich">
+      <End Role="LoaiGiaoDich" EntitySet="LoaiGiaoDiches" />
+      <End Role="PhiGiaoDich" EntitySet="PhiGiaoDiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="MoiGioiAdminModel.FK_TaiKhoan_LoaiTaiKhoan">
+      <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_The_LoaiThe" Association="MoiGioiAdminModel.FK_The_LoaiThe">
+      <End Role="LoaiThe" EntitySet="LoaiThes" />
+      <End Role="The" EntitySet="Thes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_The_TaiKhoan" Association="MoiGioiAdminModel.FK_The_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="The" EntitySet="Thes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="MoiGioiAdminModel.FK_Admin_Group" FromRole="Admin" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="CaNhan">
+    <Key>
+      <PropertyRef Name="MaCaNhan" />
+    </Key>
+    <Property Name="MaCaNhan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaTaiKhoan" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="HoTen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NgaySinh" Type="DateTime" />
+    <Property Name="GioiTinh" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="CMNDHoChieu" Type="Int32" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <Property Name="DienThoai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TaiKhoan" Relationship="MoiGioiAdminModel.FK_CaNhan_TaiKhoan" FromRole="CaNhan" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="DiaChi">
+    <Key>
+      <PropertyRef Name="MaDiaChi" />
+    </Key>
+    <Property Name="MaDiaChi" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaTaiKhoan" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoNha" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Duong" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PhuongXa" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="QuanHuyen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhThanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="TaiKhoan" Relationship="MoiGioiAdminModel.FK_DiaChi_TaiKhoan" FromRole="DiaChi" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep">
+    <Key>
+      <PropertyRef Name="MaDoanhNghiep" />
+    </Key>
+    <Property Name="MaDoanhNghiep" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaTaiKhoan" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaLoaiGiayPhepKinhDoanh" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TenCongTy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DienThoaiCongTy" Type="Int32" />
+    <Property Name="SoGiayPhepKinhDoanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <Property Name="DiaChiCongTy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DienThoaiDiDong" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LoaiGiayPhepKinhDoanh" Relationship="MoiGioiAdminModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh" FromRole="DoanhNghiep" ToRole="LoaiGiayPhepKinhDoanh" />
+    <NavigationProperty Name="TaiKhoan" Relationship="MoiGioiAdminModel.FK_DoanhNghiep_TaiKhoan" FromRole="DoanhNghiep" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaHoaDon" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="TongThanhToan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ChuTaiKhoan" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Admins" Relationship="MoiGioiAdminModel.FK_Admin_Group" FromRole="Group" ToRole="Admin" />
+    <NavigationProperty Name="Permissions" Relationship="MoiGioiAdminModel.FK_Permission_Group" FromRole="Group" ToRole="Permission" />
+  </EntityType>
+  <EntityType Name="LichSuGiaoDich">
+    <Key>
+      <PropertyRef Name="MaLichSuGiaoDich" />
+    </Key>
+    <Property Name="MaLichSuGiaoDich" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaThe" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaLoaiGiaoDich" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoTheNhan" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="NgayGiaoDich" Type="DateTime" />
+    <Property Name="SoTienGiaoDich" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="LoaiGiaoDich" Relationship="MoiGioiAdminModel.FK_LichSuGiaoDich_LoaiGiaoDich" FromRole="LichSuGiaoDich" ToRole="LoaiGiaoDich" />
+    <NavigationProperty Name="The" Relationship="MoiGioiAdminModel.FK_LichSuGiaoDich_The" FromRole="LichSuGiaoDich" ToRole="The" />
+  </EntityType>
+  <EntityType Name="LoaiGiaoDich">
+    <Key>
+      <PropertyRef Name="MaLoaiGiaoDich" />
+    </Key>
+    <Property Name="MaLoaiGiaoDich" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TenLoaiGiaoDich" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LichSuGiaoDiches" Relationship="MoiGioiAdminModel.FK_LichSuGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="LichSuGiaoDich" />
+    <NavigationProperty Name="PhiGiaoDiches" Relationship="MoiGioiAdminModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="LoaiGiaoDich" ToRole="PhiGiaoDich" />
+  </EntityType>
+  <EntityType Name="LoaiGiayPhepKinhDoanh">
+    <Key>
+      <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+    </Key>
+    <Property Name="MaLoaiGiayPhepKinhDoanh" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TenLoaiGiayPhepKinhDoanh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="DoanhNghieps" Relationship="MoiGioiAdminModel.FK_DoanhNghiep_LoaiGiayPhepKinhDoanh" FromRole="LoaiGiayPhepKinhDoanh" ToRole="DoanhNghiep" />
+  </EntityType>
+  <EntityType Name="LoaiTaiKhoan">
+    <Key>
+      <PropertyRef Name="MaLoaiTaiKhoan" />
+    </Key>
+    <Property Name="MaLoaiTaiKhoan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TenLoaiTaiKhoan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="TaiKhoans" Relationship="MoiGioiAdminModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="LoaiThe">
+    <Key>
+      <PropertyRef Name="MaLoaiThe" />
+    </Key>
+    <Property Name="MaLoaiThe" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TenLoaiThe" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="Thes" Relationship="MoiGioiAdminModel.FK_The_LoaiThe" FromRole="LoaiThe" ToRole="The" />
+  </EntityType>
+  <EntityType Name="LogAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ThoiGian" Type="DateTime" />
+    <Property Name="BangLienQuan" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ThaoTac" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DuLieuCu" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DuLieuMoi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MoiGioiLienKet">
+    <Key>
+      <PropertyRef Name="MaMoiGioiLienKet" />
+    </Key>
+    <Property Name="MaMoiGioiLienKet" Type="Int32" Nullable="false" />
+    <Property Name="TenMoiGioiLienKet" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TaiKhoanMoiGioiLienKet" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UrlWebservice" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NgonNgu">
+    <Key>
+      <PropertyRef Name="MaNgonNgu" />
+    </Key>
+    <Property Name="MaNgonNgu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BienNgonNgu" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="TiengViet" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="TiengAnh" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="MoTa" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="LinkTiengAnh" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="LinkTiengViet" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="NoiDung">
+    <Key>
+      <PropertyRef Name="MaNoiDung" />
+    </Key>
+    <Property Name="MaNoiDung" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BienNoiDung" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="TiengViet" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TiengAnh" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="MoTa" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Insert" Type="Int32" />
+    <Property Name="Update" Type="Int32" />
+    <Property Name="Delete" Type="Int32" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="MoiGioiAdminModel.FK_Permission_Group" FromRole="Permission" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="PhiGiaoDich">
+    <Key>
+      <PropertyRef Name="MaPhiGiaoDich" />
+    </Key>
+    <Property Name="MaPhiGiaoDich" Type="Int32" Nullable="false" />
+    <Property Name="MaLoaiGiaoDich" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Phi" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="LoaiGiaoDich" Relationship="MoiGioiAdminModel.FK_PhiGiaoDich_LoaiGiaoDich" FromRole="PhiGiaoDich" ToRole="LoaiGiaoDich" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoTaiKhoan" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="MaLoaiTaiKhoan" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoDu" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MatKhauGiaoDich" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="CaNhans" Relationship="MoiGioiAdminModel.FK_CaNhan_TaiKhoan" FromRole="TaiKhoan" ToRole="CaNhan" />
+    <NavigationProperty Name="DiaChis" Relationship="MoiGioiAdminModel.FK_DiaChi_TaiKhoan" FromRole="TaiKhoan" ToRole="DiaChi" />
+    <NavigationProperty Name="DoanhNghieps" Relationship="MoiGioiAdminModel.FK_DoanhNghiep_TaiKhoan" FromRole="TaiKhoan" ToRole="DoanhNghiep" />
+    <NavigationProperty Name="LoaiTaiKhoan" Relationship="MoiGioiAdminModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="TaiKhoan" ToRole="LoaiTaiKhoan" />
+    <NavigationProperty Name="Thes" Relationship="MoiGioiAdminModel.FK_The_TaiKhoan" FromRole="TaiKhoan" ToRole="The" />
+  </EntityType>
+  <EntityType Name="ThamSo">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="Int32" Nullable="false" />
+    <Property Name="TenThamSo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Kieu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="GiaTri" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TinhTrang" Type="Int32" />
+  </EntityType>
+  <EntityType Name="The">
+    <Key>
+      <PropertyRef Name="MaThe" />
+    </Key>
+    <Property Name="MaThe" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaTaiKhoan" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MaLoaiThe" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SoThe" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="SoBaoMat" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="NgayMoThe" Type="DateTime" />
+    <Property Name="NgayHetHan" Type="DateTime" />
+    <Property Name="TinhTrang" Type="Int32" />
+    <NavigationProperty Name="LichSuGiaoDiches" Relationship="MoiGioiAdminModel.FK_LichSuGiaoDich_The" FromRole="The" ToRole="LichSuGiaoDich" />
+    <NavigationProperty Name="LoaiThe" Relationship="MoiGioiAdminModel.FK_The_LoaiThe" FromRole="The" ToRole="LoaiThe" />
+    <NavigationProperty Name="TaiKhoan" Relationship="MoiGioiAdminModel.FK_The_TaiKhoan" FromRole="The" ToRole="TaiKhoan" />
+  </EntityType>
+  <Association Name="FK_Admin_Group">
+    <End Role="Group" Type="MoiGioiAdminModel.Group" Multiplicity="1" />
+    <End Role="Admin" Type="MoiGioiAdminModel.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaNhan_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.TaiKhoan" Multiplicity="0..1" />
+    <End Role="CaNhan" Type="MoiGioiAdminModel.CaNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="CaNhan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiaChi_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.TaiKhoan" Multiplicity="0..1" />
+    <End Role="DiaChi" Type="MoiGioiAdminModel.DiaChi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DiaChi">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoanhNghiep_LoaiGiayPhepKinhDoanh">
+    <End Role="LoaiGiayPhepKinhDoanh" Type="MoiGioiAdminModel.LoaiGiayPhepKinhDoanh" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="MoiGioiAdminModel.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiayPhepKinhDoanh">
+        <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="MaLoaiGiayPhepKinhDoanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoanhNghiep_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.TaiKhoan" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="MoiGioiAdminModel.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permission_Group">
+    <End Role="Group" Type="MoiGioiAdminModel.Group" Multiplicity="1" />
+    <End Role="Permission" Type="MoiGioiAdminModel.Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichSuGiaoDich_LoaiGiaoDich">
+    <End Role="LoaiGiaoDich" Type="MoiGioiAdminModel.LoaiGiaoDich" Multiplicity="0..1" />
+    <End Role="LichSuGiaoDich" Type="MoiGioiAdminModel.LichSuGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Principal>
+      <Dependent Role="LichSuGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichSuGiaoDich_The">
+    <End Role="The" Type="MoiGioiAdminModel.The" Multiplicity="0..1" />
+    <End Role="LichSuGiaoDich" Type="MoiGioiAdminModel.LichSuGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="The">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="LichSuGiaoDich">
+        <PropertyRef Name="MaThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhiGiaoDich_LoaiGiaoDich">
+    <End Role="LoaiGiaoDich" Type="MoiGioiAdminModel.LoaiGiaoDich" Multiplicity="0..1" />
+    <End Role="PhiGiaoDich" Type="MoiGioiAdminModel.PhiGiaoDich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Principal>
+      <Dependent Role="PhiGiaoDich">
+        <PropertyRef Name="MaLoaiGiaoDich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_LoaiTaiKhoan">
+    <End Role="LoaiTaiKhoan" Type="MoiGioiAdminModel.LoaiTaiKhoan" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiTaiKhoan">
+        <PropertyRef Name="MaLoaiTaiKhoan" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaLoaiTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_The_LoaiThe">
+    <End Role="LoaiThe" Type="MoiGioiAdminModel.LoaiThe" Multiplicity="0..1" />
+    <End Role="The" Type="MoiGioiAdminModel.The" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiThe">
+        <PropertyRef Name="MaLoaiThe" />
+      </Principal>
+      <Dependent Role="The">
+        <PropertyRef Name="MaLoaiThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_The_TaiKhoan">
+    <End Role="TaiKhoan" Type="MoiGioiAdminModel.TaiKhoan" Multiplicity="0..1" />
+    <End Role="The" Type="MoiGioiAdminModel.The" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="The">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
