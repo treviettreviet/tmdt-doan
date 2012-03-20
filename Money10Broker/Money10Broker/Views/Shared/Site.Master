@@ -151,13 +151,11 @@
                 </div>
             </div>
         <% }%>
-	<div class="news-hot" id="news_hot">  	
-	   <ul class="news-view" id="news_view">
-	       <li class="active">
-             <a href="#" class="active">Ecmoney10broker.tk TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a>
-           </li>
-        </ul>
-        </div>	
+	<div class="news-hot" id="news_hot">
+        <div style="cursor: pointer; position:absolute;text-align:center;">
+            <a href="/Public/TrangChu?lang=vi"><img alt="Vietnam" src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><img alt="English" src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
+        </div>   
+    </div>	
 </div>
 <div class="clear"></div>
 
@@ -181,7 +179,6 @@
     	</div>
         <div id="title-heartbanner">
             <ul>
-            
                 <li class="" style="width:134px;"><a href="#" style="padding-right:0px;"><span>&nbsp;</span>1top.vn</a></li>            
                 <li class="" style="width:134px;"><a href="#" style="padding-right:0px;"><span>&nbsp;</span>Sacombank</a></li>            
                 <li class="" style="width:134px;"><a href="#" style="padding-right:0px;"><span>&nbsp;</span>Báo Mới - Techcombank</a></li>            
@@ -193,8 +190,7 @@
 
         </div>
 	</div>
-    <div id="timeout-heartbanner" style="display:none;">
-    
+    <div id="timeout-heartbanner" style="display:none;">  
         <p>6000</p>
         <p>5000</p>
         <p>5000</p>
@@ -214,35 +210,7 @@
     </div>
 	<!--start footer-->
 	<div id="footer">
-		<div id="menu-footer">
-
-	<a href="#" target="" rel="nofollow">Về Ecmoney10Broker</a>
-	|<a href="#" target="" rel="nofollow">Thoả thuận người dùng</a>
-	|<a href="#" target="" rel="nofollow">Quyền riêng tư</a>
-	|<a href="#" target="" rel="nofollow">Quy định - Chính sách</a>
-	|<a href="#" target="" rel="nofollow">Trợ giúp - Hướng dẫn</a>
-	|<a href="#" target="" rel="nofollow">Hỏi đáp - Thảo luận</a>
-</div>
-<div id="footer-add">
-    <div id="footer-add-right">
-        <address style="margin-bottom:5px;">
-            <strong>Hà Nội:</strong> Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng; Hotline: 0984-863-761; Điện thoại: 1900-5858-99 (ext 111).
-        </address>
-        <address style="margin-bottom:5px;">
-            <strong>TP.HCM:</strong> Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12,
-       <br>
-        quận Tân Bình; Điện thoại: 1900-5858-99 (ext 101).
-        </address>
-    </div><div id="footer-add-left" style="width:490px;">
-        <p style="margin-bottom:5px;">Bản quyền © 2009-2011 Ecmoney10Broker: Hệ thống thanh toán trực tuyến trung gian bên thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="#" target="" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
-        <p style="margin-bottom:5px;">Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
-        <p style="margin-bottom:5px;">Các liên kết khác:
-			<a href="#" target="" rel="nofollow">www.chodientu.vn</a>
-                        | <a href="#" target="" rel="nofollow">www.ebay.vn</a>
-                        | <a href="#" target="" rel="nofollow">www.adnet.vn</a> | <a
-                            href="#" target="" rel="nofollow">www.vizum.vn</a></p>                
-    </div>
-</div>
+        <%=dataContent["PAGE_FOOTER"].ValueLang %>
 
 	<!-- Start of Zopim Live Chat Script -->
 	<%--<script type="text/javascript">
