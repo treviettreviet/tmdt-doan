@@ -23,6 +23,7 @@
           <EntitySet Name="NoiDung" EntityType="MoiGioiAdminModel.Store.NoiDung" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Permission" EntityType="MoiGioiAdminModel.Store.Permission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PhiGiaoDich" EntityType="MoiGioiAdminModel.Store.PhiGiaoDich" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SessionID" EntityType="MoiGioiAdminModel.Store.SessionID" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="MoiGioiAdminModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TaiKhoan" EntityType="MoiGioiAdminModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ThamSo" EntityType="MoiGioiAdminModel.Store.ThamSo" store:Type="Tables" Schema="dbo" />
@@ -134,8 +135,10 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="MaHoaDon" Type="varchar" MaxLength="10" />
+          <Property Name="MaVanChuyen" Type="varchar" MaxLength="10" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="TongThanhToan" Type="decimal" />
+          <Property Name="EmailKhachHangThanhToan" Type="varchar" MaxLength="100" />
           <Property Name="ChuTaiKhoan" Type="nvarchar" MaxLength="200" />
           <Property Name="TinhTrang" Type="int" />
           <Property Name="Email" Type="varchar" MaxLength="100" />
@@ -197,7 +200,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="ThoiGian" Type="datetime" />
           <Property Name="BangLienQuan" Type="varchar" MaxLength="100" />
@@ -259,6 +262,15 @@
           <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
           <Property Name="Phi" Type="decimal" />
           <Property Name="TinhTrang" Type="int" />
+        </EntityType>
+        <EntityType Name="SessionID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="sID" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -556,6 +568,7 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
             <End Role="The" EntitySet="Thes" />
           </AssociationSet>
+          <EntitySet Name="SessionIDs" EntityType="MoiGioiAdminModel.SessionID" />
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -627,6 +640,8 @@
           <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="DienThoai" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
           <Property Name="DiaChi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="MaVanChuyen" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailKhachHangThanhToan" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -956,6 +971,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="SessionID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sID" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Status" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1003,7 +1027,9 @@
             <ScalarProperty Name="DienThoaiDiDong" ColumnName="DienThoaiDiDong" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="DonHangs"><EntityTypeMapping TypeName="MoiGioiAdminModel.DonHang"><MappingFragment StoreEntitySet="DonHang">
-            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="EmailKhachHangThanhToan" ColumnName="EmailKhachHangThanhToan" />
+                <ScalarProperty Name="MaVanChuyen" ColumnName="MaVanChuyen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
             <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
             <ScalarProperty Name="TongThanhToan" ColumnName="TongThanhToan" />
@@ -1130,6 +1156,16 @@
             <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
             <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SessionIDs">
+            <EntityTypeMapping TypeName="MoiGioiAdminModel.SessionID">
+              <MappingFragment StoreEntitySet="SessionID">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="sID" ColumnName="sID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1226,6 +1262,7 @@
           <ConnectorPoint PointX="4.40625" PointY="5.7336531575520855" />
           <ConnectorPoint PointX="8.25" PointY="5.7336531575520855" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="MoiGioiAdminModel.SessionID" Width="1.5" PointX="5.375" PointY="0.75" Height="1.7879850260416674" />
       </Diagram>
     </Diagrams>
   </Designer>

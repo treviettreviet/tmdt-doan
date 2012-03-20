@@ -1,16 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	TaoUser
+	DoiMatKhau
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-
-    
-
-
-    <%--<div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>--%>
 
     <div class="notification attention png_bg">
         <div>
@@ -267,85 +261,32 @@
             }
         }
     </script>
-<form action="/Admin/XuLyTaoUser" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
+   <form action="/Public/XuLyDoiPass" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
     <table class="form-content-table" cellspacing="10px" id="register_account_personal">
         <tr>
-            <th style="text-align: right">Email<span class="mandatory">*</span></th>
+            <th>Mật khẩu cũ:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="text" name="email"  value="quangkhai@hotmail.com" class="text qtip" autocomplete="off"
-                    title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtUserName">&nbsp;
+                <input type="password" name="pass"  value="" class="text qtip" autocomplete="off"
+                    title="Bạn sẽ dùng mail để đăng nhập vào Bảo Kim" size="50" id="txtPass">&nbsp;
                 <br>                            
             </td>
         </tr>         
         <tr>
-            <th style="text-align: right">Password<span class="mandatory">*</span></th>
+            <th>Mật khẩu mới:<span class="mandatory">*</span></th>
             <td class="style1">
-                <input type="password" name="password" value="12345678" class="text qtip" title="- Mật khẩu có tối thiểu 8 kí tự<br/>- Không liên quan đến email và số điện thoại<br/>- Phải bao gồm chữ số hoặc ký tự in hoa hoặc ký tự đặc biệt (!,@,#,$,%,^,&amp;...)">                                    </td>
-        </tr>
+                <input type="password" name="passnew" value="" class="text qtip" autocomplete="off" title="Mật Khẩu mới !" size="50">                              
+                <br><span class="error" id="Span1"></span>
+            </td>
+        </tr>  
         <tr>
-            <th style="text-align: right">Confirm Password<span class="mandatory">*</span></th>
+            <th>Nhập lại MK mới:<span class="mandatory">*</span></th>
             <td class="style1">
-            <input type="password" name="passwordConfirm" value="12345678" class="text qtip" title="Xác nhận lại mật khẩu giống mật khẩu vừa nhập">                                    </td>
-        </tr>                                          
-        <tr>
-            <th style="text-align: right">Name<span class="mandatory">*</span></th>
-            <td class="style1">
-                <input type="text" name="name" value="Phan Quang Khải" class="text qtip" autocomplete="off" title="Họ tên phải giống như trên CMT hoặc Hộ chiếu và viết bằng tiếng Việt có dấu 
-                <br>Bạn sẽ KHÔNG ĐƯỢC RÚT TIỀN nếu điền sai họ tên !" size="50">                              
+                <input type="password" name="confirmpass" value="" class="text qtip" autocomplete="off" title="Nhập lại MK mới!" size="50">                              
                 <br><span class="error" id="error_name_personal"></span>
             </td>
         </tr>  
-       
-        <tr>
-            <th style="text-align: right">Group<span class="mandatory"></span></th>
-            <td class="style1">
-            <% Money10BrokerAdmin.Models.Admin ad = (Money10BrokerAdmin.Models.Admin)Session["User"]; %>
-                <% if (ad.GroupID == 1)
-                {
-                    Money10BrokerAdmin.Models.MoiGioiAdminEntities db = new Money10BrokerAdmin.Models.MoiGioiAdminEntities();
-                    List<Money10BrokerAdmin.Models.Group> adm = (from add in db.Groups select add  ).ToList();
-                    // List<Money10BankingAdmin.Models.GroupModels> Listgr= new List<Money10BankingAdmin.Models.GroupModels>();
-                    %>
-                <select class="text" name="group" id="provinceId">  
-                <option value="">---Group---</option> 
-                <%
-                    for (int j = 0; j < adm.Count; j++)
-                    {
-                        //Money10BankingAdmin.Models.Groups gr = new Money10BankingAdmin.Models.Groups();
-                        //gr.GroupID = adm[j].GroupID.ToString();
-                        //Listgr.Add(gr);
-                        %>
-                        <option value="<%= adm[j].GroupID.ToString() %>"> <%= adm[j].GroupName.ToString() %> </option>
-                    <% }%>
-                    </select>
-                <% }
-                        %>
-
-
-                <% if (ad.GroupID == 2)
-                {
-                    Money10BrokerAdmin.Models.MoiGioiAdminEntities db = new Money10BrokerAdmin.Models.MoiGioiAdminEntities();
-                    List<Money10BrokerAdmin.Models.Group> adm = (from add in db.Groups select add  ).ToList();
-                    // List<Money10BankingAdmin.Models.GroupModels> Listgr= new List<Money10BankingAdmin.Models.GroupModels>();
-                    %>
-                <select class="text" name="group" id="Select1">  
-                <option value="">---Group---</option> 
-                <%
-                    for (int j = 1; j < adm.Count; j++)
-                    {
-                        //Money10BankingAdmin.Models.Groups gr = new Money10BankingAdmin.Models.Groups();
-                        //gr.GroupID = adm[j].GroupID.ToString();
-                        //Listgr.Add(gr);
-                        %>
-                        <option value="<%= adm[j].GroupID.ToString() %>"> <%= adm[j].GroupName.ToString() %> </option>
-                    <% }%>
-                    </select>
-                <% }
-                        %>
-                                                               
-            </td>
-        </tr>
-                         
+         <tr>
+                   
         <tr>
             <th></th>
             <td class="style1">                     
@@ -353,4 +294,5 @@
         </tr>
     </table>
 </form>
+
 </asp:Content>
