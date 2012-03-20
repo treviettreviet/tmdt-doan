@@ -416,6 +416,22 @@ namespace Money10BrokerAdmin.Models
             }
         }
         private ObjectSet<The> _Thes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SessionID> SessionIDs
+        {
+            get
+            {
+                if ((_SessionIDs == null))
+                {
+                    _SessionIDs = base.CreateObjectSet<SessionID>("SessionIDs");
+                }
+                return _SessionIDs;
+            }
+        }
+        private ObjectSet<SessionID> _SessionIDs;
 
         #endregion
         #region AddTo Methods
@@ -586,6 +602,14 @@ namespace Money10BrokerAdmin.Models
         public void AddToThes(The the)
         {
             base.AddObject("Thes", the);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the SessionIDs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSessionIDs(SessionID sessionID)
+        {
+            base.AddObject("SessionIDs", sessionID);
         }
 
         #endregion
@@ -1940,6 +1964,54 @@ namespace Money10BrokerAdmin.Models
         private global::System.String _DiaChi;
         partial void OnDiaChiChanging(global::System.String value);
         partial void OnDiaChiChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MaVanChuyen
+        {
+            get
+            {
+                return _MaVanChuyen;
+            }
+            set
+            {
+                OnMaVanChuyenChanging(value);
+                ReportPropertyChanging("MaVanChuyen");
+                _MaVanChuyen = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MaVanChuyen");
+                OnMaVanChuyenChanged();
+            }
+        }
+        private global::System.String _MaVanChuyen;
+        partial void OnMaVanChuyenChanging(global::System.String value);
+        partial void OnMaVanChuyenChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String EmailKhachHangThanhToan
+        {
+            get
+            {
+                return _EmailKhachHangThanhToan;
+            }
+            set
+            {
+                OnEmailKhachHangThanhToanChanging(value);
+                ReportPropertyChanging("EmailKhachHangThanhToan");
+                _EmailKhachHangThanhToan = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("EmailKhachHangThanhToan");
+                OnEmailKhachHangThanhToanChanged();
+            }
+        }
+        private global::System.String _EmailKhachHangThanhToan;
+        partial void OnEmailKhachHangThanhToanChanging(global::System.String value);
+        partial void OnEmailKhachHangThanhToanChanged();
 
         #endregion
     
@@ -4043,6 +4115,137 @@ namespace Money10BrokerAdmin.Models
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoiGioiAdminModel", Name="SessionID")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class SessionID : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new SessionID object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="userName">Initial value of the UserName property.</param>
+        /// <param name="sID">Initial value of the sID property.</param>
+        public static SessionID CreateSessionID(global::System.Int32 id, global::System.String userName, global::System.String sID)
+        {
+            SessionID sessionID = new SessionID();
+            sessionID.Id = id;
+            sessionID.UserName = userName;
+            sessionID.sID = sID;
+            return sessionID;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                OnUserNameChanging(value);
+                ReportPropertyChanging("UserName");
+                _UserName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("UserName");
+                OnUserNameChanged();
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String sID
+        {
+            get
+            {
+                return _sID;
+            }
+            set
+            {
+                OnsIDChanging(value);
+                ReportPropertyChanging("sID");
+                _sID = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("sID");
+                OnsIDChanged();
+            }
+        }
+        private global::System.String _sID;
+        partial void OnsIDChanging(global::System.String value);
+        partial void OnsIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
+
+        #endregion
+    
     }
     
     /// <summary>

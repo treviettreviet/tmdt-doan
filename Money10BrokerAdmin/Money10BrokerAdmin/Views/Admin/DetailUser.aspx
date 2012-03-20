@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-     <% using (Html.BeginForm("XuLyUpdateUser","Admin")) {%>
+     <% using (Html.BeginForm("","")) {%>
         <%: Html.ValidationSummary(true) %>
 
         <fieldset>
@@ -24,7 +24,7 @@
                 <%: Html.LabelFor(model => model.Email) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Email) %>
+                <%: Html.TextBoxFor(model => model.Email, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.Email) %>
             </div>
             
@@ -32,7 +32,7 @@
                 <%: Html.LabelFor(model => model.Password) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Password) %>
+                <%: Html.TextBoxFor(model => model.Password, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.Password) %>
             </div>
             
@@ -40,7 +40,7 @@
                 <%: Html.LabelFor(model => model.Name) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Name) %>
+                <%: Html.TextBoxFor(model => model.Name, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.Name) %>
             </div>
             
@@ -110,9 +110,9 @@
                 <%: Html.ValidationMessageFor(model => model.Status) %>
             </div>--%>
             
-            <p>
+           <%-- <p>
                 <input type="submit" value="Save" />
-            </p>
+            </p>--%>
         </fieldset>
 
     <% } %>
