@@ -192,19 +192,19 @@ namespace Money10BankingAdmin.Controllers
                 }
                 else
                 {
-                    string div = "error-box";
+                    string div = "notification attention png_bg";
                     string error = "";
                     if (user_validation == -1)
                     {
-                        error += "Email không tồn tại";
+                        error += "Email không tồn tại trong hệ thống.";
                     }
                     if (user_validation == -2)
                     {
-                        error += "Sai mật khẩu";
+                        error += "Sai mật khẩu. Vui lòng đăng nhập lại!";
                     }
-                    ViewData["div"] = div; 
-                    ViewData["error"] = error;  
-                    return View("DangNhap");
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return RedirectToAction("DangNhap", new { div, error });
                 }
             }
             catch (Exception ex)

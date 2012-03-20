@@ -167,7 +167,23 @@ namespace Money10Banking.Controllers
             TaiKhoan tk = (TaiKhoan)Session["User"];
             if (tk != null)
             {
-                return View("AddCard");
+               
+                try
+                {
+                    The th = dbNganHangOnline.Thes.Single(m => m.MaTaiKhoan == tk.MaTaiKhoan);
+                    string div = "error-box";
+                    string error = "";
+                    error = "Bạn đã có số thẻ trong He Thong NH";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return View("LichSuGiaoDich");
+                }
+                catch
+                {
+
+                    return View("AddCard");
+                }
+                
             }
             else
                 return View("DangNhap");
@@ -182,7 +198,7 @@ namespace Money10Banking.Controllers
             
             TaiKhoan tk = (TaiKhoan)Session["User"];
            
-            List<The> card = (from th in dbb.Thes select th).ToList<The>();
+            List<TheTam> card = (from th in dbb.TheTams select th).ToList<TheTam>();
             for(int i=0 ; i<card.Count; i++)
             {
             if (card[i].SoThe!=SoTaiKhoan)
@@ -195,11 +211,28 @@ namespace Money10Banking.Controllers
             }
             else
             {
-                if (card[i].TinhTrang == 0 && card[i].MaTaiKhoan == tk.MaTaiKhoan)
+                if (card[i].TinhTrang == 0 && (card[i].MaTaiKhoan == null || card[i].MaTaiKhoan == ""))
                 {
+
                     
                         card[i].TinhTrang = 1;
+                        card[i].MaTaiKhoan = tk.MaTaiKhoan;
+                        string max = dbb.Thes.Max(m => m.MaThe);
+                        The the = new The();
+                        the.MaThe = TaoMaTangTuDong(max,"T");
+                        the.MaTaiKhoan = tk.MaTaiKhoan;
+                        the.MaLoaiThe = "LT001";
+                        the.SoThe = card[i].SoThe;
+                        the.SoPin = card[i].SoPin;
+                        the.SoBaoMat = card[i].SoBaoMat;
+                        the.SoDu = 0;
+                        the.NgayMoThe = card[i].NgayMoThe;
+                        the.NgayHetHan = card[i].NgayHetHan;
+                        the.TinhTrang = 1;
+                        dbb.Thes.AddObject(the);
                         dbb.SaveChanges();
+                        Session["The"] = the;
+
                         return RedirectToAction("LichSuGiaoDich");
                 }
                 else
@@ -270,6 +303,31 @@ namespace Money10Banking.Controllers
             return RedirectToAction("DangNhap");
         }
 
+        public ActionResult XLTimKiem(string tuNgay, string denNgay)
+        {
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
+            //List<LichSuGiaoDichModels> lstNgay;
+            for (int i = 0; i < lst.Count; i++)
+            {
+                //string[] thoiGian = lst[i].ThoiGian.Split(' ');
+                //DateTime time = DateTime.Parse(thoiGian[0].ToString());
+                //string date = time.Day.ToString();
+                //string month = time.Month.ToString();
+                //string year = time.Year.ToString();
+                //string timkiem = month +"/" +date+"/"+year;
+                DateTime datelst = DateTime.Parse(lst[i].ThoiGian);
+               // DateTime datetungay = DateTime.Parse(tuNgay);
+               // DateTime datedenngay = DateTime.Parse(denNgay);
+                //List<LichSuGiaoDichModels> lstNgay= (from lsgd in lst where   select lsgd).ToList<LichSuGiaoDichModels>();
+               // ViewData["ListData"] = lstNgay;
+                
+               
+            }
+                
+            return View("LichSuGiaoDich");
+        }
+
         /// <summary>
         /// Lên - Tạo mã tăng tự động cho tất cả các bảng
         /// Trước khi gọi hàm này, ta cần gọi hàm lấy mã cuối cùng của bảng bất kỳ cần thêm mới mã.
@@ -325,7 +383,8 @@ namespace Money10Banking.Controllers
         // Lên - Xử lý thoát
         public ActionResult XuLyThoat()
         {
-            Session.Remove("User");
+            //Session.Remove("User");
+            Session.RemoveAll();
             return RedirectToAction("TrangChu");
         }
 
@@ -1206,7 +1265,7 @@ namespace Money10Banking.Controllers
                                 //LSGD.SoTheNhan = "123456";
                                 LSGD.NgayGiaoDich = DateTime.Now;
                                 LSGD.SoTienGiaoDich = deAmount;
-                                LSGD.TinhTrang = 0;
+                                LSGD.TinhTrang = 1;
                                 dbNH.LichSuGiaoDiches.AddObject(LSGD);
 
                                 dbNH.SaveChanges();
