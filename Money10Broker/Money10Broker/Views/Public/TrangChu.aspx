@@ -186,7 +186,7 @@
             <!-- start đăng nhập -->
             <div class="box" id="login">
                 <h4 class="title">
-                    <%=dataLang["BOX_TITTLE"].ValueLang %></h4>
+                    <%=dataLang["BOX_TITLE"].ValueLang %></h4>
                 <form method="post" action="/Account/XuLyDangNhap" onsubmit="return checkLogin();"
                 style="margin: 0px; padding: 0px;">
                 <input type="hidden" name="form_module_id" value="1647" />
@@ -298,7 +298,8 @@
                     return true;
                 }
             </script>
-            <div class="box" id="help-index-left">
+            <%=dataContent["MAIN_LEFT"].ValueLang%>
+            <!--<div class="box" id="help-index-left">
                 <h4 class="title">Tin mới cập nhật</h4>
                 <ul>
                     <li><a href="#" class="{act}" target="" title="Trợ giá đặc biệt nhân dịp ra mắt mạng học tiếng Anh trực tuyến HelloChao.vn">
@@ -316,7 +317,7 @@
                 </ul>
                 <p class="redmove">
                     <a href="#" target="">Xem thêm</a></p>
-            </div>
+            </div>-->
         </div>
     </div>
 </asp:Content>
