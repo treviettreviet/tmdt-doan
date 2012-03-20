@@ -17,7 +17,7 @@
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
-			<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>
+			<%--<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>--%>
 				<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
 				<li class=" active" style="display:block"><a href="/Transaction/NapTien"><span>Nạp tiền</span></a></li>
                 <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
