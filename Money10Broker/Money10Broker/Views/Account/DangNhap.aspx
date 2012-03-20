@@ -49,8 +49,8 @@
                                     <td style="line-height: 28px;">
                                         <input type="submit" class="button-content" value="Đăng nhập" style="float: left;
                                             margin-right: 5px;">
-                                        <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=forgot_login_password">
-                                            Quên mật khẩu?</a>
+                                        <%--<a href="#">
+                                            Quên mật khẩu?</a>--%>
                                     </td>
                                 </tr>
                             </table>
@@ -58,13 +58,10 @@
                         </div>
                         <div id="login-rigister">
                             <p>
-                                Bạn chưa có tài khoản ví điện tử NgânLượng.vn?</p>
+                                Bạn chưa có tài khoản ví điện tử EcMoney10Broker.tk?</p>
                             <p>
                                 <a href="/Account/ChonDangKy">
                                     <img src="../../Content/images/button-r.gif"/></a></p>
-                            <p style="font-weight: normal; margin-top: 10px;">
-                                <a href="https://www.nganluong.vn/?portal=nganluong&amp;page=fast_access">Hãy click
-                                    để đăng ký và sở hữu thẻ F@stAccess ngay tại nhà</a></p>
                         </div>
                     </div>
                 </div>

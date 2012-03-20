@@ -15,17 +15,17 @@
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <th style="width:80px;text-align:right;"><span class="required">*</span>Tài khoản:</th>
-                        <td><input name="email" type="text" value="qưewe" onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};" onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};"></td>
+                        <td><input name="email" type="text" value="" onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};" onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};"></td>
                       </tr>
                       <tr>
                         <th style="width:80px;text-align:right;"><span class="required">*</span>Mật khẩu:</th>
-                        <td><input name="password" type="password" autocomplete="off" value="qưe" style="width:150px;" class="password keyboardInput"></td>
+                        <td><input name="password" type="password" autocomplete="off" value="" style="width:150px;" class="password keyboardInput"></td>
                       </tr>
                       
-                      <tr>
+                    <%--<tr>
                         <th style="width:80px;text-align:right;"><span class="required">*</span>Mã xác nhận:</th>
                         <td><input name="verify_image" type="text" value maxlength="5" autocomplete="off" style="width:70px; float:left; margin-right:5px;"><img src="../../Content/images/captcha0.gif"></td>
-                      </tr>
+                      </tr>--%>
                       <tr>
                         <th>&nbsp;</th>
                         <td style="line-height:28px;">
