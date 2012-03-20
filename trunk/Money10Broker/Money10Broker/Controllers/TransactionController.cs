@@ -50,10 +50,6 @@ namespace Money10Broker.Controllers
             return View();
         }
 
-        public ActionResult ThongBaoKetQuaGiaoDich()
-        {
-            return View();
-        }
         /// <summary>
         /// send mail khi khách hàng giao dịch
         /// </summary>
@@ -250,21 +246,83 @@ namespace Money10Broker.Controllers
             }
             try
             {
-                DonHang dh = dbMoiGioi.DonHangs.Single(m => m.MaHoaDon.Equals(id));
+                // Kiểm tra đơn hàng có tồn tại trong csdl không? Và tình trạng là chưa thanh toán TinhTrang=0
+                DonHang dh = dbMoiGioi.DonHangs.Single(m => m.MaHoaDon.Equals(id) && m.TinhTrang==0);
                 return View(dh);
             }
             catch (Exception ex)
             {
-                return View("../Public/TrangChu");
+                return RedirectToAction("../Public/TrangChu");
                 //throw new Exception(ex.Message);
             }
         }
 
+        public ActionResult ThongBaoKetQuaGiaoDich()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Xử lý Đăng Nhập cho thao tác Thanh Toán Trực Tuyến.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult XuLyDangNhapTTTT(string email, string password, string id)
         {
+            xnvaufit_MoiGioiEntities db = new xnvaufit_MoiGioiEntities();
             int user_validation = UserValidation(email, password);
             if (user_validation == 0)
             {
+                // Xử lý kiểm tra tài khoản khách hàng có đủ để thực hiện giao dịch không?
+                //  Nếu đủ thì cho phép thực hiện giao dịch và thông báo thành công
+                //  Nếu không đủ thì hiển thị thông báo
+                TaiKhoan tk = (TaiKhoan)Session["User"];
+                DonHang dh = new DonHang();
+                if (id != null)
+                {
+                    try
+                    {
+                        string div = "";
+                        string error = "";
+                        dh = db.DonHangs.Single(m => m.MaHoaDon == id && m.TinhTrang==0);
+                        if (tk.SoDu < dh.TongThanhToan)
+                        {
+                            div += "message-box";
+                            //string error = "Số dư trong ví không đủ để thực hiện giao dịch. Vui lòng nạp tiền thêm vào ví." + " Đến trang <a href='/Transaction/NapTien'>Nạp Tiền</a>";
+                            error += "Số dư trong ví không đủ để thực hiện giao dịch. Vui lòng nạp tiền thêm vào ví.";
+                            ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                            ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                            return RedirectToAction("ThanhToanTrucTuyen" + "/" + id, new { div, error });   // Chỗ này hay nè anh em :D
+                        }
+                        else
+                        {
+                            // B1: Truy vấn lại thông tin tài khoản đã vừa đăng nhập thành công
+                            // B2: Trừ tài khoản của người vừa đăng nhập, trừ bằng số tiền của đơn hàng
+                            // B3: Cộng tiền vừa trừ vào tài khoản của Chủ Website Kinh Doanh
+                            // B4: Cập nhật trạng thái đơn hàng = 1 (Có nghĩa là đơn hàng đã được thanh toán)
+                            // B4: Thông báo kết quả
+                            TaiKhoan LayLaiTK = db.TaiKhoans.Single(m=>m.MaTaiKhoan==tk.MaTaiKhoan);
+                            LayLaiTK.SoDu -= dh.TongThanhToan;
+                            TaiKhoan TKChuWebSiteKinhDoanh = db.TaiKhoans.SingleOrDefault(m=>m.Email==dh.Email);
+                            TKChuWebSiteKinhDoanh.SoDu += dh.TongThanhToan; // Cần xem lại chỗ này nữa là Xong. :D
+                            dh.TinhTrang = 1;   // Đã thanh toán thành công!
+                            db.SaveChanges();
+                            Session["User"] = LayLaiTK;
+                            div += "message-box";
+                            //string error = "Số dư trong ví không đủ để thực hiện giao dịch. Vui lòng nạp tiền thêm vào ví." + " Đến trang <a href='/Transaction/NapTien'>Nạp Tiền</a>";
+                            error += "Giao dịch thành công! Vui lòng đến trang Lịch Sử Giao Dịch để xem thông tin chi tiết kế quả giao dịch.";
+                            ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                            ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                            return RedirectToAction("ThongBaoKetQuaGiaoDich" + "/" + id, new { div, error });   // Chỗ này hay nè anh em :D
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
                 return RedirectToAction("../Public/TongHop");
             }
             else

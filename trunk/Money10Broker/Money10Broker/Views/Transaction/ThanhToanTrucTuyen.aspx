@@ -223,8 +223,13 @@
         <%
             string div = Request.QueryString["div"];
             string error = Request.QueryString["error"];
+            if (div != null && error != null)
+            {
         %>
-        <div id="message-box-login" style="display: block;" class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>
+                <div id="message-box-login" style="display: block;" class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>        
+        <%                    
+            }
+        %>
 
         <!-- BEGIN BlockPaymentOptions -->
         <div id="box-payment" class="box main-box">
