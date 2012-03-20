@@ -236,7 +236,7 @@
                                 Mật khẩu:
                             </td>
                             <td align="right">
-                                <input name="password" type="password" id="password" autocomplete="off" value="12345678"
+                                <input name="password" type="password" id="password" autocomplete="off" value=""
                                     style="color: #777; width: 130px; margin: 0px; padding: 0px; height: 18px; font-size: 12px;
                                     border: 1px solid #a5b4bc;" />
                         </tr>
@@ -280,7 +280,7 @@
                         <!--  nlh-formUsrlg-->
                         <ul>
                             <li><a href="/Account/ThongTinTaiKhoan">Thông tin tài khoản</a></li>
-                            <li><a href="/Public/TongHop">Quản trị giao dịch</a></li>
+                            <li><a href="/Transaction/LichSuGiaoDich">Quản trị giao dịch</a></li>
                             <li><a href="/Transaction/NapTien">Nạp tiền</a> | <a href="/Transaction/ChuyenTien">
                                 Chuyển tiền</a></li>
                         </ul>
