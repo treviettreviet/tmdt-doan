@@ -8,17 +8,17 @@
 
     <h2>UpdateUser</h2>
 
-    <% using (Html.BeginForm()) {%>
+    <% using (Html.BeginForm("XuLyUpdateUser","Admin")) {%>
         <%: Html.ValidationSummary(true) %>
 
         <fieldset>
-            <legend>Fields</legend>
-            
+            <legend><h3>Cập Nhật Thông Tin Tài Khoản</h3></legend>
+            <br />
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.ID) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID, new object { "name = 'id'" })%>
+                <%: Html.TextBoxFor(model => model.ID, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.ID) %>
             </div>
             
@@ -26,7 +26,56 @@
                 <%: Html.LabelFor(model => model.Email) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Email, new object { "name = 'email'" })%>
+                <%: Html.TextBoxFor(model => model.Email) %>
+                <%: Html.ValidationMessageFor(model => model.Email) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Password) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Password, new Dictionary<string, object>() { { "readonly", "true" } })%>
+                <%: Html.ValidationMessageFor(model => model.Password) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Name) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Name) %>
+                <%: Html.ValidationMessageFor(model => model.Name) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.GroupID) %>
+            </div>
+
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Group.GroupName, new Dictionary<string, object>() { { "readonly", "true" } })%>
+                <%: Html.ValidationMessageFor(model => model.Group.GroupName)%>
+            </div>
+
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Status) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Status, new Dictionary<string, object>() { { "readonly", "true" } })%>
+                <%: Html.ValidationMessageFor(model => model.Status) %>
+            </div>
+
+            <%--<div class="editor-label">
+                <%: Html.LabelFor(model => model.ID) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.ID,new { name = "ID" })%>
+                <%: Html.ValidationMessageFor(model => model.ID) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Email) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Email, new { name = "Email" })%>
                 <%: Html.ValidationMessageFor(model => model.Email) %>
             </div>
             
@@ -42,7 +91,7 @@
                 <%: Html.LabelFor(model => model.Name) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Name, new object { "name = 'name'" })%>
+                <%: Html.TextBoxFor(model => model.Name, new { name = "name" })%>
                 <%: Html.ValidationMessageFor(model => model.Name) %>
             </div>
             
@@ -51,7 +100,7 @@
             </div>
 
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Group.GroupName, new object { "name = 'group'" })%>
+                <%: Html.TextBoxFor(model => model.Group.GroupName, new { name = "group" })%>
                 <%: Html.ValidationMessageFor(model => model.Group.GroupName)%>
             </div>
 
@@ -59,9 +108,9 @@
                 <%: Html.LabelFor(model => model.Status) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Status, new object { "name = 'status'" })%>
+                <%: Html.TextBoxFor(model => model.Status, new { name = "status" })%>
                 <%: Html.ValidationMessageFor(model => model.Status) %>
-            </div>
+            </div>--%>
             
             <p>
                 <input type="submit" value="Save" />
