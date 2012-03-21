@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
-    Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Chuyển tiền giữa 2 Ví trên cùng hệ thống môi giới
+	Chuyển tiền liên môi giới
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="content">
         <div id="menu-nav-content">
@@ -26,9 +26,9 @@
                         <li class="" style="display: block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>
                         <li class=" " style="display: block"><a href="/Transaction/ChuyenTien"><span>Chuyển
                             tiền</span></a></li>
-                        <li class="active " style="display: block"><a href="/Transaction/ChuyenTienCungMoigioi">
+                        <li style="display: block"><a href="/Transaction/ChuyenTienCungMoigioi">
                             <span>Chuyển tiền cùng môi giới</span></a></li>
-                        <li class=" " style="display: block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>
+                        <li class="active " class=" " style="display: block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>
                             Chuyển tiền khác môi giới</span></a></li>
                     </ul>
                 </div>
@@ -44,13 +44,15 @@
                     else
                     {
                         Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
-                        string message = "";
-                        if (ViewData["message"] != null)
-                            message = ViewData["message"].ToString();
+                        string div = Request.QueryString["div"];
+                        string error = Request.QueryString["error"];
+                        if (div != null && error != null)
+                        {
                 %>
-                <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi">
-                <div class="message-box">
-                    <%=message%></div>
+                            <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
+                <%      }
+                %>
+                <form method="post" action="/Transaction/XuLyChuyenTienKhacMoiGioi">
                 <h4 style="margin-top: 10px;">
                     Tài khoản người nhận</h4>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -72,7 +74,7 @@
                                 <input class="output-contact field-check" name="receiver_email" id="receiver_email"
                                     value="" maxlength="255" type="text" />
                                 <div class="field-notification field-alert">
-                                    Nhập địa chỉ Email chính của tài khoản người nhận (không quá 255 ký tự)</div>
+                                    Nhập địa chỉ <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự)</div>
                                 <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập tài khoản
                                     người nhận</span><span class="field-check-function blur submit" title="isEmail(_value_)">Tài
                                         khoản người nhận không đúng định dạng</span>
@@ -87,7 +89,7 @@
                                     value="" maxlength="255" type="text" /><div id="danhsachdoitac">
                                     </div>
                                 <div class="field-notification field-alert">
-                                    Nhập lại địa chỉ Email chính của tài khoản người nhận (không quá 255 ký tự, không
+                                    Nhập lại địa chỉ <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự, không
                                     hỗ trợ copy/paste)</div>
                                 <span class="field-check-function submit" title="notEmpty(_value_)">Chưa xác nhận lại
                                     tài khoản người nhận</span><span class="field-check-function blur submit" title="isEmail(_value_)">Nhập
@@ -136,19 +138,6 @@
                                     chuyển tiền</span>
                             </td>
                         </tr>
-                        <%--<tr>
-                            <th>
-                                <span class="required">*</span>Mã xác nhận:
-                            </th>
-                            <td class="blear">
-                                <input name="verify_image" value="" type="text" class="field-check" maxlength="{max_length}"
-                                    style="width: 100px;" /><img src="../../Content/images/captcha0.gif"
-                                        border="0" style="margin-left: 10px;" align="absmiddle"><div class="field-notification field-alert">
-                                            Nhập 5 ký tự nhìn thấy trong hình trên (không phân biệt chữ hoa/thường)</div>
-                                <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mã
-                                    xác nhận</span>
-                            </td>
-                        </tr>--%>
                         <tr>
                             <th>
                             </th>
@@ -162,7 +151,7 @@
                 <%
                     }
                 %>
-                <script type="text/javascript" language="javascript">                    setFormCheck();</script>
+                <script type="text/javascript" language="javascript">setFormCheck();</script>
             </div>
         </div>
     </div>
