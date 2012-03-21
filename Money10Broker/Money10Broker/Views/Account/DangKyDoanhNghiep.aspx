@@ -8,7 +8,7 @@
                     Chuyển sang đăng ký mở ví điện tử cá nhân</a> ]</div>
         </div>
         <div class="box-content">
-            <form name="NL_UserRegisterEnterpriseForm" method="post" enctype="multipart/form-data">
+            <form action="/Account/XuLyDangKyDoanhNghiep" method="post" enctype="multipart/form-data">
             <input type="hidden" name="form_module_id" value="273">
             <div class="box-content-square" style="padding-top: 0;">
                 <div id="step-flow">
@@ -552,23 +552,7 @@
                         </table>
                     </div>
                 </div>--%>
-                <h4>
-                    Xác nhận điều khoản sử dụng dịch vụ</h4>
-                <div class="table-box">
-                    <table width="880" border="0" cellspacing="5" cellpadding="0">
-                        <tr>
-                            <td width="200" align="right">
-                                <span class="required">*</span>Nhập mã xác nhận:
-                            </td>
-                            <td>
-                                <input name="verify_image" type="text" value maxlength="5" class="input-business field-check"
-                                    autocomplete="off" style="width: 80px;"><img src="../../Content/images/captcha0.gif"
-                                        id="verify_image" align="absmiddle" style="margin-left: 10px;"><span class="field-check-function submit"
-                                            title="notEmpty(_value_)">Bạn chưa nhập mã xác nhận</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                
                 <div class="checkbox" style="margin-bottom: 0px;">
                     <input name="agree" id="agree" type="checkbox" value="1">
                     <span style="font-weight: bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="http://help.nganluong.vn/chi-tiet-4/27/373/Thoa-thuan-nguoi-dung-NganLuong.vn.html"

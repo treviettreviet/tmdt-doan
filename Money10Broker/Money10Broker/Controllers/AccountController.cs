@@ -313,8 +313,80 @@ namespace Money10Broker.Controllers
 
         }
 
-        public ActionResult XuLyDangKyDoanhNghiep(string email, string password, string password_payment, string verify_type, string social_id, string fullname, string address, string phone)
+        public ActionResult XuLyDangKyDoanhNghiep(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string address, string phone)
         {
+            if (cmdRegister != null)
+            {
+                if (KiemTraEmail(email) == 1)
+                {
+                    try
+                    {
+
+                        xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
+                        TaiKhoan newUser = new TaiKhoan();
+                        DoanhNghiep newInfo = new DoanhNghiep();
+
+                        List<string> lstMaTaiKhoan = (from col in dbXuLyDangKy.TaiKhoans select col.MaTaiKhoan).ToList<string>();//dbXuLyDangKy.TaiKhoans.ToList<string>(m => m.MaTaiKhoan);
+                        string MaTaiKhoanNext = TaoMaTangTuDong(lstMaTaiKhoan, 2, "TK");
+                        newUser.MaTaiKhoan = MaTaiKhoanNext;
+                        newUser.SoTaiKhoan = TaoSoTaiKhoan();   // Tạo số tài khoản tự động gồm 6 số không trùng nhau.
+                        newUser.MaLoaiTaiKhoan = "LTK002";
+                        newUser.SoDu = 0;
+                        newUser.Email = email;
+                        newUser.MatKhau = GetMD5Hash(password);
+                        newUser.MatKhauGiaoDich = password_payment;
+                        newUser.TinhTrang = 0;
+                        dbXuLyDangKy.TaiKhoans.AddObject(newUser);
+
+                        // Thêm thông tin vào bảng cá nhân
+                        List<string> lstMaDNMax = (from col in dbXuLyDangKy.DoanhNghieps select col.MaDoanhNghiep).ToList<string>();
+                        string MaDNNext = TaoMaTangTuDong(lstMaDNMax, 2, "CN");
+                        newInfo.MaDoanhNghiep = MaDNNext;
+                        newInfo.MaTaiKhoan = MaTaiKhoanNext;
+                        //if(fullname==null || fullname=="")
+                        //{
+                        //    fullname = "0";
+                        //}
+                        newInfo.TenCongTy = fullname;
+                        //string birthday = month + "/" + date + "/" + year;
+                        //newInfo.NgaySinh = DateTime.Parse(birthday);
+                        //if (sex.Equals("1"))
+                        //    newInfo.GioiTinh = "Nam";
+                        //else
+                        //    newInfo.GioiTinh = "Nữ";
+                        //newInfo.cm = 0;
+                        if(phone=="" || phone==null)
+                        {
+                            phone = "0";
+                        }
+                        newInfo.DienThoaiCongTy = int.Parse(phone);
+                        if (!social_id.Equals(""))
+                            newInfo.SoGiayPhepKinhDoanh = social_id;
+                        newInfo.TinhTrang = 0;
+                        dbXuLyDangKy.DoanhNghieps.AddObject(newInfo);
+                        dbXuLyDangKy.SaveChanges();
+                        string sTo = email;
+                        string sFrom = "tmdthca@gmail.com";
+                        string sSubject = "Money10Broker Thông báo";
+                        string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                        sendMail(sTo, sFrom, sSubject, sBody);
+                        return View("DangNhap");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
+                else
+                {
+                    string div = "error-box";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    //return View("DangKy");
+                    return View("DangKyCaNhan");
+                }
+            }
             return View();
         }
 
