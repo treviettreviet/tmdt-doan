@@ -10,8 +10,8 @@
         <%: Html.ValidationSummary(true) %>
 
         <fieldset>
-            <legend>Fields</legend>
-            
+            <legend><h3>Cập Nhật Thông Tin Tài Khoản</h3></legend>
+            <br />
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.ID) %>
             </div>
