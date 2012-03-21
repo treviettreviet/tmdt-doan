@@ -12,13 +12,13 @@
 
     <%--<div class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>--%>
 
-    <div class="notification attention png_bg">
+    <%--<div class="notification attention png_bg">
         <div>
             <div class='<%=Html.Encode(ViewData["div"]) %>'>
                 <%=Html.Encode(ViewData["error"]) %>
             </div>
         </div>
-    </div>
+    </div>--%>
     
     <script type="text/javascript">
 					    		    			    //initiate validator on load
@@ -267,6 +267,7 @@
             }
         }
     </script>
+<h3>Tạo User</h3>
 <form action="/Admin/XuLyTaoUser" onsubmit="return check_personal_name()" id="form" name="form_register_personal" accept-charset="utf-8" method="post"> 
     <table class="form-content-table" cellspacing="10px" id="register_account_personal">
         <tr>
