@@ -13,9 +13,9 @@
             <div class="box-content-square" style="padding-top: 0;">
                 <div id="step-flow">
                     <ul id="step-three">
-                        <li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký</li>
-                        <li>2.&nbsp;&nbsp;Kích hoạt tài khoản</li>
-                        <li class="last">3.&nbsp;&nbsp;Hoàn tất</li>
+                        <li class="active"><strong></strong>&nbsp;&nbsp;Thông tin đăng ký</li>
+                        <%--<li>2.&nbsp;&nbsp;Kích hoạt tài khoản</li>
+                        <li class="last">3.&nbsp;&nbsp;Hoàn tất</li>--%>
                     </ul>
                 </div>
                 <!-- thông báo lỗi-->
@@ -92,8 +92,7 @@
                         <table width="880" border="0" cellspacing="5" cellpadding="0">
                             <tr>
                                 <td width="200" align="right">
-                                    <span class="required">*</span>Chọn hình thức:
-                                </td>
+                                    &nbsp;<span class="required">*</span><span class="otp-type" id="otp_payment_password0">Nhập mật khẩu thanh toán:</span></td>
                                 <td>
                                     <%--<input class="otp-type" name="otp_type" type="radio" value="1" checked="checked">
                                     <span class="otp-type" id="otp_mobile">OTP (mật khẩu một lần) qua SMS</span><br>
@@ -101,7 +100,7 @@
                                         Mỗi khi chuyển, rút tiền hoặc thay đổi thông tin tài khoản, NgânLượng.vn gửi một
                                         mã bí mật qua SMS đến số di động của bạn để xác minh giao dịch.</div>--%>
                                     <%--<input class="otp-type" name="otp_type" type="radio" checked="checked" value="2">--%>
-                                    <span class="otp-type" id="otp_payment_password">Nhập mật khẩu thanh toán: <input name="password_payment" type="password" value="" class="input-business field-check"></span>
+                                    <span class="otp-type" id="otp_payment_password">&nbsp;<input name="password_payment" type="password" value="" class="input-business field-check"></span>
                                     <div class="field-notification field-alert">
                                         Bạn khai báo và sử dụng một mật khẩu thanh toán khác với mật khẩu đăng nhập để xác
                                         minh giao dịch, khuyên dùng nếu bạn thường xuyên ở nước ngoài.
@@ -574,7 +573,7 @@
                     <input name="agree" id="agree" type="checkbox" value="1">
                     <span style="font-weight: bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="http://help.nganluong.vn/chi-tiet-4/27/373/Thoa-thuan-nguoi-dung-NganLuong.vn.html"
                         target="_blank">Thỏa thuận người dùng</a> và <a href="http://help.nganluong.vn/danh-muc-56/2/1/Dang-ky-mo-tai-khoan.html"
-                            target="_blank">Hướng dẫn sử dụng</a> của NgânLượng.vn</span>
+                            target="_blank">Hướng dẫn sử dụng</a> của ECMoney10Banking.tk</span>
                     <input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button"
                         onclick="if(!document.getElementById('agree').checked) {alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
                 </div>
