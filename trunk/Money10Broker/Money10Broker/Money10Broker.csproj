@@ -401,6 +401,7 @@
     <Content Include="Views\Account\ThongTinTaiKhoan.aspx" />
     <Content Include="Views\Account\DangNhap.aspx" />
     <Content Include="Views\Transaction\ChuyenTienCungMoiGioi.aspx" />
+    <Content Include="Views\Transaction\ChuyenTienKhacMoiGioi.aspx" />
     <Content Include="Views\Transaction\LichSuGiaoDich.aspx" />
     <Content Include="Views\Transaction\NapTien.aspx" />
     <Content Include="Views\Transaction\RutTien.aspx" />

@@ -167,8 +167,8 @@
 				</table>						
 			</div>--%>
             <div class="checkbox" style="margin-bottom:0px;">
-				<input name="agree" id="agree" type="checkbox" checked="true" value="1">
-				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="#" target="_blank">Thỏa thuận người dùng</a> và <a href="#" target="_blank">Hướng dẫn sử dụng</a></span>
+				<%--<input name="agree" id="agree" type="checkbox" checked="true" value="1">
+				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="#" target="_blank">Thỏa thuận người dùng</a> và <a href="#" target="_blank">Hướng dẫn sử dụng</a></span>--%>
 				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký"  class="register-button"<%-- onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};"--%>>
 			</div>
 		    </form>

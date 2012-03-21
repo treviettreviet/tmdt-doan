@@ -50,6 +50,111 @@ namespace Money10Broker.Controllers
             return View();
         }
 
+        public ActionResult XuLyChuyenTienKhacMoiGioi(string receiver_email, string price)
+        {
+            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            System.Net.ServicePointManager.Expect100Continue = false;
+            string UrlWebservice = "http://moigioimoney04.tk/WS4EM.asmx";
+            string ServiceName = "WS4EM";
+            string MethodName1 = "WSLoginMoiGioi";
+            string MethodName2 = "LienMoiGioi";
+
+            string us = "moigioi10";
+            string pass = "123456";
+            object[] arrOb1 = new object[2];
+            arrOb1[0] = us;
+            arrOb1[1] = pass;  // Số thẻ của Môi Giới 04
+
+            object obResult = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName1, arrOb1);
+            string sID = (string)obResult;
+            string div = "";
+            string error = "";
+            if (sID.Equals("fail"))
+            {
+                div += "message-box";
+                error += "Lỗi, không đăng nhập được vào hệ thống của Môi Giới Liên Kết. Vui lòng thực hiện lại thao tác.";
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+            }
+            if(sID.Equals("error"))
+            {
+                div += "message-box";
+                error += "Có lỗi xảy ra trong quá trình thực hiện giao dịch: " + sID;
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+            }
+            if (sID != null)
+            {
+                object[] arrOb2 = new object[3];
+                double pr = double.Parse(price);
+                arrOb2[0] = sID;
+                arrOb2[1] = pr;
+                arrOb2[2] = receiver_email;
+                object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+                int result2 = (int)obResult2;
+                if (result2 == 0)
+                {
+                    try
+                    {
+                        xnvaufit_MoiGioiEntities mg222 = new xnvaufit_MoiGioiEntities();
+                        TaiKhoan tkdn = mg222.TaiKhoans.Single(m => m.Email == tk.Email);
+                        tkdn.SoDu -= (decimal)pr;
+                        mg222.SaveChanges();
+                        Session["User"] = tkdn;
+                        div += "message-box";
+                        error += "Giao dịch thành công! Bạn có thể đến trang Lịch Sử Giao Dịch bên dưới để kiêm tra lại kết quả giao dịch";
+                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                        return RedirectToAction("ThongBaoKetQuaGiaoDich", new { div, error });   // Chỗ này hay nè anh em :D
+                    }
+                    catch (Exception ex)
+                    {
+                        div += "message-box";
+                        error += "Lỗi, không truy xuất được tài khoản đang đăng nhập....!";
+                        ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                        ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                        return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+                    }
+                }
+                if (result2 == 1)
+                {
+                    div += "message-box";
+                    error += "Giao dịch thất bại....!";
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+                }
+                if (result2 == -1)
+                {
+                    div += "message-box";
+                    error += "Session đăng nhập không tồn tại...!";
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+                }
+                if (result2 == -2)
+                {
+                    div += "message-box";
+                    error += "Có lỗi xảy ra, nhưng không xác định được lỗi...!";
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+                }
+                if (result2 == -3)
+                {
+                    div += "message-box";
+                    error += "Thẻ giao dịch qua ngân hàng không được liên kết...!";
+                    ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                    ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                    return RedirectToAction("ChuyenTienKhacMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
+                }
+            }
+            return RedirectToAction("LichSuGiaoDich");
+        }
+
         /// <summary>
         /// send mail khi khách hàng giao dịch
         /// </summary>
@@ -113,6 +218,7 @@ namespace Money10Broker.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
         public ActionResult XuLyChuyenTienCungMoiGioi(string receiver_email, string price, string reason)
         {
             TaiKhoan tkGui = new TaiKhoan();
