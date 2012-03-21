@@ -70,6 +70,7 @@
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
       <End Role="The" EntitySet="Thes" />
     </AssociationSet>
+    <EntitySet Name="SessionIDs" EntityType="MoiGioiAdminModel.SessionID" />
   </EntityContainer>
   <EntityType Name="Admin">
     <Key>
@@ -141,6 +142,8 @@
     <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="DienThoai" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
     <Property Name="DiaChi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="MaVanChuyen" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailKhachHangThanhToan" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Group">
     <Key>
@@ -470,4 +473,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="SessionID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sID" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Status" />
+  </EntityType>
 </Schema>

@@ -60,6 +60,8 @@
     <EntitySetMapping Name="DonHangs">
       <EntityTypeMapping TypeName="MoiGioiAdminModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="EmailKhachHangThanhToan" ColumnName="EmailKhachHangThanhToan" />
+          <ScalarProperty Name="MaVanChuyen" ColumnName="MaVanChuyen" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -250,6 +252,16 @@
           <ScalarProperty Name="NgayMoThe" ColumnName="NgayMoThe" />
           <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
           <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionIDs">
+      <EntityTypeMapping TypeName="MoiGioiAdminModel.SessionID">
+        <MappingFragment StoreEntitySet="SessionID">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="sID" ColumnName="sID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

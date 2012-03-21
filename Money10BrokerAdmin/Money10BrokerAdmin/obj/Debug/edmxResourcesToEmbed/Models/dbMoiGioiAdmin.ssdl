@@ -18,6 +18,7 @@
     <EntitySet Name="NoiDung" EntityType="MoiGioiAdminModel.Store.NoiDung" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Permission" EntityType="MoiGioiAdminModel.Store.Permission" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PhiGiaoDich" EntityType="MoiGioiAdminModel.Store.PhiGiaoDich" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SessionID" EntityType="MoiGioiAdminModel.Store.SessionID" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="MoiGioiAdminModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TaiKhoan" EntityType="MoiGioiAdminModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ThamSo" EntityType="MoiGioiAdminModel.Store.ThamSo" store:Type="Tables" Schema="dbo" />
@@ -129,8 +130,10 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="MaHoaDon" Type="varchar" MaxLength="10" />
+    <Property Name="MaVanChuyen" Type="varchar" MaxLength="10" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="TongThanhToan" Type="decimal" />
+    <Property Name="EmailKhachHangThanhToan" Type="varchar" MaxLength="100" />
     <Property Name="ChuTaiKhoan" Type="nvarchar" MaxLength="200" />
     <Property Name="TinhTrang" Type="int" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
@@ -192,7 +195,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="ThoiGian" Type="datetime" />
     <Property Name="BangLienQuan" Type="varchar" MaxLength="100" />
@@ -254,6 +257,15 @@
     <Property Name="MaLoaiGiaoDich" Type="varchar" MaxLength="10" />
     <Property Name="Phi" Type="decimal" />
     <Property Name="TinhTrang" Type="int" />
+  </EntityType>
+  <EntityType Name="SessionID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sID" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
