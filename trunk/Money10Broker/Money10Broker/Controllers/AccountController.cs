@@ -167,12 +167,8 @@ namespace Money10Broker.Controllers
             smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
             try
             {
-
-
                 if (from.Length > 0 && to.Length > 0 && subject.Length > 0 && body.Length >= 0)
                 {
-
-
                     System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");//kiem tra tinh hop le cua mail
                     msg.From = new MailAddress(from, "Money10Bank Gui Mail", System.Text.Encoding.UTF8);
                     Byte i;
@@ -184,7 +180,6 @@ namespace Money10Broker.Controllers
                             //lblError.Visible = true;
                             //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
                             Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
-
                         }
                         else
                         {
@@ -201,13 +196,28 @@ namespace Money10Broker.Controllers
                     }
                 }
             }
-
-
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
+
+        //Kiểm tra email đăng ký
+        private int KiemTraEmail(string email)
+        {
+            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
+            try
+            {
+                TaiKhoan user = mg.TaiKhoans.Single(m => m.Email == email);
+                return 1;   // Bị  trùng Email
+            }
+            catch
+            {
+                return 0;   // Không bị trùng
+            }
+        }
+
         // Truyền các tham số vào hàm, tên của các tham số phải đúng 9 xác với tên của các input đặt bên trang DangKyCaNhan
         // Ví du: XuLyDangKyCaNhan(string email, string password,.....,...)
         // Muốn lấy giá trị của input nào thì truyền tên của input đó vô.
@@ -215,11 +225,10 @@ namespace Money10Broker.Controllers
         {
             if (cmdRegister != null)
             {
-                if (KiemTraEmail(email) == 1)
+                if (KiemTraEmail(email) == 0)
                 {
                     try
                     {
-
                         xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
                         TaiKhoan newUser = new TaiKhoan();
                         CaNhan newInfo = new CaNhan();
@@ -233,7 +242,7 @@ namespace Money10Broker.Controllers
                         newUser.Email = email;
                         newUser.MatKhau = GetMD5Hash(password);
                         newUser.MatKhauGiaoDich = password_payment;
-                        newUser.TinhTrang = 0;
+                        newUser.TinhTrang = 1;
                         dbXuLyDangKy.TaiKhoans.AddObject(newUser);
 
                         // Thêm thông tin vào bảng cá nhân
@@ -259,7 +268,7 @@ namespace Money10Broker.Controllers
                         string sSubject = "Money10Broker Thông báo";
                         string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                         sendMail(sTo, sFrom, sSubject, sBody);
-                        return View("DangNhap");
+                        return RedirectToAction("DangNhap");
                     }
                     catch (Exception ex)
                     {
@@ -269,59 +278,23 @@ namespace Money10Broker.Controllers
                 else
                 {
                     string div = "error-box";
-                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống. Vui lòng đăng ký với địa chỉ Email khác.";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    //return View("DangKy");
-                    return View("DangKyCaNhan");
+                    return RedirectToAction("DangKyCaNhan", new {div, error});
                 }
             }
             return View();
-        }
-
-        //Kiểm tra email đăng ký
-        private int KiemTraEmail(string email)
-        {
-            //try
-            //{
-            //    TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-            //    return 1;   // Email không tồn tại
-            //}
-            //catch
-            //{
-            //    return 0;   // Email tồn tại
-            //}
-            int flag = 1;
-            try
-            {
-                TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                if (!user.Email.Equals(email))
-                {
-                    flag = 1; // Email không tồn tại
-                    return flag;
-                }
-                else
-                {
-                    flag = 0; // email ton tai
-                    return flag;
-                }
-            }
-            catch
-            {
-                return flag;
-            }
-
         }
 
         public ActionResult XuLyDangKyDoanhNghiep(string cmdRegister, string email, string password, string password_payment, string social_id, string fullname, string address, string phone)
         {
             if (cmdRegister != null)
             {
-                if (KiemTraEmail(email) == 1)
+                if (KiemTraEmail(email) == 0)
                 {
                     try
                     {
-
                         xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
                         TaiKhoan newUser = new TaiKhoan();
                         DoanhNghiep newInfo = new DoanhNghiep();
@@ -372,7 +345,7 @@ namespace Money10Broker.Controllers
                         string sSubject = "Money10Broker Thông báo";
                         string sBody = "Bạn đã đăng ký thành công lúc" + DateTime.Now + "!Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                         sendMail(sTo, sFrom, sSubject, sBody);
-                        return View("DangNhap");
+                        return RedirectToAction("DangNhap");
                     }
                     catch (Exception ex)
                     {
@@ -382,11 +355,10 @@ namespace Money10Broker.Controllers
                 else
                 {
                     string div = "error-box";
-                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống";
+                    string error = "Địa chỉ email này hiện đã được sử dụng trong hệ thống. Vui lòng đăng ký địa chỉ Email khác.";
                     ViewData["div"] = div;
                     ViewData["error"] = error;
-                    //return View("DangKy");
-                    return View("DangKyCaNhan");
+                    return RedirectToAction("DangKyDoanhNghiep", new {div, error });
                 }
             }
             return View();
@@ -434,7 +406,6 @@ namespace Money10Broker.Controllers
 
         public ActionResult XuLyCapNhatTaiKhoanCaNhan(string txthoten,string txtemail, string txtdienthoai, int date, int month, string year,string gender, string txtdiachi)
         {
-
             xnvaufit_MoiGioiEntities dbMG = new xnvaufit_MoiGioiEntities();
             TaiKhoan tk = (TaiKhoan)Session["User"];
             CaNhan cn = new CaNhan();
@@ -459,7 +430,6 @@ namespace Money10Broker.Controllers
             if(!gender.Equals(""))
             {
                 cn.GioiTinh = gender;
-
             }
             if (!txtdiachi.Equals(""))
             {
@@ -499,8 +469,6 @@ namespace Money10Broker.Controllers
                     if (max < temp)
                         max = temp;
                 }
-
-
                 int intMa = 0;
                 intMa = max;
                 maTuDong = maTuDong + (intMa + 1).ToString();

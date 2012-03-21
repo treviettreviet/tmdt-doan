@@ -8,12 +8,8 @@
                     Chuyển sang đăng ký mở ví điện tử cá nhân</a> ]</div>
         </div>
         <div class="box-content">
-<<<<<<< .mine
-            <form id="form1" runat="server">
-=======
+
             <form action="/Account/XuLyDangKyDoanhNghiep" method="post" enctype="multipart/form-data">
->>>>>>> .r430
-            <input type="hidden" name="form_module_id" value="273">
             <div class="box-content-square" style="padding-top: 0;">
                 <div id="step-flow">
                     <ul id="step-three">
@@ -557,12 +553,7 @@
                 </div>--%>
                 
                 <div class="checkbox" style="margin-bottom: 0px;">
-                    <input name="agree" id="agree" type="checkbox" value="1">
-                    <span style="font-weight: bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="http://help.nganluong.vn/chi-tiet-4/27/373/Thoa-thuan-nguoi-dung-NganLuong.vn.html"
-                        target="_blank">Thỏa thuận người dùng</a> và <a href="http://help.nganluong.vn/danh-muc-56/2/1/Dang-ky-mo-tai-khoan.html"
-                            target="_blank">Hướng dẫn sử dụng</a> của ECMoney10Broker.tk</span>
-                    <input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button"
-                        onclick="if(!document.getElementById('agree').checked) {alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
+                    <input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button" />
                 </div>
             </div>
             </form>

@@ -12,7 +12,16 @@
                             Đăng nhập tài khoản ví điện tử Ngân Lượng</div>
                         <div id="login-box-content">
                             <form method="post" action="/Account/XuLyDangNhap">
-                            <div id="message-box-login" style="display: block;" class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div>
+                            <%
+                                string div = Request.QueryString["div"];
+                                string error = Request.QueryString["error"];
+                                if (div != null && error != null)
+                                {
+                            %>
+                                    <div id="message-box-login" style="display: block;" class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>
+                            <%                    
+                                }
+                            %>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <th style="width: 80px; text-align: right;">
