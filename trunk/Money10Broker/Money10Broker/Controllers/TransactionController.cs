@@ -206,7 +206,7 @@ namespace Money10Broker.Controllers
                             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
-                            Response.Flush();
+                            //Response.Flush();
                             // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
                             // lblError.Visible = true;
                         }
