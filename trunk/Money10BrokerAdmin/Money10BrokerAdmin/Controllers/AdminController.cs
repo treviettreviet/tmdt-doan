@@ -105,7 +105,7 @@ namespace Money10BrokerAdmin.Controllers
             msg.IsBodyHtml = true;
             smtp.Port = Int32.Parse(port);
             smtp.EnableSsl = true;//chứng thực việc gửi mail
-            //smtp.Host = "smtp.gmail.com";//Sử dụng SMTP của gmail 
+           
             smtp.Host = server;
             smtp.Credentials = new NetworkCredential(user, pass);//user name , password cua mail gui
             try
@@ -120,8 +120,7 @@ namespace Money10BrokerAdmin.Controllers
                         bool result = regex.IsMatch(addr[i]);
                         if (result == false)
                         {
-                            //lblError.Visible = true;
-                            //lblError.Text = "Địa chỉ email nhận:" + sTo + " không hợp lệ.";
+                           
                             Response.Write("<script> alert ('Mail Nhân" + sTo + "ko hop lệ!');</script>");
                         }
                         else
@@ -132,7 +131,7 @@ namespace Money10BrokerAdmin.Controllers
                             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
-                            Response.Flush();
+                           // Response.Flush();
                             // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
                             // lblError.Visible = true;
                         }
