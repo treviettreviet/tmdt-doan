@@ -55,7 +55,7 @@
                     }
                 }
             </script>
-		  <form method="post" action="/Transaction/TransferByBroker" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
+		  <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">	
           <p style="margin-left:80px;">
             <input type="radio" name="id" value="samebank" checked="checked" onclick="GetBank('samebank');" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>

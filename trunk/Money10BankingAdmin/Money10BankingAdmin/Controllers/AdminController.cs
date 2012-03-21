@@ -208,7 +208,41 @@ namespace Money10BankingAdmin.Controllers
             Admin user = (from row in dbNganHang.Admins where row.ID.Equals(id) select row).First<Admin>();
             return View(user);
         }
+        public ActionResult XuLyUpdateUser(Admin adm)
+        {
+            try
+            {
+                Admin ad = dbNganHang.Admins.SingleOrDefault(m => m.ID == adm.ID);
 
+                ad.Name = adm.Name;
+                //ad.Password = GetMD5Hash(adm.Password);
+                ad.Email = adm.Email;
+                dbNganHang.SaveChanges();
+                Session["User"] = ad;
+                return RedirectToAction("../Admin/Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public ActionResult DetailUser(int id)
+        {
+            try
+            {
+                Admin ad = dbNganHang.Admins.SingleOrDefault(m => m.ID == id);
+                return View(ad);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
         public ActionResult PhanQuyen()
         {
             return View();

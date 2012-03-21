@@ -340,9 +340,11 @@ namespace Money10Broker.Controllers
 
                         // Thêm thông tin vào bảng cá nhân
                         List<string> lstMaDNMax = (from col in dbXuLyDangKy.DoanhNghieps select col.MaDoanhNghiep).ToList<string>();
-                        string MaDNNext = TaoMaTangTuDong(lstMaDNMax, 2, "CN");
+                        string MaDNNext = TaoMaTangTuDong(lstMaDNMax, 2, "DN");
                         newInfo.MaDoanhNghiep = MaDNNext;
                         newInfo.MaTaiKhoan = MaTaiKhoanNext;
+                        newInfo.MaLoaiGiayPhepKinhDoanh = "LGPKD001";
+                        newInfo.DiaChiCongTy = address;
                         //if(fullname==null || fullname=="")
                         //{
                         //    fullname = "0";
