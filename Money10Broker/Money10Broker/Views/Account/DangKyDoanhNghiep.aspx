@@ -8,14 +8,16 @@
                     Chuyển sang đăng ký mở ví điện tử cá nhân</a> ]</div>
         </div>
         <div class="box-content">
+<<<<<<< .mine
+            <form id="form1" runat="server">
+=======
             <form action="/Account/XuLyDangKyDoanhNghiep" method="post" enctype="multipart/form-data">
+>>>>>>> .r430
             <input type="hidden" name="form_module_id" value="273">
             <div class="box-content-square" style="padding-top: 0;">
                 <div id="step-flow">
                     <ul id="step-three">
-                        <li class="active"><strong></strong>&nbsp;&nbsp;Thông tin đăng ký</li>
-                        <%--<li>2.&nbsp;&nbsp;Kích hoạt tài khoản</li>
-                        <li class="last">3.&nbsp;&nbsp;Hoàn tất</li>--%>
+                        <li class="active"><strong></strong>&nbsp;&nbsp;Thông tin đăng ký</li>                        
                     </ul>
                 </div>
                 <!-- thông báo lỗi-->
@@ -29,11 +31,12 @@
                         <table width="880" border="0" cellspacing="5" cellpadding="0">
                             <tr>
                                 <td width="200px;" align="right">
-                                    <span class="required">*</span>Địa chỉ Email:
+                                    <span class="required" style="font-size:12px">*</span>Địa chỉ Email:
                                 </td>
                                 <td>
                                     <input name="email" id="email" type="text" value class="input-business field-check"
-                                        maxlength="255"><div class="field-notification field-alert">
+                                        maxlength="255">
+                                    <div class="field-notification field-alert">
                                             Ngân Lượng.vn sử dụng Email làm tên đăng nhập và định danh trong giao dịch, xin
                                             vui lòng nhập chính xác một địa chỉ email bạn thường sử dụng (không quá 255 ký tự)</div>
                                     <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa
@@ -557,7 +560,7 @@
                     <input name="agree" id="agree" type="checkbox" value="1">
                     <span style="font-weight: bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="http://help.nganluong.vn/chi-tiet-4/27/373/Thoa-thuan-nguoi-dung-NganLuong.vn.html"
                         target="_blank">Thỏa thuận người dùng</a> và <a href="http://help.nganluong.vn/danh-muc-56/2/1/Dang-ky-mo-tai-khoan.html"
-                            target="_blank">Hướng dẫn sử dụng</a> của ECMoney10Banking.tk</span>
+                            target="_blank">Hướng dẫn sử dụng</a> của ECMoney10Broker.tk</span>
                     <input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký »" class="register-button"
                         onclick="if(!document.getElementById('agree').checked) {alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
                 </div>
