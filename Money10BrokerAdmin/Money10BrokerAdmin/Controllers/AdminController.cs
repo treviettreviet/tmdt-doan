@@ -223,7 +223,7 @@ namespace Money10BrokerAdmin.Controllers
                 Admin ad = dbMoiGioiAdmin.Admins.SingleOrDefault(m => m.ID == adm.ID);
                 
                 ad.Name = adm.Name;
-                ad.Password = GetMD5Hash(adm.Password);
+               // ad.Password = GetMD5Hash(adm.Password);
                 ad.Email = adm.Email;
                 dbMoiGioiAdmin.SaveChanges();
                 return RedirectToAction("../Admin/Index");

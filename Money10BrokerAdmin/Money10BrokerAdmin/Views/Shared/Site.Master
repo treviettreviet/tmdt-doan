@@ -58,7 +58,7 @@
 						QUẢN LÝ GIAO DỊCH
 					</a>
 					<ul>
-						<li><a href="/Public/NapTien">Nạp Tiền</a></li>
+						<%--<li><a href="/Public/NapTien">Nạp Tiền</a></li>--%>
 						<%--<li><a class="current" href="#">Chuyển Tiền</a></li> --%><!-- Add class "current" to sub menu items also -->
 						<%--<li><a href="#">Xóa Môi Giới</a></li>
 						<li><a href="#">Cập Nhật Thông Tin Môi Giới</a></li>--%>
