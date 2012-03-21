@@ -1,32 +1,95 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+<script type="text/javascript">
+    var emailfilter = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i
+    function isEmail(e) {
+        var returnval = emailfilter.test(e.value)        
+        return returnval
+    }
+    function checkForm() {
+    // Email
+        if (document.form1.email.value == "") {
+            alert("Bạn phải nhập vào email");
+            document.form1.email.focus();
+            return false;
+        }
+        if (isEmail(document.form1.email)==false) {
+            alert("Email không đúng định dạng");
+            document.form1.email.focus();
+            return false;
+        }
+        if (document.form1.confirm_email.value != document.form1.email.value) {
+            alert("Email nhập lại không đúng");
+            document.form1.confirm_email.focus();
+            return false;
+        }
+        //Mật khẩu đăng nhập
+        
+        if (document.form1.password.value == "") {
+            alert("Bạn phải nhập vào mật khẩu đăng nhập");
+            return false;
+        }
+//        if (document.form1.password.length() < 6) {
+//            alert("Mật khẩu quá ngắn");
+//            document.form1.password.focus();
+//            return false;
+//        }
+        if (document.form1.confirm_password.value != document.form1.password.value) {
+            alert("Mật khẩu đăng nhập nhập lại không đúng");
+            document.form1.confirm_password.focus();
+            return false;
+        }
+        //Mật khẩu thanh toán
+        if (document.form1.password_payment.value == "") {
+            alert("Bạn phải nhập vào mật khẩu thanh toán");
+            return false;
+        }
+        if (document.form1.confirm_password_payment.value != document.form1.password_payment.value) {
+            alert("Mật khẩu thanh toán nhập lại không đúng");
+            document.form1.confirm_password_payment.focus();
+            return false;
+        }
+        //CMND
+        if (document.form1.social_id.value == "") {
+            alert("Bạn phải nhập CMND");
+            return false;
+        }
+        //Tên
+        if (document.form1.fullname.value == "") {
+            alert("Bạn phải nhập họ tên");
+            return false;
+        }
+        //Checkbox agree
+        if (document.form1.agree.value == 1) {
+            alert("Bạn phải đồng ý những điều kiện của chúng tối!");
+            return false;
+        }
+    }
+</script>
 	<div id="content">
 	<div id="register">
 		<div id="title"><span class="yel">Đăng ký mở ví điện tử cá nhân</span>&nbsp;&nbsp;[ <a href="/Account/DangKyDoanhNghiep">Chuyển sang đăng ký mở ví điện tử doanh nghiệp</a> ]</div>
 	</div>
 	<div class="box-content">		
 		<div class="box-content-square" style="padding-top:0;">
-		<form action="/Account/XuLyDangKyCaNhan" method="post">
-            <input type="hidden" name="form_module_id" value="273">
+		    <form id="form1" name="form1"  onsubmit="return checkForm();" method="post">
+            <%--<input type="hidden" name="form_module_id" value="273">--%>
 			<div id="step-flow">
 				<ul id="step-three">
-					<li class="active"><strong>1.</strong>&nbsp;&nbsp;Thông tin đăng ký </li>
-					<li><strong>2.</strong> &nbsp; &nbsp;Kích hoạt tài khoản</li>
-					<li class="last"><strong>3.</strong>&nbsp;&nbsp;Hoàn tất</li>
+					<li class="active"><strong></strong>&nbsp;&nbsp;Thông tin đăng ký </li>
+					<%--<li><strong>2.</strong> &nbsp; &nbsp;Kích hoạt tài khoản</li>
+					<li class="last"><strong>3.</strong>&nbsp;&nbsp;Hoàn tất</li>--%>
 				</ul>
 			</div>
-
-			<!-- thông báo lỗi--><div id="message-box-login" style="display: block;"  class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div><!--hết thông báo lỗi-->
-					
+			<!-- thông báo lỗi--><div id="message-box-login" style="display: block;"  class="<%=Html.Encode(ViewData["div"]) %>"><%=Html.Encode(ViewData["error"]) %></div><!--hết thông báo lỗi-->	
 			<h4>Thông tin đăng nhập tài khoản </h4>
 			<div class="frame_focus">
 					<div class="table-box">
 					<table width="880" border="0" cellspacing="5" cellpadding="0">
 					  <tr>
 						<td width="200" align="right"><span class="required">*</span>Địa chỉ Email:</td>
-						<td class="blear"><input name="email" id="email" type="text" value="" class="input-business field-check"><div class="field-notification field-alert">Ngân Lượng.vn sử dụng Email làm tên đăng nhập và định danh trong giao dịch, xin vui lòng nhập chính xác một địa chỉ email bạn thường sử dụng (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Địa chỉ Email không đúng định dạng</span><span class="field-check-function blur" title="checkExistEmail(_value_,_obj_,_error_,'Bạn có thể sử dụng email này!')">Địa chỉ Email này đã được sử dụng</span></td>
+						<td class="blear"><input name="email" id="email" type="text" value="" class="input-business field-check"><div class="field-notification field-alert">ECMoney10broker.tk sử dụng Email làm tên đăng nhập và định danh trong giao dịch, xin vui lòng nhập chính xác một địa chỉ email bạn thường sử dụng (không quá 255 ký tự)</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ Email</span><span class="field-check-function blur submit" title="isEmail(_value_)">Địa chỉ Email không đúng định dạng</span><span class="field-check-function blur" title="checkExistEmail(_value_,_obj_,_error_,'Bạn có thể sử dụng email này!')">Địa chỉ Email này đã được sử dụng</span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Nhập lại địa chỉ Email:</td>
@@ -68,12 +131,12 @@
 					  <tr>
                         <td align="right"><span class="required">*</span><span class="label">Số CMTND:</span><span class="label" style="display:none;">Số hộ chiếu:</span></td>
 					    <td class="blear"><input name="social_id" type="text" value="" class="input-business field-check">
-					      <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số chứng thực!</span><span class="field-check-function blur submit" title="isVerifyNumber(_value_)">Số chứng thực bạn nhập không đúng yêu cầu, không bao gồm khoảng trống!</span></td>
+					      <%--<span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập số chứng thực!</span><span class="field-check-function blur submit" title="isVerifyNumber(_value_)">Số chứng thực bạn nhập không đúng yêu cầu, không bao gồm khoảng trống!</span></td>--%>
 				      </tr>
                       <tr>
 						<td width="200" align="right"><span class="required">*</span>Họ tên đầy đủ:</td>
 						<td class="blear"><input id="fullname" name="fullname" type="text" value="" class="input-business field-check">
-                        <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập họ tên!</span></td>
+                       <%-- <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập họ tên!</span></td>--%>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Ngày tháng năm sinh:</td>
@@ -84,8 +147,8 @@
 						<td class="blear"><select name="sex" id="sex" style="width: 110px" class="list-business"><option value="1" selected>Nam</option><option value="2">Nữ</option></select></td>
 					  </tr>
 					  <tr>
-						<td align="right"><span class="required">*</span>Chỗ ở hiện tại:</td>
-						<td class="blear"><input id="address" name="address" type="text" value="" class="input-business field-check"><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập địa chỉ!</span></td>
+						<td width="200" align="right"><span class="required">*</span>Chỗ ở hiện tại:</td>
+						<td class="blear"><input id="address" name="address" type="text" value="" class="input-business field-check"><span class="field-check-function submit"></span></td>
 					  </tr>
 					  <tr>
 						<td align="right"><span class="required">*</span>Địa phương:</td>
@@ -104,67 +167,12 @@
 				</table>						
 			</div>--%>
             <div class="checkbox" style="margin-bottom:0px;">
-				<input name="agree" id="agree" type="checkbox" value="1">
+				<input name="agree" id="agree" type="checkbox" checked="true" value="1">
 				<span style="font-weight:bold;">Tôi đã đọc kỹ và xin cam kết tuân thủ <a href="#" target="_blank">Thỏa thuận người dùng</a> và <a href="#" target="_blank">Hướng dẫn sử dụng</a></span>
-				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký" class="register-button" onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};">
+				<input name="cmdRegister" id="cmdRegister" type="submit" value="Đăng ký"  class="register-button"<%-- onclick="if(!document.getElementById('agree').checked){alert('Bạn chưa chọn đồng ý điều khoản sử dụng dịch vụ'); return false;};"--%>>
 			</div>
-		</form>		 
+		    </form>
 		</div>		
 	</div>
 </div>
-<%--<script language="javascript">    setFormCheck();</script>
-<script language="javascript">
-    $(function () {
-        $('div.otp-type').hide().find('input').removeClass('field-check');
-        $('input.otp-type').each(function (index) {
-            $(this).bind('click', function () {
-                $('span.otp-type').css('font-weight', 'normal').eq(index).css('font-weight', 'bold');
-                $('div.otp-type').hide().find('input').removeClass('field-check');
-                $('div.otp-type').find('.field-error').remove();
-                $('div.otp-type').eq(index).show().find('input').addClass('field-check');
-            });
-            if ($(this).attr('checked') == true) {
-                $('span.otp-type').eq(index).css('font-weight', 'bold');
-                $('div.otp-type').eq(index).show().find('input').addClass('field-check');
-            }
-        });
-    });
-</script>
-<script language="javascript">
-    function setMessageBox() {
-        $(document).ready(function () {
-            var $messages = $('.message-box');
-            if ($messages.length) {
-                $messages.each(function (index) { if ($(this).html() != '') { $(this).show(function () { }); } });
-                $messages.bind('click', function (event) {
-                    event.stopPropagation();
-                });
-                $(document).bind('click', function () {
-                    $messages.hide(function () { $(this).empty(); });
-                });
-            }
-        });
-    }
-</script>
-<script language="javascript">    setFrameFocus(); setMessageBox();</script>
-<script language="javascript">
-    $(document).ready(function () {
-        $('#verify_type').bind('change', function () {
-            var index = $(this).val() != 1 ? 1 : 0;
-            $('span.label').hide().each(function (index_label) {
-                if (index_label % 2 == index) {
-                    $(this).show();
-                }
-            });
-        });
-        var index = $('#verify_type').val() != 1 ? 1 : 0;
-        $('span.label').hide().each(function (index_label) {
-            if (index_label % 2 == index) {
-                $(this).show();
-            }
-        });
-    });
-
-</script>--%>
-
 </asp:Content>
