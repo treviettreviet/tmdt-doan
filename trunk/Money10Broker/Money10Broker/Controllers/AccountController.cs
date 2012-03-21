@@ -215,10 +215,11 @@ namespace Money10Broker.Controllers
         {
             if (cmdRegister != null)
             {
-                if (KiemTraEmail(email) == 0)
+                if (KiemTraEmail(email) == 1)
                 {
                     try
                     {
+
                         xnvaufit_MoiGioiEntities dbXuLyDangKy = new xnvaufit_MoiGioiEntities();
                         TaiKhoan newUser = new TaiKhoan();
                         CaNhan newInfo = new CaNhan();
@@ -281,15 +282,35 @@ namespace Money10Broker.Controllers
         //Kiểm tra email đăng ký
         private int KiemTraEmail(string email)
         {
+            //try
+            //{
+            //    TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
+            //    return 1;   // Email không tồn tại
+            //}
+            //catch
+            //{
+            //    return 0;   // Email tồn tại
+            //}
+            int flag = 1;
             try
             {
                 TaiKhoan user = (from row in dbMoiGioi.TaiKhoans where row.Email.Equals(email) select row).First<TaiKhoan>();
-                return 1;   // Email không tồn tại
+                if (!user.Email.Equals(email))
+                {
+                    flag = 1; // Email không tồn tại
+                    return flag;
+                }
+                else
+                {
+                    flag = 0; // email ton tai
+                    return flag;
+                }
             }
             catch
             {
-                return 0;   // Email không tồn tại
+                return flag;
             }
+
         }
 
         public ActionResult XuLyDangKyDoanhNghiep(string email, string password, string password_payment, string verify_type, string social_id, string fullname, string address, string phone)
