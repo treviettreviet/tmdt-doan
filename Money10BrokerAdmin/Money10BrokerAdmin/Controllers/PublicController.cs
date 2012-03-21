@@ -70,7 +70,7 @@ namespace Money10BrokerAdmin.Controllers
             int check = -1; // Đăng nhập thất bại: Sai Username và Password
             try
             {
-                //Admin user = (from row in dbMoiGioiAdmin.Admins where row.Email.Equals(email) select row).First<Admin>();
+                
                 Admin user = dbMoiGioiAdmin.Admins.Single(m => m.Email == email);
                 if (user.Password == HashMD5.GetMD5Hash(password))
                 {
