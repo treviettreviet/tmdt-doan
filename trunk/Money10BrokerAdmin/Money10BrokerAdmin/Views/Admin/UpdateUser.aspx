@@ -32,7 +32,7 @@
                 <%: Html.LabelFor(model => model.Password) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Password) %>
+                <%: Html.TextBoxFor(model => model.Password, new Dictionary<string, object>() { { "readonly", "true" } }) %>
                 <%: Html.ValidationMessageFor(model => model.Password) %>
             </div>
             
