@@ -53,70 +53,7 @@
                     <%--<li><a href="#" class="" target=""><span>Mua sắm</span></a></li>--%>
                 </ul>
             </div>
-            <div class="taskbar-support">
-                <a href class="bt-support"></a>
-                <div class="support-content" style="display: none;">
-                    <h3>
-                        Hỗ trợ trực tuyến</h3>
-                    <p>
-                        <span style="color: #006699"><strong>Thời gian làm việc: </strong></span>
-                    </p>
-                    <p>
-                        - <b>Thứ 2 đến thứ 6</b>: từ 08h30 đến 12h, 13h đến 17h30</p>
-                    <p>
-                        - <b>Thứ 7</b>: từ 08h30 - 12h</p>
-                    <p>
-                        - <b>Ngoài giờ hành chính</b>: gọi tới số hotline <span style="color: #ff5a00; font-weight: bold;">
-                            0984-863-761</span> hoặc email tới support@nganluong.vn</p>
-                    <h4>
-                        <span>Hỗ trợ chung</span></h4>
-                    <ul>
-                        <li>
-                            <label>
-                                » Hà Nội:</label>
-                            <span class="sp-phone">
-                                <img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (máy
-                                lẻ 111)</span> <span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">
-                                    <img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">Hỗ
-                                    trợ dịch vụ 1</a></span> <span class="sp-skype end"><a href="callto:nganluongdotvn"
-                                        title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">
-                                        <img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">Hỗ
-                                        trợ dịch vụ 1</a></span> </li>
-                        <li>
-                            <label>
-                                » TP.HCM:</label>
-                            <span class="sp-phone">
-                                <img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (máy
-                                lẻ 101)</span> <span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">
-                                    <img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">Hỗ
-                                    trợ dịch vụ 2</a></span> <span class="sp-skype end"><a href="callto:nganluongdotvn_hcm"
-                                        title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">
-                                        <img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">Hỗ
-                                        trợ dịch vụ 2</a></span> </li>
-                    </ul>
-                    <h4>
-                        <span>Hỗ trợ tích hợp</span></h4>
-                    <ul>
-                        <li>
-                            <label>
-                                Hỗ trợ:</label>
-                            <span class="sp-phone">
-                                <img src="../../Content/images/icon-mob.gif"><strong>1900-5858-99</strong> (ext
-                                102)</span> <span class="sp-ym"><a href="#" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">
-                                    <img src="../../Content/images/icon-ym0.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Yahoo! Messenger">Hỗ
-                                    trợ tích hợp 1</a></span> <span class="sp-skype end"><a href="callto:nganluong_sup_tech"
-                                        title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">
-                                        <img src="../../Content/images/icon-sky.gif" title="Chat với dịch vụ hỗ trợ khách hàng của Ecmoney10broker.tk bằng Skype">Hỗ
-                                        trợ tích hợp 1</a></span> </li>
-                    </ul>
-                    <p>
-                        - <strong>Hỏi đáp</strong>: <a href="#" target="_blank" rel="nofollow">
-                            Trao đổi trên diễn đàn vizum.vn</a></p>
-                    <p>
-                        - Đường dây nóng lãnh đạo tiếp nhận ý kiến khách hàng: <span style="color: #ff5a00;
-                            font-weight: bold;">093.665.1441</span></p>
-                </div>
-            </div>
+            
         </div>
     </div>
     <div style="height: 35px;">

@@ -272,7 +272,7 @@ namespace Money10Broker.Controllers
             return View("LichSuGiaoDich");
         }
 
-        string wsURL = "http://ecmoney10.tk/WebServiceNganHangMoney10.asmx";
+        string wsURL = "http://ecmoney10.tk/WebserviceNganHang/WebServiceNganHangMoney10.asmx";
         string wsMethod = "TransferMoneySameBank";
         string WebService = "WebServiceNganHangMoney10";
 
