@@ -1,6 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+    function checkForm() {
+        // Email
+        if (document.form1.email.value == "") {
+            alert("Bạn phải nhập vào email");
+            document.form1.email.focus();
+            return false;
+        }
+        if (document.form1.password.value == "") {
+            alert("Bạn phải nhập vào mật khẩu");
+            document.form1.password.focus();
+            return false;
+        }
+    }
+</script>
     <div id="content">
         <div id="body">
             <div id="line-yell">
@@ -11,7 +26,7 @@
                         <div id="login-title">
                             Đăng nhập tài khoản ví điện tử Ngân Lượng</div>
                         <div id="login-box-content">
-                            <form method="post" action="/Account/XuLyDangNhap">
+                            <form method="post" name="form1" onsubmit="return checkForm();" action="/Account/XuLyDangNhap">
                             <%
                                 string div = Request.QueryString["div"];
                                 string error = Request.QueryString["error"];
@@ -28,8 +43,7 @@
                                         <span class="required">*</span>Tài khoản:
                                     </th>
                                     <td>
-                                        <input name="email" type="text" value="" onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};"
-                                            onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};">
+                                        <input name="email" type="text" value="">
                                     </td>
                                 </tr>
                                 <tr>

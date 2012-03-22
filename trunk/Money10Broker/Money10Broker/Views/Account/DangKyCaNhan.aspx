@@ -6,26 +6,7 @@
     function isEmail(e) {
         var returnval = emailfilter.test(e.value)        
         return returnval
-    }
-    //Chỉ cho nhập số
-//    function isNumber(e) {
-//        //Hàm dùng để ngăn người dùng nhập các ký tự khác ký tự số vào TextBox
-//        var keypressed = null;
-//        if (window.event) {
-//            keypressed = window.event.keyCode; //IE
-//        }
-//        else {
-//            keypressed = e.which; //NON-IE, Standard
-//        }
-
-//        if (keypressed < 48 || keypressed > 57) { //CharCode của 0 là 48 (Theo bảng mã ASCII)
-//            //CharCode của 9 là 57 (Theo bảng mã ASCII)
-//            if (keypressed == 8 || keypressed == 127) {//Phím Delete và Phím Back
-//                return;
-//            }
-//            return false;
-//        }
-    //    }
+    }    
     function isNumber(e) {
         var unicode = e.keyCode;
         if (unicode != 8) {
@@ -152,11 +133,13 @@
                       </tr>
                       <tr>
                             <td width="300" align="right"><font color="#FF0000">* </font>Mật khẩu thanh toán:</td>
-                            <td class="blear"><input  name="password_payment" id="password1" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span></td>
+                            <td class="blear"><input  name="password_payment" id="password1" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">
+                                Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span></td>
                           </tr>
                           <tr>
                             <td align="right"><font color="#FF0000">* </font>Nhập lại mật khẩu thanh toán:</td>
-                            <td class="blear"><input  name="confirm_password_payment" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">Từ 6-20 ký tự, không bao gồm khoảng trống, không trùng với mật khẩu đăng nhập</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password_payment')">Xin xác nhận lại mật khẩu của bạn!</span></td>
+                            <td class="blear"><input  name="confirm_password_payment" autocomplete="off" type="password" value="123456" class="field-check"><div class="field-notification field-alert">
+                                Từ 6-20 ký tự, không bao gồm khoảng trống</div><span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật khẩu!</span><span class="field-check-function blur submit" title="isPassword(_value_)">Dùng từ 6 đến 20 ký tự, không bao gồm khoảng trống!</span><span class="field-check-function blur" title="isConfirmObject(_value_,'password_payment')">Xin xác nhận lại mật khẩu của bạn!</span></td>
                           </tr>
                           <tr>
                       <td><h4>THÔNG TIN TÀI KHOẢN</h4></td>

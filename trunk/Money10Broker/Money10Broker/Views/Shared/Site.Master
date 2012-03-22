@@ -45,7 +45,6 @@
 <!--start menu ngang -->
 <%=dataContent["MAIN_MENU"].ValueLang %>
 <!-- end menu ngang-->
-
 <div style="height:35px;"></div>
 <script language="javascript">
     $('.bt-support').click(function (event) {
@@ -151,8 +150,8 @@
                 </div>
             </div>
         <% }%>
-	<div class="news-hot" id="news_hot">
-        <div style="cursor: pointer; position:absolute;text-align:center;">
+	<div class="news-hot" id="news_hot" style="text-align:center">
+        <div style="cursor: pointer; position:absolute; top: -4px; left: 248px;">
             <a href="/Public/TrangChu?lang=vi"><img alt="Vietnam" src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><img alt="English" src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
         </div>   
     </div>	
