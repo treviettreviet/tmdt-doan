@@ -99,7 +99,37 @@ namespace Money10BrokerAdmin.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    return RedirectToAction("../Admin/Index");
+                    Admin tk= (Admin)Session["User"];
+                    if (tk.Status == 1)
+                    {
+                        return RedirectToAction("../Admin/Index");
+                    }
+                    else
+                    {
+                        if (tk.Status == 0)
+                        {
+                            string div = "notification attention png_bg";
+                            string error = "";
+
+                            error = "Bạn bị cấm truy cập. Vui lòng liên hệ admin!";
+
+                            ViewData["div"] = div;
+                            ViewData["error"] = error;
+                            return RedirectToAction("DangNhap", new { div, error });
+                        }
+                        else
+                            //if (tk.Status == 2)
+                            {
+                                string div = "notification attention png_bg";
+                                string error = "";
+
+                                error = "Bạn đã bị delete user. Vui lòng liên hệ admin!";
+
+                                ViewData["div"] = div;
+                                ViewData["error"] = error;
+                                return RedirectToAction("DangNhap", new { div, error });
+                            }
+                    }
                 }
                 else
                 {
