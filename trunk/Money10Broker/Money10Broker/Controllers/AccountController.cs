@@ -189,7 +189,12 @@ namespace Money10Broker.Controllers
             int user_validation = UserValidation(email, password);
             if (user_validation == 0)
             {
-                return RedirectToAction("../Transaction/LichSuGiaoDich");
+                TaiKhoan tk = (TaiKhoan)Session["User"];
+                List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
+                
+                    ViewData["ListData"] = listData;
+                    return View("../Transaction/LichSuGiaoDich");
+               
             }
             else
             {
@@ -209,6 +214,52 @@ namespace Money10Broker.Controllers
                 return View("DangNhap");
             }
         }
+
+        /// <summary>
+        /// lich su giao dich
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public List<LichSuGiaoDichModels> LSGiaoDich(string email)
+        {
+            //TaiKhoan mail = (TaiKhoan)Session["User"];
+            TaiKhoan tk = dbMoiGioi.TaiKhoans.Single(p => p.Email == email);
+            // The th= new The();
+            //var the = from th in dbMoiGioi.Thes where th.MaTaiKhoan == tk.MaTaiKhoan select th.MaTaiKhoan;
+            //if (the.Count() != 0)
+            //{
+                //TaiKhoan th = dbMoiGioi.TaiKhoans.Single(a => a.MaTaiKhoan == tk.MaTaiKhoan);
+                List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
+                List<LichSuGiaoDich> gd = (from LSGD in dbMoiGioi.LichSuGiaoDiches where LSGD.MaThe == tk.MaTaiKhoan select LSGD).ToList();
+                for (int i = 0; i < gd.Count; i++)
+                {
+
+                    string maldg = gd[i].MaLoaiGiaoDich;
+                    LoaiGiaoDich Lgd = dbMoiGioi.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
+                    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
+                    ls.ThoiGian = gd[i].NgayGiaoDich.ToString();
+                    ls.LoaiGD = Lgd.TenLoaiGiaoDich;
+                    ls.TheGui = tk.MaTaiKhoan;
+                    ls.TheNhan = gd[i].SoTheNhan;
+                    ls.TienGui = gd[i].SoTienGiaoDich.ToString();
+                    listData.Add(ls);
+
+                }
+                return listData;
+            //}
+            //else
+            //    return null;
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sTo"></param>
+        /// <param name="sFrom"></param>
+        /// <param name="sSubject"></param>
+        /// <param name="sBody"></param>
 
         public void sendMail(string sTo, string sFrom, string sSubject, string sBody)
         {

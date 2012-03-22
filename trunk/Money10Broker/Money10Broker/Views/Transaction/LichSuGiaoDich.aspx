@@ -254,7 +254,7 @@
             <form method="post" name="frm_excel">
             <span style="float: right;">Trích xuất kết quả thành: <a class="icon-ex" onclick="excel();">
                 File Excel</a> </span>Có <span class="yel"><b><u>0</u></b></span> giao dịch
-            trong 3 Tháng gần đây (từ 01/11/2011 đến 01/01/2012)
+            trong 3 Tháng gần đây
             <div id="popup-applicant" style="display: none; position: absolute; width: 220px;
                 z-index: 100">
                 <p style="color: #FF7007; font-size: 13px">
@@ -309,7 +309,7 @@
             </div>
             </form>
         </div>
-        <div id="label-table" style="border-top: 0; background-color: #fff;">
+        <%--<div id="label-table" style="border-top: 0; background-color: #fff;">
             <div id="bottom-transaction-detail" style="margin: 0; float: left;">
                 <span style="font-weight: bold; color: #555;">Trạng thái giao dịch: </span>&nbsp;&nbsp;<a
                     href="http://help.nganluong.vn/?portal=help&amp;page=detail&amp;category_id=82&amp;id=321&amp;news_name=Quy-dinh-ve-tinh-trang-giao-dich-nhu-the-nao-&amp;cat=2"
@@ -330,42 +330,69 @@
                 <img align="absmiddle" src="../../Content/images/icon_trd.gif" />
                 <span>Bị từ chối</span>
             </div>
-        </div>
+        </div>--%>
         <div id="data-grid" class="box-content-square-content">
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <td class="title-box-table data-grid-header sort-numeric" width="70">
-                            <span class="title-box-table-content">Mã GD</span>
-                        </td>
-                        <td class="title-box-table data-grid-header sort-date transaction-order-desc" width="90">
+                    <td class="title-box-table data-grid-header sort-date transaction-order-desc" width="150">
                             <span class="title-box-table-content">Thời gian</span>
                         </td>
+                      
+                        
                         <td class="title-box-table data-grid-header" width="120">
                             <span class="title-box-table-content">Loại giao dịch</span>
                         </td>
-                        <td class="title-box-table data-grid-header">
-                            <span class="title-box-table-content">Đối tác </span>
+                          <td class="title-box-table data-grid-header sort-numeric" width="150">
+                            <span class="title-box-table-content">Người Gửi</span>
                         </td>
-                        <td class="title-box-table data-grid-header sort-numeric" width="80">
+                        <td class="title-box-table data-grid-header">
+                            <span class="title-box-table-content">Người Nhận</span>
+                        </td>
+                        <td class="title-box-table data-grid-header sort-numeric" width="200">
                             <span class="title-box-table-content">Số tiền</span>
                         </td>
-                        <td class="title-box-table data-grid-header sort-numeric" width="100">
-                            <span class="title-box-table-content">Hoá đơn</span>
-                        </td>
-                        <td class="title-box-table data-grid-header" width="120">
-                            <span class="title-box-table-content">Trạng thái</span>
-                        </td>
-                        <td class="title-box-table" style="border-right: 0;" width="130">
-                            <strong>Thao tác</strong>
-                        </td>
+                        
+                       
                     </tr>
                 </thead>
-                <tr class="data-empty">
-                    <td align="center" colspan="9">
-                        Không tồn tại giao dịch nào thoả mãn điều kiện tìm kiếm!
-                    </td>
-                </tr>
+                <tbody>
+                           
+                            <thead>
+                            <%
+                               
+                                if (ViewData["ListData"] != null)
+                                {
+                                    List<Money10Broker.Models.LichSuGiaoDichModels> lsgd = (List<Money10Broker.Models.LichSuGiaoDichModels>)ViewData["ListData"];
+                                    for (int i = 0; i < lsgd.Count; i++)
+                                    {
+                                        
+                            %>
+                                        <tr>
+                                            <th width="150" class="style4" >
+                                            <%=lsgd[i].ThoiGian %></th>
+                           
+                                            <th width="120" class="style4">
+                                            <%= lsgd[i].LoaiGD%></th>
+                           
+                                            <th width="150" class="style4">
+                                            <%= lsgd[i].TheGui%></th>
+                           
+                                            <th  class="style4">
+                                            <%= lsgd[i].TheNhan%></th>
+                          
+                                            <th width="200" class="style4">
+                                            <%= lsgd[i].TienGui%></th>
+                                        </tr>
+                            <%            
+                                    }
+                                }
+                             
+                            %>
+                            
+                        </thead>
+                           
+                        </tbody>
             </table>
         </div>
     </div>
