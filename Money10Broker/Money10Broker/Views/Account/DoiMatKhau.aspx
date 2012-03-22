@@ -58,8 +58,7 @@
                                     <input type="password" autocomplete="off" style="width: 200px;" name="old_pass" size="30"
                                         value class="field-check keyboardInput">&nbsp;&nbsp;<a href="" style="text-decoration: underline;"></a><div
                                             class="field-notification field-alert">
-                                            Nhập chính xác mật khẩu đăng nhập cũ (nếu bạn quên, xin vui lòng chọn "Quên mật
-                                            khẩu")</div>
+                                            Nhập chính xác mật khẩu đăng nhập cũ </div>
                                     <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật
                                         khẩu đăng nhập cũ</span>
                                 </td>
@@ -71,8 +70,7 @@
                                 <td>
                                     <input type="password" autocomplete="off" style="width: 200px;" name="new_pass" id="new_pass"
                                         size="30" value class="field-check keyboardInput"><div class="field-notification field-alert">
-                                            Nhập mật khẩu đăng nhập mới từ 6-20 ký tự, không bao gồm khoảng trống, không trùng
-                                            với mật khẩu đăng nhập cũ</div>
+                                            Nhập mật khẩu đăng nhập mới từ 6-20 ký tự, không bao gồm khoảng trống</div>
                                     <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mật
                                         khẩu đăng nhập mới</span><span class="field-check-function blur submit" title="isPassword(_value_)">Mật
                                             khẩu đăng nhập chưa đúng quy tắc</span>
