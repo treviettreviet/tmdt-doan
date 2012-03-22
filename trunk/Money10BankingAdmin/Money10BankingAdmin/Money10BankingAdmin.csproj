@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ModController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Controllers\SuperModController.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +146,7 @@
     <Content Include="Views\Admin\DanhSachUser.aspx" />
     <Content Include="Views\Admin\UpdateUser.aspx" />
     <Content Include="Views\Admin\XuLyChonNhom.aspx" />
+    <Content Include="Views\Permission\DanhSachBang.aspx" />
     <Content Include="Views\Public\CapNhatTaiKhoan.aspx" />
     <Content Include="Views\Public\DangNhap.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
