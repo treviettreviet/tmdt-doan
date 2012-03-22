@@ -214,7 +214,10 @@ namespace Money10BankingAdmin.Controllers
             {
                 Admin ad = dbNganHang.Admins.SingleOrDefault(m => m.ID == adm.ID);
                 ad.Name = adm.Name;
+                //if(adm.Password!=null || adm.Password!="")
+                //{
                 //ad.Password = GetMD5Hash(adm.Password);
+                //}
                 ad.Email = adm.Email;
                 ad.Status = adm.Status;
                 dbNganHang.SaveChanges();
@@ -243,6 +246,11 @@ namespace Money10BankingAdmin.Controllers
             }
 
         }
+
+
+       
+
+
         public ActionResult PhanQuyen()
         {
             return View();
