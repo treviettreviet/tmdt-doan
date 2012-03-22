@@ -359,18 +359,14 @@ namespace Money10Banking.Controllers
         public static string TaoMaTangTuDong(List<string> lstID, string prefixID)
         {
             int max = 0;
-
             foreach (string sub in lstID)
             {
                 int temp = int.Parse(sub.Remove(0, prefixID.Length));
                 if (temp > max)
                     max = temp;
             }
-            
-            
-            
+            max++;
             return prefixID + max.ToString();
-
         }
 
         // Lên - Xử lý thoát
@@ -1213,200 +1209,192 @@ namespace Money10Banking.Controllers
         /// 
         public ActionResult TransferMoneyBank(string Cardsend, string CardRec, string amount ,string id)
         {
-            
             if (id == "1")
             {
                // TransferMoneySameBank(Cardsend, CardRec, amount);
              
-                    System.Net.ServicePointManager.Expect100Continue = false;
-                    string UrlWebservice = "http://ecmoney10.tk/WebserviceNganHang/WebserviceNganHangMoney10.asmx";
-                    string ServiceName = "WebServiceNganHangMoney10";
-                    //string MethodName1 = "AuthenticateForTransaction";
-                    string MethodName2 = "TransferMoneySameBank";
-                    string card_no_send = Cardsend;
-                    string card_no_receive = CardRec;
-                    decimal deAmount = decimal.Parse(amount);
+                System.Net.ServicePointManager.Expect100Continue = false;
+                string UrlWebservice = "http://ecmoney10.tk/WebserviceNganHang/WebserviceNganHangMoney10.asmx";
+                string ServiceName = "WebServiceNganHangMoney10";
+                //string MethodName1 = "AuthenticateForTransaction";
+                string MethodName2 = "TransferMoneySameBank";
+                string card_no_send = Cardsend;
+                string card_no_receive = CardRec;
+                decimal deAmount = decimal.Parse(amount);
 
-                    object[] arrOb2 = new object[4];
-                    arrOb2[0] = Session["sid"];
-                    arrOb2[1] = card_no_send;
-                    arrOb2[2] = card_no_receive;
-                    arrOb2[3] = deAmount;
-                    object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
-                    if (obResult2 != null)
+                object[] arrOb2 = new object[4];
+                arrOb2[0] = Session["sid"];
+                arrOb2[1] = card_no_send;
+                arrOb2[2] = card_no_receive;
+                arrOb2[3] = deAmount;
+                object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+                if (obResult2 != null)
+                {
+                    int kq = (int)obResult2;
+                    if (kq == 0)
                     {
-                        int kq = (int)obResult2;
-
-                        if (kq == 0)
+                        //Session["Amount"] = deAmount;
+                        // lay lai user
+                        // set lai session
+                        try
                         {
-                           
-                            //Session["Amount"] = deAmount;
-                            // lay lai user
-                            // set lai session
-                            try
-                            {
-                                  NganHangEntities dbNH= new NganHangEntities();
-                                The th = dbNH.Thes.Single(m => m.SoThe == card_no_send);
-                                Session["The"] = th;
-                                List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
-                                LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                                LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
-                                LSGD.MaThe = th.MaThe ;
-                                //LSGD.MaThe = "123456";
-                                LSGD.MaLoaiGiaoDich="LGD003";
-                                LSGD.SoTheNhan = card_no_receive;
-                                //LSGD.SoTheNhan = "123456";
-                                LSGD.NgayGiaoDich = DateTime.Now;
-                                LSGD.SoTienGiaoDich = deAmount;
-                                LSGD.TinhTrang = 1;
-                                dbNH.LichSuGiaoDiches.AddObject(LSGD);
+                            NganHangEntities dbNH= new NganHangEntities();
+                            The th = dbNH.Thes.Single(m => m.SoThe == card_no_send);
+                            Session["The"] = th;
+                            List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
+                            LichSuGiaoDich LSGD = new LichSuGiaoDich();
+                            LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
+                            LSGD.MaThe = th.MaThe ;
+                            //LSGD.MaThe = "123456";
+                            LSGD.MaLoaiGiaoDich="LGD003";
+                            LSGD.SoTheNhan = card_no_receive;
+                            //LSGD.SoTheNhan = "123456";
+                            LSGD.NgayGiaoDich = DateTime.Now;
+                            LSGD.SoTienGiaoDich = deAmount;
+                            LSGD.TinhTrang = 1;
+                            dbNH.LichSuGiaoDiches.AddObject(LSGD);
+                            dbNH.SaveChanges();
 
-                                dbNH.SaveChanges();
-                                TaiKhoan mail = (TaiKhoan)Session["User"];
-                                List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
-                                ViewData["ListData"] = listData;
+                            TaiKhoan mail = (TaiKhoan)Session["User"];
+                            List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
+                            ViewData["ListData"] = listData;
                                 
-                                Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                                TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == th.MaTaiKhoan);
-                                string sTo = tk.Email;
-                                string sFrom = "tmdthca@gmail.com";
-                                string sSubject = "Money10Banking Thông báo";
-                                string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
-                                sendMail(sTo, sFrom, sSubject, sBody);
+                            Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                            TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == th.MaTaiKhoan);
+                            string sTo = tk.Email;
+                            string sFrom = "tmdthca@gmail.com";
+                            string sSubject = "Money10Banking Thông báo";
+                            string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                            sendMail(sTo, sFrom, sSubject, sBody);
                                 
-                                return View("LichSuGiaoDich");
+                            return View("LichSuGiaoDich");
                                 
                                 
-                            }
-                            catch (Exception ex)
-                            {
+                        }
+                        catch (Exception ex)
+                        {
                                 
-                                throw new Exception(ex.Message);
-                            }
+                            throw new Exception(ex.Message);
+                        }
                            
 
-                        }
-                        string div = "error-box";
-                        ViewData["div"] = div;
-                        if (kq == -1)
-                        {
-                            string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
-                            ViewData["error"] = error;
-                            return View("ChuyenTien");
-                        }
-                        if (kq == -2)
-                        {
-                            string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
-                            ViewData["error"] = error;
-                            return View("ChuyenTien");
-                        }
-                        if (kq == -3)
-                        {
-                            string error = "Số dư không đủ cho giao dịch";
-                            ViewData["error"] = error;
-                            return View("ChuyenTien");
-                        }
-
-                        // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
                     }
-                  //  return View("ChuyenTien");
+                    string div = "error-box";
+                    ViewData["div"] = div;
+                    if (kq == -1)
+                    {
+                        string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng OCBCBank";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == -2)
+                    {
+                        string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng OCBCBank";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == -3)
+                    {
+                        string error = "Số dư không đủ cho giao dịch";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+
+                    // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+                }
+                //  return View("ChuyenTien");
                
             }
-           if (id=="2") {
+           if (id=="2") 
+           {
                 //TransferMoneyDiffBank(Cardsend, CardRec, amount);
-              
-                   System.Net.ServicePointManager.Expect100Continue = false;
-                   string UrlWebservice = "http://money04.tk/WebService1.asmx";
-                   string ServiceName = "WebService1";
-                   string MethodName1 = "LoginForBank";
-                   string MethodName2 = "TranferMoneyDiffBankForBank";
-                   string card_no_send = Cardsend;
-                   string card_no_receive = CardRec;
-                   double deAmount = double.Parse(amount);
-                   object[] arr= new object[2];
-                   arr[0]="money10";
-                   arr[1] = "123456";
-                   string sid1 = "";
-                   object obResult1 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName1,arr);
-                   sid1 = (string)obResult1;
-                   object[] arrOb2 = new object[4];
-                   arrOb2[0] = sid1;
-                   arrOb2[1] = card_no_send;
-                   arrOb2[2] = card_no_receive;
-                   arrOb2[3] = deAmount;
-                   object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
-                   if (obResult2 != null)
-                   {
-                       int kq = (int)obResult2;
+                System.Net.ServicePointManager.Expect100Continue = false;
+                string UrlWebservice = "http://money04.tk/WebService1.asmx";
+                string ServiceName = "WebService1";
+                string MethodName1 = "LoginForBank";
+                string MethodName2 = "TranferMoneyDiffBankForBank";
+                string card_no_send = Cardsend;
+                string card_no_receive = CardRec;
+                double deAmount = double.Parse(amount);
+                object[] arr= new object[2];
+                arr[0]="money10";
+                arr[1] = "123456";
+                string sid1 = "";
+                object obResult1 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName1,arr);
+                sid1 = (string)obResult1;
+                object[] arrOb2 = new object[4];
+                arrOb2[0] = sid1;
+                arrOb2[1] = card_no_send;
+                arrOb2[2] = card_no_receive;
+                arrOb2[3] = deAmount;
+                object obResult2 = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName2, arrOb2);
+                if (obResult2 != null)
+                {
+                    int kq = (int)obResult2;
 
-                       if (kq == 0)
-                       {
-                           NganHangEntities dbNH = new NganHangEntities();
-                           The sendcard = dbNH.Thes.Single(p=>p.SoThe==card_no_send);
-                           The bankcard = dbNH.Thes.Single(m => m.SoThe=="4024007182426915");
-
-                           decimal fee = decimal.Parse(amount);
-                           fee += fee * 0.1m;
-
-                           sendcard.SoDu -= fee;
-                           bankcard.SoDu += fee;
-
+                    if (kq == 0)
+                    {
+                        NganHangEntities dbNH = new NganHangEntities();
+                        The sendcard = dbNH.Thes.Single(p=>p.SoThe==card_no_send);
+                        The bankcard = dbNH.Thes.Single(m => m.SoThe == "340426820759153");
+                        decimal fee = decimal.Parse(amount);
+                        fee += fee * 0.1m;
+                        sendcard.SoDu -= fee;
+                        bankcard.SoDu += fee;
                           
-                           //The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
-                           //Session["The"] = sendcard;
-                           List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
-                           LichSuGiaoDich LSGD = new LichSuGiaoDich();
-                           LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
-                           LSGD.MaThe = sendcard.MaThe;
-                           //LSGD.MaThe = "123456";
-                           LSGD.MaLoaiGiaoDich = "LGD003";
-                           LSGD.SoTheNhan = card_no_receive;
-                           //LSGD.SoTheNhan = "123456";
-                           LSGD.NgayGiaoDich = DateTime.Now;
-                           LSGD.SoTienGiaoDich = fee;
-                           LSGD.TinhTrang = 0;
-                           dbNH.LichSuGiaoDiches.AddObject(LSGD);
-                           TaiKhoan mail = (TaiKhoan)Session["User"];
-                           dbNH.SaveChanges();
-                           List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
-                           ViewData["ListData"] = listData;
-                           Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
-                           TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == sendcard.MaTaiKhoan);
+                        //The th = dbNganHangOnline.Thes.Single(m => m.SoThe == card_no_send);
+                        //Session["The"] = sendcard;
+                        List<string> MaGDMax = (from col in dbNH.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
+                        LichSuGiaoDich LSGD = new LichSuGiaoDich();
+                        LSGD.MaLichSuGiaoDich = TaoMaTangTuDong(MaGDMax, "GD");
+                        LSGD.MaThe = sendcard.MaThe;
+                        //LSGD.MaThe = "123456";
+                        LSGD.MaLoaiGiaoDich = "LGD003";
+                        LSGD.SoTheNhan = card_no_receive;
+                        //LSGD.SoTheNhan = "123456";
+                        LSGD.NgayGiaoDich = DateTime.Now;
+                        LSGD.SoTienGiaoDich = fee;
+                        LSGD.TinhTrang = 0;
+                        dbNH.LichSuGiaoDiches.AddObject(LSGD);
+                        TaiKhoan mail = (TaiKhoan)Session["User"];
+                        dbNH.SaveChanges();
+                        List<LichSuGiaoDichModels> listData = LSGiaoDich(mail.Email);
+                        ViewData["ListData"] = listData;
+                        Response.Write("<script> alert ('Chuyển tiền thành công!');</script>");
+                        TaiKhoan tk = dbNganHangOnline.TaiKhoans.Single(p => p.MaTaiKhoan == sendcard.MaTaiKhoan);
                           
-                           string sTo = tk.Email;
-                           string sFrom = "tmdthca@gmail.com";
-                           string sSubject = "Money10Banking Thông báo";
-                           string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
-                           sendMail(sTo, sFrom, sSubject, sBody);
+                        string sTo = tk.Email;
+                        string sFrom = "tmdthca@gmail.com";
+                        string sSubject = "Money10Banking Thông báo";
+                        string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
+                        sendMail(sTo, sFrom, sSubject, sBody);
                            
-                           return View("LichSuGiaoDich");
+                        return View("LichSuGiaoDich");
 
-                       }
-                       string div = "error-box";
-                       ViewData["div"] = div;
-                       if (kq == -1)
-                       {
-                           string error = "sid ko hợp lệ";
-                           ViewData["error"] = error;
-                           return View("ChuyenTien");
-                       }
-                       if (kq == -2)
-                       {
-                           string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
-                           ViewData["error"] = error;
-                           return View("ChuyenTien");
-                       }
-                       if (kq == -3)
-                       {
-                           string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
-                           ViewData["error"] = error;
-                           return View("ChuyenTien");
-                       }
+                    }
+                    string div = "error-box";
+                    ViewData["div"] = div;
+                    if (kq == -1)
+                    {
+                        string error = "sid ko hợp lệ";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == -2)
+                    {
+                        string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == -3)
+                    {
+                        string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
 
-                       // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
-                   }
-                 
-             
+                    // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
+                }
             }
            
            return View("ChuyenTien");
