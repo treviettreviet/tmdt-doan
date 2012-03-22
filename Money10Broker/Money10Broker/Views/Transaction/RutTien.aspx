@@ -1,7 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+<script type="text/javascript">
+    var emailfilter = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i
+    function isEmail(e) {
+        var returnval = emailfilter.test(e.value)
+        return returnval
+    }
+    function isNumber(e) {
+        var unicode = e.keyCode;
+        if (unicode != 8) {
+            if (unicode < 48 || unicode > 57) {
+                return false;
+            }
+        }
+    }
+    function checkForm() {
+        // Email
+        if (document.form1.amount.value == "") {
+            alert("Bạn phải nhập số tiền cần rút");
+            document.form1.amount.focus();
+            return false;
+        }
+   }
+</script>
     <div id="menu-nav-content">
 	<div id="menu-nav-content-l"></div>
 	<div id="menu-nav-content-r"></div>
@@ -44,7 +66,7 @@
 			<!-- thông báo lỗi--><div class="message-box"></div><!--hết thông báo lỗi-->
 		</div>	
             <% Money10Broker.Models.TaiKhoan account = (Money10Broker.Models.TaiKhoan)Session["User"]; %>
-		  <form method="post" action="/Transaction/XuLyRutTien"><input type="hidden" name="form_module_id" value="451">
+		  <form method="post" name="form1" onsubmit="return checkForm();" action="/Transaction/XuLyRutTien"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">
 			  <tr>
 				<th>Tài khoản ví:</th>
@@ -56,7 +78,7 @@
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số tiền yêu cầu rút:</th>
-				<td><input name="amount" type="text" value maxlength="11" class="input-business input-amount field-check" autocomplete="off"><span class="span-grey"> (VND)</span> 
+				<td><input name="amount" type="text" value maxlength="11" class="input-business input-amount field-check" autocomplete="off" onkeydown="return isNumber(envent)"><span class="span-grey"> (VND)</span> 
                 <div class="field-notification field-alert">(tối đa 500.000 VND)</div><span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>			  			  
@@ -85,12 +107,12 @@
 				<th><span class="required">*</span>Địa chỉ nhận tiền:</th>
 				<td><select name="location" id="location" style="width: 330px" class="list-business"><option value="1"></option><option value="0" selected>&nbsp;</option><option value="2">TP.HCM: Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa, phường 12, quận Tân Bình</option></select></td>
 			  </tr>
-			  <tr>
+			  <%--<tr>
 				<th><span class="required">*</span>Mã xác nhận:</th>
 				<td><input name="verify_image" type="text" class="input-business field-check" maxlength="5" autocomplete="off" style="width:80px;"><img src="../../Content/images/captcha0.gif" border="0" style="margin-left:10px;" align="absmiddle">
                 	<span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập mã xác nhận</span>
                 </td>
-			  </tr>						  				  
+			  </tr>	--%>					  				  
 			  <tr>
 				<th>&nbsp;</th>
 				<td><input name="btnSubmit" type="submit" value="Tiếp tục »" class="button-content"></td>
