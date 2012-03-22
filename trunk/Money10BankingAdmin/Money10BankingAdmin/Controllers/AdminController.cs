@@ -213,10 +213,10 @@ namespace Money10BankingAdmin.Controllers
             try
             {
                 Admin ad = dbNganHang.Admins.SingleOrDefault(m => m.ID == adm.ID);
-
                 ad.Name = adm.Name;
                 //ad.Password = GetMD5Hash(adm.Password);
                 ad.Email = adm.Email;
+                ad.Status = adm.Status;
                 dbNganHang.SaveChanges();
                 Session["User"] = ad;
                 return RedirectToAction("../Admin/Index");

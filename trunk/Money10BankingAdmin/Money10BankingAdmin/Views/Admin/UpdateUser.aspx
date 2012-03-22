@@ -49,7 +49,6 @@
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.GroupID) %>
             </div>
-
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Group.GroupName, new Dictionary<string, object>() { { "readonly", "true" } })%>
                 <%: Html.ValidationMessageFor(model => model.Group.GroupName)%>
@@ -59,7 +58,7 @@
                 <%: Html.LabelFor(model => model.Status) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Status, new Dictionary<string, object>() { { "readonly", "true" } })%>
+                <%: Html.TextBoxFor(model => model.Status)%>
                 <%: Html.ValidationMessageFor(model => model.Status) %>
             </div>
 
