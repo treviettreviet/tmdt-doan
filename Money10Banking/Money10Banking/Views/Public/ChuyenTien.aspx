@@ -274,6 +274,12 @@
             <div class="clear">
             </div>
             <div class="form">
+
+                <%--<div class="form-content">
+
+                    
+                </div>--%>
+
                 <div class="form-content">
                     <table width="100%" cellspacing="0">
                         <tr>
@@ -338,6 +344,7 @@
                         </tr>
                     </table>
                 </div>
+
             </div>
             <div class="form-content clear">
                 <form action="/Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank"
