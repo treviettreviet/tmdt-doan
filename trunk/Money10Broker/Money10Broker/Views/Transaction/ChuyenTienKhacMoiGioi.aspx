@@ -22,17 +22,17 @@
     function checkForm() {
         // Email
         if (document.form1.receiver_email.value == "") {
-            alert("Bạn phải nhập vào email người nhận");
+            alert("Bạn phải nhập vào mã số ví người nhận");
             document.form1.receiver_email.focus();
             return false;
         }
-        if (isEmail(document.form1.receiver_email) == false) {
-            alert("Email không đúng định dạng");
-            document.form1.email.focus();
-            return false;
-        }
+//        if (isEmail(document.form1.receiver_email) == false) {
+//            alert("Email không đúng định dạng");
+//            document.form1.email.focus();
+//            return false;
+//        }
         if (document.form1.confirm_receiver_email.value != document.form1.receiver_email.value) {
-            alert("Email nhập lại không đúng");
+            alert("Mã số ví nhập lại không đúng");
             document.form1.confirm_receiver_email.focus();
             return false;
         }
@@ -108,26 +108,26 @@
                         </tr>
                         <tr>
                             <th>
-                                <span class="required">*</span>Tài khoản người nhận:
+                                <span class="required">*</span>Mã số ví người nhận:
                             </th>
                             <td class="blear">
                                 <input class="output-contact field-check" name="receiver_email" id="receiver_email"
                                     value="" maxlength="255" type="text" />
                                 <div class="field-notification field-alert">
-                                    Nhập địa chỉ <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự)</div>
+                                    Nhập <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự)</div>
                               
                             </td>
                         </tr>
                         <tr>
                             <th>
-                                <span class="required">*</span>Nhập lại tài khoản người nhận:
+                                <span class="required">*</span>Nhập lại mã số ví người nhận:
                             </th>
                             <td class="blear">
                                 <input class="output-contact field-check text-confirm" name="confirm_receiver_email"
                                     value="" maxlength="255" type="text" /><div id="danhsachdoitac">
                                     </div>
                                 <div class="field-notification field-alert">
-                                    Nhập lại địa chỉ <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự, không
+                                    Nhập lại <b>MÃ SỐ VÍ</b> của tài khoản người nhận (không quá 255 ký tự, không
                                     hỗ trợ copy/paste)</div>
                                 
                             </td>
