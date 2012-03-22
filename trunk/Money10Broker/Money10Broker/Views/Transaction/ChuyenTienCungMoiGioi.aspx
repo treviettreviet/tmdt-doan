@@ -97,7 +97,7 @@
                     
                 %>
                             
-                <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi">
+                <form method="post" name="form1" onsubmit="return checkForm();" action="/Transaction/XuLyChuyenTienCungMoiGioi">
                 <h4 style="margin-top: 10px;">
                     Tài khoản người nhận</h4>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
