@@ -281,68 +281,7 @@
                 </div>--%>
 
                 <div class="form-content">
-                    <table width="100%" cellspacing="0">
-                        <tr>
-                            <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                Mã TK :
-                                <% Money10Banking.Models.TaiKhoan tk = (Money10Banking.Models.TaiKhoan)Session["User"]; %><%=tk.SoTaiKhoan%>
-                                <div style="margin-top: 5px; width: 100%;">
-                                    <img src="../../Content/images/mail_ico.png" style="float: left;"><div style="margin-bottom: 0px;
-                                        float: left; padding-left: 10px;">
-                                        <%=tk.Email%></div>
-                                </div>
-                                </br>
-                            </td>
-                            <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                <div class="font1">
-                                    Thông tin thẻ Master Card</div>
-                                <div>
-                                    <%Money10Banking.Models.The the = (Money10Banking.Models.The)Session["The"];
-                                      if (the == null)
-                                      {
-                                    %>
-                                    <ul>
-                                        <li>Số Thẻ: 0<br />
-                                        </li>
-                                        <li>Số dư: 0 đ</li>
-                                    </ul>
-                                    <%  }
-                                          else
-                                          { %>
-                                    <ul>
-                                        <li>Số Thẻ:
-                                            <%=the.SoThe %><br />
-                                        </li>
-                                        <li>Số dư:
-                                            <%=the.SoDu %>
-                                            đ</li>
-                                    </ul>
-                                    <%  }
-                                    %>
-                            </td>
-                            <td width="25%" class="tran-tab-menu-myacount" valign="top" style="padding-top: 15px;">
-                                <div class="font1">
-                                    Thông tin thẻ Visa Card</div>
-                                <div class="font2">
-                                    0</div>
-                            </td>
-                            <td width="25%" class="tran-first">
-                                <div class="font1">
-                                    Thông tin khác
-                                </div>
-                                <div class="font2">
-                                    <%-- <% 
-                                       if (Session["SoTienThe"] == null)
-                                       {
-                                       %>
-                                           <%=stk %>
-                                       }
-                                        
-                                        <%=stk %>--%>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    
                 </div>
 
             </div>
