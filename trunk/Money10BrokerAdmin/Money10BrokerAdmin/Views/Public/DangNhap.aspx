@@ -20,21 +20,28 @@
 		<div id="login-wrapper" class="png_bg">
 			<div id="login-top">
 			
-				<h1>Simpla Admin</h1>
+				<h1>Admin EcMoney10Broker.tk</h1>
 				<!-- Logo (221px width) -->
 				<img id="logo" src="../../Content/images/logo.png" alt="Simpla Admin logo" />
 			</div> <!-- End #logn-top -->
 			
 			<div id="login-content">
-				
+				<%
+                    string div = Request.QueryString["div"];
+                    string error = Request.QueryString["error"];
+                    if (div != null)
+                    {
+                %>
+                        <div style="display: block;" class="notification attention png_bg">
+						    <a href="#" class="close"></a>
+						    <div>
+							    <%=Html.Encode(error) %>
+						    </div>
+					    </div>
+                <%        
+                    }
+                %>
 				<form action="/Public/XuLyDangNhap" method="post">
-				
-					<%--<div class="notification information png_bg">
-						<div>
-							Just click "Sign In". No password needed.
-						</div>
-					</div>--%>
-					
 					<p>
 						<label>Email</label>
 						<input class="text-input" type="text" name="email"  value="len@gmail.com" />
@@ -45,26 +52,6 @@
 						<input class="text-input" type="password" name="password" value="12345678"/>
 					</p>
 					<div class="clear"></div>
-                    <%
-                        string div = Request.QueryString["div"];
-                        string error = Request.QueryString["error"];
-                        if (div != null)
-                        {
-                    %>
-                            <div style="display: block;" class="notification attention png_bg">
-						        <a href="#" class="close"></a>
-						        <div>
-							        <%=Html.Encode(error) %>
-						        </div>
-					        </div>
-                    <%        
-                        }
-                    %>
-
-                    <%--<div class="notification information png_bg"><%=Html.Encode(error) %></div>--%>
-
-                    <%--<div class="notification attention png_bg">--%>
-                    
 					<p>
 						<input class="button" type="submit" value="Sign In" />
 					</p>
@@ -73,6 +60,5 @@
 			</div> <!-- End #login-content -->
 			
 		</div> <!-- End #login-wrapper -->
-<%--<script src="http://www.trafficrevenue.net/loadad.js?username=chrismaher96"></script>--%>
   </body>
 </html>
