@@ -181,16 +181,21 @@ namespace Money10BankingAdmin.Controllers
                 int user_validation = UserValidation(email, password);
                 if (user_validation == 0)
                 {
-                    //Admin ad= (Admin) Session["User"];
-                    //if ( ad.GroupID==1)
-                    //{                
-                    //    return View("NapTien");
-                    //}
-                    //if (ad.GroupID == 2)
-                    //{
-                    //    return View("TaoUser");
-                    //}
-                    return RedirectToAction("../Admin/Index");
+                    Admin tk= (Admin)Session["User"];
+                    if (tk.Status == 1)
+                    {
+                        return RedirectToAction("../Admin/Index");
+                    }
+                    else
+                    {
+
+                        string div = "notification attention png_bg";
+                        string error = "";
+                        error = "Bạn đang bị band nick.Ko thể truy cập!";
+                        ViewData["div"] = div;
+                        ViewData["error"] = error;
+                        return RedirectToAction("DangNhap", new { div, error });
+                    }
                 }
                 else
                 {
