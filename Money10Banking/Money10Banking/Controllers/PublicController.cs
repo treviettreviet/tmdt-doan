@@ -1233,9 +1233,6 @@ namespace Money10Banking.Controllers
                     int kq = (int)obResult2;
                     if (kq == 0)
                     {
-                        //Session["Amount"] = deAmount;
-                        // lay lai user
-                        // set lai session
                         try
                         {
                             NganHangEntities dbNH= new NganHangEntities();
@@ -1266,18 +1263,12 @@ namespace Money10Banking.Controllers
                             string sSubject = "Money10Banking Thông báo";
                             string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                             sendMail(sTo, sFrom, sSubject, sBody);
-                                
                             return View("LichSuGiaoDich");
-                                
-                                
                         }
                         catch (Exception ex)
                         {
-                                
                             throw new Exception(ex.Message);
                         }
-                           
-
                     }
                     string div = "error-box";
                     ViewData["div"] = div;
@@ -1299,15 +1290,10 @@ namespace Money10Banking.Controllers
                         ViewData["error"] = error;
                         return View("ChuyenTien");
                     }
-
-                    // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
                 }
-                //  return View("ChuyenTien");
-               
             }
            if (id=="2") 
            {
-                //TransferMoneyDiffBank(Cardsend, CardRec, amount);
                 System.Net.ServicePointManager.Expect100Continue = false;
                 string UrlWebservice = "http://money04.tk/WebService1.asmx";
                 string ServiceName = "WebService1";
@@ -1331,7 +1317,6 @@ namespace Money10Banking.Controllers
                 if (obResult2 != null)
                 {
                     int kq = (int)obResult2;
-
                     if (kq == 0)
                     {
                         NganHangEntities dbNH = new NganHangEntities();
@@ -1368,9 +1353,7 @@ namespace Money10Banking.Controllers
                         string sSubject = "Money10Banking Thông báo";
                         string sBody = "Bạn đã chuyển tiền thành công lúc" + DateTime.Now + ", tới số TK:" + card_no_receive + ". Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
                         sendMail(sTo, sFrom, sSubject, sBody);
-                           
                         return View("LichSuGiaoDich");
-
                     }
                     string div = "error-box";
                     ViewData["div"] = div;
@@ -1392,8 +1375,6 @@ namespace Money10Banking.Controllers
                         ViewData["error"] = error;
                         return View("ChuyenTien");
                     }
-
-                    // Response.Write("Ket qua giao dịch: " + kq.ToString() + "   (0: Thành công, 1, 2, 3: Các kết quả khác)");
                 }
             }
            
