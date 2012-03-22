@@ -12,29 +12,30 @@ namespace WebserviceMoiGioi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Response.Redirect("http://localhost:16108/Transaction/ThanhToanTrucTuyen/1");
             System.Net.ServicePointManager.Expect100Continue = false;
             string UrlWebservice = "http://ecmoney10.tk/WebserviceMoiGioi/WebserviceMoiGioiMoney10.asmx";
             string ServiceName = "WebServiceMoiGioiMoney10";
             string MethodName = "GhiNhanDonHang";
 
-            string MaDonHang = "2";
+            string MaDonHang = "3";
+            string MaVanChuyen = "VC01";
             int SoLuong = 2;
             decimal TongThanhToan = 500000;
             string TenChuTaiKhoan = "Trần Trịnh Khôi Nguyên";
-            int TinhTrang = 1;
+            int TinhTrang = 0;
             string Email = "trantrinhkhoinguyen@gmail.com";
             string DienThoai = "0914123456";
             string DiaChi = "135 Nguyễn Văn Cừ";
-            object[] arrOb = new object[8];
+            object[] arrOb = new object[9];
             arrOb[0] = MaDonHang;
-            arrOb[1] = SoLuong;
-            arrOb[2] = TongThanhToan;
-            arrOb[3] = TenChuTaiKhoan;
-            arrOb[4] = TinhTrang;
-            arrOb[5] = Email;
-            arrOb[6] = DienThoai;
-            arrOb[7] = DiaChi;
+            arrOb[1] = MaVanChuyen;
+            arrOb[2] = SoLuong;
+            arrOb[3] = TongThanhToan;
+            arrOb[4] = TenChuTaiKhoan;
+            arrOb[5] = TinhTrang;
+            arrOb[6] = Email;
+            arrOb[7] = DienThoai;
+            arrOb[8] = DiaChi;
             object obResult = WSProxy.CallWebService(UrlWebservice, ServiceName, MethodName, arrOb);
             int result = (int)obResult;
             if (result == 0)
