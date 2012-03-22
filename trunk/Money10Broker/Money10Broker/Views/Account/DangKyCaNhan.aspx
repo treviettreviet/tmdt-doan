@@ -73,11 +73,7 @@
             alert("Bạn phải nhập họ tên");
             return false;
         }
-        //Checkbox agree
-        if (document.form1.agree.value == 1) {
-            alert("Bạn phải đồng ý những điều kiện của chúng tối!");
-            return false;
-        }
+       
     }
 </script>
 	<div id="content">

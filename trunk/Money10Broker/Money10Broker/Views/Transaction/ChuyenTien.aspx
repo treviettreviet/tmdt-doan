@@ -5,7 +5,34 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+<script type="text/javascript">    
+    function isNumber(e) {
+        var unicode = e.keyCode;
+        if (unicode != 8) {
+            if (unicode < 48 || unicode > 57) {
+                return false;
+            }
+        }
+    }
+    function checkForm() {
+        // Email
+        if (document.form1.sendcardnum.value == "") {
+            alert("Bạn phải nhập số thẻ gửi");
+            document.form1.email.focus();
+            return false;
+        }
+        if (document.form1.receivecardnum.value == "") {
+            alert("Bạn phải nhập số thẻ nhận");
+            document.form1.email.focus();
+            return false;
+        }
+        if (document.form1.amount.value == "") {
+            alert("Bạn phải nhập sô tiền cần chuyển");
+            document.form1.email.focus();
+            return false;
+        }
+            }
+</script>
     <div id="menu-nav-content">
 	<div id="menu-nav-content-l"></div>
 	<div id="menu-nav-content-r"></div>
@@ -55,7 +82,7 @@
                     }
                 }
             </script>
-		  <form method="post" action="/Transaction/TransferByBroker" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
+		  <form method="post" name="form1" action="/Transaction/TransferByBroker"  enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">	
           <p style="margin-left:80px;">
             <input type="radio" name="idsamediff" value="samebank" checked="checked" onclick="GetBank('samebank');" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
@@ -96,16 +123,16 @@
           %>
               <tr>
 				<th><span class="required">*</span>Số thẻ người gửi:</th>
-				<td><input name="sendcardnum" id="sendcardnum" type="text" value="" ></td>
+				<td><input name="sendcardnum" id="sendcardnum" type="text" value="" onkeydown="return isNumber(event)"></td>
 			  </tr>
 			  <tr>
 				<th><span class="required">*</span>Số thẻ người nhận:</th>
-				<td><input name="receivecardnum" id="receivecardnum" type="text" value="" > <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="receivecardnum" id="receivecardnum" type="text" value="" onkeydown="return isNumber(event)"> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		
 			  <tr>
 				<th><span class="required">*</span>Số tiền muốn chuyển khoản</th>
-				<td><input name="amount" id="amount" type="text" value="" maxlength="16" class="" autocomplete="off"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
+				<td><input name="amount" id="amount" type="text" value="" maxlength="16" class="" autocomplete="off" onkeydown="return isNumber(event)"><span class="span-grey"> (VND)</span> <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập số tiền muốn rút</span><span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn rút nhập không đúng yêu cầu</span>
 				</td>
 			  </tr>		  			  
 			 		  
@@ -118,8 +145,8 @@
 				<td><input name="btnSubmit" type="submit" value="Chuyển Tiền" class="button-content"></td>
 			  </tr>
 		</table>
-		</form>
-        <script language="javascript">setFormCheck();</script>	
+		  </form>
+        <%--<script language="javascript">setFormCheck();</script>	--%>
 		</div>
 		
 	</div>

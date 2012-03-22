@@ -4,6 +4,46 @@
     Chuyển tiền giữa 2 Ví trên cùng hệ thống môi giới
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+  <script type="text/javascript">
+      var emailfilter = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i
+      function isEmail(e) {
+          var returnval = emailfilter.test(e.value)
+          return returnval
+      }
+      function isNumber(e) {
+          var unicode = e.keyCode;
+          if (unicode != 8) {
+              if (unicode < 48 || unicode > 57) {
+                  return false;
+              }
+          }
+      }
+      function checkForm() {
+          // Email
+          if (document.form1.receiver_email.value == "") {
+              alert("Bạn phải nhập vào email người nhận");
+              document.form1.receiver_email.focus();
+              return false;
+          }
+          if (isEmail(document.form1.receiver_email) == false) {
+              alert("Email không đúng định dạng");
+              document.form1.email.focus();
+              return false;
+          }
+          if (document.form1.confirm_receiver_email.value != document.form1.receiver_email.value) {
+              alert("Email nhập lại không đúng");
+              document.form1.confirm_receiver_email.focus();
+              return false;
+          }
+          if (document.form1.price.value == "") {
+              alert("Bạn phải nhập số tiền muốn chuyển");
+              document.form1.price.focus();
+              return false;
+          }
+          
+
+      }
+</script>
     <div id="content">
         <div id="menu-nav-content">
             <div id="menu-nav-content-l">
@@ -48,6 +88,9 @@
                         if (div != null && error != null)
                         {
                 %>
+
+                <form method="post" name="form1" action="/Transaction/XuLyChuyenTienCungMoiGioi" onsubmit="return checkForm();">
+
                             <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
                 <%
                         }
@@ -77,10 +120,7 @@
                                     value="" maxlength="255" type="text" />
                                 <div class="field-notification field-alert">
                                     Nhập địa chỉ Email chính của tài khoản người nhận (không quá 255 ký tự)</div>
-                                <span class="field-check-function submit" title="notEmpty(_value_)">Chưa nhập tài khoản
-                                    người nhận</span><span class="field-check-function blur submit" title="isEmail(_value_)">Tài
-                                        khoản người nhận không đúng định dạng</span>
-                            </td>
+                                                           </td>
                         </tr>
                         <tr>
                             <th>
@@ -91,13 +131,7 @@
                                     value="" maxlength="255" type="text" /><div id="danhsachdoitac">
                                     </div>
                                 <div class="field-notification field-alert">
-                                    Nhập lại địa chỉ Email chính của tài khoản người nhận (không quá 255 ký tự, không
-                                    hỗ trợ copy/paste)</div>
-                                <span class="field-check-function submit" title="notEmpty(_value_)">Chưa xác nhận lại
-                                    tài khoản người nhận</span><span class="field-check-function blur submit" title="isEmail(_value_)">Nhập
-                                        lại tài khoản người nhận không đúng định dạng</span><span class="field-check-function blur"
-                                            title="isConfirmObject(_value_,&#39;receiver_email&#39;)">Xác nhận tài khoản người
-                                            nhận chưa chính xác</span>
+                                    Nhập lại địa chỉ Email chính của tài khoản người nhận (không quá 255 ký tự)</div>                                
                             </td>
                         </tr>
                     </tbody>
@@ -121,7 +155,7 @@
                             </th>
                             <td class="blear">
                                 <%--<input name="price" value="" type="text" class="field-check input-amount" maxlength="20" />--%>
-                                <input name="price" value="" type="text" maxlength="20" />
+                                <input name="price" value="" type="text" maxlength="20" onkeydown="return isNumber(event)"/>
                                 <span class="span-grey">VND</span><div class="field-notification field-alert">
                                     Tối thiểu 2.000 VND/lần</div>
                                 <span class="field-check-function blur submit" title="isAmount(_value_)">Số tiền muốn
@@ -130,7 +164,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <span class="required">*</span>Lý do chuyển tiền:
+                                Lý do chuyển tiền:
                             </th>
                             <td class="blear">
                                 <textarea name="reason" type="text" class="field-check" cols="50" rows="5" style="width: 500px;"></textarea><div
@@ -140,19 +174,7 @@
                                     chuyển tiền</span>
                             </td>
                         </tr>
-                        <%--<tr>
-                            <th>
-                                <span class="required">*</span>Mã xác nhận:
-                            </th>
-                            <td class="blear">
-                                <input name="verify_image" value="" type="text" class="field-check" maxlength="{max_length}"
-                                    style="width: 100px;" /><img src="../../Content/images/captcha0.gif"
-                                        border="0" style="margin-left: 10px;" align="absmiddle"><div class="field-notification field-alert">
-                                            Nhập 5 ký tự nhìn thấy trong hình trên (không phân biệt chữ hoa/thường)</div>
-                                <span class="field-check-function submit" title="notEmpty(_value_)">Bạn chưa nhập mã
-                                    xác nhận</span>
-                            </td>
-                        </tr>--%>
+
                         <tr>
                             <th>
                             </th>
