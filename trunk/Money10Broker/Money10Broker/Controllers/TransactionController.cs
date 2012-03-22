@@ -282,8 +282,8 @@ namespace Money10Broker.Controllers
             TaiKhoan tkNhan = new TaiKhoan();
             xnvaufit_MoiGioiEntities dbmg = new xnvaufit_MoiGioiEntities();
             TaiKhoan tkGuiNew = dbmg.TaiKhoans.SingleOrDefault(a=>a.MaTaiKhoan==tkGui.MaTaiKhoan);
-            string message = "";
-            
+            string div = "";
+            string error = "";
             // Kiểm tra email người nhận có tồn tại trong hệ thống Ecmoney10Broker.tk không?
             try
             {
@@ -291,24 +291,28 @@ namespace Money10Broker.Controllers
             }
             catch
             {
-                message = "Tài khoản người nhận không tồn tại trong hệ thống EcMoney10Broker.tk";
-                ViewData["message"] = message;
-                return View("ChuyenTienCungMoiGioi");   
+                div += "message-box";
+                error += "Tài khoản người nhận không tồn tại trong hệ thống EcMoney10Broker.tk";
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return RedirectToAction("ChuyenTienCungMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
             }
 
             // Kiểm tra thông tin về số dư của tài khoản gửi
             decimal price_transfer = decimal.Parse(price);
             if (tkGuiNew.SoDu < price_transfer)
             {
-                message = "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền >> <a href='/Transaction/NapTien'>Nạp tiền</a>";
-                ViewData["message"] = message;
-                return View("ChuyenTienCungMoiGioi");
+                div += "message-box";
+                error += "Số dư Ví không đủ để thực hiện giao dịch này. Vui lòng nạp thêm tiền vào Ví.";
+                ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
+                ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+                return RedirectToAction("ChuyenTienCungMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
             }
 
             // Xử lý Gửi tiền
             tkGuiNew.SoDu = tkGui.SoDu - price_transfer;
             tkNhan.SoDu = tkNhan.SoDu + price_transfer;
-            //dbMoiGioi.SaveChanges();
+            dbmg.SaveChanges();
             LichSuGiaoDich log = new Models.LichSuGiaoDich();
             log.NgayGiaoDich = DateTime.Now;
             //log.The = (from row in dbMoiGioi. where row.SoThe.Equals() select row).First<The>();
@@ -319,21 +323,20 @@ namespace Money10Broker.Controllers
             log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
             log.TinhTrang = 1;
             dbmg.LichSuGiaoDiches.AddObject(log);
-           
             dbmg.SaveChanges();
 
             List<LichSuGiaoDichModels> listData = LSGiaoDich(tkGui.Email);
             ViewData["ListData"] = listData;
-            message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
-            message += " Một thông báo đã được gửi đến Email <b><i>" + tkGui.Email + "</i></b> của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
-            ViewData["message"] = message;
+            error = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
+            error += " Một thông báo đã được gửi đến Email <b><i>" + tkGui.Email + "</i></b> của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
+            ViewData["message"] = error;
             string sTo = tkGui.Email;
             string sFrom = "tmdthca@gmail.com";
             string sSubject = "Bạn đã chuyển tiền thành công luc " + DateTime.Now + "!";
             string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
             sendMail(sTo, sFrom, sSubject, sBody);
 
-            return View("ThongBaoKetQuaGiaoDich");
+            return RedirectToAction("ThongBaoKetQuaGiaoDich", new {error});
         }
 
         public ActionResult TransferByBroker(string idsamediff, string banktransfer, string banksend, string bankreceive, string sendcardnum, string receivecardnum, string amount)
@@ -407,8 +410,6 @@ namespace Money10Broker.Controllers
             ViewData["messege"] = "Chuyển Tiền Thất Bại";
             return RedirectToAction("ChuyenTien");
         }
-
-        
 
         private ActionResult TransferByBroker(string sendcardnum, string receivecardnum, decimal amount)
         {

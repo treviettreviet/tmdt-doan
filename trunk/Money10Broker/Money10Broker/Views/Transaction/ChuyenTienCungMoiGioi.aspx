@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master"
-    Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Chuyển tiền giữa 2 Ví trên cùng hệ thống môi giới
@@ -44,13 +43,18 @@
                     else
                     {
                         Money10Broker.Models.TaiKhoan tk = (Money10Broker.Models.TaiKhoan)Session["User"];
-                        string message = "";
-                        if (ViewData["message"] != null)
-                            message = ViewData["message"].ToString();
+                        string div = Request.QueryString["div"];
+                        string error = Request.QueryString["error"];
+                        if (div != null && error != null)
+                        {
                 %>
+                            <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
+                <%
+                        }
+                    }
+                %>
+                            
                 <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi">
-                <div class="message-box">
-                    <%=message%></div>
                 <h4 style="margin-top: 10px;">
                     Tài khoản người nhận</h4>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">

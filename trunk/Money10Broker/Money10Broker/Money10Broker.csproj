@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Models\Lang.cs" />
     <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\LichSuGiaoDichModels.cs" />
     <Compile Include="Models\MoiGioiOnline.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
