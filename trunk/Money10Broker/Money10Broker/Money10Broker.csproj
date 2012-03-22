@@ -188,6 +188,7 @@
     <Content Include="Content\images\hotrotha.png" />
     <Content Include="Content\images\hotrothb.png" />
     <Content Include="Content\images\icb_1299.gif" />
+    <Content Include="Content\images\icon-en.gif" />
     <Content Include="Content\images\icon-Exc.gif" />
     <Content Include="Content\images\icon-exe.gif" />
     <Content Include="Content\images\icon-fla.gif" />
@@ -210,6 +211,7 @@
     <Content Include="Content\images\icon-sky.gif" />
     <Content Include="Content\images\icon-skz.gif" />
     <Content Include="Content\images\icon-ud0.gif" />
+    <Content Include="Content\images\icon-vi.gif" />
     <Content Include="Content\images\icon-ym0.gif" />
     <Content Include="Content\images\icon-ym1.gif" />
     <Content Include="Content\images\icon_tra.gif" />

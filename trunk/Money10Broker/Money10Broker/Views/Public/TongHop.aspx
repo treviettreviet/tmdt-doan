@@ -293,17 +293,17 @@ table .cls-red-last td{
 		<!-- BEGIN BlockPaging -->
 		<div class="button-box-buttom">
 			<span style="color:#555;font-weight:bold;">Xem theo loại giao dịch: </span>
-			<a href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history">Tất cả</a>&nbsp;
+			<a href="#">Tất cả</a>&nbsp;
 			|&nbsp;
-			<a href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history&type=deposit">Nạp tiền</a>&nbsp;
+			<a href="#">Nạp tiền</a>&nbsp;
 			|&nbsp;
-			<a href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history&type=withdraw">Rút tiền</a>	&nbsp;
+			<a href="#">Rút tiền</a>	&nbsp;
 			|&nbsp;
-			<a href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history&type=transfer">Chuyển tiền</a>&nbsp;
+			<a href="#">Chuyển tiền</a>&nbsp;
 			|&nbsp;
-			<a href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history&type=receiving">Nhận tiền</a>&nbsp;
+			<a href="#">Nhận tiền</a>&nbsp;
 			|&nbsp;
-			<a class="end" href="https://www.nganluong.vn/?portal=nganluong&page=transaction_history&type=refund">Hoàn lại</a>											
+			<a class="end" href="#">Hoàn lại</a>											
 			<div class="clear"></div>
 		</div>
 		<!-- END BlockPaging -->
