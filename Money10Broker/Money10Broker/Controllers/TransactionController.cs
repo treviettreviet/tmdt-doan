@@ -49,7 +49,48 @@ namespace Money10Broker.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public List<LichSuGiaoDichModels> LSGiaoDich(string email)
+        {
+            //TaiKhoan mail = (TaiKhoan)Session["User"];
+            TaiKhoan tk = dbMoiGioi.TaiKhoans.Single(p => p.Email == email);
+            // The th= new The();
+            //var the = from th in dbMoiGioi.Thes where th.MaTaiKhoan == tk.MaTaiKhoan select th.MaTaiKhoan;
+            //if (the.Count() != 0)
+            //{
+                //TaiKhoan th = dbMoiGioi.TaiKhoans.Single(a => a.MaTaiKhoan == tk.MaTaiKhoan);
+                List<LichSuGiaoDichModels> listData = new List<LichSuGiaoDichModels>();
+                List<LichSuGiaoDich> gd = (from LSGD in dbMoiGioi.LichSuGiaoDiches where LSGD.MaThe == tk.MaTaiKhoan select LSGD).ToList();
+                for (int i = 0; i < gd.Count; i++)
+                {
 
+                    string maldg = gd[i].MaLoaiGiaoDich;
+                    LoaiGiaoDich Lgd = dbMoiGioi.LoaiGiaoDiches.Single(m => m.MaLoaiGiaoDich == maldg);
+                    LichSuGiaoDichModels ls = new LichSuGiaoDichModels();
+                    ls.ThoiGian = gd[i].NgayGiaoDich.ToString();
+                    ls.LoaiGD = Lgd.TenLoaiGiaoDich;
+                    ls.TheGui = tk.Email;
+                    ls.TheNhan = gd[i].SoTheNhan;
+                    ls.TienGui = gd[i].SoTienGiaoDich.ToString();
+                    listData.Add(ls);
+
+                }
+                return listData;
+            //}
+            //else
+            //    return null;
+        }
+
+        /// <summary>
+        /// chuyen tien cung moi gioi
+        /// </summary>
+        /// <param name="receiver_email"></param>
+        /// <param name="price"></param>
+        /// <returns></returns>
         public ActionResult XuLyChuyenTienKhacMoiGioi(string receiver_email, string price)
         {
             xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
@@ -102,12 +143,26 @@ namespace Money10Broker.Controllers
                         xnvaufit_MoiGioiEntities mg222 = new xnvaufit_MoiGioiEntities();
                         TaiKhoan tkdn = mg222.TaiKhoans.Single(m => m.Email == tk.Email);
                         tkdn.SoDu -= (decimal)pr;
+                        LichSuGiaoDich log = new Models.LichSuGiaoDich();
+                        log.NgayGiaoDich = DateTime.Now;
+                        //log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
+                        log.MaThe = tk.MaTaiKhoan;
+                        log.SoTheNhan = receiver_email;
+                        log.SoTienGiaoDich = decimal.Parse(price);
+                        log.MaLoaiGiaoDich = "LGD003";
+                        log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
+                        log.TinhTrang = 1;
+                        mg222.LichSuGiaoDiches.AddObject(log);
                         mg222.SaveChanges();
+                        //TaiKhoan mail = (TaiKhoan)Session["User"];
+                        List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
+                        ViewData["ListData"] = listData;
                         Session["User"] = tkdn;
                         div += "message-box";
                         error += "Giao dịch thành công! Bạn có thể đến trang Lịch Sử Giao Dịch bên dưới để kiêm tra lại kết quả giao dịch";
                         ViewData["div"] = div;  // chuyển sang view đăng nhập để hiển thị
                         ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
+
                         return RedirectToAction("ThongBaoKetQuaGiaoDich", new { div, error });   // Chỗ này hay nè anh em :D
                     }
                     catch (Exception ex)
@@ -206,7 +261,7 @@ namespace Money10Broker.Controllers
                             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                             msg.ReplyTo = new MailAddress(addr[i]);
                             smtp.Send(msg);
-                            //Response.Flush();
+                            Response.Flush();
                             // lblError.Text = "Email đã được gửi đến: " + sTo + ".";
                             // lblError.Visible = true;
                         }
@@ -225,14 +280,14 @@ namespace Money10Broker.Controllers
             tkGui = (TaiKhoan)Session["User"];
              
             TaiKhoan tkNhan = new TaiKhoan();
-            xnvaufit_MoiGioiEntities mg = new xnvaufit_MoiGioiEntities();
-            TaiKhoan tkGuiNew = mg.TaiKhoans.SingleOrDefault(a=>a.MaTaiKhoan==tkGui.MaTaiKhoan);
+            xnvaufit_MoiGioiEntities dbmg = new xnvaufit_MoiGioiEntities();
+            TaiKhoan tkGuiNew = dbmg.TaiKhoans.SingleOrDefault(a=>a.MaTaiKhoan==tkGui.MaTaiKhoan);
             string message = "";
             
             // Kiểm tra email người nhận có tồn tại trong hệ thống Ecmoney10Broker.tk không?
             try
             {
-                tkNhan = mg.TaiKhoans.SingleOrDefault(m => m.Email == receiver_email);   // SingleOrDefault
+                tkNhan = dbmg.TaiKhoans.SingleOrDefault(m => m.Email == receiver_email);   // SingleOrDefault
             }
             catch
             {
@@ -253,7 +308,22 @@ namespace Money10Broker.Controllers
             // Xử lý Gửi tiền
             tkGuiNew.SoDu = tkGui.SoDu - price_transfer;
             tkNhan.SoDu = tkNhan.SoDu + price_transfer;
-            mg.SaveChanges();
+            //dbMoiGioi.SaveChanges();
+            LichSuGiaoDich log = new Models.LichSuGiaoDich();
+            log.NgayGiaoDich = DateTime.Now;
+            //log.The = (from row in dbMoiGioi. where row.SoThe.Equals() select row).First<The>();
+            log.MaThe = tkGui.MaTaiKhoan;
+            log.SoTheNhan = tkNhan.Email;
+            log.SoTienGiaoDich = price_transfer;
+            log.MaLoaiGiaoDich = "LGD003";
+            log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
+            log.TinhTrang = 1;
+            dbmg.LichSuGiaoDiches.AddObject(log);
+           
+            dbmg.SaveChanges();
+
+            List<LichSuGiaoDichModels> listData = LSGiaoDich(tkGui.Email);
+            ViewData["ListData"] = listData;
             message = "Bạn vừa thực hiện giao dịch chuyển tiền <strong>thành công</strong> giữa 2 Ví trong cùng hệ thống Ecmoney10Broker.tk<br/>";
             message += " Một thông báo đã được gửi đến Email <b><i>" + tkGui.Email + "</i></b> của bạn, vui lòng kiểm tra hộp thư của bạn, để biết thêm chi tiết. Cảm ơn bạn đã sử dụng dịch vụ của EcMoney10Broker.tk !";
             ViewData["message"] = message;
@@ -262,6 +332,7 @@ namespace Money10Broker.Controllers
             string sSubject = "Bạn đã chuyển tiền thành công luc " + DateTime.Now + "!";
             string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
             sendMail(sTo, sFrom, sSubject, sBody);
+
             return View("ThongBaoKetQuaGiaoDich");
         }
 
