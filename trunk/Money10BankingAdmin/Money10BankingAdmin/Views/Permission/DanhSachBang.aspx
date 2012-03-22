@@ -7,24 +7,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Danh sách các bảng dữ liệu trong database</h2>
     <ul>
-        <li><a href="">Admin</a></li>
-        <li><a href="">Group</a></li>
-        <li><a href="">Permission</a></li>
-        <li><a href="">TaiKhoan</a></li>
-        <li><a href="">KhachHang</a></li>
-        <li><a href="">MoiGioi</a></li>
-        <li><a href="">DiaChi</a></li>
-        <li><a href="">LoaiGiayPhepKinhDoanh</a></li>
-        <li><a href="">LoaiTaiKhoan</a></li>
-        <li><a href="">The</a></li>
-        <li><a href="">TheTam</a></li>
-        <li><a href="">LoaiThe</a></li>
-        <li><a href="">LichSuGiaoDich</a></li>
-        <li><a href="">LoaiGiaoDich</a></li>
-        <li><a href="">LogAction</a></li>
-        <li><a href="">NganHangLienKet</a></li>
-        <li><a href="">NgonNgu</a></li>
-        <li><a href="">NoiDung</a></li>
-        <li><a href="">PhiGiaoDich</a></li>
+        <li><a href="/Permission/Admin">Admin</a></li>
+        <li><a href="/Permission/Group">Group</a></li>
+        <li><a href="/Permission/Permission">Permission</a></li>
+        <li><a href="/Permission/TaiKhoan">TaiKhoan</a></li>
+        <li><a href="/Permission/KhachHang">KhachHang</a></li>
+        <li><a href="/Permission/MoiGioi">MoiGioi</a></li>
+        <li><a href="/Permission/DiaChi">DiaChi</a></li>
+        <li><a href="/Permission/LoaiGiayPhepKinhDoanh">LoaiGiayPhepKinhDoanh</a></li>
+        <li><a href="/Permission/LoaiTaiKhoan">LoaiTaiKhoan</a></li>
+        <li><a href="/Permission/The">The</a></li>
+        <li><a href="/Permission/TheTam">TheTam</a></li>
+        <li><a href="/Permission/LoaiThe">LoaiThe</a></li>
+        <li><a href="/Permission/LoaiGiaoDich">LichSuGiaoDich</a></li>
+        <li><a href="/Permission/LoaiGiaoDich">LoaiGiaoDich</a></li>
+        <li><a href="/Permission/LogAction">LogAction</a></li>
+        <li><a href="/Permission/NganHangLienKet">NganHangLienKet</a></li>
+        <li><a href="/Permission/NgonNgu">NgonNgu</a></li>
+        <li><a href="/Permission/NoiDung">NoiDung</a></li>
+        <li><a href="/Permission/PhiGiaoDich">PhiGiaoDich</a></li>
+        <li><a href="/Permission/ThamSo">ThamSo</a></li>
     </ul>
 </asp:Content>
