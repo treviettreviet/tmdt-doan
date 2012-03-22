@@ -146,7 +146,8 @@ namespace Money10Broker.Controllers
                         LichSuGiaoDich log = new Models.LichSuGiaoDich();
                         log.NgayGiaoDich = DateTime.Now;
                         //log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
-                        log.MaThe = tk.MaTaiKhoan;
+                        log.The = (from row in dbMoiGioi.Thes where row.MaTaiKhoan.Equals(tk.MaTaiKhoan) select row).First<The>();
+                        log.MaThe = log.The.MaThe;
                         log.SoTheNhan = receiver_email;
                         log.SoTienGiaoDich = decimal.Parse(price);
                         log.MaLoaiGiaoDich = "LGD003";
@@ -460,15 +461,17 @@ namespace Money10Broker.Controllers
 
         private string PhatSinhMaGiaoDich()
         {
-            string MaMoiNhat = dbMoiGioi.LichSuGiaoDiches.Max(id => id.MaLichSuGiaoDich);
-            int max;
-            if (MaMoiNhat == null)
+            List<string> MaMoiNhat = (from col in dbMoiGioi.LichSuGiaoDiches select col.MaLichSuGiaoDich).ToList<string>();
+            int max = 0;
+            foreach (string sub in MaMoiNhat)
             {
-                max = 0;
+                int temp = int.Parse(sub.Substring(2));
+                if (temp > max)
+                    max = temp;
             }
-            else
-                max = int.Parse(MaMoiNhat.Substring(2));
+
             max++;
+            
             return "GD" + max.ToString();
         }
 

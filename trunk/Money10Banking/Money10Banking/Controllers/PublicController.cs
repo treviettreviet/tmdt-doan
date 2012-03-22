@@ -365,7 +365,11 @@ namespace Money10Banking.Controllers
                 if (temp > max)
                     max = temp;
             }
+<<<<<<< .mine
+
+=======
             max++;
+>>>>>>> .r464
             return prefixID + max.ToString();
         }
 
