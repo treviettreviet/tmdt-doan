@@ -146,8 +146,7 @@ namespace Money10Broker.Controllers
                         LichSuGiaoDich log = new Models.LichSuGiaoDich();
                         log.NgayGiaoDich = DateTime.Now;
                         //log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
-                        log.The = (from row in dbMoiGioi.Thes where row.MaTaiKhoan.Equals(tk.MaTaiKhoan) select row).First<The>();
-                        log.MaThe = log.The.MaThe;
+                        log.MaThe = tk.MaTaiKhoan;
                         log.SoTheNhan = receiver_email;
                         log.SoTienGiaoDich = decimal.Parse(price);
                         log.MaLoaiGiaoDich = "LGD003";
@@ -309,7 +308,7 @@ namespace Money10Broker.Controllers
                 ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                 return RedirectToAction("ChuyenTienCungMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
             }
-
+            xnvaufit_MoiGioiEntities dbmg2 = new xnvaufit_MoiGioiEntities();
             // Xử lý Gửi tiền
             tkGuiNew.SoDu = tkGui.SoDu - price_transfer;
             tkNhan.SoDu = tkNhan.SoDu + price_transfer;
@@ -323,8 +322,8 @@ namespace Money10Broker.Controllers
             log.MaLoaiGiaoDich = "LGD003";
             log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
             log.TinhTrang = 1;
-            dbmg.LichSuGiaoDiches.AddObject(log);
-            dbmg.SaveChanges();
+            dbmg2.LichSuGiaoDiches.AddObject(log);
+            dbmg2.SaveChanges();
 
             List<LichSuGiaoDichModels> listData = LSGiaoDich(tkGui.Email);
             ViewData["ListData"] = listData;
