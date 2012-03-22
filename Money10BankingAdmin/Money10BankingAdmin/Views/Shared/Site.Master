@@ -34,9 +34,18 @@
                     </div>
                     <!-- Sidebar Profile links -->
                     <div id="profile-links">
-                        <% Money10BankingAdmin.Models.Admin ad = (Money10BankingAdmin.Models.Admin)Session["User"]; %>
+                        <% 
+                            Money10BankingAdmin.Models.Admin ad = (Money10BankingAdmin.Models.Admin)Session["User"];
+                            string group = "";
+                            if (ad.GroupID == 1)
+                                group = "Admin";
+                            if (ad.GroupID == 2)
+                                group = "Super Mod";
+                            if (ad.GroupID == 3)
+                                group = "Mod";
+                        %>
                         Hello, <a href="#" title="Edit your profile">
-                            <%=ad.Name %></a>,
+                            <%=ad.Name %></a> | Nhóm: <%=group %>
                         <br />
                         <br />
                         <a href="/Public/CapNhatTaiKhoan" title="View the Site">Thông tin</a> | <a href="/Public/XuLyThoat"
