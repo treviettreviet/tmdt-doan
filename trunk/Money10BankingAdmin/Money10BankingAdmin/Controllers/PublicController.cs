@@ -33,6 +33,53 @@ namespace Money10BankingAdmin.Controllers
             return View(listcard);
         }
 
+        public ActionResult UpdateThe(string id)
+        {
+            The user = (from row in dbNganHang.Thes where row.MaThe.Equals(id) select row).First<The>();
+            return View(user);
+        }
+        public ActionResult XuLyUpdateThe(The adm)
+        {
+            try
+            {
+                The ad = dbNganHang.Thes.SingleOrDefault(m => m.MaThe == adm.MaThe);
+                ad.SoDu = adm.SoDu;
+                ad.SoBaoMat = adm.SoBaoMat;
+                if(adm.SoPin!=null||adm.SoPin!="")
+                {
+                ad.SoPin = adm.SoPin;
+                }
+                //ad.SoPin = adm.SoPin;
+                ad.NgayMoThe = adm.NgayMoThe;
+                ad.NgayHetHan = adm.NgayHetHan;
+                ad.TinhTrang = adm.TinhTrang;
+                dbNganHang.SaveChanges();
+                //Session["User"] = ad;
+                return RedirectToAction("../Admin/Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public ActionResult DetailsThe(string id)
+        {
+            try
+            {
+                The ad = dbNganHang.Thes.SingleOrDefault(m => m.MaThe == id);
+                return View(ad);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         public ActionResult XuLyCapNhatUser(string email, string name)
         {
             try

@@ -36,9 +36,9 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "UpdateUser/", new { id = item.MaThe })%> |
-                <%: Html.ActionLink("Details", "Details/", new { id=item.MaThe })%> |
-                <%: Html.ActionLink("Delete", "DeleteUser/", new { id=item.MaThe })%>
+                <%: Html.ActionLink("Edit", "UpdateThe/", new { id = item.MaThe })%> |
+                <%: Html.ActionLink("Details", "DetailsThe/", new { id=item.MaThe })%> |
+                <%: Html.ActionLink("Delete", "DeleteThe/", new { id=item.MaThe })%>
             </td>
             <td>
                 <%: item.MaThe %>
