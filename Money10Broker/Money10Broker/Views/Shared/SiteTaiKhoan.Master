@@ -43,19 +43,18 @@
 //-->
 </script>
 <body onload=enable_text(false);>
-    <div id="taskbar">
-        <div class="taskbar">
-            <div class="taskbar-sort">
-                <ul>
-                    <li><a href="/Public/TrangChu" class="active"
-                        target><span class="icon-tasbar-nl"></span><span>Ecmoney10Broker.tk</span></a></li>
-                    <li><a href="" class target><span class="icon-tasbar-pp"></span><span>Money04.TK</span></a></li>
-                    <%--<li><a href="#" class="" target=""><span>Mua sắm</span></a></li>--%>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
+    <% 
+        Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
+        Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
+        if (Session["Language"] != null && Session["Content"] != null)
+        {
+            dataLang = (Money10Banking.Models.Language)Session["Language"];
+            dataContent = (Money10Banking.Models.Language)Session["Content"];
+        }
+     %>
+
+    <%=dataContent["MAIN_MENU"].ValueLang %>
+
     <div style="height: 35px;">
     </div>
     <script language="javascript">
@@ -174,17 +173,9 @@
             </div>
             <% }%>
             <div class="news-hot" id="news_hot">
-                <ul class="news-view" id="news_view">
-                    <li class="active"><a href=""
-                        class="active">Ecmoney10broker.tk TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt</a></li>
-                </ul>
-                <div class="news-hot-box">
-                    <span class="btn-news-hot"><a href="#" id="hot-new"></a></span>
-                    <ul class="news-hot-sub" id="news_view_list">
-                        <li class="active"><a href="#"
-                            class="active">Ecmoney10broker.tk TỰ HÀO LÀ SỐ MỘT với 24 điểm khác biệt<!--<span class="news-hot-date">(24/11/2011)</span>--></a></li>
-                    </ul>
-                </div>
+                <div style="cursor: pointer; position:absolute;text-align:center;">
+                    <a href="/Public/TrangChu?lang=vi"><img alt="Vietnam" src="../../Content/images/icon-vi.gif"> <%=dataLang["TITLE_VIETNAM"].ValueLang%></a> | <a href="/Public/TrangChu?lang=en"><img alt="English" src="../../Content/images/icon-en.gif"> <%=dataLang["TITLE_ENGLISH"].ValueLang%></a>
+                </div>   
             </div>
         </div>
         <div class="clear">
@@ -194,16 +185,13 @@
                 <a href>Phan Quang Khải</a></div>
             <div id="tag-use-login-shortcut">
                 <ul>
-                    <li><a href="#">Xem thông
-                        tin tài khoản</a></li>
+                    <li><a href="#"><%=dataLang["BOX_ACCINFO"].ValueLang %></a></li>
                     <li><a href="">
-                        Lịch sử giao dịch</a></li>
-                    <li><a href="#">Thực
-                        hiện giao dịch</a></li>
-                    <li><a href="#">Quản trị
-                        khiếu nại</a></li>
+                        <%=dataLang["MENU_TRANSHISTORY"].ValueLang%></a></li>
+                    <li><a href="#"><%=dataLang["MENU_SERVICE"].ValueLang%></a></li>
+                    <li><a href="#"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></a></li>
                     <li><a href="#">
-                        Tích hợp thanh toán</a></li>
+                        <%=dataLang["BOX_ACCTYPE"].ValueLang%></a></li>
                 </ul>
             </div>
             <div id="button-use-login-shortcut">
@@ -219,42 +207,8 @@
             </div>
         </div>
         <div id="footer">
-            <div id="menu-footer">
-                <a href="#"
-                    target="_blank" rel="nofollow">Về Ecmoney10broker.tk</a> |<a href="#"
-                        target="_blank" rel="nofollow">Thoả thuận người dùng</a> |<a href="#"
-                            target="_blank" rel="nofollow">Quyền riêng tư</a> |<a href="#"
-                                target="_blank" rel="nofollow">Quy định - Chính sách</a> |<a href="#"
-                                    target="_blank" rel="nofollow">Trợ giúp - Hướng dẫn</a> |<a href="#"
-                                        target="_blank" rel="nofollow">Hỏi đáp - Thảo luận</a>
-            </div>
-            <div id="footer-add">
-                <div id="footer-add-right">
-                    <address style="margin-bottom: 5px;">
-                        <strong>Hà Nội:</strong> Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng; Hotline:
-                        0984-863-761; Điện thoại: 1900-5858-99 (ext 111).
-                    </address>
-                    <address style="margin-bottom: 5px;">
-                        <strong>TP.HCM:</strong> Lầu 1-4, tòa nhà Blue Berry, số 9-11 đường D52 Cộng Hòa,
-                        phường 12,
-                        <br>
-                        quận Tân Bình; Điện thoại: 1900-5858-99 (ext 101).
-                    </address>
-                </div>
-                <div id="footer-add-left" style="width: 490px;">
-                    <p style="margin-bottom: 5px;">
-                        Bản quyền © 2009-2011 Ecmoney10broker.tk: Hệ thống thanh toán trực tuyến trung gian bên
-                        thứ ba kết hợp bảo vệ người mua hàng đầu Việt Nam, một sản phẩm của<a href="#"
-                            target="_blank" rel="nofollow">PeaceSoft Solutions Corporation</a></p>
-                    <p style="margin-bottom: 5px;">
-                        Sản phẩm đã được Ngân hàng Nhà Nước cấp giấy phép hoạt động số 2608/QĐ-NHNN.</p>
-                    <p style="margin-bottom: 5px;">
-                        Các liên kết khác: <a href="#" target="_blank" rel="nofollow">www.chodientu.vn</a>
-                        | <a href="#" target="_blank" rel="nofollow">www.ebay.vn</a>
-                        | <a href="#" target="_blank" rel="nofollow">www.adnet.vn</a> | <a
-                            href="#" target="_blank" rel="nofollow">www.vizum.vn</a></p>
-                </div>
-            </div>
+            <%=dataContent["PAGE_FOOTER"].ValueLang %>
+
             <!-- Start of Zopim Live Chat Script -->
            <%-- <script type="text/javascript">
                 window.$zopim || (function (d, s) {

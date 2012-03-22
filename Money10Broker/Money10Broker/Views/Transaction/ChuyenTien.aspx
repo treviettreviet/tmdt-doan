@@ -58,7 +58,7 @@
 		  <form method="post" action="/Transaction/TransferByBroker" enctype="multipart/form-data"><input type="hidden" name="form_module_id" value="451">
 		  <table border="0" cellspacing="10" cellpadding="0" width="100%">	
           <p style="margin-left:80px;">
-            <input type="radio" name="id" value="samebank" checked="checked" onclick="GetBank('samebank');" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
+            <input type="radio" name="idsamediff" value="samebank" checked="checked" onclick="GetBank('samebank');" id="id_account_per"><label for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
           <p id='optionsamebank' style="margin-left:100px;">
             <select id="banktransfer" name="banktransfer">
                 <option selected="selected" value='1'>ECMoney 10</option>
@@ -66,7 +66,7 @@
             </select>
           </p>
           <p style="margin-left:80px;">
-            <input type="radio" name="id" value="diffbank"  onclick="GetBank('diffbank');" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>		  	
+            <input type="radio" name="idsamediff" value="diffbank"  onclick="GetBank('diffbank');" id="id_account_merchant"><label for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>		  	
 			  
           <p id='optiondiffbank' style="margin-left:100px;">
             <label id="diffbanksend">Send Bank</label><br>
