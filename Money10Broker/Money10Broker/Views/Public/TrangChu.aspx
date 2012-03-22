@@ -198,17 +198,17 @@
                     <!--hết thông báo lỗi-->
                     <table border="0" cellspacing="0" width="100%">
                         <tr>
-                            <td style="padding-bottom: 10px;">
+                            <td style="font-size:14px;">
                                 <%=dataLang["BOX_ACC"].ValueLang %>:
                             </td>
                             <td align="right">
                                 <input name="email" type="text" value="Email hoặc tên đăng nhập" id="email" style="color: #777;
-                                    width: 150px; margin: 0px; padding: 0px; height: 18px; font-size: 12px; border: 1px solid #a5b4bc;"
+                                    width: 130px; margin: 0px; padding: 0px; height: 18px; font-size: 12px; border: 1px solid #a5b4bc;"
                                     onfocus="if(this.value == 'Email hoặc tên đăng nhập'){this.value='';};" onblur="if(this.value == ''){this.value='Email hoặc tên đăng nhập';};" />
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="font-size:14px">
                                 <%=dataLang["BOX_PASSWORD"].ValueLang %>:
                             </td>
                             <td align="right">
@@ -218,9 +218,9 @@
                         </tr>
                     </table>
                 </div>
-                <div id="box-button-login" style="margin-top: 6px;">
-                    <input name="cmdLogin" type="submit" value="Login" class="button-content" />
-                    <%--<a href="#">Quên mật khẩu?</a>--%>
+                <div id="box-button-login" style="margin-top: 6px; text-align:center">
+                    <input name="cmdLogin" type="submit" value="Đăng Nhập" class="button-content" />
+                    
                 </div>
                 </form>
                 <div id="dangky">
