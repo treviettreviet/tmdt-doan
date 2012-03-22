@@ -45,7 +45,7 @@
                                 group = "Mod";
                         %>
                         Hello, <a href="#" title="Edit your profile">
-                            <%=ad.Name %></a> | Nhóm: <%=group %>
+                            <%=ad.Name %></a> (<%=group %>)
                         <br />
                         <br />
                         <a href="/Public/CapNhatTaiKhoan" title="View the Site">Thông tin</a> | <a href="/Public/XuLyThoat"
