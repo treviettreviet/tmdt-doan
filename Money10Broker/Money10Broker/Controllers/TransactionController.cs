@@ -308,11 +308,11 @@ namespace Money10Broker.Controllers
                 ViewData["error"] = error;  // chuyển sang view đăng nhập để hiển thị
                 return RedirectToAction("ChuyenTienCungMoiGioi", new { div, error });   // Chỗ này hay nè anh em :D
             }
-            xnvaufit_MoiGioiEntities dbmg2 = new xnvaufit_MoiGioiEntities();
+           // xnvaufit_MoiGioiEntities dbmg2 = new xnvaufit_MoiGioiEntities();
             // Xử lý Gửi tiền
             tkGuiNew.SoDu = tkGui.SoDu - price_transfer;
             tkNhan.SoDu = tkNhan.SoDu + price_transfer;
-            dbmg.SaveChanges();
+           // dbmg.SaveChanges();
             LichSuGiaoDich log = new Models.LichSuGiaoDich();
             log.NgayGiaoDich = DateTime.Now;
             //log.The = (from row in dbMoiGioi. where row.SoThe.Equals() select row).First<The>();
@@ -322,8 +322,8 @@ namespace Money10Broker.Controllers
             log.MaLoaiGiaoDich = "LGD003";
             log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
             log.TinhTrang = 1;
-            dbmg2.LichSuGiaoDiches.AddObject(log);
-            dbmg2.SaveChanges();
+            dbmg.LichSuGiaoDiches.AddObject(log);
+            dbmg.SaveChanges();
 
             List<LichSuGiaoDichModels> listData = LSGiaoDich(tkGui.Email);
             ViewData["ListData"] = listData;
@@ -335,8 +335,8 @@ namespace Money10Broker.Controllers
             string sSubject = "Bạn đã chuyển tiền thành công luc " + DateTime.Now + "!";
             string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
             sendMail(sTo, sFrom, sSubject, sBody);
-
-            return RedirectToAction("ThongBaoKetQuaGiaoDich", new {error});
+            return RedirectToAction("ThongBaoKetQuaGiaoDich", new { div, error }); 
+           // return RedirectToAction("ThongBaoKetQuaGiaoDich", new {error});
         }
 
         public ActionResult TransferByBroker(string idsamediff, string banktransfer, string banksend, string bankreceive, string sendcardnum, string receivecardnum, string amount)
