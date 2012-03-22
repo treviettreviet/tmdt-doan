@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteTaiKhoan.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Chuyển tiền giữa 2 Ví trên cùng hệ thống môi giới
+	Chuyển tiền liên môi giới
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <script type="text/javascript">
       var emailfilter = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i
@@ -88,13 +89,12 @@
                         if (div != null && error != null)
                         {
                 %>
-
-                <form method="post" name="form1" action="/Transaction/XuLyChuyenTienCungMoiGioi" onsubmit="return checkForm();">
-
-                            <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
+                     <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
                 <%
+               
+                   
                         }
-                    }
+                    
                 %>
                             
                 <form method="post" action="/Transaction/XuLyChuyenTienCungMoiGioi">
