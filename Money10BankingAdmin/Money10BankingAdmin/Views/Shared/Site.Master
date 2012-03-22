@@ -61,6 +61,7 @@
                                 <li><a href="/Admin/TaoUser">Tạo User</a></li>
                                 <li><a href="/Admin/PhanQuyen">Phân Quyền</a></li>
                                 <li><a href="/Admin/DanhSachUser">Danh Sách User</a></li>
+                                <li><a href="/Permission/DanhSachBang">Danh Sách Bảng Dữ Liệu</a></li>
                             </ul>
                         </li>
                         <li><a href="#" class="nav-top-item">TIỆN ÍCH </a>
