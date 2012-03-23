@@ -3,8 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main">
-        <div class="<%=Html.Encode(ViewData["div"]) %>">
-            <%=Html.Encode(ViewData["error"]) %></div>
         <script type="text/javascript">
 					    		    			    //initiate validator on load
 					    		    			    j(document).ready(function () {
@@ -193,7 +191,7 @@
 					    		    			        });
 					    		    			    });
         </script>
-        <script>
+        <script language="javascript" type="text/javascript">
             /**
             * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
             */
@@ -255,7 +253,7 @@
         <div id="dhtmltooltip">
         </div>
         <script type="text/javascript" src="../../Scripts/js/small000.js"></script>
-        <style>
+        <style type="text/css">
             #register_wrap .main_reg .instruction
             {
                 font-size: 0.95em;
@@ -269,32 +267,46 @@
                         Chuyển khoản
                     </h2>
                 </div>
-                <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif">
+                <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif" />
             </div>
             <div class="clear">
             </div>
             <div class="form">
-
-                <%--<div class="form-content">
-
-                    
-                </div>--%>
-
-                <div class="form-content">
-                    
-                </div>
-
+                <div class="form-content"></div>
             </div>
             <div class="form-content clear">
-                <form action="/Public/TransferMoneyBank" onsubmit="" id="form" name="form_TransferMoneyBank"
+            <script language="javascript" type="text/javascript">
+                function CheckValidation() {
+                    var card_receive = document.forms.form_TransferMoneyBank.CardRec.value;
+                    if (card_receive == "") {
+                        alert("Chưa nhập số thẻ người nhận. Vui lòng nhập số thẻ người nhận.");
+                        return false;
+                    }
+                    return true;
+                }
+                
+            </script>
+
+            <%
+                string div = Request.QueryString["div"];
+                string error = Request.QueryString["error"];
+                if (div != null && error != null)
+                {
+            %>
+                    <div class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>        
+            <%                    
+                }
+            %>
+                <form action="/Public/TransferMoneyBank" onsubmit="return CheckValidaion();" id="form" name="form_TransferMoneyBank"
                 accept-charset="utf-8" method="post">
+
                 <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank">
                     <p style="margin-left: 80px;">
-                        <input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank"><label
+                        <input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank" /><label
                             for="id_account_per"><span class="font-acc">Chuyển tiền cùng ngân hàng</span><span
                                 class="font-acc-command">(Chuyển tiền trong cũng một ngân hàng)</span></label></p>
                     <p style="margin-left: 80px;">
-                        <input type="radio" name="id" value="2" onclick="" id="TransferMoneyDiffBank"><label
+                        <input type="radio" name="id" value="2" onclick="" id="TransferMoneyDiffBank" /><label
                             for="id_account_merchant"><span class="font-acc">Chuyển tiền liên ngân hàng</span><span
                                 class="font-acc-command">(Chuyển tiền giữa hai ngân hàng khác nhau)</span></label></p>
                     <tr>
@@ -310,7 +322,7 @@
                             Số thẻ người nhận<span style="color: red;">*</span>:
                         </th>
                         <td>
-                            <input type="text" name="CardRec" value size="42">
+                            <input type="text" name="CardRec" value="" size="42" />
                         </td>
                     </tr>
                     <tr>
