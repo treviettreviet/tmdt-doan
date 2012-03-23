@@ -47,7 +47,7 @@
                             if (th != null)
                             {
                         %>
-                                <input type="text" name="cardno" value="<%=th.SoThe%>" /></div>
+                                <input type="text" name="cardno" value="<%=th.SoThe%>" readonly="readonly" /></div>
                         <%        
                             }
                             else

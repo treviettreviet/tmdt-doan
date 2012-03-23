@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main">
-        <script type="text/javascript">
+        <%--<script type="text/javascript">
 					    		    			    //initiate validator on load
 					    		    			    j(document).ready(function () {
 					    		    			        // validate contact form on keyup and submit
@@ -190,8 +190,9 @@
 					    		    			            }
 					    		    			        });
 					    		    			    });
-        </script>
-        <script language="javascript" type="text/javascript">
+        </script>--%>
+
+        <%--<script language="javascript" type="text/javascript">
             /**
             * Kiểm tra họ tên , có ít nhất 2 từ , mỗi từ trên 2 ký tự
             */
@@ -249,10 +250,9 @@
                     return false;
                 }
             }
-        </script>
-        <div id="dhtmltooltip">
-        </div>
-        <script type="text/javascript" src="../../Scripts/js/small000.js"></script>
+        </script>--%>
+        <div id="dhtmltooltip"></div>
+        <%--<script type="text/javascript" src="../../Scripts/js/small000.js"></script>--%>
         <style type="text/css">
             #register_wrap .main_reg .instruction
             {
@@ -267,39 +267,43 @@
                         Chuyển khoản
                     </h2>
                 </div>
-                <img title="Đăng ký tài khoản cá nhân" atl="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif" />
+                <img title="Đăng ký tài khoản cá nhân" alt="Đăng ký tài khoản" src="../../Content/images/icon_dan.gif" />
             </div>
             <div class="clear">
             </div>
             <div class="form">
-                <div class="form-content"></div>
+                <div class="form-content">
+                </div>
             </div>
             <div class="form-content clear">
-            <script language="javascript" type="text/javascript">
-                function CheckValidation() {
-                    var card_receive = document.forms.form_TransferMoneyBank.CardRec.value;
-                    if (card_receive == "") {
-                        alert("Chưa nhập số thẻ người nhận. Vui lòng nhập số thẻ người nhận.");
-                        return false;
+                <script language="javascript" type="text/javascript">
+                    function checkVL() {
+                        var card_receive = document.forms.frmTrans.CardRec.value;
+                        var amountX = document.forms.frmTrans.amount.value;
+                        if (card_receive == "") {
+                            alert("Chưa nhập số thẻ người nhận. Vui lòng nhập số thẻ người nhận.");
+                            return false;
+                        }
+                        if (amountX == "") {
+                            alert("Chưa nhập số tiền cần chuyển. Vui lòng nhập số tiền cần chuyển.");
+                            return false;
+                        }
+                        return true;
                     }
-                    return true;
-                }
                 
-            </script>
+                </script>
+                <%
+                    string div = Request.QueryString["div"];
+                    string error = Request.QueryString["error"];
+                    if (div != null && error != null)
+                    {
+                %>
+                        <div class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>
+                <%                    
+                    }
+                %>
 
-            <%
-                string div = Request.QueryString["div"];
-                string error = Request.QueryString["error"];
-                if (div != null && error != null)
-                {
-            %>
-                    <div class="<%=Html.Encode(div) %>"><%=Html.Encode(error) %></div>        
-            <%                    
-                }
-            %>
-                <form action="/Public/TransferMoneyBank" onsubmit="return CheckValidaion();" id="form" name="form_TransferMoneyBank"
-                accept-charset="utf-8" method="post">
-
+                <form action="/Public/TransferMoneyBank" onsubmit="return checkVL();" name="frmTrans" method="post">
                 <table class="form-content-table" cellspacing="10px" id="TransferMoneyBank">
                     <p style="margin-left: 80px;">
                         <input type="radio" name="id" value="1" checked="checked" onclick="" id="TransferMoneySameBank" /><label
@@ -330,65 +334,23 @@
                             Số tiền chuyển<span style="color: red;">*</span>:
                         </th>
                         <td>
-                            <script type="text/javascript">
-                                j(document).ready(function () {
-                                    j("#amount").bind("keyup", function () {
-                                        initFormatNumber_amount();
-                                    });
-                                    initFormatNumber_amount();
-                                });
-                                function initFormatNumber_amount() {
-                                    j("#detail_amount").text(j("#amount").val());
-
-                                    if (j("#amount").val() != "") {
-                                        j("#detail_amount").format();
-                                    }
-                                } function numbersonly(myfield, e, dec) {
-                                    var key;
-                                    var keychar;
-
-                                    if (window.event)
-                                        key = window.event.keyCode;
-                                    else if (e)
-                                        key = e.which;
-                                    else
-                                        return true;
-                                    keychar = String.fromCharCode(key);
-
-                                    // control keys
-                                    if ((key == null) || (key == 0) || (key == 8) ||
-								                        (key == 9) || (key == 13) || (key == 27))
-                                        return true;
-
-                                    // numbers
-                                    else if ((("0123456789").indexOf(keychar) > -1))
-                                        return true;
-
-                                    // decimal point jump
-                                    else if (dec && (keychar == ".")) {
-                                        myfield.form.elements[dec].focus();
-                                        return false;
-                                    }
-                                    else
-                                        return false;
-                                }</script>
                             <input style="text-align: right; width: 125px;" size="10" autocomplete="off" onkeypress="return numbersonly(this, event)"
-                                id="amount" type="text" value name="amount"><b>₫</b><div style="font-weight: bold;
-                                    padding-right: 3px;" id="detail_amount">
-                                </div>
+                                id="amount" type="text" value="" name="amount" /><b>₫</b>
+                            <div style="font-weight: bold; padding-right: 3px;" id="detail_amount">
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                         </td>
                         <td>
-                            <input type="submit" name="btn_next" value="Chuyển tiền" class="button">
+                            <input type="submit" name="btn_next" value="Chuyển tiền" class="button" />
+                            <%--<input type="submit" value="Chuyển tiền"/>--%>
                         </td>
+                    </tr>
                 </table>
                 </form>
             </div>
-        </div>
-        <div>
         </div>
     </div>
 </asp:Content>
