@@ -27,7 +27,17 @@ namespace Money10Broker.Controllers
 
         public ActionResult LichSuGiaoDich()
         {
-            return View();
+            TaiKhoan tk = (TaiKhoan)Session["User"];
+            if (tk != null)
+            {
+               
+                List<LichSuGiaoDichModels> lst = LSGiaoDich(tk.Email);
+                ViewData["ListData"] = lst;
+                return View("LichSuGiaoDich");
+            }
+            else
+                return RedirectToAction("DangNhap");
+            
         }
 
         public ActionResult NapTien()
@@ -335,8 +345,9 @@ namespace Money10Broker.Controllers
             string sSubject = "Bạn đã chuyển tiền thành công luc " + DateTime.Now + "!";
             string sBody = "Đây là mail tự động. Mọi chi tiết liên hệ tmdthca@gmail.com.";
             sendMail(sTo, sFrom, sSubject, sBody);
-            return RedirectToAction("ThongBaoKetQuaGiaoDich", new { div, error }); 
-           // return RedirectToAction("ThongBaoKetQuaGiaoDich", new {error});
+            //return RedirectToAction("ThongBaoKetQuaGiaoDich", new { div, error }); 
+           return View("LichSuGiaoDich");
+            //return RedirectToAction("LichSuGiaoDich", new { });
         }
 
         public ActionResult TransferByBroker(string idsamediff, string banktransfer, string banksend, string bankreceive, string sendcardnum, string receivecardnum, string amount)

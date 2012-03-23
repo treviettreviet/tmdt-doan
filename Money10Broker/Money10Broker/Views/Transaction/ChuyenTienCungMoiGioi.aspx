@@ -89,12 +89,9 @@
                         if (div != null && error != null)
                         {
                 %>
-                     <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
+                             <div class="<%=Html.Encode(div)%>"><%=Html.Encode(error)%></div>
                 <%
-               
-                   
                         }
-                    
                 %>
                             
                 <form method="post" name="form1" onsubmit="return checkForm();" action="/Transaction/XuLyChuyenTienCungMoiGioi">
