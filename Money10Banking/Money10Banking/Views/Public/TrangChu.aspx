@@ -1,11 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="Main" style="padding: 0">
-        
+        <script language="javascript" type="text/javascript">
+            function checkVL() {
+                var email = document.forms.frmLog.email.value;
+                var pass = document.forms.frmLog.password.value;
+                if (email == "") {
+                    alert("Chưa nhập Email. Vui lòng nhập vào Email để đăng nhập.");
+                    return false;
+                }
+                if (pass == "") {
+                    alert("Chưa nhập Mật Khẩu. Vui lòng nhập vào Mật Khẩu để đăng nhập.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
                 <div class="home-top">
                     <div class="home-top-left">
                         <div class="form_login">
-                            <form action="/Public/XuLyDangNhap" method="post" id="login_small"
+                            <form action="/Public/XuLyDangNhap" method="post" id="login_small" name="frmLog" onsubmit="return checkVL();"
                             autocomplete="off" accept-charset="utf-8">
 
                             <% 
@@ -56,7 +70,7 @@
                                         <tr>
                                             <td height="27">
                                                 <label>
-                                                    <input type="submit" name="btnLogin" value="Login" class="home-bt-login">
+                                                    <input type="submit" name="btnLogin" value="Đăng Nhập" class="home-bt-login">
                                                 </label>
                                             </td>
                                         </tr>
