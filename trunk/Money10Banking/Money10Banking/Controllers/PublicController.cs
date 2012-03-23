@@ -1359,19 +1359,37 @@ namespace Money10Banking.Controllers
                     ViewData["div"] = div;
                     if (kq == -1)
                     {
-                        string error = "sid ko hợp lệ";
+                        string error = "Giao dịch ko thanh công";
                         ViewData["error"] = error;
                         return View("ChuyenTien");
                     }
                     if (kq == -2)
                     {
-                        string error = "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
+                        string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
                         ViewData["error"] = error;
                         return View("ChuyenTien");
                     }
                     if (kq == -3)
                     {
-                        string error = "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
+                        string error = "Ngân hàng thẻ gửi chưa liên kết.";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == -4)
+                    {
+                        string error = "lỗi khi gọi hệ thống thẻ.";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == 1)
+                    {
+                        string error = "thẻ đối tác không đủ tiền.";
+                        ViewData["error"] = error;
+                        return View("ChuyenTien");
+                    }
+                    if (kq == 2)
+                    {
+                        string error = "Giao Dịch thất bại do lỗi hệ thống của BNP.";
                         ViewData["error"] = error;
                         return View("ChuyenTien");
                     }
