@@ -388,25 +388,26 @@ namespace Money10Broker.Controllers
                 //Chuyển tiền vào tk môi giới
                 wsMethod = "TransferMoneySameBank";
                 result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
-
+                TaiKhoan tk= (TaiKhoan)Session["User"];
                 //Giao dịch thành công
                 if (result == 0)
                 {
                     LichSuGiaoDich log = new Models.LichSuGiaoDich();
                     log.NgayGiaoDich = DateTime.Now;
-                    log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
-                    log.MaThe = log.The.MaThe;
+                    //log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
+                    log.MaThe = tk.MaTaiKhoan;
                     log.SoTheNhan = receivecardnum;
                     log.SoTienGiaoDich = amount;
                     log.MaLoaiGiaoDich = "LGD003";
                     log.MaLichSuGiaoDich = PhatSinhMaGiaoDich();
-                    log.TinhTrang = 0;
+                    log.TinhTrang = 1;
                     dbMoiGioi.LichSuGiaoDiches.AddObject(log);
                     dbMoiGioi.SaveChanges();
-
+                    List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
+                    ViewData["ListData"] = listData;
                     ViewData["div"] = "message-box";
                     ViewData["messege"] = "Chuyển Tiền Thành Công";
-                    return RedirectToAction("LichSuGiaoDich");
+                    return View("LichSuGiaoDich");
                 }
                 else
                 {
@@ -438,14 +439,14 @@ namespace Money10Broker.Controllers
 
                 //Chuyển tiền vào tk môi giới
                 result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
-
+                TaiKhoan tk = (TaiKhoan)Session["User"];
                 //Giao dịch thành công
                 if (result == 0)
                 {
                     LichSuGiaoDich log = new Models.LichSuGiaoDich();
                     log.NgayGiaoDich = DateTime.Now;
-                    log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
-                    log.MaThe = log.The.MaThe;
+                    //log.The = (from row in dbMoiGioi.Thes where row.SoThe.Equals(sendcardnum) select row).First<The>();
+                    log.MaThe = tk.MaTaiKhoan;
                     log.SoTheNhan = receivecardnum;
                     log.SoTienGiaoDich = amount;
                     log.MaLoaiGiaoDich = "LGD003";
@@ -453,7 +454,8 @@ namespace Money10Broker.Controllers
                     log.TinhTrang = 0;
                     dbMoiGioi.LichSuGiaoDiches.AddObject(log);
                     dbMoiGioi.SaveChanges();
-
+                    List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
+                    ViewData["ListData"] = listData;
                     ViewData["div"] = "message-box";
                     ViewData["messege"] = "Chuyển Tiền Thành Công";
                     return RedirectToAction("LichSuGiaoDich");
