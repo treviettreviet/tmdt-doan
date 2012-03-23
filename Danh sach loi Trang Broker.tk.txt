@@ -1,0 +1,9 @@
+﻿Danh sách lỗi :
+[3/23/2012 11:56:21 PM] 10HCA1 - Trần Ngọc Long: Site Broker
+[3/23/2012 11:56:23 PM] 10HCA1 - Trần Ngọc Long: 1. Chuyển tiền liên ngân hàng qua mô giới
+[3/23/2012 11:56:39 PM] 10HCA1 - Trần Ngọc Long: 2. Lỗi font chữ cả trang
+[3/23/2012 11:57:18 PM] 10HCA1 - Trần Ngọc Long: 3. chuyển tiền qua ví cùng ngân hàng. Ghi lịch sử giao dịch nhưng tiền của tài khoản gửi ko bị trừ
+[3/23/2012 11:59:34 PM] 10HCA1 - Trần Ngọc Long: 4. Rút tiền. click Tiếp tục -> trang lôi code
+[12:01:19 AM] 10HCA1 - Trần Ngọc Long: 5. Chuyển tiền liên ngân hàng qua môi giới chưa bắt valuedation
+[12:02:16 AM] 10HCA1 - Trần Ngọc Long: 6. Click "cập nhật" thông tin tài khoản -> lôic
+[12:03:14 AM] 10HCA1 - Trần Ngọc Long: 7. Đổi mật khẩu và đổi mật khẩu thanh toán chưa bắt valuedation luôn

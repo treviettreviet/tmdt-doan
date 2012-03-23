@@ -10,27 +10,24 @@
 			<ul>
 			
 				<li class="active " style="display:block"><a href="#"><span>GIAO DỊCH</span></a></li>
-				<li class=" " style="display:block"><a href="#"><span>KHIẾU NẠI</span></a></li>
 				<li class=" " style="display:block"><a href="#"><span>TÀI KHOẢN</span></a></li>
-				<li class=" end" style="display:block"><a href="#"><span>TÍCH HỢP THANH TOÁN</span></a></li>
 			</ul>
 		</div>
 		<div id="menu-nav-content-sub">
 			<ul>
 			<%--<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Tổng hợp</span></a></li>--%>
 				<li class=" " style="display:block"><a href="/Transaction/LichSuGiaoDich"><span>Lịch sử giao dịch</span></a></li>				
-				<li class=" active" style="display:block"><a href="/Transaction/NapTien"><span>Nạp tiền</span></a></li>
-                <li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	
+				<%--<li class=" active" style="display:block"><a href="/Transaction/NapTien"><span>Nạp tiền</span></a></li>--%>
+                <%--<li class="" style="display:block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>	--%>
 				<li class=" " style="display:block"><a href="/Transaction/ChuyenTien"><span>Chuyển tiền</span></a></li>
                 <li class=" " style="display:block"><a href="/Transaction/ChuyenTienCungMoigioi"><span>Chuyển tiền cùng môi giới</span></a></li>
                 <li class=" " style="display:block"><a href="/Transaction/ChuyenTienKhacMoigioi"><span>Chuyển tiền khác môi giới</span></a></li>					
-				<li class=" end" style="display:block"><a href="#"><span>Nhận tiền hoàn lại</span></a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 		
-		<div id="title"><span class="yel">Nạp tiền vào tài khoản NgânLượng.vn</span>&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="#">Xem lịch sử nạp tiền</a> ]</div>
+		<div id="title"><span class="yel">Nạp tiền vào tài khoản EcMoney10Broker.tk</span>&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="#">Xem lịch sử nạp tiền</a> ]</div>
 
 <div class="note-deposit-info">
 	<p>Xin vui lòng chọn một hình thức dưới đây để nạp tiền. Khuyên bạn nên dùng các hình thức Online để nhận được tiền ngay trong tài khoản NgânLượng.vn.</p>	
