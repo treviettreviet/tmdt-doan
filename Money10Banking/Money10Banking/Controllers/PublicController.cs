@@ -1338,7 +1338,7 @@ namespace Money10Banking.Controllers
                     if (kq == -2)
                     {
                         //error += "Thẻ gửi không tồn tại trong hệ thống ngân hàng";
-                        error += "Thẻ nhận không tồn tại trong hệ thống ngân hàng";
+                        error += "Thẻ nhận không tồn tại trong hệ thống ngân hàng Money04";
                         ViewData["error"] = error;
                         return RedirectToAction("ChuyenTien", new { div, error });   // Chỗ này hay nè anh em :D
                     }
@@ -1355,6 +1355,18 @@ namespace Money10Banking.Controllers
                         ViewData["error"] = error;
                         return RedirectToAction("ChuyenTien", new { div, error });   // Chỗ này hay nè anh em :D
                     }
+                    if (kq == -5)
+                    {
+                        error += "Thẻ của ngân hàng đối tác không hợp lệ(hết hạn , bị mất).";
+                        ViewData["error"] = error;
+                        return RedirectToAction("ChuyenTien", new { div, error });   // Chỗ này hay nè anh em :D
+                    }
+                    if (kq == -6)
+                    {
+                        error += "Thẻ của người nhận không hợp lệ (hết hạn , bị mất)";
+                        ViewData["error"] = error;
+                        return RedirectToAction("ChuyenTien", new { div, error });   // Chỗ này hay nè anh em :D
+                    }
                     if (kq == 1)
                     {
                         error += "Thẻ đối tác không đủ tiền.";
@@ -1363,7 +1375,7 @@ namespace Money10Banking.Controllers
                     }
                     if (kq == 2)
                     {
-                        error += "Giao Dịch thất bại do lỗi hệ thống của BNP.";
+                        error += "Giao Dịch thất bại do lỗi hệ thống của ngân hàng BNP (Money04).";
                         ViewData["error"] = error;
                         return RedirectToAction("ChuyenTien", new { div, error });   // Chỗ này hay nè anh em :D
                     }
