@@ -373,24 +373,31 @@ namespace Money10Broker.Controllers
         {
             string brokerCardNum = "340426820759153";
             wsMethod = "TransferMoneyDiffBank";
-
-            string sid = WSProxy.CallWebService(wsURL, WebService, "AuthenticateForTransaction", new object[] { "lengoctin@gmail.com", "12345678" }).ToString();
+            object[] ob1 = new object[2];
+            ob1[0] = "lengoctin@gmail.com";
+            ob1[1] = "12345678";
+            object result1 = WSProxy.CallWebService(wsURL, WebService, "AuthenticateForTransaction", ob1);
+            string sID = (string)result1;
 
             //Chuyển tiền 2 tài khoản khách ngân hàng
-            int result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, receivecardnum, amount });
-
+            object[] ob2 = new object[4];
+            ob2[0] = sID;
+            ob2[1] = sendcardnum;
+            ob2[0] = receivecardnum;
+            ob2[0] = amount;
+            object result2 = WSProxy.CallWebService(wsURL, WebService, wsMethod, ob2);
+            int result3 = (int)result2;
             //Chuyển thành công vào môi giới
-            if (result == 0)
+            if (result3 == 0)
             {
                 //Thu phí 3% số tiền giao dịch
                 decimal fee = amount * (3m / 100m);
-
                 //Chuyển tiền vào tk môi giới
                 wsMethod = "TransferMoneySameBank";
-                result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, sendcardnum, brokerCardNum, fee });
+                result3 = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sID, sendcardnum, brokerCardNum, fee });
                 TaiKhoan tk= (TaiKhoan)Session["User"];
                 //Giao dịch thành công
-                if (result == 0)
+                if (result3 == 0)
                 {
                     LichSuGiaoDich log = new Models.LichSuGiaoDich();
                     log.NgayGiaoDich = DateTime.Now;
@@ -405,22 +412,23 @@ namespace Money10Broker.Controllers
                     dbMoiGioi.SaveChanges();
                     List<LichSuGiaoDichModels> listData = LSGiaoDich(tk.Email);
                     ViewData["ListData"] = listData;
-                    ViewData["div"] = "message-box";
-                    ViewData["messege"] = "Chuyển Tiền Thành Công";
+                    //ViewData["div"] = "message-box";
+                    //ViewData["messege"] = "Chuyển Tiền Thành Công";
                     return View("LichSuGiaoDich");
                 }
                 else
                 {
                     //Giao dịch thất bại, trả tiền lại cho người gửi
                     wsMethod = "TransferMoneyDiffBank";
-                    result = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sid, receivecardnum, sendcardnum, fee });
+                    result3 = (int)WSProxy.CallWebService(wsURL, WebService, wsMethod, new object[] { sID, receivecardnum, sendcardnum, fee });
+                    string div = "message-box";
+                    string error = "Chuyển Tiền Thất Bại";
+                    ViewData["div"] = div;
+                    ViewData["error"] = error;
+                    return RedirectToAction("ChuyenTien", new { });
                 }
             }
-
-
-            ViewData["div"] = "message-box";
-            ViewData["messege"] = "Chuyển Tiền Thất Bại";
-            return RedirectToAction("ChuyenTien");
+            return View("ChuyenTien");
         }
 
         private ActionResult TransferByBroker(string sendcardnum, string receivecardnum, decimal amount)

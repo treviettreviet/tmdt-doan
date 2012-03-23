@@ -24,7 +24,7 @@
                 <div id="login-box-left">
                     <div id="login-box-left-content">
                         <div id="login-title">
-                            Đăng nhập tài khoản ví điện tử Ngân Lượng</div>
+                            Đăng nhập tài khoản ví điện tử EcMoney10Broker.tk</div>
                         <div id="login-box-content">
                             <form method="post" name="form1" onsubmit="return checkForm();" action="/Account/XuLyDangNhap">
                             <%

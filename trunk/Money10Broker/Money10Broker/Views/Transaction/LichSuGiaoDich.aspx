@@ -12,7 +12,7 @@
         <div id="menu-nav-content-c">
             <div id="menu-nav-content-main">
                 <ul>
-                    <li class="active" style="display: block"><a href="/Public/TongHop"><span>GIAO DỊCH</span></a></li>
+                    <li class="active" style="display: block"><a href="/Transaction/LichSuGiaoDich"><span>GIAO DỊCH</span></a></li>
                     <li class=" " style="display: block"><a href="/Account/ThongTinTaiKhoan"><span>TÀI KHOẢN</span></a></li>
                 </ul>
             </div>
@@ -21,7 +21,7 @@
                     <%--<li class="" style="display: block"><a href="/Public/TongHop"><span>Tổng hợp</span></a></li>--%>
                     <li class="active" style="display: block"><a href="/Transaction/LichSuGiaoDich"><span>
                         Lịch sử giao dịch</span></a></li>
-                    <li class="" style="display: block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>
+                    <%--<li class="" style="display: block"><a href="/Transaction/RutTien"><span>Rút tiền</span></a></li>--%>
                     <li class=" " style="display: block"><a href="/Transaction/ChuyenTien"><span>Chuyển
                         tiền</span></a></li>
                     <li class=" " style="display: block"><a href="/Transaction/ChuyenTienCungMoigioi"><span>
@@ -56,11 +56,7 @@
     <%            
         }
     %>
-    <form method="get" name="frm_search">
-    <input name="portal" type="hidden" value="nganluong" />
-    <input id="page" name="page" type="hidden" value="transaction_history" />
-    <input id="filter_type" name="filter_type" type="hidden" value="1" />
-    <input id="s_status" name="s_status" type="hidden" value="0" />
+    <form method="get" name="frm_search" action="#">
     <div id="transaction-history-sell-filter" class="box-content-square">
         <div id="ssearch" class="sall-filter" style="padding-bottom: 10px">
             <div class="row-sall-filter" style="margin: 0">
@@ -71,7 +67,7 @@
                                 <label>
                                     Chọn thời gian:</label>
                                 <p>
-                                    <select id="option_time" name="option_time" onchange="set_filter(this.value)" style="width: 180px;
+                                    <select id="option_time" name="option_time" style="width: 180px;
                                         height: 22px;">
                                         <option value="1">Hôm nay</option>
                                         <option value="2">Hôm qua</option>
@@ -90,8 +86,7 @@
                                 <label style="padding-right: 140px;">
                                     Xem theo loại giao dịch:</label>
                                 <p>
-                                    <select id="cbo_type" name="cbo_type" onchange="document.location.href='?portal=nganluong&amp;page=transaction_history&amp;type='+this.value;"
-                                        style="width: 130px; height: 22px;">
+                                    <select id="cbo_type" name="cbo_type" style="width: 130px; height: 22px;">
                                         <option selected="" value="">Tất cả</option>
                                         <option value="deposit">Nạp tiền</option>
                                         <option value="withdraw">Rút tiền</option>
@@ -171,7 +166,7 @@
             <div class="clear">
             </div>
             <div class="row-sall-filter" style="margin: 0 10px">
-                <input class="button-content" type="submit" value="Tìm kiếm" />
+                <input class="button-content" type="button" value="Tìm kiếm" />
                 <a class="btn-compact" onclick="set_advance();">Tìm kiếm rút gọn</a>
             </div>
         </div>
