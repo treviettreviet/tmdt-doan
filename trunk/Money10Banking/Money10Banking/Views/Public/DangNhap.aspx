@@ -1,6 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script language="javascript" type="text/javascript">
+        function checkVL() {
+            var email = document.forms.frmLog.email.value;
+            var pass = document.forms.frmLog.password.value;
+            if (email == "") {
+                alert("Chưa nhập Email. Vui lòng nhập vào Email để đăng nhập.");
+                return false;
+            }
+            if (pass == "") {
+                alert("Chưa nhập Mật Khẩu. Vui lòng nhập vào Mật Khẩu để đăng nhập.");
+                return false;
+            }
+            return true;
+        }
+        </script>
+
      <%
         Money10Banking.Models.Language dataLang = new Money10Banking.Models.Language();
         Money10Banking.Models.Language dataContent = new Money10Banking.Models.Language();
@@ -20,7 +36,7 @@
                     <div class="login_header">
                     </div>
                     <div class="login_content">
-                        <form action="/Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post">
+                        <form action="/Public/XuLyDangNhap" id="form_login" accept-charset="utf-8" method="post" name="frmLog" onsubmit="return checkVL()">
                         <div class="header">
                             <%=dataLang["TITLE_LOGIN"].ValueLang%></div>
                         <div class="login_label">
@@ -31,17 +47,8 @@
                             <%=dataLang["BOX_PASSWORD"].ValueLang%></div>
                         <div>
                             <input type="password" name="password" value="" /></div>
-                        <div class="login_label">
-                            Go to...</div>
                         <div>
-                            <%--<select name="goTo">
-                                <option value="accounts/info"><%=dataLang["BOX_ACCINFO"].ValueLang%></option>
-                                <option value="transactions/log"><%=dataLang["MENU_TRANSHISTORY"].ValueLang%></option>
-                                <option value="accounts/profile/money_receiving_config"><%=dataLang["MENU_UPDATEPROFILE"].ValueLang%></option>
-                            </select>--%>
-                        </div>
-                        <div>
-                            <input type="submit" name="submit" value="Login" class="login_button"></div>
+                            <input type="submit" name="submit" value="Đăng Nhập" class="login_button" /></div>
                         <%=dataContent["MAIN_REGLINK"].ValueLang%>
                         </form>
                     </div>
